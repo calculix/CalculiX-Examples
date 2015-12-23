@@ -1,2 +1,4 @@
-This ist a simply supported beam model
-+ parametrized with CGX (>2.6)
+Simply supported beam model with solid elements
++ tetrahedral and hexahedral elements
++ linear or quadratic elements
++ full or reduced integration, incompatible shape functions
