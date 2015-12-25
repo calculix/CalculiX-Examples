@@ -5,6 +5,6 @@ Parametric model of a simply supported beam, mainly used for convergence tests.
 
 Sub-directories contain models with various element types
 
-[Reference Solution (Life SMath Worksheet)](http://smath.info/cloud/worksheet/qWukPv37)
+Click the image below to open a life SMath worksheet
 
-![Screenshot](Beam_001.png)
+[![Screenshot](Beam_001.png)](http://smath.info/cloud/worksheet/qWukPv37)
