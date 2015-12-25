@@ -6,3 +6,6 @@ Simply supported beam model with solid elements
 
 
 
+| Element Type    | Size|Image    |
+| :------------- |:--- |:------------- |
+| C3D8R      |10| ![](solid_C3D8R_20_S.png)  |     
