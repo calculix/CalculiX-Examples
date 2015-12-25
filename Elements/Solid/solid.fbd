@@ -1,0 +1,71 @@
+valu H 100
+valu B 50
+Valu L 200
+valu LE 20
+valu Etyp te10
+
+# preprocessing
+# geometry
+pnt p1 0 0 0 
+seta lowerleft p p1 
+swep all new tra 0 H 0
+swep all new tra 0 0 B
+seta left all
+swep left right tra L 0 0 
+seta beam all
+
+# meshing
+div all auto LE 90
+elty all Etyp
+mesh all
+zap +tetSet
+send all abq
+
+# left end symmetry
+send left abq spc 1
+
+# right end support
+send right abq spc 2
+
+# vertex for z constraint
+send lowerleft abq spc 3
+
+#~ # run analysis
+sys ccx solid
+
+#~ # postprocessing
+read solid.frd
+#read solid.inp inp nom
+# extract umax
+ds 1 e 2
+enq all umax rec 0 _ _ 1 l
+sys mv enq_lc1_e2_1.out umax.txt
+# extract smax
+ds 2 e 1
+enq all smax rec 0 _ _ 1 h
+sys mv enq_lc2_e1_2.out smax.txt
+enq all smax rec 0 _ _ 1 l
+sys mv enq_lc2_e1_3.out smin.txt
+rot -z
+rot l 30
+rot u 15
+frame
+#zoom 2
+#tra u 50
+view elem
+# plus n left r
+# plus n right b
+view disp
+scal d 100000
+plot fv all
+# show divisions
+plus ld all
+plus ld all
+# make image
+hcpy png
+pnt pr1 0 0 25
+pnt pr2 100 0 25
+copy all new tra 0 0 0
+move new mir pr2 pr1
+plus fv all
+#copy all new rot pr1 pr2 180

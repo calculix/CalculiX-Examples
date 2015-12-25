@@ -1,0 +1,23 @@
+*include,input=all.msh
+*BOUNDARY
+*include,input=left_1.bou
+*include,input=right_2.bou
+*include,input=lowerleft_3.bou
+** material definition
+*MATERIAL, name=steel
+*elastic
+210000,0.333333333,0
+*density
+7.85e-9
+** rectangular beam cross section
+*solid section, elset=Eall, material=steel
+*STEP
+*STATIC
+*dload
+Eall,GRAV,9810.,0.,-2,0.
+*el file
+S
+*node file
+U
+*end step
+
