@@ -1,3 +1,9 @@
+
+# Convergence Study For Various Element Types
+
+
+
 Parametric model of a simply supported beam, mainly used for convergence tests.
 
-Subdirectories contain models with various element types
+
+Sub-directories contain models with various element types
