@@ -7,4 +7,4 @@ Sub-directories contain models with various element types
 
 [Reference Solution (Life SMath Worksheet)](http://smath.info/cloud/worksheet/qWukPv37)
 
-![Screenshot](beam_001.png)
+![Screenshot](Beam_001.png)
