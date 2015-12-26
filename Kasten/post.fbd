@@ -1,0 +1,12 @@
+read Kasten.frd
+rot y
+rot r 30
+rot u 20 
+view disp
+view elem
+frame
+zoom 0.9
+rep all
+ds -0
+plot f all n
+hcpy png

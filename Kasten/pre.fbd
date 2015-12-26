@@ -1,0 +1,27 @@
+pnt p1 0 0 0
+pnt p2 100 0 0
+line l1 p1 p2 12
+swep all new tra 0 100 0 12
+del s A001
+seta lower all
+swep all upper tra 0 0 150 20
+flip A003
+flip A004
+
+plot la all
+plus pa all
+plus sa all
+rot y
+rot d 10
+rot r 10
+frame
+hcpy png
+sys mv hcpy_1.png geo.png
+
+elty all qu8
+mesh all
+send all abq
+
+send all abq pres -0.01
+send lower abq nam
+send upper abq nam

@@ -1,0 +1,40 @@
+*include,input=all.msh
+*include,input=lower.nam
+*include,input=upper.nam
+*boundary
+Nlower,1,6
+Nupper,1,6
+*MATERIAL,NAME=Steel
+*ELASTIC
+210000,.3
+*plastic
+100,0
+200,0.3
+300,1
+*DENSITY
+7.8E-9
+*SHELL SECTION,ELSET=Eall,MATERIAL=Steel,offset=0
+1
+*STEP,nlgeom
+*STATIC
+*dload
+*include,input=all.dlo
+*el file
+S
+*node file
+U
+*end step
+*step,nlgeom
+*static
+0.05,1,,0.05
+*boundary
+Nupper,3,3,-20
+*el file
+S,PEEQ
+*node file
+U
+*node print,totals=only,nset=Nupper
+U,RF
+*end step
+
+
