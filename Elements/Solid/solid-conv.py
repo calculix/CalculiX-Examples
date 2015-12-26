@@ -1,5 +1,5 @@
 #!/usr/bin/python
-""" 
+"""
 This script runs a convergence study for solid elements
 """
 #from subprocess import call
@@ -40,12 +40,12 @@ for elty in eltyps.keys():
         for line in lines:
             # set element type
             if line.startswith("valu Etyp"):
-                line="valu Etyp "+eltyps[elty]+"\n"   
+                line="valu Etyp "+eltyps[elty]+"\n"
 	    # set element size
 	    if line.startswith("div all auto"):
-		line="div all auto "+str(elsize)+"\n"   
-		if elty.startswith("C3D8") or elty.startswith("C3D4"): 
-			# increase the node distance for linear elements 
+		line="div all auto "+str(elsize)+"\n"
+		if elty.startswith("C3D8") or elty.startswith("C3D4"):
+			# increase the node distance for linear elements
 		    line=line+"div all mult 0.5\n"
 		    elsize=elsize*2
             fout.write(line)
@@ -53,7 +53,7 @@ for elty in eltyps.keys():
         fout.close()
         # run solid_auto.fbd (preprocessing, solving and postprocessing)
         os.system("cgx -b solid_auto.fbd")
-        # extract data from solid.frd
+        # get number of nodes from solid.frd
         f=open("solid.frd")
         for line in f:
             if line.startswith("    2C"):
@@ -71,12 +71,3 @@ for elty in eltyps.keys():
         # write the values to the data file
         fdata.write(str(elsize)+" "+str(nnode)+" "+str((smax-smin)/2.)+" "+str(abs(umax))+"\n")
     fdata.close()
- 
-        
-        
-                
-
-                
-
-         
-
