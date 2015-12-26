@@ -1,0 +1,27 @@
+read Biegung.frd
+read Biegung.inp nom
+
+view disp
+view elem
+frame
+tra u 2
+rot y
+rot r 130
+zoom 1.5
+rep all
+ds -0
+seta ! all
+hcpy png
+sys mv hcpy_1.png deform.png
+
+rot y
+frame
+text Plastic equivalent strain
+ds -1 e 1
+comp Ndraht do
+zoom 1.5
+tra r 2
+plot fv Ndraht
+min 0 f
+hcpy png
+sys mv hcpy_2.png PE.png

@@ -1,0 +1,141 @@
+valu R 1
+valu L 16
+valu R1 5
+valu R2 2
+valu X 5
+valu Phi1 120
+valu DivR 2
+valu DivL 40
+valu Div1 40
+valu Div2 20
+
+# derived and auxiliary variables
+valu minus1 -1
+valu minusR * R minus1
+valu Zc1 + R1 R
+valu Zc1 * Zc1 minus1
+valu Zc2 + R2 R
+valu Ftol 1.1
+
+# Draht
+seto draht
+pnt p1 0 0 0
+pnt p1y 0 R 0
+pnt p1z 0 0 R
+pnt p1zn 0 0 minusR
+line l1 p1 p1y DivR
+line l2 p1y p1z p1 DivR
+line l3 p1z p1 DivR
+line l4 p1y p1zn p1 DivR
+line l5 p1 p1zn DivR
+surf s1 l1 l2 l3
+surf s2 l1 l4 l5
+swep all new tra L 0 0 DivL
+setc draht
+
+# Feste Rolle
+pnt p2y X 1 Zc1
+seto rfix
+pnt p2 X 0 Zc1
+swep rfix new tra 0 R 0 1
+swep rfix new tra R1 0 0 1
+swep rfix new rot p2y p2 Phi1 Div1
+
+setc rfix
+
+# bewegliche Rolle
+pnt p3y X 1 Zc2
+seto rmov
+pnt p3 X 0 Zc2
+swep rmov new tra 0 R 0 1
+swep rmov new tra 0 0 R2 1
+swep rmov sec1 rot p3 p3y 120 Div2
+swep sec1 sec2 rot p3 p3y 120 Div2
+swep sec2 sec3 rot p3 p3y 120 Div2
+setc rmov
+merg p
+merg l
+merg s
+merg b
+
+# Meshing
+valu Nref 1
+valu Nrot 2
+node Nref X 0 Zc1
+seta ref n Nref
+node Nrot X 1 Zc1
+seta rot n Nrot
+sys echo *rigid body, nset=Nrmov, ref node = Nref , rot node = Nrot > rb1.inp
+
+elty all he8i
+mesh all
+send all abq
+send all abq nam
+
+# symemtry
+seta symy s A005 A007
+comp symy do
+comp symy do
+send symy abq spc 2
+rot y
+rot l 80
+frame
+zoom 1.5
+text Nodes for symmetry constraint
+plot n symy
+hcpy png
+sys mv hcpy_1.png symy.png
+
+# constrain wire end
+seta nodes n all
+enq nodes x0 rect 0 _ _ 0.01
+valu Tol * R Ftol
+enq x0 wfix cyl x 0 0 Tol a
+send wfix abq spc 123
+text Nodes for wire constraint
+plot n wfix
+hcpy png
+sys mv hcpy_2.png wfix.png
+
+# constrain fixed cylinder
+send rfix abq spc 123
+
+# contact surfaces
+# find
+seta find s A00B
+comp find do
+comp find do
+send find abq sur
+# fdep
+seta fdep s A006
+comp fdep do
+comp fdep do
+send fdep abq sur
+# mind
+seta mind s A00H A00R A00M
+comp mind do
+comp mind do
+send mind abq sur
+# mdep
+seta mdep s A004
+comp mdep do
+comp mdep do
+send mdep abq sur
+
+# image
+rot l 150
+rep all
+text Surfaces for contact
+plot f find t
+plus f fdep b
+plus f mind m
+plus f mdep r
+hcpy png
+sys mv hcpy_3.png contact.png
+
+# parts and elements
+view elem
+text Independent parts
+seta ! all
+hcpy png
+sys mv hcpy_4.png parts.png

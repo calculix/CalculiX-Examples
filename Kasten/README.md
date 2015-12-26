@@ -1,7 +1,7 @@
 # Non-linear Buckling
 + Large displacements
 + Plasticity
-+ Buckling with imperfection a small internal pressure
++ Buckling with imperfection (a small internal pressure)
 + Shell elements
 
 | File     | Contents    |
@@ -13,14 +13,12 @@
 ## Preprocessing
 ```
 cgx -b pre.fbd
-
 ```
 <img src="geo.png" width="300">
 
 ## Solving
 ```
 ccx Kasten
-
 ```
 
 ### Kasten.inp
@@ -52,7 +50,6 @@ Material and shell thickness assignment
 ```
 *SHELL SECTION,ELSET=Eall,MATERIAL=Steel,offset=0
 1
-
 ```
 Step 1: Internal pressure (imperfection)
 ```
@@ -65,7 +62,6 @@ S
 *node file
 U
 *end step
-
 ```
 Step 2: Axial compression (prescribed displacement)
 ```
