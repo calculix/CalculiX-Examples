@@ -13,9 +13,10 @@
 
 | Unstructured tet mesh    | structured hex mesh    |
 | :------------- | :------------- |
-| ![solid_C3D4_20_S.png](solid_C3D4_20_S.png)| ![solid_C3D8I_20_S.png](solid_C3D8I_20_S.png)
+| <img src="solid_C3D4_20_S.png" width="300"> |<img src="solid_C3D8I_20_S.png" width="300">
 
 ## Mesh Convergence of the Normalized Results
+
 
 Running
 ```
@@ -36,4 +37,4 @@ python solid-plot.py
 ```
 generates the following plot of the results normalized by the analytical reference values.
 
-![solid.png](solid.png)
+<img src="solid.png" width="600">
