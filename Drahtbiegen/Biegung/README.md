@@ -1,4 +1,5 @@
 # Wire Bending
+Click the image to see the animation
 <img src="movie.gif" width="400">
 + Large displacements
 + Plasticity
