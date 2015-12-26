@@ -1,4 +1,5 @@
 # Wire Bending
+<img src="movie.gif" width="400">
 + Large displacements
 + Plasticity
 + Contact
@@ -9,7 +10,8 @@
 | [pre.fbd](pre.fbd)     | Pre-processing script for CGX     |
 | [post.fbd](post.fbd) | Post-processing script for CGX |
 | [Biegung.inp](Kasten.inp) | CCX input |
-
+| [Biegung.py](Biegung.py) | Python script for history plot |
+| [Animation.fbd](Animation.fbd) | CGX script to produce the animation |
 ## Preprocessing
 ```
 cgx -b pre.fbd
@@ -36,6 +38,10 @@ python Biegung.py
 ```
 <img src="Biegung-history.png">
 
+Create the animation (see on the top of this page)
+```
+cgx -b Animation.fbd
+```
 Open the results in CGX and create some plots
 ```
 cgx -b post.fbd
@@ -44,4 +50,4 @@ cgx -b post.fbd
 
 If you issue the command `seta ! all` in interactive mode, then you get the shading right:
 
-<img src="hcpy_3.png" width="300">
+<img src="deform1.png" width="300">
