@@ -11,13 +11,12 @@ Click the image to see the animation
 | :------------- | :------------- |
 | [pre.fbd](pre.fbd)     | Pre-processing script for CGX     |
 | [post.fbd](post.fbd) | Post-processing script for CGX |
-| [Biegung.inp](Kasten.inp) | CCX input |
+| [Biegung.inp](Biegung.inp) | CCX input |
 | [Biegung.py](Biegung.py) | Python script for history plot |
 | [Animation.fbd](Animation.fbd) | CGX script to produce the animation |
 ## Preprocessing
 ```
 cgx -b pre.fbd
-
 ```
 <img src="symy.png" width="300"><img src="wfix.png" width="300">
 <img src="parts.png" width="300"><img src="contact.png" width="300">
