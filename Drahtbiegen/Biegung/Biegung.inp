@@ -1,0 +1,65 @@
+*include, input=all.msh
+*include, input=draht.nam
+*include, input=rfix.nam
+*include, input=rmov.nam
+*include, input=ref.nam
+*include, input=rot.nam
+** surface definitions
+*include, input=fdep.sur
+*include, input=find.sur
+*include, input=mdep.sur
+*include, input=mind.sur
+** rigid body
+*include, input=rb1.inp
+*boundary
+Nref, 1,3
+Nrot, 1,3
+*include, input=symy_2.bou
+*include, input=rfix_123.bou
+*include, input=wfix_123.bou
+** material definition
+*material, name=draht
+*elastic 
+210000,0.3
+*plastic
+200,0
+5000,1
+*material, name=tool
+*elastic 
+210000,0.3
+** material assignment to bodies
+*solid section, elset=Edraht, material=draht
+*solid section, elset=Erfix, material=tool
+*solid section, elset=Ermov, material=tool
+** contact definitions
+*surface interaction, name=tool
+***surface behavior, pressure-overclosure=linear
+**1e6
+**surface behavior, pressure-overclosure=exponential
+**0.02,100
+*surface behavior, pressure-overclosure=linear
+10000,0.1,0.01
+***friction
+**0.1,1e7
+*contact pair, interaction=tool, type=node to surface
+Smdep,Smind
+*contact pair, interaction=tool, type=node to surface
+Sfdep,Sfind
+*step,nlgeom, inc=200
+*controls, parameters=field
+0.005,1,0.1,0.1
+*static
+0.01,1,0.00000000000001,0.1
+*boundary
+Nrot,2,2,1.57
+*node file, frequency=10
+U
+*el file
+S,PE
+*contact file
+CDIS
+*node print, nset=Nrot, frequency=1
+RF 
+*el print, totals=only, elset=Edraht 
+ELSE
+*end step
