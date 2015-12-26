@@ -1,4 +1,4 @@
-Simply supported beam model with solid elements
+## Simply Supported Beam Model With Solid Elements
 
 + tetrahedral and hexahedral elements
 + linear or quadratic elements
@@ -6,10 +6,10 @@ Simply supported beam model with solid elements
 
 | File     | Contents    |
 | :------------- | :------------- |
-| [solid.fbd]()     | Parametric pre- and postprocessing script for CGX       |
-| [solid.inp]() | CCX input |
-| [solid-conv.py]() | Python script for the convergence study |
-| [solid-plot.py]() | Python script for the convergence plot|
+| [solid.fbd](solid.fbd)     | Parametric pre- and postprocessing script for CGX, requires CGX 2.7 or higher     |
+| [solid.inp](solid.inp) | CCX input |
+| [solid-conv.py](solid-conv.py) | Python script for the convergence study |
+| [solid-plot.py](solid-plot.py) | Python script for the convergence plot|
 
 | Unstructured tet mesh    | structured hex mesh    |
 | :------------- | :------------- |
