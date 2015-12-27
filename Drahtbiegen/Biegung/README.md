@@ -14,6 +14,12 @@ Click the image to see the animation
 | [Biegung.inp](Biegung.inp) | CCX input |
 | [Biegung.py](Biegung.py) | Python script for history plot |
 | [Animation.fbd](Animation.fbd) | CGX script to produce the animation |
+
+## Reference Estimates
+Click the image below to open a life SMath worksheet
+
+[![Screenshot](Wire bending.png)](http://smath.info/cloud/worksheet/zskBVF74)
+
 ## Preprocessing
 ```
 cgx -b pre.fbd
@@ -38,6 +44,15 @@ python ../../Scripts/dat2txt.py Biegung
 python Biegung.py
 ```
 <img src="Biegung-history.png">
+
+When comparing to the reference solution take care that the FEA model is just half of the wire (symmetry).
+
+| Quantity       | Reference          | 2xFEA     |
+| :------------- | :-------------     |:---       |
+| Moment in N mm | 600                | 800...900 |
+| Energy in mJ   | 940                | 1050      |
+
+The matching is reasonable, given the crude approach for the reference estimates and the coarse mesh. 
 
 Create the animation (see on the top of this page)
 ```
