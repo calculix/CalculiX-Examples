@@ -1,0 +1,41 @@
+*include,input=all.msh
+*include, input=x0.nam
+*include, input=y0.nam
+*include, input=outer.nam
+*boundary
+Nx0,1
+Nx0,5
+Ny0,2
+Ny0,4
+Nouter,3,5
+*MATERIAL,NAME=sheet
+*ELASTIC
+200,.3
+*SHELL SECTION,ELSET=Eall,MATERIAL=sheet,offset=0
+0.5
+*time points, name=T10, generate
+0,1,0.1
+*time points, name=T1, generate
+0,1,1
+*STEP,nlgeom
+*STATIC
+0.01,1
+*controls,parameters=field
+0.5,2,,,1
+*dload
+Eall,p,0.01
+*el file, time points=t10
+S
+*node file
+U
+*end step
+*STEP,nlgeom
+*STATIC
+1,1
+*controls,parameters=field
+0.005,2,,,0.02
+*el file, time points=t1
+S
+*node file
+U
+*end step

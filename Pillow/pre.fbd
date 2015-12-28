@@ -1,0 +1,34 @@
+valu L 100
+valu Ldiv 20
+
+pnt ! 0 0 0
+swep all new tra 0 L 0 Ldiv
+swep all new tra L 0 0 Ldiv
+seta x0 l L001
+comp x0 do
+seta y0 l L003
+comp y0 do
+seta outer l L002 L004
+comp outer do
+
+elty all qu8
+mesh all
+send all abq
+send all abq nam
+#sys sed -i -e:1 -e's/TYPE=\([A-Z0-9]\+\R)/TYPE=\1/' all.msh
+
+rot -z
+view elem
+text red: x0, blue: y0, green: outer
+view edge off
+view elem
+plot f all n
+frame
+plus n x0 r
+#plus l x0 r
+plus n y0 b
+#plus l y0 b
+plus n outer g
+#plus l outer g
+hcpy png
+sys mv hcpy_1.png sets.png

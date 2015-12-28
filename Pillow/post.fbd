@@ -1,0 +1,23 @@
+read static.frd
+#sys /media/sf_Calculix/Scripts/monitor.py Inflation&
+ds -3 e 4
+seta base f all
+
+pnt p0 0 0 0
+pnt px 1 0 0
+pnt py 0 1 0
+pnt pz 0 0 1
+copy all new mir px p0
+copy all new mir py p0
+copy all new mir pz p0
+
+view disp
+view elem
+
+plot f all n
+plus fv base
+rot -z
+rot c -100
+rot d 65
+hcpy png
+sys mv hcpy_1.png expanded.png

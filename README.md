@@ -26,3 +26,8 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   width="200"
   title="Shell edge to shell face connection, modal analysis">
 ](Contact/)
+[<img
+  src="Pillow/expanded2.png"
+  width="200"
+  title="Non-linear static analysis, symmetry expansion in post-processing">
+](Pillow/)
