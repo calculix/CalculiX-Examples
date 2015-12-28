@@ -1,0 +1,45 @@
+# plate 1
+seto s1
+pnt p0 0 0 0
+swep all new tra 10 0 0
+swep all new tra 0 10 0
+setc s1
+
+# plate 2
+seto s2
+pnt p1 7 0 0
+swep s2 new tra 0 0 -10
+swep s2 new tra 0 7 0
+setc s2
+
+# mesh
+elty all qu4
+mesh all
+
+# surface
+send s1 abq sur
+
+# edge
+seta k1 l L007
+comp k1 do
+comp k1 do
+send k1 abq sur
+
+send all abq
+send all abq nam
+
+# equations for MPC contact
+send k1 s1 abq areampc 123456
+
+# image
+view elem
+rot y
+rot d 60
+rot l 20
+seta ! all
+frame
+tra d 2
+tra r 2
+seta ! all
+hcpy png
+sys mv hcpy_1.png model.png

@@ -1,0 +1,20 @@
+*include, input=all.msh
+*include, input=k1.sur
+*include, input=s1.sur
+*MATERIAL, NAME=Aluminium
+*ELASTIC
+70000, 0.34
+*DENSITY
+2.7e-9
+*SHELL SECTION, ELSET=Eall,MATERIAL=Aluminium
+0.1
+*tie,name=t1,position tolerance=0.1
+Sk1,Ss1
+*STEP
+*frequency
+20
+*NODE FILE
+U
+*el file
+S
+*END STEP
