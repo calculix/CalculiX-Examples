@@ -15,7 +15,7 @@
 The only reliable contact version to connect face to edge of shell elements seems to be MPC contact with `*tie`.
 
 ## Preprocessing
-Two separate parts are generated and meshed with shell elements. 
+Two separate parts are generated and meshed with shell elements.
 ```
 cgx -b pre.fbd
 ```
@@ -40,4 +40,5 @@ scal d 2
 ds 1 a 4
 ```
 Browse through the individual mode shapes using the PageDown and PageUp keys.
+
 <img src="mode9.png" width="300">
