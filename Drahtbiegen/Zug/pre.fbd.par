@@ -1,0 +1,45 @@
+# run param.py pre.fbd.par
+#
+# <D=1.>         Diameter
+# <DivR=10>      Radial division
+# <L=2>          Length
+# <DivL=50>      Longitudinal division
+# <BiasL=4>      Longitudinal bias
+# <Etyp='qu8c'>  Element type
+
+# geometry
+pnt p1 0 0 0
+swep all new tra <D/2.> 0 0 <DivR>
+seta bottom se all
+swep all top tra 0 <L> 0 <DivL>
+
+# meshing
+enq all vertlines rect _ <L/2.> 0 0.1
+comp vertlines up
+bia vertlines <BiasL>
+flip all
+elty all <Etyp>
+mesh all
+send all abq
+
+# symmetry axis
+seta nodes n all
+enq nodes sym rec  0 _ 0 0.001
+comp sym down
+
+send all abq nam
+
+# display of sets
+rot -z
+frame
+tra l <D/2.>
+plot la all
+plus sa all
+plus pa all
+plus n all
+plus n top b
+plus n sym g
+plus n bottom t
+
+hcpy png
+sys mv hcpy_1.png zug-geo.png

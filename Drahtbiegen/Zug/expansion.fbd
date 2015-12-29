@@ -1,0 +1,30 @@
+# This requires CGX 2.10
+read Zug.frd
+ds -0 e 1
+
+swep all new rot y 90 10
+seta q1 all
+copy q1 q2 rot y 90
+copy q2 q3 rot y 90
+
+pnt p0 0 0 0
+pnt py 0 2 0
+copy all new mir py p0 a
+
+view disp
+view elem
+frame
+steps 11
+plot fv all
+max  2 f l
+min  -0.2 f l
+rot y
+rot c 90
+rot l 25
+rot u 15
+zoom 2
+plot fv all
+hcpy png
+sys mv hcpy_1.png PE-expanded.png
+
+plot f all n

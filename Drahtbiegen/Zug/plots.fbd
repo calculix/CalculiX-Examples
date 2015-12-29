@@ -1,0 +1,16 @@
+read Zug.frd
+read Zug.inp nom
+
+seti cp n Ntop Nsym
+pnt cp cp
+pnt p0 0 0 0
+
+seto path
+line ! p0 cp 40 1.1
+setc path
+
+swep all vol rot y 90 10
+
+ds -0 e 1
+graph path +
+sys convert -rotate 90 graph_0.ps path.png

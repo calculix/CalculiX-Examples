@@ -83,6 +83,6 @@ U,RF
 ```
 cgx -b post.fbd
 ```
-Note that you have to create the screenshot in the interactive mode of CGX and
+Note that you have to create the screenshot in the interactive mode of CGX. Otherwise the shading is taken in the undeformed state.
 
-<img src="hcpy_2.png" width="300">
+<img src="hcpy_2.png" width="300"><img src="deforme.png" width="300">

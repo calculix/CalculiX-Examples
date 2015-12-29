@@ -1,0 +1,34 @@
+*include,input=all.msh
+*include,input=bottom.nam
+*include,input=top.nam
+*include,input=sym.nam
+** symmetry at bottom
+*boundary
+Nbottom, 2
+Ntop, 1,2
+Nsym, 1
+** material definition
+*material, name=steel_4301
+*elastic
+210000,0.333333333,0
+*density
+7.85e-9
+*plastic
+2000, 0, 0
+3000, 5, 0
+*solid section, elset=Eall, material=steel_4301
+*time points, name=t10, generate
+0,1,0.1
+*STEP, NLGEOM,
+*STATIC
+0.001,1,0.0000001
+** displacement control at top
+*boundary
+Ntop, 2,2,0.3
+*el file, output=2D,time points=t10
+S,PEEQ
+*node file, output=2D
+U
+*node print, totals=only, nset=Ntop
+RF
+*end step

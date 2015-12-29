@@ -1,0 +1,50 @@
+# Geometry
+valu D 1
+valu L 2
+# Meshing
+valu DivR 10
+valu DivL 50
+valu BiasL 4
+valu Etyp qu8c
+
+# derived parameters
+valu Zwei 2
+valu R / D Zwei
+valu halbL / L Zwei
+
+# preprocessing
+# geometry
+pnt p1 0 0 0
+swep all new tra R 0 0 DivR
+seta bottom se all
+swep all top tra 0 L 0 DivL
+
+# meshing
+enq all vertlines rect _ 1 0 0.1
+comp vertlines up
+bia vertlines BiasL
+flip all
+elty all Etyp
+mesh all
+
+# axis of rotation
+seta nodes n all
+enq nodes sym rec 0 _ 0 0.001
+comp sym down
+
+send all abq
+send all abq nam
+
+# display of sets
+rot -z
+frame
+tra l R
+plot la all
+plus sa all
+plus pa all
+plus n all
+plus n top b
+plus n sym g
+plus n bottom t
+hcpy png
+sys mv hcpy_1.png zug-geo.png
