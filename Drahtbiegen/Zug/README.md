@@ -62,6 +62,11 @@ Beginning with version 2.10, CGX can sweep 2D elements with results attached. Th
 ```
 cgx -b expansion.fbd
 ```
-
 <img src="PE-expanded.png" width="300" title="Automatically generated plot of the plastic equivalent strain with symmetry expansion">
 <img src="interactive_hcpy.gif" width="300" title="image created interactively in CGX using 'hcpy gif'">
+
+To see the non-expanded model, use this command:
+```
+cgx -b expansion.fbd
+```
+<img src="PE-2D.png" width="300" title="same plot as above without symmetry expansion">
