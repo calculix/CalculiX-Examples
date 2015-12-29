@@ -9,12 +9,12 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
   width="200"
-  title="large deformations, plasticity, rigid body control">
+  title="Bending of a wire. Large deformations, plasticity, rigid body control">
 ](Drahtbiegen/Biegung/)
 [<img
   src="Kasten/hcpy_2.png"
   width="200"
-  title="Non-linear buckling, structure, internal pressure as imperfection">
+  title="Compression of a box. Non-linear buckling, structure, internal pressure as imperfection">
 ](Kasten/)
 [<img
   src="Elements/Solid/solid_C3D4_20_S.png"
@@ -29,5 +29,10 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
 [<img
   src="Pillow/expanded2.png"
   width="200"
-  title="Non-linear static analysis, symmetry expansion in post-processing">
+  title="Inflation of a square pillow. Non-linear static analysis, symmetry expansion in post-processing">
 ](Pillow/)
+[<img
+  src="Drahtbiegen/Zug/movie.gif"
+  width="200"
+  title="Tensile test, axisymmetric model, expanded in postprocessing, path plot demo">
+](Drahtbiegen/Zug/)

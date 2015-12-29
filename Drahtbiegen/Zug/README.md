@@ -1,6 +1,9 @@
 # Tensile Test
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
+<img src="movie.gif" width="300" title="plastic equivalent strain">
+<img src="interactive_hcpy.gif" width="300" >
+
 The model is axisymmetric and represents a 2 mm piece of the wire with full displacement constraint at one end and symmetry at the other end. Necking occures in the symmetry plane.
 
 + Large displacements
@@ -60,4 +63,5 @@ Beginning with version 2.10, CGX can sweep 2D elements with results attached. Th
 cgx -b expansion.fbd
 ```
 
-<img src="PE-expanded.png" width="300" title="Path plot of the equivalent strain along the y-axis">
+<img src="PE-expanded.png" width="300" title="Automatically generated plot of the plastic equivalent strain with symmetry expansion">
+<img src="interactive_hcpy.gif" width="300" title="image created interactively in CGX using 'hcpy gif'">
