@@ -1,0 +1,27 @@
+# cross section
+pnt p0 0 0 0
+swep all new tra 0 10 0 4
+seta fix se all
+swep all rot tra 100 0 0 40
+
+elty all qu8
+mesh all
+send all abq
+send all abq nam
+send fix abq spc 123456
+send rot abq spc 5 1.57
+
+read view.fbd
+plot l all
+plus n all
+plus n fix b
+plus n rot t
+hcpy png
+sys mv hcpy_1.png sh-mesh.png
+sys ccx sh
+sys python ../Scripts/monitor.py sh&
+
+read sh.frd
+ds -0 e 23
+read def-plot.fbd
+sys mv hcpy_2.png sh-def.png

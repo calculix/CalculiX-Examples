@@ -1,0 +1,20 @@
+*include,input=all.msh
+*include,input=rot.mpc
+** symmetry at bottom
+*boundary
+*include,input=fix_123.bou
+** material definition
+*material, name=steel
+*elastic
+210000,0.3,0
+*solid section, elset=Eall, material=steel
+*STEP, NLGEOM, inc=1000
+*STATIC
+*include,input=rot.bou
+*el file
+S
+*node file
+U
+*el print, elset=Eall, totals=only
+ELSE
+*end step

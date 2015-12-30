@@ -1,0 +1,6 @@
+tra u 25
+view disp
+view elem
+plot fv all n
+plus l all
+hcpy png

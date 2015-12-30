@@ -36,3 +36,8 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   width="200"
   title="Tensile test, axisymmetric model, expanded in postprocessing, path plot demo">
 ](Drahtbiegen/Zug/)
+[<img
+  src="Streifen/sh-def.png"
+  width="200"
+  title="Bending of an elastic strip, beam, shell and solid models with various rotation constraints">
+](Streifen/)

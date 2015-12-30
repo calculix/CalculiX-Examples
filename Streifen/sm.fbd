@@ -1,0 +1,29 @@
+# Large rotations, small strain
+# solid model, mpc rotation constraint
+pnt p1 0 0 0
+swep all new tra 0 0 1 2
+swep all new tra 0 10 0 4
+seta fix se all
+swep all rot tra 100 0 0 40
+
+elty all he20r
+mesh all
+send all abq
+send fix abq spc 123
+send rot abq mpc 90 0 1 0
+
+read view.fbd
+plot f all n
+plus n all
+plus n fix b
+plus n rot t
+hcpy png
+sys mv hcpy_1.png sm-mesh.png
+
+sys ccx sm
+sys python ../Scripts/monitor.py sm&
+
+read sm.frd
+ds -0 e 4
+read def-plot.fbd
+sys mv hcpy_2.png sm-def.png

@@ -1,0 +1,21 @@
+*include,input=all.msh
+*boundary
+*include,input=fix_123456.bou
+** material definition
+*material, name=steel
+*elastic
+210000,0.3,0
+*beam section, elset=Eall, material=steel, section=rect
+1,10
+0,0,1
+*STEP, NLGEOM
+*STATIC
+0.01,1,,0.01
+*boundary
+*include,input=rot_51.57.bou
+*el file
+S
+*node file
+U
+*end step
+

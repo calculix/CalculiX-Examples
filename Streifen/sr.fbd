@@ -1,0 +1,31 @@
+# solid model, rigid body constraint
+pnt p1 0 0 0
+swep all new tra 0 0 1 2
+swep all new tra 0 10 0 4
+seta fix se all
+swep all rot tra 100 0 0 40
+
+node 1 0 0 0
+seta rotnode n 1
+
+elty all he20r
+mesh all
+send all abq
+send fix abq spc 123
+send all abq nam
+
+read view.fbd
+plot f all n
+plus n all
+plus n fix b
+plus n rot t
+hcpy png
+sys mv hcpy_1.png sr-mesh.png
+
+sys ccx sr
+sys python ../Scripts/monitor.py sr&
+
+read sr.frd
+ds -0 e 4
+read def-plot.fbd
+sys mv hcpy_2.png sr-def.png
