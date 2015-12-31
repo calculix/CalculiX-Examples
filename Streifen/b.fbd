@@ -17,7 +17,6 @@ plot l all
 plus n all
 plus n fix b
 plus n rot t
-frame
 hcpy png
 sys mv hcpy_1.png b-mesh.png
 
