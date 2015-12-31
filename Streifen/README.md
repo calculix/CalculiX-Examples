@@ -10,13 +10,24 @@ circle. We investigate the following cases:
 * Solid model with mean rotation constraint
 * Solid model with rigid body constraint.
 
-| File                        | Contents                                      |
+| Model    | CGX input     | CCX input |
+| :------- | :------------- |:---|
+| Beam | [b.fbd](b.fbd) | [b.inp](b.inp) |
+| Shell | [sh.fbd](sh.fbd) | [sh.inp](sh.inp) |
+| Solid, mean rotation MPC | [sm.fbd](sm.fbd) | [sm.inp](sm.inp) |
+| Solid, rigid body MPC | [sr.fbd](sr.fbd) | [sr.inp](sr.inp) |
+
+
+
+| Auxiliary CGX Files                        | Contents                                      |
 | :-------------              | :-------------                                |
-| [b.fbd](b-pre.fbd)          | CGX script, beam model                        |
-| [b.inp](b.inp)              | CCX input, beam model                         |
-| [sh.fbd](sh-pre.fbd)        | CGX script, shell model                       |
-| [sh.inp](sh.inp)            | CCX input, shell model                        |
-| [def-plot.fbd](def-plot.fbd)| CGX deformation plot                          |
+| [def-plot.fbd](def-plot.fbd)| deformation plot                          |
+| [view.fbd](view.fbd)| view settings                         |
+## Reference solution
+Click the image below to open a life SMath worksheet
+
+[![Screenshot](Screenshot.png)](http://smath.info/cloud/worksheet/7PsVsa4o)
+
 
 # Beam Model
 In CGX, b3 elements are specified. This results in B23R elements in the CCX input. These are internally expanded into C3D20R.
@@ -41,8 +52,45 @@ The rotation is applied as constraint to dof 5 of the nodes at the free end of t
 ```
 
 <img src="sh-mesh.png" width="300" title="Shell model">
-<img src="sh-def.png" width="300" title="Residual forces">
+<img src="sh-def.png" width="300" title="Worst principal stress">
 
 <img src="sh.png" width="600" title="Convergence plot">
 
 # Solid Model
+In CGX, he20r elements are specified. This results in C3D20R elements in the CCX input.
+
+## Mean Rotation MPC
+The rotation is applied using the mean rotation multipoint constraint (MPC). This couples the mean rotation of a cloud of nodes to the first dof of a reference node. The initial position of that node indicates the axis of rotation.
+
+In CGX, the required input for a rotation of 90° about the y-axis can be generated using the command
+```
+send rot abq mpc 90 0 1 0
+```
+This generates the files
+* [rot.mpc](rot.mpc) with the ref node definition and the `*mpc` block (model data)
+* [rot.bou](rot.bou) with the `*boundary` block (step data)
+
+Run the analysis:
+```
+> cgx -b sm.fbd
+```
+At 28% of the specified deformation, the incremental time becomes too small and the solution is stppped.
+
+<img src="sm-mesh.png" width="300" title="Solid model with mean rotation MPC">
+<img src="sm-def.png" width="300" title="Residual forces">
+
+<img src="sm.png" width="600" title="Convergence plot">
+
+## Rigid Body Constraint
+The rotation is applied using a rigid body constraint. The right end is rigidly coupled to a rotation control node. In the pre-processing, it is useful to create the control node with a fixed number before meshing.
+
+Run the analysis:
+```
+> cgx -b sr.fbd
+```
+At 74% of the specified deformation, the incremental time becomes too small and the solution is stppped.
+
+<img src="sr-mesh.png" width="300" title="Solid model with rigid body MPC">
+<img src="sr-def.png" width="300" title="Residual forces">
+
+<img src="sr.png" width="600" title="Convergence plot">

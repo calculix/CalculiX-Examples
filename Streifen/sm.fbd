@@ -1,4 +1,3 @@
-# Large rotations, small strain
 # solid model, mpc rotation constraint
 pnt p1 0 0 0
 swep all new tra 0 0 1 2
