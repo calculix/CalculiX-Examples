@@ -12,6 +12,7 @@ send all abq nam
 send fix abq spc 123456
 send rot abq spc 5 1.57
 
+read view.fbd
 plot l all
 plus n all
 plus n fix b
