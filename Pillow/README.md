@@ -1,4 +1,6 @@
 # Inflating a Pillow
+Tested with CGX/CCX 2.9 
+
 + Non-linear static solution
 + Shell elements
 + Symmetry expansion in the post-processing

@@ -1,4 +1,6 @@
 # Shell Assembly
+Tested with CGX/CCX 2.9 
+
 + Shell edge to shell face connection
 + Various contact versions
 + Modal analysis

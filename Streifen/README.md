@@ -1,4 +1,5 @@
 # 90°-Bending of an Elastic Strip
+Tested with CGX/CCX 2.9 
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is

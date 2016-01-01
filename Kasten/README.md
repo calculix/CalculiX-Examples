@@ -1,4 +1,6 @@
 # Non-linear Buckling
+Tested with CGX/CCX 2.9 
+
 + Large displacements
 + Plasticity
 + Buckling with imperfection (a small internal pressure)

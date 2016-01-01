@@ -1,4 +1,6 @@
 # Wire Bending
+Tested with CGX/CCX 2.9 
+
 Click the image to see the animation
 
 <img src="movie.gif" width="400">
@@ -52,7 +54,7 @@ When comparing to the reference solution take care that the FEA model is just ha
 | Moment in N mm | 600                | 800...900 |
 | Energy in mJ   | 940                | 1050      |
 
-The matching is reasonable, given the crude approach for the reference estimates and the coarse mesh. 
+The matching is reasonable, given the crude approach for the reference estimates and the coarse mesh.
 
 Create the animation (see on the top of this page)
 ```

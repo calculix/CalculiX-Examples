@@ -1,4 +1,6 @@
 # Tensile Test
+Tested with CGX 2.10/CCX 2.9 
+
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
 <img src="movie.gif" width="300" title="plastic equivalent strain">
