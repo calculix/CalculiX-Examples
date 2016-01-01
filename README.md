@@ -20,7 +20,7 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   src="Elements/Solid/solid_C3D4_20_S.png"
   width="200"
   title="Convergence study for solid elements in linear elasticity">
-](Elemets/Solid/)
+](Elements/Solid/)
 [<img
   src="Contact/mode9.png"
   width="200"
