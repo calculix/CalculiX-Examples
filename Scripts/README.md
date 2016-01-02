@@ -96,7 +96,7 @@ replaced (pre-processing):
 |                 | `<a+b>`          | `6`         |
 |                 | `<type>`         | `he8`       |
 
- ### param.py vs. CGX valu
+### param.py vs. CGX valu
 
 CGX supports parametrization starting with version 2.7 (see the `valu` command).
 
