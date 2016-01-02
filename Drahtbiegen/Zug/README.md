@@ -1,5 +1,5 @@
 # Tensile Test
-Tested with CGX 2.10/CCX 2.9 
+Tested with CGX 2.10/CCX 2.9
 
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
@@ -69,6 +69,6 @@ cgx -b expansion.fbd
 
 To see the non-expanded model, use this command:
 ```
-cgx -b expansion.fbd
+cgx -b 2D.fbd
 ```
 <img src="PE-2D.png" width="300" title="same plot as above without symmetry expansion">
