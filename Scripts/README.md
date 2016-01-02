@@ -52,9 +52,9 @@ python monitor.py <jobname>
 The plot is displayed and written to `<jobname>.png`.
 
 Examples:
-* [Drahtbiegen/Biegung/](https://github.com/mkraska/CalculiX-Examples/blob/master/Drahtbiegen/Biegung)
-* [Pillow/](Pillow/)
-* [Kasten/](Kasten/)
+* [Drahtbiegen/Biegung/](../Drahtbiegen/Biegung)
+* [Pillow/](../Pillow/)
+* [Kasten/](../Kasten/)
 
 ## param.py
 
@@ -109,3 +109,6 @@ Advantages of param.py over CGX valu
 Disadvantages:
 * Extra pre-processing step required
 * Static replacement before use of the File (e.g. no access to the stack or to result values in postprocessing)
+
+Examples:
+* [Drahtbiegen/Zug/](../Drahtbiegen/Zug/)
