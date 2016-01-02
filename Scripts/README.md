@@ -41,7 +41,7 @@ The first column contains the time values and all available data for that item a
 0.04          2 -1.520904E-14  3.031209E+01  5.927751E-16
 ```
 Examples:
-* [Drahtbiegen/Biegung/](Drahtbiegen/Biegung/)
+* [Drahtbiegen/Biegung/](../Drahtbiegen/Biegung/)
 
 ## monitor.py
 
@@ -52,7 +52,7 @@ python monitor.py <jobname>
 The plot is displayed and written to `<jobname>.png`.
 
 Examples:
-* [Drahtbiegen/Biegung/](Drahtbiegen/Biegung/)
+* [Drahtbiegen/Biegung/](https://github.com/mkraska/CalculiX-Examples/blob/master/Drahtbiegen/Biegung)
 * [Pillow/](Pillow/)
 * [Kasten/](Kasten/)
 
