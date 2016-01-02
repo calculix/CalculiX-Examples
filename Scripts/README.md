@@ -85,16 +85,16 @@ replaced (pre-processing):
   * Expressions are replaced by their result.
 
 
-  | `<filename>.par` |`<filename>`
-  :------------- | :-------------   |:--
-  Definitions    | `<a=2>`          |`a=2`
-  | `<b=2*a>`        |`b=2*a`
-  | `<type="he8">`   | `type=”he8”`
-  Expression      | `<a>`            | `2`
-  | `<2*a>`          | `4`
-  | `<b>`            | `4`
-  | `<a+b>`          | `6`
-  | `<type>`         | `he8`
+|                 | `<filename>.par` |`<filename>` |
+|  :------------- | :-------------   |:--          |
+|  Definitions    | `<a=2>`          |`a=2`        |
+|                 | `<b=2*a>`        |`b=2*a`      |
+|                 | `<type="he8">`   | `type=”he8”`|
+|  Expression     | `<a>`            | `2`         |
+|                 | `<2*a>`          | `4`         |
+|                 | `<b>`            | `4`         |
+|                 | `<a+b>`          | `6`         |
+|                 | `<type>`         | `he8`       |
 
  ### param.py vs. CGX valu
 
