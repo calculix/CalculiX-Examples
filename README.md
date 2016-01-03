@@ -45,4 +45,4 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   src="Thermal/Thermal distortion/SE-pcss-exp.png"
   width="200"
   title="Welded T-joint, assembly with different contact formulations, shrinkage model for the distortion">
-](Streifen/)
+](Thermal/Thermal distortion/)
