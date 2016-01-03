@@ -41,3 +41,8 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   width="200"
   title="Bending of an elastic strip, beam, shell and solid models with various rotation constraints">
 ](Streifen/)
+[<img
+  src="Thermal/Thermal distortion/SE-pcss-exp.png"
+  width="200"
+  title="Welded T-joint, assembly with different contact formulations, shrinkage model for the distortion">
+](Streifen/)
