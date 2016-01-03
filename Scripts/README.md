@@ -74,7 +74,6 @@ their definition.
   * Wherever you need a value depending on a, write something like `<b=a^2>` or
    `<-a>`. If you want floating point results, make sure to use floating point
    variables or values (with a period. eg. `<a=2.>`).
-
 * To extract a usable file `<filename>`, run
 ```
 python param.py <filename>.par
@@ -83,6 +82,7 @@ The expressions are scanned and the angle brackets
 replaced (pre-processing):
   * Variable definitions are copied verbatim to the output (for reference/documentation).   
   * Expressions are replaced by their result.
+  * Any valid Python expressions can be used. The math module is already imported (`from math import *`), you can use all math functions without prefix.
 
 
 |                 | `<filename>.par` |`<filename>` |
@@ -95,6 +95,8 @@ replaced (pre-processing):
 |                 | `<b>`            | `4`         |
 |                 | `<a+b>`          | `6`         |
 |                 | `<type>`         | `he8`       |
+|                 | `<sqrt(2)>`      | `1.414...`  |
+|                 | `<pi/2>`         | `1.57...`   |
 
 ### param.py vs. CGX valu
 
@@ -112,3 +114,4 @@ Disadvantages:
 
 Examples:
 * [Drahtbiegen/Zug/](../Drahtbiegen/Zug/)
+* [Thermal/Thermal distortion/](../Thermal/Thermal distortion/)
