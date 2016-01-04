@@ -1,0 +1,16 @@
+read Hertz.frd
+
+rot -z
+ds -2 e 7
+view disp
+plot fv all
+frame
+hcpy png
+sys mv hcpy_1.png SE.png
+zoom 10
+tra u 55
+tra l 5
+view elem
+plot fv all
+hcpy png
+sys mv hcpy_2.png SE-zoom.png

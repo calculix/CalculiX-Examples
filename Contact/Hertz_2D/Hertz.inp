@@ -1,0 +1,34 @@
+*HEADING
+Model: Hertzian contact stress
+
+*INCLUDE, INPUT=all.msh
+*include, input=sblk.sur
+*include, input=scyl.sur
+
+*BOUNDARY
+*include,input=x0_1.bou
+*include,input=y0_2.bou
+
+*MATERIAL,NAME=Steel
+*ELASTIC
+210000,0.3
+
+*SOLID SECTION, Elset=Eall, Material=steel
+
+*SURFACE INTERACTION, NAME=contact
+*SURFACE BEHAVIOR, PRESSURE-OVERCLOSURE=LINEAR
+1000000,0.1,0.01
+*CONTACT PAIR, INTERACTION=contact, TYPE=SURFACE TO SURFACE
+Sscyl,Ssblk
+
+*STEP, NLGEOM, INC=200
+*STATIC
+*BOUNDARY
+*include, input=control_1-1.bou
+*NODE FILE,OUTPUT=2D
+U,
+*EL FILE
+S, E
+*CONTACT FILE
+CDIS,CSTR
+*END STEP
