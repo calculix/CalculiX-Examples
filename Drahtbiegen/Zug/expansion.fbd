@@ -31,6 +31,5 @@ hcpy png
 sys mv hcpy_2.png expanded.png
 
 plus ev base
-# this hardcopy is different in zoom level to the interactive screen
 hcpy png
 sys mv hcpy_3.png 2D3D.png
