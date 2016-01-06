@@ -1,16 +1,15 @@
 # This requires CGX 2.10
-read Zug.frd
-ds -0 e 1
-
-swep all new rot y 90 10
-seta q1 all
-copy q1 q2 rot y 90
-copy q2 q3 rot y 90
-
+read Zug.frd new
+seta base se all
+seto 3D
+  copy base base1 tra 0 0 0
+  swep base1 new rot y 270 30
+setc
 pnt p0 0 0 0
 pnt py 0 2 0
-copy all new mir py p0 a
+copy 3D new mir py p0
 
+ds -0 e 1
 view disp
 view elem
 frame
@@ -28,3 +27,10 @@ hcpy png
 sys mv hcpy_1.png PE-expanded.png
 
 plot f all n
+hcpy png
+sys mv hcpy_2.png expanded.png
+
+plus ev base
+# this hardcopy is different in zoom level to the interactive screen
+hcpy png
+sys mv hcpy_3.png 2D3D.png

@@ -5,7 +5,7 @@
 # <L=2>          Length
 # <DivL=50>      Longitudinal division
 # <BiasL=4>      Longitudinal bias
-# <Etyp='qu8c'>  Element type
+# <Etyp='qu4c'>  Element type
 
 # geometry
 pnt p1 0 0 0

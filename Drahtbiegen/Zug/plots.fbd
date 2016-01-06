@@ -9,8 +9,6 @@ seto path
 line ! p0 cp 40 1.1
 setc path
 
-swep all vol rot y 90 10
-
 ds -0 e 1
 graph path +
 sys convert -rotate 90 graph_0.ps path.png
