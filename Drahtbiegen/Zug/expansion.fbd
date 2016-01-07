@@ -15,8 +15,8 @@ view elem
 frame
 steps 11
 plot fv all
-max  2 f l
-min  -0.2 f l
+max 2 f l
+min -0.2 f l
 rot y
 rot c 90
 rot l 25

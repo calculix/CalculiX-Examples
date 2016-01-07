@@ -1,5 +1,5 @@
 # Non-linear Buckling
-Tested with CGX/CCX 2.9 
+Tested with CGX 2.10/CCX 2.9
 
 + Large displacements
 + Plasticity
@@ -85,6 +85,4 @@ U,RF
 ```
 cgx -b post.fbd
 ```
-Note that you have to create the screenshot in the interactive mode of CGX. Otherwise the shading is taken in the undeformed state.
-
-<img src="hcpy_2.png" width="300"><img src="deformed.png" width="300">
+<img src="deformed.png" width="300">
