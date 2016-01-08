@@ -1,5 +1,5 @@
 # Axisymmetric Plate With Hole
-Tested with CGX 2.10/CCX 2.9
+Tested with CGX 2.10 / CCX 2.9
 
 + Linear static solution
 + Axisymmetric model
@@ -14,7 +14,7 @@ File                    | Contents
 
 ## Preprocessing
 ```
-cgx -b pre.fbd
+> cgx -b pre.fbd
 ```
 There are four disks, clamped at the outer perimeter and loaded by a pressure on the top faces. Each disk is meshed with a different element type:
 
@@ -29,12 +29,12 @@ Disk |CGX | CCX
 
 ## Solving
 ```
-ccx plates
+> ccx plates
 ```
 
 ## Postprocessing
 ```
-cgx -b post.fbd
+> cgx -b post.fbd
 ```
 Transformation to polar co-ordinates has to be applied after model expansion.
 
