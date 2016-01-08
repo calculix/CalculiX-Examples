@@ -1,0 +1,52 @@
+valu Ri 20
+valu Ra 60
+valu thick 10
+valu pressure 1
+
+valu dR - Ra Ri
+valu dy + thick thick
+valu vier 4
+valu ly * dy vier
+
+pnt ! 0 0 0
+swep all new tra 0 ly 0
+
+# geometry
+seto d1
+  pnt ! Ri 0 0
+  swep d1 new tra 0 thick 0 2
+  swep d1 new tra dR 0 0 8
+setc
+
+copy d1 d2 tra 0 dy 0
+copy d2 d3 tra 0 dy 0
+copy d3 d4 tra 0 dy 0
+
+# meshing
+elty d1 qu4c
+elty d2 qu8c
+elty d3 tr3c
+elty d4 tr6c
+mesh all
+send all abq
+
+# constraints
+seta nodes n all
+enq nodes fix rec Ra _ _ 1 a
+send fix abq nam
+
+# load
+seta load l L005 L009 L00D L00H
+comp load do
+comp load do
+send load abq pres pressure
+
+view elem
+view edge off
+plus l all
+rot -z
+plus n fix r
+plus n load g
+frame
+hcpy png
+sys mv hcpy_1.png mesh.png

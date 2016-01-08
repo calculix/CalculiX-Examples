@@ -51,3 +51,8 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   width="200"
   title="Hertz contact stress, plane strain, linear elasticity">
 ](Contact/Hertz_2D/)
+[<img
+  src="Linear/Plates/2D3D.png"
+  width="200"
+  title="Clamped circular plates, axisymmetric model">
+](Linear/Plates/)
