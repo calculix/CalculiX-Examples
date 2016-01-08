@@ -1,4 +1,4 @@
-# Axisymmetric Plate With Holes
+# Axisymmetric Plate With Hole
 Tested with CGX 2.10/CCX 2.9
 
 + Linear static solution
@@ -16,7 +16,16 @@ File                    | Contents
 ```
 cgx -b pre.fbd
 ```
-<img src="mesh.png" width="300" title="Disks with different element types. Centerline added just for clarity">
+There are four disks, clamped at the outer perimeter and loaded by a pressure on the top faces. Each disk is meshed with a different element type:
+
+Disk |CGX | CCX
+:-- |:-- | :--
+1 (upper)|tr6c |CAX6
+2|tr3c | CAX3
+3|qu8c | CAX8R
+4 (lower)|qu4c | CAX4
+
+<img src="mesh.png" width="400" title="Disks with different element types. Centerline added just for clarity">
 
 ## Solving
 ```
@@ -27,7 +36,6 @@ ccx plates
 ```
 cgx -b post.fbd
 ```
+Transformation to polar co-ordinates has to be applied after model expansion.
 
-<img src="polar.png" width="300" title="Expanded model, radial normal stress SRR"> <img src="2D3Dpng" width="300" title="Expanded model with just the base region coloured">
-
-![cuty0.png](cuty0.png)
+<img src="polar.png" width="400" title="Expanded model, radial normal stress SRR"> <img src="2D3D.png" width="400" title="Expanded model with just the base region coloured">
