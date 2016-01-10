@@ -5,11 +5,11 @@
 # <L=2>          Length
 # <DivL=50>      Longitudinal division
 # <BiasL=4>      Longitudinal bias
-# <Etyp='qu4c'>  Element type
+# <Etyp='qu8c'>  Element type
 
 # geometry
 pnt p1 0 0 0
-swep all new tra <D/2.> 0 0 <DivR>
+swep all rad tra <D/2.> 0 0 <DivR>
 seta bottom se all
 swep all top tra 0 <L> 0 <DivL>
 

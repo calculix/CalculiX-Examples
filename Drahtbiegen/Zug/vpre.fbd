@@ -15,7 +15,7 @@ valu halbL / L Zwei
 # preprocessing
 # geometry
 pnt p1 0 0 0
-swep all new tra R 0 0 DivR
+swep all rad tra R 0 0 DivR
 seta bottom se all
 swep all top tra 0 L 0 DivL
 

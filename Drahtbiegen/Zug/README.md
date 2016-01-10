@@ -56,9 +56,17 @@ The second command generates a convergence history plot of the solution.
 ```
 cgx -b plots.fbd
 ```
-This creates a path plot of the plastic equivalent strain along the symmetry axis:
+This creates path plots of the plastic equivalent strain along the symmetry axis (ine `l1` from point `cp` to point `c0`) and then in radial direction (line `l2` from point `c0` to point `rad`).
 
-<img src="path.png" width="600" title="Path plot of the equivalent strain along the y-axis">
+The first plot is based on the **undeformed** geometry:
+
+<img src="path0geo.png" width="300" title="Path on the undeformed model">
+<img src="path0.png" width="500" title="Path plot of the equivalent strain">
+
+The second plot is based on the **deformed** geometry:
+
+<img src="pathgeo.png" width="300" title="Path on the deformed model">
+<img src="path.png" width="500" title="Path plot of the equivalent strain">
 
 #### Symmetry expansion
 Beginning with version 2.10, CGX can sweep 2D elements with results attached. This is used for symmetry expansion of the axisymmetric 2D output.
