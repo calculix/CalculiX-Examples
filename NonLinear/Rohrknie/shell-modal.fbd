@@ -1,0 +1,6 @@
+# modal analysis of the symmetric shell model
+read shell.fbd
+sys ccx shell-modal
+read shell-modal.frd
+read post-modal.fbd
+sys mv movie.gif Refs/shell-modal-1.gif

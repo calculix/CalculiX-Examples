@@ -1,0 +1,12 @@
+# radius of center line
+valu R1 90
+# Outer radius of cross section
+valu R2 30
+# wall thickness
+valu T 1
+# length of straight sections
+valu L 80
+# mesh densities
+valu DivR1 10
+valu DivR2 4
+valu DivL 6

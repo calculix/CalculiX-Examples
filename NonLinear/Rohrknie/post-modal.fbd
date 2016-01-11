@@ -1,0 +1,12 @@
+# set view and animate first dataset
+rot -z
+rot r 30
+rot u 30
+scal d 2
+ds 1 a 4
+anim steps 8
+anim time 2
+movi frames 8
+# movi delay 0.5
+movi start
+movi make

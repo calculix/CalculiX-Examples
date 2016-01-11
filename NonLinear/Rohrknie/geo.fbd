@@ -1,0 +1,10 @@
+# radius of center line
+rot -z
+rot l 30
+rot u 30
+view elem
+plot f all n
+plus n fix r
+plus n load b
+frame
+hcpy png

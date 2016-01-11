@@ -1,0 +1,39 @@
+# full shell model
+read values.fbd
+
+# derived variables
+valu Neg -1
+valu Lneg * L Neg
+valu R2neg * R2 Neg
+valu x1 + R1 R2
+valu x3 - R1 R2
+# cross section
+pnt pc R1 0 0
+pnt p1 x1 0 0
+pnt p2 R1 0 R2
+pnt p3 x3 0 0
+pnt p4 R1 0 R2neg
+line ! p3 p2 pc DivR2
+line ! p2 p1 pc DivR2
+line ! p1 p4 pc DivR2
+line ! p4 p3 pc DivR2
+
+seta sec l all
+
+# extrusion
+swep sec load tra 0 L 0 DivL
+flip all
+pnt p0 0 0 0
+pnt pz 0 0 1
+swep sec sec1 rot p0 pz -90 DivR1
+swep sec1 fix tra Lneg 0 0 DivL
+
+elty all qu4
+#div all mult 2
+mesh all
+send all abq
+send fix abq nam
+send load abq nam
+
+read geo.fbd
+sys mv hcpy_1.png Refs/geo-shell.png
