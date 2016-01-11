@@ -60,4 +60,4 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   src="NonLinear/Rohrknie/Refs/shell-modal-1.gif"
   width="200"
   title="Thin-walled tube, modal analysis">
-](Linear/Plates/)
+](NonLinear/Rohrknie/)
