@@ -57,7 +57,7 @@ The examples usually require CalculiX 2.9, some of them might run with the bConv
   title="Clamped circular plates, axisymmetric model">
 ](Linear/Plates/)
 [<img
-  src="NonLinear/Rohrknie/Refs/shell-modal-1.gif"
+  src="NonLinear/Rohrknie/Refs/solid-SE-neg.png"
   width="200"
-  title="Thin-walled tube, modal analysis">
+  title="Thin-walled tube, static and modal analysis">
 ](NonLinear/Rohrknie/)
