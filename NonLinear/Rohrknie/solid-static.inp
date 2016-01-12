@@ -1,0 +1,50 @@
+*include,input=all.msh
+*include,input=fix.nam
+*include,input=load.nam
+*boundary
+Nfix,1,3
+**mean displacement
+*node, nset=Nref
+1, 0, 0, 0
+*element, elset=Ecoup,type=dcoup3d
+1,1
+*distributing coupling, elset=Ecoup
+Nload, 1
+** material definition
+*material, name=steel
+*elastic
+210000,0.3,0
+*density
+7.85e-9
+*solid section, elset=Eall, material=steel
+*time points, name=T1, generate
+0.,1.,0.05
+** Full load in -x direction
+*step,nlgeom
+*static
+*cload
+Nref,1,-50000
+*node file,frequency=100
+U
+*el file
+S
+*node print, nset=Nref
+U
+*node print, nset=Nload, totals=only
+RF
+*end step
+** Full load in x-direction
+*step,nlgeom
+*static
+0.05,1,0.000001
+*cload
+Nref,1,50000
+*node file, time points=T1
+U
+*el file
+S
+*node print, nset=Nref
+U
+*node print, nset=Nload, totals=only
+RF
+*end step

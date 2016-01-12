@@ -30,6 +30,10 @@ merg b all
 merg l all
 merg p all
 
+# reserve node 1 and elem 1 for the distributing coupling
+asgn n 2
+asgn e 2
+
 elty all he8i
 mesh all
 send all abq
@@ -37,4 +41,4 @@ send fix abq nam
 send load abq nam
 
 read geo.fbd
-sys sleep 5; mv hcpy_1.png Refs/geo-solid.png&
+sys mv hcpy_1.png Refs/geo-solid.png

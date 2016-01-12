@@ -1,0 +1,26 @@
+# create force-displacement-plot
+sys ../../Scripts/dat2txt.py solid-static
+sys mv "total force fx,fy,fz_NLOAD.txt" f.txt
+sys mv "displacements vx,vy,vz_NREF.txt" d.txt
+sys join f.txt d.txt > df.txt
+sys gnuplot df.gpl
+sys mv df.png Refs/df-solid.png
+# create stress plots
+
+read solid-static.frd
+rot -z
+view elem
+plot f all
+view disp
+max 10000 i l
+min 0 i l
+steps 20
+ds -0 e 7
+frame
+hcpy png
+sys mv hcpy_1.png Refs/solid-SE-pos.png
+ds 2 e 7
+frame
+hcpy png
+sys mv hcpy_2.png Refs/solid-SE-neg.png
+tra l 30
