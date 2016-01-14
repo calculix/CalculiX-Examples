@@ -11,7 +11,7 @@ selected via parameter `contact` in `pre.fbd.par`.
 | File                   | Contents                                      |
 | :-------------         | :-------------                                |
 | [pre.fbd.par](pre.fbd.par) | Pre-processing with CGX (param.py source file)                 |
-| [post.fbd](pre.fbd) | Post-processing with CGX                 |
+| [post.fbd](post.fbd) | Post-processing with CGX                 |
 | [pc-ss.inc](pc-ss.inc) | CCX surface-to-surface penalty contact definition |
 | [tie.inc](tie.inc)     | CCX MPC contact definition with `*tie`            |
 | [Tjoint.inp](Tjoint.inp)     | CCX input          |

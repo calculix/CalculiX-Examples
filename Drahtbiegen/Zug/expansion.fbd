@@ -5,9 +5,7 @@ seto 3D
   copy base base1 tra 0 0 0
   swep base1 new rot y 270 30
 setc
-pnt p0 0 0 0
-pnt py 0 2 0
-copy 3D new mir py p0
+copy 3D new mir y
 
 ds -0 e 1
 view disp

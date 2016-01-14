@@ -1,17 +1,13 @@
-read Tjoint.frd
+read Tjoint.frd new
 
 ds -0 e 7
 view disp
 view elem
 scal d 20
 
-pnt origin 0 0 0
-pnt xaxis 1 0 0
-pnt zaxis 0 0 1
-
 seta quarter all
-copy all newc mir xaxis origin
-copy all newz mir zaxis origin
+copy all newc mir x
+copy all newz mir z
 
 frame
 rot -z
