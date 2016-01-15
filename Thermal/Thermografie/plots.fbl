@@ -29,7 +29,7 @@ sys convert -rotate 90 graph_0.ps Refs/history.png
 
 # document the probe positions
 rot x
-rot c -90
+rot c 90
 font d 6
 zoom 2
 plot na probes
