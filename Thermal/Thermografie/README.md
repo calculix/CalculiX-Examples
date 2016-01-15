@@ -10,7 +10,8 @@ File                       | Contents
  :-------------            | :-------------
  [values.fbl](values.fbl)  | CGX script, parameter values
  [pre.fbl](pre.fbl)        | CGX script, pre-processing
- [post.fbl](post.fbl)      | CGX script, post-processing
+ [post.fbl](post.fbl)      | CGX script, post-processing, images and movie
+ [plots.fbl](plots.fbl)    | CGX script, post-processing, history plots
  [Naht.inp](Naht.inp)      | CCX input
 
 The model represents an overlap laser weld with a fault (interruption, gap). Such gaps can't be found by visual inspection, as they look like perfect welds from both sides.
@@ -33,7 +34,6 @@ send <dep> <indep> abq areampc t
 ```
 ## Solving
 
-In order to avoid inconsistent use of the individual scripts, top level script files are provided, which contain the calls to pre-processing, solving and post-processing.
 ```
 > ccx Naht
 ```
