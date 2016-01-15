@@ -4,7 +4,15 @@ Created by Martin Kraska, Brandenburg University of Applied Sciences
 These examples demonstrate the use of CalculiX for various analysis types.
 Also, there are some helper python scripts.
 
-The examples usually require CalculiX 2.9, some of them might run with the bConverged build for windows with CGX 2.6 and CCX 2.8p2
+The examples usually require CalculiX 2.9, some of them might run with the [bConverged](http://bconverged.com/) build for windows with CGX 2.6 and CCX 2.8p2
+
+Some examples demonstrate features of the not yet published CGX 2.10.
+
+Under Windows, I recommend to install the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX.
+
+For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
+
+
 
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
