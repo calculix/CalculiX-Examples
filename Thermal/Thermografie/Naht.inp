@@ -1,0 +1,32 @@
+*include, input=all.msh
+** equations for tied thermomech contact
+**include, input=depo123.equ
+*include, input=depo.equ
+**include, input=depu123.equ
+*include, input=depu.equ
+** material definition
+*material, name=steel
+**elastic
+**210000,0.333333333,0
+*density
+7.85e-9
+***expansion
+**12e-6
+*conductivity
+50.,0
+*specific heat
+5e8,0
+*initial conditions, type=temperature
+Nall,0
+*solid section, elset=Eall, material=steel
+*step
+*heat transfer, direct
+0.02,2
+*amplitude, name=excite
+0,0, 0.02,0, 0.04,1, 0.2,1
+0.22,0, 2,0
+*dflux,amplitude=excite
+*include, input=excite.dfl
+*node file
+NT
+*end step

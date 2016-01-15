@@ -69,3 +69,8 @@ For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has s
   width="200"
   title="Thin-walled tube, static and modal analysis">
 ](NonLinear/Rohrknie/)
+[<img
+  src="Thermal/Thermografie/Refs/end_of_excitation.png"
+  width="200"
+  title="Thermografic testing of an overlap weld, transient thermal analysis">
+](Thermal/Thermografie/)

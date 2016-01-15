@@ -1,0 +1,66 @@
+read values.fbl
+# dependent variables
+valu neg -1
+valu x4 float L
+valu y5 float B
+valu z1 * neg T1
+valu z2 float Gap
+valu z3 + Gap T2
+valu x3 - L o1
+valu x2 - x3 NB
+valu x1 - x2 o2
+valu y2 + y1 l1
+valu y3 + y2 lg
+valu y4 + y3 l2
+
+# Unterblech
+seto indu # dep face for contact
+  pnt p1 0 0 0
+  swep indu new tra 0 y5 0
+  swep indu new tra x4 0 0
+setc indu
+swep indu new tra 0 0 z1
+
+# Oberblech
+seto indo
+  pnt p2 x1 0 z2
+  swep indo new tra 0 B 0
+  swep indo new tra L 0 0
+setc indo
+swep indo excite tra 0 0 T2
+
+# naht
+seto depu
+  pnt p3 x2 y1 0
+  pnt p4 x2 y2 0
+  pnt p5 x2 y3 0
+  pnt p6 x2 y4 0
+  line ! p3 p4
+  line ! p5 p6
+  swep depu new tra NB 0 0
+setc depu
+swep depu depo tra 0 0 Gap
+
+# meshing
+div all auto 1.5
+elty all he8
+mesh all
+send all abq
+# contact definitions (equations)
+send depu indu abq areampc t
+send depo indo abq areampc t
+# distributed flux (excitation)
+send excite abq dflux 50
+
+rot y
+frame
+rot r 20
+rot u 20
+zoom 3
+view elem
+seta ! all
+plot f +CF1 n
+plus f +CF3 g
+plus f +CF4 g
+hcpy png
+sys mv hcpy_1.png Refs/geo.png
