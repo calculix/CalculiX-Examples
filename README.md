@@ -1,7 +1,7 @@
 # CalculiX-Examples
 Created by Martin Kraska, Brandenburg University of Applied Sciences
 
-These examples demonstrate the use of CalculiX for various analysis types.
+These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
 Also, there are some helper python scripts.
 
 The examples usually require CalculiX 2.9, some of them might run with the [bConverged](http://bconverged.com/) build for windows with CGX 2.6 and CCX 2.8p2
