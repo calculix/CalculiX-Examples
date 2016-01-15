@@ -19,7 +19,7 @@ A method to detect such faults is thermographic testing with heat impulse excita
 ## Pre-Processing
 The geometry consists of four bricks which are independently meshed.
 
-<img src="Naht.png"  title="Parameters adn co-ordinates">
+<img src="Naht.png"  title="Parameters and co-ordinates">
 <img src="Refs/geo.png" width="400" title="Lower plate (gray), seam (green)">
 
 You may edit the file [values.fbl](values.fbl) and then run
