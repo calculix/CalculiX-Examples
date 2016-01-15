@@ -4,6 +4,7 @@ Tested with CGX 2.10 / CCX 2.9
 + Transient thermal analysis
 + Thermal coupling between independent meshes by `*equation`
 + Heat impulse applied using `*amplitude`
++ Time history plot
 
 File                       | Contents    
  :-------------            | :-------------
@@ -42,5 +43,12 @@ In order to avoid inconsistent use of the individual scripts, top level script f
 ```
 > cgx -b post.fbl
 ```
-<img src="Refs/end_of_excitation.png" width="400" title="State at end of excitation impulse">
-<img src="Refs/end.png" width="400" title="State after 2 seconds">
+<img src="movie.gif" width="400" title="Animation of the temperature history">
+A time history plot of the temperature at four probe locations is generated:
+```
+> cgx -b plots.fbl
+```
+The probes are located at the center of the first seam segment and of the fault (gap), on the top (excitation) and on the bottom side. These locations are computed from the geometric parameters of the model.
+
+<img src="Refs/probes.png" height="330" title="Probe locations">
+<img src="Refs/history.png" height="330" title="Temperature history at the probe locations">

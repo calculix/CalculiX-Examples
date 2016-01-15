@@ -21,8 +21,7 @@ hcpy png
 sys mv hcpy_2.png Refs/end.png
 
 # create animation
-#plot fv all
-#ds 1 ah 1
-#min 0 f
-#max 2.5 f
-#movi frames auto
+movi frames auto
+ds 1 3 a 1
+movi make
+movi clean
