@@ -15,7 +15,7 @@ File                       | Contents
 
 The model represents a four point bending test on a elasto-plastic sandwich plate. The face material is mild steel, the core material is aluminum foam.
 
-![Sandwich bending test](4pb.png)
+!<img src="4pb.png" width="400" title="Dimensions">
 
 ## Pre-Processing
 
@@ -24,7 +24,7 @@ You may edit the file [values.fbl](values.fbl) and then run
 ```
 > cgx -b pre.fbl
 ```
-<img src="Refs/mesh.png" width="400" title="Lower plate (gray), seam (green)">
+<img src="Refs/mesh.png" width="400" title="Faces and core are separately meshed.">
 
 In order to avoid stress averaging between core and face sheets, they are meshed separately and connected via equations. The equations are generated in CGX using
 ```
@@ -40,6 +40,7 @@ The lower outer cylinder is fixed, the inner upper cylinder is moved down 20 mm.
 The rate of convergence is affected by the plastic material, the mesh density in the contact region, the contact stiffness and the time incrementation controls.
 ```
 > ccx Biegung
+> ../../monitor.py Biegung
 ```
 <img src="Biegung.png" title="Convergence plot">
 

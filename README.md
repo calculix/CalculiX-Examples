@@ -74,3 +74,8 @@ For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has s
   width="200"
   title="Thermografic testing of an overlap weld, transient thermal analysis">
 ](Thermal/Thermografie/)
+[<img
+  src="NonLinear/Sandwichtest/Refs/PE-expanded.png"
+  width="200"
+  title="4-point bending test of a sandwich structure">
+](NonLinear/Sandwichtest/)
