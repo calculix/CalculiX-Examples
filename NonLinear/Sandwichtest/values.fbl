@@ -1,0 +1,12 @@
+valu t1 2
+valu t2 2
+valu tc 16
+valu br 50
+valu lges 480
+valu lext 400
+valu ls 200
+valu radius 10
+valu divl 60
+valu divf 2
+valu divc 4
+valu divb 6

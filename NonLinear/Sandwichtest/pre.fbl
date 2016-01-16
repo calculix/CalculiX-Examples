@@ -1,0 +1,89 @@
+read values.fbl
+# dependent variables
+valu two 2
+valu neg -1
+valu lges_h / lges two
+valu br_h / br two
+valu lext_h / lext two
+valu ls_h / ls two
+valu zr2 * radius neg
+valu zr1 + t2 tc
+valu zr1 + zr1 t1
+valu zr1 + zr1 radius
+
+# in-plane profile
+pnt ! 0 0 0
+swep all new tra lges_h 0 0 divl
+swep all new tra 0 br_h 0 divb
+# stacked layers with contact surfaces
+seta f2_b se all
+seto f2
+  swep all f2_t tra 0 0 t2 divf
+setc
+seto core
+  copy f2_t core_b tra 0 0 0
+  swep core_b core_t tra 0 0 tc divc
+setc
+seto f1
+  copy core_t f1_b tra 0 0 0
+  swep f1_b f1_t tra 0 0 t1 divf
+setc
+# cylinders
+seto cyl1
+  pnt ! radius 0 0
+  swep cyl1 new rot y -360 40
+  swep cyl1 new tra 0 br_h 0 10
+setc
+copy cyl1 cyl2 tra lext_h 0 zr2
+move cyl1 tra ls_h 0 zr1
+
+# meshing
+#div all auto 5
+elty all he20r
+elty cyl1 qu4
+elty cyl2 qu4
+mesh all
+send all abq
+send f1 abq nam
+send f2 abq nam
+send core abq nam
+send cyl1 abq nam
+send cyl2 abq nam
+
+# symmetry boundaries
+seta nodes n all
+enq nodes ysym rec _ 0 _ 0.1 a
+enq nodes xsym rec 0 _ _ 0.1 a
+# remove nodes on dependent contact surfaces
+setr ysym n core_t core_b
+setr xsym n core_t core_b
+# write symmetry nodes
+send ysym abq spc 2
+send xsym abq spc 1
+
+# send contact surfaces
+send cyl1 abq sur
+send cyl2 abq sur
+send f1_t abq sur
+send f1_b abq sur
+send core_t abq sur
+send core_b abq sur
+send f2_t abq sur
+send f2_b abq sur
+
+# inter-layer-contact
+
+send core_t f1_b abq areampc 123
+send core_b f2_t abq areampc 123
+
+#seta ! all
+view elem
+rot y
+rot l 75
+rot u 10
+frame
+zoom 3
+seta ! all
+
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
