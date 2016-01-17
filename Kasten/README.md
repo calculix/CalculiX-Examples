@@ -14,14 +14,16 @@ Tested with CGX 2.10/CCX 2.9
 
 ## Preprocessing
 ```
-cgx -b pre.fbd
+> cgx -b pre.fbd
 ```
 <img src="geo.png" width="300">
 
 ## Solving
 ```
-ccx Kasten
+> ccx Kasten
+> ../Scripts/monitor.py Kasten
 ```
+<img src="Kasten.png" width="500">
 
 ### Kasten.inp
 Mesh and set definitions
@@ -83,6 +85,6 @@ U,RF
 
 ## Postprocessing
 ```
-cgx -b post.fbd
+> cgx -b post.fbd
 ```
 <img src="deformed.png" width="300">
