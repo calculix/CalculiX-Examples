@@ -40,7 +40,7 @@ The lower outer cylinder is fixed, the inner upper cylinder is moved down 20 mm.
 The rate of convergence is affected by the plastic material, the mesh density in the contact region, the contact stiffness and the time incrementation controls.
 ```
 > ccx Biegung
-> ../../monitor.py Biegung
+> ../../Scripts/monitor.py Biegung
 ```
 <img src="Biegung.png" title="Convergence plot">
 
