@@ -36,7 +36,7 @@ Boundary conditions:
 #### Parametrization with param.py
 See [../../Scripts/](../../Scripts/) for details
 ```
-> python ../../Scripts/param.py pre.fbd.par
+> ../../Scripts/param.py pre.fbd.par
 > cgx -b pre.fbd
 ```
 #### Parametrization with CGX valu
@@ -54,7 +54,7 @@ The second command generates a convergence history plot of the solution.
 ## Postprocessing
 #### Path plot
 ```
-cgx -b plots.fbd
+> cgx -b plots.fbd
 ```
 This creates path plots of the plastic equivalent strain along the symmetry axis (ine `l1` from point `cp` to point `c0`) and then in radial direction (line `l2` from point `c0` to point `rad`).
 
@@ -71,7 +71,7 @@ The second plot is based on the **deformed** geometry:
 #### Symmetry expansion
 Beginning with version 2.10, CGX can sweep 2D elements with results attached. This is used for symmetry expansion of the axisymmetric 2D output.
 ```
-cgx -b expansion.fbd
+> cgx -b expansion.fbd
 ```
 <img src="PE-expanded.png" width="300" title="Automatically generated plot of the plastic equivalent strain with symmetry expansion">
 <img src="expanded.png" width="300" title="This image is darker than expected.">
@@ -79,6 +79,6 @@ cgx -b expansion.fbd
 
 To see just the non-expanded model, use this command:
 ```
-cgx -b 2D.fbd
+> cgx -b 2D.fbd
 ```
 <img src="PE-2D.png" width="300" title="same plot as above without symmetry expansion">
