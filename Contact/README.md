@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX/CCX 2.9 
+Tested with CGX/CCX 2.9
 
 + Shell edge to shell face connection
 + Various contact versions
@@ -19,21 +19,21 @@ The only reliable contact version to connect face to edge of shell elements seem
 ## Preprocessing
 Two separate parts are generated and meshed with shell elements.
 ```
-cgx -b pre.fbd
+> cgx -b pre.fbd
 ```
 <img src="model.png" width="300">
 
 ## Solving
 Use the appropriate input file  for the contact version you want to test:
 ```
-ccx tie
+> ccx tie
 ```
 
 ## Postprocessing
 
 Load the results file in CGX
 ```
-cgx tie.frd
+> cgx tie.frd
 ```
 Display animated mode shapes coloured with the displacement magnitude. Show the elements and increase the default scaling of the mode shapes.
 ```
