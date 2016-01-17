@@ -15,7 +15,7 @@ File                       | Contents
 
 The model represents a four point bending test on a elasto-plastic sandwich plate. The face material is mild steel, the core material is aluminum foam.
 
-!<img src="4pb.png" width="400" title="Dimensions">
+<img src="4pb.png" width="400" title="Dimensions">
 
 ## Pre-Processing
 
