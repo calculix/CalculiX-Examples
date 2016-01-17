@@ -1,5 +1,5 @@
 # Wire Bending
-Tested with CGX/CCX 2.9 
+Tested with CGX 2.10/CCX 2.9
 
 Click the image to see the animation
 
@@ -24,7 +24,7 @@ Click the image below to open a life SMath worksheet
 
 ## Preprocessing
 ```
-cgx -b pre.fbd
+> cgx -b pre.fbd
 ```
 <img src="symy.png" width="300"><img src="wfix.png" width="300">
 <img src="parts.png" width="300"><img src="contact.png" width="300">
@@ -33,8 +33,8 @@ cgx -b pre.fbd
 
 Extraction of the time history of the reaction moment and the internal energy from the dat file
 ```
-ccx Biegung
-python ../../Scripts/Monitor.py Biegung
+> ccx Biegung
+> ../../Scripts/Monitor.py Biegung
 ```
 <img src="Biegung.png">
 
@@ -42,8 +42,8 @@ python ../../Scripts/Monitor.py Biegung
 
 Extraction of the time history of the reaction moment and the internal energy from the dat file and generation of the corresponding plot
 ```
-python ../../Scripts/dat2txt.py Biegung
-python Biegung.py
+> ../../Scripts/dat2txt.py Biegung
+> Biegung.py
 ```
 <img src="Biegung-history.png">
 
@@ -51,8 +51,8 @@ When comparing to the reference solution take care that the FEA model is just ha
 
 | Quantity       | Reference          | 2xFEA     |
 | :------------- | :-------------     |:---       |
-| Moment in N mm | 600                | 800...900 |
-| Energy in mJ   | 940                | 1050      |
+| Moment in N mm | 600                | 440...780 |
+| Energy in mJ   | 940                | 790       |
 
 The matching is reasonable, given the crude approach for the reference estimates and the coarse mesh.
 
@@ -65,7 +65,3 @@ Open the results in CGX and create some plots
 cgx -b post.fbd
 ```
 <img src="deform.png" width="300"><img src="PE.png" width="300">
-
-If you issue the command `seta ! all` in interactive mode, then you get the shading right:
-
-<img src="deform1.png" width="300">
