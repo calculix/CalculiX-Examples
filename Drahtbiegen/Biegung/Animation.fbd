@@ -10,5 +10,10 @@ zoom 2
 plot fv Ndraht
 ds 3 11 a 1
 max 0.2
+
+# create animation
 anim real on
+movi frames auto
 anim start
+movi make
+movi clean

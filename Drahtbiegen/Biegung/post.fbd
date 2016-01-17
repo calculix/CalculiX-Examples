@@ -8,8 +8,7 @@ tra u 2
 rot y
 rot r 130
 zoom 1.5
-rep all
-ds -0
+ds -0 e 1
 seta ! all
 hcpy png
 sys mv hcpy_1.png deform.png
