@@ -27,7 +27,7 @@ Two separate parts are generated and meshed with plane strain elements.
 > ccx Hertz
 > ../../Scripts/monitor.py Hertz
 ```
-Currently, `monitor.py` fails to produce the convergence plot due to a bug. There is convergence with just 10 iterations in a single increment.
+<img src="Hertz.png" title="Convergence plot">
 
 ## Postprocessing
 
