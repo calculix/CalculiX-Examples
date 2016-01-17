@@ -45,7 +45,11 @@ Examples:
 
 ## monitor.py
 
-This script reads the .sta and .cvg files for a given job and creates a plot of the force residuals, the displacement correction and the incremental time step in the upper diagram and of the total step time in the lower diagram.
+This script reads the .sta and .cvg files for a given job and creates an image with two diagrams:
+
+* force residuals, displacement correction and incremental time step ,
+* step time and number of contact elements.
+
 ```
 python monitor.py <jobname>
 ```
