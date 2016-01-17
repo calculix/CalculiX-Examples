@@ -5,9 +5,10 @@ view disp
 view elem
 scal d 20
 
-seta quarter all
-copy all newc mir x
-copy all newz mir z
+seta base all
+copy all new mir x
+copy all new mir z
+comp new do
 
 frame
 rot -z
@@ -16,7 +17,8 @@ rot r 6
 rot u 6
 tra u 20
 
-plot f all n
-plus fv quarter
+plot f new n
+plus fv base
+
 hcpy png
 sys mv hcpy_1.png SE_expanded.png
