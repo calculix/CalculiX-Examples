@@ -54,6 +54,7 @@ The analysis consists of two steps.
  2. The load is increased until it reaches the same value in positive x-direction. The results are written in small intervalls for generation of a force-displacement curve
 ```
 > ccx solid-static
+> ../../Scripts/monitor.py solid-static
 ```
 <img src="solid-static.png" width="600" title="Convergence plot">
 
