@@ -11,7 +11,10 @@ import re
 
 source=sys.argv[1]
 print("Source "+source)
-target = source[0:-4]
+if source.endswith(".par"):
+    target = source[0:-4]
+elif source.startswith("par."):
+    target = source[4:]
 print("Target "+target)
 f = open(sys.argv[1],"r")
 fo = open(target,"w")
