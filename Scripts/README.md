@@ -70,9 +70,11 @@ their definition.
 
 ### Usage
 
-* Copy the file to be parametrized to `<filename>.par`, where `<filename>` can include any extension. This will become the source file for parametrization.
+* Copy the file to be parametrized to `<filename>.par` or `par.<filename>`, where `<filename>` can include any extension. This will become the source file for parametrization.
 
-* In `<filename>.par` add parameter definitions, preferrably in comment lines.   
+  Prefixing with `par.` is recommended, as this does not spoil the syntax highlighting in editors.
+
+* In `<filename>.par` or `par.<filename>` add parameter definitions, preferrably in comment lines.   
   * To assign the value 4 to the variable a, include `<a=4>` to such a line.
   * To reference the value just add `<a>` wherever the value has to go.
   * Wherever you need a value depending on a, write something like `<b=a^2>` or
@@ -82,6 +84,11 @@ their definition.
 ```
 python param.py <filename>.par
 ```
+or (depending on your choice for source naming)
+```
+python param.py par.<filename>
+```
+
 The expressions are scanned and the angle brackets
 replaced (pre-processing):
   * Variable definitions are copied verbatim to the output (for reference/documentation).   
@@ -89,7 +96,7 @@ replaced (pre-processing):
   * Any valid Python expressions can be used. The math module is already imported (`from math import *`), you can use all math functions without prefix.
 
 
-|                 | `<filename>.par` |`<filename>` |
+|                 | `<filename>.par` or `par.<filename>` |`<filename>` |
 |  :------------- | :-------------   |:--          |
 |  Definitions    | `<a=2>`          |`a=2`        |
 |                 | `<b=2*a>`        |`b=2*a`      |
