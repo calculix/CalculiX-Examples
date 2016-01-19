@@ -12,6 +12,10 @@ valu x1 - x2 o2
 valu y2 + y1 l1
 valu y3 + y2 lg
 valu y4 + y3 l2
+valu two 2
+valu NBh / NB two
+valu xN - L o1
+valu xN - xN NBh
 
 # Unterblech
 seto indu # dep face for contact
@@ -22,10 +26,13 @@ setc indu
 swep indu new tra 0 0 z1
 
 # Oberblech
+valu L1 + o2 NBh
+valu L2 - L L1
 seto indo
   pnt p2 x1 0 z2
-  swep indo new tra 0 B 0
-  swep indo new tra L 0 0
+  swep indo p2y tra 0 B 0
+  swep indo k1 tra L1 0 0
+  swep k1 k2 tra L2 0 0
 setc indo
 swep indo excite tra 0 0 T2
 

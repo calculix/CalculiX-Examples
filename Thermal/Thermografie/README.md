@@ -45,12 +45,25 @@ send <dep> <indep> abq areampc t
 ```
 <img src="movie.gif" width="400" title="Animation of the temperature history">
 
-A time history plot of the temperature at four probe locations is generated:
+The command
 ```
 > cgx -b plots.fbl
 ```
+creates
+ 1. a time history plot at four probe positions and
+ 2. a temperature profile at t=2s
+
+### Time history plot
 The probes are located at the center of the first seam segment and of the fault (gap), on the top (excitation) and on the bottom side. These locations are computed from the geometric parameters of the model.
 
 <img src="Refs/probes.png" width="400" title="Probe locations">
 
 <img src="Refs/history.png" title="Temperature history at the probe locations">
+
+### Path plot (temperature profile)
+
+The temperature profile along the seam at the top side is plotted. The Path is defined by the node set `top`
+
+<img src="Refs/path.png" width="400" title="Path for the temperature profile">
+
+<img src="Refs/pathplot.png" title="Temperature profile at t=2s along the seam">

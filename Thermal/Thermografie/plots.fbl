@@ -32,6 +32,24 @@ rot x
 rot c 90
 font d 6
 zoom 2
+text Positions of the probes
 plot na probes
 hcpy png
 sys mv hcpy_1.png Refs/probes.png
+
+# path plot along the seam on the upper side
+enq nodes top rec xN _ ztop 0.1 a
+ds -0 e 1
+graph top +
+sys convert -rotate 90 graph_1.ps Refs/pathplot.png
+
+# plot the path
+rot y
+frame
+rot r 20
+rot u 20
+zoom 3
+text Path for temperature profile
+plot n top
+hcpy png
+sys mv hcpy_2.png Refs/path.png
