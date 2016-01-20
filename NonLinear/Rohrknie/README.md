@@ -38,7 +38,13 @@ In order to avoid inconsistent use of the individual scripts, top level script f
 > cgx -b solid-modal.fbd
 ```
 <img src="Refs/geo-solid.png" width="400" title="Solid model">
+
+The following animated gifs are created automatically in [post-modal.fbd](post-modal.fbd), wich is called by [solid-modal.fbd](solid-modal.fbd)
+
 <img src="Refs/solid-modal-1.gif" width="400" title="Mode 1">
+<img src="Refs/solid-modal-2.gif" width="400" title="Mode 2">
+<img src="Refs/solid-modal-3.gif" width="400" title="Mode 3">
+<img src="Refs/solid-modal-4.gif" width="400" title="Mode 4">
 
 ## Solid Model, Static Analysis
 
@@ -51,7 +57,7 @@ First, the mesh is generated:
 ### Solution
 The analysis consists of two steps.
  1. Full load is applied in negative x-direction, just the final results are written to the results files.
- 2. The load is increased until it reaches the same value in positive x-direction. The results are written in small intervalls for generation of a force-displacement curve
+ 2. The load is increased until it reaches the same value in positive x-direction. The results are written in small intervals for generation of a force-displacement curve
 ```
 > ccx solid-static
 > ../../Scripts/monitor.py solid-static

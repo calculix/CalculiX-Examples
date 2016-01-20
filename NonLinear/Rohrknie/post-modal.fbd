@@ -1,11 +1,38 @@
 # results data are loaded in the calling script
 # set view and animate first dataset
 rot -z
-rot r 30
-rot u 30
+rot u 70
 scal d 2
-anim steps 64
-movi delay 0.1
-movi frames 17
-ds 1 a
-# rename the movie in the calling script
+anim steps 16
+
+# select modes to display
+valu num 0
+valu incr 1
+valu end 4
+# name for movies to store
+valu path Refs/
+valu type -modal-
+valu pre & path model
+valu pre & pre type
+valu ext .gif
+# subset for shaded plot
+enq all new rec _ _ -100 101 a
+comp new do
+# loop over modes
+while num < end
+  valu num + num incr
+  valu num int num
+  # static dataset and display setting
+  ds num e 4
+  plot fv all
+  plus f new n
+  # init movie recording and start animation
+  movi frames auto
+  # ds num a 4
+  anim start
+  # storage of the movie
+  valu name & pre num
+  valu name & name ext
+  sys mv movie.gif name
+endwhile
+ds 1 a 1

@@ -1,8 +1,9 @@
 # modal analysis of the symmetric solid model
+# pre-processing
 read solid.fbd
+# solving
 sys ccx solid-modal
+# post-processing
 read solid-modal.frd
+valu model solid
 read post-modal.fbd
-# this succeeds only if run twice, because cgx does not wait for
-# the end of movie recording.
-sys mv -b -f movie.gif Refs/solid-modal-1.gif
