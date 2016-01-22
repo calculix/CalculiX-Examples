@@ -8,11 +8,14 @@ The examples usually require CalculiX 2.9, some of them might run with the [bCon
 
 Some examples demonstrate features of the not yet published CGX 2.10.
 
-Under Windows, I recommend to install the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX.
+Under Windows, I recommend to install the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX. It has, however, some disadvantages:
+
+* Hardware Open GL does not work
+* Multithreading does not work.
+
+These are not relevant for simple educational models but are definitely relevant for serious work.
 
 For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
-
-
 
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
@@ -79,3 +82,8 @@ For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has s
   width="200"
   title="4-point bending test of a sandwich structure">
 ](NonLinear/Sandwichtest/)
+[<img
+  src="NonLinear/Sections/Refs/D3.png"
+  width="200"
+  title="Different section shapes of identical area. Automatic determination of relative strength and stiffness">
+](NonLinear/Sections/)
