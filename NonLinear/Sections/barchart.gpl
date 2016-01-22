@@ -1,0 +1,10 @@
+set term pngcairo
+set out "Refs/beams.png"
+set boxwidth 0.3
+set yrange [0:*]
+set grid
+set key top left
+set style fill solid
+set title "Profiles of identical cross section area"
+plot "dat.txt" using ($0-0.15):2:xtic(1) with boxes title "Relative strength",\
+     "dat.txt" using ($0+0.15):3 with boxes title "Relative stiffness" lc 3

@@ -1,0 +1,29 @@
+*include, input=all.msh
+*include, input=x0.nam
+*include, input=y0.nam
+*include, input=xL.nam
+** constraints
+*boundary
+Nx0,1
+Ny0,2
+NxL,3
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** *plastic
+** 200,0
+** 1000,1
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+*step
+*static
+*dload
+Eall,GRAV,9810,0,0,1
+*node file
+U
+*el file
+S,PE
+*end step

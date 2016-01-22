@@ -1,0 +1,92 @@
+# <area=300>
+# <length=100>
+# <thickness = 4>
+# <dist = 40>
+
+# square
+# <l1=area**0.5>
+seto square
+  pnt ! 0 0 0
+  swep all new tra 0 <l1> 0 10
+  swep all new tra 0 0 <l1> 10
+  move square tra 0 <-l1/2.> <-l1/2.>
+setc
+seta fixy D001
+
+# circle
+# <radius=(area/pi)**0.5>
+seto circle
+ pnt pc 0 0 0
+ pnt py 0 <radius> 0
+ pnt pz 0 0 <radius>
+ line l1 pc py 6
+ line l2 pc pz 6
+ line l3 py pz pc 8
+ surf s1 l1 l2 l3
+ copy circle new mir y
+ copy circle new mir z
+ move circle tra 0 <dist> 0
+setc
+seta fixy p pc
+
+# Hollow circle
+# <ri=area/(2.*pi*thickness)-thickness*0.5>
+seto hcircle
+ pnt pri 0 <ri> 0
+ swep hcircle new tra 0 <thickness> 0 2
+ swep hcircle new rot x 360 40
+ move hcircle tra 0 <2.*dist> 0
+setc
+seta fixy p pri
+
+# I Profile made of three identical rectangles of given thickness
+# <l1=area/(3.*thickness)>
+seto Iprofile
+  pnt pI0 0 0 0
+  swep Iprofile pI1 tra 0 0 <l1/2.> 0
+  swep Iprofile new tra 0 <thickness> 0
+  seto f0
+    swep pI1 new tra 0 0 <thickness>
+  setc f0
+  swep f0 f1 tra 0 <thickness> 0
+  swep f1 new tra 0 <(l1-thickness)/2.> 0
+  swep f0 new tra 0 <-(l1-thickness)/2.> 0
+  copy Iprofile new mir z
+setc Iprofile
+move Iprofile tra 0 <3.*dist> 0
+seta fixy p pI0
+
+swep all xL tra <length> 0 0 20 a
+elty all he20r
+mesh all
+merg n all
+send all abq
+
+rot -y
+rot l 110
+rot u 20
+seta ! all
+frame
+view elem
+hcpy png
+sys mv hcpy_1.png Refs/mesh.pngview elem
+
+# sets
+send xL abq nam
+
+seta nodes n all
+enq nodes x0 rec 0 _ _ 1 a
+send x0 abq nam
+
+seti y0 n x0 fixy
+send y0 abq nam
+
+send square abq nam
+send circle abq nam
+send hcircle abq nam
+send Iprofile abq nam
+
+volu square
+volu circle
+volu hcircle
+volu Iprofile
