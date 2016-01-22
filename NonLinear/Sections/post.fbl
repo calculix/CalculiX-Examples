@@ -19,6 +19,8 @@ scal d 100000
 #rot -y
 #rot r 110
 #rot u 20
+frame
+zoom 1.2
 plot fv base
 plus f new n
 hcpy png
