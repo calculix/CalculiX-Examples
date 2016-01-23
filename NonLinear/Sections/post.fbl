@@ -32,18 +32,6 @@ read circle.nam inp
 read hcircle.nam inp
 read Iprofile.nam inp
 
-# extract stress values
-ds 2 e 1
-stack on
-enq Nsquare max rec 0 _ _  1 h
-valu s1 pop 3
-enq Ncircle max rec 0 _ _ 1 h
-valu s2 pop 3
-enq Nhcircle max rec 0 _ _ 1 h
-valu s3 pop 3
-enq NIprofile max rec 0 _ _ 1 h
-valu s4 pop 3
-
 # extract stress values and compute relative strength
 stack on
 ds 2 e 1
