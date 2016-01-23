@@ -87,3 +87,8 @@ For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has s
   width="200"
   title="Different section shapes of identical area. Automatic determination of relative strength and stiffness">
 ](NonLinear/Sections/)
+[<img
+  src="Linear/StressConc/Refs/worstps.png"
+  width="200"
+  title="Stress concentration factor">
+](Linear/StressConc/)

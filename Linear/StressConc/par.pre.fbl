@@ -1,0 +1,67 @@
+# <D1=100>
+# <D2=50>
+# <Di=20>
+# <L1=100>
+# <L2=100>
+# <R=5>
+#
+
+pnt p1 <Di/2.> 0 0
+pnt p2 <D1/2.> 0 0
+pnt p3 <D1/2.> <L1>
+pnt p4 <D2/2+R> <L1> 0
+pnt p5 <D2/2+R> <L1+R> 0
+pnt p6 <D2/2> <L1+R> 0
+pnt p7 <D2/2> <L1+L2> 0
+pnt p8 <Di/2> <L1+L2> 0
+pnt p9 <Di/2> <L1+R> 0
+
+# line name p1 p2 elements growth-rate
+line l1 p1 p2 4
+line l2 p2 p3 16 0.9
+line l3 p3 p4 12 0.8
+line l4 p4 p6 p5 16
+line l5 p6 p7 24 1.15
+line l6 p7 p8 2
+line l7 p8 p9 24 0.9
+line l8 p9 p1 24 1.15
+line l9 p6 p9 16 1.05
+
+surf ! l1 l2 l3 l4 l9 l8
+surf ! l9 l5 l6 l7
+
+elty all tr6u
+mesh all
+elty all tr6c
+send all abq
+
+# sets
+seta nodes n all
+enq nodes fix rec _ 0 0 1 a
+send fix abq nam
+
+enq nodes pr rec _ <L1+L2> 0 1 a
+comp pr do
+send pr abq pres -100
+
+# image
+rot -z
+rot c -30
+rot u 60
+frame
+zoom 2
+view elem
+plot ld all
+hcpy png
+sys mv hcpy_1.png Refs/div.png
+
+swep all new rot y 270 30
+frame
+rot -x
+rot c -90
+rot r 50
+rot u 30
+zoom 1.5
+plot f all n
+hcpy png
+sys mv hcpy_2.png Refs/mesh.png

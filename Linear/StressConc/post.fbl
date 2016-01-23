@@ -1,0 +1,28 @@
+read Stress.frd new
+
+view disp
+view elem
+rot -z
+stack on
+ds 2 e 23
+
+# extract node number of the hot spot
+valu nmax pop 8
+seta max n nmax
+
+# axisymmetric expansion
+seta base all
+copy base 2D tra 0 0 0.01
+swep base new rot y 270 20
+trfm cyl y
+plot f all n
+plus ev 2D
+frame
+hcpy png
+sys mv hcpy_1.png Refs/worstps.png
+
+# zoom in and annotate maximum
+zoom 3
+plus nv max
+hcpy png
+sys mv hcpy_2.png Refs/worstps-zoom.png
