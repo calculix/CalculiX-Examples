@@ -40,7 +40,7 @@ sys mv hcpy_1.png Refs/probes.png
 # path plot along the seam on the upper side
 enq nodes top rec xN _ ztop 0.1 a
 ds -0 e 1
-graph top +
+graph top length +
 sys convert -rotate 90 graph_1.ps Refs/pathplot.png
 
 # plot the path
