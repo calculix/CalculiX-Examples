@@ -11,7 +11,7 @@ File                    | Contents
 
  This script extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point.
  ```
- python dat2txt,py <jobname>
+dat2txt,py <jobname>
  ```  
 This reads `<jobname>.dat` and writes a text file for each result item in the .dat file.
 
@@ -51,7 +51,7 @@ This script reads the .sta and .cvg files for a given job and creates an image w
 * step time and number of contact elements.
 
 ```
-python monitor.py <jobname>
+monitor.py <jobname>
 ```
 The plot is displayed and written to `<jobname>.png`.
 
@@ -82,11 +82,11 @@ their definition.
    variables or values (with a period. eg. `<a=2.>`).
 * To extract a usable file `<filename>`, run
 ```
-python param.py <filename>.par
+param.py <filename>.par
 ```
 or (depending on your choice for source naming)
 ```
-python param.py par.<filename>
+param.py par.<filename>
 ```
 
 The expressions are scanned and the angle brackets
