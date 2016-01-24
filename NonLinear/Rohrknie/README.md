@@ -69,7 +69,7 @@ The analysis consists of two steps.
 > cgx -b post-solid-static.fbd
 ```
 Steps for generation of the  force-displacement curve:
- 1. Extraction of the time history data from the dat-file using the script [param.py](../../Scripts/param.py).
+ 1. Extraction of the time history data from the dat-file using the script [dat2txt.py](../../Scripts/dat2txt.py).
  2. Creating a single file from the displacement history and the force history using the `join` shell command.
  3. Running Gnuplot with the command file [df.gpl](df.gpl).
 
