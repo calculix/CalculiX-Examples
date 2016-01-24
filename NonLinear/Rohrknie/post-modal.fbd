@@ -23,12 +23,13 @@ while num < end
   valu num + num incr
   valu num int num
   # static dataset and display setting
+  #plot n all
   ds num e 4
   plot fv all
   plus f new n
   # init movie recording and start animation
-  movi frames auto
-  # ds num a 4
+  movi frames 15
+  #ds num a
   anim start
   # storage of the movie
   valu name & pre num
