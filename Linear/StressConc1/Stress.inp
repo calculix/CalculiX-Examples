@@ -1,0 +1,29 @@
+*include, input=all.msh
+*include, input=sym.nam
+*include, input=rb.nam
+** the rigid body must be sufficiently constrained.
+*rigid body, nset=Nrb, ref node=1, rot node=2
+*boundary
+Nsym, 1
+1,2,3
+2,1,2
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** *plastic
+** 200,0
+** 1000,1
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+1
+*step
+*static
+*include, input=load.inp
+*node file
+U
+*el file, output=2D
+S
+*end step
