@@ -41,6 +41,8 @@ In order to avoid inconsistent use of the individual scripts, top level script f
 
 The following animated gifs are created automatically in [post-modal.fbd](post-modal.fbd), wich is called by [solid-modal.fbd](solid-modal.fbd)
 
+The movies contain one and a quarter cycles. This is because the gif movies are just played once on github and then remain static with the last frame displayed.
+
 <img src="Refs/solid-modal-1.gif" width="400" title="Mode 1">
 <img src="Refs/solid-modal-2.gif" width="400" title="Mode 2">
 <img src="Refs/solid-modal-3.gif" width="400" title="Mode 3">

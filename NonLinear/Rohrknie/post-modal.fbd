@@ -19,6 +19,7 @@ valu ext .gif
 enq all new rec _ _ -100 101 a
 comp new do
 # loop over modes
+#view surf
 while num < end
   valu num + num incr
   valu num int num
@@ -28,9 +29,10 @@ while num < end
   plot fv all
   plus f new n
   # init movie recording and start animation
-  movi frames 15
+  movi frames 20
   #ds num a
   anim start
+  #view surf
   # storage of the movie
   valu name & pre num
   valu name & name ext
