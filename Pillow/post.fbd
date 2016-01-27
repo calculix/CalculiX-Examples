@@ -1,6 +1,6 @@
 read static.frd new
 
-ds -3 e 4
+ds -1 e 4
 seta base f all
 
 copy all new mir x
