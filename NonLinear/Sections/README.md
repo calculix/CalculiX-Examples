@@ -1,9 +1,10 @@
 # Properties of Cross Sections
 Tested with CGX 2.10 / CCX 2.9
 
-+ Elasto-plastic material
 + Simply supported beam
++ Parametric section shapes of identical area
 + Symmetry reduction
++ Automatic extraction of results values
 
 File                           | Contents    
  :-------------                | :-------------
@@ -15,7 +16,7 @@ File                           | Contents
 The model contains several simply supported beams under gravity load of equal section area but different section shape.
 Objective is to determine the relative stiffness and strength (yield limit) with respect to the square section.
 
-<img src="Refs/mesh.png" width="400" title="Dimensions">
+<img src="Refs/mesh.png" width="400">
 
 ## Pre-Processing
 
@@ -28,7 +29,6 @@ The beams are loaded by their own weight, properies of steel are assumed.
 > ../../Scripts/param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
-<img src="Refs/mesh.png" width="400" title="Faces and core are separately meshed."
 
 ## Solving
 The simulation is essentially linear. The iterative procedure is used because of the presence of plastic material. Due to the low stresses, this does not affect the solution.
