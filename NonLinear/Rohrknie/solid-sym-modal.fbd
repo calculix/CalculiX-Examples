@@ -1,0 +1,9 @@
+# modal analysis of the symmetric solid model
+# pre-processing
+read solid-sym.fbd
+# solving
+sys ccx solid-sym-modal
+# post-processing
+read solid-sym-modal.frd
+valu model solid-sym
+read post-modal.fbd

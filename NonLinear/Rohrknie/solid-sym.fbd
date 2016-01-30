@@ -1,0 +1,47 @@
+# symmetric solid model
+read values.fbd
+
+# derived variables
+valu Neg -1
+valu Lneg * L Neg
+valu R2neg * R2 Neg
+valu Tneg * T Neg
+valu x1 + R1 R2
+valu x3 - R1 R2
+
+# cross section
+# build perimeter with points and lines
+pnt pc R1 0 0
+pnt p1 x1 0 0
+pnt p2 R1 0 R2
+pnt p3 x3 0 0
+line ! p3 p2 pc DivR2
+line ! p2 p1 pc DivR2
+seta peri l all
+# sweep radially inwards by thickness
+swep peri inner rad pc y Tneg DivT
+seta sec s all
+
+# extrusion of the section along centerline segments
+swep sec load tra 0 L 0 DivL
+swep sec sec1 rot z -90 DivR1
+swep sec1 fix tra Lneg 0 0 DivL
+merg s all
+merg b all
+merg l all
+merg p all
+
+# meshing
+elty all he8i
+mesh all
+send all abq
+send fix abq nam
+send load abq nam
+
+# nodes in the symmetry plane z=0
+seta nodes n all
+enq nodes sym rec _ _ 0 0.1 a
+send sym abq nam
+
+read geo.fbd
+sys mv hcpy_1.png Refs/geo-solid-sym.png

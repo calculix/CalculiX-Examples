@@ -1,7 +1,7 @@
 # results data are loaded in the calling script
 # set view and animate first dataset
 rot -z
-rot u 70
+rot u 90
 scal d 2
 anim steps 16
 
@@ -27,7 +27,7 @@ while num < end
   #plot n all
   ds num e 4
   plot fv all
-  plus f new n
+  #plus f new n
   # init movie recording and start animation
   movi frames 20
   #ds num a

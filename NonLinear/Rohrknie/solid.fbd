@@ -15,15 +15,14 @@ swep pu2 pu3 rot pc1 D002 90 DivR2
 swep pu3 pu4 rot pc1 D002 90 DivR2
 swep pu4 pu5 rot pc1 D002 90 DivR2
 seta peri l all
-swep peri inner rad pc1 D002 Tneg 2
+swep peri inner rad pc1 D002 Tneg DivT
 merg l all
 merg p all
 seta sec s all
 #comp sec do
 # extrusion
 swep sec load tra 0 L 0 DivL
-pnt pz 0 0 1
-swep sec sec1 rot pc pz -90 DivR1
+swep sec sec1 rot pc z -90 DivR1
 swep sec1 fix tra Lneg 0 0 DivL
 merg s all
 merg b all
