@@ -141,7 +141,7 @@ The force-displacement plot is heavily non-linear because of the severe changes 
  <img src="Refs/solid-SE-neg.png" width="400" title="Force applied in negative x-direction">
  <img src="Refs/solid-SE-pos.png" width="400" title="Force applied in positive x-direction">
 
- ## Half solid model, modal analysis
+## Half solid model, modal analysis
 
  File                       | Contents    
   :-------------            | :-------------
