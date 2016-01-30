@@ -1,0 +1,22 @@
+** shell model with symmetry, modal analysis
+*include,input=all.msh
+*include,input=fix.nam
+*include,input=load.nam
+*include,input=sym.nam
+*boundary
+Nfix,1,6
+Nsym,3,5
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*density
+7.85e-9
+*shell section, elset=Eall, material=steel, offset=0.5
+1
+*STEP
+*frequency
+10
+*node file
+U
+*end step

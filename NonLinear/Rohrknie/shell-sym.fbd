@@ -1,10 +1,10 @@
-# full shell model
+# shell model with symmetry
 read values.fbd
 
 # derived variables
 valu Neg -1
 valu Lneg * L Neg
-valu R2neg * R2 Neg
+valu R1neg * R1 Neg
 valu x1 + R1 R2
 valu x3 - R1 R2
 # cross section
@@ -12,12 +12,8 @@ pnt pc R1 0 0
 pnt p1 x1 0 0
 pnt p2 R1 0 R2
 pnt p3 x3 0 0
-pnt p4 R1 0 R2neg
 line ! p3 p2 pc DivR2
 line ! p2 p1 pc DivR2
-line ! p1 p4 pc DivR2
-line ! p4 p3 pc DivR2
-
 seta sec l all
 
 # extrusion
@@ -35,6 +31,11 @@ send all abq
 send fix abq nam
 send load abq nam
 
+# symmetry boundary
+seta nodes n all
+enq nodes sym rec _ _ 0 0.1 a
+send sym abq nam
+
 # model image
 read geo.fbd
-sys mv hcpy_1.png Refs/geo-shell.png
+sys mv hcpy_1.png Refs/geo-shell-sym.png

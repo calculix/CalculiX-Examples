@@ -7,32 +7,65 @@ Tested with CGX 2.10 / CCX 2.9
 + Application of distributed loads
 + Generation of a force-displacement curve
 
+Model-independent files
+
 File                       | Contents    
  :-------------            | :-------------
  [values.fbd](values.fbd)  | CGX script, model parameters
  [geo.fbd](geo.fbd)        | CGX script, geometry plot
- [shell.fbd](shell.fbd)    | CGX script, pre-processing for the shell model    
- [solid.fbd](solid.fbd)    | CGX script, pre-processing for the solid model    
- [shell-modal.fbd](shell-modal.fbd)      |  CGX-script, complete  modal analysis of the shell model (including pre-post)
- [solid-modal.fbd](solid-modal.fbd)      |  CGX-script, complete  modal analysis of the solid model (including pre-post)
  [post-modal.fbd](post-modal.fbd)      |  CGX-script, Animation of mode shapes
- [post-solid-static.fbd](post-solid-static.fbd)      |  CGX-script, post-processing of the solid static simulation
-[shell-modal.inp](shell-modal.inp)  | CCX input, modal analysis, shell model
-  [solid-modal.inp](solid-modal.inp)  | CCX input, modal analysis, solid model
-  [solid-static.inp](solid-static.inp)  | CCX input, static analysis, solid model
   [df.gpl](df.gpl)  | Gnuplot command file for the force-displacement-plot
 
-## Shell Model, Modal Analysis
-
 In order to avoid inconsistent use of the individual scripts, top level script files are provided, which contain the calls to pre-processing, solving and post-processing.
+
+## Shell model, modal analysis
+
+File                       | Contents    
+ :-------------            | :-------------
+ [shell.fbd](shell.fbd)    | CGX script, pre-processing for the shell model     
+ [shell-modal.fbd](shell-modal.fbd)      |  CGX-script, complete  modal analysis of the shell model (including pre-post)
+[shell-modal.inp](shell-modal.inp)  | CCX input, modal analysis, shell model
+
 ```
 > cgx -b shell-modal.fbd
 ```
 <img src="Refs/geo-shell.png" width="400" title="Shell model">
+
 <img src="Refs/shell-modal-1.gif" width="400" title="Mode 1">
+<img src="Refs/shell-modal-2.gif" width="400" title="Mode 2">
+<img src="Refs/shell-modal-3.gif" width="400" title="Mode 3">
+<img src="Refs/shell-modal-4.gif" width="400" title="Mode 4">
+
+## Shell model with symmetry, modal analysis
+
+File                       | Contents    
+ :-------------            | :-------------
+  [shell-sym.fbd](shell-sym.fbd)    | CGX script, pre-processing for the shell model with symmetry     
+ [shell-sym-modal.fbd](shell-sym-modal.fbd)      |  CGX-script, complete  modal analysis of the shell model with symmetry (including pre-post)
+[shell-sym-modal.inp](shell-sym-modal.inp)  | CCX input, modal analysis, shell model with symmetry
+
+```
+> cgx -b shell-sym-modal.fbd
+```
+<img src="Refs/geo-shell-sym.png" width="400" title="Shell model with symmetry">
+
+<img src="Refs/shell-sym-modal-1.gif" width="400" title="Mode 1">
+<img src="Refs/shell-sym-modal-2.gif" width="400" title="Mode 2">
+<img src="Refs/shell-sym-modal-3.gif" width="400" title="Mode 3">
+<img src="Refs/shell-sym-modal-4.gif" width="400" title="Mode 4">
 
 
-## Solid Model, Modal Analysis
+## Solid model
+
+File                       | Contents    
+ :-------------            | :-------------
+ [solid.fbd](solid.fbd)    | CGX script, pre-processing for the solid model    
+  [solid-modal.fbd](solid-modal.fbd)      |  CGX-script, complete  modal analysis of the solid model (including pre-post)
+ [post-solid-static.fbd](post-solid-static.fbd)      |  CGX-script, post-processing of the solid static simulation
+  [solid-modal.inp](solid-modal.inp)  | CCX input, modal analysis, solid model
+  [solid-static.inp](solid-static.inp)  | CCX input, static analysis, solid model
+
+### Solid model, modal analysis
 
 ```
 > cgx -b solid-modal.fbd
@@ -48,7 +81,7 @@ The movies contain one and a quarter cycles. This is because the gif movies are 
 <img src="Refs/solid-modal-3.gif" width="400" title="Mode 3">
 <img src="Refs/solid-modal-4.gif" width="400" title="Mode 4">
 
-## Solid Model, Static Analysis
+### Solid model, static snalysis
 
 In the static analysis we apply a distributed load to the upper end of the tube. The generation of a force-displacement curve is demonstrated.
 
@@ -56,7 +89,7 @@ First, the mesh is generated:
 ```
 > cgx -b solid.fbd
 ```
-### Solution
+#### Solution
 The analysis consists of two steps.
  1. Full load is applied in negative x-direction, just the final results are written to the results files.
  2. The load is increased until it reaches the same value in positive x-direction. The results are written in small intervals for generation of a force-displacement curve
@@ -66,7 +99,7 @@ The analysis consists of two steps.
 ```
 <img src="solid-static.png" width="600" title="Convergence plot">
 
-### Postprocessing:
+#### Postprocessing:
 ```
 > cgx -b post-solid-static.fbd
 ```

@@ -1,0 +1,6 @@
+# modal analysis of the symmetric shell model
+read shell-sym.fbd
+sys ccx shell-sym-modal
+read shell-sym-modal.frd
+valu model shell-sym
+read post-modal.fbd
