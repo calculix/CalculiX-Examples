@@ -3,9 +3,14 @@ Tested with CGX 2.10 / CCX 2.9
 
 + Modal and static analysis
 + Shell and solid model
++ Full and half models (symmetry reduction)
 + Automatic movie generation in the post-processing
 + Application of distributed loads
 + Generation of a force-displacement curve
+
+
+<img src="geometry.png" width="500" title="Geometry and parameters">
+
 
 Model-independent files
 
@@ -18,7 +23,31 @@ File                       | Contents
 
 In order to avoid inconsistent use of the individual scripts, top level script files are provided, which contain the calls to pre-processing, solving and post-processing.
 
-## Shell model, modal analysis
+## Modal analysis results for solid/shell and full/reduced model
+
+The mode frequencies for the first two symmetric mode shapes are compared. All models have the same mesh density and consist of a single layer of C3D8I elements (after shell expansion). For the shell models, the reference surface is the outside. This might lead to slightly increased mass.
+
+Mode               | Solid full | Solid half | Shell full | Shell half|    
+ :------------     | --:   | --:   | --:   | --:
+ In-plane bending  | 394.9 | 393.2 | 353.3 | 368.5
+ Ovalization       | 1192.7| 1202.5 | 964.7 | 974.9
+
+ <img src="Refs/solid-modal-1.gif" width="200" title="Solid full, Mode 1">
+ <img src="Refs/solid-sym-modal-1.gif" width="200" title="Solid reduced, Mode 1">
+ <img src="Refs/shell-modal-1.gif" width="200" title="Shell full, Mode 1">
+ <img src="Refs/shell-sym-modal-1.gif" width="200" title="Shell reduced, Mode 1">
+
+ <img src="Refs/solid-modal-3.gif" width="200" title="Solid full, Mode 3">
+ <img src="Refs/solid-sym-modal-2.gif" width="200" title="Solid reduced, Mode 2">
+ <img src="Refs/shell-modal-3.gif" width="200" title="Shell full, Mode 3">
+ <img src="Refs/shell-sym-modal-2.gif" width="200" title="Shell reduced, Mode 2">
+
+ The animated gifs are created automatically in [post-modal.fbd](post-modal.fbd), wich is called by the top level script for the individual models.
+
+
+ The movies contain one and a quarter cycles. This is because the gif movies are just played once on github and then remain static with the last frame displayed.
+
+## Full shell model, modal analysis
 
 File                       | Contents    
  :-------------            | :-------------
@@ -29,14 +58,14 @@ File                       | Contents
 ```
 > cgx -b shell-modal.fbd
 ```
-<img src="Refs/geo-shell.png" width="400" title="Shell model">
+<img src="Refs/geo-shell.png" width="400" title="Full shell model">
 
 <img src="Refs/shell-modal-1.gif" width="400" title="Mode 1">
 <img src="Refs/shell-modal-2.gif" width="400" title="Mode 2">
 <img src="Refs/shell-modal-3.gif" width="400" title="Mode 3">
 <img src="Refs/shell-modal-4.gif" width="400" title="Mode 4">
 
-## Shell model with symmetry, modal analysis
+## Half shell model, modal analysis
 
 File                       | Contents    
  :-------------            | :-------------
@@ -47,15 +76,14 @@ File                       | Contents
 ```
 > cgx -b shell-sym-modal.fbd
 ```
-<img src="Refs/geo-shell-sym.png" width="400" title="Shell model with symmetry">
+<img src="Refs/geo-shell-sym.png" width="400" title="Half shell model">
 
 <img src="Refs/shell-sym-modal-1.gif" width="400" title="Mode 1">
 <img src="Refs/shell-sym-modal-2.gif" width="400" title="Mode 2">
 <img src="Refs/shell-sym-modal-3.gif" width="400" title="Mode 3">
 <img src="Refs/shell-sym-modal-4.gif" width="400" title="Mode 4">
 
-
-## Solid model
+## Full Solid model
 
 File                       | Contents    
  :-------------            | :-------------
@@ -65,23 +93,21 @@ File                       | Contents
   [solid-modal.inp](solid-modal.inp)  | CCX input, modal analysis, solid model
   [solid-static.inp](solid-static.inp)  | CCX input, static analysis, solid model
 
-### Solid model, modal analysis
+### Full solid model, modal analysis
 
 ```
 > cgx -b solid-modal.fbd
 ```
-<img src="Refs/geo-solid.png" width="400" title="Solid model">
-
-The following animated gifs are created automatically in [post-modal.fbd](post-modal.fbd), wich is called by [solid-modal.fbd](solid-modal.fbd)
-
-The movies contain one and a quarter cycles. This is because the gif movies are just played once on github and then remain static with the last frame displayed.
+<img src="Refs/geo-solid.png" width="400" title="Full solid model">
 
 <img src="Refs/solid-modal-1.gif" width="400" title="Mode 1">
 <img src="Refs/solid-modal-2.gif" width="400" title="Mode 2">
 <img src="Refs/solid-modal-3.gif" width="400" title="Mode 3">
 <img src="Refs/solid-modal-4.gif" width="400" title="Mode 4">
 
-### Solid model, static snalysis
+
+
+### Full solid model, static analysis
 
 In the static analysis we apply a distributed load to the upper end of the tube. The generation of a force-displacement curve is demonstrated.
 
@@ -114,3 +140,21 @@ The force-displacement plot is heavily non-linear because of the severe changes 
 
  <img src="Refs/solid-SE-neg.png" width="400" title="Force applied in negative x-direction">
  <img src="Refs/solid-SE-pos.png" width="400" title="Force applied in positive x-direction">
+
+ ## Half solid model, modal analysis
+
+ File                       | Contents    
+  :-------------            | :-------------
+  [solid-sym.fbd](solid-sym.fbd)    | CGX script, pre-processing for the solid model    
+   [solid-sym-modal.fbd](solid-sym-modal.fbd)      |  CGX-script, complete  modal analysis of the solid model (including pre-post)
+   [solid-sym-modal.inp](solid-modal.inp)  | CCX input, modal analysis, solid model
+
+ ```
+ > cgx -b solid-sym-modal.fbd
+ ```
+ <img src="Refs/geo-solid-sym.png" width="400" title="Half solid model">
+
+ <img src="Refs/solid-sym-modal-1.gif" width="400" title="Mode 1">
+ <img src="Refs/solid-sym-modal-2.gif" width="400" title="Mode 2">
+ <img src="Refs/solid-sym-modal-3.gif" width="400" title="Mode 3">
+ <img src="Refs/solid-sym-modal-4.gif" width="400" title="Mode 4">
