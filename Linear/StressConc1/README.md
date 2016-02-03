@@ -40,6 +40,7 @@ The stress state is evaluated using the worst principal stress (normal stress hy
 The stress concentration is illustrated by path plots.
 
 The first one is defined based on a node set (all nodes at x=0), the second is defined based on a line set.
+In a node set based definition, the points in the path plot directy correspond to mesh nodes. In a line based definition, new target nodes are created depending on the line division and the results are mapped from the source mesh to the target nodes.
 
 <img src="Refs/nodepath.png"  title="Worst principal stress, path specified by node set">
-<img src="Refs/linepath.png"  title="Worst principal stress, path specified by line set">
+<img src="Refs/linepath.png"  title="Worst principal stress, path specified by line set. There is a bug: target nodes without values (outside the structure) should interrupt the curve.">

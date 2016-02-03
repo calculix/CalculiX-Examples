@@ -99,7 +99,7 @@ graph sym length +
 sys convert -rotate 90 graph_0.ps Refs/nodepath.png
 
 # based on line set, required 3d elements
-swep all new tra 0 0 1
+#swep all new tra 0 0 1
 seto path
   line ! D00O p5 99
 setc
