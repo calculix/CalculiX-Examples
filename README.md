@@ -15,7 +15,7 @@ Under Windows, I recommend to install the virtual box provided by Sven Kaßbohm 
 
 These are not relevant for simple educational models but are definitely relevant for serious work.
 
-For editing CGX and CCX input under linux, I recommend [atom](atom.io), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
+For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
 
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
