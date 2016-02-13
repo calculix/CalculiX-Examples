@@ -1,0 +1,13 @@
+read tie.frd
+read tie.inp nom
+
+view disp
+view elem
+
+ds -1 e 4
+plot f all n
+rot y
+rot l 10
+rot u 5
+hcpy png
+sys mv hcpy_1.png Refs/def.png

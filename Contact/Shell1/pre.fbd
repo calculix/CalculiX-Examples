@@ -1,0 +1,79 @@
+# parameters
+valu rc 10
+valu tc 1
+valu hc 20
+valu ls 30
+valu ri 10
+# core
+pnt p0 0 0 0
+seto cl
+  swep all p1 tra rc 0 0 a
+setc
+copy cl cl1 rot z 120
+copy cl cl2 rot z -120
+seta c_bottom se all
+merg p all
+swep c_bottom c_top tra 0 0 hc
+seta core all
+# skin
+valu two 2
+valu ls_half / ls two
+valu neg -1
+valu ls_neg * ls neg
+seto bottom
+  pnt ps1 ls_half ls_half 0
+  swep bottom new tra ls_neg 0 0
+  swep bottom new tra 0 ls_neg 0
+setc
+copy bottom top tra 0 0 hc
+flip bottom
+# edges
+seta bot_edge l L00B L00C L00D L00E
+comp bot_edge do
+seta top_edge l L00F L00G L00H L00I
+comp top_edge do
+# sphere
+seto ind
+  pnt pk0 0 0 0
+  pnt pkx ri 0 0
+  pnt pky 0 ri 0
+  pnt pkz 0 0 ri
+  line lxy pkx pky pk0 8
+  line lyz pky pkz pk0 8
+  line lzx pkz pkx pk0 8
+  surf sk1 lxy lyz lzx
+  copy ind new rot z 90
+  copy ind new rot z 180
+setc
+merg p ind
+move ind rot y 180
+move ind tra 0 0 hc
+move ind tra 0 0 ri
+move ind tra 0 0 1
+move ind tra -5 0 0
+
+
+# meshing
+div all mult 2
+elty all qu8
+mesh all
+send all abq
+send all abq nam
+send c_bottom abq surf
+send c_top abq surf
+send bottom abq surf
+send top abq surf
+seta topneg se top
+send topneg abq surf -
+send ind abq sur
+
+# image
+view elem
+view back
+rot y
+rot l 20
+rot u 30
+seta ! all
+frame
+hcpy png
+sys mv hcpy_1.png Refs/model.png
