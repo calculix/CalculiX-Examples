@@ -22,6 +22,26 @@ File                       | Contents
   [df.gpl](df.gpl)  | Gnuplot command file for the force-displacement-plot
 
 In order to avoid inconsistent use of the individual scripts, top level script files are provided, which contain the calls to pre-processing, solving and post-processing.
+## Reference for the mass properties
+The theoretical mass and cg position are computed to compare with the values obtained by CGX for evaluation of geometric precision in CGX.
+
+[![](Rohrknie-sm-screenshot.png)](http://smath.info/cloud/worksheet/VeTqCZws)
+
+Comparison for the paramters given in [values.fbd](values.fbd) and with C3D20R elements.
+
+Model           | File    | Volume | x of cg    
+ :------------  |:--      | --:    | --:  
+ Reference    |     | 55860   | 41.59
+ Solid full | [solid.fbd](solid.fbd)| 54881 | 41.15
+ Solid full | [solid1.fbd](solid1.fbd) | 55568| 41.48
+ Solid half |  [solid-sym.fbd](solid-sym.fbd) | 27440 | 41.15
+
+ Model           | File    | Area | x of cg    
+  :------------  |:--      | --:    | --:  
+  Reference      |         | 56807  | 41.64
+  Shell full | [shell.fbd](shell.fbd)| 55882 | 41.20
+  Shell half |  [shell-sym.fbd](shell-sym.fbd) | 27941 | 41.28
+
 
 ## Modal analysis results for solid/shell and full/reduced model
 
@@ -29,8 +49,8 @@ The mode frequencies for the first two symmetric mode shapes are compared. All m
 
 Mode               | Solid full | Solid half | Shell full | Shell half|    
  :------------     | --:   | --:   | --:   | --:
- In-plane bending  | 394.9 | 393.2 | 353.3 | 368.5
- Ovalization       | 1192.7| 1202.5 | 964.7 | 974.9
+ In-plane bending  | 337.2 | 337.2 | 353.3 | 368.5
+ Ovalization       | 894.7 | 895.0 | 964.7 | 974.9
 
  <img src="Refs/solid-modal-1.gif" width="200" title="Solid full, Mode 1">
  <img src="Refs/solid-sym-modal-1.gif" width="200" title="Solid reduced, Mode 1">

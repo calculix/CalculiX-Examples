@@ -10,3 +10,5 @@ valu L 80
 valu DivR1 10
 valu DivR2 4
 valu DivL 6
+# this is only relevant for solid models
+valu DivT 2

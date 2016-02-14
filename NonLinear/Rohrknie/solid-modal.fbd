@@ -1,4 +1,4 @@
-# modal analysis of the symmetric solid model
+# modal analysis of the full solid model
 # pre-processing
 read solid.fbd
 # solving

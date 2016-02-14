@@ -32,7 +32,7 @@ merg l all
 merg p all
 
 # meshing
-elty all he8i
+elty all he20r
 mesh all
 send all abq
 send fix abq nam
@@ -45,3 +45,4 @@ send sym abq nam
 
 read geo.fbd
 sys mv hcpy_1.png Refs/geo-solid-sym.png
+volu all

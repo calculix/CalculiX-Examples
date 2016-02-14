@@ -19,12 +19,10 @@ seta sec l all
 # extrusion
 swep sec load tra 0 L 0 DivL
 flip all
-pnt p0 0 0 0
-pnt pz 0 0 1
-swep sec sec1 rot p0 pz -90 DivR1
+swep sec sec1 rot z -90 DivR1
 swep sec1 fix tra Lneg 0 0 DivL
 
-elty all qu4
+elty all qu8
 #div all mult 2
 mesh all
 send all abq
@@ -39,3 +37,4 @@ send sym abq nam
 # model image
 read geo.fbd
 sys mv hcpy_1.png Refs/geo-shell-sym.png
+area all
