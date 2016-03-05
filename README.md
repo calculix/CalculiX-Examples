@@ -96,7 +96,7 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   src="Linear/StressConc1/Refs/D.png"
   width="200"
   title="Stress concentration factor, flat strip with hole, bending load, vector and path plots">
-](Contact/StressConc1)
+](Linear/StressConc1)
 [<img
   src="Contact/Shell1/Refs/def.png"
   width="200"
