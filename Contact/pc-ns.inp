@@ -1,0 +1,29 @@
+*include, input=all.msh
+*include, input=k1.sur
+*include, input=s1.sur
+*MATERIAL, NAME=Aluminium
+*ELASTIC
+70000, 0.34
+*DENSITY
+2.7e-9
+*SHELL SECTION, ELSET=Eall,MATERIAL=Aluminium
+0.1
+*surface interaction, name=Klebung
+*surface behavior, pressure-overclosure=tied
+1.E7
+*friction
+1,1.E7
+*contact pair, interaction=Klebung, type=node to surface, adjust=1
+Sk1,Ss1
+*step,nlgeom
+*static
+*end step
+*STEP,perturbation
+*frequency
+20
+*NODE FILE
+U
+*el file
+S
+*END STEP
+
