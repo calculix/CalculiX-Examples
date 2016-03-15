@@ -1,5 +1,5 @@
 # Wire Bending
-Tested with CGX 2.10/CCX 2.9
+Tested with CGX/CCX 2.10
 
 Click the image to see the animation
 
@@ -20,7 +20,7 @@ Click the image to see the animation
 ## Reference Estimates
 Click the image below to open a life SMath worksheet
 
-[![Screenshot](Wire bending.png)](http://smath.info/cloud/worksheet/zskBVF74)
+[![Screenshot](Wire bending.png)](http://smath.info/cloud/worksheet/34vUp7hs)
 
 ## Preprocessing
 ```
@@ -51,8 +51,8 @@ When comparing to the reference solution take care that the FEA model is just ha
 
 | Quantity       | Reference          | 2xFEA     |
 | :------------- | :-------------     |:---       |
-| Moment in N mm | 600                | 440...780 |
-| Energy in mJ   | 940                | 790       |
+| Moment in N mm | 980                | 800...920 |
+| Energy in mJ   | 1290               | 1040      |
 
 The matching is reasonable, given the crude approach for the reference estimates and the coarse mesh.
 
