@@ -1,5 +1,6 @@
 valu L 100
 valu Ldiv 20
+valu Etyp qu8
 
 pnt ! 0 0 0
 swep all new tra 0 L 0 Ldiv
@@ -11,12 +12,11 @@ comp y0 do
 seta outer l L002 L004
 comp outer do
 
-elty all qu8
+elty all Etyp
 mesh all
 send all abq
 send all abq nam
-#sys sed -i -e:1 -e's/TYPE=\([A-Z0-9]\+\R)/TYPE=\1/' all.msh
-
+# sys sed 
 rot -z
 view elem
 text red: x0, blue: y0, green: outer

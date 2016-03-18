@@ -10,6 +10,18 @@ File                    | Contents
  [pre.fbd](pre.fbd)     | Pre-processing script for CGX     
  [post.fbd](post.fbd)   | Post-processing script for CGX
  [static.inp](static.inp) | CCX input
+ [test.py](test.py) | Python script for automatic re-calculation
+
+## Automatic test run
+Run the analysis for the element types S8R, S8, S4R and S4:
+```
+> ./test.py
+```
+This will pop up the convergence plot and cgx for each run. Close these windows to continue the loop
+
+The script sets the element type in [pre.fbd](pre.fbd) and edits the ccx
+element type in the exported file `all.msh`. Then, the analysis is run
+and the result plots are generated and renamed according to the element type.
 
 ## Preprocessing
 ```

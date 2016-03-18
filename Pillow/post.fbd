@@ -1,15 +1,14 @@
 read static.frd new
-
+# magnitude of displacement
 ds -1 e 4
+# symmetry expansion
 seta base f all
-
 copy all new mir x
 copy all new mir y
 copy all new mir z
-
+# expanded view
 view disp
 view elem
-
 plot f all n
 plus fv base
 rot -z
@@ -18,3 +17,12 @@ rot d 65
 frame
 hcpy png
 sys mv hcpy_1.png expanded.png
+# cut y=0
+rot y
+frame
+zoom 8
+tra l 75
+tra d 10
+plot f base n
+hcpy png
+sys mv hcpy_2.png cuty0.png
