@@ -9,7 +9,7 @@ File                    | Contents
 
 ## dat2txt.py
 
- This script extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point.
+ This scripts extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point.
  ```
 > dat2txt,py <jobname>
  ```  
