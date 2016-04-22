@@ -1,5 +1,5 @@
 # Hertz Contact 2D
-Tested with CGX/CCX 2.9
+Tested with CGX/CCX 2.10
 
 + Plane strain model
 + Linear elasticity
@@ -32,7 +32,7 @@ Two separate parts are generated and meshed with plane strain elements.
 ## Postprocessing
 
 ```
-> cgx -b post.frd
+> cgx -b post.fbd
 ```
 The solution shows the expected feature of Hertz contact with the maximum of the equivalent stress somewhat below the contact surface.
 
