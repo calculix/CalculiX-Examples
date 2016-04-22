@@ -1,26 +1,25 @@
 read Zug.frd
 read Zug.inp nom
 read rad.nam inp
-
+# path definition
 seti cp n Ntop Nsym
 pnt cp cp
 pnt p0 0 0 0
 pnt rad Nrad
-
-
 line l1 p0 cp 40 1.1
 line l2 p0 rad 20
 seto path
  lcmb ! - l1 + l2
 setc
 
-ds -0 e 1
+ds 30 e 1
 rot -z
 plot la all
 plus pa all
 hcpy png
 sys mv hcpy_1.png path0geo.png
-graph path +
+plot fv all
+graph path length +
 sys convert -rotate 90 graph_0.ps path0.png
 
 view disp
@@ -28,5 +27,5 @@ plot la all
 plus pa all
 hcpy png
 sys mv hcpy_2.png pathgeo.png
-graph path +
+graph path length +
 sys convert -rotate 90 graph_1.ps path.png
