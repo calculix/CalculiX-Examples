@@ -19,7 +19,7 @@ The model is axisymmetric and represents a 2 mm piece of the wire with full disp
 | [plots.fbd](plots.fbd) | Post-processing script for CGX (history and path plots) |
 | [expansion.fbd](expansion.fbd) | Post-processing script for CGX (axisymmetric expansion) |
 | [2D.fbd](2D.fbd) | Post-processing script for CGX (2D display) |
-| [Zug.inp](Kasten.inp) | CCX input |
+| [Zug.inp](Zug.inp) | CCX input |
 
 ## Preprocessing
 This example is designed with two alternative ways for parametrization. Both produce equivalent results.
