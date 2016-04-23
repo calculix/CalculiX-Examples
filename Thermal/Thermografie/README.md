@@ -1,10 +1,11 @@
 # Thermographic Testing
-Tested with CGX 2.10 / CCX 2.9
+Tested with CGX/CCX 2.10
 
 + Transient thermal analysis
 + Thermal coupling between independent meshes by `*equation`
 + Heat impulse applied using `*amplitude`
 + Time history plot
++ Path plot (temperature profile)
 
 File                       | Contents    
  :-------------            | :-------------
