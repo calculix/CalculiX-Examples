@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX 2.10/CCX 2.9
+Tested with CGX/CCX 2.10
 
 + Shell assembly with edge to face tied contact
 + Indenter with surface-to surface penalty contact
@@ -11,7 +11,7 @@ Tested with CGX 2.10/CCX 2.9
 | [tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            |
 
 ## Preprocessing
-A minimal sandwich structure is built with two skin sheets and a honeycomb core. #
+A minimal sandwich structure is built with two skin sheets and a honeycomb core.
 The structure is supported at the edges of the bottom skin.
 A roughly spherical indenter loads the upper skin.
 ```
