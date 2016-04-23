@@ -1,0 +1,44 @@
+# solid model (full)
+read values.fbd
+valu neg -1
+valu Tneg * neg T
+valu Lneg * L neg
+# cross section
+pnt pc 0 0 0
+pnt pc1 R1 0 0
+
+seta pc1 p pc1
+copy pc1 pu1 tra R2 0 0
+swep pu1 pu2 rot pc1 y 90 DivR2
+swep pu2 pu3 rot pc1 y 90 DivR2
+swep pu3 pu4 rot pc1 y 90 DivR2
+swep pu4 pu5 rot pc1 y 90 DivR2
+seta peri l all
+swep peri inner rad pc1 y Tneg DivT
+merg l all
+merg p all
+seta sec s all
+#comp sec do
+# extrusion
+swep sec load tra 0 L 0 DivL
+swep sec sec1 rot pc z -45 DivR1
+swep sec1 sec2 rot pc z -45 DivR1
+swep sec2 fix tra Lneg 0 0 DivL
+merg s all
+merg b all
+merg l all
+merg p all
+
+# reserve node 1 and elem 1 for the distributing coupling
+asgn n 2
+asgn e 2
+
+elty all he20r
+mesh all
+send all abq
+send fix abq nam
+send load abq nam
+
+read geo.fbd
+sys mv hcpy_1.png Refs/geo-solid.png
+volu all
