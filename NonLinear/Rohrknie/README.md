@@ -1,5 +1,5 @@
 # Thin-Walled Tube
-Tested with CGX 2.10 / CCX 2.9
+Tested with CGX/CCX 2.10
 
 + Modal and static analysis
 + Shell and solid model
@@ -25,7 +25,7 @@ In order to avoid inconsistent use of the individual scripts, top level script f
 ## Reference for the mass properties
 The theoretical mass and cg position are computed to compare with the values obtained by CGX for evaluation of geometric precision in CGX.
 
-[![](Rohrknie-sm-screenshot.png)](http://smath.info/cloud/worksheet/VeTqCZws)
+[![](Rohrknie-sm-screenshot.png)](http://smath.info/cloud/sheet/znPD3CdNqh)
 
 Comparison for the paramters given in [values.fbd](values.fbd) and with C3D20R elements.
 
@@ -137,12 +137,16 @@ File                       | Contents
 
 ### Full solid model, static analysis
 
-In the static analysis we apply a distributed load to the upper end of the tube. The generation of a force-displacement curve is demonstrated.
+In the static analysis we apply a distributed load to the upper end of the tube, without constraining the cross section shape using the `*distributing coupling` command.
+The nodes of the lower left end are completely constrained.
+
+The generation of a force-displacement curve is demonstrated.
 
 First, the mesh is generated:
 ```
 > cgx -b solid.fbd
 ```
+
 #### Solution
 The analysis consists of two steps.
  1. Full load is applied in negative x-direction, just the final results are written to the results files.
@@ -162,7 +166,7 @@ Steps for generation of the  force-displacement curve:
  2. Creating a single file from the displacement history and the force history using the `join` shell command.
  3. Running Gnuplot with the command file [df.gpl](df.gpl).
 
-The force-displacement plot is heavily non-linear because of the severe changes of the section moment of inertia due to ovalization.
+The force-displacement plot is heavily non-linear because of the severe changes of the section moment of inertia due to ovalization. The displacement range for which convergence of the solver can be obtained depends on the element type and the mesh density. Here we use C3D20R elements.
 
  <img src="Refs/df-solid.png" title="Force-displacement plot">
 
