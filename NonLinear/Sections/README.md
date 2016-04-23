@@ -1,5 +1,5 @@
 # Properties of Cross Sections
-Tested with CGX 2.10 / CCX 2.9
+Tested with CGX/CCX 2.10
 
 + Simply supported beam
 + Parametric section shapes of identical area
