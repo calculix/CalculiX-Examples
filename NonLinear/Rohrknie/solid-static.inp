@@ -19,11 +19,11 @@ Nload, 1
 *solid section, elset=Eall, material=steel
 *time points, name=T1, generate
 0.,1.,0.05
-** Full load in -x direction
+** prescribed displacementin -x direction
 *step,nlgeom
 *static
-*cload
-Nref,1,-50000
+*boundary
+Nref,1,1,-180
 *node file,frequency=100
 U
 *el file
@@ -33,12 +33,12 @@ U
 *node print, nset=Nload, totals=only
 RF
 *end step
-** Full load in x-direction
+** prescribed displacement in x direction
 *step,nlgeom
 *static
 0.05,1,0.000001
-*cload
-Nref,1,50000
+*boundary
+Nref,1,1,35
 *node file, time points=T1
 U
 *el file
