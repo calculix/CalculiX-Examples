@@ -4,9 +4,7 @@ Created by Martin Kraska, Brandenburg University of Applied Sciences
 These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
 Also, there are some helper python scripts.
 
-The examples usually require CalculiX 2.9, some of them might run with the [bConverged](http://bconverged.com/) build for windows with CGX 2.6 and CCX 2.8p2
-
-Some examples demonstrate features of the not yet published CGX 2.10.
+The examples usually require CalculiX 2.10, some of them might run with the [bConverged](http://bconverged.com/) build for windows with CGX 2.6 and CCX 2.8p2
 
 Under Windows, I recommend to install the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX. It has, however, some disadvantages:
 
