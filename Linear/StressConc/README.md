@@ -1,8 +1,8 @@
 # Stress Concentration
-Tested with CGX 2.10 / CCX 2.9
+Tested with CGX/CCX 2.10
 
 + Axisymmetric part under tensile load
-+ Stress gradient
++ Free meshing with biased line divisions
 
 File                           | Contents    
  :-------------                | :-------------
