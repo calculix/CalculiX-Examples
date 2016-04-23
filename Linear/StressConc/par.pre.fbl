@@ -1,10 +1,9 @@
-# <D1=100>
-# <D2=50>
-# <Di=20>
-# <L1=100>
-# <L2=100>
-# <R=5>
-#
+# <D1=100>   Large diameter
+# <D2=50>    Small diameter
+# <Di=20>    Inner diameter
+# <L1=100>   Length of large diameter part
+# <L2=100>   Length of small diameter part
+# <R=5>      Fillet radius
 
 pnt p1 <Di/2.> 0 0
 pnt p2 <D1/2.> 0 0
@@ -30,16 +29,18 @@ line l9 p6 p9 16 1.05
 surf ! l1 l2 l3 l4 l9 l8
 surf ! l9 l5 l6 l7
 
+# tr6u uses the unstructured mesher
 elty all tr6u
 mesh all
 elty all tr6c
 send all abq
 
-# sets
+# constraint
 seta nodes n all
 enq nodes fix rec _ 0 0 1 a
 send fix abq nam
 
+# load
 enq nodes pr rec _ <L1+L2> 0 1 a
 comp pr do
 send pr abq pres -100
