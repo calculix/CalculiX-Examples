@@ -8,7 +8,7 @@ Tested with CGX/CCX 2.10
 
 File                           | Contents    
  :-------------                | :-------------
- [par.pre.fbl](pre.fbl)        | CGX script, pre-processing, parametrized with param.py
+ [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing, parametrized with param.py
  [post.fbl](post.fbl)          | CGX script, post-processing, images and bar chart
  [Biegung.inp](Test.inp)       | CCX input
  [barchart.gpl](barchart.gpl)  | Gnuplot file for the bar chart
