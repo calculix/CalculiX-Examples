@@ -100,3 +100,8 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   width="200"
   title="Shell assembly, rigid intenter, penalty contact">
 ](Contact/Shell1/)
+[<img
+  src="CAD/OnshapeTutorial/Refs/se.png"
+  width="200"
+  title="CAD part, meshed in gmsh">
+](CAD/OnshapeTutorial/)

@@ -1,0 +1,44 @@
+# sys gmsh part.step -clcurv -3 -o gmsh.inp -order 2
+sys gmsh part.geo
+read gmsh.inp
+
+# Support
+comp Surface5 do
+seta fix n Surface5
+# Pressure load
+comp Surface17 do
+seta pres n Surface17
+# remove all surface elements
+seta tozap e all
+setr tozap e +C3D10
+zap tozap
+del se0
+
+send all abq
+send fix abq nam
+comp pres do
+send pres abq pres 1
+
+plot f pres
+plus n fix
+hcpy png
+sys mv hcpy_1.png Refs/sets.png
+
+sys ccx solve
+read solve.frd
+
+rot y
+rot c 30
+rot r 30
+view disp
+scal d 1000
+view elem
+ds -0 e 7
+plot fv all
+hcpy png
+sys mv hcpy_2.png Refs/se.png
+rot y
+rot u 30
+plot f all n
+hcpy png
+sys mv hcpy_3.png Refs/disp.png

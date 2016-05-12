@@ -1,0 +1,19 @@
+*include,input=all.msh
+*include,input=fix.nam
+** symmetry at bottom
+*boundary
+Nfix,1,3
+** material definition
+*material, name=steel
+*elastic
+210000,0.3,0
+*solid section, elset=Eall, material=steel
+*STEP
+*STATIC
+*dload
+*include,input=pres.dlo
+*el file
+S
+*node file
+U
+*end step
