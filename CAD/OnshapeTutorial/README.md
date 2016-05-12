@@ -4,7 +4,7 @@ Tested with CGX/CCX 2.10, Gmsh 2.12
 This demonstrates a possible workflow for a CalculiX analysis of a CAD
 generated part.
 
-* The workflow is controlled using a CGX fbd file.
+* The workflow is fully automated using a CGX fbd file.
 * The geometry is created in Onshape and exported as STEP file.
 * Import and meshing in gmsh, export as .inp file with volume and surface meshes.
   From within gmsh, display the surface numbers and note the required ones for
@@ -80,20 +80,23 @@ or sets of faces of solid elements for
 boundary condition application.
 
 CGX has a mechanism for doing this conversion.
+
 1. Extend the relevant surface element set to include the nodes, e.g.
-   ```
-   comp SurfaceXX do
-   ```
+     ```
+     comp SurfaceXX do
+     ```
+
 1. Remove all Surface elements. The extended sets now contain just the nodes. A generic way to do this is
-```
-seta tozap e all
-setr tozap e +C3D10
-zap tozap
-del se0
-```
+  ```
+    seta tozap e all
+    setr tozap e +C3D10
+    zap tozap
+    del se0
+  ```
+  
 1. Eventually extend the node sets to include the faces of the adjacent volume elements.
     ```
-       comp SurfaceXX do
+     comp SurfaceXX do
     ```
 
 The following image shows the nodes of the support surface and the faces of the pressure
