@@ -66,7 +66,7 @@ The gmsh geo file can be executed separately if you want to play around with the
 ```
 The result of the meshing is the file `gmsh.inp`
 # Application of Boundary Conditions
-After closing the gmsh window, CGX takes over control again andn reads `gmsh.inp`.
+After closing the gmsh window, CGX takes over control again and reads `gmsh.inp`.
 
 You could do that interactively using
 ```
@@ -82,15 +82,15 @@ boundary condition application.
 CGX has a mechanism for doing this conversion.
 1. Extend the relevant surface element set to include the nodes, e.g.
    ```
-      comp SurfaceXX do
+   comp SurfaceXX do
    ```
-1. Remove all Surface elements. The extended sets now contain just the nodes. A generic way to do this is::
-  ```
-      seta tozap e all
-      setr tozap e +C3D10
-      zap tozap
-      del se0
-  ```
+1. Remove all Surface elements. The extended sets now contain just the nodes. A generic way to do this is
+```
+seta tozap e all
+setr tozap e +C3D10
+zap tozap
+del se0
+```
 1. Eventually extend the node sets to include the faces of the adjacent volume elements.
     ```
        comp SurfaceXX do
@@ -105,5 +105,6 @@ Once the sets are defined, there is no particular challenge any more with settin
 # Results
 
 von Mises stress, displaced geometry
+
 <img src="Refs/disp.png" width="400" title="Displacement">
 <img src="Refs/se.png" width="400" title="von Mises stress">
