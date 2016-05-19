@@ -25,8 +25,7 @@ a in mm | Strain energy of the quarter model in Nmm
 
 
 
-[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/Ud72BSPz)
-
+[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/WaL5YSTu)
 
 
 ## Model Description
