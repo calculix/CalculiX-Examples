@@ -1,0 +1,56 @@
+sys gmsh ct.geo
+read gmsh.inp
+
+# Symmetry
+comp Symy do
+comp Symz do
+# force
+comp Load do
+# remove all surface elements
+seta tozap e all
+setr tozap e +C3D10
+zap tozap
+del se0
+
+send all abq
+send Symy abq nam
+send Symz abq nam
+comp Load do
+send Load abq pres 1
+# point at origin for x constraint
+enq all origin rec 0 0 0 0.1
+send origin abq nam
+
+# plot of the sets
+rot -z
+rot l 30
+rot d 30
+plot f Load
+plus n Symy r
+plus n Symz b
+plus n origin g
+hcpy png
+sys mv hcpy_1.png Refs/sets.png
+# solver run
+sys ccx solve
+read solve.frd
+# symmetry expansion
+seta orig e all
+copy all new mir y
+copy all new mir z
+# plot of the equivalent stress
+view disp
+scal d 2000
+ds -0 e 7
+rot -z
+rot r 20
+rot u 5
+plot ev orig
+plus e new n
+min 0 f
+max 10 f
+frame
+hcpy png
+sys mv hcpy_2.png Refs/se.png
+# display of the strain energy
+sys more solve.dat

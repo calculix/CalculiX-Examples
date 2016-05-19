@@ -1,0 +1,25 @@
+*include,input=all.msh
+*include,input=Symy.nam
+*include,input=Symz.nam
+*include,input=origin.nam
+** symmetry at bottom
+*boundary
+NSymy,2
+NSymz,3
+Norigin,1
+** material definition
+*material, name=steel
+*elastic
+210000,0.3,0
+*solid section, elset=Eall, material=steel
+*STEP
+*STATIC
+*dload
+*include,input=Load.dlo
+*el file
+S
+*node file
+U
+*el print, elset=Eall, totals=only
+ELSE
+*end step
