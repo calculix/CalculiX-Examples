@@ -105,3 +105,8 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   width="200"
   title="CAD part, meshed in gmsh">
 ](CAD/OnshapeTutorial/)
+[<img
+  src="Linear/Crack1/Refs/se.png"
+  width="200"
+  title="CT specimen, determination of the energy release rate">
+](Linear/Crack1/)
