@@ -19,9 +19,9 @@ File                    | Contents
 The energy release rate is determined from two simulation runs with the present model. This is used to determine the shape factor Y, which is compared to an empirical estimate from the standard.
 
 a in mm | Strain energy of the quarter model in Nmm
-:--- | :---
-20.5 | 0.05009
-21.0 | 0.05306
+:---    | :---
+20.5    | 0.05009
+21.0    | 0.05306
 
 
 
