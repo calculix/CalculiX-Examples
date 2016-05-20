@@ -11,6 +11,9 @@ File                    | Contents
  [ct.fbd](ct.fbd)       | Full analysis control script for CGX     
  [ct.geo](ct.geo)       | Parametric geometry and meshing script for Gmsh
  [solve.inp](solve.inp) | CCX input
+ [path.fbd](path.fbd)   | CGX script for the path plot
+ [path.plt](path.plt)   | Gnuplot script for the path plot
+
 
 <img src="Refs/se.png" width="400" title="Equivalent stress">
 
@@ -25,7 +28,7 @@ a in mm | Strain energy of the quarter model in Nmm
 
 
 
-[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/WaL5YSTu)
+[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/q5Gqb2bx)
 
 
 ## Model Description
@@ -87,3 +90,16 @@ colors being restricted to the vicinity of the crack tip.
 <img src="Refs/se.png" width="400" title="Expanded model, equivalent stress">
 
 Once the analysis is finished, the contents of `solve.dat` is displayed for convenient access.
+
+### Path Plot
+Run
+```
+> cgx -b path.fbd
+```
+to create a path plot of the normal stress (normal to the crack plane) and of the
+crack opening (displacement in load direction) along the centerline of the specimen (x-axis).
+The path plots are created separately in CGX and then combined using a gnuplot script.
+
+<img src="path.png" width="400" title="Stress and displacement along the centerline (x-axis)">
+
+The negative stress values are artifacts due to the extrapolation from the integration points to the nodes.

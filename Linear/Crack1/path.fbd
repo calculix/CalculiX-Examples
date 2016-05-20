@@ -1,0 +1,9 @@
+read solve.frd
+# path plot based on node set
+seta nodes n all
+enq nodes sym rec _ 0 0 0.01
+ds -0 e 2
+graph sym length +
+ds 1 e 2
+graph sym length +
+sys gnuplot path.plt
