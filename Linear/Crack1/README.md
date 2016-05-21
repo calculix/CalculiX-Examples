@@ -102,4 +102,4 @@ The path plots are created separately in CGX and then combined using a gnuplot s
 
 <img src="path.png" width="400" title="Stress and displacement along the centerline (x-axis)">
 
-The negative stress values are artifacts due to the extrapolation from the integration points to the nodes.
+The negative stress values to the right of the crack tip are artifacts due to the extrapolation from the integration points to the nodes.
