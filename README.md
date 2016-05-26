@@ -110,3 +110,8 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   width="200"
   title="CT specimen, determination of the energy release rate">
 ](Linear/Crack1/)
+[<img
+  src="Contact/Leafspring/Refs/Sxx.png"
+  width="200"
+  title="Parametric model of a leaf spring. Penalty contact">
+](Contact/Leafspring/)
