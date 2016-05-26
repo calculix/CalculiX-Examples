@@ -1,0 +1,98 @@
+# <L=500>  Length
+# <W=20> Width
+# <T=5> thickness
+# <num=5> number of leafs
+valu L 300
+valu W 20
+valu T 5
+valu num 6
+# naming scheme
+# leaf1...leafn
+# top1...topn
+# bot2...botn
+# basic brick
+valu L0 / L num
+pnt p0 0 0 0
+swep all new tra 0 W 0
+swep all new tra 0 0 T
+swep all new tra L0 0 0
+elty all he20
+div all auto W
+mesh all
+seta leaf0 b all
+setr leaf0 e all
+
+#other leafs
+valu count 1
+valu one 1
+valu leafname leaf
+valu topname top
+valu botname bot
+valu ext .sur
+valu pre S
+# init surface-file
+sys echo **surfaces include > sur.inc
+sys echo **contact pairs > pairs.inc
+while count < num
+  # counter
+  valu leafi & leafname count
+  valu topi & topname count
+  valu boti & botname count
+  # leafi
+  # offset in z
+  valu offset * T count
+  valu count + count one
+  valu count int count
+  # extract top surface of upper leaf
+  seta nodes n all
+  enq nodes topi rec _ _ offset 0.1
+  # create new leaf
+  copy leaf0 leafi tra 0 0 offset
+  move leafi scal count 1 1
+  seta nl n leafi
+  zap nl
+  elty leafi he20
+  div leafi auto W
+  mesh leafi
+
+  # bottom surface of new leaf
+  del se nodes
+  seta nodes n leafi
+  enq nodes boti rec _ _ offset 0.1
+  comp boti do
+  # write surface definitions
+  send boti abq sur
+  send topi abq sur
+  valu topfile & topi ext
+  valu botfile & boti ext
+  sys echo *include, input= topfile >> sur.inc
+  sys echo *include, input= botfile >> sur.inc
+  valu tops & pre topi
+  valu bots & pre boti
+  sys echo tops , bots >> pairs.inc
+endwhile
+
+send all abq
+seta ! all
+# Symmetry
+seta nodes n all
+enq nodes ysym rec _ 0 _ 0.1
+enq nodes xsym rec 0 _ _ 0.1
+send ysym abq spc 2
+send xsym abq spc 1
+# Load
+enq nodes load rec 0 _ _ 0.1
+send load abq spc 3 10
+# support
+enq nodes support rec L _ offset 0.1
+send support abq nam
+# image
+
+frame
+rot y
+rot l 70
+rot u 10
+zoom 3
+seta ! all
+hcpy png
+sys mv hcpy_1.png Refs/geo.png

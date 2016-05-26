@@ -1,0 +1,18 @@
+read solve.frd new
+view disp
+ds -1 e 1
+view elem
+copy all base tra 0 0 0
+copy all new mir x
+copy all new mir y
+plot ev base
+plus e new n
+frame
+rot y
+rot r 95
+rot u 2
+zoom 10
+plot ev base
+plus e new n
+hcpy png
+sys mv hcpy_1.png Refs/Sxx.png

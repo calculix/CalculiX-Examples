@@ -1,0 +1,44 @@
+*include, input=all.msh
+*include, input=support.nam
+** surface definitions
+*include, input=sur.inc
+*boundary
+*include, input=ysym_2.bou
+*include, input=xsym_1.bou
+Nsupport,3
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+** contact definitions
+*surface interaction, name=leaf
+***surface behavior, pressure-overclosure=linear
+**1e6
+**surface behavior, pressure-overclosure=exponential
+**0.02,100
+*surface behavior, pressure-overclosure=linear
+1000000,0.001,1
+**surface behavior, pressure-overclosure=tied
+**100000
+**friction
+**1,100
+*contact pair, interaction=leaf, type=node to surface
+*include, input=pairs.inc
+*step,nlgeom, inc=500
+*controls, parameters=field
+0.05,0.1,0.1,0.1,0.1
+*static
+0.0001,1
+*boundary
+*include, input=load_310.bou
+*node file,
+U
+*el file, frequency=50
+S
+*contact file
+CDIS
+*node print, nset=Nsupport,totals=only
+RF
+*end step
