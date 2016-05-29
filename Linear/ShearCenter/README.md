@@ -12,6 +12,7 @@ File                                 | Contents
  [II.inp](II.inp)                    | CCX input
 
 The model shows four beams (beam 1 and 2 being the components of beam 3 and 4)
+
 1. I beam, with a cut in the middle of the web (giving two independent T beams), each loaded with F = 100 N
 2. I beam, loaded with F = 200 N. This shows the stiffening by shear transfer trough the web
 3. Double I beam (with two webs, one of them with a cut), loaded symmetrically with F = 400 N. The left side corresponds
