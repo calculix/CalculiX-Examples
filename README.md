@@ -115,3 +115,8 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   width="200"
   title="Parametric model of a leaf spring. Penalty contact">
 ](Contact/Leafspring/)
+[<img
+  src="Linear/ShearCenter/Refs/Sxz.png"
+  width="200"
+  title="Thin-walled profiles to illustrate the shear center">
+](Linear/ShearCenter/)

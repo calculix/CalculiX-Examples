@@ -1,0 +1,28 @@
+*include, input=all.msh
+*include, input=x0.nam
+** constraints
+*boundary
+Nx0,1,3
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*shell section, elset=Eall, material=steel
+2
+** material assignment to bodies
+*step
+*static
+*cload
+*include, input=load1.frc
+*include, input=load2.frc
+*include, input=load3.frc
+*include, input=load4a.frc
+*include, input=load4bu.frc
+*include, input=load4bl.frc
+****dload
+**Eall,GRAV,9810,0,0,1
+*node file
+U
+*el file
+S,PE
+*end step

@@ -1,0 +1,83 @@
+# <h=20>
+# <b=10>
+# <length=200>
+# <dist = 40>
+
+# separate T beams
+pnt pc 0 0 0
+seta pc all
+swep pc new tra 0 <b> 0
+swep pc new tra 0 <-b> 0
+swep pc new tra 0 0 <h>
+copy all T1u mir z a
+move T1u tra 0 0 <2*h>
+swep all xL tra <length> 0 0 40
+seta toflip s A001 A004 A006
+flip toflip
+elty all qu8
+mesh all
+seta T1 all
+
+# connected T beams
+copy T1 T2 tra 0 <dist> 0 a
+seta nodes n all
+enq nodes tomerg rec _ <dist> <h> 0.1
+merg n tomerg
+
+
+# II beam 1
+copy T1 T3 tra 0 <2*dist> 0 a
+copy T2 T3a tra 0 <dist+2*b> 0 a
+seta nodes n all
+enq nodes tomerg rec _ <2*dist+b> _ 0.1
+merg n tomerg
+seta T3 se T3a
+
+
+# II beam 2
+copy T3 T4 tra 0 <dist+2*b> 0 a
+
+
+seta nodes n all
+enq nodes x0 rec 0 _ _
+send x0 abq nam
+send all abq
+
+# load application
+seta nodes n all
+enq nodes load1 rec <length> 0 0
+enq nodes load1 rec <length> 0 <2*h> 0.1 a
+send load1 abq force 0 0 -100
+# load application
+seta nodes n all
+enq nodes load2 rec <length> <dist> 0
+enq nodes load2 rec <length> <dist> <2*h> 0.1 a
+send load2 abq force 0 0 -100
+# load application
+seta nodes n all
+enq nodes load3 rec <length> <2*dist> 0 0.1
+enq nodes load3 rec <length> <2*dist> <2*h> 0.1 a
+enq nodes load3 rec <length> <2*dist+2*b> 0 0.1 a
+enq nodes load3 rec <length> <2*dist+2*b> <2*h> 0.1 a
+send load3 abq force 0 0 -100
+# load application
+seta nodes n all
+enq nodes load4a rec <length> <3*dist+2*b> 0 0.1
+enq nodes load4a rec <length> <3*dist+2*b> <2*h> 0.1 a
+enq nodes load4bl rec <length> <3*dist+4*b> 0 0.1 a
+enq nodes load4bu rec <length> <3*dist+4*b> <2*h> 0.1 a
+send load4a abq force 0 0 0
+send load4bl abq force 0 -100 -200
+send load4bu abq force 0 100 -200
+
+
+rot -y
+rot l 110
+rot u 20
+seta ! all
+frame
+view elem
+plus n x0 r
+plus n xL b
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
