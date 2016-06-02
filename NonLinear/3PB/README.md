@@ -9,7 +9,8 @@ Tested with CGX/CCX 2.10
 File                       | Contents    
  :-------------            | :-------------
  [par.pre.fbl](par.pre.fbl)        | CGX script, pre-processing, parametrized with `param.py`
- [post.fbl](post.fbl)      | CGX script, post-processing
+ [post.fbl](post.fbl)      | CGX script, post-processing, plots and force-displacement curve
+ [cpost.fbl](cpost.fbl)      | CGX script, post-processing, movie
  [Biegung.inp](Biegung.inp) | CCX input
  [df.gpl](df.gpl) | Gnuplot control file for the force-displacement plot
 
