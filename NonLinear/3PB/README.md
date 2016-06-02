@@ -1,4 +1,4 @@
-# Three-point bending test pf a hollow profile
+# Three-point bending test of a hollow profile
 Tested with CGX/CCX 2.10
 
 + Non-linear static analysis
