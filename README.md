@@ -119,9 +119,9 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   src="Linear/ShearCenter/Refs/Sxz.png"
   width="200"
   title="Thin-walled profiles to illustrate the shear center">
-](NonLinear/3PB/)
+](Contact/Leafspring/)
 [<img
-  src="Linear/ShearCenter/Refs/PEexpanded_yx.png"
+  src="NonLinear/3PB/Refs/PEexpanded_yx.png"
   width="200"
   title="Three-point bending of a hollow profile, elastic-plastic">
 ](NonLinear/3PB/)
