@@ -1,0 +1,113 @@
+# <th=4>
+# <wi=200>
+# <he=50>
+# <le=250>
+# <l2=40>
+# <lr=wi+2*th> lenthe of the indenter
+# <ro=20> radius of the intenter
+# <ra=6>
+# <cs=10> width of contact region
+# part
+pnt py 0 <wi/2> 0
+swep all new tra 0 <-th> 0 2
+swep all new1 tra 0 0 <he/2-ra> 6
+pnt pr 0 <wi/2-ra> <he/2-ra>
+swep new1 new2 rot pr x 90 6
+swep new2 new3 tra 0 <-wi/2+ra> 0 10
+seta bl l L00A L009
+bia bl 5
+copy all new mir z
+swep all new4 tra <cs> 0 0 4
+swep new4 new5 tra <le-2*cs> 0 0 20
+swep new5 new6 tra <2*cs> 0 0 4
+swep new6 new7 tra <l2-cs> 0 0 4
+seta part1 se all
+
+# center indenter
+seto part2
+pnt p1 0 0 <he/2>
+pnt p2 <ro> 0 <he/2+ro>
+pnt pc 0 0 <he/2+ro>
+line l12 p1 p2 pc 6
+line lc1 pc p1
+line l2c p2 pc
+surf s1 l12 l2c lc1
+swep part2 new tra 0 <lr/2> 0
+copy part2 ind1 rot pc y -90
+setc
+# support part
+seto part3
+copy part2 sup1 tra 0 0 0
+copy part3 sup2 mir x
+move part3 tra <le> 0 <-he-2*ro>
+setc
+# meshing
+#div part1 auto
+elty all he8i
+mesh all
+merg n part1
+merg n part2
+merg n part3
+# boundary conditions
+seta nodes n all
+enq nodes ysym rec _ 0 _ 0.1
+enq nodes xsym rec 0 _ _ 0.1
+# enq nodes load rec 0 _ <he/2> 0.1
+# enq nodes support rec <le> _ <-he/2>
+# enq nodes tmp rec 0 _ 0 15
+# enq tmp side rec 0 _ _ 1
+seta npart2 n part2
+enq npart2 load rec _ 0 _ 0.1
+seta npart3 n part3
+enq npart3 support rec _ 0 _ 0.1
+send all abq
+send all abq nam
+# contact surfacess
+seta c1a s A00L A00I
+comp c1a do
+comp c1a do
+send c1a abq sur
+seta c1s s A034
+comp c1s do
+comp c1s do
+send c1s abq sur
+seta c2a s A02B A028
+comp c2a do
+comp c2a do
+send c2a abq sur
+seta c2s s A03J A03T
+comp c2s do
+comp c2s do
+send c2s abq sur
+#seta ! all
+view elem
+seta ! all
+
+view elem
+rot -x
+rot c 90
+rot r 30
+rot u 30
+frame
+zoom 1.5
+text Parts
+seta ! all
+hcpy png
+sys mv hcpy_1.png Refs/parts.png
+
+text Node groups
+plot n ysym r
+plus n xsym r
+plus n load b
+plus n support k
+hcpy png
+sys mv hcpy_2.png Refs/groups.png
+
+view back
+text Contact pairs
+plot f c1a
+plus f c1s n
+plus f c2a
+plus f c2s n
+hcpy png
+sys mv hcpy_3.png Refs/pairs.png

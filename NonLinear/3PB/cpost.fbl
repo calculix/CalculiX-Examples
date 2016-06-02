@@ -1,0 +1,14 @@
+read Biegung.frd
+
+view disp
+view elem
+rot x
+rot c 90
+rot l 10
+zoom 4
+plot f all n
+max 0.04
+min 0
+anim real on
+movi frames auto
+ds 1 ah

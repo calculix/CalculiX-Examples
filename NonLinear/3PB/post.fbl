@@ -1,0 +1,50 @@
+read Biegung.frd
+read part1.nam inp
+comp Npart1 do
+# todo: parametrize the theoretical solution
+sys ../../Scripts/dat2txt.py Biegung
+sys gnuplot df.gpl
+
+view disp
+view elem
+
+rot y
+frame
+
+rot l 70
+rot u 10
+zoom 1.5
+# plastic strain
+ds -0 e 1
+plot fv Npart1
+min 0 f
+max 0.04 f
+text Plastic strain
+hcpy png
+sys mv hcpy_1.png Refs/PE.png
+view elem off
+copy all new mir x
+copy new new1 mir y
+plot fv Npart1
+plus e new n
+plus e new1 n
+rot y
+rot r 80
+rot u 10
+frame
+zoom 2
+max 0.04
+min 0
+hcpy png
+sys mv hcpy_2.png Refs/PEexpanded.png
+rot y
+frame
+hcpy png
+sys mv hcpy_3.png Refs/PEexpanded_y.png
+frame
+zoom 4
+rot y
+rot r 20
+rot u 10
+hcpy png
+sys mv hcpy_4.png Refs/PEexpanded_yx.png

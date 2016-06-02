@@ -1,0 +1,52 @@
+*include, input=all.msh
+*include, input=xsym.nam
+*include, input=ysym.nam
+*include, input=load.nam
+*include, input=support.nam
+*include, input=part1.nam
+*include, input=part2.nam
+*include, input=part3.nam
+*boundary
+Nxsym,1
+Nysym,2
+Nsupport,3
+**surface definitions
+*include, input=c1a.sur
+*include, input=c1s.sur
+*include, input=c2a.sur
+*include, input=c2s.sur
+*material, name=alu
+*elastic
+72000,0.3
+*plastic
+160,0
+215,0.04
+500,0.3
+*material, name=steel
+*elastic
+210000,0.3
+** material assignment to bodies
+*solid section, elset=Epart1, material=alu
+*solid section, elset=Epart2, material=steel
+*solid section, elset=Epart3, material=steel
+** contact definitions
+*surface interaction, name=tool
+*surface behavior, pressure-overclosure=linear
+100000,1,1
+***friction
+**0.1,1e7
+*contact pair, interaction=tool, type=surface to surface
+Sc1a,Sc1s
+Sc2a,Sc2s
+*step,nlgeom
+*static
+0.01,1,0.00001,0.02
+*boundary
+Nload,3,3,-20
+*node file
+U
+*el file
+S,PE
+*node print, nset=Nload, totals=only
+RF
+*end step
