@@ -42,6 +42,7 @@ The first column contains the time values and all available data for that item a
 ```
 Examples:
 * [Drahtbiegen/Biegung/](../Drahtbiegen/Biegung/)
+* [NonLinear/3PB/](../NonLinear/3PB/)
 
 ## monitor.py
 
@@ -59,6 +60,7 @@ Examples:
 * [Drahtbiegen/Biegung/](../Drahtbiegen/Biegung)
 * [Pillow/](../Pillow/)
 * [Kasten/](../Kasten/)
+* [NonLinear/3PB/](../NonLinear/3PB/)
 
 ## param.py
 
@@ -126,3 +128,5 @@ Disadvantages:
 Examples:
 * [Drahtbiegen/Zug/](../Drahtbiegen/Zug/)
 * [Thermal/Thermal distortion/](../Thermal/Thermal distortion/)
+* [Linear/StressConc1/](../Linear/StressConc1/)
+* [NonLinear/3PB/](../NonLinear/3PB/)
