@@ -1,0 +1,14 @@
+*include, input=all.msh
+*MATERIAL, NAME=Aluminium
+*ELASTIC
+70000, 0.34
+*DENSITY
+2.7e-9
+*SOLID SECTION, ELSET=Eall,MATERIAL=Aluminium
+1
+*STEP
+*frequency
+12
+*NODE FILE
+U
+*END STEP

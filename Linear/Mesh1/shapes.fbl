@@ -1,0 +1,26 @@
+valu counter 0
+valu num 12
+valu incr 1
+valu ext .gif
+valu topre Refs/shape_
+
+read modal.frd new
+rot -z
+rot d 60
+rot l 30
+scal d 2
+anim model
+
+while counter < num
+  valu counter + counter incr
+  valu counter int counter
+  valu from & hcpre counter
+  valu from & from ext
+  valu to & topre counter
+  valu to & to ext
+  # make sure that the frequency is correctly displayed
+  ds counter e 4
+  movi frames 11
+  ds counter a
+  sys mv movie.gif to
+endwhile

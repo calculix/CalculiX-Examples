@@ -1,0 +1,37 @@
+valu ri 40
+valu dr 2
+valu t1 2
+valu t2 3
+
+pnt ! 0 0 0
+seta center p all
+swep center px tra ri 0 0 10
+swep center py tra 0 ri 0 10
+line ! D002 D003 D001 14
+surf ! L001 L002 L003
+swep all new tra 0 0 t1 1
+
+seta sr s A005
+swep sr new rad z 2 1
+
+seta sz s A008
+swep sz new tra 0 0 t2 1
+
+copy all new mir x
+copy all new mir y
+merg p all 0.001
+merg l all 0.001
+merg s all 0.001
+
+elty all he8i
+mesh all
+send all abq
+
+view elem
+rot -z
+rot d 60
+frame
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+
+

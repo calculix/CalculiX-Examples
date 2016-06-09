@@ -125,3 +125,8 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   width="200"
   title="Three-point bending of a hollow profile, elastic-plastic">
 ](NonLinear/3PB/)
+[<img
+  src="Linear/Mesh1/Refs/mesh.png"
+  width="200"
+  title="Modal analysis of a plate with reinforced rim">
+](Linear/Mesh1/)
