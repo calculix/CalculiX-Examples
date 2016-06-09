@@ -1,17 +1,17 @@
 #!/usr/bin/python
-""" 
-This script plots data from ccx dat-files
+"""
+This script extracts data from ccx dat-files
 """
 import sys
 import pylab
 import re
 
-data={} 
+data={}
 pH = re.compile(' (.+) for set\\s(\\S+) and time  (.+)')
 skip = 0 # if empty lines are to be skipped
 body = 0 # if data lines are expected
 
-print sys.argv[1]   
+print sys.argv[1]
 job = sys.argv[1]
 f = open(job+".dat","r")
 
@@ -34,21 +34,12 @@ for line in f:
         data[res].write("\n"+str(time)+" ")
         skip = 1
         body = 1
-    else: 
+    else:
         if len(line.split())==0:
             body = 0
             #data[resname].write("\n")
         elif body:
             data[res].write(line+" ")
-            
+
 for name in data.keys():
     data[name].close()
- 
-		
-		
- 				
-
-				
-
-		 
-
