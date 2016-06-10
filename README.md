@@ -4,16 +4,16 @@ Created by Martin Kraska, Brandenburg University of Applied Sciences
 These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
 Also, there are some helper python scripts.
 
-The examples usually require CalculiX 2.10, some of them might run with the [bConverged](http://bconverged.com/) build for windows with CGX 2.6 and CCX 2.8p2
-
-Under Windows, I recommend to install the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX. It has, however, some disadvantages:
+All examples are developed and tested with CalculiX 2.10 in the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX. It has, however, some disadvantages:
 
 * Hardware Open GL does not work
 * Multithreading does not work.
 
 These are not relevant for simple educational models but are definitely relevant for serious work.
 
-For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
+For editing CGX, CCX  or gmsh input under linux, I recommend [atom](https://atom.io/), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
+
+Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting. Some examples may require adjustments of the system calls (like echo, mv and other commands)
 
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
@@ -126,7 +126,7 @@ For editing CGX and CCX input under linux, I recommend [atom](https://atom.io/),
   title="Three-point bending of a hollow profile, elastic-plastic">
 ](NonLinear/3PB/)
 [<img
-  src="Linear/Mesh1/Refs/mesh.png"
+  src="Linear/Mesh1/Refs/shape_8.gif"
   width="200"
   title="Modal analysis of a plate with reinforced rim">
 ](Linear/Mesh1/)
