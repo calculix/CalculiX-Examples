@@ -1,0 +1,34 @@
+*include, input=all.msh
+*include, input=hist.nam
+** heat sink with T=0
+*boundary
+*include, input=fix_123t.bou
+** material definition
+*material, name=steel
+*elastic
+210000,0.333333333,0
+*density
+7.85e-9
+*expansion
+12e-6
+*conductivity
+50.,0
+*specific heat
+5e8,0
+*solid section, elset=Eall, material=steel
+** initial temperature
+*initial conditions, type=temperature
+Nall,0
+*step
+*COUPLED TEMPERATURE-DISPLACEMENT, direct
+0.01,0.5
+*amplitude, name=excite
+0,0, 0.02,0, 0.04,1, 0.24,1
+0.26,0
+*dflux,amplitude=excite
+*include, input=excite.dfl
+*node file
+NT,U
+*el file
+S
+*end step

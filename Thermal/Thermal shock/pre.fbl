@@ -1,0 +1,41 @@
+
+# dependent variables
+valu th 2
+valu wi 20
+valu le 100
+
+# Part th x wi x le et
+pnt p1 0 0 0
+swep all new tra 0 0 le 40
+bia L001 4
+swep all new tra th 0 0 4
+swep all new tra 0 wi 0 8
+
+# meshing
+elty all he8i
+mesh all
+send all abq
+
+# distributed flux (excitation)
+seta nodes n all
+enq nodes excite rec 0 _ _ 0.1
+comp excite do
+send excite abq dflux 50
+# temperature constraint
+enq nodes fix rec _ _ 0 0.1
+send fix abq spc 123t
+# node for displacement history plot
+enq nodes hist rec 0 wi le 0.01
+send hist abq nam
+
+rot x
+frame
+rot c 40
+rot d 60
+view elem
+zoom 1.3
+plot f excite
+plus n fix
+plus na hist b
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png

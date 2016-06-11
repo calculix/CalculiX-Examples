@@ -130,3 +130,8 @@ Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It ha
   width="200"
   title="Modal analysis of a plate with reinforced rim">
 ](Linear/Mesh1/)
+[<img
+  src="Thermal/Thermal shock/Refs/end_of_excitation.png"
+  width="200"
+  title="Deflection due to non-homogeneous thermal strain">
+](Thermal/Thermal shock/)
