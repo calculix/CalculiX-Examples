@@ -1,8 +1,10 @@
 *include, input=all.msh
 *include, input=hist.nam
-** heat sink with T=0
+*include, input=path.nam
 *boundary
-*include, input=fix_123t.bou
+*include, input=ysym_2.bou
+*include, input=zsym_3.bou
+*include, input=x0_1.bou
 ** material definition
 *material, name=steel
 *elastic

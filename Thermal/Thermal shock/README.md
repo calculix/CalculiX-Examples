@@ -2,8 +2,9 @@
 Tested with CGX/CCX 2.10
 
 + Transient coupled thermo-mechanical analysis
-+ Stress due to non-homogeneous temperature
-+ Time history plot
++ Bending of a plate due to one-sided heating
++ Time history excitation and deflection plot
++ Cross thickness temperature and stress plot
 
 File                       | Contents    
  :-------------            | :-------------
@@ -12,34 +13,35 @@ File                       | Contents
  [post.fbl](post.fbl)      | CGX script, post-processing, images and plots
  [anim.fbl](anim.fbl)      | CGX script, movie
  [history.gnu](history.gnu)| Gnuplot script for the time history plot
+ [profile.gnu](profile.gnu)| Gnuplot script for the profile plot
 
-The model represents a cantilever plate. The upper face is exposed to a heat
-impulse (excitation), defined by a time-dependent heat flux density.
+The model represents a rectangular plate, which is supported in the center and exposed to a transient heat flux (excitation) at the upper side.
 
-A cross-thickness temperature gradient develops and remains for the duration of
-the excitation time.
+A cross-thickness temperature and stress gradient develops and remains for the duration of
+the excitation time, leading to transient bending of the plate.
 
-Corresponding to the temperature gradient, a strain gradient develops. which leads to
-a curvature (bending) of the plate.
+<img src="Refs/profile.png" width="400" title="Temperature and stress profile at the center of the plate">
+<img src="Refs/hist.png" width="400" title="Time history plot of the excitation and the tip deflection">
 
 <img src="Refs/start.png" width="260" title="Deflection and temperature profile, initial state">
 <img src="Refs/end_of_excitation.png" width="260" title="Deflection and temperature profile at the end of the excitation">
 <img src="Refs/end.png" width="260" title="Deflection and temperature profile at the end of the simulation">
-
-<img src="Refs/hist.png" title="Time history plot of the excitation and the tip deflection">
 
 
 ## Pre-Processing
 ```
 > cgx -b pre.fbl
 ```
-The geometry consists of a single brick with a structured hex mesh (C3D8I elements).
+The simulation domain is restricted to one quarter of the plate due to symmetry. It is meshed with 6 layers of C3D20R elements with cross thickness bias to capture the high gradients at the excitation side.
 The element size is biased (smaller at the support) because of the higher
 longitudinal temperature gradients.
 
-A set with a single node at the tip is defined for history plot generation.
+A set with a single node at the vertex of the plate is defined for history plot generation.
 
-<img src="Refs/mesh.png" width="400" title="Excitation surface (yellow), support and heat sink (red), history plot node (blue)">
+A node set marking a cross section path for plotting temperature and stress profiles is also defined.
+
+<img src="Refs/mesh.png" width="400" title="Excitation surface (yellow), symmetry (red), history plot node (blue), profile path (magenta)">
+<img src="Refs/meshzoom.gif" width="400" title="Mesh with cross thickness bias">
 
 ## Solving
 
@@ -63,12 +65,9 @@ Create a time history animation of the deformed shape colored by the temperature
 <img src="movie.gif" width="400" title="Animation of the temperature history">
 
 ```
-> cgx -b plots.fbl
+> cgx -b post.fbl
 ```
-creates
- 1. a time history plot of the deflection of the plate tip
- 2. a time history plot of the excitation function
- 3. a custom plot with both curves
+creates the images used in the introduction above:
+ 1. a time history plot of the excitation intensity and the deflection of the plate tip
+ 2. a cross section temperature and stress profile plot
  4. Images of initial and final state and of the state at the end of the excitation.
-
-Images from 3. and 4. are found at the top of this page.

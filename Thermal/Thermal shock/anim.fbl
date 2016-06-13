@@ -1,13 +1,19 @@
 read solve.frd new
-rot x
+rot z
 frame
-rot c 40
-rot d 60
+rot c 90
+rot r 5
+rot u 3
 view elem
-zoom 1.3
+zoom 3
+tra u 10
+tra l 10
 # animation of the deformed geometry coloured by the temperature
+seta base se all
+copy all new mir y
+copy all new mir z
 view disp
-scal d 1000
+scal d 500
 anim real
 movi frames auto
 ds 2 ah 1
