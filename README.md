@@ -119,7 +119,7 @@ Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It ha
   src="Linear/ShearCenter/Refs/Sxz.png"
   width="200"
   title="Thin-walled profiles to illustrate the shear center">
-](Contact/Leafspring/)
+](Linear/ShearCenter/)
 [<img
   src="NonLinear/3PB/Refs/PEexpanded_yx.png"
   width="200"
