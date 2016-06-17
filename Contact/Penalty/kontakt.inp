@@ -1,0 +1,41 @@
+*include, input=all.msh
+*include, input=gw.nam
+*include, input=kw.nam
+*boundary
+Ngw, 1,3
+Nkw, 2,3
+*MATERIAL, NAME=Aluminium
+*ELASTIC
+70000, 0.34
+*DENSITY
+2.7e-6
+*SOLID SECTION, ELSET=Eall, MATERIAL=Aluminium
+** Kontakt:
+*include, input=cgw.sur
+*include, input=ckw.sur
+*surface interaction, name=wuerfelkontakt
+*surface behavior, pressure-overclosure=linear
+10000,100,0.01
+*contact pair, interaction=wuerfelkontakt, type=surface to surface
+Sckw, Scgw
+** Berechnungsart definieren:
+*STEP,nlgeom
+*STATIC,direct
+1,1
+*boundary 
+Nkw,1,1,-0.1
+*end step
+*STEP,nlgeom
+*STATIC,direct
+0.02,1
+*boundary 
+Nkw,1,1,0.1
+*NODE FILE
+U
+*EL FILE,CONTACT ELEMENTS 
+S,PE
+*contact file
+CDIS
+*node print,nset=Nkw,totals=only
+RF
+*END STEP
