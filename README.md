@@ -135,3 +135,8 @@ Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It ha
   width="200"
   title="Deflection due to non-homogeneous thermal strain">
 ](Thermal/Thermal shock/)
+[<img
+  src="Contact/Penalty/contact.png"
+  width="200"
+  title="Experiment for testing pressure-penetration characteristics for various contact options">
+](Contact/Penalty/)

@@ -1,0 +1,82 @@
+	valu le 20
+valu off 5
+
+# large cube:
+pnt p1 0 0 0
+swep all new tra le 0 0 1
+swep all new tra 0 le 0 1
+swep all new tra 0 0 le 1
+seta gw se all
+
+# small cube
+copy gw kw scal 0.5
+move kw tra 0 off off
+move kw mir x
+
+# Meshing
+elty all he8
+mesh all
+send all abq
+
+# Contact surfaces
+seta nkw n kw
+enq nkw ckw rec 0 _ _ 0.1
+comp ckw do
+send ckw abq sur
+seta ngw n gw
+enq ngw cgw rec 0 _ _ 0.1
+comp cgw do
+send cgw abq sur
+# history node
+enq nkw hist rec 0 off off 0.1
+
+send all abq nam
+
+# model image with contact surfaces
+rot x
+rot d 90
+rot r 30
+rot u 30
+frame
+plot f cgw
+plus f ckw
+hcpy png
+sys mv hcpy_1.png contact.png
+
+# contact versions
+sys cp s2s-lin.inc contact.inc
+sys ccx solve
+read solve.frd new
+read hist.nam inp
+graph Nhist time CONTACT CPRESS
+sys mv graph_0.out s2s-lin.hist
+
+sys cp s2s-tie.inc contact.inc
+sys ccx solve
+read solve.frd new
+read hist.nam inp
+graph Nhist time CONTACT CPRESS
+sys mv graph_1.out s2s-tie.hist
+
+sys cp n2s-lin.inc contact.inc
+sys ccx solve
+read solve.frd new
+read hist.nam inp
+graph Nhist time CONTACT CPRESS
+sys mv graph_2.out n2s-lin.hist
+
+sys cp n2s-exp.inc contact.inc
+sys ccx solve
+read solve.frd new
+read hist.nam inp
+graph Nhist time CONTACT CPRESS
+sys mv graph_3.out n2s-exp.hist
+
+sys cp n2s-tab.inc contact.inc
+sys ccx solve
+read solve.frd new
+read hist.nam inp
+graph Nhist time CONTACT CPRESS
+sys mv graph_4.out n2s-tab.hist
+
+sys gnuplot pd.gnu
