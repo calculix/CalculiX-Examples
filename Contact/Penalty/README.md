@@ -9,7 +9,7 @@ Tested with CGX/CCX 2.10 Win/bConverged and Linux
 | [all.fbd](all.fbd)         | Top level control script for CGX              |
 | [one.fbd](one.fbd)         | CGX script for a single test                  |
 | [s2s-lin.inc](s2s-lin.inc) | CCX contact definition (surface-to-surface, linear)        |
-| [s2s-tie.inc](s2s-lin.tie) | CCX contact definition (surface-to-surface, tied)        |
+| [s2s-tie.inc](s2s-tie.inc) | CCX contact definition (surface-to-surface, tied)        |
 | [n2s-lin.inc](n2s-lin.inc) | CCX contact definition (node-to-surface, linear)        |
 | [n2s-exp.inc](n2s-exp.inc) | CCX contact definition (node-to-surface, exponential)        |
 | [n2s-tab.inc](n2s-tab.inc) | CCX contact definition (node-to-surface, tabular)        |

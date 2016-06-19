@@ -1,6 +1,9 @@
 *include, input=all.msh
 *include, input=gw.nam
 *include, input=kw.nam
+*include, input=cgw.sur
+*include, input=ckw.sur
+*include, input=hist.nam
 *boundary
 Ngw, 1,3
 Nkw, 2,3
