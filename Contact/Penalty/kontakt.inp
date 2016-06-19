@@ -24,18 +24,23 @@ Sckw, Scgw
 1,1
 *boundary 
 Nkw,1,1,-0.1
+** these output requests must be in the first step
+*node FILE
+U
+*contact file,CONTACT ELEMENTS 
+CDIS,CELS
 *end step
 *STEP,nlgeom
 *STATIC,direct
 0.02,1
-*boundary 
+*boundary
 Nkw,1,1,0.1
 *NODE FILE
 U
-*EL FILE,CONTACT ELEMENTS 
-S,PE
 *contact file
-CDIS
+CDIS,CELS
 *node print,nset=Nkw,totals=only
 RF
+**contact print, totals=yes
+**CDIS, CSTR, CELS, CNUM
 *END STEP
