@@ -1,4 +1,4 @@
-valu le 20
+	valu le 20
 valu off 5
 
 # grosser Wuerfel:
@@ -37,7 +37,9 @@ send all abq nam
 
 
 sys ccx kontakt
-#~ sys python dat2txt.py
+sys dat2txt.py kontakt
+sys gnuplot fd.gnu
+
 read kontakt.frd
 
 graph hist time CONTACT CPRESS

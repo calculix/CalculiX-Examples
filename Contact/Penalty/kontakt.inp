@@ -37,10 +37,10 @@ CDIS,CELS
 Nkw,1,1,0.1
 *NODE FILE
 U
-*contact file
+*contact file,CONTACT ELEMENTS 
 CDIS,CELS
 *node print,nset=Nkw,totals=only
 RF
-**contact print, totals=yes
-**CDIS, CSTR, CELS, CNUM
+*contact print, totals=yes
+CDIS, CSTR, CELS, CNUM
 *END STEP
