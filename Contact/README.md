@@ -10,7 +10,6 @@ Tested with CGX/CCX 2.10
 | :-------------         | :-------------                                |
 | [pre.fbd](pre.fbd)     | Pre-processing script for CGX                 |
 | [pc-ss.inp](pc-ss.inp) | CCX input, surface-to-surface penalty contact |
-| [pc-ns.inp](pc-ns.inp) | CCX input, node-to-surface penalty contact    |
 | [tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            |
 | [equ.inp](equ.inp)     | CCX input, MPC contact with `*equation`       |
 
@@ -20,27 +19,18 @@ MPC contact with `*equation` leads to a hinged connection at shell edge to face 
 
 Surface-to-surface penalty contact does not at all connect the parts.
 
-Node-to-surface penalty contact throws an error:
-```
-*ERROR in springforc: no overclosure model
-        selected. This is mandatory in a penalty
-        contact calculation. Please use the
-        *SURFACE BEHAVIOR card.
-```
-
-
-| Mode | tie | equ | pc-ss | pc-ns |
-| :--   | :-- | :-- | :--   | :--   |
-| 1     | 0    | 0   | 0     |     |
-| 2    | 0    | 0   | 0     |      |
-| 3     | 0    | 0.047   | 0     |      |
-| 4     | 0.0065    | 0.088   | 0     |     |
-| 5     | 0.084   | 0.102   | 0     |     |
-| 6     | 0.090    | 0.103   | 0     |      |
-| 7     | 1530    | 0.110   | 0.050     |      |
-| 8     | 2846    | 2544   | 0.067     |     |
-| 9     | 5543    | 3087   | 0.089    |      |
-| 10     | 5648    | 4306   | 0.092    |     |
+| Mode | tie | equ | pc-ss |
+| :--   | :-- | :-- | :--   |
+| 1     | 0    | 0   | 0     |
+| 2    | 0    | 0   | 0     |  
+| 3     | 0    | 0.047   | 0     |  
+| 4     | 0.0065    | 0.088   | 0     |
+| 5     | 0.084   | 0.102   | 0     |
+| 6     | 0.090    | 0.103   | 0     |
+| 7     | 1530    | 0.110   | 0.050     |
+| 8     | 2846    | 2544   | 0.067     |
+| 9     | 5543    | 3087   | 0.089    |
+| 10     | 5648    | 4306   | 0.092    | 
 |
 ## Preprocessing
 Two separate parts are generated and meshed with shell elements.
