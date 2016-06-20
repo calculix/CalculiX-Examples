@@ -2,7 +2,7 @@
 Created by Martin Kraska, Brandenburg University of Applied Sciences
 
 These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
-Also, there are some helper python scripts.
+Also, there are some helper python scripts. See [Scripts page](Scripts/) for usage hints (and how to add them to your path).
 
 All examples are developed and tested with CalculiX 2.10 in the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX. It has, however, some disadvantages:
 

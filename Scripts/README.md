@@ -7,9 +7,40 @@ File                    | Contents
  [monitor.py](monitor.py)   | Create convergence plots based on the .cvg and .sta files
  [param.py](param.py) | Preprocessor tor python expressions in arbitrary files
 
+## Setup
+
+The CalculiX examples require that the scripts are found in the executable path. Here we describe how to ensure this under Linux and Windows (for the bConverged build). Let `<exampledir>` be the root directory of the example collection. Replace this in the following explanations by your actual example directory
+
+### Linux
+`<exampledir` might be `$HOME/GIT/CalculiX-Examples`.
+Add the following line to your `.bashrc`:
+```
+export PATH="<exampledir>/Scripts:$PATH"
+```
+CGX executes sys commands in sh, not in the bash. As the scripts also are called from CGX scripts, you have to augment the path for sh as well by adding this to your `.profile`:
+```
+PATH="<exampledir>/Scripts:$PATH"
+```
+
+### Windows (bConverged build)
+
+Running the helper scripts requires a Python installation with the matplotlib package available. You may need to install this package using
+```
+>pip install matplotlib
+```
+Customize the CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`. To provide access to the helper scripts, add the `<exampledir>\Scripts` directory to your path, e.g. by adding a line next to the other set commands:
+```
+set PATH=<exampledir>\Scripts;%PATH%
+```
+`<exampledir>` might be something like `D:\FHB\Software\CalculiX\Git`.
+
+You might also wish to change the default working directory (default current directory in the CalculiX command window).
+
+Don't expect the system calls (sys command) in the CGX scripts to work. Normally, there should be windows equivalents but tests have been done only under Linux.
+
 ## dat2txt.py
 
- This script extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point.
+ This script extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point. Currently, this only works for result items with scope to a node or element set (not for contact results, as these cannot be scoped to sets).
  ```
 > dat2txt,py <jobname>
  ```  
