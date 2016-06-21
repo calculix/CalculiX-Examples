@@ -7,7 +7,7 @@ Tested with CGX/CCX 2.10
 
 | File     | Contents    |
 | :------------- | :------------- |
-| [solid.fbd](solid.fbd)     | Parametric pre- and postprocessing script for CGX, requires CGX 2.7 or higher     |
+| [solid.fbd](solid.fbd)     | Parametric pre- and postprocessing script for CGX   |
 | [solid.inp](solid.inp) | CCX input |
 | [solid-conv.py](solid-conv.py) | Python script for the convergence study |
 | [solid-plot.py](solid-plot.py) | Python script for the convergence plot|
