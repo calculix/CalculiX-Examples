@@ -31,7 +31,7 @@ The following parameters are defined in `pre.fbd.par`
 ```
 Create the file `pre.fbd` and run the pre-processing
 ```
-> ../../Scripts/param.py pre.fbd.par
+> param.py pre.fbd.par
 > cgx -b pre.fbd
 ```
 <img src="parts.png" width="300">

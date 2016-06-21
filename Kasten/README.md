@@ -21,7 +21,7 @@ Tested with CGX/CCX 2.10
 ## Solving
 ```
 > ccx Kasten
-> ../Scripts/monitor.py Kasten
+> monitor.py Kasten
 ```
 <img src="Kasten.png" width="500">
 
