@@ -11,7 +11,7 @@ File                       | Contents
  [values.fbl](values.fbl)  | CGX script, parameter values
  [pre.fbl](pre.fbl)        | CGX script, pre-processing
  [post.fbl](post.fbl)      | CGX script, post-processing
- [Biegung.inp](Biegung.inp)      | CCX input
+ [Biegung.inp](Biegung.inp) | CCX input
 
 The model represents a four point bending test on a elasto-plastic sandwich plate. The face material is mild steel, the core material is aluminum foam.
 
@@ -40,7 +40,7 @@ The lower outer cylinder is fixed, the inner upper cylinder is moved down 20 mm.
 The rate of convergence is affected by the plastic material, the mesh density in the contact region, the contact stiffness and the time incrementation controls.
 ```
 > ccx Biegung
-> ../../Scripts/monitor.py Biegung
+> monitor.py Biegung
 ```
 <img src="Biegung.png" title="Convergence plot">
 
