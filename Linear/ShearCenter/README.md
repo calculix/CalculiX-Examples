@@ -30,7 +30,7 @@ The problem is parametrized using [param.py](../../Scripts/param.py).
 The four beams are generated using appropriate copy options and node merging.
 The load application points are selected using `enq` based on their location.
 ```
-> ../../Scripts/param.py par.II-pre.fbl
+> param.py par.II-pre.fbl
 > cgx -b II-pre.fbl
 ```
 
