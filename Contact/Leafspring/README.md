@@ -46,7 +46,7 @@ were basically just guessed, thus there is plenty of room for systematic studies
 
 ```
 > ccx solve
-> ../../Scripts/monitor.py solve
+> monitor.py solve
 ```
 <img src="solve.png">
 
