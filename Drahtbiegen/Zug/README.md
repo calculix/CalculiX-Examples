@@ -36,7 +36,7 @@ Boundary conditions:
 #### Parametrization with param.py
 See [../../Scripts/](../../Scripts/) for details
 ```
-> ../../Scripts/param.py pre.fbd.par
+> param.py pre.fbd.par
 > cgx -b pre.fbd
 ```
 #### Parametrization with CGX valu
@@ -46,7 +46,7 @@ See [../../Scripts/](../../Scripts/) for details
 ## Solving
 ```
 > ccx Zug
-> ../../Scripts/monitor.py Zug
+> monitor.py Zug
 ```
 The second command generates a convergence history plot of the solution.
 <img src="Zug.png" title="Convergence history">

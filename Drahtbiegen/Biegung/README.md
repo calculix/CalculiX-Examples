@@ -6,7 +6,7 @@ Click the image to see the animation
 <img src="movie.gif" width="400">
 + Large displacements
 + Plasticity
-+ Contact
++ Contact (smoothed bi-linear node-to-surface)
 + Rigid body with prescribed rotation
 
 | File     | Contents    |
@@ -34,7 +34,7 @@ Click the image below to open a life SMath worksheet
 Extraction of the time history of the reaction moment and the internal energy from the dat file
 ```
 > ccx Biegung
-> ../../Scripts/Monitor.py Biegung
+> Monitor.py Biegung
 ```
 <img src="Biegung.png">
 
@@ -42,7 +42,7 @@ Extraction of the time history of the reaction moment and the internal energy fr
 
 Extraction of the time history of the reaction moment and the internal energy from the dat file and generation of the corresponding plot
 ```
-> ../../Scripts/dat2txt.py Biegung
+> dat2txt.py Biegung
 > Biegung.py
 ```
 <img src="Biegung-history.png">
