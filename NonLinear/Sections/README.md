@@ -26,7 +26,7 @@ The beams are supported vertically at all nodes at x=Length and have a symmetry 
 
 The beams are loaded by their own weight, properies of steel are assumed.
 ```
-> ../../Scripts/param.py par.pre.fbl
+> param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
 
