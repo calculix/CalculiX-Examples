@@ -14,7 +14,7 @@ File                           | Contents
 To run the complete analysis, edit parameter values in [par.run.fbl](par.run.fbl)
 and run
 ```
-> ../../Scripts/param.py par.run.fbl
+> param.py par.run.fbl
 > cgx -b run.fbl
 ```
 
