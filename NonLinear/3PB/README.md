@@ -21,7 +21,7 @@ domain is reduced to a quarter due to symmetry.
 
 You may adjust the parameter values in the file [par.pre.fbl](par.pre.fbl) and then run
 ```
-> ../../Scripts/param.py par.pre.fbl
+> param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
 <img src="Refs/parts.png" width="400" title="Parts: Specimen, indenter and support">
@@ -36,7 +36,7 @@ The time step has to be limited for stable contact. Initially, the number of con
 elements grows with increasing indentation, but then shrinks due to local buckling below the indenter.
 ```
 > ccx Biegung
-> ../../Scripts/monitor.py Biegung
+> monitor.py Biegung
 ```
 <img src="Biegung.png" title="Convergence plot">
 
