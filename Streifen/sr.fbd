@@ -23,7 +23,7 @@ hcpy png
 sys mv hcpy_1.png sr-mesh.png
 
 sys ccx sr
-sys python ../Scripts/monitor.py sr&
+sys monitor.py sr&
 
 read sr.frd
 ds -0 e 4

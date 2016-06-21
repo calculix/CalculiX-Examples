@@ -21,7 +21,7 @@ hcpy png
 sys mv hcpy_1.png b-mesh.png
 
 sys ccx b
-sys python ../Scripts/monitor.py b&
+sys monitor.py b&
 
 read b.frd
 ds -0 e 4
