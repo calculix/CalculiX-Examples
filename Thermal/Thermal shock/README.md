@@ -50,7 +50,7 @@ fixed time increments. During the excitation (approx. half of the total time), t
 is slightly slower than afterwards.
 ```
 > ccx solve
-> ../../monitor.py solve
+> monitor.py solve
 ```
 
 ![solve.png](solve.png)
