@@ -39,7 +39,7 @@ Sc_top,Stop
 ** penalty
 *surface interaction, name=tool
 *surface behavior, pressure-overclosure=linear
-100000,0.1,0.1
+100000
 *contact pair, interaction=tool, type=surface to surface
 Stopneg,Sind
 ** step

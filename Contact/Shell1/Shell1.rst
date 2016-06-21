@@ -84,7 +84,7 @@ pre.fbd
       Point ``p0`` at the origin is swept in x direction, the resulting line
       is copied and rotated by :math:`\pm` 120°.
 
-      These three lines for the set ``c_bottom``, which we later use for contact definition.
+      These three lines form the set ``c_bottom``, which we later use for contact definition.
 
       The lines are swept in z direction, the copy of the generating set is named ``c_top`` and also later used for contact.
 

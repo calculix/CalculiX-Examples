@@ -1,7 +1,7 @@
 # Shell Assembly
 Tested with CGX/CCX 2.10
 
-+ Shell assembly with edge to face tied contact
++ Shell assembly with edge to face tied Lagrange contact
 + Indenter with surface-to surface penalty contact
 
 | File                   | Contents                                      |
@@ -23,7 +23,7 @@ A roughly spherical indenter loads the upper skin.
 All nodes of the indenter are moved downwards in a static step with default solution controls.
 ```
 > ccx tie
-> ../../Scripts/monitor.py tie
+> monitor.py tie
 ```
 <img src="tie.png" width="600">
 
