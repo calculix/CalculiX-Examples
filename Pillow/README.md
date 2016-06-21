@@ -33,7 +33,7 @@ and the result plots are generated and renamed according to the element type.
 The problem involves heavy buckling and challenges the non-linear solver. In order to obtain a solution, the convergence criteria are relaxed in the first step. In the second step, the default values are restored. For the given parameters in the stored example, this is not relevant, as the solution at the end of step 1 already meets the default criteria.
 ```
 > ccx static
-> ../Scripts/monitor.py static
+> monitor.py static
 ```
 ![Refs/static-s8r.png](Refs/static-s8r.png)
 
