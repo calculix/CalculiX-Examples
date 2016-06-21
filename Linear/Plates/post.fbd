@@ -6,7 +6,8 @@ rot u 20
 view disp
 scal d 1000
 view elem
-seta base se all
+
+seta base all
 # the z shift is required to avoid interference between 2D and 3D plot
 copy base 2D tra 0 0 0.001
 swep base new rot y 270 30
