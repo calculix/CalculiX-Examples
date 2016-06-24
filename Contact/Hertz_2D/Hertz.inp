@@ -20,11 +20,26 @@ Model: Hertzian contact stress
 1000000,0.1,0.01
 *CONTACT PAIR, INTERACTION=contact, TYPE=SURFACE TO SURFACE
 Sscyl,Ssblk
-
+** step with displacement control
 *STEP, NLGEOM, INC=200
 *STATIC
 *BOUNDARY
 *include, input=control_1-1.bou
+*NODE FILE,OUTPUT=2D
+U,
+*EL FILE
+S, E
+*CONTACT FILE
+CDIS,CSTR
+*END STEP
+** step with pressure control
+*STEP, NLGEOM, INC=200
+*STATIC
+*boundary, op=new
+*include,input=x0_1.bou
+*include,input=y0_2.bou
+*dload
+*include, input=control.dlo
 *NODE FILE,OUTPUT=2D
 U,
 *EL FILE

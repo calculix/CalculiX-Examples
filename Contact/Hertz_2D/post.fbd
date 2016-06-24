@@ -1,16 +1,25 @@
 read Hertz.frd
 
 rot -z
-ds -2 e 7
+ds 2 e 7
 view disp
 plot fv all
 frame
 hcpy png
-sys mv hcpy_1.png SE.png
+sys mv hcpy_1.png SE_dc.png
+ds 6 e 7
+plot fv all
+hcpy png
+sys mv hcpy_2.png SE_pc.png
+
 zoom 10
 tra u 55
 tra l 5
 view elem
 plot fv all
 hcpy png
-sys mv hcpy_2.png SE-zoom.png
+sys mv hcpy_3.png SE_pc-zoom.png
+ds 2 e 7
+plot fv all
+hcpy png
+sys mv hcpy_4.png SE_dc-zoom.png
