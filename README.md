@@ -144,5 +144,5 @@ Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It ha
 [<img
   src="Contact/Eyebar/PE.png"
   width="200"
-  title="Eye and pin contact model with plasticity, plain strain">
+  title="Eye and pin contact model with plasticity, plane strain">
 ](Contact/Eyebar/)
