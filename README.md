@@ -8,6 +8,7 @@ All examples are developed and tested with CalculiX 2.10 in the virtual box prov
 
 * Hardware Open GL does not work
 * Multithreading does not work.
+* Avoid working in folders shared with the host system. In series
 
 These are not relevant for simple educational models but are definitely relevant for serious work.
 
@@ -140,3 +141,8 @@ Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It ha
   width="200"
   title="Experiment for testing pressure-penetration characteristics for various contact options">
 ](Contact/Penalty/)
+[<img
+  src="Contact/Eyebar/PE.png"
+  width="200"
+  title="Eye and pin contact model with plasticity, plain strain">
+](Contact/Eyebar/)

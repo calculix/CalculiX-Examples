@@ -1,0 +1,19 @@
+read eyebar.frd
+
+rot -z
+ds -1 e 1
+view disp
+view elem
+zoom 1.2
+plot fv all
+hcpy png
+sys mv hcpy_1.png PE.png
+ds -3 e 7
+plot fv all
+hcpy png
+sys mv hcpy_2.png SE.png
+
+# create force-displacement plot
+sys dat2txt.py eyebar
+sys join "total force fx,fy,fz_NCONTROL.txt" "displacements vx,vy,vz_NMONITOR.txt" > df.txt
+sys gnuplot df.gnu
