@@ -2,19 +2,12 @@
 Created by Martin Kraska, Brandenburg University of Applied Sciences
 
 These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
+
 Also, there are some helper python scripts. See [Scripts page](Scripts/) for usage hints (and how to add them to your path).
 
-All examples are developed and tested with CalculiX 2.10 in the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX. It has, however, some disadvantages:
+The [Setup](Setup.md) page provides instructions on how to setup the working environment under Windows and Linux.
 
-* Hardware Open GL does not work
-* Multithreading does not work.
-* Avoid working in folders shared with the host system. In series
-
-These are not relevant for simple educational models but are definitely relevant for serious work.
-
-For editing CGX, CCX  or gmsh input under linux, I recommend [atom](https://atom.io/), it has syntax highlighting for these files and markdown preview. The README-files for the examples here are written in Markdown.
-
-Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting. Some examples may require adjustments of the system calls (like echo, mv and other commands)
+Click the preview images to view the examples.
 
 [<img
   src="Drahtbiegen/Biegung/movie.gif"

@@ -9,34 +9,7 @@ File                    | Contents
 
 ## Setup
 
-The CalculiX examples require that the scripts are found in the executable path. Here we describe how to ensure this under Linux and Windows (for the bConverged build). Let `<exampledir>` be the root directory of the example collection. Replace this in the following explanations by your actual example directory
-
-### Linux
-`<exampledir` might be `$HOME/GIT/CalculiX-Examples`.
-Add the following line to your `.bashrc`:
-```
-export PATH="<exampledir>/Scripts:$PATH"
-```
-CGX executes sys commands in sh, not in the bash. As the scripts also are called from CGX scripts, you have to augment the path for sh as well by adding this to your `.profile`:
-```
-PATH="<exampledir>/Scripts:$PATH"
-```
-
-### Windows (bConverged build)
-
-Running the helper scripts requires a Python installation with the matplotlib package available. You may need to install this package using
-```
->pip install matplotlib
-```
-Customize the CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`. To provide access to the helper scripts, add the `<exampledir>\Scripts` directory to your path, e.g. by adding a line next to the other set commands:
-```
-set PATH=<exampledir>\Scripts;%PATH%
-```
-`<exampledir>` might be something like `D:\FHB\Software\CalculiX\Git`.
-
-You might also wish to change the default working directory (default current directory in the CalculiX command window).
-
-Don't expect the system calls (sys command) in the CGX scripts to work. Normally, there should be windows equivalents but tests have been done only under Linux.
+The example docs assume that the helper scripts are found in the PATH. See [Setup](../Setup.md) for instructions how to do this.
 
 ## dat2txt.py
 
