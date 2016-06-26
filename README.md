@@ -3,7 +3,7 @@ Created by Martin Kraska, Brandenburg University of Applied Sciences
 
 These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
 
-Also, there are some helper python scripts. See [Scripts page](Scripts/) for usage hints (and how to add them to your path).
+Also, there are some helper python scripts. See [Scripts page](Scripts/) for usage hints.
 
 The [Setup](Setup.md) page provides instructions on how to setup the working environment under Windows and Linux.
 
