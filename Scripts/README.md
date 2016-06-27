@@ -17,7 +17,20 @@ The example docs assume that the helper scripts are found in the PATH. See [Setu
  ```
 > dat2txt,py <jobname>
  ```  
-This reads `<jobname>.dat` and writes a text file for each result item in the .dat file.
+This reads `<jobname>.dat` and writes a text file for each result item in the .dat file. The names (without extension .txt) are printed to the console.
+
+If no jobname is given, the current directory is searched for any .dat file and if a single one is found, it is used.
+
+If multiple .dat files are found, their names are printed and no processing is done.
+
+This means: If you have just a single .dat file in your directory, it is sufficient to call the script without parameters:
+ ```
+> dat2txt,py
+No jobname given.
+Found  solve.dat
+total force fx,fy,fz_NKW
+>
+ ```  
 
 For example, the .dat-file might contain these lines:
 ```
