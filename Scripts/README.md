@@ -15,9 +15,22 @@ The example docs assume that the helper scripts are found in the PATH. See [Setu
 
  This script extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point. Currently, this only works for result items with scope to a node or element set (not for contact results, as these cannot be scoped to sets).
  ```
-> dat2txt,py <jobname>
+> dat2txt.py [<jobname>]
  ```  
-This reads `<jobname>.dat` and writes a text file for each result item in the .dat file.
+This reads `<jobname>.dat` and writes a text file for each result item in the .dat file. The names (without extension .txt) are printed to the console.
+
+If no jobname is given, the current directory is searched for any .dat file and if a single one is found, it is used.
+
+If multiple .dat files are found, their names are printed and no processing is done.
+
+This means: If you have just a single .dat file in your directory, it is sufficient to call the script without parameters:
+ ```
+> dat2txt.py
+No jobname given.
+Found  solve.dat
+total force fx,fy,fz_NKW
+>
+ ```  
 
 For example, the .dat-file might contain these lines:
 ```

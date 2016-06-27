@@ -5,15 +5,31 @@ This script extracts data from ccx dat-files
 import sys
 import pylab
 import re
+import glob
 
 data={}
 pH = re.compile(' (.+) for set\\s(\\S+) and time  (.+)')
 skip = 0 # if empty lines are to be skipped
 body = 0 # if data lines are expected
 
-print sys.argv[1]
-job = sys.argv[1]
-f = open(job+".dat","r")
+# processing command line arguments, get the
+# jobname
+if len(sys.argv)==1:
+    print "No jobname given."
+    files=glob.glob("*.dat")
+    if len(files)==1:
+        print "Found", files[0]
+        job=files[0]
+    else:
+        print "Available data files:"
+        for f in files:
+            print "  ", f
+        quit()
+if len(sys.argv)>1:
+    print "Jobname:",sys.argv[1]
+    job = sys.argv[1]+".dat"
+
+f = open(job,"r")
 
 for line in f:
     if skip: # if the line is known to be useless
