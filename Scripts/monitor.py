@@ -1,13 +1,31 @@
 #!/usr/bin/python
 """
-This is a monitor for .sta-files of calculix
+This is a monitor for .sta and .cvg files of calculix
 """
 import sys
 import pylab
 import numpy
+import glob
 
-print sys.argv[1]
-job = sys.argv[1]
+# print sys.argv[1]
+# job = sys.argv[1]
+# processing command line arguments, get the
+# jobname
+if len(sys.argv)==1:
+    print "No jobname given."
+    files=glob.glob("*.sta")
+    if len(files)==1:
+        print "Found", files[0]
+        job=files[0][:-4]
+    else:
+        print "Available .sta files:"
+        for f in files:
+            print "  ", f
+        quit()
+if len(sys.argv)>1:
+    print "Jobname:",sys.argv[1]
+    job = sys.argv[1]
+
 sta=numpy.genfromtxt(job+'.sta',skip_header=2,delimiter=[6,11,7,6,14,14,14])
 cvg=numpy.genfromtxt(job+'.cvg',skip_header=4)
 # ensure 2dim array in case of single data line

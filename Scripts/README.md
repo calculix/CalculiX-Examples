@@ -69,8 +69,11 @@ This script reads the .sta and .cvg files for a given job and creates an image w
 * step time and number of contact elements.
 
 ```
-> monitor.py <jobname>
+> monitor.py [<jobname>]
 ```
+Specification of the jobname is only required if
+there is more than one .sta file in the current directory.
+
 The plot is displayed and written to `<jobname>.png`.
 
 Examples:
@@ -89,9 +92,9 @@ their definition.
 
 ### Usage
 
-* Copy the file to be parametrized to `<filename>.par` or `par.<filename>`, where `<filename>` can include any extension. This will become the source file for parametrization.
+* Copy the file to be parametrized to `<filename>.par` or (better) `par.<filename>`, where `<filename>` can include any extension. This will become the source file for parametrization.
 
-  Prefixing with `par.` is recommended, as this does not spoil the syntax highlighting in editors.
+  Prefixing with `par.` is recommended, as this does not spoil the syntax highlighting in editors and you can call `param.py` without specifying the file name.
 
 * In `<filename>.par` or `par.<filename>` add parameter definitions, preferrably in comment lines.   
   * To assign the value 4 to the variable a, include `<a=4>` to such a line.
@@ -105,7 +108,11 @@ their definition.
 ```
 or (depending on your choice for source naming)
 ```
-> param.py par.<filename>
+> param.py [par.<filename>]
+```
+If the filename starts with .par and only one such file is present in the directory, then it is sufficient to just call
+```
+> param.py
 ```
 
 The expressions are scanned and the angle brackets
