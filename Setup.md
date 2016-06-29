@@ -36,6 +36,11 @@ File types
 
 ### Windows Setup
 
+Windows is not the native development platform for CalculiX and this may cause problems at any time. Some of them are:
+
++ CCX fails to clean the result files upon startup if the files (e.g. .frd) is still open in CGX. Thus, the .frd file accumulates the results of multiple runs instead of just being re-written.
++ CGX doesn't properly syncronize screen shots with `hcpy`. The command acts as if it was written some commands further above in the .fbd file.
+
 #### CalculiX
 
 Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting and execution hotkeys for various relevant file types.
@@ -70,10 +75,21 @@ Don't expect all system calls (`sys` command) in the CGX scripts to work. Normal
 **Gmsh** is only included if you purchase the Open Engineering Suite from bConverged.
 
 Otherwise you can install it separately from http://gmsh.info/.
+Make sure that the executable is in the path. Either
 
-**Markdown Editor** For viewing the README.md files (or for writing your own), you might install [Markdown Edit](http://markdownedit.com/). It has life preview with support for Github flavoured Markdown.
+**Markdown Editor** For viewing the README.md files (or for writing your own), you might install [Markdown Edit](http://markdownedit.com/). It has life preview with support for Github flavoured Markdown (except for tables, these aren't rendered).
 
 Open the README.md in `<exampledir>` with MarkdownEdit and click the preview images to open the  corresponding example subdirectory in a file manager window.
+
+#### GE Distribution
+
+If you use the GE distribution of CalculiX, the
+right spot to modify the path variables is
+`<GEhome>\etc\CalculiXWindowsEnvironment.bat`. Add these settings:
+```
+set PROJECT=<exampledir>
+set PATH=%PROJECT%\Scripts;%PATH%
+```
 
 ### Linux Setup
 
