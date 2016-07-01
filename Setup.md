@@ -58,13 +58,15 @@ Running the helper scripts requires a Python installation with the matplotlib pa
 ```
 >pip install matplotlib
 ```
-Customize the CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`. To provide access to the helper scripts, add the `<exampledir>\Scripts` directory to your path, e.g. by adding a line next to the other set commands:
+Customize the bConverged CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`. To provide access to the helper scripts, add the `<exampledir>\Scripts` directory to your path, e.g. by adding a line next to the other set commands:
 ```
 set PATH=<exampledir>\Scripts;%PATH%
 ```
 `<exampledir>` might be something like `D:\FHB\Software\CalculiX\Git`.
 
 You might also wish to change the default working directory (default current directory in the CalculiX command window).
+
+Run the examples in the CalculiX Command Window.
 
 Don't expect all system calls (`sys` command) in the CGX scripts to work. Normally, there should be windows equivalents but tests mainly have been done  under Linux.
 
@@ -83,13 +85,14 @@ Open the README.md in `<exampledir>` with MarkdownEdit and click the preview ima
 
 #### GE Distribution
 
-If you use the GE distribution of CalculiX, the
+If you use the [GE distribution of CalculiX](https://github.com/GeneralElectric/CalculiX), the
 right spot to modify the path variables is
 `<GEhome>\etc\CalculiXWindowsEnvironment.bat`. Add these settings:
 ```
 set PROJECT=<exampledir>
 set PATH=%PROJECT%\Scripts;%PATH%
 ```
+You should run the examples in the CalculiXWindowsShell, provided with the distribution.
 
 ### Linux Setup
 
