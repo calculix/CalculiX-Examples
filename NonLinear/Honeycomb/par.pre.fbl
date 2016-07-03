@@ -1,0 +1,157 @@
+# <le=8> Wandlänge
+# <wb=14> Wabenbreite
+# <hw=10> Kernhöhe
+# <esize=hw/4> Element size
+# <divx=4>
+# <divy=4>
+# <divz=4>
+# <lx=120>
+# <ly=3*wb>
+# <x1=50>
+# <x2=100>
+# <radius=10>
+# <tupper=1>
+# <tlower=1>
+# <tsingle=0.1>
+# <tdouble=2*tsingle>
+# <dx1=sqrt(le*le-wb*wb/4.)>
+# <wl=dx1*2.+le> row spacing parallel
+# <nx=int(lx/(wl+le))+1>
+# <ny=int(ly/wb)+1>
+# base cell
+pnt p0 0 0 0
+pnt p1 <dx1+le/2.> 0 0
+pnt p2 <le/2.> <wb/2.> 0
+pnt p3 0 <wb/2.> 0
+line l1 p0 p1 <divx>
+line l2 p1 p2 <divy>
+line l3 p2 p3 <divx>
+line l4 p3 p0 <divy>
+surf s1 l1 l2 l3 l4
+swep all new tra 0 0 <hw> <divz>
+del s A002 A005
+# rotation
+pnt rc p1 p2 0.5 1
+copy all new rot rc z 180
+merg p all
+merg l all
+merg s all
+# shell sets
+seta lower s1 A006
+seta upper A001 A007
+seta single A003
+seta double A004 A009
+# complete base cell
+copy all new mir D005 x a
+copy all new mir p3 y a
+merg p all
+merg l all
+merg s all
+seta basey s all
+# adjust orientations (skin normals outwards, wall normals in pos x or y)
+seta toflip A00I A00M A00F A00B
+seta toflip s1 A006 A00Q A00N
+seta toflip A00G A003 A004 A00U A00D
+flip toflip
+# replicate in y direction
+valu ny <ny>
+valu inc 1
+valu count 1
+valu dy <wb>
+while count < ny
+  valu pos * count dy
+  copy basey rowy tra 0 pos 0 a
+  valu count + count inc
+endwhile
+merg p all
+merg l all
+merg s all
+seta rowy se basey
+# assign single thickness to wall in symmetry plane
+seta wsym s A009 A00G
+setr double se wsym
+seta single se wsym
+# replicate in x direction
+valu nx <nx>
+valu inc 1
+valu count 1
+valu dx <(dx1+le)*2>
+while count < nx
+  valu pos * count dx
+  copy rowy new tra pos 0 0 a
+  valu count + count inc
+endwhile
+merg p all
+merg l all
+merg s all
+# meshing
+#div all auto <esize>
+elty all qu8
+mesh all
+merg n all
+# cut to size
+seta nodes n all
+enq nodes partx rec <lx/2.> _ _ <1.0001*lx/2.>
+enq partx part rec _ <ly/2.> _  <1.001*ly/2.>
+seta tozap n all
+setr tozap n part
+comp tozap up
+zap tozap
+# image
+seto outline
+pnt po1 0 <ly> 0
+swep outline po2 tra <lx> 0 0
+swep po2 po3 tra 0 <-ly> 0
+setc outline
+rot -z
+view elem
+plot e all n
+plus s all
+plus l outline b
+frame
+hcpy png
+sys mv hcpy_1.png size.png
+
+rot -z
+rot c 45
+rot d 60
+view back
+plot e lower n
+plus e single t
+plus e double b
+frame
+zoom 1.5
+hcpy png
+sys mv hcpy_2.png core.png
+
+
+# cylinders
+seto cyl1
+  pnt ! <radius> 0 0
+  swep cyl1 new rot y -360 40
+  swep cyl1 new tra 0 <1.1*ly> 0 10
+setc
+copy cyl1 cyl2 tra <x1> 0 <hw+tupper+radius>
+move cyl1 tra <x2> 0 <-tlower-radius>
+elty cyl1 qu4
+elty cyl2 qu4
+mesh cyl1
+mesh cyl2
+
+send all abq
+send all abq nam
+
+# symmetry boundaries
+seta nodes n all
+enq nodes ysym rec _ 0 _ 0.1 a
+enq nodes xsym rec 0 _ _ 0.1 a
+# write symmetry nodes
+send ysym abq spc 2
+send xsym abq spc 1
+# send contact surfaces
+send cyl1 abq sur
+send cyl2 abq sur
+send lower abq sur
+send upper abq sur
+
+seta ! all
