@@ -38,6 +38,7 @@ fo = open(target,"w")
 # context dictionaries for evaluation
 g={}
 l={}
+ln=1 # linenumber for error message
 exec("from math import *",g,l)
 for line in f:
     # split line into dead and active strings
@@ -52,13 +53,37 @@ for line in f:
             active=s[i+1]
             if active.find("=")!=-1:
                 # active string contains assignment
-                exec(active,g,l)
-                res=active
-                print(active)
+                try:
+                    exec(active,g,l)
+                    res=active
+                    val=str(eval(active[:active.find("=")],g,l))
+                    print(active+"  ("+val+")")
+                except Exception as ex:
+                    #template = "An exception of type {0} occured. Arguments:\n{1!r}"
+                    #print template.format(type(ex).__name__, ex.args)
+                    print "******* ERROR ********"
+                    print "Line "+str(ln)+" in "+source+"\n"
+                    print line
+                    print ex.args[0]
+                    if type(ex).__name__=="NameError":
+                        print "Hint: Use <name=value> to define names."
+                    exit()
             else:
                 # active string is an expression
-                res=str(eval(active,g,l))
+                try:
+                    res=str(eval(active,g,l))
+                except Exception as ex:
+                    #template = "An exception of type {0} occured. Arguments:\n{1!r}"
+                    #print template.format(type(ex).__name__, ex.args)
+                    print "******* ERROR ********"
+                    print "Line "+str(ln)+" in "+source+"\n"
+                    print line
+                    print ex.args[0]
+                    if type(ex).__name__=="NameError":
+                        print "Hint: Use <name=value> to define names."
+                    exit()
             outline=outline+res
     fo.write(outline)
+    ln=ln+1
 fo.close()
 f.close()
