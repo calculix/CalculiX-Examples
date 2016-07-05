@@ -9,7 +9,7 @@ The [Setup](Setup.md) page provides instructions on how to setup the working env
 
 Click the preview images to view the examples.
 
-This page uses animated gifs. In Firefox, you might want to install the plugin [Toggle Animated Gifs](https://addons.mozilla.org/en-US/firefox/addon/toggle-animated-gifs/) to add replay controls.
+This page uses animated gifs. In Firefox, you might want to install the plugin [Toggle A../../REnimated Gifs](https://addons.mozilla.org/en-US/firefox/addon/toggle-animated-gifs/) to add replay controls.
 
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
@@ -141,3 +141,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Eye and pin contact model with plasticity, plane strain">
 ](Contact/Eyebar/)
+[<img
+  src="NonLinear/Honeycomb/SE-core.png"
+  width="200"
+  title="4-point bending test of a honeycomb sandwich">
+](NonLinear/Honeycomb/)
