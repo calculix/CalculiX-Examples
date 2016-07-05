@@ -23,7 +23,7 @@ The prescribed displacement is applied to the flat equatorial surface of the pin
 
 ```
 > param.py par.eyebar.fbd
-> cgx -b pre.fbd
+> cgx -b eyebar.fbd
 ```
 <img src="mesh.png">
 
