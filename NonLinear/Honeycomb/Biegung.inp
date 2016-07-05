@@ -5,12 +5,13 @@
 *include, input=single.nam
 *include, input=cyl1.nam
 *include, input=cyl2.nam
+*include, input=mon1.nam
+*include, input=monc.nam
 ** surface definitions
 *include, input=lower.sur
 *include, input=upper.sur
 *include, input=cyl1.sur
 *include, input=cyl2.sur
-
 ** constraints
 *boundary
 *include, input=xsym_1.bou
@@ -21,9 +22,11 @@ Ncyl2,1,3
 *material, name=alu
 *elastic
 72000,0.3
-** *plastic
-** 160,0
-** 300,1
+*plastic
+160,0
+200,0.01
+300,0.2
+500,1
 ** material and thickness assignment to bodies
 *shell section, elset=Elower, material=alu,offset=-0.5
 1
@@ -41,23 +44,36 @@ Ncyl2,1,3
 ** contact definitions
 *surface interaction, name=tool
 *surface behavior, pressure-overclosure=linear
-100000
-*friction
-0.1,10000
-*contact pair, interaction=tool, type=surface to surface
-Supper,Scyl2
-Slower,Scyl1
+10000,0.1,0.1
+***friction
+**0.1,10000
+*contact pair, interaction=tool, type=node to surface
+Supper,Scyl1
+*contact pair, interaction=tool, type=node to surface
+Slower,Scyl2
 *step,nlgeom
 *static
-0.001,1,0.000001
+0.01,1,0.00000001,0.05
+*dload
+** Edouble,P,0.01
+** Esingle,P,0.01
+*controls, parameters=field
+0.001,1,0.1,,0.02
+*controls, parameters=time incrementation
+8,,5
+0.25,
 *boundary
-Ncyl2,3,3,-2
+Ncyl1,3,3,-5
 *node file
 U
 *el file
-S
+S,PE
 ** *contact file
 ** CDIS
-** *node print, nset=Ncyl1, totals=only
-** RF
+*node print, nset=Ncyl1, totals=only
+RF
+*node print, nset=Nmon1
+U
+*node print, nset=Nmonc
+U
 *end step
