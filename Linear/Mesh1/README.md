@@ -9,7 +9,7 @@ File                      | Contents
  :-------------           | :-------------
  [pre.fbl](pre.fbl)       | Preprocessing script for CGX     
  [modal.inp](modal.inp)   | CCX input
- [shapes.fbd](shapes.fbd) | CGX script for postprocessing (mode shape movies)
+ [shapes.fbl](shapes.fbl) | CGX script for postprocessing (mode shape movies)
 
 
 <img src="Refs/mesh.png" width="400" title="mesh">
@@ -53,7 +53,7 @@ unconstrained model.
 
 Running
 ```
-> cgx -b shapes.fbd
+> cgx -b shapes.fbl
 ```
 creates animated gifs for the individual mode shapes. Here we only show the non-rigid modes.
 
