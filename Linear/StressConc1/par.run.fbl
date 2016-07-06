@@ -45,8 +45,8 @@ node 1 <L> 0 0
 seta nref n 1
 node 2 <L> 0 0
 seta nrot n 2
-sys echo "*cload"   > load.inp
-sys echo "2,3,<M>" >> load.inp
+sys echo *cload   > load.inp
+sys echo 2,3,<M> >> load.inp
 
 send all abq
 send all abq nam
