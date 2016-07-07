@@ -3,10 +3,13 @@
 Working environment:
 
 + Example files
-+ CalculiX (CGX and CCX)
-+ Setup of the path to the helper scripts
-+ Gmsh (sometimes used for geometry and meshing)
-+ Git (for convenient and smart update of the example files)
++ Command window (terminal) with the following commands working:
+  + `monitor.py`, `dat2txt.py`, `param.py` (helper scripts from the examples collection)
+  + `gmsh` (sometimes used for geometry and meshing)
+  + `join`, `mv` (unix commands, under Windows you might install Cygwin to make them available)
+  + `gnuplot` (plotting program)
+  + `cgx` and `ccx` (the CalculiX programs)
+  + `git` (source code management system, for easy update of the example collection)
 
 The examples are developed under Linux but most of them might work under Windows.
 
@@ -41,6 +44,11 @@ Windows is not the native development platform for CalculiX and this may cause p
 + CCX fails to clean the result files upon startup if the files (e.g. .frd) is still open in CGX. Thus, the .frd file accumulates the results of multiple runs instead of just being re-written.
 + CGX doesn't properly syncronize screen shots with `hcpy`. The command acts as if it was written some commands further above in the .fbd file.
 
+Don't expect all system calls (`sys` command) in the CGX scripts to work. In particular:
++ Many examples use the unix command `mv` to rename files (screenshots, results)
++ Some examples use `join` to combine results files, mainly to create force-displacement plots.
+Former problems with incompatible `echo` behaviour have been fixed.
+
 #### CalculiX
 
 Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting and execution hotkeys for various relevant file types.
@@ -68,8 +76,6 @@ You might also wish to change the default working directory (default current dir
 
 Run the examples in the CalculiX Command Window.
 
-Don't expect all system calls (`sys` command) in the CGX scripts to work. Normally, there should be windows equivalents but tests mainly have been done  under Linux.
-
 #### Other Tools
 
 **Gnuplot** is already included in the bConverged CalculiX distribution.
@@ -77,7 +83,7 @@ Don't expect all system calls (`sys` command) in the CGX scripts to work. Normal
 **Gmsh** is only included if you purchase the Open Engineering Suite from bConverged.
 
 Otherwise you can install it separately from http://gmsh.info/.
-Make sure that the executable is in the path. Either
+Make sure that the executable is in the path.
 
 **Markdown Editor** For viewing the README.md files (or for writing your own), you might install [Markdown Edit](http://markdownedit.com/). It has life preview with support for Github flavoured Markdown (except for tables, these aren't rendered).
 
