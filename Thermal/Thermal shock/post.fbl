@@ -20,6 +20,7 @@ ds 71 e 1
 graph Npath length
 ds 72 e 3
 graph Npath length
+sys gnuplot profile.gnu
 
 # create screen shots
 seta base se all
