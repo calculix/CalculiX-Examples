@@ -65,10 +65,10 @@ valu w4 pop 2
 valu w4 / w1 w4
 
 # write values to a file
-sys echo "Square sref wref " > dat.txt
-sys echo "Circle s2 w2 " >> dat.txt
-sys echo "HCircle s3 w3 " >> dat.txt
-sys echo "Iprofile s4 w4 " >> dat.txt
+sys echo Square sref wref > dat.txt
+sys echo Circle s2 w2 >> dat.txt
+sys echo HCircle s3 w3 >> dat.txt
+sys echo Iprofile s4 w4 >> dat.txt
 
 # make the barchart
 sys gnuplot barchart.gpl

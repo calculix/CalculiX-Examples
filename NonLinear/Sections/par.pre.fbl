@@ -69,7 +69,7 @@ seta ! all
 frame
 view elem
 hcpy png
-sys mv hcpy_1.png Refs/mesh.pngview elem
+sys mv hcpy_1.png Refs/mesh.png
 
 # sets
 send xL abq nam
