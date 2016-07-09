@@ -146,3 +146,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="4-point bending test of a honeycomb sandwich">
 ](NonLinear/Honeycomb/)
+[<img
+  src="Linear/PSE/EYY.png"
+  width="200"
+  title="Illustration of plane stress/strain condition">
+](Linear/PSE/)

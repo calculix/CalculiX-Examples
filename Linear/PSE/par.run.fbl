@@ -1,0 +1,141 @@
+# <b0=1> width of the plane models
+# <b1=10> width of the beam
+# <b2=150> width of the plate
+# <he=10> heigth
+# <le=50> length
+# <dist=30> distance of the models
+
+seto PE
+pnt ! 0 0 0
+swep all new tra 0 <b0> 0 1 a
+setc
+
+seto PS
+pnt ! 0 <b0+dist> 0
+swep PS new tra 0 <b0> 0 1 a
+setc
+
+seto Beam
+pnt ! 0 <2*b0+2*dist> 0
+swep Beam new tra 0 <b1> 0 2 a
+setc
+
+seto Plate
+pnt ! 0 <2*b0+b1+3*dist> 0
+swep Plate new tra 0 <b2> 0 20 a
+setc
+
+swep all new tra 0 0 <he> 2 a
+swep all new tra <le> 0 0 20 a
+
+elty all he8i
+mesh all
+send all abq
+
+# mesh plot
+frame
+rot y
+rot l 20
+rot u 25
+zoom 2.3
+view elem
+text From bottom right: plane strain, plane stress, beam, plate
+seta ! all
+hcpy png
+sys mv hcpy_1.png mesh.png
+
+# z support
+seta nodes n all
+enq nodes fixz rec <le> _ _ 0.1
+send fixz abq spc 3
+text Constraint uz=0 (support)
+plot n fixz
+hcpy png
+sys mv hcpy_2.png uz0.png
+
+# y support
+enq nodes fixy rec _ <b0/2.> _ <1.1*b0/2.>
+seta fixy p D003 D005 D007
+comp fixy do
+send fixy abq spc 2
+text Constraint uy=0 (rigid body constraint and plane strain)
+plot n fixy
+hcpy png
+sys mv hcpy_3.png uy0.png
+
+# symmetry
+enq nodes symx rec 0 _ _ 0.1
+send symx abq spc 1
+text Constraint ux=0 (symmetry)
+plot n symx
+hcpy png
+sys mv hcpy_4.png ux0.png
+
+# load
+seta load s A00D A00E A00F A00G
+comp load do
+comp load do
+send load abq pres 1
+text Pressure application area
+plot f load
+hcpy png
+sys mv hcpy_5.png load.png
+
+sys ccx solve
+read solve.frd
+
+# sys wmctrl -r :ACTIVE: -e 0,200,0,1200,600
+
+# sys wmctrl -r Calculix -e 0,200,0,1200,600
+# rot y
+# rot l 60
+# rot u 30
+# zoom 2
+
+
+view disp
+view elem off
+scal d 200
+rot y
+rot l 10
+zoom
+zoom 3
+ds 1 e 3
+text Vertical displacement
+plot fv all
+hcpy png
+sys mv hcpy_6.png U3-flat.png
+
+seta base se all
+copy all new mir x
+rot y
+rot l 20
+rot u 25
+frame
+zoom 2.3
+tra l <le/2>
+
+ds 1 e 3
+plot fv base
+hcpy png
+sys mv hcpy_7.png U3.png
+
+text Transverse strain
+ds 3 e 2
+hcpy png
+sys mv hcpy_8.png EYY.png
+
+text Transverse stress
+ds 2 e 2
+hcpy png
+sys mv hcpy_9.png SYY.png
+
+text Longitudinal (bending) stress
+ds 2 e 1
+hcpy png
+sys mv hcpy_10.png SXX.png
+
+text Equivalent (von Mises) stress
+ds 2 e 7
+hcpy png
+sys mv hcpy_11.png SE.png

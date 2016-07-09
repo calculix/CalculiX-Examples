@@ -1,0 +1,20 @@
+*include, input=all.msh
+*boundary
+*include, input=fixy_2.bou
+*include, input=fixz_3.bou
+*include, input=symx_1.bou
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+*step
+*static
+*dload
+*include, input=load.dlo
+*node file
+U
+*el file
+S,E
+*end step
