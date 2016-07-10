@@ -1,16 +1,8 @@
 sys gmsh ct.geo
 read gmsh.inp
 
-# Symmetry
-comp Symy do
-comp Symz do
-# force
-comp Load do
 # remove all surface elements
-seta tozap e all
-setr tozap e +C3D10
-zap tozap
-del se0
+zap +CPS6
 
 send all abq
 send Symy abq nam

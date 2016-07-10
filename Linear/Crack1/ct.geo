@@ -55,5 +55,6 @@ Physical Surface("Symy")={30};
 Physical Surface("Symz")={14};
 Physical Surface("Load")={66,70};
 Physical Volume("Part")={1};
+Mesh.SaveGroupsOfNodes = 1;
 Save "gmsh.inp";
 Save "gmsh.png";
