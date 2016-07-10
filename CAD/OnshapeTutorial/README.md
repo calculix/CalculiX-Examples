@@ -7,10 +7,10 @@ generated part.
 * The workflow is fully automated using a CGX fbd file.
 * The geometry is created in Onshape and exported as STEP file.
 * Import and meshing in gmsh, export as .inp file with volume and surface meshes.
-  From within gmsh, display the surface numbers and note the required ones for
-  loads and constraints application.
-* Open the inp file in cgx and convert the surface element sets for boundary  
-  conditions into node sets. Remove all surface elements.
+  In gmsh, define physical surfaces for boundary conditions and export the mesh
+  with appropriate settings (to ensure that node sets are written)
+* Open the inp file in cgx and remove all surface elements. Eventually extend node sets to
+  face sets for surface definition or pressure application.
 * Write the mesh and required set definitions
 * Write other FEA items
 * Run the analysis
@@ -41,24 +41,12 @@ The individual steps of the workflow are discussed below.
 The STEP geometry is loaded into gmsh and meshed with second order tetrahedra. Gmsh
 also meshes the surfaces with individual sets of second order triangles.
 
-Upon export in ABAQUS format (inp) the elements are stored in individual sets
-of the name VolumeXX and SurfaceXX, where
-XX are unique region numbers.
+Then, the physical groups have to be defined.
++ a phyiscal volume, named "part", containing the part
++ a physical surface "support", defining the area to be fixed
++ a physical surface "load", defining the area for pressure application
 
-The regions for boundary conditions are referenced by their numbers. therefore,
-gmsh offers a display of the meshed surfaces with region numbers.
-
-![Model in Gmsh](gmsh.png)
-
-By interactive inspection, the relevant surface numbers are found:
- + Surface5 for the support
- + Surface17 for pressure application
-
-The only non-default meshing option is to use second order elements.
-
-The whole process of STEP inport, mesh and display setting, meshing and export of the mesh
-is controlled by a gmsh geo file. Alternatively, a set of command line
-parameters for gmsh could have been used.
+Upon export to ABAQUS format (inp) node and element sets for the physical groups are written.
 
 The gmsh geo file can be executed separately if you want to play around with the meshing details:
 ```
@@ -72,35 +60,23 @@ You could do that interactively using
 ```
 > cgx -c gmsh.inp
 ```
-Then you might issue `prnt se` in order to see what sets are defined and `plot e <setname>` to
-display individual element sets.
+Then you might issue `prnt se` in order to see what sets are defined and `plot e` or `plot n` to
+display individual sets (browse the sets by PageUp and PageDown).
 
-Gmsh provides the surfaces as sets of 2D elements. CalculiX needs sets of nodes
-or sets of faces of solid elements for
-boundary condition application.
+Some cleanup is required, because gmsh writes 2D elements for the physical surfaces, which are not needed in CalculiX.
 
-CGX has a mechanism for doing this conversion.
-
-1. Extend the relevant surface element set to include the nodes, e.g.
-     ```
-     comp SurfaceXX do
-     ```
-
-1. Remove all Surface elements. The extended sets now contain just the nodes. A generic way to do this is
-  ```
-    seta tozap e all
-    setr tozap e +C3D10
-    zap tozap
-    del se0
-  ```
-  
-1. Eventually extend the node sets to include the faces of the adjacent volume elements.
-    ```
-     comp SurfaceXX do
-    ```
-
+Remove the 2D elements (we address them by type here):
+```
+zap +CPS6
+```
+Extend node sets to face sets if required (here we need the set `load` for
+pressure application)
+```
+comp load do
+```
 The following image shows the nodes of the support surface and the faces of the pressure
 application surface.
+
 <img src="Refs/sets.png" width="400" title="Sets for boundary application">
 
 Once the sets are defined, there is no particular challenge any more with setting up the simulation.

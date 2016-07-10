@@ -1,8 +1,8 @@
 *include,input=all.msh
-*include,input=fix.nam
+*include,input=support.nam
 ** symmetry at bottom
 *boundary
-Nfix,1,3
+Nsupport,1,3
 ** material definition
 *material, name=steel
 *elastic
@@ -11,7 +11,7 @@ Nfix,1,3
 *STEP
 *STATIC
 *dload
-*include,input=pres.dlo
+*include,input=load.dlo
 *el file
 S
 *node file

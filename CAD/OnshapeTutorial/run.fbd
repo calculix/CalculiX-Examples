@@ -2,25 +2,16 @@
 sys gmsh part.geo
 read gmsh.inp
 
-# Support
-comp Surface5 do
-seta fix n Surface5
-# Pressure load
-comp Surface17 do
-seta pres n Surface17
-# remove all surface elements
-seta tozap e all
-setr tozap e +C3D10
-zap tozap
-del se0
+# remove surface elements
+zap +CPS6
 
 send all abq
-send fix abq nam
-comp pres do
-send pres abq pres 1
+send support abq nam
+comp load do
+send load abq pres 1
 
-plot f pres
-plus n fix
+plot f load
+plus n support
 hcpy png
 sys mv hcpy_1.png Refs/sets.png
 
