@@ -43,6 +43,7 @@ First, a `*frequency` step is performed and then a `*steady state dynamics` step
 ## Postprocessing
 
 Mode shapes
+
 <img src="modes.png">
 
 
