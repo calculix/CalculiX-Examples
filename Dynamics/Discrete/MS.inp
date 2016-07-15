@@ -1,0 +1,64 @@
+** based on example spring1.inp
+*NODE,NSET=NALL
+1,0.,0.,0.
+2,1.,0.,0.
+3,2,0,0
+4,3,0,0
+5,4,0,0
+*nset,nset=response
+2,4
+*ELEMENT,TYPE=SPRINGA,ELSET=ESpring
+1,1,2
+3,3,4
+** this element enforces the existence of node 5 in the model,
+** in the expanded model it is otherwise not existent any more
+5,4,5
+*ELEMENT,TYPE=DASHPOTA,ELSET=EDash
+6,1,2
+7,3,4
+*ELEMENT,TYPE=B31,ELSET=Emass
+2,2,3
+4,4,5
+*BOUNDARY
+1,1,3
+2,2,3
+3,2,6
+4,2,6
+5,2,6
+*equation
+2
+2,1,1,3,1,-1
+*equation
+2
+4,1,1,5,1,-1
+*SPRING,ELSET=Espring
+
+10.
+*DASHPOT,elset=EDash
+
+0.000001
+*MATERIAL,NAME=EL
+*ELASTIC
+210000.,.3
+*DENSITY
+7.8E-9
+*beam section, elset=Emass,material=EL,section=rect
+1,1
+*STEP
+*frequency,storage=yes
+2
+*cload
+5,1,0
+*NODE file
+U
+*END STEP
+*STEP
+*STEADY STATE DYNAMICS
+0,12000
+*cload
+5,1,1
+*NODE file
+PU,U
+*NODE print,nset=response
+U
+*END STEP
