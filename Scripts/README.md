@@ -119,7 +119,12 @@ The expressions are scanned and the angle brackets
 replaced (pre-processing):
   * Variable definitions are copied verbatim to the output (for reference/documentation).   
   * Expressions are replaced by their result.
-  * Any valid Python expressions can be used. The math module is already imported (`from math import *`), you can use all math functions without prefix.
+  * Python expressions involving the following functions from the `math` module can be used:
+  ```
+  'acos', 'asin', 'atan', 'atan2', 'ceil', 'cos', 'cosh', 'degrees', 'e', 'exp', 'fabs', 'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log',
+  'log10', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh'
+  ```
+
 
 
 |                 | `<filename>.par` or `par.<filename>` |`<filename>` |

@@ -26,6 +26,9 @@ if len(sys.argv)==1:
 if len(sys.argv)>1:
     print "Using file:",sys.argv[1]
     source = sys.argv[1]
+    # check if parameter values are given on the command line
+    if len(sys.argv)>2:
+        print sys.argv[2:]
 
 print("Source "+source)
 if source.endswith(".par"):
@@ -36,10 +39,19 @@ print("Target "+target)
 f = open(source,"r")
 fo = open(target,"w")
 # context dictionaries for evaluation
-g={}
-l={}
+# restriction to safe functions based on
+# http://lybniz2.sourceforge.net/safeeval.html
+from math import *
+safe_list = ['acos', 'asin', 'atan', 'atan2', 'ceil', 'cos', 'cosh', 'degrees', 'e', 'exp', 'fabs', 'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log',
+'log10', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh']
+#use the list to filter the local namespace
+safe_dict = dict([ (k, locals().get(k, None)) for k in safe_list ])
+#add any needed builtins back in.
+safe_dict['abs'] = abs
+l=safe_dict
+g={"__builtins__":None}
 ln=1 # linenumber for error message
-exec("from math import *",g,l)
+#exec("from math import *",g,l)
 for line in f:
     # split line into dead and active strings
     s=re.split(r"<([^>]*)>",line)
