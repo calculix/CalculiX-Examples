@@ -10,7 +10,7 @@ File                           | Contents
  :-------------                | :-------------
  [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing, parametrized with param.py
  [post.fbl](post.fbl)          | CGX script, post-processing, images and bar chart
- [Biegung.inp](Test.inp)       | CCX input
+ [Biegung.inp](Biegung.inp)       | CCX input
  [barchart.gpl](barchart.gpl)  | Gnuplot file for the bar chart
 
 The model contains several simply supported beams under gravity load of equal section area but different section shape.
