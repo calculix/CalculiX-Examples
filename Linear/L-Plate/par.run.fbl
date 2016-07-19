@@ -1,0 +1,63 @@
+# <h=100>
+# <p=1>
+pnt ! 0 0 0
+swep all new tra 0 <h> 0
+swep all new tra <2*h> 0 0
+seta quad se all
+
+copy quad new tra <-2*h> 0 0
+copy quad new tra <-2*h> <h> 0
+
+merg p all
+merg l all
+
+div all auto 10
+elty all qu8
+mesh all
+seta plate e all
+rot -z
+view elem
+
+# upper edge
+seta nodes n all
+enq nodes upper rec _ <2*h> _ 0.01
+# lower edge
+enq nodes lower rec _ 0 _ 0.01
+# include elements for ednor load
+comp lower up
+# left edge
+enq nodes left rec <-2*h> _ _ 0.01
+# right edge
+enq nodes right rec <2*h> _ _ 0.01
+
+# mesh image
+view edge off
+frame
+plus n upper r
+plus n left g
+plus n lower b
+plus n right m
+
+hcpy png
+sys mv hcpy_1.png mesh.png
+
+send all abq
+send all abq nam
+
+sys ccx solve
+
+read solve.frd new
+
+ds 2 e 19
+view disp
+scal d 1000
+hcpy png
+sys mv hcpy_2.png PS3.png
+
+ds 3 e 4
+view vec
+scal v 3
+hcpy png
+sys mv hcpy_3.png RFv.png
+
+# vibration shapes

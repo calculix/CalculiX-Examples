@@ -1,0 +1,44 @@
+*INCLUDE, INPUT=all.msh
+*INCLUDE, INPUT=lower.nam
+*include, input=upper.nam
+*include, input=right.nam
+*include, input=left.nam
+*include, input=plate.nam
+*BOUNDARY
+Nupper,2,3,0
+Nlower,3,3,0
+Nleft,1,1,0
+Nleft,3,3,0
+Nright,3,3,0
+*MATERIAL,NAME=Steel
+*ELASTIC
+200000,0.3
+*density
+7.85e-9
+*SHELL SECTION,ELSET=Eplate,MATERIAL=Steel
+1
+*STEP
+*static
+*dLOAD
+Elower,EDNOR2,1
+*NODE FILE
+U, RF
+*EL FILE
+S
+*END STEP
+*step,perturbation
+*frequency
+6
+*NODE FILE
+U
+*el file
+*END STEP
+*STEP
+*buckle
+3
+*dLOAD
+Elower,EDNOR2,1
+*NODE FILE
+U
+*el file
+*END STEP

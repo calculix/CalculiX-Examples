@@ -156,3 +156,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Freqency response of a 2 DOF spring-mass-system">
 ](Dynamics/Discrete/)
+[<img
+  src="Linear/L-Plate/PS3.png"
+  width="200"
+  title="Buckling and modal analysis of a pre-loaded system">
+](Linear/L-Plate/)

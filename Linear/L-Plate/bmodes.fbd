@@ -1,0 +1,19 @@
+read solve.frd new
+
+rot -z
+rot c -60
+rot d 60
+zoom 1.5
+tra r 20
+view elem
+anim real
+scal d 200
+movi frames 11
+ds -2 a
+sys mv movie.gif b1.gif
+movi frames 11
+ds -1 a
+sys mv movie.gif b2.gif
+movi frames 11
+ds -0 a
+sys mv movie.gif b3.gif
