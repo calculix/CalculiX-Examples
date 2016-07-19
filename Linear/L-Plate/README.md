@@ -5,13 +5,13 @@ Tested with CGX/CCX 2.10
 + Eigenvalue buckling analysis
 + Shell edge load
 
-File                      | Contents    
- :-------------           | :-------------
- [pre.fbl](pre.fbl)       | Preprocessing script for CGX     
- [modal.inp](modal.inp)   | CCX input
- [shapes.fbl](shapes.fbl) | CGX script for postprocessing (mode shape movies)
 
-
+  File                      | Contents    
+ :-------------             | :-------------
+ [par.run.fbl](par.run.fbl) | Control script for CGX     
+ [solve.inp](solve.inp)     | CCX input
+ [vmodes.fbd](vmodes.fbd)   | CGX script, vibration mode movies)
+ [bmodes.fbd](bmodes.fbd)   | CGX script, buckling mode movies)
 
 ## Model Description
 The model is a flat L-shaped plate.
@@ -29,7 +29,7 @@ Boundary conditions
 
 Set the appropriate values for the parameters in `par.run.fbd` and run the simulation using
 ```
-> param.py par.run.fbd
+> param.py par.run.fbl
 > cgx -b run.fbl
 ```
 ## Solution
