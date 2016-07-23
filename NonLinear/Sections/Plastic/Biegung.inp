@@ -1,0 +1,77 @@
+*include, input=all.msh
+*include, input=x0.nam
+*include, input=fixy.nam
+*include, input=xL.nam
+*include, input=xLsquare.nam
+*include, input=xLcircle.nam
+*include, input=xLhcircle.nam
+*include, input=xLIprofile.nam
+*include, input=disp.nam
+** constraints
+*boundary
+Nx0,1
+Nfixy,2
+NxL,3
+
+** **mean displacement of block
+** *node, nset=Nref1
+** 1, 0, 0, 0
+** *element, elset=Ecoup1,type=dcoup3d
+** 1,1
+** *distributing coupling, elset=Ecoup1
+** Nx0, 1
+** ** mean displacement of cylinder
+** *node, nset=Nref2
+** 2, 1, 0, 0
+** *element, elset=Ecoup2,type=dcoup3d
+** 2,1
+** *distributing coupling, elset=Ecoup2
+** Nnmid_cylinder, 1
+** ** mean displacement of hollow cylinder
+** *node, nset=Nref3
+** 3, 0, 0, 0
+** *element, elset=Ecoup3,type=dcoup3d
+** 3,1
+** *distributing coupling, elset=Ecoup3
+** Nnmid_hcylinder, 1
+** **mean displacement
+** *node, nset=Nref4
+** 4, 0, 0, 0
+** *element, elset=Ecoup4,type=dcoup3d
+** 4,1
+** *distributing coupling, elset=Ecoup4
+** Nnmid_Ibeam, 1
+
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*plastic
+200,0
+**1000,1
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+*step,nlgeom
+*static
+0.05,1,0.00000001,0.05
+*boundary
+Ndisp,3,3,20
+** Nref1,3,3,-3
+** Nref2,3,3,-3
+** Nref3,3,3,-3
+** Nref4,3,3,-3
+*node file
+U
+*el file
+S,PE
+*node print, nset=Nxlsquare,totals=only
+RF
+*node print, nset=Nxlcircle,totals=only
+RF
+*node print, nset=Nxlhcircle,totals=only
+RF
+*node print, nset=Nxliprofile,totals=only
+RF
+*end step

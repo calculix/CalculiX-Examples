@@ -1,0 +1,48 @@
+read Biegung.frd new
+
+view disp
+view elem
+rot -y
+rot l 110
+rot u 20
+
+seta base all
+copy base new mir x
+comp new do
+ds 2 e 1
+plot fv base
+hcpy png
+sys mv hcpy_1.png S11-1.png
+
+rot -y
+rot l 135
+rot u 20
+ds -1 e 1
+plot fv base
+mm 210
+steps 21
+zoom 3
+hcpy png
+sys mv hcpy_1.png PE.png
+
+ds -0 e 1
+min 0 e l
+max 0.004 e l
+steps 2
+plot fv all
+
+frame
+zoom 7
+tra r 20
+plot fv base
+scal d
+anim real
+movi frames auto
+ds 3 ah 1
+sys mv movie.gif PE.gif
+
+mm 210 e l
+steps 21
+movi frames auto
+ds 2 ah 1
+sys mv movie.gif SXX.gif

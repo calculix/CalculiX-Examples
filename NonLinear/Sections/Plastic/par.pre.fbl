@@ -1,0 +1,160 @@
+# <area=300>
+# <length=400>
+# <thickness = 4>
+# <dist = 40>
+# <divx = 20>
+
+asgn n 005
+asgn e 005
+
+# square
+# <l1=area**0.5>
+seto square
+  pnt ! 0 0 0
+  swep all new tra 0 <l1> 0 10
+  swep all new tra 0 0 <l1> 10
+  move square tra 0 <-l1/2.> <-l1/2.>
+setc
+seta fixy D001
+seto block
+swep square xLsquare tra <length> 0 0 <divx> a
+setc block
+
+
+# circle
+# <radius=(area/pi)**0.5>
+seto circle
+ pnt pc 0 0 0
+ pnt py 0 <radius> 0
+ pnt pz 0 0 <radius>
+ line l1 pc py 6
+ line l2 pc pz 6
+ line l3 py pz pc 8
+ surf s1 l1 l2 l3
+ copy circle new mir y
+ copy circle new mir z
+ move circle tra 0 <dist> 0
+setc
+seta fixy p pc
+seto cylinder
+swep circle xLcircle tra <length> 0 0 <divx> a
+setc cylinder
+
+# Hollow circle
+# <ri=area/(2.*pi*thickness)-thickness*0.5>
+seto hcircle
+ pnt pri 0 0 <ri> 0
+ swep hcircle new tra 0 0 <thickness> 2
+ swep hcircle new rot x 90 10
+ copy hcircle new rot x 90
+ copy hcircle new rot x 180
+ move hcircle tra 0 <2.*dist> 0
+setc
+seta fixy p pri
+seto hcylinder
+swep hcircle xLhcircle tra <length> 0 0 <divx> a
+setc hcylinder
+
+# I Profile made of three identical rectangles of given thickness
+# <l1=area/(3.*thickness)>
+seto Iprofile
+  pnt pI0 0 0 0
+  swep Iprofile pI1 tra 0 0 <l1/2.> 0
+  swep Iprofile new tra 0 <thickness> 0
+  seto f0
+    swep pI1 new tra 0 0 <thickness>
+  setc f0
+  swep f0 f1 tra 0 <thickness> 0
+  swep f1 new tra 0 <(l1-thickness)/2.> 0
+  swep f0 new tra 0 <-(l1-thickness)/2.> 0
+  copy Iprofile new mir z
+setc Iprofile
+move Iprofile tra 0 <3.*dist> 0
+seta fixy p pI0
+seto Ibeam
+swep Iprofile xLIprofile tra <length> 0 0 <divx> a
+setc Ibeam
+
+# set the bias to the longitudinal lines
+# enquiring lines is only possible at their end points
+seta lines l all
+enq lines l0 rec 0 _ _ 0.1
+enq lines ll rec <length> _ _ 0.1
+seti lb l l0 ll
+bia lb 10
+
+#Meshing
+elty all he8i
+mesh all
+merg n all
+send all abq
+
+# # choose nodes of the middle length:
+# # --> square / block:
+# seta nblock n block
+# enq nblock nmid_block rec <length/2> _ _ 0.1
+# # --> circle / cylinder:
+# seta ncylinder n cylinder
+# enq ncylinder nmid_cylinder rec <length/2> _ _ 0.1
+# # --> hcircle / hcylinder:
+# seta nhcylinder n hcylinder
+# enq nhcylinder nmid_hcylinder rec <length/2> _ _ 0.1
+# # --> Iprofile / Ibeam:
+# seta nIbeam n Ibeam
+# enq nIbeam nmid_Ibeam rec <length/2> _ _ 0.1
+
+# Mesh image
+rot -y
+rot l 110
+rot u 20
+frame
+zoom 2.5
+tra l <dist>
+view elem
+seta ! all
+hcpy png
+sys mv hcpy_1.png mesh.png
+
+# sets
+seta nodes n all
+enq nodes xL rec <length> _ 0 0.01 a
+send xL abq nam
+
+enq nodes x0 rec 0 _ _ 1 a
+send x0 abq nam
+
+send fixy abq nam
+
+enq x0 disp rec 0 _ 0 0.1
+send disp abq nam
+
+send xLsquare abq nam
+send xLcircle abq nam
+send xLhcircle abq nam
+send xLIprofile abq nam
+
+text x0 (red), y0 (green), disp (turq), xL (blue)
+rot x
+rot c -90
+rot l 5
+rot u 10
+frame
+zoom 2.5
+tra <dist> r
+plot n x0 r
+plus n fixy g
+plus n disp t
+plus n xL b
+hcpy png
+sys mv hcpy_2.png sets.png
+
+
+# send nmid_block abq nam
+# send nmid_cylinder abq nam
+# send nmid_hcylinder abq nam
+# send nmid_Ibeam abq nam
+
+volu block
+volu cylinder
+volu hcylinder
+volu Ibeam

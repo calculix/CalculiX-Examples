@@ -161,3 +161,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Buckling and modal analysis of a pre-loaded system">
 ](Linear/L-Plate/)
+[<img
+  src="NonLinear/Sections/Plastic/PE.gif"
+  width="200"
+  title="Different section shapes of identical area. Plastic zone">
+](NonLinear/Sections/Plastic)
