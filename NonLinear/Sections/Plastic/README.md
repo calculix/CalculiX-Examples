@@ -18,8 +18,6 @@ File                           | Contents
  [chart.fbl](chart.fbl)        | CGX script, chart generation
  [Biegung.inp](Biegung.inp)    | CCX input
 
-
-
 ## Pre-Processing
 
 The problem is parametrized using [param.py](../../../Scripts/param.py).
@@ -56,3 +54,11 @@ The plastic zone is marked using a two-step color scheme with the plastic proof 
 
 <img src="PE.gif" width="400" title="Plastic zone (plastic strain > 0.2%)">
 <img src="SXX.gif" width="400" title="Bending stress">
+
+To create a force-displacement-plot, type
+```
+> cgx -b -bg chart.fbl
+```
+Note that this script does not yet account for changes in the input file (maximum displacement is hard-wired).
+
+<img src="df.png" title="Force-displacement-plot">
