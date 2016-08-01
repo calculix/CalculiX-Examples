@@ -17,6 +17,7 @@ File                           | Contents
  [movie.fbl](movie.fbl)        | CGX script, movie generation
  [chart.fbl](chart.fbl)        | CGX script, chart generation
  [Biegung.inp](Biegung.inp)    | CCX input
+ [df.gpl](df.gpl)              | Gnuplot script for the force-displacement-plot
 
 ## Pre-Processing
 
@@ -52,7 +53,7 @@ The ideal-plastic material can create convergence problems. These are mitigated 
 ```
 The plastic zone is marked using a two-step color scheme with the plastic proof strain of 0.2% marking the limit between the two colors. The right movie shows the longitudinal (bending) stress with color bar limits 5% above the yield limit.
 
-<img src="PE.gif" width="400" title="Plastic zone (plastic strain > 0.2%)">
+<img src="PE.gif" width="400" title="Plastic zone (plastic strain > 0.2% )">
 <img src="SXX.gif" width="400" title="Bending stress">
 
 To create a force-displacement-plot, type
