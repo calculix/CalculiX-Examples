@@ -7,7 +7,7 @@ Tested with CGX/CCX 2.10
 + Elasto-plastic material without hardening (ideal plastic)
 + Objective:
   + Evolution of the plastic zone
-  + Force-displacement curves (TBD)
+  + Force-displacement curves
   + Ultimate bending load - plastic section modulus (TBD)
 
 
@@ -15,6 +15,7 @@ File                           | Contents
  :-------------                | :-------------
  [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing, parametrized with param.py
  [movie.fbl](movie.fbl)        | CGX script, movie generation
+ [chart.fbl](chart.fbl)        | CGX script, chart generation
  [Biegung.inp](Biegung.inp)    | CCX input
 
 
