@@ -62,4 +62,4 @@ To create a force-displacement-plot, type
 ```
 Note that this script does not yet account for changes in the input file (maximum displacement is hard-wired).
 
-<img src="df.png" title="Force-displacement-plot">
+<img src="df.png" title="Force-displacement-plot (full model)">
