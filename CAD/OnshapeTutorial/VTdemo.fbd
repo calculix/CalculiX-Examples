@@ -1,0 +1,48 @@
+# sys gmsh part.step -clcurv -3 -o gmsh.inp -order 2
+sys gmsh part.geo
+read gmsh.inp
+# remove surface elements
+zap +CPS6
+plot f all n
+view elem
+rot y
+rot d 20
+zoom 2
+plus n all
+hcpy png
+sys mv hcpy_1.png mesh.png
+frame
+zoom 5
+rot y
+rot u 20
+tra l 30
+tra d 30
+plot f all n
+plus n all
+hcpy png
+sys mv hcpy_2.png mesh1.png
+del mesh
+
+sys gmsh partVT.geo
+read gmshVT.inp new
+# remove surface elements
+zap +CPS6
+plot f all n
+view elem
+frame
+rot y
+rot d 20
+zoom 2
+plus n all
+hcpy png
+sys mv hcpy_3.png VTmesh.png
+frame
+zoom 5
+rot y
+rot u 20
+tra l 30
+tra d 30
+plot f all n
+plus n all
+hcpy png
+sys mv hcpy_4.png VTmesh1.png
