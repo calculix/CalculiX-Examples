@@ -25,7 +25,6 @@ generated part.
 | [part.geo](part.geo) | Gmsh control file for meshing and model display |
 | [run.fbd](run.fbd) | CGX control file for preprocessing, solving and postprocessing |
 | [partVT.geo](partVT.geo) | Gmsh control file with geometry cleaning (virtual topology)|
-| [runVT.fbd](runVT.fbd) | CGX control file for the VT version|
 | [VTdemo.fbd](VTdemo.fbd) | CGX file for the mesh plots (original and VT version) |
 | [solve.inp](solve.inp) | CCX input file |
 
