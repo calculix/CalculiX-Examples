@@ -49,7 +49,7 @@ of the total reaction forces and the displacement of the monitor node.
 
 <img src="df.png" width="400" title="Force-displacement curve">
 
-Stress profiles in cross sections at the support (left) and at the eye (right, magenta in the mesh plot). The diagrams show the profiles at the first increment (still elastic) and at the end of the load step.
+Stress profiles in cross sections at the support (left) and at the eye (right, light blue in the mesh plot). The diagrams show the profiles at the first increment (still elastic) and at the end of the load step.
 
 <img src="SXX-fix.png" width="400" title="Stress profile at the support">
 <img src="SXX-path.png" width="400" title="Stress profile at x=0">
