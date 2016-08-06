@@ -1,5 +1,5 @@
 # 90°-Bending of an Elastic Strip
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is
@@ -11,19 +11,19 @@ circle. We investigate the following cases:
 * Solid model with mean rotation constraint
 * Solid model with rigid body constraint.
 
-| Model    | CGX input     | CCX input |
-| :------- | :------------- |:---|
-| Beam | [b.fbd](b.fbd) | [b.inp](b.inp) |
-| Shell | [sh.fbd](sh.fbd) | [sh.inp](sh.inp) |
-| Solid, mean rotation MPC | [sm.fbd](sm.fbd) | [sm.inp](sm.inp) |
-| Solid, rigid body MPC | [sr.fbd](sr.fbd) | [sr.inp](sr.inp) |
+Model                    | CGX input        | CCX input
+:-------                 | :-------------   |:---        
+Beam                     | [b.fbd](b.fbd)   | [b.inp](b.inp)
+Shell                    | [sh.fbd](sh.fbd) | [sh.inp](sh.inp)
+Solid, mean rotation MPC | [sm.fbd](sm.fbd) | [sm.inp](sm.inp)
+Solid, rigid body MPC    | [sr.fbd](sr.fbd) | [sr.inp](sr.inp)
 
 
 
-| Auxiliary CGX Files                        | Contents                                      |
-| :-------------              | :-------------                                |
-| [def-plot.fbd](def-plot.fbd)| deformation plot                          |
-| [view.fbd](view.fbd)| view settings                         |
+Auxiliary CGX Files         | Contents     
+:-------------              | :-------------
+[def-plot.fbd](def-plot.fbd)| deformation plot
+[view.fbd](view.fbd)        | view settings   
 ## Reference solution
 Click the image below to open a life SMath worksheet
 

@@ -1,5 +1,5 @@
 # Meshing a CAD Geometry with Gmsh
-Tested with CGX/CCX 2.10, Gmsh 2.13.1
+Tested with CGX/CCX 2.11, Gmsh 2.13.1
 
 This demonstrates a possible workflow for a CalculiX analysis of a CAD
 generated part.

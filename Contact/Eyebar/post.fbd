@@ -1,5 +1,4 @@
 read eyebar.frd
-
 rot -z
 ds -1 e 1
 view disp
@@ -17,3 +16,15 @@ sys mv hcpy_2.png SE.png
 sys dat2txt.py eyebar
 sys join "total force fx,fy,fz_NCONTROL.txt" "displacements vx,vy,vz_NMONITOR.txt" > df.txt
 sys gnuplot df.gnu
+
+# path plots
+read fix.nam inp
+read path.nam inp
+view disp off
+ds 2 e 1
+graph Nfix length
+graph Npath length
+ds -3 e 1
+graph Nfix length
+graph Npath length
+sys gnuplot path.gnu

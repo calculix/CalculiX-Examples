@@ -8,10 +8,10 @@ pnt pe0 0 0 0
 copy all new tra <re> 0 0
 swep new new1 tra <wi> 0 0 10
 swep all new2 rot z 90 16
-swep new2 new3 rot z 90 10
+swep new2 new3 rot z 90 16
 seta p1 p D005
-swep p1 p2 tra <-wi-re> 0 0 5
-swep p2 p3 tra 0 <-wi-re> 0 5
+swep p1 p2 tra <-wi-re> 0 0 8
+swep p2 p3 tra 0 <-wi-re> 0 8
 lcmb lc + L00A + L00B
 surf s1 L008 L002 lc L006
 flip A001
@@ -27,7 +27,7 @@ move pin tra <re-rp> 0 0
 setc pin
 
 #mesh
-elty all qu4e
+elty all qu4s
 div all mult 2
 mesh all
 send all abq
@@ -64,6 +64,11 @@ comp seye do
 comp seye do
 send seye abq sur
 
+# path for stress profile
+seta neye n eye
+enq neye path rec 0 _ _ 0.0001
+send path abq nam
+
 # sets plot
 rot -z
 seta ! all
@@ -72,6 +77,7 @@ plus n fix r
 plus n sym b
 plus n seye g
 plus n spin g
+plus n path t
 
 zoom 1.2
 view elem
