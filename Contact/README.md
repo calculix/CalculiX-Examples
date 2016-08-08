@@ -8,6 +8,7 @@ Tested with CGX/CCX 2.11
 | File                   | Contents                                      |
 | :-------------         | :-------------                                |
 | [pre.fbd](pre.fbd)     | Pre-processing script for CGX                 |
+| [pc-ns.inp](pc-ns.inp) | CCX input, node-to-surface penalty contact |
 | [pc-ss.inp](pc-ss.inp) | CCX input, surface-to-surface penalty contact |
 | [tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            |
 | [equ.inp](equ.inp)     | CCX input, MPC contact with `*equation`       |
@@ -36,7 +37,7 @@ MPC contact with `*equation` leads to a hinged connection at shell edge to face 
 | 9     | 5543  | 3087   | 6769    | 5543
 | 10    | 5648  | 4306   | 7422    | 5430
 
-4x4 S8R elements
+4x4 S8R elements (edit `pre.fbl` accordingly)
 
 | Mode  | tie   | equ    | pc-ss   | pc-ns
 | :--   | :--   | :--    | :--     | :--
