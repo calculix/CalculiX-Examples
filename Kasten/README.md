@@ -1,5 +1,6 @@
+
 # Non-linear Buckling
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 + Large displacements
 + Plasticity
@@ -87,4 +88,7 @@ U,RF
 ```
 > cgx -b post.fbd
 ```
-<img src="deformed.png" width="300">
+The left image shows the result for the parameters as in the files. The right image has double the displacement and a target element size of 3 mm.
+
+<img src="deformed.png" width="400" title="Base parameter values">
+<img src="e3d40.png" width="400" title="Target element size 3 mm, displacement 40 mm">

@@ -18,6 +18,7 @@ frame
 hcpy png
 sys mv hcpy_1.png geo.png
 
+#div all auto 3
 elty all qu8
 mesh all
 send all abq
