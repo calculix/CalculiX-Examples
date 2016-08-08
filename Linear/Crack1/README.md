@@ -23,13 +23,12 @@ The energy release rate is determined from two simulation runs with the present 
 
 a in mm | Strain energy of the quarter model in Nmm
 :---    | :---
-20.5    | 0.05009
-21.0    | 0.05306
+20.5    | 0.050047
+21.0    | 0.053046
 
 
 
-[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/q5Gqb2bx)
-
+[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/AZEb6S2W)
 
 ## Model Description
 The model is a CT (compact tension) specimen with the simulation domain reduced
@@ -44,7 +43,7 @@ release rate can be calculated.
 In order to determine the energy release rate, run the model twice with
 different settings of the crack length `a` in `ct.geo`
 
-For each run, record the crack length a and the strain energy from the file s`olve.dat`.
+For each run, record the crack length a and the strain energy from the file `solve.dat`.
 
 Run the analysis using
 ```
