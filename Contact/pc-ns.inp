@@ -9,11 +9,11 @@
 *SHELL SECTION, ELSET=Eall,MATERIAL=Aluminium
 0.1
 *surface interaction, name=Klebung
-*surface behavior, pressure-overclosure=tied
-1.E7
+*surface behavior, pressure-overclosure=linear
+1.E7,10000,10000
 *friction
 1,1.E7
-*contact pair, interaction=Klebung, type=surface to surface, adjust=1
+*contact pair, interaction=Klebung, type=node to surface, adjust=1
 Sk1,Ss1
 *step,nlgeom
 *static

@@ -13,6 +13,8 @@ swep s2 new tra 0 7 0
 setc s2
 
 # mesh
+#div all mult 2
+#elty all qu8
 elty all qu4
 mesh all
 
