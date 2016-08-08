@@ -37,7 +37,7 @@ MPC contact with `*equation` leads to a hinged connection at shell edge to face 
 | 9     | 5543  | 3087   | 6769    | 5543
 | 10    | 5648  | 4306   | 7422    | 5430
 
-4x4 S8R elements (edit `pre.fbl` accordingly)
+4x4 S8R elements (edit `pre.fbd` accordingly)
 
 | Mode  | tie   | equ    | pc-ss   | pc-ns
 | :--   | :--   | :--    | :--     | :--
