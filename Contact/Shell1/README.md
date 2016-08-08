@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 + Shell assembly with edge to face tied Lagrange contact
 + Indenter with surface-to surface penalty contact
@@ -34,5 +34,5 @@ Create a shaded image of the deformed structure
 > cgx -b post.fbd
 ```
 
-<img src="Refs/def.png" width="400" title="Deformed geometry">
-<img src="Refs/worstPS.png" width="400" title="Worst principal stress">
+<img src="Refs/def1.png" width="400" title="Deformed geometry">
+<img src="Refs/worstPS1.png" width="400" title="Worst principal stress">

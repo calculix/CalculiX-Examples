@@ -12,8 +12,8 @@ ds -1 e 23
 plot fv all
 plus e Eind n
 hcpy png
-sys mv hcpy_1.png Refs/worstPS.png
+sys mv hcpy_1.png Refs/worstPS1.png
 # shaded deformed plot
 plus e all n
 hcpy png
-sys mv hcpy_2.png Refs/def.png
+sys mv hcpy_2.png Refs/def1.png

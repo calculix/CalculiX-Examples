@@ -92,7 +92,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Stress concentration factor, flat strip with hole, bending load, vector and path plots">
 ](Linear/StressConc1)
 [<img
-  src="Contact/Shell1/Refs/def.png"
+  src="Contact/Shell1/Refs/worstPS1.png"
   width="200"
   title="Shell assembly, rigid intenter, penalty contact">
 ](Contact/Shell1/)
