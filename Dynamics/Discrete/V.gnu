@@ -3,7 +3,6 @@ set term pngcairo enhanced
 set out "modes.png"
 set key top left
 set grid
-set xlabel "Position in mm"
 set ylabel "Amplitude (unitless)"
 plot "graph_0.out" using 2:3 title "Mode 1" w lp, "graph_1.out" using 2:3 title "Mode 2" w lp
 set out "V.png"

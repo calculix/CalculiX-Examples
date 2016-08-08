@@ -1,5 +1,5 @@
 # Spring/Mass Oscillator
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 + Frequency response analysis
 + 2-Mass oszillator
