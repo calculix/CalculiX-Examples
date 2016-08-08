@@ -1,5 +1,5 @@
 # Tensile Test
-Tested with CGX 2.10/CCX 2.10
+Tested with CGX/CCX 2.11
 
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
@@ -15,9 +15,9 @@ The model is axisymmetric and represents a 2 mm piece of the wire with full disp
 | File     | Contents    |
 | :------------- | :------------- |
 | [vpre.fbd](vpre.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
-| [pre.fbd.par](pre.fbd.par)     | Pre-processing script for CGX (parametrized with param.py)  |
+| [par.pre.fbd](par.pre.fbd)     | Pre-processing script for CGX (parametrized with param.py)  |
 | [plots.fbd](plots.fbd) | Post-processing script for CGX (history and path plots) |
-| [expansion.fbd](expansion.fbd) | Post-processing script for CGX (axisymmetric expansion) |
+| [expansion.fbd](expansion.fbd) | Post-processing script for CGX (axisymmetric expansion, plots and movie) |
 | [2D.fbd](2D.fbd) | Post-processing script for CGX (2D display) |
 | [Zug.inp](Zug.inp) | CCX input |
 
@@ -36,7 +36,7 @@ Boundary conditions:
 #### Parametrization with param.py
 See [../../Scripts/](../../Scripts/) for details
 ```
-> param.py pre.fbd.par
+> param.py par.pre.fbd
 > cgx -b pre.fbd
 ```
 #### Parametrization with CGX valu

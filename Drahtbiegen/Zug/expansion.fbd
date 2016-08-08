@@ -31,3 +31,9 @@ sys mv hcpy_2.png expanded.png
 plus ev base
 hcpy png
 sys mv hcpy_3.png 2D3D.png
+
+# movie
+plot ev all
+movi delay 0.5
+movi frames auto
+ds 3 ah 1
