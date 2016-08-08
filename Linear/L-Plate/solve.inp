@@ -1,5 +1,7 @@
 *INCLUDE, INPUT=all.msh
 *INCLUDE, INPUT=lower.nam
+*INCLUDE, INPUT=elower.nam
+*INCLUDE, INPUT=lower.sur
 *include, input=upper.nam
 *include, input=right.nam
 *include, input=left.nam
@@ -19,8 +21,10 @@ Nright,3,3,0
 1
 *STEP
 *static
-*dLOAD
-Elower,EDNOR2,1
+***dsload
+**Slower,1.
+*dload
+Eelower,EDNOR2,1
 *NODE FILE
 U, RF
 *EL FILE
@@ -36,8 +40,10 @@ U
 *STEP
 *buckle
 3
-*dLOAD
-Elower,EDNOR2,1
+**dsload
+**Slower,1.
+*dload
+Eelower,EDNOR2,1
 *NODE FILE
 U
 *el file

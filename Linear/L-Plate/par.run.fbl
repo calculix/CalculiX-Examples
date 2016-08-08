@@ -24,7 +24,11 @@ enq nodes upper rec _ <2*h> _ 0.01
 # lower edge
 enq nodes lower rec _ 0 _ 0.01
 # include elements for ednor load
-comp lower up
+seta elower n lower
+comp elower up
+# include element faces for surface definition (for *dsload)
+comp lower do
+send lower abq sur
 # left edge
 enq nodes left rec <-2*h> _ _ 0.01
 # right edge
@@ -43,7 +47,6 @@ sys mv hcpy_1.png mesh.png
 
 send all abq
 send all abq nam
-
 sys ccx solve
 
 read solve.frd new
