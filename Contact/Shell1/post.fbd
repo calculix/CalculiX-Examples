@@ -7,14 +7,14 @@ view elem
 rot y
 rot l 10
 rot u 5
-# def
-ds -1 e 4
-plot f all n
-# store
-hcpy png
-sys mv hcpy_1.png Refs/def.png
 # color plot of worst ps
-ds -0 e 23
+ds -1 e 23
+plot fv all
 plus e Eind n
+plus e all n
 hcpy png
-sys mv hcpy_2.png Refs/worstPS.png
+sys mv hcpy_1.png Refs/worstPS.png
+# shaded deformed plot
+plus e all n
+hcpy png
+sys mv hcpy_2.png Refs/def.png

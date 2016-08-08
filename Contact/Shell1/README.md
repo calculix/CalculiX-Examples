@@ -34,4 +34,5 @@ Create a shaded image of the deformed structure
 > cgx -b post.fbd
 ```
 
-<img src="Refs/def.png" width="400">
+<img src="Refs/def.png" width="400" title="Deformed geometry">
+<img src="Refs/worstPS.png" width="400" title="Worst principal stress">
