@@ -11,7 +11,6 @@ rot u 5
 ds -1 e 23
 plot fv all
 plus e Eind n
-plus e all n
 hcpy png
 sys mv hcpy_1.png Refs/worstPS.png
 # shaded deformed plot
