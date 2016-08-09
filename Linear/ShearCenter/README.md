@@ -1,5 +1,5 @@
 # Shear center
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 + Cantilever beams with point load at the free end
 + Parametric thin-walled sections

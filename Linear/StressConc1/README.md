@@ -1,5 +1,5 @@
 # Stress concentration in a flat strip with hole under bending load
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 + Plane stress model
 + Parametric geometry and load
