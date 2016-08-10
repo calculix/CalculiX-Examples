@@ -1,5 +1,5 @@
 # Three-point bending test of a hollow profile
-Tested with CGX/CCX 2.10
+Tested with CGX/CCX 2.11
 
 + Non-linear static analysis
 + Plasticity
@@ -24,6 +24,8 @@ You may adjust the parameter values in the file [par.pre.fbl](par.pre.fbl) and t
 > param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
+![3PB.png](3PB.png)
+
 <img src="Refs/parts.png" width="400" title="Parts: Specimen, indenter and support">
 
 <img src="Refs/groups.png" width="400" title="Node groups for constraint application">
