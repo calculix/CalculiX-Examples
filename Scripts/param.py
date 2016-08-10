@@ -48,6 +48,7 @@ safe_list = ['acos', 'asin', 'atan', 'atan2', 'ceil', 'cos', 'cosh', 'degrees', 
 safe_dict = dict([ (k, locals().get(k, None)) for k in safe_list ])
 #add any needed builtins back in.
 safe_dict['abs'] = abs
+safe_dict['int'] = int
 l=safe_dict
 g={"__builtins__":None}
 ln=1 # linenumber for error message

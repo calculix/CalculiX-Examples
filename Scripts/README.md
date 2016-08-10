@@ -124,7 +124,10 @@ replaced (pre-processing):
   'acos', 'asin', 'atan', 'atan2', 'ceil', 'cos', 'cosh', 'degrees', 'e', 'exp', 'fabs', 'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log',
   'log10', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh'
   ```
-
+  * The following built-ins are unlocked for usage in expressions:
+  ```
+  'abs', 'int'
+  ```
 
 
 |                 | `<filename>.par` or `par.<filename>` |`<filename>` |
