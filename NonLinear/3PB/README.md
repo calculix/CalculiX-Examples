@@ -17,6 +17,8 @@ File                       | Contents
 The model represents a three point bending test on a elasto-plastic beam with a hollow box section. The simulation
 domain is reduced to a quarter due to symmetry.
 
+[![Screenshot](3PBref.png)](http://smath.info/cloud/worksheet/RgGh4MoK)
+
 ## Pre-Processing
 
 You may adjust the parameter values in the file [par.pre.fbl](par.pre.fbl) and then run
