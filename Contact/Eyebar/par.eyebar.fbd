@@ -1,6 +1,7 @@
-<wi=10>
-<re=10>
-<rp=9.5>
+# <wi=10>
+# <re=10>
+# <rp=9.5>
+# <etyp="qu4e"> Element type (4 or for nodes, e for plain strain, s for plain stress)
 
 # eye
 seto eye
@@ -27,7 +28,7 @@ move pin tra <re-rp> 0 0
 setc pin
 
 #mesh
-elty all qu4s
+elty all <etyp>
 div all mult 2
 mesh all
 send all abq

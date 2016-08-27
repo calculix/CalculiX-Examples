@@ -1,7 +1,7 @@
 # Eye/Pin Contact 2D
 Tested with CGX/CCX 2.11
 
-+ Plane strain model
++ Plane strain model (can be switched to plane stress)
 + Linear elastic pin, elasto-plastic eye
 + Node-to-surface Penalty contact
 + Prescribed displacement of the pin
@@ -23,6 +23,8 @@ The model was inspired by a  [model ](https://groups.yahoo.com/neo/groups/calcul
 Two separate parts are generated and meshed with plane strain elements.
 The prescribed displacement is applied to the flat equatorial surface of the pin.
 
+You can change the model type using the parameter `etyp` in `par.eyebar.fbd`.
+Default is 4 node plane strain.
 ```
 > param.py par.eyebar.fbd
 > cgx -b eyebar.fbd

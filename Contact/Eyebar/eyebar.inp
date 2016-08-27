@@ -16,6 +16,9 @@ Nsym,2,2,0
 *MATERIAL,NAME=STEEL_el
 *ELASTIC
 210000,0.3
+** For plane stress, the pin must be longer than the thickness of the bar, because
+** otherwise the contact may fail if the bar is getting thicker than the pin
+** length. The thickness value is ignored for plane strain
 *SOLID SECTION, Elset=Epin, Material=STEEL_el
 2
 *MATERIAL,NAME=STEEL_pl
