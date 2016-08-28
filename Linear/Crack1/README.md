@@ -28,7 +28,7 @@ a in mm | Strain energy of the quarter model in Nmm
 
 
 
-[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/AZEb6S2W)
+[![Screenshot](CT-test.png)](http://smath.info/cloud/worksheet/he7wmRTF)
 
 ## Model Description
 The model is a CT (compact tension) specimen with the simulation domain reduced
