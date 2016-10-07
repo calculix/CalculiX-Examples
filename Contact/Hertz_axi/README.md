@@ -16,13 +16,16 @@ Tested with CGX/CCX 2.11
 
 ## Preprocessing
 Two separate parts are generated and meshed with axisymmetric elements (CAX8).
-The load is applied as pressure to the flat equatorial surface of the hemisphere.
-The lower surface of the flat disk is constrained in axial (y) direction.
+The load is applied as pressure to the flat equatorial surface of the hemisphere (l2).
+The lower surface of the flat disk (L004) is constrained in axial (y) direction.
+The nodes on the axis of symmetry (l1, L001) are constrained in radial (x) direction.
 ```
 > cgx -b pre.fbd
 ```
 <img src="parts.png" width="400">
 <img src="parts-zoom.png" width="400">
+<img src="lines.png" width="400">
+
 
 ## Solving
 ```
@@ -50,8 +53,9 @@ Stress plot along the axis of symmetry (x=0) at the contact location:
 
 <img src="stress.png" title="Stress plot along contact normal">
 
-Contact pressure along
-<img src="pres.png" title="Radial pressure distribution, displacement control" >
+Contact pressure distribution along the meridian of the sphere:
+
+<img src="pres.png" title="Radial pressure distribution" >
 
 
 
