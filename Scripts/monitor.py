@@ -25,8 +25,12 @@ if len(sys.argv)==1:
 if len(sys.argv)>1:
     print "Jobname:",sys.argv[1]
     job = sys.argv[1]
-
-sta=numpy.genfromtxt(job+'.sta',skip_header=2,delimiter=[6,11,7,6,14,14,14])
+try:
+    sta=numpy.genfromtxt(job+'.sta',skip_header=2,delimiter=[6,11,7,6,14,14,14])
+except:
+    # before the first increment is completed, the sta-file is empty, so we
+    # fake some contents to not crash the 
+    sta=numpy.array([[  1.   ,   1.   ,   1.   ,  0   ,   0  ,   0  ,   0  ]])
 cvg=numpy.genfromtxt(job+'.cvg',skip_header=4)
 # ensure 2dim array in case of single data line
 if sta.ndim==1:
