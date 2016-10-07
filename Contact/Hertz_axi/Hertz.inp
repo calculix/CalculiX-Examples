@@ -1,0 +1,39 @@
+*INCLUDE, INPUT=all.msh
+*include, input=sblk.sur
+*include, input=speri.sur
+*include, input=x0.nam
+*include, input=y0.nam
+*include, input=control.sur
+
+** constraints
+*BOUNDARY
+Nx0,1,,0
+Ny0,2,,0
+** material definition
+*MATERIAL,NAME=Steel
+*ELASTIC
+210000,0.3
+*SOLID SECTION, Elset=Eall, Material=steel
+** contact definition
+*SURFACE INTERACTION, NAME=contact
+*SURFACE BEHAVIOR, PRESSURE-OVERCLOSURE=LINEAR
+10000000
+*CONTACT PAIR, INTERACTION=contact, TYPE=SURFACE TO SURFACE
+Ssperi,Ssblk
+** Apply pressure to equatorial plane of the sphere
+*STEP, NLGEOM, INC=200
+*Static
+0.1,1
+*dsload
+Scontrol,P,10
+**NODE FILE,OUTPUT=3D, frequency=200
+*NODE FILE,OUTPUT=2D, frequency=200
+U,
+*EL FILE
+S, E
+*CONTACT FILE, output=2D
+***CONTACT FILE, output=3D,contact elements
+CDIS,CSTR
+*Node print, NSET=Ny0, totals=only
+RF
+*END STEP

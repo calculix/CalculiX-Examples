@@ -1,0 +1,101 @@
+# contact stress between cylinder and brick, based on a non-parametric model by
+# dichtstoff
+valu radius 50
+valu height 60
+valu width 120
+
+# quarter circle (hemisphere)
+pnt p1 0 radius 0
+pnt p2 0 0 0
+pnt p3 radius radius 0
+# undocumented line bias
+line peri p2 p3 p1 80 1.05
+line l1 p2 p1 80 1.05
+line l2 p3 p1 40 1
+surf s1 l2 peri l1
+
+# rectangle (cylindric disk)
+seto block
+pnt p4 0 0 0
+valu neg -1
+valu neg_height * neg height
+swep block block tra 0 neg_height 0 80
+bia block 8
+swep block block tra width 0 0 120
+seta lb l L003 L004
+bia lb 8
+
+# shift everything up to obtain only positive y values
+# this is required for path plot
+move all tra 0 height 0
+
+# meshing
+flip all
+elty all qu8c
+mesh all
+send all abq
+
+# total view
+rot -z
+view elem
+frame
+plot la all
+hcpy png
+sys mv hcpy_1.png lines.png
+
+seta ! all
+hcpy png
+sys mv hcpy_2.png parts.png
+
+# view of the contact zone
+zoom 10
+tra r 55
+tra d 5
+seta ! all
+hcpy png
+sys mv hcpy_3.png parts-zoom.png
+
+# line numbers
+frame
+plot la all
+hcpy png
+sys mv hcpy_4.png lines.png
+
+# intenter contact surface
+SETA speri l peri
+comp speri do
+comp speri do
+send speri abq sur
+send speri abq nam
+
+# block contact surface
+seta sblk l L003
+comp sblk do
+comp sblk do
+send sblk abq sur
+
+# center line constraint in x
+seta x0 l L001 l1
+comp x0 do
+comp x0 do
+send x0 abq nam
+
+# bottom edge of plate constraint in y
+seta y0 l L004
+comp y0 do
+comp y0 do
+send y0 abq nam
+
+# upper side of indenter
+seta control l l2
+comp control do
+comp control do
+send control abq sur
+
+# path for pressure plot
+seta path n speri
+setr path n control
+send path abq nam
+
+#setr scyl n control
+#send scyl abq nam

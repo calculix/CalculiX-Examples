@@ -1,0 +1,36 @@
+read Hertz.frd
+read Hertz.inp nom
+read path.nam inp nom
+
+ds 2 e 1
+graph +bou1 length
+sys mv graph_0.out sx.out
+
+ds 2 e 2
+graph +bou1 length
+sys mv graph_1.out sy.out
+
+ds 2 e 3
+graph +bou1 length
+sys mv graph_2.out sz.out
+
+ds 2 e 4
+graph +bou1 length
+sys mv graph_3.out sxy.out
+
+ds 2 e 7
+graph +bou1 length
+sys mv graph_4.out mises.out
+
+ds 2 e 24
+graph +bou1 length
+sys mv graph_5.out maxshear.out
+
+ds 4 e 4
+
+graph Npath length
+sys mv graph_6.out pres.out
+
+#
+# create the real plots
+sys gnuplot plots.gnu

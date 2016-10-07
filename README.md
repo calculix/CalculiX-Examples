@@ -166,3 +166,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Different section shapes of identical area. Plastic zone">
 ](NonLinear/Sections/Plastic)
+[<img
+  src="Contact/Hertz_axi/SE-3D.png"
+  width="200"
+  title="Elastic contact between sphere and plane">
+](Contact/Hertz_axi)

@@ -1,0 +1,33 @@
+read Hertz.frd
+# plot of the equivalent stress
+rot -z
+ds 2 e 7
+view disp
+plot fv all
+frame
+hcpy png
+sys mv hcpy_1.png SE.png
+
+zoom 10
+tra r 55
+tra d 5
+view elem
+plot fv all
+hcpy png
+sys mv hcpy_2.png SE_zoom.png
+
+
+view elem off
+seta base all
+copy base 2D tra 0 0 0.001
+swep base new rot y 270 30
+frame
+zoom 2
+trfm cyl y
+plot f all n
+plus ev 2D
+rot -z
+rot r 10
+rot u 10
+hcpy png
+sys mv hcpy_3.png SE-3D.png
