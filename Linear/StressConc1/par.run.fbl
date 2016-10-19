@@ -1,6 +1,6 @@
 # <L=100>
 # <W=60>
-# <R=20>
+# <R=10>
 # <M=W*W/6.>
 # <M>
 
@@ -11,12 +11,20 @@ pnt p4 0 <R> 0
 pnt p5 0 <W/2.> 0
 pnt p6 <L> <W/2.> 0
 
+
 # line name p1 p2 elements growth-rate
-line l1 p1 p2 20
+line l1 p1 p2 20 0.9
 line l2 p2 p4 p3 16 0.9
-line l3 p4 p5 12 1.1
+line l3 p4 p5 20 1.1
 line l4 p5 p6 20 1.1
 line l5 p6 p1 8
+
+rot -z
+frame
+plot la all
+plus pa all
+hcpy png
+sys mv hcpy_1.png Refs/lines.png
 
 surf ! l1 l2 l3 l4 l5
 flip all
@@ -57,11 +65,11 @@ frame
 view elem
 plot ld all
 hcpy png
-sys mv hcpy_1.png Refs/div.png
+sys mv hcpy_2.png Refs/div.png
 
 plot f all n
 hcpy png
-sys mv hcpy_2.png Refs/mesh.png
+sys mv hcpy_3.png Refs/mesh.png
 
 # solution
 sys ccx Stress
@@ -76,7 +84,7 @@ view vec
 scal v 3
 frame
 hcpy png
-sys mv hcpy_3.png Refs/vecplot.png
+sys mv hcpy_4.png Refs/vecplot.png
 
 # expanded deformation plot
 view disp
@@ -88,7 +96,7 @@ zoom 1.2
 plot fv base
 plus e new n
 hcpy png
-sys mv hcpy_4.png Refs/D.png
+sys mv hcpy_5.png Refs/D.png
 
 # path plot along weakest cross section
 view disp off

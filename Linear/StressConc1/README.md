@@ -20,11 +20,11 @@ and run
 
 ## Pre-Processing
 
-The problem is parametrized using [param.py](../../Scripts/param.py). The geometry is built bottom-up by first defining points, then lines and then surfaces. The local mesh refinement at the stress concentration is controlled by division and bias of the individual lines.
+The problem is parametrized using [param.py](../../Scripts/param.py). The geometry is built bottom-up by first defining points, then lines and then surfaces. The local mesh refinement at the stress concentration is controlled by division and growth rate of the individual lines.
 
 In order to avoid restrictions to the line divisions, free meshing is used.
 
-<img src="Refs/div.png" width="400"><img src="Refs/mesh.png" width="400">
+<img src="Refs/lines.png" width="400"><img src="Refs/mesh.png" width="400">
 
 ## Solving
 
