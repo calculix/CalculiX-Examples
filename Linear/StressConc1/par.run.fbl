@@ -30,8 +30,8 @@ elty all tr6s
 # double and merge the mesh
 copy all new mir y a
 merg n all
-merg p all
-merg l all
+#merg p all # this leads to mesh error with CGX 2.10 under windows
+#merg l all
 
 # symmetry boundary
 seta nodes n all
