@@ -53,7 +53,8 @@ NxL,3
 7.85e-9
 ** material assignment to bodies
 *solid section, elset=Eall, material=steel
-*step,nlgeom
+** load application (prescribed displacement)
+*step,nlgeom,inc=1000
 *static
 0.05,1,0.00000001,0.05
 *boundary
