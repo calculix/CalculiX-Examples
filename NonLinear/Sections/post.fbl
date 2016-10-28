@@ -32,39 +32,67 @@ read circle.nam inp
 read hcircle.nam inp
 read Iprofile.nam inp
 
-# extract stress values and compute relative strength
-stack on
+# extract stress values
 ds 2 e 1
+stack on
+
 enq Nsquare max rec 0 _ _  1 h
 valu s1 pop 2
-valu sref 1
 enq Ncircle max rec 0 _ _ 1 h
 valu s2 pop 2
-valu s2 / s1 s2
 enq Nhcircle max rec 0 _ _ 1 h
 valu s3 pop 2
-valu s3 / s1 s3
 enq NIprofile max rec 0 _ _ 1 h
 valu s4 pop 2
-valu s4 / s1 s4
 
-# extract displacement values and compute relative stiffness
+plot f base n
+text Maximum Bending Stress
+rot x
+rot d 10
+frame
+view elem off
+view edge off
+plus nv max k
+frame
+hcpy png
+sys mv hcpy_3.png Refs/stress.png
+
+# extract displacement values
 ds 1 e 3
 stack on
-enq Nsquare max rec 0 _ _  1 h
-valu w1 pop 2
-valu wref 1
-enq Ncircle max rec 0 _ _ 1 h
-valu w2 pop 2
-valu w2 / w1 w2
-enq Nhcircle max rec 0 _ _ 1 h
-valu w3 pop 2
-valu w3 / w1 w3
-enq NIprofile max rec 0 _ _ 1 h
-valu w4 pop 2
-valu w4 / w1 w4
 
-# write values to a file
+enq Nsquare maxd rec 0 _ _  1 h
+valu w1 pop 2
+enq Ncircle maxd rec 0 _ _ 1 h
+valu w2 pop 2
+enq Nhcircle maxd rec 0 _ _ 1 h
+valu w3 pop 2
+enq NIprofile maxd rec 0 _ _ 1 h
+valu w4 pop 2
+
+plot f base n
+text Maximum Displacement
+plus nv maxd k
+frame
+hcpy png
+sys mv hcpy_4.png Refs/disp.png
+
+# write absolute values to a file
+sys echo Square s1 w1 > s-w.txt
+sys echo Circle s2 w2 >> s-w.txt
+sys echo HCircle s3 w3 >> s-w.txt
+sys echo Iprofile s4 w4 >> s-w.txt
+
+
+# write relative values to a file
+valu sref 1
+valu s2 / s2 s1
+valu s3 / s3 s1
+valu s4 / s4 s1
+valu wref 1
+valu w2 / w2 w1
+valu w3 / w3 w1
+valu w4 / w4 w1
 sys echo Square sref wref > dat.txt
 sys echo Circle s2 w2 >> dat.txt
 sys echo HCircle s3 w3 >> dat.txt

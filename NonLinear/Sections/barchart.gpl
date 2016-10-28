@@ -6,5 +6,7 @@ set grid
 set key top left
 set style fill solid
 set title "Profiles of identical cross section area"
-plot "dat.txt" using ($0-0.15):2:xtic(1) with boxes title "Relative strength",\
-     "dat.txt" using ($0+0.15):3 with boxes title "Relative stiffness" lc 3
+# data in dat.txt:
+# Name smax/smax_square wmax/wmax_square
+plot "dat.txt" using ($0-0.15):(1/$2):xtic(1) with boxes title "Relative strength",\
+     "dat.txt" using ($0+0.15):(1/$3) with boxes title "Relative stiffness" lc 3
