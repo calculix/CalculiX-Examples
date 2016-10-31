@@ -1,0 +1,48 @@
+read valve.frd
+
+read vc.nam inp
+ds 3 e 4
+graph Nvc length
+ds 3 e 2
+graph Nvc length
+
+rot -z
+plot fv all
+frame
+view disp
+view elem
+scal d 100
+ds 2 e 7
+tra u 15
+zoom 2.5
+plot fv all
+hcpy png
+sys mv hcpy_1.png se.png
+
+seta ! all
+
+seta base all
+
+copy base 2D tra 0 0 0.001
+# add a radial offset to the nodes on the axis
+# to avoid symmetry expansion glitches
+enq +CF1 x0 rec 0 _ 0 0.001
+move x0 tra 0.001 0 0
+
+comp 2D do
+swep +CF1 new rot y 270 30
+swep +CF2 new rot y 261 29
+
+view elem off
+plot e all n
+plus ev 2D
+frame
+zoom 1.2
+tra u 15
+rot r 20
+rot u 10
+hcpy png
+sys mv hcpy_2.png se_exp.png
+
+# path plot
+sys gnuplot path.gnu
