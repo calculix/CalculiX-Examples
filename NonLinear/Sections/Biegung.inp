@@ -18,7 +18,10 @@ NxL,3
 7.85e-9
 ** material assignment to bodies
 *solid section, elset=Eall, material=steel
-*step
+** nlgeom required with bconverged 2.10 in order to avoid
+** non-converged results (this is a bug, the problem
+** is purely linear)
+*step,nlgeom
 *static
 *dload
 Eall,GRAV,9810,0,0,1
