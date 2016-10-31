@@ -171,3 +171,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Elastic contact between sphere and plane">
 ](Contact/Hertz_axi)
+[<img
+  src="Contact/Valve/se_exp.png"
+  width="200"
+  title="Valve model with path plots of contact pressure and contact slip">
+](Contact/Valve)
