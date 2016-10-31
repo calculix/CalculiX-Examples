@@ -21,13 +21,13 @@ The valve and the valve seat ring are meshed with axisymmetric second order tria
 
 The mesh is controlled by a global size and the division on the contact region of the valve (dependent side, orange).
 
-<img src="sketch.pdf">
+<img src="sketch.png">
 
 ```
 > param.py par.pre.fbd
 > cgx -b pre.fbd
 ```
-<img src="mesh.png">
+<img src="mesh.png"  width=400>
 
 ## Solving
 ```
@@ -41,15 +41,9 @@ The mesh is controlled by a global size and the division on the contact region o
 ```
 > cgx -b post.fbd
 ```
-<img src="SE.png" width="400" title="Equivalent stress">
-<img src="PE.png" width="400" title="Equivalent plastic strain">
+<img src="se.png" width="400" title="Equivalent stress">
+<img src="se_exp.png" width="400" title="Equivalent stress, symmetry expansion of the model">
 
-The force-displacement curve is valid for the half model and is created from the .dat-file-output
-of the total reaction forces and the displacement of the monitor node.
+For wear prediction, contact pressure and slip are relevant.
 
-<img src="df.png" width="400" title="Force-displacement curve">
-
-Stress profiles in cross sections at the support (left) and at the eye (right, light blue in the mesh plot). The diagrams show the profiles at the first increment (still elastic) and at the end of the load step.
-
-<img src="SXX-fix.png" width="400" title="Stress profile at the support">
-<img src="SXX-path.png" width="400" title="Stress profile at x=0">
+<img src="path.png"  title="Contact pressure and slip">
