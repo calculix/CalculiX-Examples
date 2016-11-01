@@ -68,8 +68,6 @@ plot ld all
 hcpy png
 sys mv hcpy_2.png Refs/div.png
 
-break
-
 view elem
 plot f all n
 frame
