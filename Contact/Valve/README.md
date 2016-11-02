@@ -19,7 +19,7 @@ Tested with CGX/CCX 2.11
 ## Preprocessing
 The valve and the valve seat ring are meshed with axisymmetric second order triangular elements. This allows for free meshing,
 
-The mesh is controlled by a global size and the division on the contact region of the valve (dependent side, orange).
+The mesh is controlled by a global size (parameter `esize`) and the refinement factor at the contact zone (parameter `refine`).
 
 <img src="sketch.png">
 
