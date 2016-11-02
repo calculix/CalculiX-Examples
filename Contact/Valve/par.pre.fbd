@@ -4,6 +4,8 @@
 # <h1=4>
 # <h2=40>
 # <fase=2>
+# <esize=0.5> Element size
+# <refine=5> Refinement factor in contact zone
 #
 # <d1=1>
 # <d2=fase>
@@ -56,9 +58,17 @@ flip s2
 
 rot -z
 
-div all auto 0.5
-div l3 16
-div ls5 24
+
+div all auto <esize>
+seta cl l l3 ls5
+seta nl l l2 l4
+#div l2 8
+#div l3 32
+#div ls5 48
+div cl mult <refine>
+div nl mult <2*int(sqrt(0.25*refine))>
+bia l4 <refine>
+bia l2 <refine> -1
 elty all <etyp>
 mesh all
 elty all tr6c
@@ -76,7 +86,7 @@ comp press do
 send press abq sur
 
 # valve contact surface
-seta vc l l3
+seta vc l l2 l3 l4
 comp vc do
 comp vc do
 send vc abq sur
@@ -110,4 +120,4 @@ plus n vsc m
 plus n vc o
 frame
 hcpy png
-mv hcpy_1.png mesh.png
+sys mv hcpy_1.png mesh.png
