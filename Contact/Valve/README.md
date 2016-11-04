@@ -36,7 +36,9 @@ The mesh is controlled by a global size (parameter `esize`) and the refinement f
 ```
 <img src="valve.png" title="Convergence plot">
 
-## Postprocess
+## Postprocessing
+
+The postprocessing script generates plots of the equivalent stress of the 2D base and of the expanded model. Also, path plots of the contact pressure and slip are generated. 
 
 ```
 > cgx -b post.fbd
