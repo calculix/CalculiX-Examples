@@ -1,0 +1,27 @@
+sys dat2txt.py
+sys gnuplot sigeps.gnu
+
+read Zug.frd
+
+seta base se all
+copy all new mir x
+copy all new mir y
+copy all new mir z
+plot e all
+frame
+zoom 1.5
+rot x
+rot c 90
+rot u 30
+rot l 20
+
+hcpy png
+#ds -1 e 7
+ds -0 e 1
+view disp
+#view elem
+plot fv base
+plus e new n
+
+hcpy png
+sys mv hcpy_2.png pe.png

@@ -1,0 +1,84 @@
+valu lx 40
+valu ly 12.5
+valu lz 4
+valu divx 40
+valu divy 12
+valu divz 6
+valu biax 4
+valu maxeps 35
+valu imp -0.05
+valu rimp 5
+
+
+# geometry
+pnt p1 0 0 0
+swep all new tra lx 0 0 divx
+bia all biax
+swep all new tra 0 ly 0 divy
+swep all new tra 0 0 lz divz
+# copy all new mir x
+# seta xl s A006
+# swep xl new tra dx 0 0 4
+
+# meshing
+elty all he20
+mesh all
+merg n all 0.001
+
+# apply imperfection
+seta nodes n all
+enq nodes nimp rec 0 ly _ rimp
+move nimp tra 0 imp 0
+
+send all abq
+
+# planes of symmetry
+enq nodes symx rec  0 _ _ 0.001
+send symx abq nam
+
+enq nodes symy rec _ 0 _ 0.001
+send symy abq nam
+
+enq nodes symz rec _ _ 0 0.001
+send symz abq nam
+
+# load application
+enq nodes load rec lx _ _ 0.001
+# 100/2
+#valu fac 50
+valu fac 100
+valu disp * maxeps lx
+valu disp / disp fac
+send load abq nam
+sys echo Nload,1,1, disp > load.inc
+# valu neg -1
+# valu neglx * lx neg
+# enq nodes nlx rec neglx _ _ 0.001
+#send nlx abq nam
+
+# display of sets
+text nlx (red), symy (green), symz (blue), load (mag.)
+text symx (red), symy (green), symz (blue), load (mag.)
+frame
+zoom 1.5
+rot -x
+rot l 20
+rot u 20
+# plot n nlx r
+plot n symx r
+plus n symy g
+plus n symz b
+plus n load m
+
+hcpy png
+sys mv hcpy_1.png zug-geo.png
+
+text region of imperfection (dy of imp mm)
+plot n nimp
+
+hcpy png
+sys mv hcpy_2.png zug-imp.png
+
+# parameter info for gnuplot
+sys echo maxe= maxeps > params.gnu
+sys echo area= " ly * lz ">> params.gnu

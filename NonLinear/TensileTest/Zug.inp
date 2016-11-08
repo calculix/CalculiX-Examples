@@ -1,0 +1,42 @@
+*include,input=all.msh
+*include,input=symx.nam
+*include,input=symy.nam
+*include,input=symz.nam
+*include,input=load.nam
+
+
+** symmetry
+*boundary
+Nsymx, 1
+Nsymy, 2
+Nsymz, 3
+** material definition
+*material, name=S235test
+*elastic
+210000,0.3,0
+*density
+7.85e-9
+*plastic
+330, 0, 0
+335, 0.02, 0
+400, 0.04, 0
+480, 0.08, 0
+540, 0.15, 0
+585, 0.24, 0
+1000, 1,0
+*solid section, elset=Eall, material=S235test
+*time points, name=sampling, generate
+0,1,0.01
+*STEP, NLGEOM,inc=200
+*STATIC
+0.001,1,0.0000001
+** displacement control at top
+*boundary
+*include, input=load.inc
+*el file, time points=sampling
+S,PEEQ
+*node file
+U
+*node print, totals=only, nset=Nload
+RF
+*end step
