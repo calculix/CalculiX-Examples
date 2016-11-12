@@ -23,13 +23,24 @@ File                           | Contents
 
 The problem is parametrized using [param.py](../../../Scripts/param.py).
 
+Parameters in `par.pre.fbl`
+
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `area` | 300 | Cross section area in mm² |
+| `length` | 400 |distance from support to center (half span) in mm |
+| `thickness` | 4 | Wall thickness of tube and I profile |
+| `divx` | 20 | longitudinal mesh division |
+| `disp` | 20 | prescribed displacement (at mid-span) in mm |
+
+
 The model contains several simply supported beams of equal section area but different section shape.
 
 Objective is to visualize the evolution of the plastic zone and to determine the relative ultimate strength (full plastic section) with respect to the square section.
 
 Starting from a given cross section area, the half span of the beam and a thickness, four section shapes of identical cross section area are generated.
 
-The beams are supported vertically at all nodes at x=Length and z=0 and have a symmetry boundary at x=0.
+The beams are supported vertically at all nodes at x=`length` and z=0 and have a symmetry boundary at x=0.
 
 One row of nodes per beam is fixed in y-direction. This is a bit over-constrained, but prevents lateral bending, which might happen due to the developing plastic hinges if just a single node per beam is constrained in y-direction.
 
@@ -61,6 +72,6 @@ To create a force-displacement-plot, type
 ```
 > cgx -b -bg chart.fbl
 ```
-Note that this script does not yet account for changes in the input file (maximum displacement is hard-wired).
+The displayed force is valid for the full model (twice the support reactions).
 
 <img src="df.png" title="Force-displacement-plot (full model)">

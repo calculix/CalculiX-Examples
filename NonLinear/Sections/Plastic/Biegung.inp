@@ -57,8 +57,9 @@ NxL,3
 *step,nlgeom,inc=1000
 *static
 0.05,1,0.00000001,0.05
+** disp value is written by par.pre.fbl
 *boundary
-Ndisp,3,3,20
+*include, input=disp.inc
 ** Nref1,3,3,-3
 ** Nref2,3,3,-3
 ** Nref3,3,3,-3

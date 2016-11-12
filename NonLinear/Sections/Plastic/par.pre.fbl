@@ -3,6 +3,7 @@
 # <thickness = 4>
 # <dist = 40>
 # <divx = 20>
+# <disp = 20>
 
 asgn n 005
 asgn e 005
@@ -83,11 +84,17 @@ enq lines ll rec <length> _ _ 0.1
 seti lb l l0 ll
 bia lb 10
 
-#Meshing
+# Meshing
 elty all he8i
 mesh all
 merg n all
 send all abq
+
+# send disp value to ccx
+sys echo Ndisp,3,3, <disp> > disp.inc
+
+# send disp value to gnuplot
+sys echo disp = <disp> > disp.gnu
 
 # # choose nodes of the middle length:
 # # --> square / block:
