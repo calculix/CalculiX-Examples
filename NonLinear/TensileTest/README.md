@@ -15,7 +15,7 @@ Using symmetry, the structure is reduced to one eight of the original one.
 
 | File     | Contents    |
 | :------------- | :------------- |
-| [vpre.fbd](vpre.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
+| [pre.fbd](pre.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
 | [post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot) |
 | [sigeps.gnu](sigeps.gnu) | Gnuplot control script |
 | [Zug.inp](Zug.inp) | CCX input |
