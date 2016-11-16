@@ -16,8 +16,8 @@ Using symmetry, the structure is reduced to one eight of the original one.
 | File     | Contents    |
 | :------------- | :------------- |
 | [vpre.fbd](vpre.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
-| [plot.fbd](plot.fbd) | Post-processing script for CGX (history and path plots) |
-| [expansion.fbd](expansion.fbd) | Post-processing script for CGX (axisymmetric expansion, plots and movie) |
+| [post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot) |
+| [sigeps.gnu](sigeps.gnu) | Gnuplot control script |
 | [Zug.inp](Zug.inp) | CCX input |
 
 ## Preprocessing
@@ -77,5 +77,4 @@ You can generate the stress-strain curve separately using the commands:
 ```
 > dat2txt.py Zug
 > gnuplot sigeps.gnu
-
 ```
