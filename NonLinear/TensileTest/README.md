@@ -12,6 +12,7 @@ Using symmetry, the structure is reduced to one eight of the original one.
 + Handover of load parameters to the CCX file
 + Handover of parameters to the gnuplot file
 
+
 | File     | Contents    |
 | :------------- | :------------- |
 | [vpre.fbd](vpre.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
@@ -53,6 +54,7 @@ Boundary conditions:
 
 
 ## Solving
+
 ```
 > ccx Zug
 > monitor.py Zug
@@ -69,3 +71,11 @@ This creates a stress-strain curve and an expanded plot of the equivalent plasti
 
 <img src="pe.png" width="400" title="Equivalent plastic strain">
 <img src="sigeps.png" width="500" title="Stress-strain curve">
+
+You can generate the stress-strain curve separately using the commands:
+
+```
+> dat2txt.py Zug
+> gnuplot sigeps.gnu
+
+```

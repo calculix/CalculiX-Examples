@@ -81,4 +81,5 @@ sys mv hcpy_2.png zug-imp.png
 
 # parameter info for gnuplot
 sys echo maxe= maxeps > params.gnu
-sys echo area= " ly * lz ">> params.gnu
+valu area * ly lz
+sys echo area=  area >> params.gnu

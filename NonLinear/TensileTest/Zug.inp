@@ -27,16 +27,26 @@ Nsymz, 3
 *solid section, elset=Eall, material=S235test
 *time points, name=sampling, generate
 0,1,0.01
+** Tensile test, output limited to stress-strain-curve
 *STEP, NLGEOM,inc=200
 *STATIC
 0.001,1,0.0000001
 ** displacement control at top
 *boundary
 *include, input=load.inc
-*el file, time points=sampling
+*node print, totals=only, nset=Nload, time points=sampling
+RF
+*end step
+** step for field output of the final state
+*STEP, NLGEOM,inc=200
+*STATIC
+** displacement control at top
+*boundary
+*include, input=load.inc
+*el file, frequency=1000
 S,PEEQ
 *node file
 U
-*node print, totals=only, nset=Nload
-RF
+** switch off .dat output
+*node print
 *end step
