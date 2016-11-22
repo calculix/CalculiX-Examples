@@ -1,0 +1,33 @@
+*include,input=all.msh
+*include,input=x0.nam
+*include,input=y0.nam
+*include,input=z0.nam
+*include,input=zl.nam
+** symmetry
+*boundary
+Nx0, 1
+Ny0, 2
+Nz0, 3
+** material definition
+*material, name=ABS
+*elastic
+2000,0.3,0
+*density
+1e-9
+*plastic
+20, 0, 0
+30, 2, 0
+*solid section, elset=Eall, material=ABS
+*STEP, NLGEOM,inc=200
+*STATIC
+0.01,1,,0.1
+** displacement control at top
+*boundary
+*include,input=disp.inc
+*el file
+S,PEEQ
+*node file
+U
+*node print, totals=only, nset=Nz0
+RF
+*end step

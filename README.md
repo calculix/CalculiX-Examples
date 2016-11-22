@@ -181,3 +181,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Tensile test with real stress-strain data">
 ](NonLinear/TensileTest)
+[<img
+  src="RVE/PlanarSlide/exp.png"
+  width="200"
+  title="Tensile test of an FDM structure perpendicular to the layer plane">
+](RVE/PlanarSlide)

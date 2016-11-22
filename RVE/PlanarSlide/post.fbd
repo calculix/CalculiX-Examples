@@ -1,0 +1,17 @@
+read Zug.frd new
+read monitor.nam inp
+
+copy all new mir y
+copy all new mir z
+view disp
+view elem
+ds -0 e 1
+rot x
+rot c 90
+frame
+hcpy png
+sys mv hcpy_1.png exp.png
+
+graph Nmonitor time PE PE
+sys dat2txt.py 
+sys gnuplot pe.gnu

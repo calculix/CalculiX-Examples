@@ -1,0 +1,56 @@
+valu lx 0.5
+valu ly 0.5
+valu lz 0.25
+valu rad 0.1
+valu le 0.01
+valu ez 0.1
+
+valu factor 0.01
+valu tol * factor le
+pnt p0 0 0 0
+pnt py 0 ly 0
+pnt pz 0 0 lz
+pnt pyz 0 ly lz
+line l1 p0 py
+line l2 py pyz
+line l3 pyz pz
+line l4 pz p0
+fil l1 l2 rad
+fil l2 l3 rad
+fil l3 l4 rad
+fil l4 l1 rad
+lcmb lc1 + L001 + l2 + L002
+lcmb lc2 + L003 + l4 + L004
+surf s1 l1 lc1 l3 lc2
+swep all new tra lx 0 0
+
+div all auto le
+elty all te10
+mesh all
+send all abq
+
+# set definitions
+seta nodes n all
+enq nodes x0 rec 0 _ _ tol
+enq nodes y0 rec _ 0 _ tol
+enq nodes z0 rec _ _ 0 tol
+enq nodes zl rec _ _ lz tol
+enq nodes monitor rec 0 rad 0 tol
+send all abq nam
+
+# set displacement
+valu disp * ez lz
+sys echo Nzl,3,3, disp > disp.inc
+# export values to gnuplot
+valu area * lx ly
+sys echo ez= ez > ez.gnu
+sys echo area= area >> ez.gnu
+# mesh image
+rot x
+rot c 90
+rot r 10
+rot d 10
+view elem
+frame
+hcpy png
+sys mv hcpy_1.png mesh.png
