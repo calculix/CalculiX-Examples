@@ -35,7 +35,7 @@ The mesh is controlled by a global node distance.
 | :------------- |  :------------- | :------------- |
 | `lx` | 0.5 | half road length in mm |
 | `ly` | 0.5 | road width in mm |
-| `lz` | 0.25 | layer thickmess in mm |
+| `lz` | 0.25 | layer thickness in mm |
 | `rad` | 0.1 | fillet radius |
 | `le` | 0.01 | node distance on edges |
 | `ez` | 0.1 | global engineering strain in z direction |
