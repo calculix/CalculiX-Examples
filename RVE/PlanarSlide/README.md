@@ -45,7 +45,7 @@ Boundary conditions:
 * ux = 0 at x = 0 (symmetry boundary)
 * uy = 0 at y = 0 (symmetry boundary)
 * uz = 0 at z = 0 (symmetry boundary)
-* uz = maxeps/100*lz at z = lz (prescribed displacement)
+* uz = ez/100*lz at z = lz (prescribed displacement)
 
 <img src="mesh.png" width="400">
 
