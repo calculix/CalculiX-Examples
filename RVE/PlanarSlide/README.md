@@ -65,7 +65,7 @@ The second command generates a convergence history plot of the solution.
 ```
 This creates a stress-strain curve and an expanded plot of the equivalent plastic strain.
 
-<img src="pe.png" width="400" title="Equivalent plastic strain">
+<img src="exp.png" width="400" title="Equivalent plastic strain">
 <img src="pe.png" width="500" title="Local strain and global stress">
 
 You can generate the curves separately using the commands:
