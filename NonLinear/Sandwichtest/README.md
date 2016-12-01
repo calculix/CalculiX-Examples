@@ -19,6 +19,20 @@ The model represents a four point bending test on a elasto-plastic sandwich plat
 
 ## Pre-Processing
 
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `t1` | 2 | thickness of upper face sheet in mm |
+| `t2` | 2 | thickness of lower face sheet in mm|
+| `tc` | 16 | core thickenss in mm |
+| `br` | 50 | width of the specimen in mm |
+| `lges` | 480 | total length of the specimen in mm |
+| `lext` | 400 | center distance of the support cylinders in mm |
+| `ls` | 200 | distance of the loading cylinders in mm |
+| `radius` | 10 | radius of the cylinders in mm |
+| `divl` | 60 | mesh division in longitudinal direction) |
+| `divf` | 2 | cross thickness mesh division in the face sheets |
+| `divc` | 4 | cross thickness mesh division in the core |
+| `divb` | 6 | mesh division in lateral direction |
 
 You may edit the file [values.fbl](values.fbl) and then run
 ```
