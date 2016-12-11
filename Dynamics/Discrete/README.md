@@ -7,7 +7,7 @@ Tested with CGX/CCX 2.11
 
 | File                     | Contents                        |
 | :-------------           | :-------------                  |
-| [run.fbd](pre.fbd)       | Top level control script for CGX|
+| [run.fbd](run.fbd)       | Top level control script for CGX|
 | [MS.inp](MS.inp)         | Input for CCX                   |
 | [V.gnu](V.gnu)           | Gnuplot script for the response function  |
 
