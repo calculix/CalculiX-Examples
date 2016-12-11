@@ -33,8 +33,6 @@ the excitation time, leading to transient bending of the plate.
 > cgx -b pre.fbl
 ```
 The simulation domain is restricted to one quarter of the plate due to symmetry. It is meshed with 6 layers of C3D20R elements with cross thickness bias to capture the high gradients at the excitation side.
-The element size is biased (smaller at the support) because of the higher
-longitudinal temperature gradients.
 
 A set with a single node at the vertex of the plate is defined for history plot generation.
 
