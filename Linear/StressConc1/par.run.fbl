@@ -117,3 +117,5 @@ setc
 graph path length +
 sys convert -rotate 90 graph_1.ps Refs/linepath.png
 plus fv base
+
+sys more Stress.dat

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Studio Desktop" version="0.98.6179.21440"?>
+<regions>
+  <settings>
+    <identity>
+      <id>69f13bd9-4507-4db7-805f-53cfa3bb9ca3</id>
+      <revision>2</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="true" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true">
+      <paper id="1" orientation="Portrait" width="850" height="1100" />
+      <margins left="39" right="39" top="39" bottom="39" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Studio Desktop" version="0.98.6179.21440" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="Math Region" version="0.98.6179.21440" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="Picture Region" version="1.10.6179.21444" guid="06b5df04-393e-4be7-9107-305196fcb861" />
+      <assembly name="Text Region" version="1.10.6179.21446" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <region id="0" left="18" top="18" width="667" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>The cantilever beam is loaded such that the specified nominal stress is reached.</p>
+    </text>
+  </region>
+  <region id="1" left="18" top="45" width="82" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">L</e>
+        <e type="operand">100</e>
+        <e type="operand" style="unit">mm</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="2" left="126" top="45" width="91" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">E</e>
+        <e type="operand">210</e>
+        <e type="operand" style="unit">GPa</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="3" left="306" top="45" width="292" height="108" color="#000000" bgColor="#ffffff">
+    <picture>
+      <raw format="png" encoding="base64">iVBORw0KGgoAAAANSUhEUgAAARwAAABkCAYAAABU8o/4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARvSURBVHhe7dZbbhw3EEBRLcSfWXlW55+sQQkDTMAQ7G62plnkkOcABdgzelilrgt/fQMEERwgjOAAYQQHCCM4QBjBAcIIDhBGcIAwggOEERwgjOAAYQQHCCM4QBjBAcIIDhBGcGADX3/+/m9GEhxYXB6bcqIJDiyuFpraRBAc2EAtMGfTi+DAYH/9+uN/00MtKi3ztKmD8/X19e/ACsqwvOYl//PTajFJ81J7L5+nTHvNr9AIDp+kjEk+V1o+5qdqEXlNqfYxaZ4w5TXnkREcZlOGJJ93vPv5Z8pw5H9/vVbT8jF3THXNKS5lYASHaGVEyump19evhaP2Wm/TXPNRWASHJ5XxqM1Ivb5/LS75a/nrPU1xzWdRERxaleGozex6/RuPwnL0ei/Dr/kqKIJDGY2jWUGvn+MoLEev9zL0mltiIjjrKUNxNTvp9fOeheXsvacNueYUkdaQCM78ykBcDcd67ecsKmfvPS38mu8GRHDilGFoHZ7Ta59nUTl772mh1/yT2AjOfWUQWoc5RP8u8uD0js6U15yHZqfglAH46fDZRvwOtw1OGZiZg1Me+rsDyYhnYcvg1OLyTnDKg356oIcRz9ZWwUlROQpLer089NZ5fV1jPmlez26kPDg9ozM8OFeLjV48jDYiOMnywWlZquCwG8F5WFpm60IFh90IzoPuLlJw2FGKTrQlg3NHio3gsCPBCZSHRnDYkeAEKQMjOOxIcALU4iI47EhwOkpROQqL4LAjwenkKiiCw44Ep4OWmAgOO0rPfXR0lg1OWmZrSASHHQnOQ+4GRHDYkeAMkJYuOOxIcALloREcdjQyOD1Nd81lYASHHUUHJ+J/N8lU11yLi+CwI8Hp7CgsgsOOXs99VHS2Cs5ZVASHHQlOB2mpV0ERHHYUGZyo2CTDrrk1JILDjlJo8ulp+eDciYjgsKIyKOVEPvfLB6dVWrrg8GlqASnniuAEykMjOMykFo9ynhD13Oex2TI45aIFhwi1cNQmyojgRJjqmmtLFhzeUYtGbWYT8dznsdkuOEcLFhxytViczaeKDk6UKa75bLmCs7ZaJM5mF4LTQVrq1WIFZ361MLQOdb2f+xGxSYZdc+tCBSdGLQatw/ME50F3YiM452oB+Mkwl57P/ajYJFNecx6aVYJTO/InhjX1eu7z2AjOP8pF91p87Xh7DtwREZwRpgpObcm1431i0vcyZuZ5Wh6brYNztuAei4fdzBCbZPg1XwVFcOA9s8QmGXrNLTERHHjP9sFJEWmNjeDAe2aJTRJ+zXdDIziwjumuuQyM4MA6prrmWlwEB9YxzTUfhUVwYB1TXPNZVAQH1jH0mlNMroIiOLCOYdfcGhLBgXUMueY7EREcWMe015xC8xpgDVNecx4ZwYF1THfNZWAEB9YxzTWnsNTiIjiwjimu+SwqggPrGH7NV0ERHFjHsGtOIRET2MuQixca2JPLB8IIDhBGcIAwggOEERwgjOAAYQQHCCM4QBjBAcIIDhBGcIAg399/A9ragr2dKQVEAAAAAElFTkSuQmCC</raw>
+    </picture>
+  </region>
+  <region id="4" left="18" top="63" width="73" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">w</e>
+        <e type="operand">60</e>
+        <e type="operand" style="unit">mm</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="5" left="126" top="72" width="99" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">σ.nom</e>
+        <e type="operand">1</e>
+        <e type="operand" style="unit">MPa</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="6" left="18" top="81" width="65" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">t</e>
+        <e type="operand">1</e>
+        <e type="operand" style="unit">mm</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="7" left="576" top="81" width="20" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">M</e>
+      </input>
+    </math>
+  </region>
+  <region id="8" left="189" top="99" width="97" height="42" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">I</e>
+        <e type="operand">1</e>
+        <e type="operand">12</e>
+        <e type="operator" args="2">/</e>
+        <e type="operand">t</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">w</e>
+        <e type="operand">3</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="9" left="18" top="108" width="151" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Moment of inertia</p>
+    </text>
+  </region>
+  <region id="10" left="315" top="108" width="20" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">w</e>
+      </input>
+    </math>
+  </region>
+  <region id="11" left="189" top="135" width="62" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">W</e>
+        <e type="operand">I</e>
+        <e type="operand">2</e>
+        <e type="operand">w</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="12" left="405" top="135" width="20" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">L</e>
+      </input>
+    </math>
+  </region>
+  <region id="13" left="18" top="144" width="136" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Section modulus</p>
+    </text>
+  </region>
+  <region id="14" left="18" top="180" width="119" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Required load</p>
+    </text>
+  </region>
+  <region id="15" left="189" top="180" width="149" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">M</e>
+        <e type="operand">σ.nom</e>
+        <e type="operand">W</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">N</e>
+        <e type="operand" style="unit">m</e>
+        <e type="operator" args="2">*</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.6</e>
+      </result>
+    </math>
+  </region>
+  <region id="16" left="189" top="207" width="199" height="42" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ</e>
+        <e type="operand">M</e>
+        <e type="operand">L</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">E</e>
+        <e type="operand">I</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">rad</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">1.5873</e>
+        <e type="operand">10</e>
+        <e type="operand">5</e>
+        <e type="operator" args="1">-</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="17" left="18" top="216" width="160" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Angular deflection</p>
+    </text>
+  </region>
+  <region id="18" left="414" top="216" width="105" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math decimalPlaces="5">
+      <input>
+        <e type="operand">φ</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.00091</e>
+      </result>
+    </math>
+  </region>
+</regions>

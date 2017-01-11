@@ -3,6 +3,8 @@
 *include, input=rb.nam
 ** the rigid body must be sufficiently constrained.
 *rigid body, nset=Nrb, ref node=1, rot node=2
+*nset, nset=rotnode
+2
 *boundary
 Nsym, 1
 1,2,3
@@ -26,4 +28,6 @@ Nsym, 1
 U
 *el file, output=2D
 S
+*node print, nset=rotnode
+U
 *end step

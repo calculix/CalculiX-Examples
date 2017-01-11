@@ -11,6 +11,13 @@ File                           | Contents
  [par.run.fbl](par.run.fbl)    | CGX script, complete analysis, parametrized with param.py
  [Stress.inp](Stress.inp)      | CCX input
 
+
+## Reference Estimates
+Click the image below to open a life SMath worksheet
+
+[![Screenshot](Stressconc1.png)](http://smath.info/cloud/worksheet/T2x8HNoS)
+
+
 To run the complete analysis, edit parameter values in [par.run.fbl](par.run.fbl)
 and run
 ```
@@ -44,3 +51,5 @@ In a node set based definition, the points in the path plot directy correspond t
 
 <img src="Refs/nodepath.png"  title="Worst principal stress, path specified by node set">
 <img src="Refs/linepath.png"  title="Worst principal stress, path specified by line set. There is a bug: target nodes without values (outside the structure) should interrupt the curve.">
+
+The rotation of the rot node about z is written to `Stress.dat` and displayed in the console window at the end of the postprocessing.
