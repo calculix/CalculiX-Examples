@@ -16,13 +16,18 @@ Tested with CGX/CCX 2.11
 ## Model Description
 The model is a flat L-shaped plate.
 
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `h` | 100 | edge length parameter in mm |
+| `p` | 1 | pressure in MPa |
+
 <img src="mesh.png" width="400" title="mesh">
 
 Boundary conditions
 + UY=0, UZ=0 at the upper edge (red)
 + UX=0, UZ=0 at the left edge (green)
 + UZ=0 at the lower (blue) and right (magenta) edges
-+ Line load in y-direction (1 N/mm)
++ Line load in y-direction (1 N/mm), applied as pressure to surface `Slower`
 
 <img src="RFv.png" width="400" title="Reactions and loads">
 <img src="PS3.png" width="400" title="Minimum principal stress">

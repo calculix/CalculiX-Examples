@@ -29,6 +29,7 @@ comp elower up
 # include element faces for surface definition (for *dsload)
 comp lower do
 send lower abq sur
+sys echo Slower,P, <p> > pressure.inc
 # left edge
 enq nodes left rec <-2*h> _ _ 0.01
 # right edge
