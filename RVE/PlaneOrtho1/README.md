@@ -45,7 +45,7 @@ Boundary conditions:
 * ux = 0 at x = 0 (symmetry boundary)
 * uy = 0 at y = 0 (symmetry boundary)
 * uz = 0 at z = 0 (symmetry boundary)
-* uz = ez/100*lz at z = lz (prescribed displacement)
+* uz = ez/100*lz at z = lz/2 (prescribed displacement)
 * ux all equal at x = lx (parallel to yz plane)
 * uy all equal at y = ly/2 (parallel to xz plane)
 
@@ -77,11 +77,11 @@ First, let's verify the boundary conditions.
 <img src="dy.png" width="400" title="Displacement in y">
 
 
-
+Now let's create a stress-strain curve and an expanded plot of the equivalent plastic strain.
 ```
 > cgx -b post.fbd
 ```
-This creates a stress-strain curve and an expanded plot of the equivalent plastic strain.
+
 
 <img src="exp.png" width="400" title="Equivalent plastic strain">
 <img src="pe.png" width="500" title="Local strain and global stress">
