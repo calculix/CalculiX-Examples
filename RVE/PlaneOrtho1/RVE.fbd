@@ -1,0 +1,100 @@
+valu lx 0.02
+valu width 0.5
+valu height 0.25
+valu rad 0.1
+valu le 0.01
+valu ez 0.1
+
+valu factor 0.01
+valu tol * factor le
+valu two 2
+valu ly / width two
+valu lz / height two
+# create rectangle with fillet
+pnt p0 0 0 0
+pnt py 0 ly 0
+pnt pz 0 0 lz
+pnt pyz 0 ly lz
+line l1 p0 py
+line l2 py pyz
+line l3 pyz pz
+line l4 pz p0
+fil l4 l1 rad
+# plot entity labels
+plot la all
+plus pa all
+frame
+rot x
+rot c 90
+hcpy png
+sys mv hcpy_1.png section.png
+# create surface and extrusion
+surf s1 l1 l2 l3 l4 L001
+swep all new tra lx 0 0
+
+# meshing
+# control nodes for plane xl
+seta control p p0
+div all auto le
+elty all te10
+mesh all
+send all abq
+plot f all n
+view elem
+# definitions of sets
+seta nodes n all
+enq nodes x0 rec 0 _ _ tol
+enq nodes y0 rec _ 0 _ tol
+enq nodes z0 rec _ _ 0 tol
+enq nodes zl rec _ _ lz tol
+enq nodes yl rec _ ly _ tol
+enq nodes xl rec lx _ _ tol
+enq nodes monitor rec 0 rad 0 tol
+send all abq nam
+# set displacement
+valu disp * ez lz
+sys echo Nzl,3,3, disp > disp.inc
+# set uy at three points in y=ly to be equal
+#  define control nodes
+stack on
+enq xl n110 rec lx ly 0 tol
+valu v110 pop
+enq xl n111 rec lx ly lz tol
+valu v111 pop
+enq x0 n010 rec 0 ly 0 tol
+valu v010 pop
+enq xl n101 rec lx 0 lz tol
+valu v101 pop
+# control nodes found: v110 v111 v010 v101
+# write equations
+sys echo *equation                         > equations.inc
+sys echo 2                                >> equations.inc
+sys echo v110 , 2, -1, v111 , 2, 1        >> equations.inc
+sys echo 2                                >> equations.inc
+sys echo v010 , 2 ,-1, v111 , 2, 1        >> equations.inc
+sys echo 2                                >> equations.inc
+sys echo v110 , 1, -1, v111 , 1, 1        >> equations.inc
+sys echo 2                                >> equations.inc
+sys echo v101 , 1 ,-1, v111 , 1, 1        >> equations.inc
+sys echo *mpc                             >> equations.inc
+sys echo Plane, v111 , v110 , v101 , Nxl  >> equations.inc
+sys echo *mpc                             >> equations.inc
+sys echo Plane, v110 , v111 , v010 , Nyl  >> equations.inc
+# define reduced sets (remove control nodes)
+setr xl n v110 v111 v101
+setr yl n v110 v111 v010
+send all abq nam
+
+# export values to gnuplot
+valu area * lx ly
+sys echo ez= ez > ez.gnu
+sys echo area= area >> ez.gnu
+# mesh image
+plot f all n
+frame
+rot x
+rot c 90
+rot r 30
+rot u 30
+hcpy png
+sys mv hcpy_2.png mesh.png

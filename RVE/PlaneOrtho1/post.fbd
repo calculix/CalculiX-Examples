@@ -1,0 +1,35 @@
+read Zug.frd
+read monitor.nam inp
+# verify constraints
+text Displacement in x (normal to section)
+ds -2 e 1
+frame
+view disp
+view elem
+rot -x
+rot c -90
+rot r 45
+rot u 30
+frame
+hcpy png
+sys mv hcpy_1.png dx.png
+text Displacement in y (lateral)
+ds -2 e 2
+frame
+hcpy png
+sys mv hcpy_2.png dy.png
+
+copy all new mir y
+copy all new mir z
+view disp
+view elem
+ds -0 e 1
+rot x
+rot c 90
+frame
+hcpy png
+sys mv hcpy_3.png exp.png
+
+graph Nmonitor time PE PE
+sys dat2txt.py Zug
+sys gnuplot pe.gnu

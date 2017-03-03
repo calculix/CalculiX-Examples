@@ -186,3 +186,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Tensile test of an FDM structure perpendicular to the layer plane">
 ](RVE/PlanarSlide)
+[<img
+  src="RVE/PlaneOrtho1/exp.png"
+  width="200"
+  title="Tensile test of an FDM structure perpendicular to the layer plane, generalized plane strain">
+](RVE/PlaneOrtho1)
