@@ -1,0 +1,27 @@
+*include,input=all.msh
+*include,input=fiber.nam
+*include,input=matrix.nam
+** constraints
+*include,input=periodic.equ
+*boundary
+n0, 1,3
+*material, name=matrix
+*elastic
+2000,0.3,0
+*material, name=fiber
+*elastic
+150000,0.3,0
+*solid section, elset=Ematrix, material=matrix
+*solid section, elset=Efiber, material=fiber
+*STEP, NLGEOM,inc=200
+*STATIC
+*boundary
+nx,1,1,0.2
+nx,2,3
+ny,3,3,0.2
+nz,2,2,0
+*el file
+S
+*node file
+U
+*end step

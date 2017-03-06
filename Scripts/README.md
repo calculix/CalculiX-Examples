@@ -5,7 +5,8 @@ File                    | Contents
  :-------------         | :-------------
  [dat2txt.py](dat2txt.py)     | Extract time history data from .dat files     
  [monitor.py](monitor.py)   | Create convergence plots based on the .cvg and .sta files
- [param.py](param.py) | Preprocessor tor python expressions in arbitrary files
+ [param.py](param.py) | Preprocessor for python expressions in arbitrary files
+ [periodic.py](param.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
 
 ## Setup
 
@@ -162,3 +163,33 @@ Examples:
 * [Thermal/Thermal distortion/](../Thermal/Thermal distortion/)
 * [Linear/StressConc1/](../Linear/StressConc1/)
 * [NonLinear/3PB/](../NonLinear/3PB/)
+
+## periodic.py
+
+This script creates equations for periodic boundary conditions of a
+brick-shaped RVE, specified by a mesh file with at least the `*node` definitions.
+We assume that it's corners are at (0,0,0) and (lx,ly,lz).
+The dimensions are determined from the nodal co-ordinates.
+```
+> periodic.py <meshfile>
+```  
+The console output of the script shows
+- the file used,
+- the dimensions of the RVE
+- the numbers of the control nodes
+- the amount of nodes eliminated by periodicity.
+
+This is the output in example [RVE/Periodic/](../RVE/Periodic/)
+```
+Using file: all.msh
+lx: 1.0
+ly: 1.0
+lz: 1.0
+n0: 1321
+nx: 1211
+ny: 221
+nz: 1331
+332 nodes constrained
+```
+The average deformation gradient of the RVE corresponds to the displacements of
+the control nodes. These can be specified using `*boundary`.

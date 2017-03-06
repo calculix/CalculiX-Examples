@@ -191,3 +191,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Tensile test of an FDM structure perpendicular to the layer plane, generalized plane strain">
 ](RVE/PlaneOrtho1)
+[<img
+  src="RVE/Periodic/se-rot.png"
+  width="200"
+  title="Representative volume element with periodic boundary conditions">
+](RVE/Periodic)
