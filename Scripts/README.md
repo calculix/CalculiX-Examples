@@ -6,7 +6,7 @@ File                    | Contents
  [dat2txt.py](dat2txt.py)     | Extract time history data from .dat files     
  [monitor.py](monitor.py)   | Create convergence plots based on the .cvg and .sta files
  [param.py](param.py) | Preprocessor for python expressions in arbitrary files
- [periodic.py](param.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
+ [periodic.py](periodic.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
 
 ## Setup
 
