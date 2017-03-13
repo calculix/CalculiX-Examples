@@ -7,6 +7,9 @@
 # <ro=20> radius of the intenter
 # <ra=6>
 # <cs=10> width of contact region
+# <disp=20> indentation
+# <Emodul=70000>
+# <Re=160>
 # part
 pnt py 0 <wi/2> 0
 swep all new tra 0 <-th> 0 2
@@ -111,3 +114,28 @@ plus f c2a
 plus f c2s n
 hcpy png
 sys mv hcpy_3.png Refs/pairs.png
+
+# prescribed displacement
+sys echo Nload,3,3, <-disp> > load.bou
+# Reference solution
+# <I=1./12.*(wi*he**3 -(wi-2.*th)*(he-2.*th)**3)>
+# <W=I/he*2.>
+# <Me=W*Re>
+# <Fe=2.*Me/le>
+# <w=1./48.*Fe*(2.*le)**3/(Emodul*I)>
+# w  = <w>
+# Fe = <Fe>
+
+# propagate parameters to gnuplot
+sys echo disp= <disp> > params.gnu
+sys echo w= <w> >> params.gnu
+sys echo Fe= <Fe> >> params.gnu
+
+# write material specification to ccx
+sys echo *material, name=alu > alu.inc
+sys echo *elastic           >> alu.inc
+sys echo <Emodul>,0.3       >> alu.inc
+sys echo *plastic           >> alu.inc
+sys echo <Re>,0             >> alu.inc
+sys echo <Re*1.3>,0.04      >> alu.inc
+sys echo <Re*3.>,0.3        >> alu.inc

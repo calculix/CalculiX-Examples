@@ -5,6 +5,7 @@ Tested with CGX/CCX 2.11
 + Plasticity
 + Penalty contact
 + Symmetry reduction
++ Parameters propagated to
 
 File                       | Contents    
  :-------------            | :-------------
@@ -32,12 +33,18 @@ domain is reduced to a quarter due to symmetry.
 | `ro` | 20 | radius of the intenter in mm |
 | `ra` | 6 | outer fillet radius of the profile in mm |
 | `cs` | 10 | dimension of the contact region in mm |
+| `Emodul` | 70000 | Young's modulus of the profile in MPa |
+| `Re` | 160 | yield limit of the profile in MPa |
+| `disp` | 20 | displacement of the indenter in mm |
+
 
 You may adjust the parameter values in the file [par.pre.fbl](par.pre.fbl) and then run
 ```
 > param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
+The
+
 ![3PB.png](3PB.png)
 
 <img src="Refs/parts.png" width="400" title="Parts: Specimen, indenter and support">
