@@ -50,7 +50,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   src="Thermal/Thermal distortion/SE-pcss-exp.png"
   width="200"
   title="Welded T-joint, assembly with different contact formulations, shrinkage model for the distortion">
-]("Thermal/Thermal distortion/")
+](Thermal/Thermal\ distortion/)
 [<img
   src="Contact/Hertz_2D/SE.png"
   width="200"
