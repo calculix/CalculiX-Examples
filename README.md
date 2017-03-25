@@ -130,7 +130,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   src="Thermal/Thermal shock/Refs/end_of_excitation.png"
   width="200"
   title="Deflection due to non-homogeneous thermal strain">
-](Thermal/Thermal shock/)
+](Thermal/Thermal%20shock/)
 [<img
   src="Contact/Penalty/contact.png"
   width="200"
