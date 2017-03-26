@@ -7,6 +7,7 @@ File                    | Contents
  [monitor.py](monitor.py)   | Create convergence plots based on the .cvg and .sta files
  [param.py](param.py) | Preprocessor for python expressions in arbitrary files
  [periodic.py](periodic.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
+ [separate.py](separate.py) | Preprocessor to split an existing mesh such that no node is used by more than one element. Continuity is enforced by equations instead. Purpose: Avoid nodal averaging of results.
 
 ## Setup
 
@@ -193,3 +194,41 @@ nz: 1331
 ```
 The average deformation gradient of the RVE corresponds to the displacements of
 the control nodes. These can be specified using `*boundary`.
+
+## separate.py
+
+This script enable the display of results not averaged at the nodes in CGX. The
+trick is to provide a separate node for each element where otherwise all adjacent
+elements would share the same node. Instead of ensuring continuity of the
+displacement field by using the same node, identical displacement of
+repeated nodes is enforced using equations.
+
+These equations completely eliminate the dofs of the added nodes, such that no
+further input modificiation is required.
+```
+> separate.py <meshfile>
+```  
+The console output of the script shows
+- the file used,
+- the element type, number of nodes and number of dofs per element for
+all `*element` blocks
+
+The script produces three files
+- `separate-nod.inc`: Nodes of the separated meshes. This includes the original and the duplicated nodes.
+- `separate-ele.inc`: Elements of the separated meshes. Node numbers are modified as required.
+- `separate-eqn.inc`: Equations to enforce continuity.
+
+In order suppress the nodal averaging for an existing CCX input file, replace the mesh by
+```
+*include,input=separate-nod.inc
+*include,input=separate-ele.inc
+*include,input=separate-eqn.inc
+```
+
+No other changes need to be made, as all set definitions remain valid.
+
+Limitations:
+- No in-depth tests performed (just the example [../Linear/Separate](../Linear/Separate))
+- Nodes and elements of the original mesh must reside in a single file (typcially `all.msh` from CGX)
+
+For hexahedral meshes, the amount of nodes (and thus the size of the results file) can grow by a factor of 8. The number of dofs, however, remains the same, as all added nodes are eliminated by equations.

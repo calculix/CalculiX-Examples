@@ -1,0 +1,17 @@
+*include,input=all.msh
+*include, input=fix.nam
+*boundary
+Nfix,1,2
+*MATERIAL,NAME=steel
+*ELASTIC
+210000,.3
+*solid SECTION,ELSET=Eall,MATERIAL=steel
+*STEP
+*STATIC
+*dload
+*include,input=load.dlo
+*el file
+S
+*node file
+U
+*end step

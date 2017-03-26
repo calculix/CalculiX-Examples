@@ -1,0 +1,14 @@
+read nodal.frd
+rot -z
+view elem
+seta ! all
+hcpy png
+sys mv hcpy_1.png nodal-mesh.png
+
+ds -0 e 1
+view disp
+scal d 500
+frame
+plot fv all
+hcpy png
+sys mv hcpy_2.png nodal-sx.png

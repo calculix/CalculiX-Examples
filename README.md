@@ -196,3 +196,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Representative volume element with periodic boundary conditions">
 ](RVE/Periodic)
+[<img
+  src="Linear/Separate/element-sx.png"
+  width="200"
+  title="Demonstration of how to avoid nodal averaging">
+](Linear/Separate)

@@ -1,0 +1,19 @@
+*include,input=separate-nod.inc
+*include,input=separate-ele.inc
+*include,input=separate-eqn.inc
+*include, input=fix.nam
+*boundary
+Nfix,1,2
+*MATERIAL,NAME=steel
+*ELASTIC
+210000,.3
+*solid SECTION,ELSET=EALL,MATERIAL=steel
+*STEP
+*STATIC
+*dload
+*include,input=load.dlo
+*el file
+S
+*node file
+U
+*end step

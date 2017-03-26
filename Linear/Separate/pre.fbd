@@ -1,0 +1,47 @@
+valu le 40
+valu he 10
+valu pressure 1
+
+valu dy + he he
+
+# geometry
+seto d1
+  pnt ! 0 0 0
+  swep d1 new tra 0 he 0 2
+  swep d1 new tra le 0 0 8
+setc
+
+copy d1 d2 tra 0 dy 0
+copy d2 d3 tra 0 dy 0
+copy d3 d4 tra 0 dy 0
+
+# meshing
+elty d1 qu4s
+elty d2 qu8s
+elty d3 tr3s
+elty d4 tr6s
+mesh all
+send all abq
+# separate the elements into disjoint meshes
+sys separate.py all.msh
+
+# constraints
+seta nodes n all
+enq nodes fix rec 0 _ _ 1 a
+send fix abq nam
+
+# load
+seta load l L004 L008 L00C L00G
+comp load do
+comp load do
+send load abq pres pressure
+
+view elem
+view edge off
+plus l all
+rot -z
+plus n fix r
+plus n load g
+frame
+hcpy png
+sys mv hcpy_1.png mesh.png
