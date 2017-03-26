@@ -28,7 +28,7 @@ Disk |CGX | CCX
 
 <img src="mesh.png" width="400" title="Beams with different element types">
 
-The pre-processing script calls `separate.py`, which separates the elements into disjoint meshes to avoid nodal averaging of the element results (stress). See the [Helper Scripts](../../Scripts) page for details.
+The pre-processing script calls `separate.py`, which separates the elements into disjoint meshes to avoid nodal averaging of the element results (stress). See the [Helper Scripts](../../Scripts#separatepy) page for details.
 
 ## Solving
 Because of the different meshes, both versions with and without nodal averaging require different input input files and therefore, different simulation runs.

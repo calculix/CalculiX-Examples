@@ -230,5 +230,6 @@ No other changes need to be made, as all set definitions remain valid.
 Limitations:
 - No in-depth tests performed (just the example [../Linear/Separate](../Linear/Separate))
 - Nodes and elements of the original mesh must reside in a single file (typcially `all.msh` from CGX)
+- No effect on multilayer shell elements in through-thickness direction
 
 For hexahedral meshes, the amount of nodes (and thus the size of the results file) can grow by a factor of 8. The number of dofs, however, remains the same, as all added nodes are eliminated by equations.
