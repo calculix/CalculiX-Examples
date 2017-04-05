@@ -108,8 +108,7 @@ Magnitude of the displacement due to pressure application (imperfection). Max. d
 
 Deformed geometry after collapse. The left image shows the result for the parameters as in the files. The right image has double the displacement and a target element size of 3 mm.
 
-<img src="deformed.png" width="350" title="Base parameter values">
-<img src="e3d40.png" width="350" title="Target node distance 3 mm, displacement 40 mm">
+<img src="deformed.png" width="400" title="Base parameter values"><img src="e3d40.png" width="400" title="Target node distance 3 mm, displacement 40 mm">
 
 Force-displacement plots. Left: full history, right: detail of transition to collapse.
 

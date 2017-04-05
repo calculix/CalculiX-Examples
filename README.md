@@ -17,7 +17,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Bending of a wire. Large deformations, plasticity, rigid body control">
 ](Drahtbiegen/Biegung/)
 [<img
-  src="Kasten/hcpy_2.png"
+  src="Kasten/deformed.png"
   width="200"
   title="Compression of a box. Non-linear buckling, structure, internal pressure as imperfection">
 ](Kasten/)
