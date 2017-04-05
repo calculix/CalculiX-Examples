@@ -19,7 +19,7 @@ set title "Axisymmetric contact"
 #set nokey
 set xrange [0:5]
 set yrange [0:5000]
-set xlabel "Position meridan in mm"
+set xlabel "Arc length from south pole in mm"
 set ylabel "Contact pressure in MPa"
 p(x)=4400*sqrt(1-x**2/2.92**2)
 plot "pres.out" using ($2):($3) title "FEA" w lp , p(x) title "Theory"

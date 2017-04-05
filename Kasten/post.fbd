@@ -12,3 +12,13 @@ ds -0 e 1
 plot f all n
 hcpy png
 sys cp hcpy_1.png deformed.png
+
+ds 1 e 4
+scal d 100
+plot fv all
+hcpy png
+sys cp hcpy_2.png imperfection.png
+
+# create force-displacement curve
+sys dat2txt.py Kasten
+sys gnuplot df.gpl

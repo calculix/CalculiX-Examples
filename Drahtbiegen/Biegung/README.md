@@ -1,5 +1,5 @@
 # Wire Bending
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 Click the image to see the animation
 
@@ -23,6 +23,22 @@ Click the image below to open a life SMath worksheet
 [![Screenshot](Wire bending.png)](http://smath.info/cloud/worksheet/34vUp7hs)
 
 ## Preprocessing
+
+The parameters can be changed in `pre.fbd`.
+
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `R` | 1 | radius of the wire in mm |
+| `L` | 16 | length of the wire in mm |
+| `R1` | 5 | radius of the fixed tool (die) in mm |
+| `R2` | 2 | radius of the movable tool in mm |
+| `X`  | 5 | x-position of the center of the die (point A) in mm |
+| `Phi1` | 120 | sector angle of the die surface in ° |
+| `DivR` | 2 | number of radial mesh segments in the wire |
+| `DivL` | 40 | number of longitudinal mesh segments in the wire |
+| `Div1` | 40 | number of circumferential mesh segments in the die |
+| `Div2` | 20 | number of circumferential mesh segments in the movable tool |
+
 ```
 > cgx -b pre.fbd
 ```
@@ -31,7 +47,6 @@ Click the image below to open a life SMath worksheet
 
 ## Solving
 
-Extraction of the time history of the reaction moment and the internal energy from the dat file
 ```
 > ccx Biegung
 > Monitor.py Biegung

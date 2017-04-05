@@ -1,5 +1,5 @@
 # Hertz contact axisymmetric (sphere to plane)
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Axisymmetric model
 + Linear elasticity
@@ -15,7 +15,17 @@ Tested with CGX/CCX 2.11
 | [plots.gnu](plots.gnu) | Gnuplot script for path plots                 |
 
 ## Preprocessing
-Two separate parts are generated and meshed with axisymmetric elements (CAX8).
+
+The parameters can be changed in `pre.fbd`.
+
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `radius` | 50 | radius of the hemisphere in mm |
+| `height` | 60 | thickness of the cylindrical disk in mm |
+| `width` | 120 | radius of the cylindrical disk in mm |
+| `etyp` | qu8c | element type (in CGX terms) |
+
+Two separate parts are generated and meshed with axisymmetric elements (by default CAX8).
 The load is applied as pressure to the flat equatorial surface of the hemisphere (l2).
 The lower surface of the flat disk (L004) is constrained in axial (y) direction.
 The nodes on the axis of symmetry (l1, L001) are constrained in radial (x) direction.
@@ -39,8 +49,7 @@ The nodes on the axis of symmetry (l1, L001) are constrained in radial (x) direc
 ```
 > cgx -b post.fbd
 ```
-The solution shows the expected feature of Hertz contact with the maximum of the equivalent stress somewhat below the contact surface. However, there is evidence of contact finding problems near the axis of symmetry.
-
+The solution shows the expected feature of Hertz contact with the maximum of the equivalent stress somewhat below the contact surface. However, there is evidence of contact finding problems near the axis of symmetry. With CAX8R elements (reduced integration, specify `qu8cr` in `pre.fbd`) this problem is even more pronounced.
 
 <img src="SE.png" width="400" title="Equivalent stress">
 <img src="SE_zoom.png" title="Equivalent stress" width="400">

@@ -1,0 +1,13 @@
+set term pngcairo
+set out "df.png"
+set yrange [0:*]
+set grid
+set nokey
+set xlabel "Displacement in mm"
+set ylabel "Force in kN"
+set title "Buckling of a square box"
+load "disp.txt"
+plot "total force fx,fy,fz_NUPPER.txt" using (($1-1)*disp):(-$4/1000) w lp
+set xrange [0:0.2]
+set out "df1.png"
+replot

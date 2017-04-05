@@ -3,6 +3,9 @@
 valu radius 50
 valu height 60
 valu width 120
+# element type, e.g. qu8c, qu8cr
+valu etyp qu8c
+
 
 # quarter circle (hemisphere)
 pnt p1 0 radius 0
@@ -32,6 +35,7 @@ move all tra 0 height 0
 # meshing
 flip all
 elty all qu8c
+# elty all qu8cr
 mesh all
 send all abq
 

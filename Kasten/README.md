@@ -1,6 +1,6 @@
 
 # Non-linear Buckling
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Large displacements
 + Plasticity
@@ -12,8 +12,20 @@ Tested with CGX/CCX 2.11
 | [pre.fbd](pre.fbd)     | Pre-processing script for CGX     |
 | [post.fbd](post.fbd) | Post-processing script for CGX |
 | [Kasten.inp](Kasten.inp) | CCX input |
+| [df.gpl](df.gpl) | Gnuplot input for force-displacement curve|
 
 ## Preprocessing
+
+The parameters can be changed in `pre.fbd`
+
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `lx`   | 100 | width in x-direction in mm |
+| `ly`   | 100 | width in y-direction in mm |
+| `lz`   | 150 | height in mm |
+| `nd`   | 7.8 | target node distance in mm |
+| `disp` | 20  | displacement in mm |
+
 ```
 > cgx -b pre.fbd
 ```
@@ -74,7 +86,7 @@ Step 2: Axial compression (prescribed displacement)
 *static
 0.05,1,,0.05
 *boundary
-Nupper,3,3,-20
+*include, input=disp.inc
 *el file
 S,PEEQ
 *node file
@@ -85,10 +97,21 @@ U,RF
 ```
 
 ## Postprocessing
+
 ```
 > cgx -b post.fbd
 ```
-The left image shows the result for the parameters as in the files. The right image has double the displacement and a target element size of 3 mm.
+Magnitude of the displacement due to pressure application (imperfection). Max. deflection is approximately 10% of the sheet thickness.
+
+<img src="imperfection.png" width="400" title="Imperfection (scale factor 100)">
+
+
+Deformed geometry after collapse. The left image shows the result for the parameters as in the files. The right image has double the displacement and a target element size of 3 mm.
 
 <img src="deformed.png" width="400" title="Base parameter values">
-<img src="e3d40.png" width="400" title="Target element size 3 mm, displacement 40 mm">
+<img src="e3d40.png" width="400" title="Target node distance 3 mm, displacement 40 mm">
+
+Force-displacement plots. Left: full history, right: detail of transition to collapse.
+
+<img src="df.png" width="400" title="force-displacement plot">
+<img src="df1.png" width="400" title="force-displacement plot, detail">

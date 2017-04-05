@@ -1,10 +1,16 @@
+valu lx 100
+valu ly 100
+valu lz 150
+valu nd 7.8
+valu dz 20
+
 pnt p1 0 0 0
-pnt p2 100 0 0
+pnt p2 lx 0 0
 line l1 p1 p2 12
-swep all new tra 0 100 0 12
+swep all new tra 0 ly 0 12
 del s A001
 seta lower all
-swep all upper tra 0 0 150 20
+swep all upper tra 0 0 lz 20
 flip A003
 flip A004
 
@@ -18,11 +24,20 @@ frame
 hcpy png
 sys mv hcpy_1.png geo.png
 
-#div all auto 3
-elty all qu8
+div all auto nd
+elty all qu8r
 mesh all
 send all abq
 
 send all abq pres -0.01
 send lower abq nam
 send upper abq nam
+
+view elem
+plot f all
+
+# export displacement to CCX INP and Gnuplot
+valu neg -1
+valu neg_dz * neg dz
+sys echo Nupper,3,3, neg_dz > disp.inc
+sys echo disp= dz > disp.txt

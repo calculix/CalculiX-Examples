@@ -1,18 +1,18 @@
 # Meshing a CAD Geometry with Gmsh
-Tested with CGX/CCX 2.11, Gmsh 2.13.1
+Tested with CGX/CCX 2.12, Gmsh 2.16.0
 
 This demonstrates a possible workflow for a CalculiX analysis of a CAD
 generated part.
 
-* The workflow is fully automated using a CGX fbd file.
+* The workflow is fully automated using a CGX FBD file.
 * The geometry is created in Onshape and exported as STEP file.
-* Import and meshing in gmsh, export as .inp file with volume and surface meshes.
+* Import and meshing in gmsh, export as INP file with volume and surface meshes.
   In gmsh, define physical surfaces for boundary conditions and export the mesh
   with appropriate settings (to ensure that node sets are written)
 * There are two versions for gmsh pre-processing:
   * `part.geo`: mesh the geometry as it is, leading to small elements at short edges and narrow surfaces
   * `partVT.geo`: Compounding lines and geometry before meshing.  
-* Open the inp file in cgx and remove all surface elements. Eventually extend node sets to
+* Open the INP file in cgx and remove all surface elements. Eventually extend node sets to
   face sets for surface definition or pressure application.
 * Write the mesh and required set definitions
 * Write other FEA items
@@ -53,7 +53,7 @@ Then, the physical groups have to be defined.
 
 Upon export to ABAQUS format (inp) node and element sets for the physical groups are written.
 
-The gmsh geo file can be executed separately if you want to play around with the meshing details:
+The gmsh GEO file can be executed separately if you want to play around with the meshing details:
 ```
 > gmsh part.geo
 ```
