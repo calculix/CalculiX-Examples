@@ -112,5 +112,4 @@ Deformed geometry after collapse. The left image shows the result for the parame
 
 Force-displacement plots. Left: full history, right: detail of transition to collapse.
 
-<img src="df.png" width="400" title="force-displacement plot">
-<img src="df1.png" width="400" title="force-displacement plot, detail">
+<img src="df.png" width="400" title="force-displacement plot"><img src="df1.png" width="400" title="force-displacement plot, detail">
