@@ -32,7 +32,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Shell edge to shell face connection, modal analysis">
 ](Contact/Shell0)
 [<img
-  src="Pillow/expanded2.png"
+  src="Pillow/Refs/expanded-s4.png"
   width="200"
   title="Inflation of a square pillow. Non-linear static analysis, symmetry expansion in post-processing">
 ](Pillow/)
