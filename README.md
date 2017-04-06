@@ -27,10 +27,10 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Convergence study for solid elements in linear elasticity">
 ](Elements/Solid/)
 [<img
-  src="Contact/mode9.png"
+  src="Contact/Shell0/mode9.png"
   width="200"
   title="Shell edge to shell face connection, modal analysis">
-](Contact/)
+](Contact/Shell0)
 [<img
   src="Pillow/expanded2.png"
   width="200"
