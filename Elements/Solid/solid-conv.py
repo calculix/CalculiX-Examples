@@ -9,7 +9,6 @@ import numpy
 import re
 
 # Calculix solid element types with their cgx counterparts.
-# This has to be done by inp file editing.
 #~ eltyps={"C3D8":"he8",
     #~ "C3D4":"te4",
     #~ "C3D10":"te10"}
