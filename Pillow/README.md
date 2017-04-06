@@ -1,9 +1,14 @@
 # Inflating a Pillow
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Non-linear static solution
 + Shell elements
 + Symmetry expansion in the post-processing
+
+Problems
+
+- Element type `qu4r` (S4) is missing in CGX
+- Mirror copy of elements is inverted
 
 File                    | Contents    
  :-------------         | :-------------
@@ -57,7 +62,7 @@ Here, results of a comparison for the element types S4, S4R, S8 and S8R is given
 |qu8         | S8R         | 44.8  | 169        |
 |            | S8          | 36.9  | 82         |
 |qu4         | S4          | 37.6  | 157 (60%)  |
-|            | S4R         | 36.2  | 58         |
+|            | S4R         | ??    | ??         |
 
 ### Convergence
 
@@ -67,21 +72,16 @@ Here, results of a comparison for the element types S4, S4R, S8 and S8R is given
 |S4  | S4R |
 
 
-<img src="Refs/static-s8r.png" width="400" title="S8R">
-<img src="Refs/static-s8.png" width="400" title="S8">
+<img src="Refs/static-s8r.png" width="400" title="S8R"><img src="Refs/static-s8.png" width="400" title="S8">
 <img src="Refs/static-s4.png" width="400" title="S4">
-<img src="Refs/static-s4r.png" width="400" title="S4R">
-
+`<img src="Refs/static-s4r.png" width="400" title="S4R">
+`
 ### Deformation
 
-<img src="Refs/expanded-s8r.png" width="400" title="S8R">
-<img src="Refs/expanded-s8.png" width="400" title="S8">
-<img src="Refs/expanded-s4.png" width="400" title="S4">
-<img src="Refs/expanded-s4r.png" width="400" title="S4R">
+<img src="Refs/expanded-s8r.png" width="400" title="S8R"><img src="Refs/expanded-s8.png" width="400" title="S8">
+<img src="Refs/expanded-s4.png" width="400" title="S4">`<img src="Refs/expanded-s4r.png" width="400" title="S4R">`
 
 ### Cut view
 
-<img src="Refs/cuty0-s8r.png" width="400" title="S8R">
-<img src="Refs/cuty0-s8.png" width="400" title="S8">
-<img src="Refs/cuty0-s4.png" width="400" title="S4">
-<img src="Refs/cuty0-s4r.png" width="400" title="S4R">
+<img src="Refs/cuty0-s8r.png" width="400" title="S8R"><img src="Refs/cuty0-s8.png" width="400" title="S8">
+<img src="Refs/cuty0-s4.png" width="400" title="S4">`<img src="Refs/cuty0-s4r.png" width="400" title="S4R">`
