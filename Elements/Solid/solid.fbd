@@ -1,24 +1,25 @@
 valu H 100
 valu B 50
 Valu L 200
-valu LE 20
+valu LE 5
 valu Etyp te10
 
 # preprocessing
 # geometry
-pnt p1 0 0 0 
-seta lowerleft p p1 
+pnt p1 0 0 0
+seta lowerleft p p1
 swep all new tra 0 H 0
 swep all new tra 0 0 B
 seta left all
-swep left right tra L 0 0 
+swep left right tra L 0 0
 seta beam all
 
 # meshing
-div all auto LE 90
+div all auto LE
 elty all Etyp
 mesh all
-zap +tetSet
+
+#zap +tetSet
 send all abq
 
 # left end symmetry

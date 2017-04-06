@@ -30,23 +30,23 @@ for elty in eltyps.keys():
     # open results summary file
     fdata=open(elty+".txt","w")
     fdata.write("# size NoN smax umax\n")
-	# loop over element sizes
+    # loop over element sizes
     for elsize in elsizes:
         print elty, elsize
         # modify solid.fbd and write output to solid-auto.fbd
         fout = open("solid_auto.fbd", "w")
-        fout.write("text "+elty+" "+str(elsize)+"\n")
         for line in lines:
             # set element type
             if line.startswith("valu Etyp"):
                 line="valu Etyp "+eltyps[elty]+"\n"
-	    # set element size
-	    if line.startswith("div all auto"):
-		line="div all auto "+str(elsize)+"\n"
-		if elty.startswith("C3D8") or elty.startswith("C3D4"):
-			# increase the node distance for linear elements
-		    line=line+"div all mult 0.5\n"
-		    elsize=elsize*2
+                # set element size
+            if line.startswith("div all auto"):
+                line="div all auto "+str(elsize)+"\n"
+                if elty.startswith("C3D8") or elty.startswith("C3D4"):
+                    # increase the node distance for linear elements
+                    line=line+"div all div 2\n"
+                    elsize=elsize*2
+                fout.write("text "+elty+" "+str(elsize)+"\n")
             fout.write(line)
         fout.write("quit\n")
         fout.close()
