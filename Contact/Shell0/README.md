@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Shell edge to shell face connection
 + Various contact versions
@@ -34,10 +34,10 @@ MPC contact with `*equation` leads to a hinged connection at shell edge to face 
 | 6     | 0.090 | 0.103  | 0.034   | 0
 | 7     | 1530  | 0.110  | 1322    | 1522
 | 8     | 2846  | 2544   | 4001    | 2818
-| 9     | 5543  | 3087   | 6769    | 5543
-| 10    | 5648  | 4306   | 7422    | 5430
+| 9     | 5543  | 3087   | 6769    | 5431
+| 10    | 5648  | 4306   | 7422    | 5543
 
-4x4 S8R elements (edit `pre.fbd` accordingly)
+4x4 S8 elements (edit `pre.fbd` accordingly)
 
 | Mode  | tie   | equ    | pc-ss   | pc-ns
 | :--   | :--   | :--    | :--     | :--
@@ -45,12 +45,27 @@ MPC contact with `*equation` leads to a hinged connection at shell edge to face 
 | 2     | 0     | 0      | 0       | 0
 | 3     | 0     | 0.     | 0       | 0
 | 4     | 0     | 0      | 0.10    | 0
-| 5     | 0.071 | 0      | 0.15    | 0.29
-| 6     | 0.076 | 0.042  | 748     | 0
+| 5     | 0.071 | 0      | 0.153   | 0.289
+| 6     | 0.078 | 0.042  | 748     | 0
 | 7     | 1468  | 0.184  | 1395    | 1405
 | 8     | 2654  | 2408   | 2963    | 2629
 | 9     | 3283  | 2798   | 3287    | 3222
 | 10    | 4977  | 3996   | 5467    | 4827
+
+4x4 S8R elements (edit `pre.fbd` accordingly)
+
+| Mode  | tie   | equ    | pc-ss   | pc-ns
+| :--   | :--   | :--    | :--     | :--
+| 1     | 0     | 0      | 0       | 0.090
+| 2     | 0     | 0      | 0       | 0.076
+| 3     | 0     | 0.     | 0       | 0
+| 4     | 0.022 | 0      | 0.077   | 0.147
+| 5     | 0.042 | 0      | 0.151   | 0
+| 6     | 0.117 | 0.071  | 1091    | 0
+| 7     | 1402  | 0.077  | 1929    | 1358
+| 8     | 2588  | 2393   | 2963    | 2579
+| 9     | 3178  | 2750   | 3183    | 3122
+| 10    | 4598  | 3847   | 3659    | 4529
 
 
 ## Preprocessing

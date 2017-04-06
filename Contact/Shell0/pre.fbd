@@ -15,6 +15,7 @@ setc s2
 # mesh
 #div all mult 2
 #elty all qu8
+#elty all qu8r
 elty all qu4
 mesh all
 
