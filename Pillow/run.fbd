@@ -1,6 +1,6 @@
 valu L 100
 valu Ldiv 20
-valu Etyp qu4r
+valu Etyp qu4
 
 pnt ! 0 0 0
 swep all new tra 0 L 0 Ldiv
