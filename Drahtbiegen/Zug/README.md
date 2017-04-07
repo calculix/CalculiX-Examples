@@ -1,5 +1,9 @@
 # Tensile Test
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
+
+Issues
+* Inverted elements in the mirror copy for symmetry expansion
+* dark shading of `expanded.png`
 
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
@@ -24,7 +28,7 @@ The model is axisymmetric and represents a 2 mm piece of the wire with full disp
 ## Preprocessing
 This example is designed with two alternative ways for parametrization. Both produce equivalent results.
 
-The mesh is biased as to account for the localized deformation.
+The mesh is biased as to account for the localized deformation. Axisymmetric second order quadrilateral elements with reduced integration (CAX8R) are used. 
 
 <img src="zug-geo.png" width="400">
 
@@ -70,6 +74,8 @@ The second plot is based on the **deformed** geometry:
 
 #### Symmetry expansion
 Beginning with version 2.10, CGX can sweep 2D elements with results attached. This is used for symmetry expansion of the axisymmetric 2D output.
+
+Note: In CGX 2.12 a regression happened: The mirror copy has inverted elements.
 ```
 > cgx -b expansion.fbd
 ```

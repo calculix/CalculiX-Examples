@@ -5,7 +5,7 @@ valu L 2
 valu DivR 10
 valu DivL 50
 valu BiasL 4
-valu Etyp qu8c
+valu Etyp qu8cr
 
 # derived parameters
 valu Zwei 2
