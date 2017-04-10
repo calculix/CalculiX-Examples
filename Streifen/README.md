@@ -106,7 +106,7 @@ The rotation is applied using surface based distributed coupling
 and
 ```
 *boundary
-Nrefnode,5,5,1,57
+Nrefnode,5,5,1.57
 ```
 
 Run the analysis:
@@ -129,7 +129,7 @@ The rotation is applied using surface based kinematic coupling
 and
 ```
 *boundary
-Nrefnode,5,5,1,57
+Nrefnode,5,5,1.57
 ```
 
 Run the analysis:
