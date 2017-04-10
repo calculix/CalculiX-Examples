@@ -1,5 +1,5 @@
 # 90°-Bending of an Elastic Strip
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is
@@ -8,8 +8,10 @@ circle. We investigate the following cases:
 
 * Beam model
 * Shell model
-* Solid model with mean rotation constraint
-* Solid model with rigid body constraint.
+* Solid model with mean rotation constraint,
+* Solid model with rigid body constraint,
+* Solid model with coupling/distributing constraint,
+* Solid model with coupling/kinematic constraint,
 
 Model                    | CGX input        | CCX input
 :-------                 | :-------------   |:---        
@@ -41,8 +43,7 @@ The rotation is applied as constraint to dof 5 of the node at the free end of th
 ```
 The script contains the pre-processing, solution and post-processing.
 
-<img src="b-mesh.png" width="300" title="Beam model">
-<img src="b-def.png" width="300" title="Residual forces">
+<img src="b-mesh.png" width="300" title="Beam model"><img src="b-def.png" width="300" title="Residual forces">
 
 <img src="b.png" width="600" title="Convergence plot">
 
@@ -54,8 +55,7 @@ The rotation is applied as constraint to dof 5 of the nodes at the free end of t
 > cgx -b sh.fbd
 ```
 
-<img src="sh-mesh.png" width="300" title="Shell model">
-<img src="sh-def.png" width="300" title="Worst principal stress">
+<img src="sh-mesh.png" width="300" title="Shell model"><img src="sh-def.png" width="300" title="Worst principal stress">
 
 <img src="sh.png" width="600" title="Convergence plot">
 
@@ -79,8 +79,7 @@ Run the analysis:
 ```
 At 28% of the specified deformation, the incremental time becomes too small and the solution is stppped.
 
-<img src="sm-mesh.png" width="300" title="Solid model with mean rotation MPC">
-<img src="sm-def.png" width="300" title="Residual forces">
+<img src="sm-mesh.png" width="300" title="Solid model with mean rotation MPC"><img src="sm-def.png" width="300" title="Residual forces">
 
 <img src="sm.png" width="600" title="Convergence plot">
 
@@ -93,8 +92,7 @@ Run the analysis:
 ```
 At 74% of the specified deformation, the incremental time becomes too small and the solution is stppped.
 
-<img src="sr-mesh.png" width="300" title="Solid model with rigid body MPC">
-<img src="sr-def.png" width="300" title="Residual forces">
+<img src="sr-mesh.png" width="300" title="Solid model with rigid body MPC"><img src="sr-def.png" width="300" title="Residual forces">
 
 <img src="sr.png" width="600" title="Convergence plot">
 
@@ -117,8 +115,7 @@ Run the analysis:
 ```
 The simulation doesn't complete a single increment.
 
-<img src="scd-mesh.png" width="300" title="Solid model with surfaced based load (distributing coupling)">
-<img src="scd-def.png" width="300" title="Residual forces">
+<img src="scd-mesh.png" width="300" title="Solid model with surfaced based load (distributing coupling)"><img src="scd-def.png" width="300" title="Residual forces">
 
 <img src="scd.png" width="600" title="Convergence plot">
 
@@ -141,7 +138,6 @@ Run the analysis:
 ```
 At 74% of the specified deformation, the incremental time becomes too small and the solution is stopped. This is the same deformation as reached with rigid body constraints but a much less increments.
 
-<img src="sck-mesh.png" width="300" title="Solid model with surface based load (kinematic coupling)">
-<img src="sck-def.png" width="300" title="Residual forces">
+<img src="sck-mesh.png" width="300" title="Solid model with surface based load (kinematic coupling)"><img src="sck-def.png" width="300" title="Residual forces">
 
 <img src="sck.png" width="600" title="Convergence plot">
