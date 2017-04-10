@@ -17,6 +17,8 @@ Beam                     | [b.fbd](b.fbd)   | [b.inp](b.inp)
 Shell                    | [sh.fbd](sh.fbd) | [sh.inp](sh.inp)
 Solid, mean rotation MPC | [sm.fbd](sm.fbd) | [sm.inp](sm.inp)
 Solid, rigid body MPC    | [sr.fbd](sr.fbd) | [sr.inp](sr.inp)
+Solid, Coupl./Distrib.   | [scd.fbd](scd.fbd) | [scd.inp](scd.inp)
+Solid, Coupl./Kinem.     | [sck.fbd](sck.fbd) | [sck.inp](sck.inp)
 
 
 
@@ -95,3 +97,51 @@ At 74% of the specified deformation, the incremental time becomes too small and 
 <img src="sr-def.png" width="300" title="Residual forces">
 
 <img src="sr.png" width="600" title="Convergence plot">
+
+## Coupling/Distributing
+The rotation is applied using surface based distributed coupling
+```
+*coupling,refnode=1,surface=Srot,constraint name=rot
+*distributing
+5
+```
+and
+```
+*boundary
+Nrefnode,5,5,1,57
+```
+
+Run the analysis:
+```
+> cgx -b scd.fbd
+```
+The simulation doesn't complete a single increment.
+
+<img src="scd-mesh.png" width="300" title="Solid model with surfaced based load (distributing coupling)">
+<img src="scd-def.png" width="300" title="Residual forces">
+
+<img src="scd.png" width="600" title="Convergence plot">
+
+## Coupling/Kinematic
+The rotation is applied using surface based kinematic coupling
+```
+*coupling,refnode=1,surface=Srot,constraint name=rot
+*kinematic
+1,3
+```
+and
+```
+*boundary
+Nrefnode,5,5,1,57
+```
+
+Run the analysis:
+```
+> cgx -b sck.fbd
+```
+At 74% of the specified deformation, the incremental time becomes too small and the solution is stopped. This is the same deformation as reached with rigid body constraints but a much less increments.
+
+<img src="sck-mesh.png" width="300" title="Solid model with surface based load (kinematic coupling)">
+<img src="sck-def.png" width="300" title="Residual forces">
+
+<img src="sck.png" width="600" title="Convergence plot">

@@ -1,0 +1,26 @@
+*include,input=all.msh
+*include,input=rot.sur
+*include,input=refnode.nam
+*coupling,refnode=1,surface=Srot,constraint name=rot
+*distributing
+1,6
+*boundary
+*include,input=fix_123.bou
+** material definition
+*material, name=steel
+*elastic
+210000,0.3,0
+*solid section, elset=Eall, material=steel
+*STEP, NLGEOM, inc=1000
+*STATIC
+*boundary
+Nrefnode,5,5,1.57
+*el file
+S
+*node file
+U
+*el print, elset=Eall, totals=only
+ELSE
+*section print, surface=Srot, name=rot
+SOM
+*end step

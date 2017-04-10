@@ -1,6 +1,7 @@
 *include,input=all.msh
 *include,input=fix.nam
 *include,input=rot.nam
+*include,input=fix.sur
 *boundary
 Nfix,1,6
 ** material definition
@@ -19,4 +20,6 @@ S
 U
 *el print, elset=Eall, totals=only
 ELSE
+*section print, surface=Sfix, name=fix
+SOF
 *end step
