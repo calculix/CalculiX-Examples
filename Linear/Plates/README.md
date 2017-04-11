@@ -1,10 +1,13 @@
 # Axisymmetric Plate With Hole
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Linear static solution
 + Axisymmetric model
 + Test of expansion sweep in the post-processing for various element types
 + Demonstration of polar co-ordinate system for stress components
+
+Issues:
++ inverted sweep of elements, mitigated with `view back` in CGX
 
 File                    | Contents    
  :-------------         | :-------------
@@ -38,4 +41,4 @@ Disk |CGX | CCX
 ```
 Transformation to polar co-ordinates has to be applied after model expansion.
 
-<img src="polar.png" width="400" title="Expanded model, radial normal stress SRR"> <img src="2D3D.png" width="400" title="Expanded model with just the base region coloured">
+<img src="polar.png" width="400" title="Expanded model, radial normal stress SRR"><img src="2D3D.png" width="400" title="Expanded model with just the base region coloured">

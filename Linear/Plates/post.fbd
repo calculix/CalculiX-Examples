@@ -17,6 +17,7 @@ plot fv all
 hcpy png
 sys mv hcpy_1.png polar.png
 
+view back
 plot f all n
 plus ev 2D
 plus n 2D
