@@ -1,0 +1,128 @@
+valu L 50
+valu B 50
+valu T1 1.3
+valu T2 1.3
+valu Gap 1
+valu o1 5
+valu o2 5
+valu NB 2
+valu y1 3
+valu l1 20
+valu lg 3
+valu l2 20
+
+# dependent variables
+valu neg -1
+valu x4 float L
+valu y5 float B
+valu z1 * neg T1
+valu z2 float Gap
+valu z3 + Gap T2
+valu x3 - L o1
+valu x2 - x3 NB
+valu x1 - x2 o2
+valu y2 + y1 l1
+valu y3 + y2 lg
+valu y4 + y3 l2
+
+# Unterblech
+seto indu # dep face for contact
+  pnt p1 0 0 0
+  swep indu new tra 0 y5 0
+  swep indu new tra x4 0 0
+setc indu
+swep indu new tra 0 0 z1
+
+# Oberblech
+seto indo
+  pnt p2 x1 0 z2
+  swep indo new tra 0 B 0 # breite
+  swep indo new tra L 0 0 # l�nge
+setc indo
+swep indo excite tra 0 0 T2 # dicke
+
+# naht
+seto depu
+  pnt p3 x2 y1 0
+  pnt p4 x2 y2 0
+  pnt p5 x2 y3 0
+  pnt p6 x2 y4 0
+  line ! p3 p4
+  line ! p5 p6
+  swep depu new tra NB 0 0
+setc depu
+swep depu depo tra 0 0 Gap
+
+# meshing
+div all auto 1.5
+elty all he8
+mesh all
+send all abq
+# contact definitions (equations)
+#send depu indu abq areampc 123
+#sys copy depu.equ depu123.equ
+send depu indu abq areampc t
+#send depo indo abq areampc 123
+#sys copy depo.equ depo123.equ
+send depo indo abq areampc t
+# distributed flux (excitation)
+send excite abq dflux 50
+
+rot y
+rot u 20
+rot r 10
+zoom 3
+view elem
+seta ! all
+plot f +CF1 n
+plus f +CF3 g
+plus f +CF4 g
+break
+#~ plot la all
+#~ plus sa all
+#~ plus pa all
+
+#sys ccx Naht2
+
+read Naht2.frd
+
+#seta nodes n all
+#enq nodes s rec 0 10 _ 1
+#graph s time NDTEMP T
+
+#~ min 0 f
+#ds 1 e 1
+#min 0 f
+#max 2.5 f
+rot y
+rot u 20
+rot r 10
+zoom 3
+# create screen shots
+ds 4 e 1
+plot fv all
+min 0 f
+max 2.5 f
+max 2.5 f
+hcpy png
+
+ds 8 e 1
+plot fv all
+min 0 f
+max 2.5 f
+max 2.5 f
+hcpy png
+
+ds 40 e 1
+plot fv all
+min 0 f
+max 2.5 f
+max 2.5 f
+hcpy png
+
+
+# create animation
+plot fv all
+ds 1 2 -0 e 1
+min 0 f
+max 2.5 f

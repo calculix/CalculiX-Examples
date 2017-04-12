@@ -1,5 +1,5 @@
 # Thin-Walled Tube
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Modal and static analysis
 + Shell and solid model

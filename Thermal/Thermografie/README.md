@@ -1,5 +1,5 @@
 # Thermographic Testing
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Transient thermal analysis
 + Thermal coupling between independent meshes by `*equation`
