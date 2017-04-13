@@ -1,10 +1,13 @@
 # Four-Point Bending Test With Sandwich Material
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Non-linear static analysis
 + Plasticity
 + Penalty contact
 + Symmetry reduction
+
+Issues:
+* Mirror copies of elements have inverted faces
 
 File                       | Contents    
  :-------------            | :-------------
