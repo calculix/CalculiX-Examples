@@ -8,7 +8,6 @@ Tested with CGX/CCX 2.12
 Problems
 
 - Element type `qu4r` (S4) is missing in CGX
-- Mirror copy of elements is inverted
 
 File                    | Contents    
  :-------------         | :-------------
