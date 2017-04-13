@@ -1,0 +1,33 @@
+*include, input=all.msh
+*include, input=sym.nam
+*include, input=load.sur
+*include, input=nref.nam
+*coupling, surface=Sload, ref node=1,constraint name=load
+*kinematic
+1,
+*boundary
+Nsym, 1
+**Nnref,2
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** *plastic
+** 200,0
+** 1000,1
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+1
+*step
+*static
+*cload
+*include, input=load.inp
+*node file
+U,RF
+*el file, output=2D
+S
+*section print, surface=Sload,name=load
+SOF
+*end step
