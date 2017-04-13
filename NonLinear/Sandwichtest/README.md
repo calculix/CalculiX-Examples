@@ -67,6 +67,5 @@ The rate of convergence is affected by the plastic material, the mesh density in
 ```
 The yield stress of the face sheets is much higher than that of the core. The specimen fails by core shear, the center zone with pure bending load remains in the elastic range.
 
-<img src="Refs/PE.png" width="400" title="Equivalent strain">
-<img src="Refs/SE.png" width="400" title="Equivalent stress">
+<img src="Refs/PE.png" width="400" title="Equivalent strain"><img src="Refs/SE.png" width="400" title="Equivalent stress">
 <img src="Refs/PE-expanded.png" title="Equivalent strain, expanded model with the core exposed">
