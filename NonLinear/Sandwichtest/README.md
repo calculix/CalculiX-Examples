@@ -6,9 +6,6 @@ Tested with CGX/CCX 2.12
 + Penalty contact
 + Symmetry reduction
 
-Issues:
-* Mirror copies of elements have inverted faces
-
 File                       | Contents    
  :-------------            | :-------------
  [values.fbl](values.fbl)  | CGX script, parameter values

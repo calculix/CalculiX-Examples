@@ -6,9 +6,6 @@ Tested with CGX/CCX 2.12
 + Test of expansion sweep in the post-processing for various element types
 + Demonstration of polar co-ordinate system for stress components
 
-Issues:
-+ inverted sweep of elements, mitigated with `view back` in CGX
-
 File                    | Contents    
  :-------------         | :-------------
  [pre.fbd](pre.fbd)     | Pre-processing script for CGX     
