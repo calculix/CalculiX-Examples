@@ -2,7 +2,6 @@
 Tested with CGX/CCX 2.12
 
 Issues
-* Inverted elements in the mirror copy for symmetry expansion
 * dark shading of `expanded.png`
 
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
@@ -28,7 +27,7 @@ The model is axisymmetric and represents a 2 mm piece of the wire with full disp
 ## Preprocessing
 This example is designed with two alternative ways for parametrization. Both produce equivalent results.
 
-The mesh is biased as to account for the localized deformation. Axisymmetric second order quadrilateral elements with reduced integration (CAX8R) are used. 
+The mesh is biased as to account for the localized deformation. Axisymmetric second order quadrilateral elements with reduced integration (CAX8R) are used.
 
 <img src="zug-geo.png" width="400">
 
@@ -64,13 +63,11 @@ This creates path plots of the plastic equivalent strain along the symmetry axis
 
 The first plot is based on the **undeformed** geometry:
 
-<img src="path0geo.png" width="300" title="Path on the undeformed model">
-<img src="path0.png" width="500" title="Path plot of the equivalent strain">
+<img src="path0geo.png" width="300" title="Path on the undeformed model"><img src="path0.png" width="500" title="Path plot of the equivalent strain">
 
 The second plot is based on the **deformed** geometry:
 
-<img src="pathgeo.png" width="300" title="Path on the deformed model">
-<img src="path.png" width="500" title="Path plot of the equivalent strain">
+<img src="pathgeo.png" width="300" title="Path on the deformed model"><img src="path.png" width="500" title="Path plot of the equivalent strain">
 
 #### Symmetry expansion
 Beginning with version 2.10, CGX can sweep 2D elements with results attached. This is used for symmetry expansion of the axisymmetric 2D output.
@@ -79,8 +76,7 @@ Note: In CGX 2.12 a regression happened: The mirror copy has inverted elements.
 ```
 > cgx -b expansion.fbd
 ```
-<img src="PE-expanded.png" width="300" title="Automatically generated plot of the plastic equivalent strain with symmetry expansion">
-<img src="expanded.png" width="300" title="This image is darker than expected.">
+<img src="PE-expanded.png" width="300" title="Automatically generated plot of the plastic equivalent strain with symmetry expansion"><img src="expanded.png" width="300" title="This image is darker than expected.">
 <img src="2D3D.png" width="300" title="3D expansion with embedded 2D model">
 
 To see just the non-expanded model, use this command:
