@@ -1,5 +1,5 @@
 # Properties of Cross Sections
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Simply supported beam
 + Parametric section shapes of identical area
@@ -47,11 +47,9 @@ The stiffness is the ratio of applied load to resulting deflection. Again, the r
 
 The post-processing extracts the maximum stress and deflection values for each section.
 
-<img src="Refs/S11.png" width="400" title="Longitudinal stress. The higher the max. stress is, the lower is the strength of the beam for a given material">
-<img src="Refs/stress.png" width="400" title="Maximum values of the bending stress">
+<img src="Refs/S11.png" width="400" title="Longitudinal stress. The higher the max. stress is, the lower is the strength of the beam for a given material"><img src="Refs/stress.png" width="400" title="Maximum values of the bending stress">
 
-<img src="Refs/D3.png"  width="400" title="Vertical displacement. Lower deflection means higher stiffness.">
-<img src="Refs/disp.png"  width="400" title="Maximum values of the vertical deflection">
+<img src="Refs/D3.png"  width="400" title="Vertical displacement. Lower deflection means higher stiffness."><img src="Refs/disp.png"  width="400" title="Maximum values of the vertical deflection">
 
 The maximum values of stress and displacement are written to file `s-w.txt`.
 The relative values (reference: square section) are written to file `dat.txt`. The bar chart is generated based on the relative values.
