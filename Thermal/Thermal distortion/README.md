@@ -7,9 +7,6 @@ selected via parameter `contact` in `pre.fbd.par`.
 + Thermal strain with prescribed temperature
 + Symmetry expansion in post-processing
 
-Issues:
-+ Inverted mirror copies of elements
-
 
 | File                   | Contents                                      |
 | :-------------         | :-------------                                |
