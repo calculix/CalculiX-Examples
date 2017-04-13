@@ -1,5 +1,5 @@
 # Stress Concentration
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Axisymmetric part under tensile load
 + Free meshing with biased line divisions
@@ -37,5 +37,4 @@ The left end at y=0 is fixed in axial direction, at the right end, a uniform ten
 ```
 The stress concentration factor is the maximum stress divided by the applied nominal stress (100 MPa).
 
-<img src="Refs/worstps.png" width="400" title="Worst principal stress">
-<img src="Refs/worstps-zoom.png"  width="400" title="Worst principal stress">
+<img src="Refs/worstps.png" width="400" title="Worst principal stress"><img src="Refs/worstps-zoom.png"  width="400" title="Worst principal stress">
