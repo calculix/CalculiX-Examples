@@ -53,5 +53,9 @@ nind,3,3,-2
 U
 *el file
 S
+*section print, surface=Sind, name=ind
+SOF
+*section print, surface=Stopneg, name=top
+SOF
 ** endstep
 *END STEP

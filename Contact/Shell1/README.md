@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Shell assembly with edge to face tied Lagrange contact
 + Indenter with surface-to surface penalty contact
