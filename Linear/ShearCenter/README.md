@@ -1,5 +1,5 @@
 # Shear center
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Cantilever beams with point load at the free end
 + Parametric thin-walled sections
@@ -47,8 +47,6 @@ The simulation is linear.
 The script generates plots of the deformed and the undeformed geometry and of
 the shear and bending stress.
 
-<img src="Refs/undef.png" width="400" title="Undeformed model">
-<img src="Refs/def.png"  width="400" title="Deformed model.">
+<img src="Refs/undef.png" width="400" title="Undeformed model"><img src="Refs/def.png"  width="400" title="Deformed model.">
 
-<img src="Refs/Sxx.png" width="400" title="Bending stress">
-<img src="Refs/Sxz.png"  width="400" title="Shear stress in the webs.">
+<img src="Refs/Sxx.png" width="400" title="Bending stress"><img src="Refs/Sxz.png"  width="400" title="Shear stress in the webs.">

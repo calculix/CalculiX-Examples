@@ -1,7 +1,11 @@
 read II.frd new
+# set x0 is created and displayed as workaround for the dark shading hardcopy bug
+# in cgx
+enq all x0 rec 0 _ _ 0.01
 rot -x
 rot c -90
 plot f all n
+plus n x0 r
 zoom 1.1
 hcpy png
 sys mv hcpy_1.png Refs/undefx.png
@@ -11,12 +15,14 @@ rot u 5
 frame
 zoom 1.1
 plot f all n
+plus n x0 r
 hcpy png
 sys mv hcpy_2.png Refs/undef.png
 
 view disp
 scal d 100
 plot f all n
+plus n x0 r
 hcpy png
 sys mv hcpy_3.png Refs/def.png
 
