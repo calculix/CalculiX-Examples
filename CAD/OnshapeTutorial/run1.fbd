@@ -1,0 +1,22 @@
+sys cad2fbd part.step
+read result.fbd
+div all auto 5 30
+elty all te10
+mesh all
+
+view elem
+rot y
+rot l 45
+rot u 30
+plot f all n
+plus n all
+hcpy png
+sys mv hcpy_1.png Refs/mesh_c2f.png
+
+tra d 30
+tra l 5
+zoom 10
+plot f all n
+plus n all
+hcpy png
+sys mv hcpy_2.png Refs/mesh_c2f1.png

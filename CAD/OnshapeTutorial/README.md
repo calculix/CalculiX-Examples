@@ -19,14 +19,17 @@ generated part.
 * Run the analysis
 * Perform postprocessing
 
-| File     | Contents       |
-| :------- | :------------- |
-| [part.step](part.step) | STEP geometry exported from Onshape |
-| [part.geo](part.geo) | Gmsh control file for meshing and model display |
-| [run.fbd](run.fbd) | CGX control file for preprocessing, solving and postprocessing |
-| [partVT.geo](partVT.geo) | Gmsh control file with geometry cleaning (virtual topology)|
-| [VTdemo.fbd](VTdemo.fbd) | CGX file for the mesh plots (original and VT version) |
-| [solve.inp](solve.inp) | CCX input file |
+The script `run1.fbd` demonstrate the use of the new import and meshing capabilities of CGX 2.12.
+
+| File                     | Contents                                                       |
+| :-------                 | :-------------                                                 |
+| [part.step](part.step)   | STEP geometry exported from Onshape                            |
+| [part.geo](part.geo)     | Gmsh control file for meshing and model display                |
+| [run.fbd](run.fbd)       | CGX control file for preprocessing, solving and postprocessing |
+| [run1.fbd](run1.fbd)     | CGX control file import with `cad2fbd` and meshing in CGX      |
+| [partVT.geo](partVT.geo) | Gmsh control file with geometry cleaning (virtual topology)    |
+| [VTdemo.fbd](VTdemo.fbd) | CGX file for the mesh plots (original and VT version)          |
+| [solve.inp](solve.inp)   | CCX input file                                                 |
 
 # Run the analysis
 
@@ -81,13 +84,11 @@ to produce images for comparison of the meshes produced with the original geomet
 
 Original geometry (1856 nodes, 998 elements)
 
-<img src="mesh.png" width="400" title="Mesh based on the original geometry">
-<img src="mesh1.png" width="400" title="Mesh based on the original geometry">
+<img src="Refs/mesh.png" width="400" title="Mesh based on the original geometry"><img src="Refs/mesh1.png" width="400" title="Mesh based on the original geometry">
 
 Virtual topology (1425 nodes, 665 elements):
 
-<img src="VTmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more">
-<img src="VTmesh1.png" width="400" title="Mesh based on the modified geometry, note the straight element edges on the arched surface.">
+<img src="Refs/Tmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more"><img src="Refs/VTmesh1.png" width="400" title="Mesh based on the modified geometry, note the straight element edges on the arched surface.">
 
 # Application of Boundary Conditions
 After closing the gmsh window, CGX takes over control again and reads `gmsh.inp`.
@@ -122,5 +123,19 @@ Once the sets are defined, there is no particular challenge any more with settin
 
 von Mises stress, displaced geometry
 
-<img src="Refs/disp.png" width="400" title="Displacement">
-<img src="Refs/se.png" width="400" title="von Mises stress">
+<img src="Refs/disp.png" width="400" title="Displacement"><img src="Refs/se.png" width="400" title="von Mises stress">
+
+# Meshing with cad2fbd/cgx
+
+CGX 2.12 comes with the CAD converter cad2fbd, which can convert STEP and IGES files to CGX native FBD format.
+
+The script `run1.fbd`
++ calls the converter
++ reads the resulting file `result.fbd`
++ tries to mesh the geometry
+```
+cgx -b run1.fbd
+```
+Unfortunately, CGX can't mesh all surfaces. Manual modifications (splitting of lines) are required. These operations can't be done in batch mode.
+
+<img src="Refs/mesh_c2f.png" width="400" ><img src="Refs/mesh_c2f1.png" width="400">
