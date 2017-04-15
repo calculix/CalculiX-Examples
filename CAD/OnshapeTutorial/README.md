@@ -88,7 +88,7 @@ Original geometry (1856 nodes, 998 elements)
 
 Virtual topology (1425 nodes, 665 elements):
 
-<img src="Refs/Tmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more"><img src="Refs/VTmesh1.png" width="400" title="Mesh based on the modified geometry, note the straight element edges on the arched surface.">
+<img src="Refs/VTmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more"><img src="Refs/VTmesh1.png" width="400" title="Mesh based on the modified geometry, note the straight element edges on the arched surface.">
 
 # Application of Boundary Conditions
 After closing the gmsh window, CGX takes over control again and reads `gmsh.inp`.
