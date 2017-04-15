@@ -1,5 +1,5 @@
 # Three-point bending test of a hollow profile
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Non-linear static analysis
 + Plasticity
@@ -43,16 +43,15 @@ You may adjust the parameter values in the file [par.pre.fbl](par.pre.fbl) and t
 > param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
-The
+The model is reduced to one quarter using symmetry.
 
 ![3PB.png](3PB.png)
 
 <img src="Refs/parts.png" width="400" title="Parts: Specimen, indenter and support">
 
-<img src="Refs/groups.png" width="400" title="Node groups for constraint application">
-<img src="Refs/pairs.png" width="400" title="Contact pairs">
+<img src="Refs/groups.png" width="400" title="Node groups for constraint application"><img src="Refs/pairs.png" width="400" title="Contact pairs">
 
-The load application cylinders are controlled by imposed displacements to the nodes in the y=0 plane.
+The load application cylinders are controlled by imposed displacements to the nodes in the y=0 plane (plane of symmetry).
 
 ## Solving
 The time step has to be limited for stable contact. Initially, the number of contact
@@ -75,8 +74,7 @@ A movie showing the contact details:
 ```
 The plastic strain is displayed, the color bar is restricted to 0...4%.
 
-<img src="Refs/PE.png"  title="Equivalent strain">
-<img src="Refs/PEexpanded.png"  title="Equivalent strain, expanded model">
+<img src="Refs/PE.png"  title="Equivalent strain"><img src="Refs/PEexpanded.png"  title="Equivalent strain, expanded model">
 
 <img src="Refs/PEexpanded_y.png" width="400"  title="Equivalent strain, expanded model"><img src="Refs/PEexpanded_yx.png" width="400"  title="Equivalent strain, expanded model">
 
