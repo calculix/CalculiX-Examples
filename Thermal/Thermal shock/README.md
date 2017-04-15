@@ -1,5 +1,5 @@
 # Thermal Strain
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Transient coupled thermo-mechanical analysis
 + Bending of a plate due to one-sided heating
@@ -20,12 +20,9 @@ The model represents a rectangular plate, which is supported in the center and e
 A cross-thickness temperature and stress gradient develops and remains for the duration of
 the excitation time, leading to transient bending of the plate.
 
-<img src="Refs/profile.png" width="400" title="Temperature and stress profile at the center of the plate">
-<img src="Refs/hist.png" width="400" title="Time history plot of the excitation and the tip deflection">
+<img src="Refs/profile.png" width="400" title="Temperature and stress profile at the center of the plate"><img src="Refs/hist.png" width="400" title="Time history plot of the excitation and the tip deflection">
 
-<img src="Refs/start.png" width="260" title="Deflection and temperature profile, initial state">
-<img src="Refs/end_of_excitation.png" width="260" title="Deflection and temperature profile at the end of the excitation">
-<img src="Refs/end.png" width="260" title="Deflection and temperature profile at the end of the simulation">
+<img src="Refs/start.png" width="260" title="Deflection and temperature profile, initial state"><img src="Refs/end_of_excitation.png" width="260" title="Deflection and temperature profile at the end of the excitation"><img src="Refs/end.png" width="260" title="Deflection and temperature profile at the end of the simulation">
 
 
 ## Pre-Processing
@@ -38,8 +35,7 @@ A set with a single node at the vertex of the plate is defined for history plot 
 
 A node set marking a cross section path for plotting temperature and stress profiles is also defined.
 
-<img src="Refs/mesh.png" width="400" title="Excitation surface (yellow), symmetry (red), history plot node (blue), profile path (magenta)">
-<img src="Refs/meshzoom.gif" width="400" title="Mesh with cross thickness bias">
+<img src="Refs/mesh.png" width="400" title="Excitation surface (yellow), symmetry (red), history plot node (blue), profile path (magenta)"><img src="Refs/meshzoom.gif" width="400" title="Mesh with cross thickness bias">
 
 ## Solving
 
