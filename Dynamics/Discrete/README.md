@@ -1,14 +1,17 @@
 # Spring/Mass Oscillator
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Frequency response analysis
 + 2-Mass oszillator
 + Mass element faked using beam element and appropriate constraints.
++ Simulation with real mass elements fails.
 
 | File                     | Contents                        |
 | :-------------           | :-------------                  |
 | [run.fbd](run.fbd)       | Top level control script for CGX|
 | [MS.inp](MS.inp)         | Input for CCX                   |
+| [runM.fbd](runM.fbd)       | Top level control script for CGX, discrete mass|
+| [MSM.inp](MSM.inp)         | Input for CCX, discrete mass                  |
 | [V.gnu](V.gnu)           | Gnuplot script for the response function  |
 
 The system consists of two rigid bodies connected by springs and dashpots.
@@ -50,3 +53,13 @@ Mode shapes
 Magnitude and phase plot of the response (displacement of the masses)
 
 <img src="V.png">
+
+## Version with mass elements
+
+There is no cgx-based preprocessing. The model is entirely defined within the input file `MSM.inp`.
+Springs and dashpots are represented by the appropriate discrete elements,
+the masses are represented by mass elements (new in 2.12).
+```
+> cgx -b run.fbd
+```
+The simulation fails with an arpack error message.

@@ -1,0 +1,45 @@
+** Nodes
+*NODE,NSET=NALL
+1,0.,0.,0.
+2,1.,0.,0.
+3,2,0,0
+*nset,nset=response
+1,2
+** Topology
+*ELEMENT,TYPE=SPRINGA,ELSET=ESpring
+1,1,2
+2,2,3
+*ELEMENT,TYPE=DASHPOTA,ELSET=EDash
+3,1,2
+4,2,3
+*ELEMENT,TYPE=MASS,ELSET=Emass
+5,1
+6,2
+*BOUNDARY
+NALL,2,3
+1,1
+*SPRING,ELSET=Espring
+10.
+*DASHPOT,elset=EDash
+
+0.000001
+*Mass, Elset=Emass
+7.8e-9
+*STEP
+*frequency,storage=yes
+2
+*cload
+3,1,0
+*NODE file
+U
+*END STEP
+*STEP
+*STEADY STATE DYNAMICS
+0,12000
+*cload
+3,1,1
+*NODE file
+PU,U
+*NODE print,nset=response
+U
+*END STEP
