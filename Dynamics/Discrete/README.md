@@ -60,6 +60,6 @@ There is no cgx-based preprocessing. The model is entirely defined within the in
 Springs and dashpots are represented by the appropriate discrete elements,
 the masses are represented by mass elements (new in 2.12).
 ```
-> cgx -b run.fbd
+> cgx -b runM.fbd
 ```
 The simulation fails with an arpack error message.
