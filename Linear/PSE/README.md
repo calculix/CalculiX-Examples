@@ -1,5 +1,5 @@
 # Illustration of Plane Stress and Plane Strain
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Parametric geometry
 + 4 simply supported beams with different width (one of them in fact a plate) and one of them with lateral constraints (plane strain)
@@ -30,11 +30,9 @@ The model consists of the following parts (listed in increasing y direction) wit
 
 <img src="mesh.png" width="400" title="Separate meshes">
 
-<img src="load.png" width="400" title="Area for pressure application">
-<img src="ux0.png" width="400" title="Symmetry boundary">
+<img src="load.png" width="400" title="Area for pressure application"><img src="ux0.png" width="400" title="Symmetry boundary">
 
-<img src="uz0.png" width="400" title="Vertical support">
-<img src="uy0.png" width="400" title="Transversal support">
+<img src="uz0.png" width="400" title="Vertical support"><img src="uy0.png" width="400" title="Transversal support">
 
 ## Solving
 
@@ -47,18 +45,15 @@ The displacement plot shows the increased stiffness due to lateral constraints (
 
 
 
-<img src="U3-flat.png" width="400" title="Vertical displacement">
-<img src="U3.png" width="400" title="Vertical displacement">
+<img src="U3-flat.png" width="400" title="Vertical displacement"><img src="U3.png" width="400" title="Vertical displacement">
 
 In plane strain, the normal strain in lateral (y) direction is zero (center of the plate, constrained thin beam).
 
 In plane stress, the normal stress in lateral direction is zero (lateral boundaries of the plate, unconstrained beams).
 
-<img src="EYY.png" width="400" title="Transverse strain">
-<img src="SYY.png" width="400" title="Transverse stress">
+<img src="EYY.png" width="400" title="Transverse strain"><img src="SYY.png" width="400" title="Transverse stress">
 
 The bending stress is nearly unaffected by the lateral
 constraints conditions.
 
-<img src="SXX.png" width="400" title="Longitudinal (bending) stress">
-<img src="SE.png" width="400" title="Equivalent stress (von Mises)">
+<img src="SXX.png" width="400" title="Longitudinal (bending) stress"><img src="SE.png" width="400" title="Equivalent stress (von Mises)">
