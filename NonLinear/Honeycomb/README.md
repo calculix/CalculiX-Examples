@@ -1,6 +1,7 @@
 # Honeycomb Sandwich
-Tested with CGX/CCX 2.10
-Doesn't converge with 2.11, images below are obtained with 2.10.
+Tested with CGX/CCX 2.12
+
+CGX generates spurious nodes which deteriorate the convergence of the model. See issue #14
 
 + Non-linear static analysis
 + Plasticity
@@ -9,9 +10,10 @@ Doesn't converge with 2.11, images below are obtained with 2.10.
 + Parametric model
 + Shell elements
 
-File                       | Contents    
+File                        | Contents    
 :-------------              | :-------------
 [par.pre.fbl](par.pre.fbl)  | CGX script, pre-processing, parametrized with `param.py`
+[pre.fbl](pre.fbl)          | CGX script, pre-processing, already processed with `param.py`
 [post.fbd](post.fbd)        | CGX script, post-processing
 [Biegung.inp](Biegung.inp)  | CCX input
 [df.gnu](df.gnu)            | Gnuplot script
@@ -48,8 +50,7 @@ times as is required to fit the target dimensions.
 
 Then, all elements off the target are are cut away.
 
-<img src="size.png" width="400" title="Sample cut out of the generated material">
-<img src="core.png" width="400" title="Cell walls: single thickness (light blue), double thickness (dark blue)">
+<img src="size.png" width="400" title="Sample cut out of the generated material"><img src="core.png" width="400" title="Cell walls: single thickness (light blue), double thickness (dark blue)">
 
 The cylinders for load application and support are completely displacement controlled, they have
 no degrees of freedom.
@@ -72,7 +73,4 @@ The rate of convergence is affected by the plastic material, the mesh density, t
 ```
 <img src="df.png" title="Force-displacement curve (for the full specimen)">
 
-<img src="PE.png" width="400" title="Equivalent strain">
-<img src="PE-core.png" width="400" title="Equivalent strain in the core">
-<img src="SE.png" width="400" title="Equivalent stress">
-<img src="SE-core.png" width="400" title="Equivalent stress in the core">
+<img src="PE.png" width="400" title="Equivalent strain"><img src="PE-core.png" width="400" title="Equivalent strain in the core"><img src="SE.png" width="400" title="Equivalent stress"><img src="SE-core.png" width="400" title="Equivalent stress in the core">

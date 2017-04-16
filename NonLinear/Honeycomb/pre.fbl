@@ -1,34 +1,34 @@
-# <le=6> Wandlänge
-# <wb=10.5> Wabenbreite
-# <hw=10> Kernhöhe
-# <esize=hw/4> Element size
-# <divx=2>
-# <divy=4>
-# <divz=4>
-# <lx=120>
-# <ly=25>
-# <x1=50>
-# <x2=100>
-# <radius=10>
-# <tupper=1>
-# <tlower=1>
-# <tsingle=0.1>
-# <tdouble=2*tsingle>
-# <dx1=sqrt(le*le-wb*wb/4.)>
-# <wl=dx1*2.+le> row spacing parallel
-# <nx=int(lx/(wl+le))+1>
-# <ny=int(ly/wb)+1>
+# le=6 Wandlänge
+# wb=10.5 Wabenbreite
+# hw=10 Kernhöhe
+# esize=hw/4 Element size
+# divx=2
+# divy=4
+# divz=4
+# lx=120
+# ly=25
+# x1=50
+# x2=100
+# radius=10
+# tupper=1
+# tlower=1
+# tsingle=0.1
+# tdouble=2*tsingle
+# dx1=sqrt(le*le-wb*wb/4.)
+# wl=dx1*2.+le row spacing parallel
+# nx=int(lx/(wl+le))+1
+# ny=int(ly/wb)+1
 # base cell
 pnt p0 0 0 0
-pnt p1 <dx1+le/2.> 0 0
-pnt p2 <le/2.> <wb/2.> 0
-pnt p3 0 <wb/2.> 0
-line l1 p0 p1 <divx>
-line l2 p1 p2 <divy>
-line l3 p2 p3 <divx>
-line l4 p3 p0 <divy>
+pnt p1 5.90473750966 0 0
+pnt p2 3.0 5.25 0
+pnt p3 0 5.25 0
+line l1 p0 p1 2
+line l2 p1 p2 4
+line l3 p2 p3 2
+line l4 p3 p0 4
 surf s1 l1 l2 l3 l4
-swep all new tra 0 0 <hw> <divz>
+swep all new tra 0 0 10 4
 del s A002 A005
 # rotation
 pnt rc p1 p2 0.5 1
@@ -54,10 +54,10 @@ seta toflip s1 A006 A00Q A00N
 seta toflip A00G A003 A004 A00U A00D
 flip toflip
 # replicate in y direction
-valu ny <ny>
+valu ny 3
 valu inc 1
 valu count 1
-valu dy <wb>
+valu dy 10.5
 while count < ny
   valu pos * count dy
   copy basey rowy tra 0 pos 0 a
@@ -72,10 +72,10 @@ seta wsym s A009 A00G
 setr double se wsym
 seta single se wsym
 # replicate in x direction
-valu nx <nx>
+valu nx 7
 valu inc 1
 valu count 1
-valu dx <(dx1+le)*2>
+valu dx 17.8094750193
 while count < nx
   valu pos * count dx
   copy rowy new tra pos 0 0 a
@@ -85,23 +85,23 @@ merg p all
 merg l all
 merg s all
 # meshing
-#div all auto <esize>
+#div all auto 2
 elty all qu4
 mesh all
 merg n all 0.1
 # cut to size
 seta nodes n all
-enq nodes partx rec <lx/2.> _ _ <1.0001*lx/2.>
-enq partx part rec _ <ly/2.> _  <1.001*ly/2.>
+enq nodes partx rec 60.0 _ _ 60.006
+enq partx part rec _ 12.5 _  12.5125
 seta tozap n all
 setr tozap n part
 comp tozap up
 zap tozap
 # image
 seto outline
-pnt po1 0 <ly> 0
-swep outline po2 tra <lx> 0 0
-swep po2 po3 tra 0 <-ly> 0
+pnt po1 0 25 0
+swep outline po2 tra 120 0 0
+swep po2 po3 tra 0 -25 0
 setc outline
 rot -z
 view elem
@@ -128,12 +128,12 @@ sys mv hcpy_2.png core.png
 # cylinders
 del se new
 seto cyl1
-  pnt ! <radius> 0 0
+  pnt ! 10 0 0
   swep cyl1 new rot y -360 40
-  swep cyl1 new tra 0 <1.1*ly> 0 10
+  swep cyl1 new tra 0 27.5 0 10
 setc
-copy cyl1 cyl2 tra <x2> 0 <-tlower-radius>
-move cyl1 tra <x1> 0 <hw+tupper+radius>
+copy cyl1 cyl2 tra 100 0 -11
+move cyl1 tra 50 0 21
 elty cyl1 qu4
 elty cyl2 qu4
 
@@ -168,7 +168,7 @@ send lower abq sur
 send upper abq sur
 # displacement monitor node for cyl1
 seta nc1 n cyl1
-enq nc1 mon1 rec <x1> 0 <hw+tupper> 0.01
+enq nc1 mon1 rec 50 0 11 0.01
 send mon1 abq nam
 # displacement monitor node ffor center of specimen
 seta nodes n all
