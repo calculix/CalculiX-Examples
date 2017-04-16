@@ -1,13 +1,13 @@
 # Buckling and modal analysis with preload
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Modal analysis with preload
 + Eigenvalue buckling analysis
 + Shell edge load
 
 
-  File                      | Contents    
- :-------------             | :-------------
+|  File                      | Contents    
+|:-------------             | :-------------
  [par.run.fbl](par.run.fbl) | Control script for CGX     
  [solve.inp](solve.inp)     | CCX input
  [vmodes.fbd](vmodes.fbd)   | CGX script, vibration mode movies)
@@ -57,8 +57,7 @@ These are displayed using `ds <n> a` to get a sinusoidal animation
 ```
 <img src="v1.gif" width="400"><img src="v2.gif" width="400">
 
-<img src="v1n.png" width="400"><img src="v2n.png" width="400">
-<img src="v3n.png" width="400"><img src="v4n.png" width="400">
+<img src="v1n.png" width="400"><img src="v2n.png" width="400"><img src="v3n.png" width="400"><img src="v4n.png" width="400">
 
 ### Buckling mode shapes:
 These are displayed with
