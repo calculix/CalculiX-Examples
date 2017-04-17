@@ -26,10 +26,10 @@ view elem
 ds -0 e 1
 rot x
 rot c 90
+plot fv all
 frame
 hcpy png
 sys mv hcpy_3.png exp.png
-
 graph Nmonitor time PE PE
 sys dat2txt.py Zug
 sys gnuplot pe.gnu
