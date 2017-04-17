@@ -1,5 +1,5 @@
 # Tensile Test of FDM layers, plane and orthogonal boundaries
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 Tensile test of unidirectional FDM (3D printed) layers with load application perpendicular to the printing plane. The layed roads only partially bond between each other and to the layer below. The localized strains at the resulting notches lead to material failure at global strains much below the maximum elongation of the base material (embrittlement).
 
@@ -73,8 +73,7 @@ First, let's verify the boundary conditions.
 ```
 
 
-<img src="dx.png" width="400" title="Displacement in x">
-<img src="dy.png" width="400" title="Displacement in y">
+<img src="dx.png" width="400" title="Displacement in x"><img src="dy.png" width="400" title="Displacement in y">
 
 
 Now let's create a stress-strain curve and an expanded plot of the equivalent plastic strain.
@@ -83,8 +82,7 @@ Now let's create a stress-strain curve and an expanded plot of the equivalent pl
 ```
 
 
-<img src="exp.png" width="400" title="Equivalent plastic strain">
-<img src="pe.png" width="500" title="Local strain and global stress">
+<img src="exp.png" width="400" title="Equivalent plastic strain"><img src="pe.png" width="500" title="Local strain and global stress">
 
 You can generate the curves separately using the commands:
 
