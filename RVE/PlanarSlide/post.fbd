@@ -13,5 +13,5 @@ hcpy png
 sys mv hcpy_1.png exp.png
 
 graph Nmonitor time PE PE
-sys dat2txt.py 
+sys dat2txt.py Zug
 sys gnuplot pe.gnu

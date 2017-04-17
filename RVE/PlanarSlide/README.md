@@ -1,5 +1,5 @@
 # Tensile Test of FDM layers
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 Tensile test of unidirectional FDM (3D printed) layers with load application perpendicular to the printing plane. The layed roads only partially bond between each other and to the layer below. The localized strains at the resulting notches lead to material failure at global strains much below the maximum elongation of the base material (embrittlement).
 
@@ -14,12 +14,12 @@ Most appropriate (efficient) would be to model a representative volume element w
 + Handover of parameters to the gnuplot file
 
 
-| File     | Contents    |
-| :------------- | :------------- |
-| [RVE.fbd](RVE.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
+| File                 | Contents    |
+| :-------------       | :------------- |
+| [RVE.fbd](RVE.fbd)   | Pre-processing script for CGX (parametrized with valu commands)     |
 | [post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot) |
-| [pe.gnu](pe.gnu) | Gnuplot control script |
-| [Zug.inp](Zug.inp) | CCX input |
+| [pe.gnu](pe.gnu)     | Gnuplot control script |
+| [Zug.inp](Zug.inp)   | CCX input |
 
 ## Preprocessing
 
