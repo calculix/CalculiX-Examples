@@ -22,7 +22,7 @@ Disk |CGX | CCX
 :-- |:-- | :--
 1 (upper)|tr6c |CAX6
 2|tr3c | CAX3
-3|qu8c | CAX8R
+3|qu8c | CAX8
 4 (lower)|qu4c | CAX4
 
 <img src="mesh.png" width="400" title="Disks with different element types. Centerline added just for clarity">
