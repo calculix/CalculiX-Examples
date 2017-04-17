@@ -161,7 +161,7 @@ Disadvantages:
 
 Examples:
 * [Drahtbiegen/Zug/](../Drahtbiegen/Zug/)
-* [Thermal/Thermal distortion/](../Thermal/Thermal distortion/)
+* [Thermal/Thermal distortion/](../Thermal/Thermal%20distortion/)
 * [Linear/StressConc1/](../Linear/StressConc1/)
 * [NonLinear/3PB/](../NonLinear/3PB/)
 
