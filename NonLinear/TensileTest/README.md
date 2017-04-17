@@ -1,5 +1,5 @@
 # Tensile Test
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 Tensile test of a 8x25mm steel bar. The yield curve is obtained from real test data and the simulated stress-strain curve is compared to the experimental one.
 
@@ -49,8 +49,7 @@ Boundary conditions:
 * uy = 0 at y = 0 (symmetry boundary)
 * uz = 0 at z = 0 (symmetry boundary)
 
-<img src="zug-geo.png" width="400">
-<img src="zug-imp.png" width="400">
+<img src="zug-geo.png" width="400"><img src="zug-imp.png" width="400">
 
 
 ## Solving
@@ -69,8 +68,7 @@ The second command generates a convergence history plot of the solution.
 ```
 This creates a stress-strain curve and an expanded plot of the equivalent plastic strain.
 
-<img src="pe.png" width="400" title="Equivalent plastic strain">
-<img src="sigeps.png" width="500" title="Stress-strain curve">
+<img src="pe.png" width="400" title="Equivalent plastic strain"><img src="sigeps.png" width="500" title="Stress-strain curve">
 
 You can generate the stress-strain curve separately using the commands:
 
