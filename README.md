@@ -1,7 +1,7 @@
-# CalculiX-Examples
+# Parametric CalculiX-Examples
 Created by Martin Kraska, Brandenburg University of Applied Sciences
 
-These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types.
+These examples demonstrate the use of [CalculiX](http://www.dhondt.de/) for various analysis types. Most of them use parametrized geometry generated in CGX, some use GMSH for geometry and meshing.
 
 Also, there are some helper python scripts. See [Scripts page](Scripts/) for usage hints.
 
