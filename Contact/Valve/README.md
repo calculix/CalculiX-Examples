@@ -1,5 +1,5 @@
 # Engine Valve
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Axisymmetric model of a valve with valve seat
 + Linear elastic material
@@ -38,13 +38,12 @@ The mesh is controlled by a global size (parameter `esize`) and the refinement f
 
 ## Postprocessing
 
-The postprocessing script generates plots of the equivalent stress of the 2D base and of the expanded model. Also, path plots of the contact pressure and slip are generated. 
+The postprocessing script generates plots of the equivalent stress of the 2D base and of the expanded model. Also, path plots of the contact pressure and slip are generated.
 
 ```
 > cgx -b post.fbd
 ```
-<img src="se.png" width="400" title="Equivalent stress">
-<img src="se_exp.png" width="400" title="Equivalent stress, symmetry expansion of the model">
+<img src="se.png" width="400" title="Equivalent stress"><img src="se_exp.png" width="400" title="Equivalent stress, symmetry expansion of the model">
 
 For wear prediction, contact pressure and slip are relevant.
 
