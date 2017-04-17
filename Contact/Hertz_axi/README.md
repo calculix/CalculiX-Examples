@@ -32,8 +32,7 @@ The nodes on the axis of symmetry (l1, L001) are constrained in radial (x) direc
 ```
 > cgx -b pre.fbd
 ```
-<img src="parts.png" width="400">
-<img src="parts-zoom.png" width="400">
+<img src="parts.png" width="400"><img src="parts-zoom.png" width="400">
 <img src="lines.png" width="400">
 
 
@@ -51,8 +50,8 @@ The nodes on the axis of symmetry (l1, L001) are constrained in radial (x) direc
 ```
 The solution shows the expected feature of Hertz contact with the maximum of the equivalent stress somewhat below the contact surface. However, there is evidence of contact finding problems near the axis of symmetry. With CAX8R elements (reduced integration, specify `qu8cr` in `pre.fbd`) this problem is even more pronounced.
 
-<img src="SE.png" width="400" title="Equivalent stress">
-<img src="SE_zoom.png" title="Equivalent stress" width="400">
+<img src="SE.png" width="400" title="Equivalent stress"><img src="SE_zoom.png" title="Equivalent stress" width="400">
+
 <img src="SE-3D.png" title="Equivalent stress, symmetry expansion" >
 
 ```

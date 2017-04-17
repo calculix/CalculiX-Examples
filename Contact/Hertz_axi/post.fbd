@@ -21,7 +21,6 @@ view elem off
 seta base all
 copy base 2D tra 0 0 0.001
 swep base new rot y 270 30
-view back
 frame
 zoom 2
 trfm cyl y
