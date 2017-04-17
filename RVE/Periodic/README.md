@@ -1,5 +1,5 @@
 # RVE with periodic boundary conditions
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 This is a generic RVE of a fiber-matrix compound.
 
@@ -59,5 +59,4 @@ Plots of the equivalent stress, the periodicity of the deformation is visible.
 ```
 
 
-<img src="se.png" width="400" title="Displacement in x">
-<img src="se-rot.png" width="400" title="Displacement in y">
+<img src="se.png" width="400" title="Displacement in x"><img src="se-rot.png" width="400" title="Displacement in y">
