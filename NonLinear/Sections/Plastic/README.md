@@ -1,5 +1,5 @@
 # Properties of Cross Sections (elasto-plastic)
-Tested with CGX/CCX 2.11
+Tested with CGX/CCX 2.12
 
 + Simply supported beam with a prescribed displacement in the center
 + Parametric section shapes of identical area
@@ -49,8 +49,7 @@ The load is applied as a prescribed displacement of the nodes at x=0 (center bet
 > param.py par.pre.fbl
 > cgx -b pre.fbl
 ```
-<img src="mesh.png" width="400" title="Mesh density is biased towards the center section at x=0">
-<img src="sets.png" width="400" title="">
+<img src="mesh.png" width="400" title="Mesh density is biased towards the center section at x=0"><img src="sets.png" width="400" title="">
 
 ## Solving
 The ideal-plastic material can create convergence problems. These are mitigated by load application via prescribed displacement. A maximum increment size of 5% of the step is set for smooth force-displacement curves and movies.
@@ -65,8 +64,7 @@ The ideal-plastic material can create convergence problems. These are mitigated 
 ```
 The plastic zone is marked using a two-step color scheme with the plastic proof strain of 0.2% marking the limit between the two colors. The right movie shows the longitudinal (bending) stress with color bar limits 5% above the yield limit.
 
-<img src="PE.gif" width="400" title="Plastic zone (red: plastic strain &gt; 0.2% )">
-<img src="SXX.gif" width="400" title="Bending stress">
+<img src="PE.gif" width="400" title="Plastic zone (red: plastic strain &gt; 0.2% )"><img src="SXX.gif" width="400" title="Bending stress">
 
 To create a force-displacement-plot, type
 ```

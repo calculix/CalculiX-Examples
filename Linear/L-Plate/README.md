@@ -29,8 +29,7 @@ Boundary conditions
 + UZ=0 at the lower (blue) and right (magenta) edges
 + Line load in y-direction (1 N/mm), applied as pressure to surface `Slower`
 
-<img src="RFv.png" width="400" title="Reactions and loads">
-<img src="PS3.png" width="400" title="Minimum principal stress">
+<img src="RFv.png" width="400" title="Reactions and loads"><img src="PS3.png" width="400" title="Minimum principal stress">
 
 Set the appropriate values for the parameters in `par.run.fbd` and run the simulation using
 ```
