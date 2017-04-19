@@ -29,6 +29,7 @@ seto bottom
 setc
 copy bottom top tra 0 0 hc
 flip bottom
+seta part se all
 # edges
 seta bot_edge l L00B L00C L00D L00E
 comp bot_edge do
@@ -40,14 +41,19 @@ seto ind
   pnt pkx ri 0 0
   pnt pky 0 ri 0
   pnt pkz 0 0 ri
-  line lxy pkx pky pk0 8
-  line lyz pky pkz pk0 8
   line lzx pkz pkx pk0 8
-  surf sk1 lxy lyz lzx
+  swep ind inds rot z 90 10 n
+  merg p ind
+  merg l ind
+  del l0 ind
+  flip ind
+  div ind auto 2
+  elty ind qu4
+  mesh ind
   copy ind new rot z 90
   copy ind new rot z 180
+  merg n ind
 setc
-merg p ind
 # positioning the indenter
 move ind rot y 180
 move ind tra 0 0 hc
@@ -55,9 +61,9 @@ move ind tra 0 0 ri
 move ind tra 0 0 ts
 move ind tra xi 0 0
 # meshing
-div all mult 2
-elty all qu8
-mesh all
+div part mult 2
+elty part qu8
+mesh part
 send all abq
 send all abq nam
 # surfaces

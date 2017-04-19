@@ -1,6 +1,9 @@
 # read
 read tie.frd
 read tie.inp nom
+read part.nam inp nom
+comp Eind do
+comp Epart do
 # view
 view disp
 view elem
@@ -14,6 +17,7 @@ plus e Eind n
 hcpy png
 sys mv hcpy_1.png Refs/worstPS1.png
 # shaded deformed plot
-plus e all n
+plot fv Epart
+plus f Eind n
 hcpy png
 sys mv hcpy_2.png Refs/def1.png

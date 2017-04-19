@@ -3,6 +3,7 @@ Tested with CGX/CCX 2.12
 
 + Shell assembly with edge to face tied Lagrange contact
 + Indenter with surface-to surface penalty contact
++ Indenter generated with nurbs based sweep, this generates a more precise hemisphere
 
 | File                   | Contents                                      |
 | :-------------         | :-------------                                |
@@ -13,7 +14,7 @@ Tested with CGX/CCX 2.12
 ## Preprocessing
 A minimal sandwich structure is built with two skin sheets and a honeycomb core.
 The structure is supported at the edges of the bottom skin.
-A roughly spherical indenter loads the upper skin.
+The spherical indenter loads the upper skin.
 ```
 > cgx -b pre.fbd
 ```
@@ -34,5 +35,4 @@ Create a shaded image of the deformed structure
 > cgx -b post.fbd
 ```
 
-<img src="Refs/def1.png" width="400" title="Deformed geometry">
-<img src="Refs/worstPS1.png" width="400" title="Worst principal stress">
+<img src="Refs/def1.png" width="400" title="Deformed geometry"><img src="Refs/worstPS1.png" width="400" title="Worst principal stress">
