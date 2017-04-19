@@ -12,12 +12,12 @@ rot l 10
 rot u 5
 # color plot of worst ps
 ds -1 e 23
-plot fv all
-plus e Eind n
+plot fv Epart
+plus f Eind n
 hcpy png
 sys mv hcpy_1.png Refs/worstPS1.png
 # shaded deformed plot
-plot fv Epart
-plus f Eind n
+plus e all n
+
 hcpy png
 sys mv hcpy_2.png Refs/def1.png
