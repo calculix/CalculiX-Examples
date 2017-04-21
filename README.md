@@ -201,3 +201,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Demonstration of how to avoid nodal averaging">
 ](Linear/Separate)
+[<img
+  src="Test/Supports/Refs/shape_20.gif"
+  width="200"
+  title="Test of distributing coupling">
+](Test/Supports)
