@@ -4,6 +4,7 @@ Tested with CGX/CCX 2.12
 + Test of distributing coupling
 + Modal analysis
 
+
 File                           | Contents    
  :-------------                | :-------------
  [pre.fbl](pre.fbl)            | CGX script, pre-processing
