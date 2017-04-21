@@ -5,13 +5,13 @@ Tested with CGX/CCX 2.12
 + Plane stress model
 + Test of element separation to avoid nodal averaging of results (AKA element solution in ANSYS)
 
-File                    | Contents    
- :-------------         | :-------------
- [pre.fbd](pre.fbd)     | Pre-processing script for CGX     
- [post-e.fbd](post-e.fbd)   | Post-processing script for CGX, no nodal averaging
+File                        | Contents    
+ :-------------             | :-------------
+ [pre.fbd](pre.fbd)         | Pre-processing script for CGX     
  [post-n.fbd](post-n.fbd)   | Post-processing script for CGX, nodal averaging
- [nodal.inp](nodal.inp)| CCX input with non-separated mesh (nodal averaging)
- [element.inp](element.inp)| CCX input with non-separated mesh (nodal averaging)
+ [post-e.fbd](post-e.fbd)   | Post-processing script for CGX, no nodal averaging
+ [nodal.inp](nodal.inp)     | CCX input with non-separated mesh (nodal averaging)
+ [element.inp](element.inp) | CCX input with separated mesh (no nodal averaging)
 
 ## Preprocessing
 ```
@@ -23,7 +23,7 @@ Disk     | CGX  | CCX
 :--      | :--  | :--
 1 (upper)| tr6s | CPS6
 2        | tr3s | CPS3
-3        | qu8s | CPS8R
+3        | qu8sr| CPS8R
 4 (lower)| qu4s | CPS4
 
 <img src="mesh.png" width="400" title="Beams with different element types">
