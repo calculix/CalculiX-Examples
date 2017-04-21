@@ -1,0 +1,39 @@
+# movie counter
+valu counter 0
+# number of modes
+valu num 20
+# increment for modes
+valu incr 1
+# file extension for movies
+valu ext .gif
+# file prefix for movies
+valu topre Refs/shape_
+
+# read the solution
+read solve.frd new
+# setup the view
+rot x
+rot c 90
+rot r 10
+rot u 10
+zoom 3
+# show undeformed model edges
+#anim model
+view elem
+
+# loop over movies
+while counter < num
+  valu counter + counter incr
+  # convert counter value to integer
+  valu counter int counter
+  # build output file name from prefix, counter and extension
+  valu to & topre counter
+  valu to & to ext
+  # make sure that the frequency is correctly displayed
+  ds counter e 4
+  # write 11 frames from the output of the subsequent command
+  movi frames 11
+  ds counter a 4
+  # store the file under the target name
+  sys mv movie.gif to
+endwhile

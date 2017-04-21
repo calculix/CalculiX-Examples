@@ -1,0 +1,33 @@
+valu lx 100
+valu ly 5
+valu lz 10
+
+pnt ! 0 0 0
+swep all new tra 0 ly 0 4
+swep all new tra 0 0 lz 4
+swep all new tra lx 0 0 20
+
+asgn n 2
+elty all he8i
+mesh all
+
+seta nodes n all
+enq nodes fix rec 0 _ _ 0.01
+comp fix do
+
+view elem
+plot f all n
+plus f fix r
+
+# create reference node at cg of the surface
+stack on
+area fix
+valu xr pop 2
+valu yr pop
+valu zr pop
+node 1 xr yr zr
+seta nref n 1
+
+send all abq
+send all abq nam
+send fix abq surf
