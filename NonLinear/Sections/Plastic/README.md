@@ -58,6 +58,7 @@ The ideal-plastic material can create convergence problems. These are mitigated 
 > monitor.py Biegung
 ```
 <img src="Biegung.png" >
+
 ## Post-Processing
 ```
 > cgx -b movie.fbl
