@@ -1,0 +1,91 @@
+valu lx 50
+valu ly 25
+valu lz 2
+
+pnt ! 0 0 0
+swep all new tra lx 0 0
+swep all new tra 0 ly 0
+copy all new mir x
+copy all new mir y
+merg p all
+merg l all
+swep all new tra 0 0 lz
+
+asgn n 2
+div all auto 2
+div all mult 0.5
+elty all he8i
+mesh all
+
+seta nodes n all
+enq nodes fix rec _ _ 0 0.01
+
+seta nodes n all
+enq nodes load rec _ _ lz 0.01
+comp load do
+
+# create reference nodes at cg of the surfaces
+stack on
+
+area load
+valu xr pop 2
+valu yr pop
+valu zr pop
+node 1 xr yr zr
+seta rload n 1
+
+# sets for paths
+enq nodes pathx rec _ 0 0 0.01
+enq nodes pathy rec 0 _ 0 0.01
+
+send all abq
+send all abq nam
+send load abq surf
+
+rot z
+view elem
+plot f all n
+plus n pathx m
+plus n pathy r
+frame
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+
+sys ccx solve
+read solve.frd nom
+
+text Moment about x
+ds 2 e 3
+frame
+hcpy png
+sys mv hcpy_2.png Refs/mx.png
+
+graph pathy length
+
+text Moment about y
+ds 4 e 3
+frame
+hcpy png
+sys mv hcpy_3.png Refs/my.png
+
+graph pathx length
+
+text Moment about z
+ds 6 e 24
+frame
+hcpy png
+sys mv hcpy_4.png Refs/mz.png
+
+graph pathx length
+
+rot -z
+frame
+text Moment about z
+view disp
+scal d 100000
+ds 6 e 24
+frame
+hcpy png
+sys mv hcpy_5.png Refs/mz-disp.png
+
+sys gnuplot path.gpl
