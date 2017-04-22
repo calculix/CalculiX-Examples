@@ -1,6 +1,6 @@
 *include, input=all.msh
 *include, input=fix.sur
-*include, input=nref.nam
+*include, input=rfix.nam
 ** material definition
 *material, name=steel
 *elastic
@@ -23,8 +23,8 @@ U
 *frequency
 10
 *boundary
-Nnref,1,3
-Nnref,4,6
+Nrfix,1,3
+Nrfix,4,6
 *node file
 U
 *end step

@@ -7,7 +7,7 @@ swep all new tra 0 ly 0 4
 swep all new tra 0 0 lz 4
 swep all new tra lx 0 0 20
 
-asgn n 2
+asgn n 3
 elty all he8i
 mesh all
 
@@ -15,19 +15,43 @@ seta nodes n all
 enq nodes fix rec 0 _ _ 0.01
 comp fix do
 
-view elem
-plot f all n
-plus f fix r
+seta nodes n all
+enq nodes load rec lx _ _ 0.01
+comp load do
 
-# create reference node at cg of the surface
+
+rot x
+rot c 90
+rot r 10
+rot u 10
+plot e all
+frame
+view back
+zoom 3
+view elem
+plot f fix r
+plus f load b
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+
+# create reference nodes at cg of the surfaces
 stack on
 area fix
 valu xr pop 2
 valu yr pop
 valu zr pop
 node 1 xr yr zr
-seta nref n 1
+seta rfix n 1
+
+area load
+valu xr pop 2
+valu yr pop
+valu zr pop
+node 2 xr yr zr
+seta rload n 2
+
 
 send all abq
 send all abq nam
 send fix abq surf
+send load abq surf

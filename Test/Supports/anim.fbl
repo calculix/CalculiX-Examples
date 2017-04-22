@@ -1,0 +1,13 @@
+read trans.frd new
+# view setup
+view disp
+view elem
+rot y
+rot r 50
+rot u 40
+
+# animation
+anim real
+movi frames auto
+ds 2 ah 7
+sys mv movie.gif Refs/trans.gif
