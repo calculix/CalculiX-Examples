@@ -1,24 +1,28 @@
 # Supports using coupling
 Tested with CGX/CCX 2.12
 
-+ Test of distributing coupling
++ Test of distributing and kinematic coupling
 + Modal analysis
++ Large rotations
 
 
 File                           | Contents    
  :-------------                | :-------------
  [pre.fbl](pre.fbl)            | CGX script, pre-processing
  [shapes.fbd](shapes.fbd)      | CGX script, post-processing, animation of mode shapes
- [anim.fbd](anim.fbd)          | CGX script, time history animation
- [post.fbd](post.fbd)          | CGX script, images and surface data plots
+ [anim.fbl](anim.fbl)          | CGX script, time history animation
+ [post.fbl](post.fbl)          | CGX script, images and surface data plots
+ [trfix.fbl](trfix.fbl)        | CGX script, images and surface data plots
  [solve.inp](solve.inp)        | CCX input for frequency analysis
  [trans.inp](trans.inp)        | CCX input for static analysis
+ [trfix.inp](trfix.inp)        | CCX input for the reference solution
  [surface.gpl](surface.gpl)    | Gnuplot script for section data
 
-The model contains a brick shaped beam. Two simulations are set up:
+The model contains a brick shaped beam. Three simulations are set up:
 
 + Frequency analysis with one end coupled and subjected to various constraints (distributing coupling is used).
 + Multistep static analysis with large rotation. Cantilever beam with the load distributed over the end surface by distributing coupling. Support is applied via kinematic coupling.
++ Reference solution, cantilever beam with nodal constraints at the end surface.
 
 ## Pre-Processing
 
@@ -85,7 +89,6 @@ cgx -b anim.fbl
 ```
 cgx -b post.fbl
 ```
-
 The stress distribution at the support (rigid body constraint by kinematic coupling) is essentially identical to the reference solution (using direct nodal constraints)
 
 <img src="Refs/trans1.png" width="400"><img src="Refs/trans2.png" width="400">
