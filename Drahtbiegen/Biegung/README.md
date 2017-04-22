@@ -20,7 +20,7 @@ Click the image to see the animation
 ## Reference Estimates
 Click the image below to open a life SMath worksheet
 
-[![Screenshot](Wire bending.png)](http://smath.info/cloud/worksheet/34vUp7hs)
+[![Screenshot](Wire%20bending.png)](http://smath.info/cloud/worksheet/34vUp7hs)
 
 ## Preprocessing
 
