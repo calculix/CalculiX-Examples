@@ -3,8 +3,8 @@ These scripts augment the automation capabilities of CGX.
 
 File                    | Contents    
  :-------------         | :-------------
- [dat2txt.py](dat2txt.py)     | Extract time history data from .dat files     
- [monitor.py](monitor.py)   | Create convergence plots based on the .cvg and .sta files
+ [dat2txt.py](dat2txt.py)     | Extract time history data from DAT files     
+ [monitor.py](monitor.py)   | Create convergence plots based on the CVG and STA files
  [param.py](param.py) | Preprocessor for python expressions in arbitrary files
  [periodic.py](periodic.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
  [separate.py](separate.py) | Preprocessor to split an existing mesh such that no node is used by more than one element. Continuity is enforced by equations instead. Purpose: Avoid nodal averaging of results.
@@ -15,17 +15,21 @@ The example docs assume that the helper scripts are found in the PATH. See [Setu
 
 ## dat2txt.py
 
- This script extracts arbitrary result items from a given .dat file to an easy to parse tabular text file with one line per time point. Currently, this only works for result items with scope to a node or element set (not for contact results, as these cannot be scoped to sets).
+ This script extracts arbitrary result items from a given DAT file to an easy to parse tabular text file with one line per time point. Currently, this works for output requested by
+ + `*node print`
+ + `*el print`
+ + `*section print`.
+
  ```
 > dat2txt.py [<jobname>]
  ```  
-This reads `<jobname>.dat` and writes a text file for each result item in the .dat file. The names (without extension .txt) are printed to the console.
+This reads `<jobname>.dat` and writes a text file for each result item in the DAT file. The names (without extension .txt) are printed to the console.
 
-If no jobname is given, the current directory is searched for any .dat file and if a single one is found, it is used.
+If no jobname is given, the current directory is searched for any DAT file and if a single one is found, it is used.
 
-If multiple .dat files are found, their names are printed and no processing is done.
+If multiple DAT files are found, their names are printed and no processing is done.
 
-This means: If you have just a single .dat file in your directory, it is sufficient to call the script without parameters:
+This means: If you have just a single DAT file in your directory, it is sufficient to call the script without parameters:
  ```
 > dat2txt.py
 No jobname given.
@@ -34,7 +38,7 @@ total force fx,fy,fz_NKW
 >
  ```  
 
-For example, the .dat-file might contain these lines:
+For example, the DAT-file might contain these lines:
 ```
 forces (fx,fy,fz) for set NROT and time  0.2000000E-01
 
@@ -65,7 +69,7 @@ Examples:
 
 ## monitor.py
 
-This script reads the .sta and .cvg files for a given job and creates an image with two diagrams:
+This script reads the STA and CVG files for a given job and creates an image with two diagrams:
 
 * force residuals, displacement correction and incremental time step ,
 * step time and number of contact elements.
@@ -74,7 +78,7 @@ This script reads the .sta and .cvg files for a given job and creates an image w
 > monitor.py [<jobname>]
 ```
 Specification of the jobname is only required if
-there is more than one .sta file in the current directory.
+there is more than one STA file in the current directory.
 
 The plot is displayed and written to `<jobname>.png`.
 
@@ -98,7 +102,7 @@ their definition.
 
   Prefixing with `par.` is recommended, as this does not spoil the syntax highlighting in editors and you can call `param.py` without specifying the file name.
 
-* In `<filename>.par` or `par.<filename>` add parameter definitions, preferrably in comment lines.   
+* In `<filename>.par` or `par.<filename>` add parameter definitions, preferably in comment lines.   
   * To assign the value 4 to the variable a, include `<a=4>` to such a line.
   * To reference the value just add `<a>` wherever the value has to go.
   * Wherever you need a value depending on a, write something like `<b=a^2>` or
@@ -112,7 +116,7 @@ or (depending on your choice for source naming)
 ```
 > param.py [par.<filename>]
 ```
-If the filename starts with .par and only one such file is present in the directory, then it is sufficient to just call
+If the filename starts with `par.` and only one such file is present in the directory, then it is sufficient to just call
 ```
 > param.py
 ```

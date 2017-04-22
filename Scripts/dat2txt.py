@@ -8,7 +8,7 @@ import re
 import glob
 
 data={}
-pH = re.compile(' (.+) for set\\s(\\S+) and time  (.+)')
+pH = re.compile(' (.+) for .*set\\s(\\S+) and time  (.+)')
 skip = 0 # if empty lines are to be skipped
 body = 0 # if data lines are expected
 
@@ -48,14 +48,11 @@ for line in f:
             print res
             data[res] = open(res+".txt","w")
         data[res].write("\n"+str(time)+" ")
-        skip = 1
-        body = 1
+        body=1
     else:
-        if len(line.split())==0:
-            body = 0
-            #data[resname].write("\n")
-        elif body:
-            data[res].write(line+" ")
+        if body==1:
+            if not "force" in line and not "center" in line:
+                data[res].write(line+" ")
 
 for name in data.keys():
     data[name].close()
