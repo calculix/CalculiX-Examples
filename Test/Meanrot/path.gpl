@@ -1,0 +1,9 @@
+set term pngcairo enhanced
+set grid
+set xlabel "Position in mm"
+set ylabel "Stress in MPa"
+set out "Refs/stress.png"
+plot "graph_0.out" using ($2-25):3 title "{/Symbol s}_z(M_x)" w lp,\
+     "graph_1.out" using ($2-50):3 title "{/Symbol s}_z(M_y)" w lp,\
+     "graph_2.out" using ($2-50):3 title "{/Symbol t}_{max}(M_y)" w lp
+set out #

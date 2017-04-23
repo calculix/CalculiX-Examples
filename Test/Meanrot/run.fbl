@@ -1,0 +1,103 @@
+# test of mean rotation MPC
+valu lx 50
+valu ly 25
+valu lz 2
+valu df 0.1
+
+pnt ! 0 0 0
+swep all new tra lx 0 0
+swep all new tra 0 ly 0
+copy all new mir x
+copy all new mir y
+merg p all
+merg l all
+swep all new tra 0 0 lz
+
+asgn n 4
+div all auto 2
+div all mult 0.5
+elty all he8i
+mesh all
+
+seta nodes n all
+enq nodes fix rec _ _ 0 0.01
+
+seta nodes n all
+enq nodes load rec _ _ lz 0.01
+
+# send meanrot mpc under different names
+# dummy nodes need to be created to enforce
+# different ref nodes
+# Caution, this is not robust against mesh changes
+node 3000 0 0 0
+seta mx n load
+send mx abq mpc df 1 0 0
+# the new reference node is not known to cgx and can't be included in a set
+# unless we define some dummy node
+node 3001 0 0 0
+seta refx n 3001
+
+seta my n load
+send my abq mpc df 0 1 0
+node 3002 0 0 0
+seta refy n 3002
+
+seta mz n load
+send mz abq mpc df 0 0 1
+node 3003 0 0 0
+seta refz n 3003
+
+# sets for paths
+enq nodes pathx rec _ 0 0 0.01
+enq nodes pathy rec 0 _ 0 0.01
+
+send all abq
+send all abq nam
+
+rot z
+view elem
+plot f all n
+plus n pathx m
+plus n pathy r
+frame
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+
+sys ccx solve
+read solve.frd nom
+
+text Moment about x
+ds 2 e 3
+frame
+hcpy png
+sys mv hcpy_2.png Refs/mx.png
+
+graph pathy length
+
+text Moment about y
+ds 4 e 3
+frame
+hcpy png
+sys mv hcpy_3.png Refs/my.png
+
+graph pathx length
+
+text Moment about z
+ds 6 e 24
+frame
+hcpy png
+sys mv hcpy_4.png Refs/mz.png
+
+graph pathx length
+
+rot -z
+frame
+text Moment about z
+view disp
+scal d 100000
+ds 6 e 24
+frame
+hcpy png
+sys mv hcpy_5.png Refs/mz-disp.png
+
+sys gnuplot path.gpl

@@ -211,3 +211,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Test of distributing coupling, stress distribution">
 ](Test/Distributing)
+[<img
+  src="Test/Meanrot/Refs/mz-disp.png"
+  width="200"
+  title="Test of mean rotation MPC, stress distribution">
+](Test/Meanrot)

@@ -1,0 +1,58 @@
+*include, input=all.msh
+*include, input=fix.nam
+*include, input=mx.mpc
+*include, input=my.mpc
+*include, input=mz.mpc
+*include, input=refx.nam
+*include, input=refy.nam
+*include, input=refz.nam
+*boundary
+Nfix,1,3
+** material definition
+*material, name=dummy
+*elastic
+10000,0
+** material assignment to bodies
+*solid section, elset=Eall, material=dummy
+** Moment about x
+*step
+*static
+*cload
+Nrefx,1,1000
+*node file
+U
+*el file
+S
+*section print, surface=Sload, name=so1
+SOF
+*el print, elset=Eall, totals=only
+ELSE
+*end step
+** Moment about y
+*step
+*static
+*cload, op=new
+Nrefy,1,1000
+*node file
+U
+*el file
+S
+*section print, surface=Sload, name=so1
+SOF
+*el print, elset=Eall, totals=only
+ELSE
+*end step
+** Moment about z
+*step
+*static
+*cload, op=new
+Nrefz,1,1000
+*node file
+U
+*el file
+S
+*section print, surface=Sload, name=so1
+SOF
+*el print, elset=Eall, totals=only
+ELSE
+*end step
