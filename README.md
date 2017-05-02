@@ -217,7 +217,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Test of mean rotation MPC, stress distribution">
 ](Test/Meanrot)
 [<img
-  src="Test/Beam/Refs/c_kin_center_12310.png"
+  src="Test/Beam/Refs/c_kin_center_12310.gif"
   width="200"
   title="Test of coupling to beams">
 ](Test/Beam)
