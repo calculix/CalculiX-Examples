@@ -1,0 +1,28 @@
+*include, input=all.msh
+*include, input=fix.nam
+*include, input=load.nam
+*include, input=s1.sur
+*include, input=beam.nam
+*include, input=disk.nam
+** support
+*boundary
+Nfix,1,6
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*density
+7.85e-9
+*beam section, elset=Ebeam, material=steel, section=rect
+10,5
+0,0,1
+*solid section, elset=Edisk, material=steel
+*include, input=c.inc
+*step
+*frequency
+20
+*cload
+9,4,10
+*node file
+U
+*end step

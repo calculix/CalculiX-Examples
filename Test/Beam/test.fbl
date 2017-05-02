@@ -1,0 +1,111 @@
+valu le 100
+valu two 2
+valu le_half / le two
+valu ri 10
+valu ra 20
+valu td 5
+valu dist 10
+# number of movies to generate per simulation
+valu num 10
+
+# line
+pnt fix 0 0 0
+pnt center le_half 0 0
+pnt load le 0 0
+line ! fix center
+line ! load center
+
+
+# meshing. don't assign be3 to all, otherwise all lines will be meshed
+seta beam l all
+div all auto 10
+elty beam be3
+mesh all
+
+seta nodes n all
+enq nodes fix rec 0 _ _ 0.1
+enq nodes load rec le _ _ 0.1
+enq nodes center rec le_half _ _ 0.1
+
+# disk
+seto disk
+pnt pd0 0 ri 0
+pnt pd1 0 ra 0
+line ld1 pd0 pd1 4
+move disk tra le 0 0
+move disk tra dist 0 0
+swep disk new rot x 180 6 n
+swep new new1 rot x 180 6 n
+# here we have spurious points
+plot p all
+plot la all
+# avoid to sweep the spurious points
+seta s1 s all
+swep s1 new tra td 0 0 2
+
+elty disk he20r
+mesh disk
+merg n disk
+setc
+# coupling surface
+comp s1 do
+comp s1 do
+send s1 abq sur
+# write coupling commands
+stack on
+prnt se center
+valu nref pop
+prnt se load
+valu nload pop
+# distributing
+sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_dist_center_123.inc
+sys echo *distributing                                              >> c_dist_center_123.inc
+sys echo 1,3                                                        >> c_dist_center_123.inc
+sys echo *coupling, ref node= nload , surface=Ss1, constraint name=c1 > c_dist_load_123.inc
+sys echo *distributing                                              >> c_dist_load_123.inc
+sys echo 1,3                                                        >> c_dist_load_123.inc
+sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_dist_center_123456.inc
+sys echo *distributing                                              >> c_dist_center_123456.inc
+sys echo 1,6                                                        >> c_dist_center_123456.inc
+sys echo *coupling, ref node= nload , surface=Ss1, constraint name=c1 > c_dist_load_123456.inc
+sys echo *distributing                                              >> c_dist_load_123456.inc
+sys echo 1,6                                                        >> c_dist_load_123456.inc
+# kinematic
+sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_kin_center_123.inc
+sys echo *kinematic                                                 >> c_kin_center_123.inc
+sys echo 1,3                                                        >> c_kin_center_123.inc
+sys echo *coupling, ref node= nload , surface=Ss1, constraint name=c1 > c_kin_load_123.inc
+sys echo *kinematic                                                 >> c_kin_load_123.inc
+sys echo 1,3                                                        >> c_kin_load_123.inc
+
+
+# display
+view elem
+plot l all
+comp beam do
+plus pa beam
+plus f all w
+frame
+rot y
+rot l 50
+rot u 40
+zoom 1.3
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+
+# write mesh and sets
+send all abq
+send all abq nam
+
+valu file c_dist_center_123
+read run.fbl add
+valu file c_dist_load_123
+read run.fbl add
+valu file c_dist_load_123456
+read run.fbl add
+valu file c_dist_center_123456
+read run.fbl add
+valu file c_kin_center_123
+read run.fbl add
+valu file c_kin_load_123
+read run.fbl add
