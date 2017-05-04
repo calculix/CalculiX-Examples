@@ -1,5 +1,5 @@
 # 90°-Bending of an Elastic Strip
-Tested with CGX/CCX 2.12
+Tested with CGX 2.12.1/CCX 2.12
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is
@@ -120,11 +120,12 @@ The simulation doesn't complete a single increment.
 <img src="scd.png" width="600" title="Convergence plot">
 
 ## Coupling/Kinematic
-The rotation is applied using surface based kinematic coupling
+The rotation is applied using surface based kinematic coupling (with the y-displacement not coupled)
 ```
 *coupling,refnode=1,surface=Srot,constraint name=rot
 *kinematic
-1,3
+1
+3
 ```
 and
 ```
@@ -136,7 +137,7 @@ Run the analysis:
 ```
 > cgx -b sck.fbd
 ```
-At 74% of the specified deformation, the incremental time becomes too small and the solution is stopped. This is the same deformation as reached with rigid body constraints but a much less increments.
+At 78% of the specified deformation, the incremental time becomes too small and the solution is stopped.
 
 <img src="sck-mesh.png" width="300" title="Solid model with surface based load (kinematic coupling)"><img src="sck-def.png" width="300" title="Residual forces">
 
