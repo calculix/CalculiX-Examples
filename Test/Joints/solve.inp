@@ -1,0 +1,50 @@
+*include, input=all.msh
+*include, input=parts.nam
+*include, input=pin1.nam
+*include, input=pin2.nam
+*include, input=s1.sur
+*include, input=s2.sur
+*include, input=fix.nam
+*include, input=pin.inc
+*include, input=load.sur
+*boundary
+Nfix,1,3
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eparts, material=steel
+** material assignment and section of the pin
+*beam section, elset=Epin1, material=steel, section=circ
+10,10
+1,0,0
+*beam section, elset=Epin2, material=steel, section=circ
+5,5
+1,0,0
+*step
+*frequency
+10
+*node file
+U
+*end step
+*step
+*static
+*dsload
+Sload,P,-1
+*node file
+U
+*el file
+S
+*end step
+*step,nlgeom
+*static
+*dsload
+Sload,P,-1000
+*node file
+U
+*el file
+S
+*end step

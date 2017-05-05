@@ -1,0 +1,60 @@
+
+# run the simulations and generate the images
+text Kinematic coupling
+sys cp kpin.inc pin.inc
+sys ccx solve > solve-k.log
+read solve.frd new
+read solve.inp nom
+
+frame
+view elem
+rot -z
+rot u 90
+rot l 45
+rot u 45
+tra l 30
+plot fv all
+# movie counter
+valu counter 0
+# number of modes
+valu num 10
+# increment for modes
+valu incr 1
+# file extension for movies
+valu ext .gif
+# file prefix for movies
+valu topre Refs/kin
+read the solution
+# setup the view
+# loop over movies
+while counter < num
+  valu counter + counter incr
+  # convert counter value to integer
+  valu counter int counter
+  # build output file name from prefix, counter and extension
+  valu target & topre counter
+  valu target & target ext
+  # make sure that the frequency is correctly displayed
+  ds counter e 4
+  # write 11 frames from the output of the subsequent command
+  movi frames 11
+  ds counter a 4
+  # store the movie under the target name target
+  sys mv movie.gif target
+endwhile
+
+ds 12 e 7
+view disp
+scal d 100
+frame
+rot -z
+rot u 90
+rot l 45
+rot u 45
+tra l 30
+plot fv all
+hcpy png
+sys mv hcpy_1.png Refs/se-kin.png
+sys dat2txt.py solve
+sys gnuplot frequency.gpl
+sys mv f.png Refs/f-kin.png

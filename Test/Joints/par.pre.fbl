@@ -1,0 +1,141 @@
+# test of geometry generation for ccx
+# <xh=100>
+# <rh=5>
+# <lx=xh+2*rh>
+# <wi=4*rh>
+# <th=rh>
+# <angle=-90>
+
+# outer rectangle
+pnt p1 0 <-wi/2> 0
+pnt p2 <lx> <-wi/2> 0
+pnt p3 <lx> <wi/2> 0
+pnt p4 0 <wi/2> 0
+line r1 p1 p2
+line r2 p2 p3
+line r3 p3 p4
+line r4 p4 p1
+
+# circle
+pnt pc <xh> 0 0
+pnt pc1 <xh-rh> 0 0
+pnt pc2 <xh> <-rh> 0
+pnt pc3 <xh+rh> 0 0
+pnt pc4 <xh> <rh> 0
+line c1 pc1 pc2 pc
+line c2 pc2 pc3 pc
+line c3 pc3 pc4 pc
+line c4 pc4 pc1 pc
+
+# create part
+surf s1 all
+swep all new tra 0 0 <th>
+
+# duplicate part
+seto part2
+copy all new1 rot pc y 180
+setc
+move part2 rot pc z <angle>
+
+# meshing
+div all auto <rh/2>
+elty all te10
+mesh all
+
+seta parts e all
+
+# display
+view elem
+plot f all
+
+# pin
+seto ref1
+pnt ref1 <xh> 0 <th/2.>
+setc ref1
+seto ref2
+pnt ref2 <xh> 0 <-th/2.>
+setc ref2
+seto pin1
+line ! ref1 ref2 2
+setc pin1
+seto pin2
+swep ref1 pin2 tra 0 0 <th/2.> 2
+swep ref2 pin2 tra 0 0 <-th/2.> 2
+setc
+seta pin se pin1 pin2
+elty pin be3
+mesh pin
+stack on
+prnt se ref1
+valu nref1 pop 5
+prnt se ref2
+valu nref2 pop 5
+# coupling surfaces
+seta s1 s A006 A007 A008 A009
+seta s2 s A00G A00H A00I A00J
+comp s* do
+comp s* do
+send s1 abq sur
+send s2 abq sur
+# write coupling cards
+sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11 > dpin.inc
+sys echo *distributing >> dpin.inc
+sys echo 4,6 >> dpin.inc
+sys echo *coupling, ref node= nref2 ,surface= Ss2 ,constraint name=p12 >> dpin.inc
+sys echo *distributing >> dpin.inc
+sys echo 4,6 >> dpin.inc
+
+# write coupling cards, kinematic
+sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11 > kpin.inc
+sys echo *kinematic >> kpin.inc
+sys echo 1,3 >> kpin.inc
+sys echo *coupling, ref node= nref2 ,surface= Ss2 ,constraint name=p12 >> kpin.inc
+sys echo *kinematic >> kpin.inc
+sys echo 1,3 >> kpin.inc
+
+# support
+seta nodes n all
+enq nodes fix rec 0 _ _ 0.1
+
+# load
+seta load s A00F
+comp load do
+comp load do
+send load abq sur
+# write mesh and sets
+send all abq
+send all abq nam
+
+# plot of the model
+frame
+rot -z
+rot u 90
+rot l 45
+rot u 45
+tra l <0.3*xh>
+plot f all w
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+# plot of support and load application sets
+text nodeset 'fix' and surface 'load'
+plot n fix r
+plus f load b
+plus l all
+hcpy png
+sys mv hcpy_2.png Refs/fix_load.png
+# plot of coupling details
+text Coupling surfaces and reference nodes
+frame
+rot z
+tra r <0.4*xh>
+tra d <0.4*xh>
+zoom 5
+rot u 20
+plot s all
+plus f s1 r
+plus pa ref1 r
+plus f s2 b
+plus pa ref2 b
+plus e pin k
+hcpy png
+sys mv hcpy_3.png Refs/coupling.png
