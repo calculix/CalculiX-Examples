@@ -3,7 +3,7 @@ These scripts augment the automation capabilities of CGX.
 
 File                    | Contents    
  :-------------         | :-------------
- [dat2txt.py](dat2txt.py)     | Extract time history data from DAT files     
+ [dat2txt.py](dat2txt.py)     | Extract time history and frequency data from DAT files     
  [monitor.py](monitor.py)   | Create convergence plots based on the CVG and STA files
  [param.py](param.py) | Preprocessor for python expressions in arbitrary files
  [periodic.py](periodic.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
@@ -19,6 +19,8 @@ The example docs assume that the helper scripts are found in the PATH. See [Setu
  + `*node print`
  + `*el print`
  + `*section print`.
+ + frequency steps (no particular output command required)
+
 
  ```
 > dat2txt.py [<jobname>]
@@ -63,6 +65,12 @@ The first column contains the time values and all available data for that item a
 0.02          2 -1.323856E-16 -9.342657E-01  9.120891E-18
 0.04          2 -1.520904E-14  3.031209E+01  5.927751E-16
 ```
+
+Frequency outout is written to separate text files:
++ `Eigenvalues_<nr>.txt` eigenvalues, `<nr>` is a counter.
++ `Eigenvalues_PF_<nr>.txt` participation factors.
++ `Eigenvalues_MM_<nr>.txt` modal masses.
+
 Examples:
 * [Drahtbiegen/Biegung/](../Drahtbiegen/Biegung/)
 * [NonLinear/3PB/](../NonLinear/3PB/)
