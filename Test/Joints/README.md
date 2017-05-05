@@ -100,7 +100,7 @@ The frequency chart can't be plotted because the dat-file is empty, perhaps due 
 
 `<img src="Refs/f-kin.png" width="400">`
 
-In the linear static step, the lower fixed bar is totally stress free, all the load is taken by the upper reference node (which was not fixed deliberately). There is a message stating that nlgeom is active.
+In the linear static step, the lower fixed bar is shows bending and twisting load. The upper bar has tensile load, the stresses are much smaller there. This is to be expected because regardles of how the upper bar rotates, the pressure load is always axial.
 
 <img src="Refs/se-kin.png" width="400">
 
