@@ -59,4 +59,4 @@ Plots of the equivalent stress, the periodicity of the deformation is visible.
 ```
 
 
-<img src="se.png" width="400" title="Displacement in x"><img src="se-rot.png" width="400" title="Displacement in y">
+<img src="se.png" width="400" title="Equivalent stress"><img src="se-rot.png" width="400" title="Equivalent stress">
