@@ -1,0 +1,68 @@
+# <th=10.>
+# <he=50.>
+# <lx=200.>
+
+
+# rotated rectangle section
+pnt ! 0 <th/2.> <he/2.>
+swep all new tra 0 <-th> 0 2
+swep all new tra 0 0 <-he> 8
+move all rot x 45
+swep all new tra <lx> 0 0 10
+
+# ref node
+node 1 <lx> 0 0
+seta ref n 1
+
+# meshing
+elty all he8i
+mesh all
+
+# quick and dirty support
+seta nodes n all
+enq nodes support rec 0 _ _ 0.01
+
+# load application surface
+enq nodes load rec <lx> _ _ 0.01
+comp load do
+comp load do
+send load abq surface
+
+# write mesh and sets
+send all abq
+send all abq nam
+
+# plot of mesh and ref node
+text support (red), load (yellow) with ref node (blue)
+frame
+zoom 1.5
+rot -x
+rot c 90
+rot l 40
+rot u 10
+view elem
+plot f all n
+plus f load y
+plus na ref b
+plus n support r
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
+
+# Solving
+sys ccx Biegung
+read Biegung.frd new
+
+# display of stress distribution and deformed geometry
+text Stress distribution
+view disp
+scal d 1000
+# sxx
+ds 2 e 1
+hcpy png
+sys mv hcpy_2.png Refs/sxx.png
+
+# neutral fiber
+text Neutral fiber
+steps 2
+hcpy png
+sys mv hcpy_3.png Refs/neutral.png

@@ -1,0 +1,26 @@
+*include, input=all.msh
+*include, input=support.nam
+*include, input=load.sur
+** constraints
+*boundary
+Nsupport,1,3
+1,2,4
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+** kinematic coupling of the load surface for moment application
+*coupling, ref node=1, surface=Sload, constraint name=c1
+*kinematic
+1
+*step
+*static
+*cload
+1,5,-1000
+*node file
+U
+*el file
+S
+*end step
