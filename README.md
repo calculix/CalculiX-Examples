@@ -227,7 +227,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Test of using coupling to model joints">
 ](Test/Joints)
 [<img
-  src="Linear/BiaxBending/Refs/sxx.gif"
+  src="Linear/BiaxBending/Refs/sxx.png"
   width="200"
   title="Application of moment load via kinematic coupling">
 ](Test/BiaxBending)
