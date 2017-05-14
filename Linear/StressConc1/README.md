@@ -45,8 +45,7 @@ The right edge nodes are coupled by a rigid body constraint. The displacement co
 
 The stress state is evaluated using the worst principal stress (normal stress hypothesis with compression/tension symmetry). A vector plot shows the concentration in the symmetry plane. At the right edge, some deviations from the longitudinal direction can be seen. These are due to the suppression of y-strain at the rigid boundary. Leaving this aside, the rigid body constraint creates a much smoother load application than e.g. a pair of nodal forces at the vertices.
 
-<img src="Refs/vecplot.png" width="400" title="Worst principal stress">
-<img src="Refs/D.png"  width="400" title="Displacement, expanded geometry">
+<img src="Refs/vecplot.png" width="400" title="Worst principal stress"><img src="Refs/D.png"  width="400" title="Displacement, expanded geometry">
 
 The stress concentration is illustrated by path plots.
 
@@ -91,7 +90,7 @@ Stress and RF results indicating strange load distribution
 <img src="Refs/vecplot1.png" width="400" title="Worst Principal Stress"><img src="Refs/RF1.png" width="400" title="RF">
 
 Values printed by `*section print`
-Moment about CG should be 600 
+Moment about CG should be 600
 
 ```
 statistics for surface set SLOAD and time  0.1000000E+01
