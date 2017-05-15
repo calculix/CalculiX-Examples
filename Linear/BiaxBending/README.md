@@ -11,7 +11,8 @@ File                           | Contents
 
 ## Model
 
-The model contains a cantilever beam with bending moment about the transverse horizontal axis (y). It is applied to the ref node of a kinematic coupling constraint o the free end surface. The cross section is a rectangle rotated by 45°.
+The model contains three cantilever beams of different cross sections with non-zero deviatoric moment of inertia. Each one is subjected to a bending moment about the transverse horizontal axis (y).
+The bending moment is applied to the ref node of a kinematic coupling constraint of the free end surface.
 
 <img src="Refs/mesh.png" width="400">
 
@@ -21,10 +22,11 @@ In order to not induce transverse stresses by the coupling constraint, the const
 *kinematic
 1
 ```
-This only couples the x displacement and the rotation about y and z of the reference node to the surface. Thus, dofs 2,3 and 4 of the ref node have to be constrained separately.
+This only couples the x displacement and the rotation about y and z of the reference node to the surface. Thus, dofs 2,3 and 4 of the ref nodes have to be constrained separately.
 
 ## Results
 
+The images show the axial stress distribution and the neutral fiber (with color bar steps set to 2).
 ```
 > param.py par.run.fbl
 > cgx -b run.fbl

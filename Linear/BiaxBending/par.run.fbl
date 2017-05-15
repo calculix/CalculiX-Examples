@@ -8,11 +8,51 @@ pnt ! 0 <th/2.> <he/2.>
 swep all new tra 0 <-th> 0 2
 swep all new tra 0 0 <-he> 8
 move all rot x 45
-swep all new tra <lx> 0 0 10
+swep all load1 tra <lx> 0 0 10
 
-# ref node
+# z section
+# <y0z=-45>
+# <z0z=20>
+# <la=40>
+# <lb=10>
+# <th=3>
+del se new
+seto zprof
+pnt p0z 0 <y0z> <z0z>
+swep zprof new tra 0 <-th> 0 2
+swep zprof new1 tra 0 0 <-th> 2
+swep new1 new2 tra 0 0 <-la+2*th> 6
+swep new2 new3 tra 0 0 <-th> 2
+seta fu l L00F
+swep fu new tra 0 <lb> 0 3
+seta fo l L00M
+swep fo new tra 0 <-lb> 0 3
+swep zprof load2 tra <lx> 0 0 10
+setc
+
+# angle section
+# <y0a=-90>
+# <z0a=20>
+# <la=40>
+# <lb=20>
+# <tha=3>
+del se new
+seto angle
+pnt p0a 0 <y0a> <z0a>
+swep angle new tra 0 <-tha> 0 2
+swep new new1 tra 0 <-lb+tha> 0 4
+swep angle new tra 0 0 <-tha> 2
+seta tmp l L01N
+swep tmp new tra 0 0 <-la+tha> 8
+swep angle load3 tra <lx> 0 0 10
+setc
+
+# ref nodes
 node 1 <lx> 0 0
-seta ref n 1
+node 2 <lx> <y0z> <z0z>
+node 3 <lx> <y0a> <z0a>
+
+seta ref n all
 
 # meshing
 elty all he8i
@@ -22,11 +62,10 @@ mesh all
 seta nodes n all
 enq nodes support rec 0 _ _ 0.01
 
-# load application surface
-enq nodes load rec <lx> _ _ 0.01
-comp load do
-comp load do
-send load abq surface
+# load application surfaces
+send load1 abq surf
+send load2 abq surf
+send load3 abq surf
 
 # write mesh and sets
 send all abq
@@ -38,11 +77,13 @@ frame
 zoom 1.5
 rot -x
 rot c 90
-rot l 40
+rot l 10
 rot u 10
 view elem
 plot f all n
-plus f load y
+plus f load1 y
+plus f load2 y
+plus f load3 y
 plus na ref b
 plus n support r
 hcpy png
@@ -66,3 +107,10 @@ text Neutral fiber
 steps 2
 hcpy png
 sys mv hcpy_3.png Refs/neutral.png
+
+text displacement
+plot f all n
+rot -x
+rot c 90
+hcpy png
+sys mv hcpy_4.png Refs/disp.png
