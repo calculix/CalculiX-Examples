@@ -231,3 +231,8 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   width="200"
   title="Application of moment load via kinematic coupling">
 ](Linear/BiaxBending)
+[<img
+  src="Test/Supports1/Refs/shape_3.gif"
+  width="200"
+  title="Modelling of bearings with distributing coupling">
+](Test/Supports1)

@@ -1,0 +1,16 @@
+sys cad2fbd Welle.step
+read result.fbd
+#node 1 0 0 0
+#node 2 0 0 0
+div all auto 10
+elty all te10
+mesh all
+seta s1 s A001
+seta s2 s A009
+comp s* do
+comp s* do
+
+send s1 abq sur
+send s2 abq sur
+
+send all abq

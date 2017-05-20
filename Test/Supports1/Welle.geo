@@ -1,0 +1,12 @@
+Merge "Welle.stp";
+Mesh.ElementOrder=2;
+Mesh.HighOrderOptimize = 1;
+Mesh.CharacteristicLengthMax = 10;
+Mesh 3;
+OptimizeMesh = "Gmsh";
+Physical Surface("s1") = {1};
+Physical Surface("s2") = {9};
+Physical Volume("Welle") = {1};
+Mesh.SaveGroupsOfNodes = 1;
+Save "mesh.inp";
+Exit;

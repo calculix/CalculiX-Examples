@@ -1,0 +1,31 @@
+*include, input=all.msh
+*include, input=s1.sur
+*include, input=s2.sur
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+** coupling
+*node, nset=r1
+10000,0,0,0
+*coupling,surface=Ss1,refnode=10000,constraint name=c1
+*distributing
+1,3
+*node, nset=r2
+10001,0,0,0
+*coupling,surface=Ss2,refnode=10001,constraint name=c2
+*distributing
+1,3
+*boundary
+r1,1,3
+r2,2,3
+*step
+*frequency
+20
+*node file
+U
+*end step
