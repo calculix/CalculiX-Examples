@@ -6,25 +6,51 @@ Tested with CGX/CCX 2.12
 + Linear static analysis
 + Non-linear static analysis
 
-Issues:
+## Summary:
+- Kinematic coupling with cylindrical co-ordinate system and no pin is a convenient and straightforward representation for hinge joints between parts.
+- This is restricted to small displacements.
+- The radial and axial displacement of the coupling surface follows a rigid body motion
+
+### How to make a hinge
+
+- Define a cylindrical co-ordinate system co-inciding with the axis of the hinge.
+- Define a ref node on the axis (the location should be irrelevant, this was not tested)
+- Couple the axial and radial motion of the interface surface to the rigid body motion of the ref node.
+- You may need to constraint the rotation of the ref node about the axis, although this did not make any difference in the present test.
+```
+*orientation, name=pin, system=cylindrical
+100, 0, 0, 100, 0, 10
+*node, nset=nref
+6000 , 100, 0, 0
+*coupling, ref node= 6000 ,surface= Ss12 ,constraint name=p11, orientation=pin
+*kinematic
+1
+3
+```
+
+
+### Issues
 * version with distributing coupling behaves as if the pin was fully constrained.
 * version with distributing coupling fails in a nlgeom step
-* Segfault with kinematic coupling in nlgeom step
+* Segfault with kinematic coupling with pin in nlgeom step
 * Segfault destroys already accumulated dat file.
 
 
 File                           | Contents    
  :-------------                | :-------------
  [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing
+ [par.pre2.fbl](par.pre2.fbl)  | CGX script, pre-processing, pin-less model
  [dist.fbl](dist.fbl)          | CGX script, simulation and post-pro with distributing coupling
  [kin.fbl](kin.fbl)            | CGX script, simulation and post-pro with kinematic coupling
- [solve.inp](solve.inp)        | CCX input
+ [kin2.fbl](kin2.fbl)          | CGX script, simulation and post-pro with kinematic coupling and no pin
+ [solve.inp](solve.inp)        | CCX input for model with pin
+ [solve2.inp](solve2.inp)      | CCX input for model without pin
  [frequency.gpl](surface.gpl)  | Gnuplot script for frequency chart
 
-The model represents a hinged (currently without free rotation, i.e. no rigid body dofs in the model) joint between two bars. The pin is modeled by a beam which is coupled to the cylindrical surface of the holes.
+The model represents a hinged joint between two bars. The pin is modeled by a beam which is coupled to the cylindrical surfaces of the holes.
 
 
-## Pre-Processing
+## Pre-Processing for the model with pin
 
 The script generated the elements, the surface, node and element sets and writes the coupling commands for ccx.
 ```
@@ -88,6 +114,7 @@ Nonlinear geometric effects are taken into account
 ```
 
 ## Kinematic coupling
+The interface surfaces are coupled to separate ref nodes. The ref nodes are connected by the pin with no released degrees of freedom. Thus the structure behaves like a single deformable part.
 
 ```
 > cgx -b kin.fbl
@@ -100,7 +127,7 @@ The frequency chart can't be plotted because the dat-file is empty, perhaps due 
 
 `<img src="Refs/f-kin.png" width="400">`
 
-In the linear static step, the lower fixed bar is shows bending and twisting load. The upper bar has tensile load, the stresses are much smaller there. This is to be expected because regardles of how the upper bar rotates, the pressure load is always axial.
+In the linear static step, the lower fixed bar shows bending and twisting load. The upper bar has tensile load, the stresses are much smaller there. This is to be expected because regardles of how the upper bar rotates, the pressure load is always axial.
 
 <img src="Refs/se-kin.png" width="400">
 
@@ -132,3 +159,48 @@ iteration 1
 Segmentation fault
 
 ```
+## Kinematic coupling without pin
+
+The idea is to couple the interface surfaces of both members to the same reference node and restricting the coupling to the axial and radial motion using a custom co-ordinate system. This will allow relative rotation about the axis.
+
+The axis is defined using two points on the axis of rotation.
+
+Another difference to the models above is the use of kinematic coupling for the support.
+
+Steps:
+1. frequency analysis
+1. static analysis with tension in part 2 without explicit `nlgeom`
+1. static analysis with bending in both parts without explicit `nlgeom`
+1. as before with explicit `nlgeom`
+
+
+### Pre-processing
+
+```
+> param.py par.pre2.fbl
+> cgx -b pre2.fbl
+```
+<img src="Refs2/mesh.png" width="400"><img src="Refs2/surf.png" width="400">
+
+### Solving and post-processing
+
+```
+> cgx -b kin2.fbl
+```
+The frequency analysis and the linear static analysis show the expected behaviour.
+
+<img src="Refs2/kin1.gif" width="160"><img src="Refs/kin4.gif" width="160"><img src="Refs/kin10.gif" width="160">
+
+The frequency chart shows a single zero rigid body mode (f=0). This is the rotation of part 2 about the hinge.
+
+<img src="Refs2/f-kin.png" width="400">
+
+In the first linear static step, the lower fixed bar shows bending and twisting load. The upper bar has tensile load, the stresses are much smaller there. This is to be expected because regardles of how the upper bar rotates, the pressure load is always axial.
+
+<img src="Refs2/se1-kin.png" width="400">
+
+In the second step, a vertical force is applied, which induces bending in both parts.
+
+<img src="Refs2/se2-kin.png" width="400">
+
+This step is repeated with explicit `nlgeom`. In this case the solution does not converge.

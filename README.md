@@ -222,7 +222,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Test of coupling to beams">
 ](Test/Beam)
 [<img
-  src="Test/Joints/Refs/kin5.gif"
+  src="Test/Joints/Refs2/kin1.gif"
   width="200"
   title="Test of using coupling to model joints">
 ](Test/Joints)

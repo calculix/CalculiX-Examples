@@ -1,0 +1,123 @@
+# hinge made by kinematic coupling with released angular constraint
+# no pin
+# test of geometry generation for ccx
+# <xh=100>
+# <rh=5>
+# <lx=xh+2*rh>
+# <wi=4*rh>
+# <th=rh>
+# <angle=-60>
+# <dz=5>
+
+# outer rectangle
+pnt p1 0 <-wi/2> 0
+pnt p2 <lx> <-wi/2> 0
+pnt p3 <lx> <wi/2> 0
+pnt p4 0 <wi/2> 0
+line r1 p1 p2
+line r2 p2 p3
+line r3 p3 p4
+line r4 p4 p1
+
+# circle
+pnt pc <xh> 0 0
+pnt pc1 <xh-rh> 0 0
+pnt pc2 <xh> <-rh> 0
+pnt pc3 <xh+rh> 0 0
+pnt pc4 <xh> <rh> 0
+line c1 pc1 pc2 pc
+line c2 pc2 pc3 pc
+line c3 pc3 pc4 pc
+line c4 pc4 pc1 pc
+
+# create part
+surf s1 all
+swep all new tra 0 0 <th>
+
+# duplicate part
+seto part2
+copy all new1 rot pc y 180
+setc
+move part2 rot pc z <angle>
+move part2 tra 0 0 <-dz>
+
+# meshing
+# this should start the node numbers at 4 but also sets an increment of 4
+# asgn n 4
+div all auto <rh/2>
+elty all te10
+mesh all
+comp all do
+
+seta parts e all
+
+# display
+view elem
+plot f all
+
+# coupling surfaces
+seta s1 s A006 A007 A008 A009
+seta s2 s A00G A00H A00I A00J
+seta s12 se s1 s2
+comp s12 do
+comp s12 do
+send s12 abq sur
+#automatic ref node number
+# stack on
+# prnt se al*
+# valu nref pop 4
+# valu one 1
+# valu nref + nref one
+# valu nref int nref
+# write coupling cards
+valu nref 6000
+sys echo *orientation, name=pin, system=cylindrical > pin.inc
+sys echo <xh>, 0, 0, <xh>, 0, 10 >> pin.inc
+sys echo *node, nset=nref >> pin.inc
+sys echo nref , <xh>, 0, 0 >> pin.inc
+sys echo *coupling, ref node= nref ,surface= Ss12 ,constraint name=p11, orientation=pin >> pin.inc
+sys echo *kinematic >> pin.inc
+sys echo 1 >> pin.inc
+sys echo 3 >> pin.inc
+
+# support with control by ref node
+seta nodes n all
+enq nodes fix rec 0 _ _ 0.1
+comp fix do
+comp fix do
+send fix abq sur
+valu rfix 6001
+sys echo *node, nset=rfix > fix.inc
+sys echo rfix , 0, 0, 0 >> fix.inc
+sys echo *coupling, ref node= rfix ,surface= Sfix ,constraint name=p11 >> fix.inc
+sys echo *kinematic>> fix.inc
+sys echo 1,3 >> fix.inc
+
+# load
+seta load s A00F
+comp load do
+comp load do
+send load abq sur
+# write mesh and sets
+send all abq
+send all abq nam
+
+# plot of the model
+frame
+rot -z
+rot u 90
+rot l 45
+rot u 45
+tra l <0.3*xh>
+plot f all w
+hcpy png
+sys mv hcpy_1.png Refs2/mesh.png
+# plot of the surfaces
+text nodeset 'fix' (red), surface 'load' (blue), coupling surface (yellow)
+view back
+plot f fix r
+plus f load b
+plus l all
+plus f s12 y
+hcpy png
+sys mv hcpy_2.png Refs2/surf.png

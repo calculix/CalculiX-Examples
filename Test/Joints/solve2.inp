@@ -1,0 +1,57 @@
+*include, input=all.msh
+*include, input=s12.sur
+*include, input=fix.sur
+*include, input=load.sur
+*include, input=load.nam
+** coupling
+*include, input=pin.inc
+*include, input=fix.inc
+*boundary
+rfix,1,6
+**nref,6
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+*density
+7.85e-9
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+** modal analysis
+*step
+*frequency
+10
+*node file
+U
+*end step
+** axial tension in part 2
+*step
+*static
+*dsload
+Sload,P,-1
+*node file
+U
+*el file
+S
+*end step
+** transverse load
+*step
+*static
+*cload
+Nload,3,10
+*node file
+U
+*el file
+S
+*end step
+** transverse load
+*step,nlgeom
+*static
+0.01,1.
+*cload
+Nload,3,10
+*node file
+U
+*el file
+S
+*end step

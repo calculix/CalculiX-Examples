@@ -4,7 +4,8 @@
 # <lx=xh+2*rh>
 # <wi=4*rh>
 # <th=rh>
-# <angle=-90>
+# <angle=-60>
+# <dz=10>
 
 # outer rectangle
 pnt p1 0 <-wi/2> 0
@@ -36,6 +37,7 @@ seto part2
 copy all new1 rot pc y 180
 setc
 move part2 rot pc z <angle>
+move part2 tra 0 0 <-dz>
 
 # meshing
 div all auto <rh/2>
@@ -53,7 +55,7 @@ seto ref1
 pnt ref1 <xh> 0 <th/2.>
 setc ref1
 seto ref2
-pnt ref2 <xh> 0 <-th/2.>
+pnt ref2 <xh> 0 <-th/2.-dz>
 setc ref2
 seto pin1
 line ! ref1 ref2 2
@@ -65,11 +67,13 @@ setc
 seta pin se pin1 pin2
 elty pin be3
 mesh pin
+
 stack on
 prnt se ref1
 valu nref1 pop 5
 prnt se ref2
 valu nref2 pop 5
+
 # coupling surfaces
 seta s1 s A006 A007 A008 A009
 seta s2 s A00G A00H A00I A00J
@@ -77,21 +81,23 @@ comp s* do
 comp s* do
 send s1 abq sur
 send s2 abq sur
-# write coupling cards
-sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11 > dpin.inc
-sys echo *distributing >> dpin.inc
-sys echo 4,6 >> dpin.inc
+
+# write coupling cards, distributing
+sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11  > dpin.inc
+sys echo *distributing                                                 >> dpin.inc
+sys echo 4,6                                                           >> dpin.inc
 sys echo *coupling, ref node= nref2 ,surface= Ss2 ,constraint name=p12 >> dpin.inc
-sys echo *distributing >> dpin.inc
-sys echo 4,6 >> dpin.inc
+sys echo *distributing                                                 >> dpin.inc
+sys echo 4,6                                                           >> dpin.inc
 
 # write coupling cards, kinematic
-sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11 > kpin.inc
-sys echo *kinematic >> kpin.inc
-sys echo 1,3 >> kpin.inc
+sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11  > kpin.inc
+sys echo *kinematic                                                    >> kpin.inc
+sys echo 1,3                                                           >> kpin.inc
 sys echo *coupling, ref node= nref2 ,surface= Ss2 ,constraint name=p12 >> kpin.inc
-sys echo *kinematic >> kpin.inc
-sys echo 1,3 >> kpin.inc
+sys echo *kinematic                                                    >> kpin.inc
+sys echo 1,3                                                           >> kpin.inc
+
 
 # support
 seta nodes n all
@@ -127,10 +133,11 @@ sys mv hcpy_2.png Refs/fix_load.png
 text Coupling surfaces and reference nodes
 frame
 rot z
-tra r <0.4*xh>
+tra r <0.2*xh>
 tra d <0.4*xh>
+view back
 zoom 5
-rot u 20
+rot u 10
 plot s all
 plus f s1 r
 plus pa ref1 r
