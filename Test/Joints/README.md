@@ -189,7 +189,7 @@ Steps:
 ```
 The frequency analysis and the linear static analysis show the expected behaviour.
 
-<img src="Refs2/kin1.gif" width="160"><img src="Refs/kin4.gif" width="160"><img src="Refs/kin10.gif" width="160">
+<img src="Refs2/kin1.gif" width="160"><img src="Refs2/kin4.gif" width="160"><img src="Refs2/kin10.gif" width="160">
 
 The frequency chart shows a single zero rigid body mode (f=0). This is the rotation of part 2 about the hinge.
 
