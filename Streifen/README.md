@@ -31,7 +31,7 @@ Auxiliary CGX Files         | Contents
 ## Reference solution
 Click the image below to open a life SMath worksheet
 
-[![Screenshot](Screenshot.png)](http://en.smath.info/cloud/worksheet/HPoZEq6u)
+[![Streifen](Streifen.png)](http://en.smath.info/cloud/worksheet/HPoZEq6u)
 
 
 # Beam Model
