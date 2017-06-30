@@ -4,7 +4,7 @@
   <settings>
     <identity>
       <id>5f9dfa4e-21bc-4f4f-a130-72afcd1e3015</id>
-      <revision>12</revision>
+      <revision>18</revision>
     </identity>
     <calculation>
       <precision>4</precision>
@@ -146,9 +146,9 @@
       </result>
     </math>
   </region>
-  <region id="14" left="18" top="90" width="155" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="14" left="18" top="90" width="171" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
-      <p>radius ofurvature </p>
+      <p>Radius of curvature </p>
     </text>
   </region>
   <region id="15" left="288" top="117" width="138" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
@@ -172,12 +172,12 @@
   </region>
   <region id="16" left="18" top="126" width="233" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
-      <p>long. strain at the surface</p>
+      <p>Long. strain at the surface</p>
     </text>
   </region>
   <region id="17" left="18" top="162" width="168" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
-      <p>longitudinal stress</p>
+      <p>Longitudinal stress</p>
     </text>
   </region>
   <region id="18" left="288" top="162" width="135" height="24" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
@@ -204,7 +204,7 @@
   </region>
   <region id="20" left="18" top="216" width="250" height="40" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
-      <p>longitudinal stress(plane strain, in the center)</p>
+      <p>Longitudinal stress(plane strain, in the center)</p>
     </text>
   </region>
   <region id="21" left="288" top="216" width="172" height="50" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
