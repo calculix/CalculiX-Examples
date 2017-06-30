@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<?application progid="SMath Studio Desktop" version="0.97.5737.24521"?>
-<regions>
+<?application progid="SMath Studio Desktop" version="0.98.6356.19993"?>
+<regions xmlns="http://smath.info/schemas/worksheet/1.0">
   <settings>
     <identity>
       <id>5f9dfa4e-21bc-4f4f-a130-72afcd1e3015</id>
-      <revision>6</revision>
+      <revision>12</revision>
     </identity>
     <calculation>
       <precision>4</precision>
@@ -19,11 +19,12 @@
       <backgrounds />
     </pageModel>
     <dependencies>
-      <assembly name="SMath Studio Desktop" version="0.97.5737.24521" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
-      <assembly name="Text Region" version="1.10.5737.24526" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
-      <assembly name="Math Region" version="0.97.5737.24521" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
-      <assembly name="Picture Region" version="1.10.5737.24525" guid="06b5df04-393e-4be7-9107-305196fcb861" />
+      <assembly name="SMath Studio Desktop" version="0.98.6356.19993" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="Math Region" version="0.98.6356.19993" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="Picture Region" version="1.10.6356.19997" guid="06b5df04-393e-4be7-9107-305196fcb861" />
+      <assembly name="Text Region" version="1.10.6356.19999" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
     </dependencies>
+    <mode debug="true" />
   </settings>
   <region id="0" left="18" top="18" width="65" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
@@ -150,7 +151,7 @@
       <p>radius ofurvature </p>
     </text>
   </region>
-  <region id="15" left="288" top="117" width="145" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="15" left="288" top="117" width="138" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">ε</e>
@@ -162,7 +163,7 @@
         <e type="operator" args="2">:</e>
       </input>
       <contract>
-        <e type="operand" style="unit">％</e>
+        <e type="operand" style="unit">%</e>
       </contract>
       <result action="numeric">
         <e type="operand">0.7854</e>
