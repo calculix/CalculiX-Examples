@@ -1,0 +1,49 @@
+** includes
+*include, input=all.msh
+*include, input=ind.sur
+*include, input=dep.sur
+*include, input=load.sur
+*include, input=fix.nam
+*include, input=ysym.nam
+*nset, nset=control
+1
+** constraints
+*boundary
+Nfix,1,3
+Nysym,2
+** material
+*MATERIAL, NAME=Aluminium
+*ELASTIC
+70000, 0.34
+*DENSITY
+2.7e-9
+*solid section, elset=Eall, material=Aluminium
+** contact
+*surface interaction, name=telescope
+*surface behavior, pressure-overclosure=linear
+100000.
+*contact pair, interaction=telescope, type=surface to surface
+Sdep,Sind
+** coupling
+*coupling, ref node=1, surface=Sload, constraint name=c1
+*kinematic
+1
+3
+*boundary
+control,1,2
+** step
+*step,nlgeom
+*static
+0.1,1
+*boundary
+control,5,5,0.3
+** output
+*NODE FILE
+U
+*el file
+S
+*section print, surface=Sload,name=sp1
+SOM
+*contact file
+CSTR
+*END STEP

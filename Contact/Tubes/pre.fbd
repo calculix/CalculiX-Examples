@@ -1,0 +1,90 @@
+# parameters
+valu R1 50
+valu T1 5
+valu L1 500
+valu R2 45
+valu T2 5
+valu L2 500
+valu OVL 150
+valu divt 1
+valu divrot 18
+valu divl 50
+
+# dependent values
+valu neg -1
+valu T1neg * T1 neg
+valu T2neg * T2 neg
+valu x21 - L1 OVL
+valu x22 + x21 L2
+
+# sketch of tube 1
+seto tube1
+pnt p1 0 0 R1
+swep all new tra 0 0 T1neg divt
+swep all new tra L1 0 0 divl
+swep all new rot x 180 divrot
+setc
+# sketch of tube 2
+seto tube2
+pnt p2 x21 0 R2
+swep tube2 new tra 0 0 T2neg divt
+swep tube2 new tra L2 0 0 divl
+swep tube2 new rot x 180 divrot
+setc
+
+# meshing
+node 1 x22 0 0
+
+elty all he8i
+mesh all
+send all abq
+
+# node sets for picking
+seta nodes n all
+seta n1 n tube1
+seta n2 n tube2
+
+# fix
+enq n1 fix rec 0 _ _ 0.1
+send fix abq nam
+
+# symmetry
+enq nodes ysym rec _ 0 _ 0.1
+send ysym abq nam
+
+# load
+enq n2 load rec x22 _ _ 0.1
+send abq load
+comp load do
+send load abq surf
+
+# indep
+valu R1i - R1 T1
+enq n1 ind cyl x R1i _ 0.1
+comp ind do
+send ind abq surf
+
+# dep
+enq n2 dep cyl x R2 _ 0.1
+comp dep do
+send dep abq surf
+
+
+rot -y
+plot f all n
+frame
+rot l 80
+rot u 10
+plus f ind b
+plus f dep r
+view elem
+zoom 4
+hcpy png
+sys mv hcpy_1.png contact.png
+
+plot n fix m 6
+plus n load t 6
+plus n ysym r 4
+ulin fix (magenta), ysym (red), load (turq)
+hcpy png
+sys mv hcpy_2.png sets.png
