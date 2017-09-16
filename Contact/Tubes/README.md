@@ -1,4 +1,4 @@
-# Shell Assembly
+# Telescoping Tubes Under Bending Load
 Tested with CGX 2.13/CCX 2.12
 
 + Telescopic structure of linear elastic tubes
