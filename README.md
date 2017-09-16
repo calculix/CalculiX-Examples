@@ -237,7 +237,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Modelling of bearings with distributing coupling">
 ](Test/Supports1)
 [<img
-  src="Contact/Tubes/SE.png"
+  src="Contact/Tubes/SE_zoom.png"
   width="200"
   title="Telescoping tubes under bending load">
 ](Contact/Tubes)
