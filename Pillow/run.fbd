@@ -19,16 +19,16 @@ send all abq nam
 
 rot -z
 view elem
-text red: x0, blue: y0, green: outer
+ulim red: x0, blue: y0, green: outer
 view edge off
 view elem
 plot f all n
 frame
-plus n x0 r
+plus n x0 r 6
 #plus l x0 r
-plus n y0 b
+plus n y0 b 6
 #plus l y0 b
-plus n outer g
+plus n outer g 6
 #plus l outer g
 hcpy png
 sys mv hcpy_1.png sets.png
@@ -36,7 +36,7 @@ del mesh
 
 sys ccx static
 
-text Etyp
+ulim Etyp
 read static.frd new
 # magnitude of displacement
 ds -1 e 4
@@ -48,7 +48,10 @@ copy all new mir z
 # expanded view
 view disp
 view elem
+view sh
 plot f all n
+# plot nodes to enforce correct colors
+plus n outer g 1
 plus fv base
 rot -z
 rot c -100
@@ -63,5 +66,6 @@ zoom 8
 tra l 75
 tra d 10
 plot f base n
+plus n outer r 1
 hcpy png
 sys mv hcpy_3.png cuty0.png
