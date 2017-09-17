@@ -3,14 +3,15 @@ set out "df.png"
 set yrange [0:*]
 set grid
 set xlabel "Displacement in mm"
-set key bottom right
+set nokey
 set ylabel "Force in kN"
 set title "Buckling of a square box"
 load "disp.txt"
 plot "total force fx,fy,fz_NUPPER.txt" using (($1-1)*disp):(-$4/1000) w lp
 set xrange [0:0.2]
 set out "df1.png"
-set trange [0:1]
+set key bottom right
+set key
 plot "total force fx,fy,fz_NUPPER.txt" using (($1-1)*disp):(-$4/1000) w lp title "Calculix", '-'  w lp title "Linear elastic limit"
 0 0
 0.0714 40
