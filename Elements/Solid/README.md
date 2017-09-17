@@ -1,5 +1,5 @@
 ## Simply Supported Beam Model With Solid Elements
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + tetrahedral and hexahedral elements
 + linear or quadratic elements
@@ -15,6 +15,8 @@ Tested with CGX/CCX 2.12
 | Unstructured tet mesh    | structured hex mesh    |
 | :------------- | :------------- |
 | <img src="solid_C3D4_20_S.png" width="300"> |<img src="solid_C3D8I_20_S.png" width="300">
+
+For the reference solution go to the [parent directory](https://github.com/mkraska/CalculiX-Examples/tree/master/Elements) of this example.
 
 ## Mesh Convergence of the Normalized Results
 

@@ -54,6 +54,7 @@ frame
 #zoom 2
 #tra u 50
 view elem
+view sh
 # plus n left r
 # plus n right b
 view disp
@@ -66,7 +67,7 @@ plus ld all
 hcpy png
 pnt pr1 0 0 25
 pnt pr2 100 0 25
-copy all new tra 0 0 0
-move new mir pr2 pr1
+# copy all new tra 0 0 0
+# move new mir pr2 pr1
 plus fv all
 #copy all new rot pr1 pr2 180
