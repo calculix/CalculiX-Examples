@@ -72,17 +72,20 @@ mesh all
 send all abq
 send all abq nam
 
-# symemtry
+# symmetry
 seta symy s A005 A007
 comp symy do
 comp symy do
 send symy abq spc 2
+
+view edge
 rot y
 rot l 80
 frame
 zoom 1.5
-text Nodes for symmetry constraint
-plot n symy
+ulin Nodes for symmetry constraint
+plot e all n
+plot n symy 6
 hcpy png
 sys mv hcpy_1.png symy.png
 
@@ -92,8 +95,9 @@ enq nodes x0 rect 0 _ _ 0.01
 valu Tol * R Ftol
 enq x0 wfix cyl x 0 0 Tol a
 send wfix abq spc 123
-text Nodes for wire constraint
-plot n wfix
+ulin Nodes for wire constraint
+plot e all n
+plot n wfix 6
 hcpy png
 sys mv hcpy_2.png wfix.png
 
@@ -125,7 +129,7 @@ send mdep abq sur
 # image
 rot l 150
 rep all
-text Surfaces for contact
+ulin Surfaces for contact
 plot f find t
 plus f fdep b
 plus f mind m
@@ -135,7 +139,7 @@ sys mv hcpy_3.png contact.png
 
 # parts and elements
 view elem
-text Independent parts
+ulin Independent parts
 seta ! all
 hcpy png
 sys mv hcpy_4.png parts.png
