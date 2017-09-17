@@ -1,5 +1,5 @@
 # Wire Bending
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 Click the image to see the animation
 
@@ -16,6 +16,7 @@ Click the image to see the animation
 | [Biegung.inp](Biegung.inp) | CCX input |
 | [Biegung.py](Biegung.py) | Python script for history plot |
 | [Animation.fbd](Animation.fbd) | CGX script to produce the animation |
+| [test.py](test.py) | Python script for test run of the example |
 
 ## Reference Estimates
 Click the image below to open a life SMath worksheet
@@ -42,14 +43,19 @@ The parameters can be changed in `pre.fbd`.
 ```
 > cgx -b pre.fbd
 ```
+Node sets
+
 <img src="symy.png" width="300"><img src="wfix.png" width="300">
+
+Parts and contact surfaces
+
 <img src="parts.png" width="300"><img src="contact.png" width="300">
 
 ## Solving
 
 ```
 > ccx Biegung
-> Monitor.py Biegung
+> monitor.py Biegung
 ```
 <img src="Biegung.png">
 
