@@ -46,7 +46,7 @@ for elty in eltyps.keys():
                     # increase the node distance for linear elements
                     line=line+"div all div 2\n"
                     elsize=elsize*2
-                fout.write("text "+elty+" "+str(elsize)+"\n")
+                fout.write("ulin "+elty+" "+str(elsize)+"\n")
             fout.write(line)
         fout.write("quit\n")
         fout.close()
