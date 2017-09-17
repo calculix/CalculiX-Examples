@@ -8,16 +8,32 @@ frame
 zoom 0.9
 rep all
 ds -0 e 1
-#ds -0
-plot f all n
+# the next command is a trick to enforce correct coloring
+plot fv all
+plus f all n
+plus n
 hcpy png
-sys cp hcpy_1.png deformed.png
+sys mv hcpy_1.png deformed.png
+
+view sh
 
 ds 1 e 4
 scal d 100
 plot fv all
 hcpy png
-sys cp hcpy_2.png imperfection.png
+sys mv hcpy_2.png imperfection.png
+
+ds -0 e 1
+scal d
+plot fv all
+hcpy png
+sys mv hcpy_3.png PE.png
+
+ds -2 e 3
+scal d
+plot fv all
+hcpy png
+sys mv hcpy_4.png D3.png
 
 # create force-displacement curve
 sys dat2txt.py Kasten

@@ -41,3 +41,11 @@ valu neg -1
 valu neg_dz * neg dz
 sys echo Nupper,3,3, neg_dz > disp.inc
 sys echo disp= dz > disp.txt
+
+# sets
+ulin Sets: upper (blue), lower (red)
+plot n upper b 6
+plus n lower r 6
+plus l all k
+hcpy png
+sys mv hcpy_2.png sets.png

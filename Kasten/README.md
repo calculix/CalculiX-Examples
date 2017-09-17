@@ -1,6 +1,6 @@
 
 # Non-linear Buckling
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Large displacements
 + Plasticity
@@ -14,6 +14,10 @@ Tested with CGX/CCX 2.12
 | [Kasten.inp](Kasten.inp) | CCX input |
 | [df.gpl](df.gpl) | Gnuplot input for force-displacement curve|
 
+Reference solution for elastic limit (without buckling)
+
+[![Screenshot](Kasten-cloud.png)](http://en.smath.info/cloud/worksheet/bd5YCePV)
+
 ## Preprocessing
 
 The parameters can be changed in `pre.fbd`
@@ -26,10 +30,13 @@ The parameters can be changed in `pre.fbd`
 | `nd`   | 7.8 | target node distance in mm |
 | `disp` | 20  | displacement in mm |
 
+![]()
 ```
 > cgx -b pre.fbd
 ```
-<img src="geo.png" width="300">
+Geometry and sets
+
+<img src="geo.png" width="400"><img src="sets.png" width="400">
 
 ## Solving
 ```
@@ -109,6 +116,10 @@ Magnitude of the displacement due to pressure application (imperfection). Max. d
 Deformed geometry after collapse. The left image shows the result for the parameters as in the files. The right image has double the displacement and a target element size of 3 mm.
 
 <img src="deformed.png" width="400" title="Base parameter values"><img src="e3d40.png" width="400" title="Target node distance 3 mm, displacement 40 mm">
+
+Vertical displacement and plastic equivalent strain:
+
+<img src="D3.png" width="400" title="Vertical displacement"><img src="PE.png" width="400" title="Plastic equivalent strain">
 
 Force-displacement plots. Left: full history, right: detail of transition to collapse.
 
