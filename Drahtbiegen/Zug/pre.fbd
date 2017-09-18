@@ -1,24 +1,24 @@
 # run param.py pre.fbd.par
 #
-# <Dia=1.>         Diameter
-# <DivR=10>      Radial division
-# <Len=2>          Length
-# <DivL=50>      Longitudinal division
-# <BiasL=4>      Longitudinal bias
-# <Etyp='qu8cr'>  Element type
+# Dia=1.         Diameter
+# DivR=10      Radial division
+# Len=2          Length
+# DivL=50      Longitudinal division
+# BiasL=4      Longitudinal bias
+# Etyp='qu8cr'  Element type
 
 # geometry
 pnt p1 0 0 0
-swep all rad tra <Dia/2.> 0 0 <DivR>
+swep all rad tra 0.5 0 0 10
 seta bottom se all
-swep all top tra 0 <Len> 0 <DivL>
+swep all top tra 0 2 0 50
 
 # meshing
-enq all vertlines rect _ <Len/2.> 0 0.1
+enq all vertlines rect _ 1.0 0 0.1
 comp vertlines up
-bia vertlines <BiasL>
+bia vertlines 4
 flip all
-elty all <Etyp>
+elty all qu8cr
 mesh all
 send all abq
 
@@ -32,7 +32,7 @@ send all abq nam
 # display of sets
 rot -z
 frame
-tra l <Dia/2.>
+tra l 0.5
 plot la all
 plus sa all
 plus pa all

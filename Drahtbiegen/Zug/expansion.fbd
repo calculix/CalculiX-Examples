@@ -10,6 +10,7 @@ copy 3D new mir y
 ds -0 e 1
 view disp
 view elem
+view sh
 frame
 steps 11
 plot fv all
@@ -24,7 +25,8 @@ plot fv all
 hcpy png
 sys mv hcpy_1.png PE-expanded.png
 
-plot f all n
+plot fv all
+plus f all n
 hcpy png
 sys mv hcpy_2.png expanded.png
 

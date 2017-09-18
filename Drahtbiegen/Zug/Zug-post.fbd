@@ -1,0 +1,22 @@
+
+read Zug.frd
+rot -z
+view disp
+view elem
+
+ds -0 e 1
+frame
+steps 11
+plot fv all
+max 2
+min -0.19999
+min -0.19999
+hcpy png
+
+
+seta nodes n all
+merg n nodes
+enq nodes sel rec 0 _ 0 0.0001
+graph sel time PE PE
+
+

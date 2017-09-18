@@ -1,6 +1,6 @@
 # Geometry
-valu D 1
-valu L 2
+valu Dia 1
+valu Len 2
 # Meshing
 valu DivR 10
 valu DivL 50
@@ -9,15 +9,15 @@ valu Etyp qu8cr
 
 # derived parameters
 valu Zwei 2
-valu R / D Zwei
-valu halbL / L Zwei
+valu Radius / Dia Zwei
+valu halbL / Len Zwei
 
 # preprocessing
 # geometry
 pnt p1 0 0 0
-swep all rad tra R 0 0 DivR
+swep all rad tra Radius 0 0 DivR
 seta bottom se all
-swep all top tra 0 L 0 DivL
+swep all top tra 0 Len 0 DivL
 
 # meshing
 enq all vertlines rect _ 1 0 0.1
@@ -38,13 +38,20 @@ send all abq nam
 # display of sets
 rot -z
 frame
-tra l R
+tra l Radius
 plot la all
 plus sa all
 plus pa all
-plus n all
-plus n top b
-plus n sym g
-plus n bottom t
 hcpy png
 sys mv hcpy_1.png zug-geo.png
+
+ulin Sets: top (blue), sym (green), bottom (turq)
+view elem
+plot f all n
+plus n top b 8
+plus n bottom t 8
+plus n sym g 6
+
+
+hcpy png
+sys mv hcpy_2.png zug-sets.png
