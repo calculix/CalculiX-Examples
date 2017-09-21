@@ -22,6 +22,7 @@ rot y
 rot c 30
 rot r 30
 view disp
+view sh
 scal d 1000
 view elem
 ds -0 e 7
@@ -30,6 +31,7 @@ hcpy png
 sys mv hcpy_2.png Refs/se.png
 rot y
 rot u 30
-plot f all n
+plot fv all
+plus f all n
 hcpy png
 sys mv hcpy_3.png Refs/disp.png

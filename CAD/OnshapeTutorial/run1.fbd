@@ -20,3 +20,17 @@ plot f all n
 plus n all
 hcpy png
 sys mv hcpy_2.png Refs/mesh_c2f1.png
+
+del mesh
+div all mult 4
+mesh all
+hcpy png
+sys mv hcpy_3.png Refs/mesh_c2f2.png
+
+del mesh
+div all auto 5 30
+seta cdiv l Q021 Q018 Q013
+div cdiv mult 4
+mesh all
+hcpy png
+sys mv hcpy_4.png Refs/mesh_c2f3.png

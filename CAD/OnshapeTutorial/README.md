@@ -1,11 +1,11 @@
 # Meshing a CAD Geometry with Gmsh
-Tested with CGX/CCX 2.12, Gmsh 2.16.0
+Tested with CGX 2.13 / CCX 2.12, Gmsh 3.0.5
 
 This demonstrates a possible workflow for a CalculiX analysis of a CAD
 generated part.
 
-* The workflow is fully automated using a CGX FBD file.
-* The geometry is created in Onshape and exported as STEP file.
+* Starting point is a geometry created in Onshape and exported as STEP file.
+* The FEA workflow is fully automated using a CGX FBD file.
 * Import and meshing in gmsh, export as INP file with volume and surface meshes.
   In gmsh, define physical surfaces for boundary conditions and export the mesh
   with appropriate settings (to ensure that node sets are written)
@@ -18,6 +18,11 @@ generated part.
 * Write other FEA items
 * Run the analysis
 * Perform postprocessing
+
+## Issues
+
++ inverted elements if virtual topology is used
++ midside nodes aren't on the surface
 
 The script `run1.fbd` demonstrate the use of the new import and meshing capabilities of CGX 2.12.
 
@@ -136,6 +141,10 @@ The script `run1.fbd`
 ```
 cgx -b run1.fbd
 ```
-Unfortunately, CGX can't mesh all surfaces. Manual modifications (splitting of lines) are required. These operations can't be done in batch mode.
+Unfortunately, CGX can't mesh all surfaces with moderate mesh density.
 
 <img src="Refs/mesh_c2f.png" width="400" ><img src="Refs/mesh_c2f1.png" width="400">
+
+If the mesh density is increased (all divisions multiplied by four) then automatic meshing succeeds (with nearly 150000 nodes, left image). If the high density is restricted to the lines along the narrow strips of the failed surface, then meshing succeeds with just 6000 nodes (right).
+
+<img src="Refs/mesh_c2f2.png" width="400" ><img src="Refs/mesh_c2f3.png" width="400" >
