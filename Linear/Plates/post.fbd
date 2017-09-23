@@ -13,12 +13,13 @@ copy base 2D tra 0 0 0.001
 swep base new rot y 270 30
 trfm cyl y
 frame
+view sh
 plot fv all
 hcpy png
 sys mv hcpy_1.png polar.png
 
 plot f all n
 plus ev 2D
-plus n 2D
+plus n 2D r 6
 hcpy png
 sys mv hcpy_2.png 2D3D.png

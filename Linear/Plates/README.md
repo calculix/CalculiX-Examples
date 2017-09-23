@@ -1,5 +1,5 @@
 # Axisymmetric Plate With Hole
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Linear static solution
 + Axisymmetric model
@@ -13,16 +13,24 @@ File                    | Contents
  [plates.inp](plates.inp) | CCX input
 
 ## Preprocessing
+
+| Parameter      | Value   | Meaning                           |
+| :------------- |  :----  | :-------------                    |
+| `Ri`           | 20      | inner radius (hole) in mm         |
+| `Ra`           | 60      | outer radius (rim) in mm          |
+| `thick`        | 10      | thickness of the plates in mm     |
+| `pressure`     | 1       | pressure in MPa                   |
+
 ```
 > cgx -b pre.fbd
 ```
 There are four disks, clamped at the outer perimeter and loaded by a pressure on the top faces. Each disk is meshed with a different element type:
 
-Disk |CGX | CCX
-:-- |:-- | :--
+Disk     |CGX  | CCX
+:--      |:--  | :--
 1 (upper)|tr6c |CAX6
-2|tr3c | CAX3
-3|qu8c | CAX8
+2        |tr3c | CAX3
+3        |qu8c | CAX8
 4 (lower)|qu4c | CAX4
 
 <img src="mesh.png" width="400" title="Disks with different element types. Centerline added just for clarity">
