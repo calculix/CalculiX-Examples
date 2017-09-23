@@ -1,4 +1,5 @@
 read Tjoint.frd new
+read contact.fbd
 
 ds -0 e 7
 view disp
@@ -17,8 +18,26 @@ rot r 6
 rot u 6
 tra u 20
 
+# stress plot
 plot f new n
 plus fv base
+max 3000 f
+min 0 f
+steps 20
 
+valu name -SE.png
+valu name & contact name
 hcpy png
-sys mv hcpy_1.png SE_expanded.png
+sys mv hcpy_1.png name
+
+# displacement plot
+valu name -D2.png
+valu name & contact name
+steps 10
+ds -1 e 2
+max 0.5 f
+min -0.5 f
+plot f all n
+plus fv base
+hcpy png
+sys mv hcpy_2.png name

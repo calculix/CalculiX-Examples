@@ -68,7 +68,8 @@ send fdep abq sur
 # write the element sets
 send all abq nam
 sys cp <contact>.inc contact.inc
-
+# write parameter for post-processing
+sys echo valu contact <contact> >> contact.fbd
 view elem
 rot -z
 rot r 15
@@ -81,3 +82,31 @@ seta ! all
 #~ plus f seam b
 hcpy png
 sys mv hcpy_1.png parts.png
+
+# plot of the contact pairs
+view ill
+move seam tra 0.1 0.1 0
+rot -z
+rot r 30
+rot u 30
+frame
+zoom 1.3
+ulin Contact flange-seam (blue-turq.), web-seam (red-mag.)
+plot f wind r 6
+plus f wdep m 6
+plus f find b 6
+plus f fdep t 6
+hcpy png
+sys mv hcpy_2.png contact.png
+
+ulin Planes of symmetry
+rep all
+plot si symz
+plus si symx
+hcpy png
+sys mv hcpy_3.png symmetry.png
+
+ulin Point for y constraint (web)
+plot n p2 r 8
+hcpy png
+sys mv hcpy_4.png y-const.png
