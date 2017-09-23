@@ -57,12 +57,15 @@ hcpy png
 sys mv hcpy_1.png Refs/div.png
 
 swep all new rot y 270 30
-frame
+ulin Sets: fix (red), pr (blue)
 rot -x
 rot c -90
 rot r 50
 rot u 30
-zoom 1.5
-plot f all n
+frame
+zoom 1.3
+plot n fix r 8
+plus l pr b 6
+plus f all n
 hcpy png
 sys mv hcpy_2.png Refs/mesh.png

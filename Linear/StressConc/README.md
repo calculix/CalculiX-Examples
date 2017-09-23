@@ -1,5 +1,5 @@
 # Stress Concentration
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Axisymmetric part under tensile load
 + Free meshing with biased line divisions
@@ -11,6 +11,15 @@ File                           | Contents
  [Stress.inp](Stress.inp)      | CCX input
 
 ## Pre-Processing
+
+| Parameter | Value | Meaning                             |
+| :-------- |  :--- | :-------------                      |
+| `D1`      | 100   | large diameter in mm                |
+| `D2`      | 50    | small diameter in mm                |
+| `Di`      | 20    | inner diameter in mm                |
+| `L1`      | 100   | length of large diameter part in mm |
+| `L2`      | 100   | length of small diameter part in mm |
+| `R`       | 5     | fillet radius in mm                 |
 
 ```
 > param.py par.pre.fbl
@@ -25,13 +34,14 @@ The left end at y=0 is fixed in axial direction, at the right end, a uniform ten
 
 <img src="Refs/div.png" width="400"><img src="Refs/mesh.png" width="400">
 
-
 ## Solving
+
 ```
 > ccx Stress
 ```
 
 ## Post-Processing
+
 ```
 > cgx -b post.fbl
 ```
