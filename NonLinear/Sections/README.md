@@ -1,5 +1,5 @@
 # Properties of Cross Sections
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Simply supported beam
 + Parametric section shapes of identical area
@@ -25,6 +25,14 @@ The problem is parametrized using [param.py](../../Scripts/param.py). Starting f
 The beams are supported vertically at all nodes at x=Length and have a symmetry boundary at x=0. One node per beam is fixed in y-direction.
 
 The beams are loaded by their own weight, properies of steel are assumed.
+
+| Parameter | Value | Meaning |
+| :------------- |  :------------- | :------------- |
+| `area` | 300 | cross section area in mm^2 |
+| `length` | 100 | length (end to center) in mm|
+| `thickness` | 4 | wall thickenss (where applicable) in mm |
+| `dist` | 40 | spacing between the beams in mm |
+
 ```
 > param.py par.pre.fbl
 > cgx -b pre.fbl
