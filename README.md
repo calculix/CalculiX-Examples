@@ -47,7 +47,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Bending of an elastic strip, beam, shell and solid models with various rotation constraints">
 ](Streifen/)
 [<img
-  src="Thermal/Thermal distortion/SE-pcss-exp.png"
+  src="Thermal/Thermal distortion/pc-ss-SE.png"
   width="200"
   title="Welded T-joint, assembly with different contact formulations, shrinkage model for the distortion">
 ](Thermal/Thermal%20distortion/)
