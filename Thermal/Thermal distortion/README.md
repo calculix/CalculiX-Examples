@@ -61,5 +61,4 @@ Penalty contact is less rigid than MPC contact, thus the maximum equivalent stre
 
 Vertical displacement
 
-<img src="pc-ss-D2.png" width="400" title="Vertical displacement penalty contact (contact='pc-ss')">
-<img src="tie-D2.png" width="400" title="Vertical displacement, MPC contact (contact='tie')">
+<img src="pc-ss-D2.png" width="400" title="Vertical displacement penalty contact (contact='pc-ss')"><img src="tie-D2.png" width="400" title="Vertical displacement, MPC contact (contact='tie')">
