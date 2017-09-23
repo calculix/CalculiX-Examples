@@ -1,5 +1,5 @@
 # Stress concentration in a flat strip with hole under bending load
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Plane stress model
 + Parametric geometry and load
@@ -21,6 +21,13 @@ Click the image below to open a life SMath worksheet
 
 
 ## Rigid Body
+
+| Parameter | Value | Meaning                  |
+| :---------|  :--- | :-------------           |
+| `L`       | 100   | length of one half in mm |
+| `W`       | 60    | width in mm              |
+| `R`       | 15    | radius in mm             |
+
 
 To run the complete analysis, edit parameter values in [par.run.fbl](par.run.fbl)
 and run
@@ -83,7 +90,7 @@ cgx -b run1.fbl
 ```
 Surface and reference node
 
-<img src="Refs/div1.png" width="400" title="Surface and reference node">
+<img src="Refs/mesh1.png" width="400" title="Surface and reference node">
 
 Stress and RF results indicating strange load distribution
 

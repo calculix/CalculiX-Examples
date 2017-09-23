@@ -69,7 +69,11 @@ hcpy png
 sys mv hcpy_2.png Refs/div.png
 
 view elem
+ulin Sets: sym (red), nref (big blue), rb (blue)
 plot f all n
+plus n sym r 8
+plus na nref b 10
+plus n rb b 6
 frame
 hcpy png
 sys mv hcpy_3.png Refs/mesh.png

@@ -62,16 +62,11 @@ send all abq
 send all abq nam
 
 # images
-rot -z
-view elem
-plot e all n
-plus fa load b
-plus na nref
-hcpy png
-sys mv hcpy_2.png Refs/div1.png
-
-
+ulin Sets: sym (red), nref (big blue), load (blue)
 plot f all n
+plus n nref b 10
+plus n sym r 6
+plus f load b 6
 frame
 hcpy png
 sys mv hcpy_3.png Refs/mesh1.png
