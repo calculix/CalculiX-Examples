@@ -30,10 +30,17 @@ sys convert -rotate 90 graph_0.ps Refs/history.png
 # document the probe positions
 rot x
 rot c 90
-font d 6
+#font d 6
 zoom 2
-text Positions of the probes
-plot na probes
+ulin Positions of the probes
+plot f all n
+
+txt topseam  0.1 0.1
+txt topfault 0.1 0.1
+txt botseam  0.1 -0.1
+txt botfault 0.1 -0.1
+
+plot na probes r 6
 hcpy png
 sys mv hcpy_1.png Refs/probes.png
 
@@ -45,11 +52,10 @@ sys convert -rotate 90 graph_1.ps Refs/pathplot.png
 
 # plot the path
 rot y
-frame
+frame top
 rot r 20
 rot u 20
-zoom 3
-text Path for temperature profile
+ulin Path for temperature profile
 plot n top
 hcpy png
 sys mv hcpy_2.png Refs/path.png

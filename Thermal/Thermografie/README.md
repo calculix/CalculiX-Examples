@@ -1,5 +1,5 @@
 # Thermographic Testing
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Transient thermal analysis
 + Thermal coupling between independent meshes by `*equation`
@@ -24,6 +24,21 @@ The geometry consists of four bricks which are independently meshed.
 
 <img src="Naht.png"  title="Parameters and co-ordinates">
 <img src="Refs/geo.png" width="400" title="Lower plate (gray), seam (green)">
+
+| Parameter      | Value   | Meaning                                     |
+| :------------- |  :----  | :-------------                              |
+| `L`            | 50      | Length of the parts in mm                   |
+| `B`            | 50      | width of the parts in mm                    |
+| `T1`           | 1.3     | thickness of the lower part in mm           |
+| `T2`           | 1.3     | thickness of the upper part in mm           |
+| `Gap`          | 1       | distance (gap) between the parts in mm      |
+| `o1`           | 5       | lower edge offset in mm                     |
+| `o2`           | 5       | upper edge offset in mm                     |
+| `NB`           | 2       | seam width in mm                            |
+| `y1`           | 3       | start position of the seam                  |
+| `l1`           | 10      | length of the first seam segment in mm      |
+| `lg`           | 3       | length of the fault (interruption) in mm    |
+| `l2`           | 30      | length of the second seam segment in mm     |
 
 You may edit the file [values.fbl](values.fbl) and then run
 ```
