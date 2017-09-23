@@ -2,6 +2,7 @@ read Biegung.frd new
 
 view disp
 view elem
+view sh
 rot -y
 rot l 110
 rot u 20
@@ -11,6 +12,7 @@ copy base new mir x
 comp new do
 ds 2 e 1
 plot fv base
+frame base
 hcpy png
 sys mv hcpy_1.png Refs/S11.png
 
@@ -19,13 +21,13 @@ scal d 100000
 #rot -y
 #rot r 110
 #rot u 20
-frame
-zoom 1.2
+
 plot fv base
 plus f new n
+frame
+zoom 1.2
 hcpy png
 sys mv hcpy_2.png Refs/D3.png
-
 # max stress and displacement
 read square.nam inp
 read circle.nam inp
