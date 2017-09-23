@@ -34,16 +34,17 @@ rot c 90
 zoom 2
 ulin Positions of the probes
 plot f all n
-
-txt topseam  0.1 0.1
-txt topfault 0.1 0.1
-txt botseam  0.1 -0.1
-txt botfault 0.1 -0.1
-
-plot na probes r 6
+valu pos 0.05
+valu neg -0.05
+txt topseam  v pos pos
+txt topfault v pos pos
+txt botseam  v pos neg
+txt botfault v pos neg
+plot e all n
+plus nt probes r 6
 hcpy png
 sys mv hcpy_1.png Refs/probes.png
-
+break
 # path plot along the seam on the upper side
 enq nodes top rec xN _ ztop 0.1 a
 ds -0 e 1
