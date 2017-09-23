@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<?application progid="SMath Studio Desktop" version="0.97.5737.24521"?>
-<regions>
+<?application progid="SMath Studio Desktop" version="0.98.6398.26177"?>
+<regions xmlns="http://smath.info/schemas/worksheet/1.0">
   <settings>
     <identity>
       <id>ae3b4dc6-3f40-424a-8e94-f1af71cb4736</id>
-      <revision>3</revision>
+      <revision>11</revision>
     </identity>
     <calculation>
       <precision>4</precision>
@@ -19,36 +19,29 @@
       <backgrounds />
     </pageModel>
     <dependencies>
-      <assembly name="SMath Studio Desktop" version="0.97.5737.24521" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
-      <assembly name="Snapshot Region" version="1.0.5190.1932" guid="9166ba14-4cd9-47f6-b988-e96526b16cc9" />
-      <assembly name="Text Region" version="1.10.5737.24526" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
-      <assembly name="Picture Region" version="1.10.5737.24525" guid="06b5df04-393e-4be7-9107-305196fcb861" />
-      <assembly name="Math Region" version="0.97.5737.24521" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="SMath Studio Desktop" version="0.98.6398.26177" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="Math Region" version="0.98.6398.26177" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="Picture Region" version="1.10.6398.26182" guid="06b5df04-393e-4be7-9107-305196fcb861" />
+      <assembly name="Text Region" version="1.10.6398.26182" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
     </dependencies>
+    <mode debug="true" />
   </settings>
-  <region id="0" left="9" top="0" width="757" height="538" color="#000000" bgColor="#ffffff" fontSize="10">
-    <snapshot tag="Beam" ID="1" tile="True" compact="False">
-      <input>
-        <e type="operand" style="string">Beam</e>
-      </input>
-    </snapshot>
-  </region>
-  <region id="1" left="18" top="27" width="644" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="0" left="18" top="27" width="644" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p bold="true">Reference solution for a simply supported beam with rectangular cross section</p>
     </text>
   </region>
-  <region id="2" left="342" top="54" width="228" height="130" color="#000000" bgColor="#ffffff">
+  <region id="1" left="342" top="54" width="228" height="130" color="#000000" bgColor="#ffffff">
     <picture>
       <raw format="png" encoding="base64">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</raw>
     </picture>
   </region>
-  <region id="3" left="18" top="72" width="69" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="2" left="18" top="72" width="69" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Length  </p>
     </text>
   </region>
-  <region id="4" left="234" top="72" width="74" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="3" left="234" top="72" width="74" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">l</e>
@@ -59,12 +52,12 @@
       </input>
     </math>
   </region>
-  <region id="5" left="18" top="99" width="65" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="4" left="18" top="99" width="65" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Heigth </p>
     </text>
   </region>
-  <region id="6" left="234" top="99" width="73" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="5" left="234" top="99" width="73" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">h</e>
@@ -75,12 +68,12 @@
       </input>
     </math>
   </region>
-  <region id="7" left="18" top="126" width="57" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="6" left="18" top="126" width="57" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Width </p>
     </text>
   </region>
-  <region id="8" left="234" top="126" width="65" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="7" left="234" top="126" width="65" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">b</e>
@@ -91,12 +84,12 @@
       </input>
     </math>
   </region>
-  <region id="9" left="18" top="153" width="136" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="8" left="18" top="153" width="136" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Young's modulus</p>
     </text>
   </region>
-  <region id="10" left="234" top="153" width="91" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="9" left="234" top="153" width="91" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">E</e>
@@ -107,7 +100,7 @@
       </input>
     </math>
   </region>
-  <region id="11" left="585" top="162" width="131" height="51" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="10" left="585" top="162" width="131" height="51" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">E</e>
@@ -128,7 +121,7 @@
       </result>
     </math>
   </region>
-  <region id="12" left="234" top="171" width="47" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="11" left="234" top="171" width="47" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">ν</e>
@@ -139,12 +132,12 @@
       </input>
     </math>
   </region>
-  <region id="13" left="18" top="180" width="135" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="12" left="18" top="180" width="135" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Poisson's ratio</p>
     </text>
   </region>
-  <region id="14" left="234" top="198" width="106" height="50" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="13" left="234" top="198" width="106" height="50" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">ρ</e>
@@ -159,14 +152,14 @@
       </input>
     </math>
   </region>
-  <region id="15" left="18" top="207" width="70" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="14" left="18" top="207" width="70" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">Density</e>
       </input>
     </math>
   </region>
-  <region id="16" left="585" top="216" width="148" height="51" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="15" left="585" top="216" width="148" height="51" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">ρ</e>
@@ -188,12 +181,12 @@
       </result>
     </math>
   </region>
-  <region id="17" left="18" top="243" width="123" height="40" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="16" left="18" top="243" width="127" height="40" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
-      <p>Gravitational acceleration</p>
+      <p>Accelerationof gravitation</p>
     </text>
   </region>
-  <region id="18" left="234" top="243" width="98" height="50" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="17" left="234" top="243" width="98" height="50" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">g</e>
@@ -208,7 +201,7 @@
       </input>
     </math>
   </region>
-  <region id="19" left="585" top="270" width="96" height="50" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="18" left="585" top="270" width="96" height="50" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">g</e>
@@ -225,7 +218,7 @@
       </result>
     </math>
   </region>
-  <region id="20" left="234" top="297" width="176" height="43" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="19" left="234" top="297" width="176" height="43" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">G</e>
@@ -247,12 +240,12 @@
       </result>
     </math>
   </region>
-  <region id="21" left="18" top="306" width="119" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="20" left="18" top="306" width="119" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Shear modulus</p>
     </text>
   </region>
-  <region id="22" left="234" top="333" width="210" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="21" left="234" top="333" width="210" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
     <math decimalPlaces="7">
       <input>
         <e type="operand">q.0</e>
@@ -275,12 +268,12 @@
       </result>
     </math>
   </region>
-  <region id="23" left="18" top="342" width="86" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="22" left="18" top="342" width="86" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Line load</p>
     </text>
   </region>
-  <region id="24" left="234" top="378" width="205" height="67" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="23" left="234" top="378" width="205" height="67" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">w.max</e>
@@ -321,30 +314,25 @@
       </input>
     </math>
   </region>
-  <region id="25" left="585" top="396" width="173" height="41" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="24" left="585" top="396" width="129" height="32" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
     <math exponentialThreshold="2">
       <input>
         <e type="operand">w.max</e>
       </input>
       <contract>
-        <e type="operand" style="unit">mm</e>
+        <e type="operand" style="unit">μm</e>
       </contract>
       <result action="numeric">
-        <e type="operand">1.7015</e>
-        <e type="operand">10</e>
-        <e type="operand">4</e>
-        <e type="operator" args="1">-</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">*</e>
+        <e type="operand">0.1702</e>
       </result>
     </math>
   </region>
-  <region id="26" left="18" top="405" width="177" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="25" left="18" top="405" width="177" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Maximum displacement</p>
     </text>
   </region>
-  <region id="27" left="234" top="441" width="123" height="67" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="26" left="234" top="441" width="123" height="67" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">σ.max</e>
@@ -365,7 +353,7 @@
       </input>
     </math>
   </region>
-  <region id="28" left="585" top="459" width="145" height="50" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="27" left="585" top="459" width="145" height="50" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">σ.max</e>
@@ -382,7 +370,7 @@
       </result>
     </math>
   </region>
-  <region id="29" left="18" top="468" width="127" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="28" left="18" top="468" width="127" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <text lang="eng">
       <p>Maximum stress</p>
     </text>

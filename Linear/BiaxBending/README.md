@@ -32,3 +32,4 @@ The images show the axial stress distribution and the neutral fiber (with color 
 > cgx -b run.fbl
 ```
 <img src="Refs/sxx.png"  width="400" title="Longitudinal stress."><img src="Refs/neutral.png"  width="400" title="Neutral fiber">
+<img src="Refs/disp.png"  width="400" title="Displacement">

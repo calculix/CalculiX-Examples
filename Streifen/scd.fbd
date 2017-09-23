@@ -1,4 +1,4 @@
-# solid model, rigid body constraint
+# solid model, distributing coupling
 pnt p1 0 0 0
 swep all new tra 0 0 1 2
 swep all new tra 0 10 0 4

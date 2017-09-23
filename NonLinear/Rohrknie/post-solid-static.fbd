@@ -12,6 +12,7 @@ rot -z
 view elem
 plot f all
 view disp
+view sh
 max 10000 i l
 min 0 i l
 steps 20

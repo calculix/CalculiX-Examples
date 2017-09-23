@@ -4,7 +4,7 @@
 *include, input=nref.nam
 *coupling, surface=Sload, ref node=1,constraint name=load
 *kinematic
-1,
+1,3
 *boundary
 Nsym, 1
 **Nnref,2
@@ -26,7 +26,7 @@ Nsym, 1
 *include, input=load.inp
 *node file
 U,RF
-*el file, output=2D
+*el file, output=3D
 S
 *section print, surface=Sload,name=load
 SOF

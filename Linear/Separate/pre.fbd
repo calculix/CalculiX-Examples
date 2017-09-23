@@ -17,7 +17,7 @@ copy d3 d4 tra 0 dy 0
 
 # meshing
 elty d1 qu4s
-elty d2 qu8s
+elty d2 qu8sr
 elty d3 tr3s
 elty d4 tr6s
 mesh all

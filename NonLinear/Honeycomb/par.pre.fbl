@@ -86,9 +86,10 @@ merg l all
 merg s all
 # meshing
 #div all auto <esize>
+asgn e 2
 elty all qu4
 mesh all
-merg n all 0.1
+merg n all 0.01
 # cut to size
 seta nodes n all
 enq nodes partx rec <lx/2.> _ _ <1.0001*lx/2.>
@@ -97,6 +98,7 @@ seta tozap n all
 setr tozap n part
 comp tozap up
 zap tozap
+merg n all
 # image
 seto outline
 pnt po1 0 <ly> 0
@@ -150,7 +152,7 @@ plus n cyl2 t
 hcpy png
 sys mv hcpy_4 all_nodes_2.png
 
-
+#comp * do
 send all abq
 send all abq nam
 
@@ -161,6 +163,7 @@ enq nodes xsym rec 0 _ _ 0.1 a
 # write symmetry nodes
 send ysym abq spc 2
 send xsym abq spc 1
+send xsym abq nam
 # contact surfaces
 send cyl1 abq sur
 send cyl2 abq sur
@@ -170,7 +173,7 @@ send upper abq sur
 seta nc1 n cyl1
 enq nc1 mon1 rec <x1> 0 <hw+tupper> 0.01
 send mon1 abq nam
-# displacement monitor node ffor center of specimen
+# displacement monitor node for center of specimen
 seta nodes n all
 enq nodes monc rec 0 0 0 0.01
 send monc abq nam

@@ -39,10 +39,20 @@ view elem
 rot y
 rot d 60
 rot l 20
-seta ! all
+plot n all
 frame
-tra d 2
-tra r 2
+#tra d 2
+#tra r 2
 seta ! all
 hcpy png
 sys mv hcpy_1.png model.png
+
+# plot of the contact pair
+view ill
+ulin Contact pair: s1 (blue), k1 (red)
+plot f k1 r 8
+plus f s1 b
+plus n k1 r 8
+frame s1
+hcpy png
+sys mv hcpy_2.png contact.png

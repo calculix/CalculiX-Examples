@@ -1,7 +1,7 @@
 # Honeycomb Sandwich
-Tested with CGX/CCX 2.12
+Tested with CGX 2.12.1/CCX 2.12
 
-CGX generates spurious nodes which deteriorate the convergence of the model. See issue #14
+There are issues with the convergence control.
 
 + Non-linear static analysis
 + Plasticity

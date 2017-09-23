@@ -1,5 +1,5 @@
 set term pngcairo enhanced
-set out "path.png"
+set out "Refs/path.png"
 set key top left
 set grid
 set xlabel "Distance from back side in mm"

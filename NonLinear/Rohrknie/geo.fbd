@@ -4,7 +4,7 @@ rot l 30
 rot u 30
 view elem
 plot f all n
-plus n fix r
-plus n load b
+plus n fix r 6
+plus n load b 6
 frame
 hcpy png

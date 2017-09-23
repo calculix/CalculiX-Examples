@@ -25,9 +25,7 @@ For different load directions, individual MPCs have to be generated. This is a b
 - you have to create dummy nodes, `send` then uses the next unused number (but doesn't recognize the generated reference node)
 - you have to rename the target node set for MPCs with different angle or direction.
 
-The good news is that you perhaps don't need this MPC as you can use distributing coupling instead.
-
-Using `asgn n <number>` does not help, this setting is ignored by
+Using `asgn n <number>` is not really a solution because it doesn't work correctly (asgn n 4 produces node numbers 4,8,12...)
 
 For path plots of the stress distribution, appropriate node sets are generated.
 

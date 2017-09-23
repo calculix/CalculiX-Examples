@@ -3,6 +3,7 @@ read Biegung.inp nom
 comp Ndraht do
 view elem
 view disp
+view sh
 rot y
 rot r 60
 tra u 2

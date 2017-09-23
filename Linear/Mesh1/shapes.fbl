@@ -14,8 +14,8 @@ anim model
 while counter < num
   valu counter + counter incr
   valu counter int counter
-  valu from & hcpre counter
-  valu from & from ext
+  #valu from & hcpre counter
+  #valu from & from ext
   valu to & topre counter
   valu to & to ext
   # make sure that the frequency is correctly displayed

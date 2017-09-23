@@ -10,7 +10,7 @@ rot d 20
 zoom 2
 plus n all
 hcpy png
-sys mv hcpy_1.png mesh.png
+sys mv hcpy_1.png Refs/mesh.png
 frame
 zoom 5
 rot y
@@ -20,7 +20,7 @@ tra d 30
 plot f all n
 plus n all
 hcpy png
-sys mv hcpy_2.png mesh1.png
+sys mv hcpy_2.png Refs/mesh1.png
 del mesh
 
 sys gmsh partVT.geo
@@ -35,7 +35,8 @@ rot d 20
 zoom 2
 plus n all
 hcpy png
-sys mv hcpy_3.png VTmesh.png
+sys mv hcpy_3.png Refs/VTmesh.png
+#break
 frame
 zoom 5
 rot y
@@ -45,4 +46,4 @@ tra d 30
 plot f all n
 plus n all
 hcpy png
-sys mv hcpy_4.png VTmesh1.png
+sys mv hcpy_4.png Refs/VTmesh1.png

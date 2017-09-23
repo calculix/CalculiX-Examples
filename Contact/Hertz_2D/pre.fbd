@@ -39,10 +39,12 @@ sys mv hcpy_1.png parts.png
 zoom 10
 tra u 55
 tra l 5
-# this does not work, should write the zoomed plot
+
+# this is a trick to get the screenshot correct (plots an invisible point)
+plus p all k 1
+
 hcpy png
 sys mv hcpy_2.png parts-zoom.png
-
 
 SETA scyl l peri
 comp scyl do
@@ -74,3 +76,19 @@ send control abq spc 1 -1
 
 setr scyl n control
 send scyl abq nam
+
+# boundary sets
+ulin Boundary sets: x0 (red), y0 (blue), control (turq.)
+frame
+plot n x0 r 6
+plus n y0 b 6
+plus f control t 8
+hcpy png
+sys mv hcpy_3.png sets.png
+
+# contact surfaces
+ulin Contact surfaces: scyl (red), sblk (blue)
+plot f scyl r 8
+plus f sblk b 8
+hcpy png
+sys mv hcpy_4.png contact.png

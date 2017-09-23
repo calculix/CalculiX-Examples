@@ -12,6 +12,7 @@ Physical Surface("load") = {17};
 Physical Volume("part") = {1};
 // Mesh control and meshing
 Mesh.SaveGroupsOfNodes = 1;
+// Mesh.CharacteristicLengthMax = 5;
 Mesh.ElementOrder=2;
 Mesh.Optimize=1;
 Mesh 3;

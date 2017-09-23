@@ -2,6 +2,7 @@ sys cad2fbd Welle.step
 read result.fbd
 #node 1 0 0 0
 #node 2 0 0 0
+asgn n 3
 div all auto 10
 elty all te10
 mesh all
@@ -12,5 +13,8 @@ comp s* do
 
 send s1 abq sur
 send s2 abq sur
+
+# this is required as workaround for an export bug
+comp all do
 
 send all abq

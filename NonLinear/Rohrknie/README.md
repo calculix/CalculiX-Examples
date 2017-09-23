@@ -1,5 +1,5 @@
 # Thin-Walled Tube
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Modal and static analysis
 + Shell and solid model
@@ -60,15 +60,9 @@ Mode               | Solid full | Solid half | Shell full | Shell half|
  In-plane bending  | 337.2 | 337.2 | 353.3 | 368.5
  Ovalization       | 894.7 | 895.0 | 964.7 | 974.9
 
- <img src="Refs/solid-modal-1.gif" width="200" title="Solid full, Mode 1">
- <img src="Refs/solid-sym-modal-1.gif" width="200" title="Solid reduced, Mode 1">
- <img src="Refs/shell-modal-1.gif" width="200" title="Shell full, Mode 1">
- <img src="Refs/shell-sym-modal-1.gif" width="200" title="Shell reduced, Mode 1">
+ <img src="Refs/solid-modal-1.gif" width="200" title="Solid full, Mode 1"> <img src="Refs/solid-sym-modal-1.gif" width="200" title="Solid reduced, Mode 1"> <img src="Refs/shell-modal-1.gif" width="200" title="Shell full, Mode 1"> <img src="Refs/shell-sym-modal-1.gif" width="200" title="Shell reduced, Mode 1">
 
- <img src="Refs/solid-modal-3.gif" width="200" title="Solid full, Mode 3">
- <img src="Refs/solid-sym-modal-2.gif" width="200" title="Solid reduced, Mode 2">
- <img src="Refs/shell-modal-3.gif" width="200" title="Shell full, Mode 3">
- <img src="Refs/shell-sym-modal-2.gif" width="200" title="Shell reduced, Mode 2">
+ <img src="Refs/solid-modal-3.gif" width="200" title="Solid full, Mode 3"> <img src="Refs/solid-sym-modal-2.gif" width="200" title="Solid reduced, Mode 2"> <img src="Refs/shell-modal-3.gif" width="200" title="Shell full, Mode 3"> <img src="Refs/shell-sym-modal-2.gif" width="200" title="Shell reduced, Mode 2">
 
  The animated gifs are created automatically in [post-modal.fbd](post-modal.fbd), wich is called by the top level script for the individual models.
 
@@ -88,10 +82,8 @@ File                       | Contents
 ```
 <img src="Refs/geo-shell.png" width="400" title="Full shell model">
 
-<img src="Refs/shell-modal-1.gif" width="400" title="Mode 1">
-<img src="Refs/shell-modal-2.gif" width="400" title="Mode 2">
-<img src="Refs/shell-modal-3.gif" width="400" title="Mode 3">
-<img src="Refs/shell-modal-4.gif" width="400" title="Mode 4">
+<img src="Refs/shell-modal-1.gif" width="400" title="Mode 1"><img src="Refs/shell-modal-2.gif" width="400" title="Mode 2">
+<img src="Refs/shell-modal-3.gif" width="400" title="Mode 3"><img src="Refs/shell-modal-4.gif" width="400" title="Mode 4">
 
 ## Half shell model, modal analysis
 
@@ -106,10 +98,8 @@ File                       | Contents
 ```
 <img src="Refs/geo-shell-sym.png" width="400" title="Half shell model">
 
-<img src="Refs/shell-sym-modal-1.gif" width="400" title="Mode 1">
-<img src="Refs/shell-sym-modal-2.gif" width="400" title="Mode 2">
-<img src="Refs/shell-sym-modal-3.gif" width="400" title="Mode 3">
-<img src="Refs/shell-sym-modal-4.gif" width="400" title="Mode 4">
+<img src="Refs/shell-sym-modal-1.gif" width="400" title="Mode 1"><img src="Refs/shell-sym-modal-2.gif" width="400" title="Mode 2">
+<img src="Refs/shell-sym-modal-3.gif" width="400" title="Mode 3"><img src="Refs/shell-sym-modal-4.gif" width="400" title="Mode 4">
 
 ## Full Solid model
 
@@ -128,10 +118,8 @@ File                       | Contents
 ```
 <img src="Refs/geo-solid.png" width="400" title="Full solid model">
 
-<img src="Refs/solid-modal-1.gif" width="400" title="Mode 1">
-<img src="Refs/solid-modal-2.gif" width="400" title="Mode 2">
-<img src="Refs/solid-modal-3.gif" width="400" title="Mode 3">
-<img src="Refs/solid-modal-4.gif" width="400" title="Mode 4">
+<img src="Refs/solid-modal-1.gif" width="400" title="Mode 1"><img src="Refs/solid-modal-2.gif" width="400" title="Mode 2">
+<img src="Refs/solid-modal-3.gif" width="400" title="Mode 3"><img src="Refs/solid-modal-4.gif" width="400" title="Mode 4">
 
 
 
@@ -170,8 +158,7 @@ The force-displacement plot is heavily non-linear because of the severe changes 
 
  <img src="Refs/df-solid.png" title="Force-displacement plot">
 
- <img src="Refs/solid-SE-neg.png" width="400" title="Force applied in negative x-direction">
- <img src="Refs/solid-SE-pos.png" width="400" title="Force applied in positive x-direction">
+ <img src="Refs/solid-SE-neg.png" width="400" title="Force applied in negative x-direction"><img src="Refs/solid-SE-pos.png" width="400" title="Force applied in positive x-direction">
 
 ## Half solid model, modal analysis
 
@@ -186,7 +173,5 @@ The force-displacement plot is heavily non-linear because of the severe changes 
  ```
  <img src="Refs/geo-solid-sym.png" width="400" title="Half solid model">
 
- <img src="Refs/solid-sym-modal-1.gif" width="400" title="Mode 1">
- <img src="Refs/solid-sym-modal-2.gif" width="400" title="Mode 2">
- <img src="Refs/solid-sym-modal-3.gif" width="400" title="Mode 3">
- <img src="Refs/solid-sym-modal-4.gif" width="400" title="Mode 4">
+ <img src="Refs/solid-sym-modal-1.gif" width="400" title="Mode 1"> <img src="Refs/solid-sym-modal-2.gif" width="400" title="Mode 2">
+ <img src="Refs/solid-sym-modal-3.gif" width="400" title="Mode 3"> <img src="Refs/solid-sym-modal-4.gif" width="400" title="Mode 4">
