@@ -6,6 +6,7 @@ read f2.nam inp
 
 view disp
 view elem
+view sh
 rot y
 frame
 zoom 2.5

@@ -1,5 +1,5 @@
 # Four-Point Bending Test With Sandwich Material
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Non-linear static analysis
 + Plasticity
