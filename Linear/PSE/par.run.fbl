@@ -95,6 +95,7 @@ read solve.frd
 
 view disp
 view elem off
+view sh
 scal d 200
 rot y
 rot l 10

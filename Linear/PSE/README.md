@@ -1,5 +1,5 @@
 # Illustration of Plane Stress and Plane Strain
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Parametric geometry
 + 4 simply supported beams with different width (one of them in fact a plate) and one of them with lateral constraints (plane strain)
@@ -11,6 +11,15 @@ File                           | Contents
 
 To run the complete analysis, edit parameter values in [par.run.fbl](par.run.fbl)
 and run
+
+Parameter | Value  | Description
+:--       | :--    | :---
+`b0`      | 1      | Width of the plane models in mm
+`b1`      | 10     | Width of the beam in mm
+`b2`      | 150    | Width of the plate in mm
+`le`      | 50     | Half span in mm
+`dist`    | 30     | Distance of the models
+
 ```
 > param.py
 > cgx -b run.fbl
