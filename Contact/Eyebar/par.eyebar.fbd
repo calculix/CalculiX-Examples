@@ -71,17 +71,17 @@ enq neye path rec 0 _ _ 0.0001
 send path abq nam
 
 # sets plot
+ulin fix (red), sym (green), contact pair (red/blue), path (mag.), control (turq.)
 rot -z
 seta ! all
 frame
-plus n fix r
-plus n sym b
-plus n seye g
-plus n spin g
-plus n path t
-
+plus n fix r 6
+plus n sym g 5
+plus f seye r 6
+plus f spin b 6
+plus n path m 6
 zoom 1.2
 view elem
-plus n control m
+plus n control t 6
 hcpy png
 sys mv hcpy_1.png mesh.png

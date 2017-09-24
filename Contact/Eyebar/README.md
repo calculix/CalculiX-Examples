@@ -23,6 +23,13 @@ The model was inspired by a  [model ](https://groups.yahoo.com/neo/groups/calcul
 Two separate parts are generated and meshed with plane strain elements.
 The prescribed displacement is applied to the flat equatorial surface of the pin.
 
+Parameter | Value  | Description
+:--       | :--    | :---
+`wi`      | 10     | Width of the material around the hole (eye) in mm
+`re`      | 10     | Radius of the hole in mm
+`rp`      | 9.5    | Radius of the pin in mm
+`etyp`    | "qu4e" | Element type
+
 You can change the model type using the parameter `etyp` in `par.eyebar.fbd`.
 Default is 4 node plane strain.
 ```
@@ -43,8 +50,7 @@ Default is 4 node plane strain.
 ```
 > cgx -b post.fbd
 ```
-<img src="SE.png" width="400" title="Equivalent stress">
-<img src="PE.png" width="400" title="Equivalent plastic strain">
+<img src="SE.png" width="400" title="Equivalent stress"><img src="PE.png" width="400" title="Equivalent plastic strain">
 
 The force-displacement curve is valid for the half model and is created from the .dat-file-output
 of the total reaction forces and the displacement of the monitor node.
@@ -53,5 +59,4 @@ of the total reaction forces and the displacement of the monitor node.
 
 Stress profiles in cross sections at the support (left) and at the eye (right, light blue in the mesh plot). The diagrams show the profiles at the first increment (still elastic) and at the end of the load step.
 
-<img src="SXX-fix.png" width="400" title="Stress profile at the support">
-<img src="SXX-path.png" width="400" title="Stress profile at x=0">
+<img src="SXX-fix.png" width="400" title="Stress profile at the support"><img src="SXX-path.png" width="400" title="Stress profile at x=0">
