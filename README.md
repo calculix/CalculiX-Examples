@@ -152,7 +152,7 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
   title="Illustration of plane stress/strain condition">
 ](Linear/PSE/)
 [<img
-  src="Dynamics/Discrete/V.png"
+  src="Dynamics/Discrete/V0.png"
   width="200"
   title="Freqency response of a 2 DOF spring-mass-system">
 ](Dynamics/Discrete/)
