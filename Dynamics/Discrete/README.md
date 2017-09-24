@@ -61,7 +61,9 @@ Springs and dashpots are represented by the appropriate discrete elements,
 the masses are represented by mass elements (new in 2.12).
 
 <img src="meshM.png" width=400>
+
 ```
 > cgx -b runM.fbd
 ```
+
 The simulation runs but the results are unreliable, because the eigensolver Arpack is not suited for small systems.
