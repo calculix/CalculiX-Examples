@@ -1,5 +1,5 @@
 # Thermal Strain
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Transient coupled thermo-mechanical analysis
 + Bending of a plate due to one-sided heating
@@ -26,6 +26,13 @@ the excitation time, leading to transient bending of the plate.
 
 
 ## Pre-Processing
+
+Parameter | Value | Description
+:--       | :--   | :---
+`th`      | 2     | Thickness in mm
+`wi`      | 20    | Width in mm
+`le`      | 100   | Wength in mm
+
 ```
 > cgx -b pre.fbl
 ```
@@ -48,7 +55,6 @@ is slightly slower than afterwards.
 ```
 
 ![solve.png](solve.png)
-
 
 ## Post-Processing
 
