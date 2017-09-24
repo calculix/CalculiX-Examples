@@ -1,5 +1,5 @@
 # Three-point bending test of a hollow profile
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Non-linear static analysis
 + Plasticity
@@ -23,19 +23,19 @@ domain is reduced to a quarter due to symmetry.
 ## Pre-Processing
 
 
-| Parameter | Value | Meaning |
-| :------------- |  :------------- | :------------- |
-| `th` | 4 | wall thickness in mm |
-| `wi` | 200 | width of the profile in mm|
-| `he` | 50 | height of the profile in mm |
-| `le` | 250 | half span of the supports in mm |
-| `l2` | 40 | extra length beyond the supports in mm |
-| `ro` | 20 | radius of the intenter in mm |
-| `ra` | 6 | outer fillet radius of the profile in mm |
-| `cs` | 10 | dimension of the contact region in mm |
-| `Emodul` | 70000 | Young's modulus of the profile in MPa |
-| `Re` | 160 | yield limit of the profile in MPa |
-| `disp` | 20 | displacement of the indenter in mm |
+| Parameter | Value   | Meaning |
+| :-------- |  :----- | :------------- |
+| `th`      | 4       | wall thickness in mm |
+| `wi`      | 200     | width of the profile in mm|
+| `he`      | 50      | height of the profile in mm |
+| `le`      | 250     | half span of the supports in mm |
+| `l2`      | 40      | extra length beyond the supports in mm |
+| `ro`      | 20      | radius of the intenter in mm |
+| `ra`      | 6       | outer fillet radius of the profile in mm |
+| `cs`      | 10      | dimension of the contact region in mm |
+| `Emodul`  | 70000   | Young's modulus of the profile in MPa |
+| `Re`      | 160     | yield limit of the profile in MPa |
+| `disp`    | 20      | displacement of the indenter in mm |
 
 
 You may adjust the parameter values in the file [par.pre.fbl](par.pre.fbl) and then run
