@@ -75,12 +75,21 @@ seta topneg se top
 send topneg abq surf -
 send ind abq sur
 # image
+ulin Independent meshes
 view elem
-view back
+view ill
 rot y
 rot l 20
 rot u 30
 seta ! all
 frame
+zoom 0.9
 hcpy png
 sys mv hcpy_1.png Refs/model.png
+
+ulin Sets: bot_edge (red), ind (blue)
+plot f all n
+plus n bot_edge r 6
+plus n ind b 6
+hcpy png
+sys mv hcpy_2.png Refs/sets.png
