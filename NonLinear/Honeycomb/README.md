@@ -57,7 +57,7 @@ no degrees of freedom.
 
 Shell elements expanded to a single layer of volume elements are not really appropriate for plastic deformations, because they have just two cross thickness integration points.
 
-The model is stabilized using by coupling the sandwich to ground via a weak spring.
+The model is stabilized by coupling the sandwich to ground via a weak spring.
 
 ## Solving
 The rate of convergence is affected by the plastic material, the mesh density, the contact stiffness and the time incrementation controls. Heavy relaxation of the convergence criteria is required to get the model solved.
