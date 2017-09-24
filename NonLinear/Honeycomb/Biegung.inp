@@ -13,12 +13,12 @@
 *include, input=upper.sur
 *include, input=cyl1.sur
 *include, input=cyl2.sur
-** **spring Element
-** *element,type=spring1,elset=feder
-**  1,1
-** *spring,elset=feder
-**  3
-**  1.
+**spring Element
+*element,type=spring1,elset=feder
+ 1,1
+*spring,elset=feder
+ 3
+ 1.
 ** constraints
 *boundary
 *include, input=xsym_1.bou
@@ -32,8 +32,8 @@ Ncyl2,1,3
 72000,0.3
 *plastic
 160,0
-200,0.01
-300,0.2
+180,0.01
+300,0.1
 500,1
 *density
 2.7e9
@@ -54,7 +54,7 @@ Ncyl2,1,3
 ** contact definitions
 *surface interaction, name=tool
 *surface behavior, pressure-overclosure=linear
-1000000
+100000
 ***friction
 **0.1,10000
 *contact pair, interaction=tool, type=surface to surface
@@ -63,19 +63,19 @@ Supper,Scyl1,
 Slower,Scyl2
 *step,nlgeom, inc=1000
 *static
-0.01,1,0.0000000001,0.02
+0.01,1,0.0000000001,0.01
 **dload
 ** Edouble,P,0.01
 ** Esingle,P,0.01
-**controls, parameters=field
-** ran,can,qa0,qau,rap,ea,cae,ral
-**   100,  ,   ,  1000  ,100,0.1
+*controls, parameters=field
+** ran ,can,qa0 ,qau,rap,ea,cae,ral
+   10.,0.1,100.,100.,100.
 **controls, parameters=time incrementation
 **15,,5
 **0.25,
 *boundary
 Ncyl1,3,3,-5
-*node file
+*node file, lastiterations
 U
 *el file
 S,PE

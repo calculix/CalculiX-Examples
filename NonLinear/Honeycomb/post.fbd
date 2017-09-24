@@ -8,10 +8,10 @@ comp Esand do
 rot -z
 rot c 45
 rot d 60
-view back
 frame
 zoom 1.5
 view disp
+view sh
 # Equivalent strain
 ds -0 e 1
 plot ev Edouble

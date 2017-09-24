@@ -108,8 +108,10 @@ setc outline
 rot -z
 view elem
 plot e all n
+frame
+plot e all n
 plus s all
-plus l outline b
+plus l outline b 6
 frame
 hcpy png
 sys mv hcpy_1.png size.png
@@ -125,7 +127,6 @@ plus e single t
 plus e double b
 hcpy png
 sys mv hcpy_2.png core.png
-
 
 # cylinders
 del se new
@@ -164,6 +165,7 @@ enq nodes xsym rec 0 _ _ 0.1 a
 send ysym abq spc 2
 send xsym abq spc 1
 send xsym abq nam
+send ysym abq nam
 # contact surfaces
 send cyl1 abq sur
 send cyl2 abq sur
@@ -178,8 +180,11 @@ seta nodes n all
 enq nodes monc rec 0 0 0 0.01
 send monc abq nam
 
+
+view front
 seta ! all
-plus n mon1 t
-plus n monc t
+plus n mon1 t 8
+plus n monc t 8
+view ill
 hcpy png
 sys mv hcpy_5.png quarter.png
