@@ -30,8 +30,8 @@ send all abq
 view elem
 rot -z
 rot d 60
+plot n all r 1
+plus f all n
 frame
 hcpy png
 sys mv hcpy_1.png Refs/mesh.png
-
-

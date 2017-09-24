@@ -1,5 +1,5 @@
 # Modal analysis
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Modal analysis with automatic generation of mode shape animations
 + Parametric model
@@ -32,6 +32,13 @@ It is meshed with C3D8I elements (8 node hexaeder with incompatible shape
   functions).
 
 ## Preprocessing
+
+Parameter | Value | Description
+:--       | :--   | :---
+`ri`      | 40    | Inner radius of the rim in mm
+`dr`      | 2     | Radial thickness of the rim in mm
+`t1`      | 2     | Thickness of the disk in mm
+`t2`      | 3     | Thickness of the rim in mm
 
 Set the appropriate values for the parameters in `pre.fbd`
 Generate the model using
