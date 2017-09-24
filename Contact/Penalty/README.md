@@ -1,5 +1,5 @@
 # Basic Tests of Penalty Contact
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Completely displacement controlled model (no dofs)
 + Objective: extract pressure-penetration characteristic for various contact options
@@ -27,6 +27,11 @@ scaled and re-positioned.
 Two contact surfaces are defined.
 
 Each cube is meshed with a single element.
+
+Parameter | Value | Description
+:--       | :--   | :---
+`le`      | 20    | Edge length of the cube in mm
+`off`     | 5     | Offset of the smaller cube in mm
 
 <img src="contact.png" title="Pressure-penetration characteristic" width=400>
 

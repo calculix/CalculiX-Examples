@@ -1,4 +1,4 @@
-	valu le 20
+valu le 20
 valu off 5
 
 # large cube:
@@ -33,13 +33,17 @@ enq nkw hist rec 0 off off 0.1
 send all abq nam
 
 # model image with contact surfaces
+ulin Contact pair (red/blue), history node (turq.)
+view ill
 rot x
 rot d 90
 rot r 30
 rot u 30
 frame
-plot f cgw
-plus f ckw
+move cgw tra 0.01 0 0
+plot f cgw r
+plus f ckw b
+plus n hist t 10
 hcpy png
 sys mv hcpy_1.png contact.png
 
