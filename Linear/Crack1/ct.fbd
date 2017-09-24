@@ -17,10 +17,11 @@ send origin abq nam
 rot -z
 rot l 30
 rot d 30
+view ill
 plot f Load
 plus n Symy r
 plus n Symz b
-plus n origin g
+plus n origin g 8
 hcpy png
 sys mv hcpy_1.png Refs/sets.png
 # solver run
@@ -32,10 +33,11 @@ copy all new mir y
 copy all new mir z
 # plot of the equivalent stress
 view disp
+view sh
 scal d 2000
 ds -0 e 7
 rot -z
-rot r 20
+rot r 25
 rot u 5
 plot ev orig
 plus e new n
