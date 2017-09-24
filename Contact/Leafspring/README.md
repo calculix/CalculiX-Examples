@@ -1,9 +1,9 @@
 # Leaf Spring
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Parametric model with variable number of leafs
 + completely automatic generation of the solver input using a loop in CGX
-+ Penalty contact
++ Penalty contact (node-to-surface)
 + Static analysis
 + Analysis of a quarter model, expanded in postprocessing
 
@@ -18,12 +18,12 @@ spring leafs along with the required contact definitions.
 
 In the file `pre.fbd` you can set the following parameters:
 
-| Name                   |                                       |
-| :-------------         | :-------------                                |
-| L    | Half-span                |
-| W    | Half-width                                   |
-| T    | Tickness of the leafs                        |
-| num  | Number of leafs |
+| Parameter | Value | Description           | Unit
+| :------   | :---- | :---                  | :--
+| `L`       | 300   | Half-span             | mm
+| `W`       | 20    | Half-width            | mm                       |
+| `T`       | 5     | Tickness of the leafs | mm
+| `num`     | 6     | Number of leafs       |
 
 ## Preprocessing
 
