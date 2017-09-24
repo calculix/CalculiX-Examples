@@ -1,10 +1,14 @@
-sys ccx MSM
+sys ccx MSM > MSM.log
 read MSM.frd
 read MSM.inp nom
 # plot model
 seta ! all
+seta fix n 1
+plot e all k
+plus n all k 6
+plus n fix r 6
 hcpy png
-sys mv hcpy_1.png mesh.png
+sys mv hcpy_1.png meshM.png
 # plot mode shapes
 seta path n 1 2 3
 ds 1 e 1
@@ -16,3 +20,5 @@ graph response time PDISP MAG1
 graph response time PDISP PHA1
 
 sys gnuplot V.gnu
+sys mv modes.png modesM.png
+sys mv V.png VM.png

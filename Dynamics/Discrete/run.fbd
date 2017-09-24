@@ -16,3 +16,5 @@ graph response time PDISP MAG1
 graph response time PDISP PHA1
 
 sys gnuplot V.gnu
+sys mv modes.png modes0.png
+sys mv V.png V0.png

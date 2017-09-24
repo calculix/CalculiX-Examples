@@ -1,5 +1,5 @@
 # Spring/Mass Oscillator
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Frequency response analysis
 + 2-Mass oscillator
@@ -47,18 +47,20 @@ First, a `*frequency` step is performed and then a `*steady state dynamics` step
 
 Mode shapes
 
-<img src="modes.png">
+<img src="modes0.png">
 
 
 Magnitude and phase plot of the response (displacement of the masses)
 
-<img src="V.png">
+<img src="V0.png">
 
 ## Version with mass elements
 
 There is no cgx-based preprocessing. The model is entirely defined within the input file `MSM.inp`.
 Springs and dashpots are represented by the appropriate discrete elements,
 the masses are represented by mass elements (new in 2.12).
+
+<img src="meshM.png" width=400>
 ```
 > cgx -b runM.fbd
 ```
