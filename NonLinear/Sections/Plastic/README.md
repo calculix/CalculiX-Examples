@@ -1,5 +1,5 @@
 # Properties of Cross Sections (elasto-plastic)
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Simply supported beam with a prescribed displacement in the center
 + Parametric section shapes of identical area
@@ -25,13 +25,13 @@ The problem is parametrized using [param.py](../../../Scripts/param.py).
 
 Parameters in `par.pre.fbl`
 
-| Parameter | Value | Meaning |
-| :------------- |  :------------- | :------------- |
-| `area` | 300 | Cross section area in mm² |
-| `length` | 400 |distance from support to center (half span) in mm |
-| `thickness` | 4 | Wall thickness of tube and I profile |
-| `divx` | 20 | longitudinal mesh division |
-| `disp` | 20 | prescribed displacement (at mid-span) in mm |
+| Parameter   | Value | Meaning |
+| :---------  |  :--- | :------------- |
+| `area`      | 300   | Cross section area in mm² |
+| `length`    | 400   | Distance from support to center (half span) in mm |
+| `thickness` | 4     | Wall thickness of tube and I profile |
+| `divx`      | 20    | Longitudinal mesh division |
+| `disp`      | 20    | Prescribed displacement (at mid-span) in mm |
 
 
 The model contains several simply supported beams of equal section area but different section shape.

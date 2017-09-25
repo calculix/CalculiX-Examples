@@ -37,15 +37,18 @@ enq nodes right rec <2*h> _ _ 0.01
 
 # mesh image
 view edge off
+ulin upper (red), left (green), lower (blue), right (mag.)
+#plot e all n
+plot f all n
 frame
-plus n upper r
-plus n left g
-plus n lower b
-plus n right m
-
+plus n upper r 6
+plus n left g 6
+plus n lower b 6
+plus n right m 6
+view edge
 hcpy png
 sys mv hcpy_1.png mesh.png
-
+ulin
 send all abq
 send all abq nam
 sys ccx solve

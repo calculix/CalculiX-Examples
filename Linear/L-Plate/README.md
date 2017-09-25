@@ -1,5 +1,5 @@
 # Buckling and modal analysis with preload
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Modal analysis with preload
 + Eigenvalue buckling analysis
@@ -17,9 +17,9 @@ Tested with CGX/CCX 2.12
 The model is a flat L-shaped plate.
 
 | Parameter | Value | Meaning |
-| :------------- |  :------------- | :------------- |
-| `h` | 100 | edge length parameter in mm |
-| `p` | 1 | pressure in MPa |
+| :-------- |  :----| :------------- |
+| `h`       | 100   | edge length parameter in mm |
+| `p`       | 1     | pressure in MPa |
 
 <img src="mesh.png" width="400" title="mesh">
 

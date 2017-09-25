@@ -2,6 +2,7 @@ read Biegung.frd new
 
 view disp
 view elem
+view sh
 rot -y
 rot l 110
 rot u 20
