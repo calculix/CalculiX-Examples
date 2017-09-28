@@ -90,11 +90,27 @@ valu area * lx ly
 sys echo ez= ez > ez.gnu
 sys echo area= area >> ez.gnu
 # mesh image
+ulin planes of symmetry (red), prescribed displacement (blue)
 plot f all n
+plot n x0 r
+plus n y0 r
+plus n z0 r
+plus n zl b
 frame
-rot x
-rot c 90
+rot -x
+rot c -90
 rot r 30
 rot u 30
 hcpy png
 sys mv hcpy_2.png mesh.png
+
+ulin control nodes of the planes xl (mag.) and yl (turq.)
+plot f all n
+plus n n110 r 10
+plus n n111 r 10
+plus n n010 r 10
+plus n n101 r 10
+plus n xl m 6
+plus n yl t 6
+hcpy png
+sys mv hcpy_3.png control.png

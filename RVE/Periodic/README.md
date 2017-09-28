@@ -1,5 +1,5 @@
 # RVE with periodic boundary conditions
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 This is a generic RVE of a fiber-matrix compound.
 

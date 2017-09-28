@@ -1,5 +1,5 @@
 # Tensile Test of FDM layers, plane and orthogonal boundaries
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 Tensile test of unidirectional FDM (3D printed) layers with load application perpendicular to the printing plane. The layed roads only partially bond between each other and to the layer below. The localized strains at the resulting notches lead to material failure at global strains much below the maximum elongation of the base material (embrittlement).
 
@@ -49,7 +49,7 @@ Boundary conditions:
 * ux all equal at x = lx (parallel to yz plane)
 * uy all equal at y = ly/2 (parallel to xz plane)
 
-<img src="mesh.png" width="400">
+<img src="mesh.png" width="400"><img src="control.png" width="400">
 
 Compared to the less sophisticated [example](RVE/PlanarSlide), the model require only a fraction (a single layer) of the elements in x-direction and just one quarter of the section.
 

@@ -1,5 +1,5 @@
 # Plane beams - element solution
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Linear static solution
 + Plane stress model
@@ -25,6 +25,12 @@ Disk     | CGX  | CCX
 2        | tr3s | CPS3
 3        | qu8sr| CPS8R
 4 (lower)| qu4s | CPS4
+
+Parameter | Value | Description
+ :--      | :--   | :--
+le        | 40    | Length in mm
+he        | 10    | Height in mm
+pressure  | 1     | Pressure in MPa
 
 <img src="mesh.png" width="400" title="Beams with different element types">
 

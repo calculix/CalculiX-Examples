@@ -54,3 +54,14 @@ view elem
 frame
 hcpy png
 sys mv hcpy_1.png mesh.png
+
+
+view edge
+ulin symmetry at x0, y0, z0 (red), prescribed displacement at zl (blue)
+plot n zl b
+plus n x0 r
+plus n y0 r
+plus n z0 r
+
+hcpy png
+sys mv hcpy_2.png sets.png

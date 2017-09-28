@@ -9,6 +9,7 @@ ds -0 e 1
 view disp
 scal d 500
 frame
+zoom 1.1
 plot fv all
 hcpy png
 sys mv hcpy_2.png nodal-sx.png

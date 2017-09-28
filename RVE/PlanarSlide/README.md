@@ -1,6 +1,8 @@
 # Tensile Test of FDM layers
 Tested with CGX 2.13 / CCX 2.12
 
++ Issue: the model edges in the sets plot are missing.
+
 Tensile test of unidirectional FDM (3D printed) layers with load application perpendicular to the printing plane. The layed roads only partially bond between each other and to the layer below. The localized strains at the resulting notches lead to material failure at global strains much below the maximum elongation of the base material (embrittlement).
 
 The test specimen is a stack of layers with 2 roads wide and two times lx long.
@@ -47,7 +49,7 @@ Boundary conditions:
 * uz = 0 at z = 0 (symmetry boundary)
 * uz = ez/100*lz at z = lz (prescribed displacement)
 
-<img src="mesh.png" width="400">
+<img src="mesh.png" width="400"><img src="sets.png" width="400">
 
 ## Solving
 

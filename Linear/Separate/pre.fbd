@@ -36,12 +36,13 @@ comp load do
 comp load do
 send load abq pres pressure
 
+ulin fixed nodes (red), pressure surface (blue)
 view elem
 view edge off
 plus l all
 rot -z
-plus n fix r
-plus n load g
+plus n fix r 6
+plus f load b 4
 frame
 hcpy png
 sys mv hcpy_1.png mesh.png

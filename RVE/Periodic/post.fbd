@@ -3,6 +3,7 @@ read Solve.frd
 ds 2 e 7
 view disp
 view elem
+view sh
 plot fv all
 rot -x
 rot c -90
