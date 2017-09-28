@@ -20,6 +20,7 @@ zoom 3
 # show undeformed model edges
 #anim model
 view elem
+view sh
 
 # loop over movies
 while counter < num

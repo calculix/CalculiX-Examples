@@ -2,6 +2,7 @@ read trans.frd new
 # view setup
 view disp
 view elem
+view sh
 rot y
 rot r 50
 rot u 40

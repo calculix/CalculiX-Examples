@@ -1,5 +1,5 @@
 # Supports using coupling
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Test of distributing and kinematic coupling
 + Modal analysis
@@ -18,7 +18,15 @@ File                           | Contents
  [trfix.inp](trfix.inp)        | CCX input for the reference solution
  [surface.gpl](surface.gpl)    | Gnuplot script for section data
 
-The model contains a brick shaped beam. Three simulations are set up:
+The model contains a brick shaped beam with dimensions given by parameters in `pre.fbl`.
+
+Parameters | Value | Description
+:--        | :--   | :--
+lx         | 100   | Length
+ly         | 5     | Thickness
+lz         | 10    | Width
+
+Three simulations are set up:
 
 + Frequency analysis with one end coupled and subjected to various constraints (distributing coupling is used).
 + Multistep static analysis with large rotation. Cantilever beam with the load distributed over the end surface by distributing coupling. Support is applied via kinematic coupling.
@@ -26,10 +34,11 @@ The model contains a brick shaped beam. Three simulations are set up:
 
 ## Pre-Processing
 
-The script generated the elements, the surface sets and the reference nodes.
+The script generates the elements, the surface sets and the reference nodes.
 ```
 > cgx -b pre.fbl
 ```
+<img src="Refs/mesh.png" width="400">
 
 ## Frequency analysis
 

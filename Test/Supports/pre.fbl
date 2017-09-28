@@ -19,21 +19,6 @@ seta nodes n all
 enq nodes load rec lx _ _ 0.01
 comp load do
 
-
-rot x
-rot c 90
-rot r 10
-rot u 10
-plot e all
-frame
-view back
-zoom 3
-view elem
-plot f fix r
-plus f load b
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
-
 # create reference nodes at cg of the surfaces
 stack on
 area fix
@@ -55,3 +40,20 @@ send all abq
 send all abq nam
 send fix abq surf
 send load abq surf
+
+ulin Surfaces and ref nodes: fix (red, mag.), load (blue, turq.)
+rot x
+rot c 90
+rot r 10
+rot u 10
+plot e all
+frame
+view ill
+zoom 3
+view elem
+plot f fix r
+plus n rfix m 10
+plus f load b
+plus n rload t 10
+hcpy png
+sys mv hcpy_1.png Refs/mesh.png
