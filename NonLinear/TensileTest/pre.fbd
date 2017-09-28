@@ -57,8 +57,7 @@ sys echo Nload,1,1, disp > load.inc
 #send nlx abq nam
 
 # display of sets
-text nlx (red), symy (green), symz (blue), load (mag.)
-text symx (red), symy (green), symz (blue), load (mag.)
+ulin symx (red), symy (green), symz (blue), load (mag.)
 frame
 zoom 1.5
 rot -x
@@ -73,7 +72,7 @@ plus n load m
 hcpy png
 sys mv hcpy_1.png zug-geo.png
 
-text region of imperfection (dy of imp mm)
+ulin region of imperfection (dy of imp mm)
 plot n nimp
 
 hcpy png

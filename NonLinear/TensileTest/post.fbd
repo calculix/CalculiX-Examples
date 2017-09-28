@@ -9,13 +9,12 @@ copy all new mir y
 copy all new mir z
 plot e all
 frame
-zoom 1.5
+zoom 2
 rot x
 rot c 90
 rot u 30
 rot l 20
 
-hcpy png
 #ds -1 e 7
 ds -0 e 1
 view disp
@@ -24,4 +23,16 @@ plot fv base
 plus e new n
 
 hcpy png
-sys mv hcpy_2.png pe.png
+sys mv hcpy_1.png pe.png
+
+view elem
+view sh
+rot x
+rot c 90
+plot fv base
+frame base
+zoom 4
+
+
+hcpy png
+sys mv hcpy_2.png pe-int.png

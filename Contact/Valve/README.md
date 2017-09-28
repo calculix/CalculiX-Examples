@@ -1,9 +1,9 @@
 # Engine Valve
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Axisymmetric model of a valve with valve seat
 + Linear elastic material
-+ Penalty contact with friction
++ Penalty contact with friction (surface to surface)
 + Path plot of contact pressure and slip
 + Pressure load
 
@@ -21,13 +21,32 @@ The valve and the valve seat ring are meshed with axisymmetric second order tria
 
 The mesh is controlled by a global size (parameter `esize`) and the refinement factor at the contact zone (parameter `refine`).
 
+Parameter | Value | Unit | Description
+:--       | :--   | :--  | :--
+`r1`      | 3     | mm   |
+`r2`      | 4     | mm   |
+`r3`      | 15    | mm   |
+`h1`      | 4     | mm   |
+`h2`      | 3     | mm   |
+`fase`    | 2     | mm   |
+`esize`   | 0.5   | mm   | Element size
+`refine`  | 5     |      | Refinement factor in the contact zone
+`d1`      | 1     | mm   |
+`d2`      | fase  | mm   |
+`d3`      | 1     | mm   |
+`d4`      | 2     | mm   |
+`dy1`     | 1     | mm   |
+`dy2`     | 1     | mm   |
+`dy3`     | fase  | mm   |
+`dy4`     | 1     | mm   |
+
 <img src="sketch.png">
 
 ```
 > param.py par.pre.fbd
 > cgx -b pre.fbd
 ```
-<img src="mesh.png"  width=400>
+<img src="mesh.png"  width=400><img src="mesh-vsc.png"  width=400>
 
 ## Solving
 ```

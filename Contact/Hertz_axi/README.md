@@ -1,5 +1,5 @@
 # Hertz contact axisymmetric (sphere to plane)
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13/CCX 2.12
 
 + Axisymmetric model
 + Linear elasticity
@@ -26,9 +26,9 @@ The parameters can be changed in `pre.fbd`.
 | `etyp` | qu8c | element type (in CGX terms) |
 
 Two separate parts are generated and meshed with axisymmetric elements (by default CAX8).
-The load is applied as pressure to the flat equatorial surface of the hemisphere (l2).
-The lower surface of the flat disk (L004) is constrained in axial (y) direction.
-The nodes on the axis of symmetry (l1, L001) are constrained in radial (x) direction.
+The load is applied as pressure to the flat equatorial surface of the hemisphere (blue).
+The lower surface of the flat disk (red) is constrained in axial (y) direction.
+The nodes on the axis of symmetry (magenta) are constrained in radial (x) direction.
 ```
 > cgx -b pre.fbd
 ```

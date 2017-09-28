@@ -111,13 +111,18 @@ send vsr5 abq nam
 
 view elem
 frame
+ulin x0, vsr5, vsy2 (red), press (blue), contact pair (yellow/mag.)
 plot f all n
-plus n x0 r
-plus n vsr5 r
-plus n vsy2 r
-plus n press b
-plus n vsc m
-plus n vc o
+plus n x0 r 6
+plus n vsr5 r 6
+plus n vsy2 r 6
+plus f press b 6
+plus f vsc m 10
+plus f vc y 6
 frame
 hcpy png
 sys mv hcpy_1.png mesh.png
+
+frame vsc
+hcpy png
+sys mv hcpy_2.png mesh-vsc.png

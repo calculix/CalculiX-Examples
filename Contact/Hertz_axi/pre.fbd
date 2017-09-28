@@ -39,17 +39,12 @@ elty all qu8c
 mesh all
 send all abq
 
-# total view
 rot -z
 view elem
 frame
-plot la all
-hcpy png
-sys mv hcpy_1.png lines.png
-
 seta ! all
 hcpy png
-sys mv hcpy_2.png parts.png
+sys mv hcpy_1.png parts.png
 
 # view of the contact zone
 zoom 10
@@ -57,13 +52,13 @@ tra r 55
 tra d 5
 seta ! all
 hcpy png
-sys mv hcpy_3.png parts-zoom.png
+sys mv hcpy_2.png parts-zoom.png
 
 # line numbers
 frame
 plot la all
 hcpy png
-sys mv hcpy_4.png lines.png
+sys mv hcpy_3.png lines.png
 
 # intenter contact surface
 SETA speri l peri
@@ -103,3 +98,11 @@ send path abq nam
 
 #setr scyl n control
 #send scyl abq nam
+
+# sets
+ulin x0 (red), y0 (mag.), control (b)
+plot l x0 r 6
+plus l y0 m 6
+plus l control b 6
+hcpy png
+sys mv hcpy_4.png sets.png

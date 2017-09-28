@@ -1,5 +1,5 @@
 # Tensile Test of FDM layers
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 Tensile test of unidirectional FDM (3D printed) layers with load application perpendicular to the printing plane. The layed roads only partially bond between each other and to the layer below. The localized strains at the resulting notches lead to material failure at global strains much below the maximum elongation of the base material (embrittlement).
 
