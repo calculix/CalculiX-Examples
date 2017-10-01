@@ -48,10 +48,11 @@ sys echo area= area >> ez.gnu
 # mesh image
 rot x
 rot c 90
-rot r 10
-rot d 10
+rot r 20
+rot d 20
 view elem
-frame
+plot f all n q
+frame all
 hcpy png
 sys mv hcpy_1.png mesh.png
 
