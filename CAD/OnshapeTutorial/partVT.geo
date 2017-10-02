@@ -15,6 +15,7 @@ Mesh.SaveGroupsOfNodes = 1;
 // Mesh.CharacteristicLengthMax = 5;
 Mesh.ElementOrder=2;
 Mesh.Optimize=1;
+Mesh.RemeshParametrization = 7;
 Mesh 3;
 Save "gmshVT.inp";
 // image
