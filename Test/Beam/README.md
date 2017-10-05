@@ -1,6 +1,6 @@
 ># Coupling with beams
 
-Tested with CGX 2.12.1/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Test of coupling with beam nodes
 + Distributing and kinematic coupling
@@ -36,6 +36,15 @@ c_kin_center_123      | kinematic     | knot     | 1-3
 The model consists of a beam and a disk with hole.
 The beam is fixed at x=0 (all dofs). The adjacent face of the disk is coupled either to the "center" node (which has a knot due to inverse beam normals at both sides) or to the
 "load" node at the free end (which is an ordinary node).
+
+Parameter | Value | Description
+:--       | :--   | :---
+le        | 100   | Length in mm
+ri        | 10    | Inner radius in mm
+ra        | 20    | Outer radius in mm
+td        | 5     | Thickness of the ring in mm
+dist      | 10    | Offset of the ring from the beam end in mm  
+num       | 10    | Number of mode shape movies to generate
 
 <img src="Refs/mesh.png" width="400">
 

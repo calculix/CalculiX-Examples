@@ -1,12 +1,14 @@
 valu le 100
-valu two 2
-valu le_half / le two
 valu ri 10
 valu ra 20
 valu td 5
 valu dist 10
 # number of movies to generate per simulation
 valu num 10
+
+# dependent Parameter
+valu two 2
+valu le_half / le two
 
 # line
 pnt fix 0 0 0
@@ -54,9 +56,9 @@ send s1 abq sur
 # write coupling commands
 stack on
 prnt se center
-valu nref pop
+valu nref pop 14
 prnt se load
-valu nload pop
+valu nload pop 14
 # distributing
 sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_dist_center_123.inc
 sys echo *distributing                                              >> c_dist_center_123.inc
@@ -81,9 +83,9 @@ sys echo 1,3                                                        >> c_kin_loa
 
 # display
 view elem
-plot l all
+plot l beam n 4
 comp beam do
-plus pa beam
+plus pa beam b 6
 plus f all w
 frame
 rot y

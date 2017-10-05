@@ -44,9 +44,10 @@ send load abq surf
 
 rot z
 view elem
+ulin pathx (mag.), pathy (red)
 plot f all n
-plus n pathx m
-plus n pathy r
+plus n pathx m 6
+plus n pathy r 6
 frame
 hcpy png
 sys mv hcpy_1.png Refs/mesh.png
@@ -54,7 +55,7 @@ sys mv hcpy_1.png Refs/mesh.png
 sys ccx solve
 read solve.frd nom
 
-text Moment about x
+ulin Moment about x
 ds 2 e 3
 frame
 hcpy png
@@ -62,7 +63,7 @@ sys mv hcpy_2.png Refs/mx.png
 
 graph pathy length
 
-text Moment about y
+ulin Moment about y
 ds 4 e 3
 frame
 hcpy png
@@ -70,7 +71,7 @@ sys mv hcpy_3.png Refs/my.png
 
 graph pathx length
 
-text Moment about z
+ulin Moment about z
 ds 6 e 24
 frame
 hcpy png
@@ -80,7 +81,7 @@ graph pathx length
 
 rot -z
 frame
-text Moment about z
+ulin Moment about z
 view disp
 scal d 100000
 ds 6 e 24
