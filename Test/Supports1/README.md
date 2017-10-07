@@ -33,8 +33,7 @@ The shaft is free to rotate.
 
 Bending modes rotate about the centers of the bearing surfaces
 
-<img src="Refs/shape_2.gif" width="400"><img src="Refs/shape_5
-.gif" width="400">
+<img src="Refs/shape_2.gif" width="400"><img src="Refs/shape_5.gif" width="400">
 
 The left bearing is constrained in longitudinal direction (x), the right one is not. It is clearly visible that the bearing surfaces can deform (which they could not with kinematic coupling)
 
