@@ -14,16 +14,16 @@ File                           | Contents
 Parameter | Value | Description
 :--       | :--   |:--
 lx        | 100   | Length in mm
-          |       |Rotated Flat
+Rotated Flat |        |
 th        | 10    | Thickness in mm
 he        | 50    | Height in mm
-          |       | Z profile
+Z profile          |       |
 y0z       | -45   | y reference location in mm
 z0z       | 20    | z reference location in mm
 la        | 40    |
 lb        | 10    |
 th        | 3     |
-          |       | L profile
+L profile          |       | 
 y0a       | -90   | y reference location in mm
 z0a       | 20    | z reference location in mm
 la        | 40    |
