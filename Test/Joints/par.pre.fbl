@@ -70,10 +70,9 @@ mesh pin
 
 stack on
 prnt se ref1
-valu nref1 pop 5
+valu nref1 pop 18
 prnt se ref2
-valu nref2 pop 5
-
+valu nref2 pop 18
 # coupling surfaces
 seta s1 s A006 A007 A008 A009
 seta s2 s A00G A00H A00I A00J
@@ -123,26 +122,24 @@ plot f all w
 hcpy png
 sys mv hcpy_1.png Refs/mesh.png
 # plot of support and load application sets
-text nodeset 'fix' and surface 'load'
+ulin nodeset 'fix' and surface 'load'
 plot n fix r
 plus f load b
 plus l all
 hcpy png
 sys mv hcpy_2.png Refs/fix_load.png
 # plot of coupling details
-text Coupling surfaces and reference nodes
-frame
-rot z
-tra r <0.2*xh>
-tra d <0.4*xh>
-view back
-zoom 5
-rot u 10
-plot s all
+ulin Coupling surfaces and reference nodes
+frame pin
+zoom 0.5
+#rot z
+view ill
+plot l all r 2
+plus l part2 b 2
 plus f s1 r
-plus pa ref1 r
+plus pa ref1 r 10
 plus f s2 b
-plus pa ref2 b
-plus e pin k
+plus pa ref2 b 10
+plus e pin k 6
 hcpy png
 sys mv hcpy_3.png Refs/coupling.png

@@ -1,9 +1,9 @@
 # run the simulations and generate the images
-text Kinematic coupling
+ulin Kinematic coupling
 sys ccx solve2 > solve-k.log
 read solve2.frd new
 read solve2.inp nom
-
+break
 frame
 view elem
 rot -z
@@ -40,7 +40,7 @@ while counter < num
   # store the movie under the target name target
   sys mv movie.gif target
 endwhile
-text Axial tension in part 2
+ulin Axial tension in part 2
 rot x
 rot c -90
 rot u 20
@@ -51,7 +51,7 @@ frame
 plot fv all
 hcpy png
 sys mv hcpy_1.png Refs2/se1-kin.png
-text Vertical load at the end of part 2
+ulin Vertical load at the end of part 2
 rot y
 rot c 180
 ds 14 e 7

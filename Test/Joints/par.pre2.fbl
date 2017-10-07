@@ -113,8 +113,8 @@ plot f all w
 hcpy png
 sys mv hcpy_1.png Refs2/mesh.png
 # plot of the surfaces
-text nodeset 'fix' (red), surface 'load' (blue), coupling surface (yellow)
-view back
+ulin  Sets: 'fix' (red), surface 'load' (blue), coupling surface (yellow)
+view ill
 plot f fix r
 plus f load b
 plus l all

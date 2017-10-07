@@ -1,5 +1,5 @@
 # Test of Joints
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.12
 
 + Test of distributing and kinematic coupling
 + Modal analysis
@@ -47,10 +47,17 @@ File                           | Contents
  [solve2.inp](solve2.inp)      | CCX input for model without pin
  [frequency.gpl](surface.gpl)  | Gnuplot script for frequency chart
 
-The model represents a hinged joint between two bars. The pin is modeled by a beam which is coupled to the cylindrical surfaces of the holes.
+The model represents a hinged joint between two bars. The pin is modeled by a beam which is coupled to the cylindrical surfaces of the holes. Pin-free alternative modelling is also demonstrated.
 
 
 ## Pre-Processing for the model with pin
+
+Parameter | Value | Description
+:--       | :--   | :--
+xh        | 100   | Distance between hinge and end of the bars in mm
+rh        | 5     | Radius of the holes in mm
+angle     | -60   | Angular position of bar 2 in degrees
+dz        | 10    | axial offset between the bars in mm
 
 The script generated the elements, the surface, node and element sets and writes the coupling commands for ccx.
 ```

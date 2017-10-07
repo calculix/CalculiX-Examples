@@ -72,7 +72,7 @@ send all abq
 send all abq nam
 
 # plot of mesh and ref node
-text support (red), load (yellow) with ref node (blue)
+ulin support (red), load (yellow) with ref node (blue)
 frame
 zoom 1.5
 rot -x
@@ -80,12 +80,13 @@ rot c 90
 rot l 10
 rot u 10
 view elem
-plot f all n
+plot n ref r
+plus f all n
 plus f load1 y
 plus f load2 y
 plus f load3 y
-plus na ref b
-plus n support r
+plus n ref b 10
+plus n support r 10
 hcpy png
 sys mv hcpy_1.png Refs/mesh.png
 
@@ -94,8 +95,9 @@ sys ccx Biegung
 read Biegung.frd new
 
 # display of stress distribution and deformed geometry
-text Stress distribution
+ulin Stress distribution
 view disp
+view sh
 scal d 1000
 # sxx
 ds 2 e 1
@@ -103,14 +105,16 @@ hcpy png
 sys mv hcpy_2.png Refs/sxx.png
 
 # neutral fiber
-text Neutral fiber
+ulin Neutral fiber
 steps 2
 hcpy png
 sys mv hcpy_3.png Refs/neutral.png
 
-text displacement
-plot f all n
+ulin displacement
 rot -x
 rot c 90
+plot n all r 1
+plus f all n
+
 hcpy png
 sys mv hcpy_4.png Refs/disp.png

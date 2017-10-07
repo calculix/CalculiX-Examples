@@ -1,6 +1,6 @@
 
 # run the simulations and generate the images
-text Distributing coupling
+ulin Distributing coupling
 sys cp dpin.inc pin.inc
 sys ccx solve > solve-d.log
 read solve.frd new
