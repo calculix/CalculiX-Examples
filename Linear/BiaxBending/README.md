@@ -23,7 +23,7 @@ z0z       | 20    | z reference location in mm
 la        | 40    |
 lb        | 10    |
 th        | 3     |
-L profile          |       | 
+L profile          |       |
 y0a       | -90   | y reference location in mm
 z0a       | 20    | z reference location in mm
 la        | 40    |

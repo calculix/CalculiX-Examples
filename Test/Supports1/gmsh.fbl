@@ -6,7 +6,7 @@ send s1 abq sur
 send s2 abq sur
 send all abq
 # image
-text bearing surfaces (red and blue)
+ulin bearing surfaces (red and blue)
 view elem
 plot f all n
 plus f s1 r
@@ -18,6 +18,13 @@ sys mv hcpy_1.png Refs/mesh.png
 sys ccx solve
 
 read solve.frd new
+
+# ref node plots, nodes are defined in the INP file
+ulin Ref nodes
+plot n r1 r 10
+plus n r2 b 10
+hcpy png
+sys mv hcpy_1.png Refs/refnodes.png
 
 # movie counter
 valu counter 0

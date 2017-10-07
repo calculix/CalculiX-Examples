@@ -1,5 +1,5 @@
 # Supports using distributing coupling
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 /CCX 2.12
 
 + Use of distributing coupling to model bearings of a shaft
 + Modal analysis
@@ -15,9 +15,11 @@ The geometry represents a gearbox shaft with bearing journals at the ends. These
 
 Note that this works only for solid elements (not for shells).
 
-The mesh is generated using Gmsh, as the meshing in CGX fails (massive production of elements with negative Jacobian, see issue #19).
+```
+> cgx .b run.fbl
+```
 
-<img src="Refs/mesh.png" width="400">
+<img src="Refs/cgx-mesh.png" width="400">
 
 Constraints of the ref nodes
 
@@ -31,8 +33,20 @@ The shaft is free to rotate.
 
 Bending modes rotate about the centers of the bearing surfaces
 
-<img src="Refs/shape_3.gif" width="400"><img src="Refs/shape_6.gif" width="400">
+<img src="Refs/shape_2.gif" width="400"><img src="Refs/shape_5
+.gif" width="400">
 
 The left bearing is constrained in longitudinal direction (x), the right one is not. It is clearly visible that the bearing surfaces can deform (which they could not with kinematic coupling)
 
 <img src="Refs/shape_12.gif" width="400">
+
+## Meshing with Gmsh
+
+In CGX 2.12 there was a bug, which resulted in fail of meshing the geometry.
+Therefore, an alternative simulation with gmsh as pre-processor has been set up
+
+```
+> cgx -b gmsh.fbl
+```
+
+<img src="Refs/mesh.png" width="400">

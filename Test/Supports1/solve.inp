@@ -9,7 +9,7 @@
 7.85e-9
 ** material assignment to bodies
 *solid section, elset=Eall, material=steel
-** coupling
+** coupling, note that the ref node location for distr. coupling is irrelevant
 *node, nset=r1
 10000,0,0,0
 *coupling,surface=Ss1,refnode=10000,constraint name=c1
