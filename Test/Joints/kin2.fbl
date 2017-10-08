@@ -3,7 +3,7 @@ ulin Kinematic coupling
 sys ccx solve2 > solve-k.log
 read solve2.frd new
 read solve2.inp nom
-break
+
 frame
 view elem
 rot -z
