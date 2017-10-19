@@ -1,3 +1,13 @@
+# qu8r qu8
+valu etyp qu4
+valu ctyp tie
+
+# this leads to a segfault
+# valu frdname & ctyp .frd
+
+valu ext .frd
+valu frdname & ctyp ext
+
 # plate 1
 seto s1
 pnt p0 0 0 0
@@ -13,10 +23,11 @@ swep s2 new tra 0 7 0
 setc s2
 
 # mesh
-#div all mult 2
-#elty all qu8
-#elty all qu8r
-elty all qu4
+# generate 4x4 elements with or without midside nodes
+if etyp ne qu4
+   div all mult 2
+endif
+elty all etyp
 mesh all
 
 # surface
@@ -56,3 +67,13 @@ plus n k1 r 8
 frame s1
 hcpy png
 sys mv hcpy_2.png contact.png
+
+sys ccx ctyp
+sys dat2txt ctyp
+
+read frdname
+view elem
+view sh
+plot fv all
+scal d 2
+ds 1 a 4
