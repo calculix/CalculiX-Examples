@@ -1,6 +1,6 @@
 
 # Non-linear Buckling
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13/CCX 2.13
 
 + Large displacements
 + Plasticity

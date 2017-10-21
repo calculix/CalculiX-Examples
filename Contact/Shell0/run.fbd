@@ -1,7 +1,21 @@
-# qu8r qu8
-valu etyp qu4
-valu ctyp tie
+# set default for etyp and ctyp
+#valu etyp qu4
+#valu etyp qu8
+#valu etyp qu8r
+#valu ctyp tie
+#valu ctyp equ
+#valu ctyp pc-ss
+#valu ctyp pc-ns
 
+# read values from file. If file doesn't exist, the defaults are used
+# print pwd
+sys pwd
+stack on
+read values.fbd
+
+
+# etyp ctyp
+ulin etyp: etyp , ctyp: ctyp
 # this leads to a segfault
 # valu frdname & ctyp .frd
 
@@ -69,7 +83,9 @@ hcpy png
 sys mv hcpy_2.png contact.png
 
 sys ccx ctyp
-sys dat2txt ctyp
+sys python dat2txt.py ctyp
+
+ulin etyp: etyp , ctyp: ctyp
 
 read frdname
 view elem
@@ -77,3 +93,7 @@ view sh
 plot fv all
 scal d 2
 ds 1 a 4
+
+if last eq quit
+   quit
+endif
