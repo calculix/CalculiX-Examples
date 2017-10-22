@@ -65,7 +65,7 @@ frame
 zoom 8
 tra l 75
 tra d 10
-plot f base n
-plus n outer r 1
+plot n all r 1
+plus f base n
 hcpy png
 sys mv hcpy_3.png cuty0.png
