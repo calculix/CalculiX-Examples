@@ -17,6 +17,7 @@ ds 30 e 1
 rot -z
 plot f all n
 plus l path b 6
+plus p cp b 10
 hcpy png
 sys mv hcpy_1.png path0geo.png
 plot fv all
@@ -26,6 +27,7 @@ sys convert -rotate 90 graph_0.ps path0.png
 view disp
 plot f all n
 plus l path b 6
+plus p cp b 10
 hcpy png
 sys mv hcpy_2.png pathgeo.png
 graph path length +

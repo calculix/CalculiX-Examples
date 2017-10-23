@@ -1,8 +1,8 @@
 # Tensile Test
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 Issues
-* dark shading of `expanded.png`
+* dark shading of `expanded.png` worked around with
 
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
@@ -22,6 +22,7 @@ The model is axisymmetric and represents a 2 mm piece of the wire with full disp
 | [expansion.fbd](expansion.fbd) | Post-processing script for CGX (axisymmetric expansion, plots and movie) |
 | [2D.fbd](2D.fbd) | Post-processing script for CGX (2D display) |
 | [Zug.inp](Zug.inp) | CCX input |
+| [test.py](test.py) | Test script |
 
 ## Preprocessing
 This example is designed with two alternative ways for parametrization. Both produce equivalent results.
