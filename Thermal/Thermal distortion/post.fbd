@@ -19,6 +19,7 @@ rot u 6
 tra u 20
 
 # stress plot
+ulin contact: contact
 plot f new n
 plus fv base
 max 3000 f

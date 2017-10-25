@@ -1,9 +1,8 @@
 # Shrinkage Model for Welding Distortion
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Assembly with `*tie` or `*contact pair` connections. Contact version is
 selected via parameter `contact` in `pre.fbd.par`.
-
 + Thermal strain with prescribed temperature
 + Symmetry expansion in post-processing
 
@@ -15,6 +14,7 @@ selected via parameter `contact` in `pre.fbd.par`.
 | [pc-ss.inc](pc-ss.inc) | CCX surface-to-surface penalty contact definition |
 | [tie.inc](tie.inc)     | CCX MPC contact definition with `*tie`            |
 | [Tjoint.inp](Tjoint.inp)     | CCX input          |
+| [test.py](test.py])     | Python script to run both contact versions         |
 
 ## Preprocessing
 Three separate parts are generated.

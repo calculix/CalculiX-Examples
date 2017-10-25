@@ -1,5 +1,5 @@
 # 90°-Bending of an Elastic Strip
-Tested with CGX 2.12.1/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is
@@ -13,6 +13,8 @@ circle. We investigate the following cases:
 * Solid model with coupling/distributing constraint,
 * Solid model with coupling/kinematic constraint,
 
+
+
 Model                    | CGX input        | CCX input
 :-------                 | :-------------   |:---        
 Beam                     | [b.fbd](b.fbd)   | [b.inp](b.inp)
@@ -24,10 +26,12 @@ Solid, Coupl./Kinem.     | [sck.fbd](sck.fbd) | [sck.inp](sck.inp)
 
 
 
-Auxiliary CGX Files         | Contents     
+Other files         | Contents     
 :-------------              | :-------------
-[def-plot.fbd](def-plot.fbd)| deformation plot
-[view.fbd](view.fbd)        | view settings   
+[def-plot.fbd](def-plot.fbd)| CGX input for deformation plot
+[view.fbd](view.fbd)        | CGX input for view settings   
+[test.py](test.py)| Python script to run all simulations
+
 ## Reference solution
 Click the image below to open a life SMath worksheet
 

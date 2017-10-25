@@ -69,7 +69,7 @@ send fdep abq sur
 send all abq nam
 sys cp <contact>.inc contact.inc
 # write parameter for post-processing
-sys echo valu contact <contact> >> contact.fbd
+sys echo valu contact <contact> > contact.fbd
 view elem
 rot -z
 rot r 15
