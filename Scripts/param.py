@@ -28,14 +28,22 @@ if len(sys.argv)>1:
     source = sys.argv[1]
     # check if parameter values are given on the command line
     if len(sys.argv)>2:
-        print sys.argv[2:]
-
-print("Source "+source)
+        argParams=sys.argv[2:]
+        #print sys.argParams
+        argParamsDict={}
+        for argParam in argParams:
+            key,val=argParam.split("=")
+            print key,val
+            argParamsDict[key]=val
+        print argParamsDict    
+            
+# open files
+print("Source: "+source)
 if source.endswith(".par"):
     target = source[0:-4]
 elif source.startswith("par."):
     target = source[4:]
-print("Target "+target)
+print("Target: "+target)
 f = open(source,"r")
 fo = open(target,"w")
 # context dictionaries for evaluation
@@ -71,6 +79,12 @@ for line in f:
                     res=active
                     val=str(eval(active[:active.find("=")],g,l))
                     print(active+"  ("+val+")")
+                    # check for override by command line
+                    key=active.split("=")[0]
+                    if key in argParamsDict:
+                        exec(key+"="+argParamsDict[key],g,l)
+                        print "  Override by command line: ("+argParamsDict[key]+")"
+                        res=key+"="+argParamsDict[key]
                 except Exception as ex:
                     #template = "An exception of type {0} occured. Arguments:\n{1!r}"
                     #print template.format(type(ex).__name__, ex.args)

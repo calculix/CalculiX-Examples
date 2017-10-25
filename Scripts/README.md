@@ -1,11 +1,11 @@
 # Helper Scripts
 These scripts augment the automation capabilities of CGX.
 
-File                    | Contents    
- :-------------         | :-------------
- [dat2txt.py](dat2txt.py)     | Extract time history and frequency data from DAT files     
+File                        | Contents    
+ :-------------             | :-------------
+ [dat2txt.py](dat2txt.py)   | Extract time history and frequency data from DAT files     
  [monitor.py](monitor.py)   | Create convergence plots based on the CVG and STA files
- [param.py](param.py) | Preprocessor for python expressions in arbitrary files
+ [param.py](param.py)       | Preprocessor for python expressions in arbitrary files
  [periodic.py](periodic.py) | Preprocessor to generate periodic boundary conditions for brick-shaped RVE meshes
  [separate.py](separate.py) | Preprocessor to split an existing mesh such that no node is used by more than one element. Continuity is enforced by equations instead. Purpose: Avoid nodal averaging of results.
 
@@ -104,11 +104,13 @@ expressions. These expressions can contain variables, which can be defined at
 the beginning (or elsewhere in the file) and can be referenced wherever below
 their definition.
 
+Definitions in the file can be overridden from the command line.
+
 ### Usage
 
 * Copy the file to be parametrized to `<filename>.par` or (better) `par.<filename>`, where `<filename>` can include any extension. This will become the source file for parametrization.
 
-  Prefixing with `par.` is recommended, as this does not spoil the syntax highlighting in editors and you can call `param.py` without specifying the file name.
+  Prefixing with `par.` is recommended, as this does not spoil the syntax highlighting in editors and you can call `param.py` without specifying the file name if there is just one such file in the current directory.
 
 * In `<filename>.par` or `par.<filename>` add parameter definitions, preferably in comment lines.   
   * To assign the value 4 to the variable a, include `<a=4>` to such a line.
@@ -157,6 +159,15 @@ replaced (pre-processing):
 |                 | `<sqrt(2)>`      | `1.414...`  |
 |                 | `<pi/2>`         | `1.57...`   |
 
+### Overriding parameter values from the command line
+
+You can override definitions in the file from the command line using additional command line parameters of the form `name=value` just like you would write in the `<...>` tags in the file.
+Definitions from the command line take precedence to whatever assignments to the variable `name` within the file.
+```
+> param.py par.<filename> <name1>=<value1> <name2>=<value2>
+```
+This feature is designed to support script-controlled parametric studies without the need to edit the parameter definitions inside the files.
+
 ### param.py vs. CGX valu
 
 CGX supports parametrization starting with version 2.7 (see the `valu` command).
@@ -166,6 +177,7 @@ Advantages of param.py over CGX valu
 * Non-CGX-files can be parametrized (e.g. CCX input)
 * More natural expressions (CGX has reversed polish notation)
 * Large variety of available python functions
+* Parameter override from the command line
 
 Disadvantages:
 * Extra pre-processing step required
