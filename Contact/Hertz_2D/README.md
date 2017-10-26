@@ -1,5 +1,5 @@
 # Hertz Contact 2D
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Plane strain model
 + Linear elasticity
@@ -16,17 +16,17 @@ The model was inspired by  [this post](https://groups.yahoo.com/neo/groups/calcu
 | [post.fbd](post.fbd)   | CGX post-processing script                    |
 | [plots.fbd](plots.fbd) | CGX post-processing script) path plots)       |
 | [plots.gnu](plots.gnu) | Gnuplot script for path plots                 |
-
+| [test.py](test.py)     | Python script to run the example              |
 ## Preprocessing
 
 
-| Parameter      | Value   | Meaning                      |
+| Parameter      | Value   | Description                  |
 | :------------- |  :----  | :-------------               |
 | `radius`       | 50      | radius in mm                 |
 | `height`       | 60      | thickness of the block in mm |
 | `width`        | 120     | width of the block in mm     |
 
-The prescribed displacement or the pressure are applied to the flat equatorial surface of the cylinder.
+The prescribed displacement (first step) or the pressure (second step) are applied to the flat equatorial surface of the cylinder.
 
 The values for both variants are chosen independently, thus they can't be compared directly.
 ```

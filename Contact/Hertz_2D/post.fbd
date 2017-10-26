@@ -1,12 +1,16 @@
 read Hertz.frd
 
 rot -z
-ds 2 e 7
 view disp
+
+ulin Prescribed displacement
+ds 2 e 7
 plot fv all
 frame
 hcpy png
 sys mv hcpy_1.png SE_dc.png
+
+ulin Prescribed load
 ds 6 e 7
 plot fv all
 hcpy png
@@ -19,6 +23,8 @@ view elem
 plot fv all
 hcpy png
 sys mv hcpy_3.png SE_pc-zoom.png
+
+ulin Prescribed displacement
 ds 2 e 7
 plot fv all
 hcpy png
