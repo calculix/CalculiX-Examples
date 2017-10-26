@@ -1,20 +1,21 @@
 # Axisymmetric Plate With Hole
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Linear static solution
 + Axisymmetric model
 + Test of expansion sweep in the post-processing for various element types
 + Demonstration of polar co-ordinate system for stress components
 
-File                    | Contents    
- :-------------         | :-------------
- [pre.fbd](pre.fbd)     | Pre-processing script for CGX     
- [post.fbd](post.fbd)   | Post-processing script for CGX
+File                      | Contents    
+ :-------------           | :-------------         
+ [pre.fbd](pre.fbd)       |Pre-processing script for CGX     
+ [post.fbd](post.fbd)     | Post-processing script for CGX
  [plates.inp](plates.inp) | CCX input
+ [test.py](test.py)       | Python script to run the full simulation
 
 ## Preprocessing
 
-| Parameter      | Value   | Meaning                           |
+| Parameter      | Value   | Description                       |
 | :------------- |  :----  | :-------------                    |
 | `Ri`           | 20      | inner radius (hole) in mm         |
 | `Ra`           | 60      | outer radius (rim) in mm          |
