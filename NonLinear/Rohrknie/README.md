@@ -1,5 +1,5 @@
 # Thin-Walled Tube
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13/CCX 2.13
 
 + Modal and static analysis
 + Shell and solid model
@@ -19,7 +19,8 @@ File                       | Contents
  [values.fbd](values.fbd)  | CGX script, model parameters
  [geo.fbd](geo.fbd)        | CGX script, geometry plot
  [post-modal.fbd](post-modal.fbd)      |  CGX-script, Animation of mode shapes
-  [df.gpl](df.gpl)  | Gnuplot command file for the force-displacement-plot
+ [df.gpl](df.gpl)          | Gnuplot command file for the force-displacement-plot
+ [test.py](test.py)        | Python script to run all simulations
 
 In order to avoid inconsistent use of the individual scripts, top level script files are provided, which contain the calls to pre-processing, solving and post-processing.
 ## Reference for the mass properties
