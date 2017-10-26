@@ -1,5 +1,5 @@
 # Thermographic Testing
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Transient thermal analysis
 + Thermal coupling between independent meshes by `*equation`
@@ -14,6 +14,7 @@ File                       | Contents
  [post.fbl](post.fbl)      | CGX script, post-processing, images and movie
  [plots.fbl](plots.fbl)    | CGX script, post-processing, history and path plots
  [Naht.inp](Naht.inp)      | CCX input
+ [test.py](test.py)        | Python script to run the simulation
 
 The model represents an overlap laser weld with a fault (interruption, gap). Such gaps can't be found by visual inspection, as they look like perfect welds from both sides.
 
