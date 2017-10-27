@@ -10,6 +10,8 @@ import sys
 import re
 import glob
 
+argParamsDict={}
+
 # processing command line arguments, get the
 # jobname
 if len(sys.argv)==1:
@@ -30,7 +32,6 @@ if len(sys.argv)>1:
     if len(sys.argv)>2:
         argParams=sys.argv[2:]
         #print sys.argParams
-        argParamsDict={}
         for argParam in argParams:
             key,val=argParam.split("=")
             print key,val

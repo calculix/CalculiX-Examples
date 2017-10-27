@@ -1,17 +1,5 @@
 # Properties of Cross Sections
-Tested with CGX 2.13/CCX 2.12
-
-+ Simply supported beam
-+ Parametric section shapes of identical area
-+ Symmetry reduction
-+ Automatic extraction of results values
-
-File                           | Contents    
- :-------------                | :-------------
- [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing, parametrized with param.py
- [post.fbl](post.fbl)          | CGX script, post-processing, images and bar chart
- [Biegung.inp](Biegung.inp)    | CCX input
- [barchart.gpl](barchart.gpl)  | Gnuplot file for the bar chart
+Tested with CGX 2.13 / CCX 2.13
 
 The model contains several simply supported beams under gravity load of equal section area but different section shape.
 Objective is to determine the relative stiffness and strength (yield limit) with respect to the square section.

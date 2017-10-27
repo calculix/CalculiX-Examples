@@ -47,14 +47,15 @@ valu s3 pop 2
 enq NIprofile max rec 0 _ _ 1 h
 valu s4 pop 2
 
-plot f base n
-text Maximum Bending Stress
-rot x
-rot d 10
+plot fv base
+ulin Maximum Bending Stress
+#rot x
+#rot d 10
 frame
 view elem off
 view edge off
-plus nv max k
+txt max nf -0.15 -0.1
+plus nt max k
 frame
 hcpy png
 sys mv hcpy_3.png Refs/stress.png
@@ -72,9 +73,10 @@ valu w3 pop 2
 enq NIprofile maxd rec 0 _ _ 1 h
 valu w4 pop 2
 
-plot f base n
-text Maximum Displacement
-plus nv maxd k
+plot fv base
+ulin Maximum Displacement
+txt maxd nf -0.15 -0.1
+plus nt maxd k
 frame
 hcpy png
 sys mv hcpy_4.png Refs/disp.png
