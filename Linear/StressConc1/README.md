@@ -1,5 +1,5 @@
 # Stress concentration in a flat strip with hole under bending load
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Plane stress model
 + Parametric geometry and load
@@ -12,6 +12,7 @@ File                           | Contents
  [Stress.inp](Stress.inp)      | CCX input, kinematic coupling
  [par.run1.fbl](par.run1.fbl)  | CGX script, complete analysis, kinematic coupling
  [Stress1.inp](Stress1.inp)    | CCX input, kinematic coupling
+ [test.py](test.py)            | Python script to run the simulation
 
 
 ## Reference Estimates
@@ -104,7 +105,7 @@ statistics for surface set SLOAD and time  0.1000000E+01
 
   total surface force (fx,fy,fz) and moment about the origin(mx,my,mz)
 
-   1.185272E+00  5.843811E-01 -6.991656E-13 -2.158506E-12  6.992085E-11 -1.148262E+02
+   7.815719E-01  6.560960E-01 -8.669194E-14  1.025126E-11  8.659184E-12 -9.624174E+01
 
   center of gravity and mean normal
 
@@ -112,9 +113,9 @@ statistics for surface set SLOAD and time  0.1000000E+01
 
   moment about the center of gravity(mx,my,mz)
 
-  -2.158519E-12  4.318024E-15 -1.732644E+02
+   1.025124E-11 -9.992000E-15 -1.618513E+02
 
   area,  normal force (+ = tension) and shear force (size)
 
-   6.000000E+01  1.185272E+00  5.843811E-01
+   6.000000E+01  7.815719E-01  6.560960E-01
 ```
