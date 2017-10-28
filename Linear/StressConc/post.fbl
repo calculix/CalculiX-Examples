@@ -23,6 +23,7 @@ sys mv hcpy_1.png Refs/worstps.png
 
 # zoom in and annotate maximum
 zoom 3
-plus nv max
+txt max n 0.05 0.05
+plus nt max r
 hcpy png
 sys mv hcpy_2.png Refs/worstps-zoom.png

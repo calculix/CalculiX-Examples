@@ -1,5 +1,5 @@
 # Stress Concentration
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13/CCX 2.13
 
 + Axisymmetric part under tensile load
 + Free meshing with biased line divisions
@@ -9,6 +9,7 @@ File                           | Contents
  [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing, parametrized with param.py
  [post.fbl](post.fbl)          | CGX script, post-processing,
  [Stress.inp](Stress.inp)      | CCX input
+ [test.py](test.py)            | Python script to run the simulation
 
 ## Pre-Processing
 
