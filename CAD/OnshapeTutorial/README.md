@@ -1,5 +1,5 @@
-# Meshing a CAD Geometry with Gmsh
-Tested with CGX 2.13 / CCX 2.12, Gmsh 3.0.5
+b# Meshing a CAD Geometry with Gmsh
+Tested with CGX 2.13 / CCX 2.13, Gmsh 3.0.5
 
 This demonstrates a possible workflow for a CalculiX analysis of a CAD
 generated part.
@@ -19,12 +19,12 @@ generated part.
 * Run the analysis
 * Perform postprocessing
 
-## Issues
+## Issues in Gmsh
 
-+ inverted elements if virtual topology is used
++ inverted elements if virtual topology is used (fixed by `Mesh.RemeshParametrization = 7;`)
 + midside nodes aren't on the surface
 
-The script `run1.fbd` demonstrate the use of the new import and meshing capabilities of CGX 2.12.
+The script `run1.fbd` demonstrates the use of the new import and meshing capabilities of CGX 2.12.
 
 | File                     | Contents                                                       |
 | :-------                 | :-------------                                                 |
@@ -35,6 +35,7 @@ The script `run1.fbd` demonstrate the use of the new import and meshing capabili
 | [partVT.geo](partVT.geo) | Gmsh control file with geometry cleaning (virtual topology)    |
 | [VTdemo.fbd](VTdemo.fbd) | CGX file for the mesh plots (original and VT version)          |
 | [solve.inp](solve.inp)   | CCX input file                                                 |
+| [test.py](test.py)       | python script to run the simulation                            |
 
 # Run the analysis
 
