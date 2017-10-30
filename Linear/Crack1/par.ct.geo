@@ -1,7 +1,11 @@
+// param.py par.ct.geo
+// <B=20.>
+// <a=20.5>
+// <t=2.>
 // CT specimen
-B=20;   // Width
-a=20.5; // Crack length
-t=2;    // Cut half width
+B=<B>;   // Width
+a=<a>;   // Crack length
+t=<t>;   // Cut half width
 // derived parameters
 W=2*B;
 s=0.55*W;

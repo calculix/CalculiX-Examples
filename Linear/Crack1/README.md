@@ -1,19 +1,20 @@
 # Energy Release Rate (Global Energy Method)
-Tested with CGX 2.13 / CCX 2.12, Gmsh 3.0.5
+Tested with CGX 2.13 / CCX 2.13, Gmsh 3.0.5
 
 + Linear static solution
 + Symmetric model
 + Parametric modeling and meshing with Gmsh
++ Command line parametrization with param.py
 + Evaluation of the total strain energy
 
-File                    | Contents    
- :-------------         | :-------------
- [ct.fbd](ct.fbd)       | Full analysis control script for CGX     
- [ct.geo](ct.geo)       | Parametric geometry and meshing script for Gmsh
- [solve.inp](solve.inp) | CCX input
- [path.fbd](path.fbd)   | CGX script for the path plot
- [path.plt](path.plt)   | Gnuplot script for the path plot
-
+File                      | Contents    
+ :-------------           | :-------------
+ [ct.fbd](ct.fbd)         | Full analysis control script for CGX     
+ [par.ct.geo](par.ct.geo) | Parametric geometry and meshing script for Gmsh
+ [solve.inp](solve.inp)   | CCX input
+ [path.fbd](path.fbd)     | CGX script for the path plot
+ [path.plt](path.plt)     | Gnuplot script for the path plot
+ [test.py](test.py)       | python script to run the simulation  
 
 <img src="Refs/se.png" width="400" title="Equivalent stress">
 
@@ -23,8 +24,8 @@ The energy release rate is determined from two simulation runs with the present 
 
 a in mm | Strain energy of the quarter model in Nmm
 :---    | :---
-20.5    | 0.050053
-21.0    | 0.053080
+20.5    | 0.05009
+21.0    | 0.05309
 
 [![Screenshot](CT-test.png)](http://en.smath.info/cloud/worksheet/kC3ENnvc)
 
@@ -39,19 +40,25 @@ From the difference of the strain energy for two different crack lengths the ene
 release rate can be calculated.
 
 In order to determine the energy release rate, run the model twice with
-different settings of the crack length `a` in `ct.geo`
+different settings of the crack length `a`.
 
 For each run, record the crack length a and the strain energy from the file `solve.dat`.
 
-Run the analysis using
+Set the crack length:
+```
+> param.py par.ct.geo a=20.5
+```
+Run the analysis:
 ```
 > cgx -b ct.fbd
 ```
 To update the gmsh mesh plot, export it from within gmsh, otherwise the the image is not framed appropriately.
 
 ## Preprocessing
-Run the mesh generation using
+
+Run the mesh generation with optional specification of the crack length
 ```
+> param.py par.ct.geo a=20.5
 > gmsh ct.geo
 ```
 The script `ct.geo` creates a quarter model of the ct specimen using the gmsh bottom-up
