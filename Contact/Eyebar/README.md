@@ -1,5 +1,5 @@
 # Eye/Pin Contact 2D
-Tested with CGX/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Plane strain model (can be switched to plane stress)
 + Linear elastic pin, elasto-plastic eye
@@ -10,14 +10,14 @@ Tested with CGX/CCX 2.12
 The model was inspired by a  [model ](https://groups.yahoo.com/neo/groups/calculix/files/examples/eyebar%20with%20contact%20and%20nonlinear%20material/) by user dichtstoff in the CalculiX user forum. Here, essentially, parametrization with the script `param.py` was added.
 
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [par.eyebar.fbd](par.eyebar.fbd)     | Pre-processing script for CGX  (parametrized with `param.py`)                |
-| [eyebar.inp](eyebar.inp) | CCX input |
-| [post.fbd](post.fbd)   | CGX post-processing script                    |
-| [df.gnu](df.gnu)   | Gnuplot script for the force-displacement plot    |
-| [path.gnu](path.gnu)   | Gnuplot script for the stress profiles        |
-
+ File                             | Contents                                    
+ :-------------                   | :-------------                                
+ [par.eyebar.fbd](par.eyebar.fbd) | Pre-processing script for CGX  (parametrized with `param.py`)  
+ [eyebar.inp](eyebar.inp)         | CCX input
+ [post.fbd](post.fbd)             | CGX post-processing script                 
+ [df.gnu](df.gnu)                 | Gnuplot script for the force-displacement plot   
+ [path.gnu](path.gnu)             | Gnuplot script for the stress profiles      
+ [test.py](test.py)               | Python script to run the full simulation
 
 ## Preprocessing
 Two separate parts are generated and meshed with plane strain elements.
