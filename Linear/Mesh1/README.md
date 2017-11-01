@@ -1,5 +1,5 @@
 # Modal analysis
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Modal analysis with automatic generation of mode shape animations
 + Parametric model
@@ -10,7 +10,7 @@ File                      | Contents
  [pre.fbl](pre.fbl)       | Preprocessing script for CGX     
  [modal.inp](modal.inp)   | CCX input
  [shapes.fbl](shapes.fbl) | CGX script for postprocessing (mode shape movies)
-
+ [test.py](test.py)       | Python script to run the full simulation
 
 <img src="Refs/mesh.png" width="400" title="mesh">
 
