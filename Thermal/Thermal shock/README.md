@@ -1,5 +1,5 @@
 # Thermal Strain
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Transient coupled thermo-mechanical analysis
 + Bending of a plate due to one-sided heating
@@ -14,6 +14,7 @@ File                       | Contents
  [anim.fbl](anim.fbl)      | CGX script, movie
  [history.gnu](history.gnu)| Gnuplot script for the time history plot
  [profile.gnu](profile.gnu)| Gnuplot script for the profile plot
+ [test.py](test.py)        | Python script to run the full simulation
 
 The model represents a rectangular plate, which is supported in the center and exposed to a transient heat flux (excitation) at the upper side.
 
