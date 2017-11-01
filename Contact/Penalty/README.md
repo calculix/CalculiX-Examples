@@ -1,20 +1,21 @@
 # Basic Tests of Penalty Contact
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Completely displacement controlled model (no dofs)
 + Objective: extract pressure-penetration characteristic for various contact options
 
-| File                       | Contents                                      |
-| :-------------             | :-------------                                |
-| [all.fbd](all.fbd)         | Top level control script for CGX              |
-| [one.fbd](one.fbd)         | CGX script for a single test                  |
-| [s2s-lin.inc](s2s-lin.inc) | CCX contact definition (surface-to-surface, linear)        |
-| [s2s-tie.inc](s2s-tie.inc) | CCX contact definition (surface-to-surface, tied)        |
-| [n2s-lin.inc](n2s-lin.inc) | CCX contact definition (node-to-surface, linear)        |
-| [n2s-exp.inc](n2s-exp.inc) | CCX contact definition (node-to-surface, exponential)        |
-| [n2s-tab.inc](n2s-tab.inc) | CCX contact definition (node-to-surface, tabular)        |
-| [solve.inp](solve.inp)     | CCX input (generic)      |
-| [pd.gnu](pd.gnu)           | Gnuplot script for the pressure-penetration diagram      |
+ File                       | Contents                                             
+:-------------              | :-------------                                 
+ [all.fbd](all.fbd)         | Top level control script for CGX            
+ [one.fbd](one.fbd)         | CGX script for a single test                
+ [s2s-lin.inc](s2s-lin.inc) | CCX contact definition (surface-to-surface, linear)     
+ [s2s-tie.inc](s2s-tie.inc) | CCX contact definition (surface-to-surface, tied)      
+ [n2s-lin.inc](n2s-lin.inc) | CCX contact definition (node-to-surface, linear)       
+ [n2s-exp.inc](n2s-exp.inc) | CCX contact definition (node-to-surface, exponential)       
+ [n2s-tab.inc](n2s-tab.inc) | CCX contact definition (node-to-surface, tabular)       
+ [solve.inp](solve.inp)     | CCX input (generic)      
+ [pd.gnu](pd.gnu)           | Gnuplot script for the pressure-penetration diagram    
+ [test.py](test.py)         | Python script to run the full simulation
 
 Run the complete example using
 ```
