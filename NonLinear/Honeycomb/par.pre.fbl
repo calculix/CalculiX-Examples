@@ -142,7 +142,7 @@ elty cyl2 qu4
 
 plot n all
 hcpy png
-sys mv hcpy_3 all_nodes_1.png
+sys mv hcpy_3.png all_nodes_1.png
 
 mesh cyl1
 mesh cyl2
@@ -151,7 +151,7 @@ plot n all
 plus n cyl1 g
 plus n cyl2 t
 hcpy png
-sys mv hcpy_4 all_nodes_2.png
+sys mv hcpy_4.png all_nodes_2.png
 
 #comp * do
 send all abq

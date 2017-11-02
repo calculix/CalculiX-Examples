@@ -1,5 +1,5 @@
 # Honeycomb Sandwich
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13/CCX 2.13
 
 + Non-linear static analysis
 + Plasticity
@@ -15,7 +15,7 @@ File                        | Contents
 [post.fbd](post.fbd)        | CGX script, post-processing
 [Biegung.inp](Biegung.inp)  | CCX input
 [df.gnu](df.gnu)            | Gnuplot script
-
+[test.py](test.py)          | Python script to run the full simulation
 
 The model represents a four point bending test on an elasto-plastic aluminium honeycomb sandwich plate. The honeycombs are of expanded type, i.e. 1/3 of the walls has double thickness.
 
