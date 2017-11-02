@@ -1,18 +1,19 @@
 # Spring/Mass Oscillator
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Frequency response analysis
 + 2-Mass oscillator
 + Mass element faked using beam element and appropriate constraints.
 + Simulation with real mass elements fails because the eigenvalue solver can't handle small systems.
 
-| File                     | Contents                        |
-| :-------------           | :-------------                  |
-| [run.fbd](run.fbd)       | Top level control script for CGX|
-| [MS.inp](MS.inp)         | Input for CCX                   |
-| [runM.fbd](runM.fbd)     | Top level control script for CGX, discrete mass|
-| [MSM.inp](MSM.inp)       | Input for CCX, discrete mass                  |
-| [V.gnu](V.gnu)           | Gnuplot script for the response function  |
+ File                     | Contents                        
+ :-------------           | :-------------                  
+ [run.fbd](run.fbd)       | Top level control script for CGX
+ [MS.inp](MS.inp)         | Input for CCX                   
+ [runM.fbd](runM.fbd)     | Top level control script for CGX, discrete mass
+ [MSM.inp](MSM.inp)       | Input for CCX, discrete mass                  
+ [V.gnu](V.gnu)           | Gnuplot script for the response function  
+ [test.py](test.py)       | Python script to run the full simulation
 
 The system consists of two rigid bodies connected by springs and dashpots.
 
