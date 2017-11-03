@@ -1,22 +1,23 @@
 # Supports using coupling
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Test of distributing and kinematic coupling
 + Modal analysis
 + Large rotations
 
 
-File                           | Contents    
- :-------------                | :-------------
- [pre.fbl](pre.fbl)            | CGX script, pre-processing
- [shapes.fbd](shapes.fbd)      | CGX script, post-processing, animation of mode shapes
- [anim.fbl](anim.fbl)          | CGX script, time history animation
- [post.fbl](post.fbl)          | CGX script, images and surface data plots
- [trfix.fbl](trfix.fbl)        | CGX script, images and surface data plots
- [solve.inp](solve.inp)        | CCX input for frequency analysis
- [trans.inp](trans.inp)        | CCX input for static analysis
- [trfix.inp](trfix.inp)        | CCX input for the reference solution
- [surface.gpl](surface.gpl)    | Gnuplot script for section data
+File                          | Contents    
+:-------------                | :-------------
+[pre.fbl](pre.fbl)            | CGX script, pre-processing
+[shapes.fbd](shapes.fbd)      | CGX script, post-processing, animation of mode shapes
+[anim.fbl](anim.fbl)          | CGX script, time history animation
+[post.fbl](post.fbl)          | CGX script, images and surface data plots
+[trfix.fbl](trfix.fbl)        | CGX script, images and surface data plots
+[solve.inp](solve.inp)        | CCX input for frequency analysis
+[trans.inp](trans.inp)        | CCX input for static analysis
+[trfix.inp](trfix.inp)        | CCX input for the reference solution
+[surface.gpl](surface.gpl)    | Gnuplot script for section data
+[test.py](test.py)            | Python script to run the full simulation
 
 The model contains a brick shaped beam with dimensions given by parameters in `pre.fbl`.
 
@@ -52,7 +53,7 @@ For each step, 10 mode shapes are stored.
 ```
 Post-Processing
 ```
-> cgx -b shapes.fbl
+> cgx -b shapes.fbd
 ```
 Free (unconstrained reference node).
 
