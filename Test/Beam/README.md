@@ -1,6 +1,6 @@
 ># Coupling with beams
 
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Test of coupling with beam nodes
 + Distributing and kinematic coupling
@@ -18,11 +18,12 @@ Feature request:
 + Distributing coupling such that the CG of the surface and the ref node are coupled rigidly (to allow for a distant force or a distant support without constraining the deformation of the coupled surface).
 
 
-File                           | Contents    
- :-------------                | :-------------
- [test.fbl](test.fbl)          | Top level CGX script, full test program
- [run.fbl](run.fbl)            | CGX script, subprogram for a single simulation
- [modal.inp](modal.inp)        | CCX input
+File                          | Contents    
+:-------------                | :-------------
+[test.fbl](test.fbl)          | Top level CGX script, full test program
+[run.fbl](run.fbl)            | CGX script, subprogram for a single simulation
+[modal.inp](modal.inp)        | CCX input
+[test.py](test.py)            | Python script to run the full simulation
 
 Name                  | Coupling      | Ref node | dofs
 :----                 | :----         | :----    | :---
