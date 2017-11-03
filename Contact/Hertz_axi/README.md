@@ -1,18 +1,19 @@
 # Hertz contact axisymmetric (sphere to plane)
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Axisymmetric model
 + Linear elasticity
 + Surface-to-surface Penalty contact
 + Force (pressure) control
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [pre.fbd](pre.fbd)     | Pre-processing script for CGX  (parametrized with `valu`)                |
-| [Hertz.inp](Hertz.inp) | CCX input, surface-to-surface penalty contact |
-| [post.fbd](post.fbd)   | CGX post-processing script                    |
-| [plots.fbd](plots.fbd) | CGX post-processing script (path plots)       |
-| [plots.gnu](plots.gnu) | Gnuplot script for path plots                 |
+File                   | Contents                                      
+:-------------         | :-------------                               
+[pre.fbd](pre.fbd)     | Pre-processing script for CGX  (parametrized with `valu`)               
+[Hertz.inp](Hertz.inp) | CCX input, surface-to-surface penalty contact
+[post.fbd](post.fbd)   | CGX post-processing script                    
+[plots.fbd](plots.fbd) | CGX post-processing script (path plots)       
+[plots.gnu](plots.gnu) | Gnuplot script for path plots                 
+[test.py](test.py)     | Python script to run the full simulation
 
 ## Preprocessing
 
