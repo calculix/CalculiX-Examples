@@ -1,5 +1,5 @@
 # Tensile Test of FDM layers, plane and orthogonal boundaries
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 Tensile test of unidirectional FDM (3D printed) layers with load application perpendicular to the printing plane. The layed roads only partially bond between each other and to the layer below. The localized strains at the resulting notches lead to material failure at global strains much below the maximum elongation of the base material (embrittlement).
 
@@ -13,13 +13,14 @@ The test specimen is a quarter unit cell out of an infinite Block of layers. Thi
 + Handover of parameters to the gnuplot file
 
 
-| File     | Contents    |
-| :------------- | :------------- |
-| [RVE.fbd](RVE.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     |
-| [post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot) |
-| [verify.fbd](verify.fbd) | Post-processing script for CGX (displacement plots) |
-| [pe.gnu](pe.gnu) | Gnuplot control script |
-| [Zug.inp](Zug.inp) | CCX input |
+File                     | Contents    
+:-------------           | :-------------
+[RVE.fbd](RVE.fbd)       | Pre-processing script for CGX (parametrized with valu commands)     
+[post.fbd](post.fbd)     | Post-processing script for CGX (stress-strain curve and deformed plot)
+[verify.fbd](verify.fbd) | Post-processing script for CGX (displacement plots) |
+[pe.gnu](pe.gnu)         | Gnuplot control script
+[Zug.inp](Zug.inp)       | CCX input
+[test.py](test.py)       | Python script to run the full simulation
 
 ## Preprocessing
 
@@ -51,7 +52,7 @@ Boundary conditions:
 
 <img src="mesh.png" width="400"><img src="control.png" width="400">
 
-Compared to the less sophisticated [example](RVE/PlanarSlide), the model require only a fraction (a single layer) of the elements in x-direction and just one quarter of the section.
+Compared to the less sophisticated [example](RVE/PlanarSlide), the model requires only a fraction (a single layer) of the elements in x-direction and just one quarter of the section.
 
 ## Solving
 
