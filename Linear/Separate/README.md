@@ -1,17 +1,18 @@
 # Plane beams - element solution
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Linear static solution
 + Plane stress model
 + Test of element separation to avoid nodal averaging of results (AKA element solution in ANSYS)
 
-File                        | Contents    
- :-------------             | :-------------
- [pre.fbd](pre.fbd)         | Pre-processing script for CGX     
- [post-n.fbd](post-n.fbd)   | Post-processing script for CGX, nodal averaging
- [post-e.fbd](post-e.fbd)   | Post-processing script for CGX, no nodal averaging
- [nodal.inp](nodal.inp)     | CCX input with non-separated mesh (nodal averaging)
- [element.inp](element.inp) | CCX input with separated mesh (no nodal averaging)
+File                       | Contents    
+:-------------             | :-------------
+[pre.fbd](pre.fbd)         | Pre-processing script for CGX     
+[post-n.fbd](post-n.fbd)   | Post-processing script for CGX, nodal averaging
+[post-e.fbd](post-e.fbd)   | Post-processing script for CGX, no nodal averaging
+[nodal.inp](nodal.inp)     | CCX input with non-separated mesh (nodal averaging)
+[element.inp](element.inp) | CCX input with separated mesh (no nodal averaging)
+[test.py](test.py)         | Python script to run the full simulation
 
 ## Preprocessing
 ```
