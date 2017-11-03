@@ -1,5 +1,5 @@
 # Test of Joints
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Test of distributing and kinematic coupling
 + Modal analysis
@@ -36,16 +36,17 @@ Tested with CGX 2.13 / CCX 2.12
 * Segfault destroys already accumulated dat file.
 
 
-File                           | Contents    
- :-------------                | :-------------
- [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing
- [par.pre2.fbl](par.pre2.fbl)  | CGX script, pre-processing, pin-less model
- [dist.fbl](dist.fbl)          | CGX script, simulation and post-pro with distributing coupling
- [kin.fbl](kin.fbl)            | CGX script, simulation and post-pro with kinematic coupling
- [kin2.fbl](kin2.fbl)          | CGX script, simulation and post-pro with kinematic coupling and no pin
- [solve.inp](solve.inp)        | CCX input for model with pin
- [solve2.inp](solve2.inp)      | CCX input for model without pin
- [frequency.gpl](surface.gpl)  | Gnuplot script for frequency chart
+File                          | Contents    
+:-------------                | :-------------
+[par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing
+[par.pre2.fbl](par.pre2.fbl)  | CGX script, pre-processing, pin-less model
+[dist.fbl](dist.fbl)          | CGX script, simulation and post-pro with distributing coupling
+[kin.fbl](kin.fbl)            | CGX script, simulation and post-pro with kinematic coupling
+[kin2.fbl](kin2.fbl)          | CGX script, simulation and post-pro with kinematic coupling and no pin
+[solve.inp](solve.inp)        | CCX input for model with pin
+[solve2.inp](solve2.inp)      | CCX input for model without pin
+[frequency.gpl](surface.gpl)  | Gnuplot script for frequency chart
+[test.py](test.py)            | Python script to run the full simulation
 
 The model represents a hinged joint between two bars. The pin is modeled by a beam which is coupled to the cylindrical surfaces of the holes. Pin-free alternative modelling is also demonstrated.
 
