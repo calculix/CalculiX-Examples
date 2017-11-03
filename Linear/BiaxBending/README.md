@@ -1,13 +1,14 @@
 # Unsymmetric Bending
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Application of bending moment via kinematic coupling without transverse constraints
 + Display of the neutral fiber
 
 File                           | Contents    
- :-------------                | :-------------
- [par.run.fbl](par.run.fbl)    | CGX script top level script, parametrized with param.py
- [Biegung.inp](Biegung.inp)    | CCX input
+:-------------                | :-------------
+[par.run.fbl](par.run.fbl)    | CGX script top level script, parametrized with param.py
+[Biegung.inp](Biegung.inp)    | CCX input
+[test.py](test.py)            | Python script to run the full simulation
 
 ## Model
 
