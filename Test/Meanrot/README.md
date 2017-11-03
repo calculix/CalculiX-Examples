@@ -1,16 +1,17 @@
 # Stress distribution with mean rotation MPC
 
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Test of mean rotation multipoint constraints
 + Stress distribution for applied moments
 + Result: Exhibits the same strange (hyperbolic) stress distribution as distributing coupling, plus stress peaks at boundaries and edges due to equal nodal weights. Distributing coupling is area-weighted, thus no artificial peaks.
 
 File                           | Contents    
- :-------------                | :-------------
- [run.fbl](pre.fbl)            | CGX script, full simulation
- [solve.inp](solve.inp)        | CCX input
- [path.gpl](path.gpl)          | Gnuplot input for path plots
+:-------------                | :-------------
+[run.fbl](pre.fbl)            | CGX script, full simulation
+[solve.inp](solve.inp)        | CCX input
+[path.gpl](path.gpl)          | Gnuplot input for path plots
+[test.py](test.py)            | Python script to run the full simulation
 
 ## Model description
 
