@@ -1,5 +1,5 @@
 # Tensile Test of FDM layers
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Issue: mesh image is too dark (hcpy problem)
 
@@ -16,12 +16,13 @@ Most appropriate (efficient) would be to model a representative volume element w
 + Handover of parameters to the gnuplot file
 
 
-| File                 | Contents    |
-| :-------------       | :------------- |
-| [RVE.fbd](RVE.fbd)   | Pre-processing script for CGX (parametrized with valu commands)     |
-| [post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot) |
-| [pe.gnu](pe.gnu)     | Gnuplot control script |
-| [Zug.inp](Zug.inp)   | CCX input |
+File                 | Contents    
+:-------------       | :-------------
+[RVE.fbd](RVE.fbd)   | Pre-processing script for CGX (parametrized with valu commands)     
+[post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot)
+[pe.gnu](pe.gnu)     | Gnuplot control script
+[Zug.inp](Zug.inp)   | CCX input
+[test.py](test.py)   | Python script to run the full simulation
 
 ## Preprocessing
 
