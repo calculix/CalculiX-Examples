@@ -10,10 +10,9 @@ valu Div1 40
 valu Div2 20
 
 # derived and auxiliary variables
-valu minus1 -1
-valu minusR * R minus1
+valu minusR * R -1
 valu Zc1 + R1 R
-valu Zc1 * Zc1 minus1
+valu Zc1 * Zc1 -1
 valu Zc2 + R2 R
 valu Ftol 1.1
 
