@@ -6,12 +6,13 @@ Tested with CGX 2.13/CCX 2.12
 + Shell edge load
 
 
-|  File                      | Contents    
-|:-------------             | :-------------
+  File                      | Contents    
+ :-------------             | :-------------
  [par.run.fbl](par.run.fbl) | Control script for CGX     
  [solve.inp](solve.inp)     | CCX input
  [vmodes.fbd](vmodes.fbd)   | CGX script, vibration mode movies)
  [bmodes.fbd](bmodes.fbd)   | CGX script, buckling mode movies)
+ [test.py](test.py)         | Python script to run the full simulation
 
 ## Model Description
 The model is a flat L-shaped plate.
@@ -41,7 +42,7 @@ Set the appropriate values for the parameters in `par.run.fbd` and run the simul
 
 If you want to run the analysis separately:
 ```
-> ccx solve.inp
+> ccx solve
 ```
 The analysis consists of 3 steps:
 + Static step, application of preload for the modal analysis

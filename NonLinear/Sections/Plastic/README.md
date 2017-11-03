@@ -1,5 +1,5 @@
 # Properties of Cross Sections (elasto-plastic)
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Simply supported beam with a prescribed displacement in the center
 + Parametric section shapes of identical area
@@ -18,6 +18,7 @@ File                           | Contents
  [chart.fbl](chart.fbl)        | CGX script, chart generation
  [Biegung.inp](Biegung.inp)    | CCX input
  [df.gpl](df.gpl)              | Gnuplot script for the force-displacement-plot
+ [test.py](test.py)            | Python script to run the full simulation
 
 ## Pre-Processing
 
