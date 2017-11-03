@@ -1,15 +1,16 @@
 # Supports using distributing coupling
-Tested with CGX 2.13 /CCX 2.12
+Tested with CGX 2.13 /CCX 2.13
 
 + Use of distributing coupling to model bearings of a shaft
 + Modal analysis
 
 
-File                           | Contents    
- :-------------                | :-------------
- [Welle.stp](Welle.stp)        | Geometry, STEP format, generated using Autodesk INVENTOR
- [pre.fbl](pre.fbl)            | CGX script, meshing with CGX
- [gmsh.fbl](gmsh.fbl)          | CGX script, meshing with Gmsh
+File                          | Contents    
+:-------------                | :-------------
+[Welle.stp](Welle.stp)        | Geometry, STEP format, generated using Autodesk INVENTOR
+[pre.fbl](pre.fbl)            | CGX script, meshing with CGX
+[gmsh.fbl](gmsh.fbl)          | CGX script, meshing with Gmsh
+[test.py](test.py)            | Python script to run the full simulation
 
 The geometry represents a gearbox shaft with bearing journals at the ends. These are modelled using distributing coupling of the cylindrical bearing surfaces. The translations of their centroid is controlled by the displacement of the reference nodes.
 
