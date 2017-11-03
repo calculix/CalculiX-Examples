@@ -1,16 +1,17 @@
 # Telescoping Tubes Under Bending Load
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Telescopic structure of linear elastic tubes
 + Loaded in pure bending (no shear)
 + Surface-to-surface contact
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [pre.fbd](pre.fbd)     | Pre-processing script for CGX                 |
-| [post.fbd](post.fbd)   | Post-processing script for cgx                |
-| [solve.inp](solve.inp) | CCX input                                     |
-| [moment.plt](moment.plt) | Gnuplot input for the moment-time-curve     |
+File                     | Contents                                      
+:-------------           | :-------------                                
+[pre.fbd](pre.fbd)       | Pre-processing script for CGX                 
+[post.fbd](post.fbd)     | Post-processing script for cgx                
+[solve.inp](solve.inp)   | CCX input                                     
+[moment.plt](moment.plt) | Gnuplot input for the moment-time-curve     
+[test.py](test.py)       | Python script to run the full simulation
 
 ## Preprocessing
 
