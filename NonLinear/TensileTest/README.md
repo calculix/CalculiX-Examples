@@ -1,5 +1,5 @@
 # Tensile Test
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 Tensile test of a 8x25mm steel bar. The yield curve is obtained from real test data and the simulated stress-strain curve is compared to the experimental one.
 
@@ -13,12 +13,14 @@ Using symmetry, the structure is reduced to one eight of the original one.
 + Handover of parameters to the gnuplot file
 
 
-| File     | Contents    |
-| :------------- | :------------- |
-| [pre.fbd](pre.fbd)     | Pre-processing script for CGX (parametrized with valu commands)      |
-| [post.fbd](post.fbd) | Post-processing script for CGX (stress-strain curve and deformed plot) |
-| [sigeps.gnu](sigeps.gnu) | Gnuplot control script |
-| [Zug.inp](Zug.inp) | CCX input |
+File                     | Contents    
+:-------------           | :-------------
+[pre.fbd](pre.fbd)       | Pre-processing script for CGX (parametrized with valu commands)      
+[post.fbd](post.fbd)     | Post-processing script for CGX (stress-strain curve and deformed plot)
+[sigeps.gnu](sigeps.gnu) | Gnuplot control script
+[Zug.inp](Zug.inp)       | CCX input
+[test.py](test.py)       | Python script to run the full simulation
+
 
 ## Preprocessing
 
