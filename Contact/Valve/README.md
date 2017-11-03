@@ -1,5 +1,5 @@
 # Engine Valve
-Tested with CGX 2.13 / CCX 2.12
+Tested with CGX 2.13 / CCX 2.13
 
 + Axisymmetric model of a valve with valve seat
 + Linear elastic material
@@ -9,12 +9,13 @@ Tested with CGX 2.13 / CCX 2.12
 
 
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [par.pre.fbd](par.pre.fbd)     | Pre-processing script for CGX  (parametrized with `param.py`)                |
-| [valve.inp](valve.inp) | CCX input |
-| [post.fbd](post.fbd)   | CGX post-processing script                    |
-| [path.gnu](df.gnu)   | Gnuplot script for the contact plot    |
+File                       | Contents                                     
+:-------------             | :-------------                                
+[par.pre.fbd](par.pre.fbd) | Pre-processing script for CGX  (parametrized with `param.py`)                
+[valve.inp](valve.inp)     | CCX input
+[post.fbd](post.fbd)       | CGX post-processing script                    
+[path.gnu](df.gnu)         | Gnuplot script for the contact plot    
+[test.py](test.py)         | Python script to run the full simulation
 
 ## Preprocessing
 The valve and the valve seat ring are meshed with axisymmetric second order triangular elements. This allows for free meshing,
