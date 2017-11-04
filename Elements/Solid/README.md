@@ -1,16 +1,17 @@
 ## Simply Supported Beam Model With Solid Elements
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + tetrahedral and hexahedral elements
 + linear or quadratic elements
 + full or reduced integration, incompatible shape functions
 
-| File     | Contents    |
-| :------------- | :------------- |
-| [solid.fbd](solid.fbd)     | Parametric pre- and postprocessing script for CGX   |
-| [solid.inp](solid.inp) | CCX input |
-| [solid-conv.py](solid-conv.py) | Python script for the convergence study |
-| [solid-plot.py](solid-plot.py) | Python script for the convergence plot|
+File                           | Contents    
+:-------------                 | :------------- |
+[solid.fbd](solid.fbd)         | Parametric pre- and postprocessing script for CGX   
+[solid.inp](solid.inp)         | CCX input
+[solid-conv.py](solid-conv.py) | Python script for the convergence study
+[solid-plot.py](solid-plot.py) | Python script for the convergence plot
+[test.py](test.py)             | Python script to run the full example
 
 | Unstructured tet mesh    | structured hex mesh    |
 | :------------- | :------------- |
@@ -40,4 +41,4 @@ python solid-plot.py
 ```
 generates the following plot of the results normalized by the analytical reference values.
 
-<img src="solid.png" width="600">
+<img src="solid.svg" width="600">
