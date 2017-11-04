@@ -1,18 +1,19 @@
 # Shell Assembly
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Investigation of shell edge to shell face connection using modal analysis
 + Various contact versions
 + Various element types
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [run.fbd](run.fbd)     | Simulation control script for CGX             |
-| [pc-ns.inp](pc-ns.inp) | CCX input, node-to-surface penalty contact    |
-| [pc-ss.inp](pc-ss.inp) | CCX input, surface-to-surface penalty contact |
-| [tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            |
-| [equ.inp](equ.inp)     | CCX input, MPC contact with `*equation`       |
-| [test.py](test.py)     | Python script for automatic parameter sweep   |
+File                   | Contents                                      
+:-------------         | :-------------                                
+[run.fbd](run.fbd)     | Simulation control script for CGX             
+[values.fbd](run.fbd)  | Parameter values           
+[pc-ns.inp](pc-ns.inp) | CCX input, node-to-surface penalty contact    
+[pc-ss.inp](pc-ss.inp) | CCX input, surface-to-surface penalty contact
+[tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            
+[equ.inp](equ.inp)     | CCX input, MPC contact with `*equation`       
+[test.py](test.py)     | Python script for automatic parameter sweep   
 
 ## Results
 
@@ -36,11 +37,12 @@ MPC contact with `*equation` leads to a hinged connection at shell edge to face 
 
 ## Simulation
 
+A single simulation is run using
 ```
 > cgx -b run.fbd
 ```
 Two separate parts are generated and meshed with shell elements. Specify element type and contact
-version using the parameters in `run.fbd`.
+version using the parameters in `values.fbd`.
 
 Parameter | Value | Description
 :--       | :--   | :---
