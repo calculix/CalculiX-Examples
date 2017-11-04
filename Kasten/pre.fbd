@@ -37,8 +37,7 @@ view elem
 plot f all
 
 # export displacement to CCX INP and Gnuplot
-valu neg -1
-valu neg_dz * neg dz
+valu neg_dz * -1 dz
 sys echo Nupper,3,3, neg_dz > disp.inc
 sys echo disp= dz > disp.txt
 

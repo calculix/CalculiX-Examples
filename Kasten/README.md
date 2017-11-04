@@ -1,18 +1,17 @@
-
 # Non-linear Buckling
-Tested with CGX 2.13/CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Large displacements
 + Plasticity
 + Buckling with imperfection (a small internal pressure)
 + Shell elements
 
-| File     | Contents    |
-| :------------- | :------------- |
-| [pre.fbd](pre.fbd)     | Pre-processing script for CGX     |
-| [post.fbd](post.fbd) | Post-processing script for CGX |
-| [Kasten.inp](Kasten.inp) | CCX input |
-| [df.gpl](df.gpl) | Gnuplot input for force-displacement curve|
+File                     | Contents    
+:-------------           | :-------------
+[pre.fbd](pre.fbd)       | Pre-processing script for CGX     
+[post.fbd](post.fbd)     | Post-processing script for CGX
+[Kasten.inp](Kasten.inp) | CCX input
+[df.gpl](df.gpl)         | Gnuplot input for force-displacement curve
 
 Reference solution for elastic limit (without buckling)
 
