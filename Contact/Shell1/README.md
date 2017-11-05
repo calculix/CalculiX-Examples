@@ -1,16 +1,16 @@
 # Shell Assembly
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Shell assembly with edge to face tied Lagrange contact
 + Indenter with surface-to surface penalty contact
 + Indenter generated with nurbs based sweep, this generates a more precise hemisphere
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [pre.fbd](pre.fbd)     | Pre-processing script for CGX                 |
-| [post.fbd](post.fbd)   | Post-processing script for cgx                |
-| [tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            |
-| [test.py](test.py)     | python script to run the simulation           |
+File                   | Contents                                      
+:-------------         | :-------------                                
+[pre.fbd](pre.fbd)     | Pre-processing script for CGX                 
+[post.fbd](post.fbd)   | Post-processing script for cgx                
+[tie.inp](tie.inp)     | CCX input, MPC contact with `*tie`            
+[test.py](test.py)     | python script to run the simulation           
 
 ## Preprocessing
 A minimal sandwich structure is built with two skin sheets and a honeycomb core.

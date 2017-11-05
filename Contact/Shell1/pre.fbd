@@ -18,10 +18,8 @@ merg p all
 swep c_bottom c_top tra 0 0 hc
 seta core all
 # skin
-valu two 2
-valu ls_half / ls two
-valu neg -1
-valu ls_neg * ls neg
+valu ls_half / ls 2
+valu ls_neg * ls -1
 seto bottom
   pnt ps1 ls_half ls_half 0
   swep bottom new tra ls_neg 0 0
