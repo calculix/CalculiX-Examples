@@ -11,9 +11,8 @@ valu divrot 18
 valu divl 50
 
 # dependent values
-valu neg -1
-valu T1neg * T1 neg
-valu T2neg * T2 neg
+valu T1neg * T1 -1
+valu T2neg * T2 -1
 valu x21 - L1 OVL
 valu x22 + x21 L2
 

@@ -1,3 +1,5 @@
+#wsize 1000 500
+font l 3
 # read
 read solve.frd
 read solve.inp nom
@@ -10,6 +12,7 @@ rot -y
 ds -2 e 7
 plot fv all
 frame
+#zoom 1.5
 hcpy png
 sys mv hcpy_1.png SE.png
 zoom 4

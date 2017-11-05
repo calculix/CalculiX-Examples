@@ -1,5 +1,5 @@
 # Telescoping Tubes Under Bending Load
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Telescopic structure of linear elastic tubes
 + Loaded in pure bending (no shear)
