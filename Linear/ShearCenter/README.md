@@ -1,16 +1,16 @@
 # Shear center
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Cantilever beams with point load at the free end
 + Parametric thin-walled sections
 + Demonstration of shear-torsion coupling in unsymmetric sections
 
-File                                 | Contents    
- :-------------                      | :-------------
- [par.II-pre.fbl](par.II-pre.fbl)    | CGX script, pre-processing, parametrized with param.py
- [II-post.fbl](II-post.fbl)          | CGX script, post-processing
- [II.inp](II.inp)                    | CCX input
-  [test.py](test.py)                 | python script to run the simulation  
+File                                | Contents    
+:-------------                      | :-------------
+[par.II-pre.fbl](par.II-pre.fbl)    | CGX script, pre-processing, parametrized with param.py
+[II-post.fbl](II-post.fbl)          | CGX script, post-processing
+[II.inp](II.inp)                    | CCX input
+[test.py](test.py)                  | python script to run the simulation  
 
 The model shows four beams (beam 1 and 2 being the components of beam 3 and 4)
 
