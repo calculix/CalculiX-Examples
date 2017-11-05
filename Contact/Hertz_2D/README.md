@@ -1,5 +1,5 @@
 # Hertz Contact 2D
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Plane strain model
 + Linear elasticity
@@ -9,14 +9,15 @@ Tested with CGX 2.13 / CCX 2.13
 The model was inspired by  [this post](https://groups.yahoo.com/neo/groups/calculix/conversations/topics/11564) by user dichtstoff in the CalculiX user forum. Here, essentially, parametrization with the CGX `valu` command and mesh bias were added.
 
 
-| File                   | Contents                                      |
-| :-------------         | :-------------                                |
-| [pre.fbd](pre.fbd)     | Pre-processing script for CGX  (parametrized with `valu`)                |
-| [Hertz.inp](Hertz.inp) | CCX input, surface-to-surface penalty contact |
-| [post.fbd](post.fbd)   | CGX post-processing script                    |
-| [plots.fbd](plots.fbd) | CGX post-processing script) path plots)       |
-| [plots.gnu](plots.gnu) | Gnuplot script for path plots                 |
-| [test.py](test.py)     | Python script to run the example              |
+File                   | Contents                                      
+:-------------         | :-------------                                
+[pre.fbd](pre.fbd)     | Pre-processing script for CGX  (parametrized with `valu`)                
+[Hertz.inp](Hertz.inp) | CCX input, surface-to-surface penalty contact
+[post.fbd](post.fbd)   | CGX post-processing script                    
+[plots.fbd](plots.fbd) | CGX post-processing script) path plots)       
+[plots.gnu](plots.gnu) | Gnuplot script for path plots                 
+[test.py](test.py)     | Python script to run the example        
+
 ## Preprocessing
 
 

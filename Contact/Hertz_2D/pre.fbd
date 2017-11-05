@@ -16,8 +16,7 @@ move all tra height 0 0
 
 seto block
 pnt p4 height 0 0
-valu neg -1
-valu neg_height * neg height
+valu neg_height * -1 height
 swep block block tra neg_height 0 0 80
 bia block 8
 swep block block tra 0 width 0 120
