@@ -1,12 +1,10 @@
 read values.fbl
 # dependent variables
-valu two 2
-valu neg -1
-valu lges_h / lges two
-valu br_h / br two
-valu lext_h / lext two
-valu ls_h / ls two
-valu zr2 * radius neg
+valu lges_h / lges 2
+valu br_h / br 2
+valu lext_h / lext 2
+valu ls_h / ls 2
+valu zr2 * radius -1
 valu zr1 + t2 tc
 valu zr1 + zr1 t1
 valu zr1 + zr1 radius
