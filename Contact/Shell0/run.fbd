@@ -16,11 +16,7 @@ read values.fbd
 
 # etyp ctyp
 ulin etyp: etyp , ctyp: ctyp
-# this leads to a segfault
-# valu frdname & ctyp .frd
-
-valu ext .frd
-valu frdname & ctyp ext
+valu frdname & ctyp .frd
 
 # plate 1
 seto s1
