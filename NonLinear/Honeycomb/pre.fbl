@@ -55,13 +55,13 @@ seta toflip A00G A003 A004 A00U A00D
 flip toflip
 # replicate in y direction
 valu ny 3
-valu inc 1
+#valu inc 1
 valu count 1
 valu dy 10.5
 while count < ny
   valu pos * count dy
   copy basey rowy tra 0 pos 0 a
-  valu count + count inc
+  valu count + count 1
 endwhile
 merg p all
 merg l all
@@ -73,13 +73,13 @@ setr double se wsym
 seta single se wsym
 # replicate in x direction
 valu nx 7
-valu inc 1
+#valu inc 1
 valu count 1
 valu dx 17.8094750193
 while count < nx
   valu pos * count dx
   copy rowy new tra pos 0 0 a
-  valu count + count inc
+  valu count + count 1
 endwhile
 merg p all
 merg l all
