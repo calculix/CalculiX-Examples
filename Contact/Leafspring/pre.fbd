@@ -24,24 +24,18 @@ setr leaf0 e all
 
 #other leafs
 valu count 1
-valu one 1
-valu leafname leaf
-valu topname top
-valu botname bot
-valu ext .sur
-valu pre S
 # init surface-file
 sys echo **surfaces include > sur.inc
 sys echo **contact pairs > pairs.inc
 while count < num
   # counter
-  valu leafi & leafname count
-  valu topi & topname count
-  valu boti & botname count
+  valu leafi & leaf count
+  valu topi & top count
+  valu boti & bot count
   # leafi
   # offset in z
   valu offset * T count
-  valu count + count one
+  valu count + count 1
   valu count int count
   # extract top surface of upper leaf
   seta nodes n all
@@ -63,12 +57,12 @@ while count < num
   # write surface definitions
   send boti abq sur
   send topi abq sur
-  valu topfile & topi ext
-  valu botfile & boti ext
+  valu topfile & topi .sur
+  valu botfile & boti .sur
   sys echo *include, input= topfile >> sur.inc
   sys echo *include, input= botfile >> sur.inc
-  valu tops & pre topi
-  valu bots & pre boti
+  valu tops & S topi
+  valu bots & S boti
   sys echo tops , bots >> pairs.inc
 endwhile
 

@@ -4,9 +4,8 @@ valu thick 10
 valu pressure 1
 
 valu dR - Ra Ri
-valu dy + thick thick
-valu vier 4
-valu ly * dy vier
+valu dy * thick 2
+valu ly * dy 4
 
 pnt ! 0 0 0
 swep all new tra 0 ly 0

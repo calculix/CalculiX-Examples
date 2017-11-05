@@ -1,5 +1,5 @@
 # Axisymmetric Plate With Hole
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Linear static solution
 + Axisymmetric model
@@ -7,11 +7,11 @@ Tested with CGX 2.13 / CCX 2.13
 + Demonstration of polar co-ordinate system for stress components
 
 File                      | Contents    
- :-------------           | :-------------         
- [pre.fbd](pre.fbd)       |Pre-processing script for CGX     
- [post.fbd](post.fbd)     | Post-processing script for CGX
- [plates.inp](plates.inp) | CCX input
- [test.py](test.py)       | Python script to run the full simulation
+:-------------           | :-------------         
+[pre.fbd](pre.fbd)       |Pre-processing script for CGX     
+[post.fbd](post.fbd)     | Post-processing script for CGX
+[plates.inp](plates.inp) | CCX input
+[test.py](test.py)       | Python script to run the full simulation
 
 ## Preprocessing
 

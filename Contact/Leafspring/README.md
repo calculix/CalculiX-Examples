@@ -1,5 +1,5 @@
 # Leaf Spring
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Parametric model with variable number of leafs
 + completely automatic generation of the solver input using a loop in CGX
@@ -7,12 +7,12 @@ Tested with CGX 2.13 / CCX 2.13
 + Static analysis
 + Analysis of a quarter model, expanded in postprocessing
 
- File                   | Contents                                      
- :-------------         | :-------------                                
- [pre.fbd](pre.fbd)     | Pre-processing script for CGX                 
- [solve.inp](solve.inp) | CCX input                                     
- [post.fbd](post.fbd)   | Post-processing                               
- [test.py](test.py)     | python script to run the simulation  
+File                   | Contents                                      
+:-------------         | :-------------                                
+[pre.fbd](pre.fbd)     | Pre-processing script for CGX                 
+[solve.inp](solve.inp) | CCX input                                     
+[post.fbd](post.fbd)   | Post-processing                               
+[test.py](test.py)     | python script to run the simulation  
 
 The main feature of this model is the automatic generation of a given number of
 spring leafs along with the required contact definitions.
