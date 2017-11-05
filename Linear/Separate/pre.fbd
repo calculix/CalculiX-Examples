@@ -2,7 +2,7 @@ valu le 40
 valu he 10
 valu pressure 1
 
-valu dy + he he
+valu dy * he 2
 
 # geometry
 seto d1
