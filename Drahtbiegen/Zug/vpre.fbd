@@ -8,9 +8,8 @@ valu BiasL 4
 valu Etyp qu8cr
 
 # derived parameters
-valu Zwei 2
-valu Radius / Dia Zwei
-valu halbL / Len Zwei
+valu Radius / Dia 2
+valu halbL / Len 2
 
 # preprocessing
 # geometry
