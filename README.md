@@ -11,6 +11,8 @@ Click the preview images to view the examples.
 
 This page uses animated gifs. In Firefox, you might want to install the plugin [Toggle Animated Gifs](https://addons.mozilla.org/en-US/firefox/addon/toggle-animated-gifs/) to add replay controls.
 
+In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) you can download the examples for your version of CalculiX. Oldest available version is 2.10. Note that only the current version is under maintenance.
+
 [<img
   src="Drahtbiegen/Biegung/movie.gif"
   width="200"
