@@ -4,6 +4,7 @@ Tested with CGX 2.13.1 / CCX 2.13
 Click the image to see the animation
 
 <img src="movie.gif" width="400">
+
 + Large displacements
 + Plasticity
 + Contact (smoothed bi-linear node-to-surface)
