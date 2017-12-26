@@ -44,17 +44,11 @@ send symz abq nam
 
 # load application
 enq nodes load rec lx _ _ 0.001
-# 100/2
-#valu fac 50
-valu fac 100
+# compute displacement from given nominal strain
 valu disp * maxeps lx
-valu disp / disp fac
+valu disp / disp 100
 send load abq nam
 sys echo Nload,1,1, disp > load.inc
-# valu neg -1
-# valu neglx * lx neg
-# enq nodes nlx rec neglx _ _ 0.001
-#send nlx abq nam
 
 # display of sets
 ulin symx (red), symy (green), symz (blue), load (mag.)
