@@ -7,9 +7,8 @@ valu ez 0.1
 
 valu factor 0.01
 valu tol * factor le
-valu two 2
-valu ly / width two
-valu lz / height two
+valu ly / width 2
+valu lz / height 2
 # create rectangle with fillet
 pnt p0 0 0 0
 pnt py 0 ly 0
