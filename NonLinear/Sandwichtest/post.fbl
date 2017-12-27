@@ -17,14 +17,14 @@ tra u 10
 ds -1 e 1
 plot fv all
 min 0 f
-text Plastic strain
+ulin Plastic strain
 hcpy png
 sys mv hcpy_1.png Refs/PE.png
 
 # equivalent stress
 ds -2 e 7
 min 0 f
-text Equivalent stress
+ulin Equivalent stress
 hcpy png
 sys mv hcpy_2.png Refs/SE.png
 
@@ -39,7 +39,7 @@ rot r 100
 rot u -10
 frame
 zoom 4.2
-text Equivalent strain
+ulin Equivalent strain
 plus ev Ecore
 hcpy png
 sys mv hcpy_3.png Refs/PE-expanded.png
