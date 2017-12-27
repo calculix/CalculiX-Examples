@@ -1,6 +1,6 @@
 ># Coupling with beams
 
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Test of coupling with beam nodes
 + Distributing and kinematic coupling

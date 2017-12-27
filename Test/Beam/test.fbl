@@ -7,8 +7,7 @@ valu dist 10
 valu num 10
 
 # dependent Parameter
-valu two 2
-valu le_half / le two
+valu le_half / le 2
 
 # line
 pnt fix 0 0 0

@@ -1,8 +1,7 @@
-valu ext .inc
-valu incfile & file ext
+valu incfile & file .inc
 sys cp incfile c.inc
 sys ccx modal > modal.log
-text file
+ulin file
 read modal.frd new
 # movie counter
 valu counter 0

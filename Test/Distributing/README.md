@@ -1,6 +1,6 @@
 # Stress distribution with distributing coupling
 
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Test of distributing coupling
 + Stress distribution for applied moments

@@ -1,5 +1,5 @@
 # Test of Joints
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Test of distributing and kinematic coupling
 + Modal analysis

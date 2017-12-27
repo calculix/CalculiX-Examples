@@ -1,5 +1,5 @@
 # Supports using coupling
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Test of distributing and kinematic coupling
 + Modal analysis
@@ -81,7 +81,7 @@ The rotations are specified by the rotation vector with respect to the initial s
 Observations:
 + The stress state at the support is consistent with full rigid constraint of the nodes, see the reference solution further down.
 + If you switch the coupling dofs at the load application side from 1...3 to 1...6, the simulation still converges but at a much slower rate.
-+ The `*section print` command is not reliable for large rotations.
+
 
 ```
 ccx trans
@@ -104,7 +104,7 @@ The stress distribution at the support (rigid body constraint by kinematic coupl
 <img src="Refs/trans1.png" width="400"><img src="Refs/trans2.png" width="400">
 <img src="Refs/trans3.png" width="400"><img src="Refs/trans4.png" width="400">
 
-Using the `*section print` command, the surface results (reactions, geometry) are written. This reveals severe problems with `*section print` for surfaces undergoing large rotations.
+Using the `*section print` command, the surface results (reactions, geometry) are written.
 
 <img src="Refs/trans/surface_f.png" width="400"><img src="Refs/trans/surface_m.png" width="400">
 
