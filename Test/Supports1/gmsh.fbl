@@ -43,7 +43,7 @@ while counter < num
   valu counter + counter incr
   # convert counter value to integer
   valu counter int counter
-  text Mode counter
+  ulin Mode counter
   # build output file name from prefix, counter and extension
   valu to & topre counter
   valu to & to ext
