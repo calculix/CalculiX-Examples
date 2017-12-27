@@ -1,5 +1,5 @@
 # Eye/Pin Contact 2D
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Plane strain model (can be switched to plane stress)
 + Linear elastic pin, elasto-plastic eye

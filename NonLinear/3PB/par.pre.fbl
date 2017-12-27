@@ -93,12 +93,12 @@ rot r 30
 rot u 30
 frame
 zoom 1.5
-text Parts
+ulin Parts
 seta ! all
 hcpy png
 sys mv hcpy_1.png Refs/parts.png
 
-text Node groups
+ulin Node groups
 plot n ysym r
 plus n xsym r
 plus n load b
@@ -107,7 +107,7 @@ hcpy png
 sys mv hcpy_2.png Refs/groups.png
 
 view back
-text Contact pairs
+ulin Contact pairs
 plot f c1a
 plus f c1s n
 plus f c2a

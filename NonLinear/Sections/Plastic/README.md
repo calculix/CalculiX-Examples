@@ -1,5 +1,5 @@
 # Properties of Cross Sections (elasto-plastic)
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Simply supported beam with a prescribed displacement in the center
 + Parametric section shapes of identical area

@@ -1,12 +1,12 @@
 # Buckling and modal analysis with preload
-Tested with CGX 2.13/CCX 2.12
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Modal analysis with preload
 + Eigenvalue buckling analysis
 + Shell edge load
 
 
-  File                      | Contents    
+File                        | Contents    
  :-------------             | :-------------
  [par.run.fbl](par.run.fbl) | Control script for CGX     
  [solve.inp](solve.inp)     | CCX input

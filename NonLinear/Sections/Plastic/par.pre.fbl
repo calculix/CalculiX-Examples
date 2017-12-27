@@ -140,7 +140,7 @@ send xLcircle abq nam
 send xLhcircle abq nam
 send xLIprofile abq nam
 
-text x0 (red), y0 (green), disp (turq), xL (blue)
+ulin x0 (red), y0 (green), disp (turq), xL (blue)
 rot x
 rot c -90
 rot l 5

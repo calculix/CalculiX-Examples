@@ -1,5 +1,5 @@
 # Engine Valve
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 + Axisymmetric model of a valve with valve seat
 + Linear elastic material
