@@ -62,12 +62,13 @@ sys echo 2,3,<M> >> load.inp
 send all abq
 send all abq nam
 
-# images
+# plot: Line divisions
 rot -z
 plot ld all
 hcpy png
 sys mv hcpy_2.png Refs/div.png
 
+# plot: Mesh and sets
 view elem
 ulin Sets: sym (red), nref (big blue), rb (blue)
 plot f all n
@@ -85,6 +86,7 @@ sys ccx Stress
 read Stress.frd new
 
 # vector plot of worst principal stress
+ulin Load applied via rigid body constraint
 view elem off
 ds 2 e 23
 view vec

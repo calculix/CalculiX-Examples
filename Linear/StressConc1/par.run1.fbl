@@ -69,14 +69,14 @@ plus n sym r 6
 plus f load b 6
 frame
 hcpy png
-sys mv hcpy_3.png Refs/mesh1.png
+sys mv hcpy_2.png Refs/mesh1.png
 
 # solution
 sys ccx Stress1
 
 # post-processing
 read Stress1.frd new
-
+ulin Load applied via kinematic coupling
 # vector plot of worst principal stress
 view elem
 view disp
@@ -86,7 +86,7 @@ scal v 3
 plot fv all
 frame
 hcpy png
-sys mv hcpy_4.png Refs/vecplot1.png
+sys mv hcpy_3.png Refs/vecplot1.png
 
 # expanded deformation plot
 # view disp
@@ -99,11 +99,11 @@ sys mv hcpy_4.png Refs/vecplot1.png
 # plus e new n
 # plus fv base
  hcpy png
- sys mv hcpy_5.png Refs/D1.png
+ sys mv hcpy_4.png Refs/D1.png
 #
 # debug plot
 view elem
 ds 3 e 4
 plot fv all
 hcpy png
-sys mv hcpy_6.png Refs/RF1.png
+sys mv hcpy_5.png Refs/RF1.png
