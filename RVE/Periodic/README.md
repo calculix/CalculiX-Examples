@@ -1,5 +1,5 @@
 # RVE with periodic boundary conditions
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.13.1 / CCX 2.13
 
 This is a generic RVE of a fiber-matrix compound.
 
@@ -17,7 +17,7 @@ File                   | Contents
 :-------------         | :-------------
 [RVE.fbd](RVE.fbd)     | Pre-processing script for CGX (parametrized with valu commands)     
 [post.fbd](post.fbd)   | Post-processing script for CGX (stress-strain curve and deformed plot)
-[Solve.inp](Solve.inp) | CCX input 
+[Solve.inp](Solve.inp) | CCX input
 [test.py](test.py)     | Python script to run the full simulation
 
 ## Preprocessing

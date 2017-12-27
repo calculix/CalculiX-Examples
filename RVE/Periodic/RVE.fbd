@@ -18,9 +18,8 @@ mesh all
 send all abq
 
 # create fiber (cylinder along x in the center)
-valu two 2
-valu my / ly two
-valu mz / lz two
+valu my / ly 2
+valu mz / lz 2
 seta nodes n all
 enq nodes fiber rec _ my mz rad
 comp fiber up
