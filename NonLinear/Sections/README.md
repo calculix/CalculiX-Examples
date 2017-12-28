@@ -18,7 +18,7 @@ The beams are loaded by their own weight, properies of steel are assumed.
 | :------------- |  :------------- | :------------- |
 | `area` | 300 | cross section area in mm^2 |
 | `length` | 100 | length (end to center) in mm|
-| `thickness` | 4 | wall thickenss (where applicable) in mm |
+| `thickness` | 4 | wall thickness (where applicable) in mm |
 | `dist` | 40 | spacing between the beams in mm |
 
 ```
