@@ -6,6 +6,13 @@ Objective is to determine the relative stiffness and strength (yield limit) with
 
 <img src="Refs/mesh.png" width="400">
 
+## Reference solution
+
+For the given mesh, the reference solution and the FEA results match within 2% error for the maximum bending stress and the displacements. For the pipe and I beam, the displacements differ by approx. 10% between reference and FEA. Note that their reference shear factor is only approximate.
+
+Click the image below to open a life worksheet:
+[![Screenshot](Reference.png)](https://en.smath.info/cloud/worksheet/uXbMYr5w)
+
 ## Pre-Processing
 
 The problem is parametrized using [param.py](../../Scripts/param.py). Starting from a given cross section area, the half span of the beam and a thickness, four section shapes of identical cross section area are generated.
