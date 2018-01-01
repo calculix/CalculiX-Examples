@@ -1,0 +1,45 @@
+*NODE, NSET=Nall
+1,0.,0.,0.
+2,10.,0.,0.
+3,20.,0.,0.
+4,30.,0.,0.
+5,40.,0.,0.
+6,50.,0.,0.
+7,60.,0.,0.
+8,70.,0.,0.
+9,80.,0.,0.
+10,90.,0.,0.
+11,100.,0.,0.
+*ELEMENT, TYPE=U1, ELSET=Eall
+1,      1,      2,
+2,      2,      3,
+3,      3,      4,
+4,      4,      5,
+5,      5,      6,
+6,      6,      7,
+7,      7,      8,
+8,      8,      9,
+9,      9,     10,
+10,     10,    11,
+*USER ELEMENT,TYPE=U1,NODES=2,INTEGRATION POINTS=2,MAXDOF=6
+*BOUNDARY
+1,1,6
+*MATERIAL,NAME=EL
+*ELASTIC
+210000.,.3
+*BEAM SECTION,ELSET=Eall,MATERIAL=EL,SECTION=GENERAL
+100.,833.3,0.,833.3,0.8333
+0.,1.,0.
+*STEP
+*STATIC
+*CLOAD
+11,3,1000.
+*NODE PRINT,NSET=Nall
+U
+*EL PRINT,ELSET=Eall
+S
+*NODE FILE
+U
+*EL FILE,section forces, output=2d
+S
+*END STEP
