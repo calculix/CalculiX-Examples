@@ -1,0 +1,24 @@
+*include, input="b32.msh"
+*include, input="fixb32.nam"
+*include, input="loadb32.nam"
+
+*MATERIAL, NAME=mat
+*ELASTIC
+210000 ,  0.300
+*BEAM SECTION, ELSET=Eb32, MATERIAL=mat, SECTION=RECT
+10 , 10
+*STEP
+*STATIC
+*BOUNDARY
+Nfixb32,1,6
+*CLOAD
+Nloadb32,3,1000.
+*NODE FILE, OUTPUT=3d
+U
+*EL FILE
+S, E
+*NODE PRINT , NSET=Nall
+U
+*EL PRINT , ELSET=Eall
+S
+*END STEP

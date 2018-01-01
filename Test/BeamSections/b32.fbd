@@ -1,0 +1,59 @@
+# 1D beam
+valu le 100
+
+seto b32
+  pnt p1 0 0 0
+  seta fixb32 se all
+  swep all loadb32 tra le 0 0 10
+setc
+
+elty b32 be3
+mesh b32
+
+send fixb32 abq nam
+send loadb32 abq nam
+
+send b32 abq
+
+sys ccx b32
+
+read b32.frd new
+# get nodes at support
+seta nodes n all
+enq nodes fix rec 0 _ _
+
+rot -y
+view elem
+view disp
+view sh
+scal d 10
+plot f all
+frame
+
+
+ds 2 e 7
+
+hcpy png
+sys mv hcpy_1.png b32-se.png
+
+frame fix
+scal d 10
+hcpy png
+sys mv hcpy_2.png b32-fix.png
+
+rot l 30
+hcpy png
+sys mv hcpy_3.png b32-fix-30.png
+
+view disp off
+ds 1 e 3
+graph b32 length
+
+view disp
+scal d 0.1
+rot -y
+plot fv all
+
+frame
+hcpy png
+sys mv hcpy_4.png b32-disp.png

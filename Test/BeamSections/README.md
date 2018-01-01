@@ -6,6 +6,8 @@ Tested with CGX 2.13.1 / CCX 2.13
 
 File                           | Contents    
 :-------------                 | :-------------
+[b32.inp](b32.inp)             | CCX input for B32 element
+[b32.fbd](b32.fbd)             | CGX pre/post input for B32 element
 [u1general.inp](u1general.inp) | CCX input for user element U1 with general beam section
 [u1.plt](u1.plt)               | Gnuplot script for the U1 example
 [test.py](test.py)             | Python script to run the full simulation
@@ -20,6 +22,18 @@ steel with E = 210 GPa and nu = 0.3.
 
 Click the image below to open a life worksheet:
 [![Screenshot](cantilever.png)](https://en.smath.info/cloud/worksheet/RGoTsp3s)
+
+### Beam element b32
+This element is internally expanded into C3D20 solid elements. Prescribed rotations are internally converted into mean rotation MPCs. The conversion isn't consistent, the mean rotation of the left end clearly isn't zero. This leads to excessive displacement compared to the reference.
+
+```
+> cgx -b b32.fbd
+```
+<img src="b32-disp.png" width="400" title="Deflection for B32 element"><img src="b32-se.png" width="400" title="Equivalent stress for B32 element">
+
+The displacement exceeds the reference value by 10%. This is due to the incomplete rotation constraint at the support:
+
+<img src="b32-fix.png" width="400" title="The corner nodes stick to the support plane, the top and bottom midside nodes don't"><img src="b32-fix-30.png" width="400" title="The corner nodes stick to the support plane, the top and bottom midside nodes don't">
 
 ### User element U1 with general section
 
