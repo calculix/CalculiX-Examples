@@ -19,7 +19,7 @@ steel with E = 210 GPa and nu = 0.3.
 ### Reference solution
 
 Click the image below to open a life worksheet:
-[![Screenshot](beam.png)](https://en.smath.info/cloud/worksheet/RGoTsp3s)
+[![Screenshot](cantilever.png)](https://en.smath.info/cloud/worksheet/RGoTsp3s)
 
 ### User element U1 with general section
 
@@ -50,4 +50,4 @@ For results checking you have to rely on the DAT file.
 
 The following image shows the displacement UZ and the rotation RY along the beam.
 
-<img src="Refs/S11.png" width="400" title="Longitudinal stress. The higher the max. stress is, the lower is the strength of the beam for a given material">
+<img src="u1-def.png" width="500" title="Deflection and rotation results for U1 user element">
