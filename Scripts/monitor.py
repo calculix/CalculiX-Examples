@@ -65,35 +65,42 @@ itsteptime=numpy.empty([iters])  # Step time for iterations
 for i in it:
     stp = itstep[i]
     inc = itinc[i]
-	# ccx writes values below 1e-6 as zero
+	# ccx writes values below 1e-6 as zero,
     if (cvg[i,5]==0.0):
-        cvg[i,5]=0.5
+        cvg[i,5]=1.e-7
+        
+    found=0 
     for j in range(sta.shape[0]):
         if (stp==sta.astype(int)[j,0]) and (inc==sta.astype(int)[j,1]):
             itdt[i]=sta[j,6]
             itsteptime[i]=sta[j,5]
             print i, stp, inc, j, itdt[i],itsteptime[i],cvg[i,5]
-            imax=i
+            istamax=i
+            icvgmax=i
+            found=1
+    if (not found==1):
+        print i, stp, inc, cvg[i,4], cvg[i,5]
+        icvgmax=i
 ## Plot force residuals, disp correction and time step
 pylab.subplot(2,1,1)
 pylab.title('sta and cvg data of job '+job )
-pylab.semilogy(it[:imax],itdt[:imax],'-',
-               it[:imax],cvg[:imax,5],'-',
-               it[:imax],cvg[:imax,6],'r-')
+pylab.semilogy(it[:istamax],itdt[:istamax],'-',
+               it[:icvgmax],cvg[:icvgmax,5],'-',
+               it[:icvgmax],cvg[:icvgmax,6],'r-')
 pylab.grid()
 pylab.legend(['dt','force','disp'],
              fontsize='small',framealpha=0.5, loc=2)
 # step time and number of contact elements
 sp1=pylab.subplot(2,1,2)
-pylab.plot(it[:imax],itsteptime[:imax],'r-',
-           it[:imax],itsteptime[:imax],'b-',)
+pylab.plot(it[:istamax],itsteptime[:istamax],'r-',
+           it[:istamax],itsteptime[:istamax],'b-',)
 pylab.legend(['# cont. el.','step time'],
              fontsize='small',framealpha=0.5, loc=2)
 pylab.ylabel('step time')
 pylab.xlabel('Iteration')
 pylab.grid()
 sp2=sp1.twinx()
-pylab.plot(it[:imax],cvg[:imax,4],'r-')
+pylab.plot(it[:icvgmax],cvg[:icvgmax,4],'r-')
 pylab.ylabel('# of cont. elements')
 pylab.savefig(job)
 pylab.show()
