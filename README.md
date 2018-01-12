@@ -244,10 +244,10 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   title="Telescoping tubes under bending load">
 ](Contact/Tubes)
 [<img
-  src="Test/BeamSection/b32-fix-30.png"
+  src="Test/BeamSections/b32-fix-30.png"
   width="200"
   title="Test of beam elements">
-](Contact/Tubes)
+](Test/BeamSections)
 [<img
   src="NonLinear/Cut/Refs/blech-pe-2.png"
   width="200"

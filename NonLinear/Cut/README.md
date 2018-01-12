@@ -46,10 +46,12 @@ The outer contour and the slot of the tools are generated bottom up using points
 The radii are generated using the `fil` command.
 
 
-Boundary conditions:
- + Tool 1 is fixed at the lateral surfaces.
- + Tool 2 is subjected to a prescribed displacement under 45° in positive x and negative y direction, applied to the lateral surfaces
- + the profile is constrained in longitudinal direction at x=0
+Boundary conditions of the tools
+ + The red boundaries have prescribed displacement in y-direction (vertical).
+ + The black boundaries have prescribed displacement in x-direction.
+ + The green edge is fixed in z-direction (longitudinal).
+
+ The profile is constrained in longitudinal direction at x=0.
 
  <img src="Refs/parts.png" width="400"><img src="Refs/randb.png" width="400">
  <img src="Refs/rand1.png" width="400"><img src="Refs/rand2.png" width="400">
