@@ -1,0 +1,76 @@
+*include, input=all.msh
+*include, input=MA1.sur
+*include, input=MA2.sur
+*include, input=MI1.sur
+*include, input=MI2.sur
+*include, input=BlechAussen.sur
+*include, input=BlechInnen.sur
+*include, input=blech.nam
+*include, input=Blechrand.nam
+*include, input=messer1.nam
+*include, input=messer2.nam
+*include, input=m1u.nam
+*include, input=m1r.nam
+*include, input=m1k.nam
+*include, input=m2o.nam
+*include, input=m2l.nam
+*include, input=m2k.nam
+
+** Materials ***********************************************
+**
+*Material, name=Messer
+*Elastic
+210000, 0.3
+*Material, name=Blech
+*Elastic
+210000, 0.3
+*Plastic
+400, 0
+800, 0.2
+2000,2
+**
+** Sections ************************************************
+**
+*Solid section, elset=Emesser1, material=Messer
+*Solid section, elset=Emesser2, material=Messer
+*Solid section, elset=Eblech, material=Blech
+**
+** Constraints *********************************************
+**
+*boundary
+Nm1u,2,2
+Nm1r,1,1
+Nm1k,3,3
+Nm2k,3,3
+NBlechrand,3,3
+
+*surface interaction, name=cut
+*surface behavior, pressure-overclosure=linear
+100000.
+*contact pair, interaction=cut, type=surface to surface
+SBlechAussen, SMA1
+SBlechAussen, SMA2
+SBlechInnen, SMI1
+SBlechInnen, SMI2
+**
+** Steps ***************************************************
+**
+*TIME POINTS, NAME=TP1, GENERATE
+0,1,0.1
+
+*Step,nlgeom
+*Static
+0.05,1,0.00000001,0.05
+***controls, parameters=field
+**0.02,0.1,1.,1.,0.1,0.1
+***controls, parameters=time incrementation
+**4,8 ,9, 16, 10 ,4 , , 8, ,
+**0.25, 0.5, 0.75, 0.85 , ,1.5 ,
+*boundary
+Nm2l,1,1,3
+Nm2o,2,2,-3
+*element output,TIME POINTS=TP1, last iterations
+S,PE
+*node output
+U
+*end step

@@ -243,3 +243,13 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   width="200"
   title="Telescoping tubes under bending load">
 ](Contact/Tubes)
+[<img
+  src="Test/BeamSection/b32-fix-30.png"
+  width="200"
+  title="Test of beam elements">
+](Contact/Tubes)
+[<img
+  src="NonLinear/Cut/Refs/blech-pe-2.png"
+  width="200"
+  title="Incomplete cutting operation">
+](NonLinear/Cut)

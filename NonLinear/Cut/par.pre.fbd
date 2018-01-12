@@ -1,0 +1,259 @@
+# z in Profillaufrichtung
+# x quer
+# y nach oben
+
+# <he=130.>     height of the tool
+# <wi=180.>     width of the tool
+# <th=40.>      thickness of the tool
+# <ra=4.>       end radius of the slot
+# <phe=125.>    height of the profile
+# <pwi=70.>     width of the profile
+# <pgap=50.>    gap (opening) of the C-profile
+# <pth=5.>      sheet thickness
+# <pra=10.>     outer radius of the profile corners
+# <ss=2.>       gap between tools
+
+# dependent variables
+# <off=ra-pth/2.>
+# <ya=pwi/2.+off>
+# <yi=pwi/2.-pth-off>
+# <yc12=pwi/2.-pra>
+# <xc12=phe/2.-pra>
+# <xa=phe/2.+off>
+# <xi=phe/2.-pth-off>
+# <xg=pgap/2.-ra-off>
+
+
+# Kontur
+pnt lu <-wi/2.> <-he/2.> 0
+pnt mu 0 <-he/2.> 0
+pnt lo <-wi/2.> < he/2.> 0
+pnt mo 0 < he/2.> 0
+pnt p1a 0 <-ya> 0
+pnt p2a <-xa> <-ya> 0
+pnt p3a <-xa> <ya> 0
+pnt p4a <-xg> <ya> 0
+pnt p4i <-xg> <yi> 0
+pnt p3i <-xi> <yi> 0
+pnt p2i <-xi> <-yi> 0
+pnt p1i 0 <-yi> 0
+
+# Messer
+line ! mo lo
+line ! lo lu
+line ! lu mu
+line ! mu p1a
+line ! p1a p2a
+line ! p2a p3a
+line ! p3a p4a
+line ! p4a p4i
+line ! p4i p3i
+line ! p3i p2i
+line ! p2i p1i
+line ! p1i mo
+fil L005 L006 <pra>
+fil L006 L007 <pra>
+fil L007 L008 <ra>
+fil L008 L009 <ra>
+fil L009 L00A <pra-pth>
+fil L00A L00B <pra-pth>
+del l L008
+merg p all
+
+# Kontaktflächen
+seta MesserInnen L00B L00I L00A L00H L009 L00G
+comp MesserInnen do
+seta MesserAussen L00F L007 L00E L006 L00D L005
+comp MesserAussen do
+
+plot pa all
+plus la all
+seto messer1
+  seto sketch
+    surf s1 all
+  setc
+  copy sketch new mir x a
+  merg p all
+  merg l all
+  swep all new tra 0 0 <th> a
+setc
+
+copy messer1 messer2 tra 0 0 <th+ss> a
+div all auto 5 30
+elty all te10
+mesh all
+comp messer1 do
+comp messer2 do
+
+
+# profil
+seto blech
+pnt pp1a 0 <-pwi/2> 0
+pnt pp2a <-phe/2> <-pwi/2> 0
+pnt pp3a <-phe/2> <pwi/2> 0
+pnt pp4a <-pgap/2.> <pwi/2> 0
+pnt pp1i 0 <-pwi/2+pth> 0
+pnt pp2i <-phe/2+pth> <-pwi/2+pth> 0
+pnt pp3i <-phe/2+pth> <pwi/2-pth> 0
+pnt pp4i <-pgap/2.> <pwi/2-pth> 0
+
+line l1 pp1a pp2a
+line l2 pp2a pp3a
+line l3 pp3a pp4a
+line l4 pp4a pp4i
+line l5 pp4i pp3i
+line l6 pp3i pp2i
+line l7 pp2i pp1i
+line l8 pp1i pp1a
+fil l1 l2 <pra>
+fil l2 l3 <pra>
+fil l5 l6 <pra-pth>
+fil l6 l7 <pra-pth>
+# Ränder
+seta BlechInnen l l5 l6 l7  L05Y L05Z
+comp BlechInnen do
+seta BlechAussen l l1 l2 l3 L05W L05X
+comp BlechAussen do
+
+surf ! blech
+swep blech new tra 0 0 <2.*th+ss> a
+
+copy blech new mir x a
+
+elty blech te10
+div blech auto 3 10
+mesh blech
+
+merg n blech
+#move blech tra 0 0  <-th>
+comp BlechAussen do
+comp BlechInnen do
+comp blech do
+
+setc
+
+setr messer1 se blech
+# Kontaktflächen
+# seta BlechInnen s A025 A02B A026 A02C A027 A02L A02Q A02K A02P A02J
+# seta BlechAussen s A02H A02O A02G A02N A02F A021 A029 A022 A02A A0s3
+
+plot f all n
+view elem
+
+merg l all
+merg p all
+merg n all
+
+seti MA1 f MesserAussen messer1
+seti MA2 f MesserAussen messer2
+seti MI1 f MesserInnen messer1
+seti MI2 f MesserInnen messer2
+
+send MA1 abq sur
+send MA2 abq sur
+send MI1 abq sur
+send MI2 abq sur
+
+
+
+send BlechAussen abq sur
+send BlechInnen abq sur
+
+
+# sets for constraints
+seta Blechrand s A020 A02E
+comp Blechrand do
+send Blechrand abq nam
+
+# sets for Materials
+send messer1 abq nam
+send messer2 abq nam
+send blech abq nam
+
+# Messer 1 rechts, links, oben, unten
+seta m1nodes n messer1
+enq m1nodes m1r rec <wi/2.> _ _ 0.1
+send m1r abq nam
+enq m1nodes m1l rec <-wi/2.> _ _ 0.1
+send m1l abq nam
+enq m1nodes m1o rec _ <he/2.> _ 0.1
+send m1o abq nam
+enq m1nodes m1u rec _ <-he/2.> _ 0.1
+send m1u abq nam
+
+# Messer 2 rechts, links, oben, unten
+seta m2nodes n messer2
+enq m2nodes m2r rec <wi/2.> _ _ 0.1
+send m2r abq nam
+enq m2nodes m2l rec <-wi/2.> _ _ 0.1
+send m2l abq nam
+enq m2nodes m2o rec _ <he/2.> _ 0.1
+send m2o abq nam
+enq m2nodes m2u rec _ <-he/2.> _ 0.1
+send m2u abq nam
+
+# Messer Außenkanten
+seta m1rnodes n m1r m1l m1o m1u
+enq m1rnodes m1k rec _ _ 0 0.1
+send m1k abq nam
+seta m2rnodes n m2r m2l m2o m2u
+enq m2rnodes m2k rec  _ _ <2.*th+ss> 0.1
+send m2k abq nam
+
+move blech tra <off> <-off> 0
+move messer2 tra <2.*off> <-2*off> 0
+
+send all abq
+
+# doc images
+ulin Parts: Messer1 (gray), Messer2 (red), blech (green)
+rot -z
+rot r 30
+rot u 30
+seta ! all
+frame
+hcpy png
+sys mv hcpy_1.png Refs/parts.png
+
+ulin contact surfaces: MI1 (turq.), MA1 (blue)
+plot l all n
+plus f MI1 t
+plus f MA1 b
+hcpy png
+sys mv hcpy_2.png Refs/surf1.png
+
+ulin contact surfaces: MI2 (turq.), MA2 (blue)
+plot l all n
+plus f MI2 t
+plus f MA2 b
+hcpy png
+sys mv hcpy_3.png Refs/surf2.png
+
+ulin contact surfaces: BlechInnen (turq.), BlechAussen (blue)
+plot l all n
+plus f BlechInnen t
+plus f BlechAussen b
+hcpy png
+sys mv hcpy_4.png Refs/surfb.png
+
+ulin conststraint regions of Messer1: m1r (black), m1u (red), m1k (green)
+plot l all n
+plus n m1r k 4
+plus n m1u r 4
+plus n m1k g 4
+hcpy png
+sys mv hcpy_5.png Refs/rand1.png
+
+ulin conststraint regions of Messer2: m2r (black), m2u (red), m2k (green)
+plot l all n
+plus n m2l k 4
+plus n m2o r 4
+plus n m2k g 4
+hcpy png
+sys mv hcpy_6.png Refs/rand2.png
+
+ulin conststraint region: Blechrand
+plot l all n
+plus n Blechrand r 4
+hcpy png
+sys mv hcpy_7.png Refs/randb.png

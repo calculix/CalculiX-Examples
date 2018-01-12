@@ -1,0 +1,12 @@
+wsize 1400 800
+read ResultsForLastIterations.frd
+seta ! all
+view elem
+view disp
+view sh
+ds -1 e 4
+rot -z
+zoom 2.5
+plot ev +CF3
+scal d 10
+plus ev +CF1
