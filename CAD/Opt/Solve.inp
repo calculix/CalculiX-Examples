@@ -1,0 +1,23 @@
+*INCLUDE, INPUT=all.msh
+*INCLUDE, INPUT=fix.nam
+*INCLUDE, INPUT=load.sur
+*BOUNDARY
+Nfix,1,3,0
+*MATERIAL,NAME=Steel
+*ELASTIC
+200000,0.3
+*density
+7.85e-9
+*SOLID SECTION,ELSET=Eall,MATERIAL=Steel
+1
+*STEP
+*static
+*dsload
+Sload,p,-1
+*NODE FILE
+U, RF
+*EL FILE
+S
+*el print,TOTALS=ONLY,elset=Eall
+EVOL
+*END STEP

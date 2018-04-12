@@ -253,3 +253,8 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   width="200"
   title="Incomplete cutting operation">
 ](NonLinear/Cut)
+[<img
+  src="CAD/Opt/hcpy_2.png"
+  width="200"
+  title="Plane stress model for parameter optimization">
+](CAD/Opt)

@@ -1,0 +1,96 @@
+# top level parameters
+valu R 30
+valu H 20
+text R: R  H: H
+# dependent values
+valu one 1
+valu le 100
+valu y1 * H one
+valu y2 + H R
+valu y3 + y2 R
+valu y4 * le one
+valu x1 - le R
+valu x2 * le one
+valu x3 + x2 le
+# points
+pnt p1 0 0 0
+pnt p2 x3 0 0
+pnt p3 0 y4 0
+pnt p4 x2 y4 0
+pnt p5 x3 y1 0
+pnt p6 x2 y3 0
+pnt p7 x1 y2 0
+pnt p8 x2 y1 0
+pnt p9 x2 y2 0
+
+# lines
+line l1 p1 p2 4
+line l2 p1 p3 4
+line l3 p3 p4 4
+line l4 p2 p5 4
+line l5 p4 p6 4
+line l6 p5 p8 4
+line l7 p6 p7 p9 4
+line l8 p8 p7 p9 4
+
+# surface
+surf A1 all
+flip all
+
+# meshing
+valu divH 6
+valu lrefine / H divH
+seta arc l l7 l8 l9
+seta refine l l1 l6
+div all auto 10
+div arc 20
+div refine auto lrefine
+elty all tr6u
+mesh all
+elty all tr6s
+send all abq
+
+# create and write sets
+seta load l l1
+comp load do
+comp load do
+
+seta fix l l2 l3
+comp fix do
+
+send fix abq nam
+send load abq sur
+
+# plot of the boundary sets
+view elem
+rot -z
+plot f all n
+frame
+plot f load b 6
+plus n fix r 6
+plus n fix r 6
+hcpy png
+
+# solve and read results
+sys ccx Solve
+read Solve.frd new
+
+# select equivalent stress result
+# and write max value
+ds 2 e 7
+stack on
+view disp
+scal d 100
+plot fv all
+plot fv all
+hcpy png
+prnt st
+valu maxs pop 7
+
+
+# write area (for mass optimization)
+area all
+valu size pop
+sys echo Stress  maxs > results.txt
+sys echo Surface size >> results.txt
+#quit
