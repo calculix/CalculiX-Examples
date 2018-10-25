@@ -28,7 +28,7 @@ A free mesh with second order triangles is generated.
 Parameter | Value | Unit | Description
 :--       | :--   | :--  | :--
 `R`       | 30    | mm   | Radius
-`r2`      | 20    | mm   | Height of the beam
+`H`      | 20    | mm   | Height of the beam
 
 
 ## Meshing and sets
