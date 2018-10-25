@@ -45,8 +45,10 @@ Node set `fix` and surface `load` are created for application of the boundary co
 
 ## Solution
 
-The simulation is run from within the top level CGX script.
-
+The simulation is run from within the top level CGX script:
+```
+> cgx -b Run.fbd
+```
 Separate run of the simulation:
 ```
 > ccx Solve
