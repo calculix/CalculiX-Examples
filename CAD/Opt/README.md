@@ -67,7 +67,7 @@ A plot of the equivalent stress is generated and the maximum value is read from 
 The `area` command computes the surface properties and writes them to the stack.
 Thus the surface area can be determined and also be written to the results file.
 
-The results file contains is meant to be read by some external optimization software like Optimax or Dakota.
+The results file contains the maximum equivalent stress and the surface area. It is meant to be read by some external optimization software like Optimax or Dakota.
 
 ```
 Stress 9.405108e+01
