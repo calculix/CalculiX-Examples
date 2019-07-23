@@ -32,31 +32,31 @@ graph Nscyl length
 sys mv graph_6.out dc-pres.out
 
 # results for pressure control
-ds 6 e 1
+ds 7 e 1
 graph +bou2 length
 sys mv graph_7.out pc-sx.out
 
-ds 6 e 2
+ds 7 e 2
 graph +bou2 length
 sys mv graph_8.out pc-sy.out
 
-ds 6 e 3
+ds 7 e 3
 graph +bou2 length
 sys mv graph_9.out pc-sz.out
 
-ds 6 e 4
+ds 7 e 4
 graph +bou2 length
 sys mv graph_10.out pc-sxy.out
 
-ds 6 e 7
+ds 7 e 7
 graph +bou2 length
 sys mv graph_11.out pc-mises.out
 
-ds 6 e 24
+ds 7 e 24
 graph +bou2 length
 sys mv graph_12.out pc-maxshear.out
 
-ds 8 e 4
+ds 9 e 4
 graph Nscyl length
 sys mv graph_13.out pc-pres.out
 
