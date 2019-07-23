@@ -59,12 +59,12 @@ send load abq surf
 
 # indep
 valu R1i - R1 T1
-enq n1 ind cyl x R1i _ 0.1
+enq n1 ind cx R1i _ _ 0.1
 comp ind do
 send ind abq surf
 
 # dep
-enq n2 dep cyl x R2 _ 0.1
+enq n2 dep cx R2 _ _ 0.1
 comp dep do
 send dep abq surf
 

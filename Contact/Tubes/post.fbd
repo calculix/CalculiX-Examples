@@ -1,8 +1,9 @@
 #wsize 1000 500
 font l 3
 # read
+
+read solve.inp
 read solve.frd
-read solve.inp nom
 # view
 view disp
 view sh
@@ -29,4 +30,5 @@ rot u 60
 hcpy png
 sys mv hcpy_4.png cpress_rot.png
 
+sys dat2txt.py
 sys gnuplot moment.plt
