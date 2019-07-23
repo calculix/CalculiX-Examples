@@ -14,10 +14,8 @@ plot f load
 plus n support
 hcpy png
 sys mv hcpy_1.png Refs/sets.png
-
 sys ccx solve
 read solve.frd
-
 rot y
 rot c 30
 rot r 30
