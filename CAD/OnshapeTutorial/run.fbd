@@ -23,7 +23,7 @@ view disp
 view sh
 scal d 1000
 view elem
-ds -0 e 7
+ds -1 e 7
 plot fv all
 hcpy png
 sys mv hcpy_2.png Refs/se.png

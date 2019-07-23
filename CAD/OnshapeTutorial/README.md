@@ -1,35 +1,26 @@
-# Meshing a CAD Geometry with Gmsh
+# Meshing a CAD Geometry
 
 Tested with CGX 2.15 / CCX 2.15, Gmsh 4.4
 
-This demonstrates a possible workflow for a CalculiX analysis of a CAD
+This demonstrates possible workflows for a CalculiX analysis of a CAD
 generated part.
 
 * Starting point is a geometry created in Onshape and exported as STEP file.
-* The FEA workflow is fully automated using a CGX FBD file.
-* Import and meshing in gmsh, export as INP file with volume and surface meshes.
-  In gmsh, define physical surfaces for boundary conditions and export the mesh
-  with appropriate settings (to ensure that node sets are written)
+* The FEA workflow is fully automated using CGX FBD files. There are two basic versions:
+ * Meshing in gmsh (`run.fbd`)
+ * Meshing in CGX (using cad2fbd for CAD file conversion)
+   * `run1.fbd` demonstrates various mesh settings
+   * `run2.fbd` performs a full analysis with the best settings found
 * There are two versions for gmsh pre-processing:
   * `part.geo`: mesh the geometry as it is, leading to small elements at short edges and narrow surfaces
   * `partVT.geo`: Compounding lines and geometry before meshing.  
-* Open the INP file in cgx and remove all surface elements. Eventually extend node sets to
-  face sets for surface definition or pressure application.
-* Write the mesh and required set definitions
-* Write other FEA items
-* Run the analysis
-* Perform postprocessing
 
-## Issues in Gmsh
+### Issues in Gmsh
 
 + virtual topology doesn't work
-+ standard meshing generates elements with negative jacobian
++ standard meshing requires very small elements to avoid  elements with negative jacobian
 
-Thus currently, the gmsh meshing is broken.
 
-The script `run1.fbd` demonstrates the use of the import and meshing capabilities of CGX 2.15.
-
-The script `run2.fbd` demonstrates a gmsh-free workflow.
 
 | File                     | Contents                                                       |
 | :-------                 | :-------------                                                 |
@@ -94,7 +85,7 @@ Compound Surface {old#1,old#2};
 ```
 The Gmsh command file `partVT.geo` uses these commands to produce a mesh without spurious refinement spots.
 
-There is one limitation: The midside nodes of second order elements don't follow the geometry, the edges of such elements are always straight except at boundaries. In Gmsh 3.0 this is announced to be fixed.
+This doesn't actually work in gmsh 4.4. The images below are generated with the maximum element size which still avoids negative jacobians.
 
 Execute
 ```
@@ -102,11 +93,11 @@ Execute
 ```
 to produce images for comparison of the meshes produced with the original geometry or with the cleaned geometry (virtual topology).
 
-Original geometry (1856 nodes, 998 elements)
+Original geometry (characteristic lenght 11, 4473 nodes, 2263 elements)
 
 <img src="Refs/mesh.png" width="400" title="Mesh based on the original geometry"><img src="Refs/mesh1.png" width="400" title="Mesh based on the original geometry">
 
-Virtual topology (1557 nodes, 715 elements):
+Virtual topology (characteristic length 5, 28149 nodes, 15635 elements):
 
 <img src="Refs/VTmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more"><img src="Refs/VTmesh1.png" width="400" title="Mesh based on the modified geometry, note the straight element edges on the arched surface.">
 
@@ -147,12 +138,12 @@ von Mises stress, displaced geometry
 
 # Meshing with cad2fbd/cgx
 
-CGX 2.12 comes with the CAD converter cad2fbd, which can convert STEP and IGES files to CGX native FBD format.
+CGX comes with the CAD converter cad2fbd, which can convert STEP and IGES files to CGX native FBD format.
 
 The script `run1.fbd`
 + calls the converter
 + reads the resulting file `result.fbd`
-+ tries to mesh the geometry
++ tries to mesh the geometry with various settings.
 ```
 cgx -b run1.fbd
 ```

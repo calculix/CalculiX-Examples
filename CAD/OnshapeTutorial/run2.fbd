@@ -1,0 +1,57 @@
+# convert and import geometry
+sys cad2fbd part.step
+read result.fbd
+
+# meshing
+div all auto 5 30
+seta cdiv l Q021 Q018 Q013
+div cdiv mult 4
+elty all te10
+mesh all
+
+view elem
+plot e all
+hcpy png
+sys mv hcpy_1.png Refs/mesh2.png
+
+send all abq
+
+# pressure application
+seta load s A00H
+comp load do
+comp load do
+send load abq pres 1
+
+# support
+seta support s A005
+comp support do
+comp support do
+send support abq nam
+
+# image of sets
+frame
+plot f load
+plus n support
+hcpy png
+sys mv hcpy_2.png Refs/sets2.png
+
+# solve
+sys ccx solve
+read solve.frd
+rot y
+rot c 30
+rot r 30
+view disp
+view sh
+scal d 1000
+view elem
+ds -1 e 7
+plot fv all
+hcpy png
+sys mv hcpy_3.png Refs/se2.png
+rot y
+rot u 30
+plot fv all
+plus f all n
+hcpy png
+sys mv hcpy_4.png Refs/disp2.png
