@@ -55,11 +55,10 @@ You can use the CGX script `one.fbd` to run a single analysis including the post
 
 ## Postprocessing
 
-The results are read and time history plots of the contact pressure are created. Then a
-plot with all curves is created.
-
-Note that for surface-to-surface contact, there are
-problems (spurious zero values) with the output or display of the
+The contact pressure versus penetration curve is extracted in two ways:
+1. The field results (FRD) are read and time history plots of the contact pressure are created. Note that for surface-to-surface contact, there are problems (spurious zero values) with the output or display of the
 pressure at some increments.
+2. The reaction forces are extracted for plotting from the selected results file (DAT) using the helper script dat2txt.py
 
 <img src="pd.png" title="Pressure-penetration characteristic">
+<img src="ft.png" title="Pressure-penetration characteristic">
