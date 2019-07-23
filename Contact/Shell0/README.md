@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Investigation of shell edge to shell face connection using modal analysis
 + Various contact versions
@@ -29,7 +29,7 @@ MPC contact with  `*tie` and penalty contact lead to a stiff connection between 
 
 Surface-to-surface contact gives frequencies which differ severely from the reference MPC contact. Also, for S8R elements, there are only 5 frequencies close to zero (should be 6 rigid body modes).
 
-Penalty contact (both surface-to-surface and node-to-surface) requires the modal analysis being performed as a perturbation step with a preceding static step (in the given case with no load applied). Note that the first result increment in a perturbation analysis is not a mode shape.
+Penalty contact (both surface-to-surface and node-to-surface) requires the modal analysis being performed as a perturbation step with a preceding static step (in the given case with no load applied). Note that the first result increment in a perturbation analysis is not a mode shape. For uniform test conditions, all simulations use a dummy static step and a subsequent frequency perturbation step.
 
 MPC contact with `*equation` leads to a hinged connection at shell edge to face contact (7 rigid body modes).
 

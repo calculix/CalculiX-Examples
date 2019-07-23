@@ -10,7 +10,10 @@
 0.1
 *tie,name=t1,position tolerance=0.1
 Sk1,Ss1
-*STEP
+*step,nlgeom
+*static
+*end step
+*STEP,perturbation
 *frequency
 20
 *NODE FILE

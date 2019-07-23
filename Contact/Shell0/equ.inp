@@ -7,7 +7,10 @@
 2.7e-9
 *SHELL SECTION, ELSET=Eall,MATERIAL=Aluminium
 0.1
-*STEP
+*step,nlgeom
+*static
+*end step
+*STEP,perturbation
 *frequency
 20
 *NODE FILE
@@ -15,4 +18,3 @@ U
 *el file
 S
 *END STEP
-
