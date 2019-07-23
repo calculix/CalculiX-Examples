@@ -59,7 +59,7 @@ plot la all
 hcpy png
 sys mv hcpy_3.png lines.png
 
-# intenter contact surface
+# indenter contact surface
 SETA speri l peri
 comp speri do
 comp speri do

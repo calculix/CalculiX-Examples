@@ -1,5 +1,5 @@
 # Hertz contact axisymmetric (sphere to plane)
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Axisymmetric model
 + Linear elasticity
@@ -34,7 +34,8 @@ The nodes on the axis of symmetry (magenta) are constrained in radial (x) direct
 > cgx -b pre.fbd
 ```
 <img src="parts.png" width="400"><img src="parts-zoom.png" width="400">
-<img src="lines.png" width="400">
+<img src="lines.png" width="400"><img src="sets.png" width="400">
+
 
 
 ## Solving
