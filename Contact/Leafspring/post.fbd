@@ -1,6 +1,6 @@
 read solve.frd new
 view disp
-ds -1 e 1
+ds -2 e 1
 view elem
 copy all base tra 0 0 0
 copy all new mir x
