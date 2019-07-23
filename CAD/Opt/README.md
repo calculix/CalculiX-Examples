@@ -1,6 +1,6 @@
 # Model for Parametric Optimization
 
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 This is a test model for optimization with various optimization software tools like Optimax or Dakota.
 
@@ -20,7 +20,7 @@ The mesh divisions are adapted based on the parameter values in order to ensure 
 
 A planar L-shaped part is clamped at the upper and left edges and uniformly loaded at the lower edge.
 The dimensions to be driven by the optimization are the radius of the notch and the height of the horizontal beam.
-A free mesh with second order triangles is generated.
+A free mesh with second order plane stress triangles is generated.
 
 <img src="Optimax-example.png" width="400" title="Geometry">
 
