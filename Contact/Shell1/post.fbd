@@ -12,7 +12,7 @@ rot y
 rot l 10
 rot u 5
 # color plot of worst ps
-ds -1 e 23
+ds -2 e 23
 plot fv Epart
 plus f Eind n
 hcpy png

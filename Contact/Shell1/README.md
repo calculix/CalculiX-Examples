@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Shell assembly with edge to face tied Lagrange contact
 + Indenter with surface-to surface penalty contact
@@ -15,7 +15,7 @@ File                   | Contents
 ## Preprocessing
 A minimal sandwich structure is built with two skin sheets and a honeycomb core.
 The structure is supported at the edges of the bottom skin.
-The spherical indenter loads the upper skin.
+The spherical indenter is pressed against the upper skin.
 
 Parameter | Value | Description
 :---      | :---  | :--
