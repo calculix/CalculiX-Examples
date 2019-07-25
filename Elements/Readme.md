@@ -7,4 +7,4 @@ Sub-directories contain models with various element types
 
 Click the image below to open a life SMath worksheet
 
-[![Screenshot](Beam_001.png)](http://smath.info/cloud/worksheet/qWukPv37)
+[![Screenshot](Beam.png)](http://smath.info/cloud/worksheet/qWukPv37)
