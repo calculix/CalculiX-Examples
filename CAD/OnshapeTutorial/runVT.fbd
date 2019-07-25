@@ -1,11 +1,10 @@
-# sys gmsh part.step -clcurv -3 -o gmsh.inp -order 2
-sys gmsh part.geo
-read gmsh.inp
-ulin gmsh without virtual topology
+# Virtual topology version
+sys gmsh partVT.geo
+read gmshVT.inp
+ulin gmsh with virtual topology
 
 # remove surface elements
 zap +CPS6
-
 send all abq
 send support abq nam
 comp load do
@@ -14,7 +13,7 @@ send load abq pres 1
 plot f load
 plus n support
 hcpy png
-sys mv hcpy_1.png Refs/sets.png
+sys mv hcpy_1.png Refs/setsVT.png
 sys ccx solve
 read solve.frd
 rot y
@@ -27,11 +26,10 @@ view elem
 ds -1 e 7
 plot fv all
 hcpy png
-sys mv hcpy_2.png Refs/se.png
-
+sys mv hcpy_2.png Refs/seVT.png
 rot y
 rot u 30
 plot fv all
 plus f all n
 hcpy png
-sys mv hcpy_3.png Refs/disp.png
+sys mv hcpy_3.png Refs/dispVT.png

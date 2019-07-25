@@ -1,6 +1,7 @@
 # convert and import geometry
 sys cad2fbd part.step
 read result.fbd
+ulin cad2fbd import, local mesh refinement
 
 # meshing
 div all auto 5 30

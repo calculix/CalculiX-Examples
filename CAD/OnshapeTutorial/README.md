@@ -1,35 +1,30 @@
 # Meshing a CAD Geometry
 
-Tested with CGX 2.15 / CCX 2.15, Gmsh 4.4
+Tested with CGX 2.15 / CCX 2.15, Gmsh 4.4.1
 
 This demonstrates possible workflows for a CalculiX analysis of a CAD
 generated part.
 
+
 * Starting point is a geometry created in Onshape and exported as STEP file.
-* The FEA workflow is fully automated using CGX FBD files. There are two basic versions:
- * Meshing in gmsh (`run.fbd`)
+* The FEA workflow is fully automated using CGX FBD files. There are three  versions:
+ * Meshing in gmsh based on the original geometry
+ * Meshing in gmsh using virtual topology
  * Meshing in CGX (using cad2fbd for CAD file conversion)
    * `run1.fbd` demonstrates various mesh settings
    * `run2.fbd` performs a full analysis with the best settings found
-* There are two versions for gmsh pre-processing:
-  * `part.geo`: mesh the geometry as it is, leading to small elements at short edges and narrow surfaces
-  * `partVT.geo`: Compounding lines and geometry before meshing.  
 
-### Issues in Gmsh
-
-+ virtual topology doesn't work
-+ standard meshing requires very small elements to avoid  elements with negative jacobian
-
-
+The virtual topology version of this example has been set up with the help of Christophe Geuzaine and has become [part of the gmsh test suite](https://gitlab.onelab.info/gmsh/gmsh/blob/master/benchmarks/step/part_compound_curved_mesh.geo).
 
 | File                     | Contents                                                       |
 | :-------                 | :-------------                                                 |
 | [part.step](part.step)   | STEP geometry exported from Onshape                            |
 | [part.geo](part.geo)     | Gmsh control file for meshing and model display                |
-| [run.fbd](run.fbd)       | CGX control file for preprocessing with gmsh,  solving and postprocessing |
-| [run1.fbd](run1.fbd)     | CGX control file import with `cad2fbd` and meshing in CGX      |
-| [run2.fbd](run2.fbd)     | CGX control file, import with `cad2fbd`, meshing, solving, postprocessing,    |
 | [partVT.geo](partVT.geo) | Gmsh control file with geometry cleaning (virtual topology)    |
+| [run.fbd](run.fbd)       | CGX control file for standard meshing with gmsh,  solving and postprocessing, |
+| [runVT.fbd](runVT.fbd)       | CGX control file for virtual tppology meshing with gmsh,  solving and postprocessing, |
+| [run1.fbd](run1.fbd)     | CGX control file import with `cad2fbd` and various meshing versions in CGX      |
+| [run2.fbd](run2.fbd)     | CGX control file, import with `cad2fbd`, meshing, solving, postprocessing,    |
 | [VTdemo.fbd](VTdemo.fbd) | CGX file for the mesh plots (original and VT version)          |
 | [solve.inp](solve.inp)   | CCX input file                                                 |
 | [test.py](test.py)       | python script to run the simulation                            |
@@ -43,19 +38,17 @@ The complete analysis with gmsh-based meshing is run from a single CGX script. I
 the analysis you have to close the gmsh window.
 ```
 > cgx -b run.fbd
+> cgx -b runVT.fbd
 ```
 The individual steps of the workflow are discussed below.
 
-Because the above script doesn't work with gmsh 4.4, an alternative gmsh-free control script is provided. It uses the CAD import tool `cad2fbd`.
-
+A gmsh-independent workflow is based on STEP import with  `cad2fbd` and subsequent meshing in CGX.
 ```
 > cgx -b run2.fbd
 ```
 
 
 # Gmsh-Based Meshing
-
-This is broken in Gmsh 4.4
 
 The STEP geometry is loaded into gmsh and meshed with second order tetrahedra. Gmsh
 also meshes the surfaces with individual sets of second order triangles.
@@ -73,6 +66,8 @@ The gmsh GEO file can be executed separately if you want to play around with the
 ```
 The result of the meshing is the file `gmsh.inp`
 
+<img src="Refs/gmsh.png" width="400" title="Mesh based on the original geometry">
+
 ## Virtual Topology in Gmsh
 
 The CAD model contains short edges and narrow faces, which locally enforce small elements.
@@ -84,8 +79,11 @@ Compound Surface {old#1,old#2};
 
 ```
 The Gmsh command file `partVT.geo` uses these commands to produce a mesh without spurious refinement spots.
-
-This doesn't actually work in gmsh 4.4. The images below are generated with the maximum element size which still avoids negative jacobians.
+```
+> gmsh partVT.geo
+```
+<img src="Refs/gmshVT.png" width="400" title="Mesh based on the original geometry">
+<img src="Refs/gmshVT-zoom.png" width="400" title="Mesh based on the original geometry">
 
 Execute
 ```
@@ -93,13 +91,13 @@ Execute
 ```
 to produce images for comparison of the meshes produced with the original geometry or with the cleaned geometry (virtual topology).
 
-Original geometry (characteristic lenght 11, 4473 nodes, 2263 elements)
+Original geometry (characteristic length 11, 4473 nodes, 2263 elements)
 
 <img src="Refs/mesh.png" width="400" title="Mesh based on the original geometry"><img src="Refs/mesh1.png" width="400" title="Mesh based on the original geometry">
 
-Virtual topology (characteristic length 5, 28149 nodes, 15635 elements):
+Virtual topology (characteristic length 7, 11394 nodes, 6289 elements):
 
-<img src="Refs/VTmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more"><img src="Refs/VTmesh1.png" width="400" title="Mesh based on the modified geometry, note the straight element edges on the arched surface.">
+<img src="Refs/VTmesh.png" width="400" title="Mesh based on the modified geometry, no local refinement spot any more"><img src="Refs/VTmesh1.png" width="400" title="Mesh based on the modified geometry.">
 
 # Application of Boundary Conditions
 After closing the gmsh window, CGX takes over control again and reads `gmsh.inp`.
@@ -134,7 +132,9 @@ Once the sets are defined, there is no particular challenge any more with settin
 
 von Mises stress, displaced geometry
 
+
 <img src="Refs/disp.png" width="400" title="Displacement"><img src="Refs/se.png" width="400" title="von Mises stress">
+<img src="Refs/dispVT.png" width="400" title="Displacement"><img src="Refs/seVT.png" width="400" title="von Mises stress">
 
 # Meshing with cad2fbd/cgx
 
@@ -155,7 +155,7 @@ If the mesh density is increased (all divisions multiplied by four) then automat
 
 <img src="Refs/mesh_c2f2.png" width="400" ><img src="Refs/mesh_c2f3.png" width="400" >
 
-# Gmsh-Free Analysis
+# Gmsh-Independent Analysis
 
 Meshing is done in CGX as shown in the previous section.
 The load and support surfaces are generated from the surface names in the imported geometry.

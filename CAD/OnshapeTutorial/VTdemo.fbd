@@ -1,6 +1,8 @@
 # sys gmsh part.step -clcurv -3 -o gmsh.inp -order 2
+
 sys gmsh part.geo
 read gmsh.inp
+ulin gmsh without virtual topology
 # remove surface elements
 zap +CPS6
 plot f all n
@@ -25,6 +27,7 @@ del mesh
 
 sys gmsh partVT.geo
 read gmshVT.inp new
+ulin gmsh with virtual topology
 # remove surface elements
 zap +CPS6
 plot f all n

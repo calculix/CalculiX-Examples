@@ -3,6 +3,7 @@ read result.fbd
 div all auto 5 30
 elty all te10
 mesh all
+ulin cad2fbd import, coarse mesh
 
 view elem
 rot y
@@ -21,12 +22,14 @@ plus n all
 hcpy png
 sys mv hcpy_2.png Refs/mesh_c2f1.png
 
+ulin cad2fbd import, global refinement
 del mesh
 div all mult 4
 mesh all
 hcpy png
 sys mv hcpy_3.png Refs/mesh_c2f2.png
 
+ulin cad2fbd import, local refinement
 del mesh
 div all auto 5 30
 seta cdiv l Q021 Q018 Q013
