@@ -1,5 +1,5 @@
 ## Simply Supported Beam Model With Solid Elements
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + tetrahedral and hexahedral elements
 + linear or quadratic elements
