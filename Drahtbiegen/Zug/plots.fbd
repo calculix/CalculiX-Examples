@@ -12,8 +12,10 @@ seto path
  lcmb ! - l1 + l2
 setc
 comp path do
+
+# Path plot of PE in the undeformed geometry
 view elem
-ds 30 e 1
+ds -2 e 1
 rot -z
 plot f all n
 plus l path b 6
@@ -24,6 +26,7 @@ plot fv all
 graph path length +
 sys convert -rotate 90 graph_0.ps path0.png
 
+# Path plot of PE in the deformed geometry
 view disp
 plot f all n
 plus l path b 6
@@ -32,3 +35,4 @@ hcpy png
 sys mv hcpy_2.png pathgeo.png
 graph path length +
 sys convert -rotate 90 graph_1.ps path.png
+# END OF SCRIPT

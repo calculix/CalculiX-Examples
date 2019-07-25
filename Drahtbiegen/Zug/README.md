@@ -1,5 +1,5 @@
 # Tensile Test
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 Issues
 * dark shading of `expanded.png` worked around with first generating a color plot and then add a shaded geometry plot using `plus`
@@ -8,7 +8,7 @@ Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This ste
 
 <img src="movie.gif" width="300" title="plastic equivalent strain"><img src="2D3D.png" width="300" title="3D expansion with embedded 2D model">
 
-The model is axisymmetric and represents a 2 mm piece of the wire with full displacement constraint at one end and symmetry at the other end. Necking occures in the symmetry plane.
+The model is axisymmetric and represents a 2 mm piece of the wire with full displacement constraint at one end and symmetry at the other end. Necking occures in the plane of symmetry.
 
 + Large displacements
 + Plasticity

@@ -49,3 +49,4 @@ plus n sym g 6
 
 hcpy png
 sys mv hcpy_2.png zug-sets.png
+# END OF SCRIPT

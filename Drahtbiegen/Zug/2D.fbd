@@ -1,6 +1,6 @@
 # This requires CGX 2.10
 read Zug.frd
-ds -0 e 1
+ds -1 e 1
 
 view disp
 view elem
