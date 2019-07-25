@@ -16,7 +16,7 @@ sys mv hcpy_1.png deform.png
 rot y
 frame
 text Plastic equivalent strain
-ds -2 e 1
+ds -3 e 1
 comp Ndraht do
 zoom 1.5
 tra r 2

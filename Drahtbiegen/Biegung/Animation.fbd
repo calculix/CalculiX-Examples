@@ -12,4 +12,4 @@ plot fv Ndraht
 max 0.2
 anim real on
 movi frames auto
-ds 3 11 a 1
+ds 3 8 a 1

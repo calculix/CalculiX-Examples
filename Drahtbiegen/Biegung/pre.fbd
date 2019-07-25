@@ -39,7 +39,6 @@ pnt p2 X 0 Zc1
 swep rfix new tra 0 R 0 1
 swep rfix new tra R1 0 0 1
 swep rfix new rot p2y p2 Phi1 Div1
-
 setc rfix
 
 # bewegliche Rolle
@@ -92,7 +91,7 @@ sys mv hcpy_1.png symy.png
 seta nodes n all
 enq nodes x0 rect 0 _ _ 0.01
 valu Tol * R Ftol
-enq x0 wfix cyl x 0 0 Tol a
+enq x0 wfix cx 0 _ 0 Tol a
 send wfix abq spc 123
 ulin Nodes for wire constraint
 plot e all n

@@ -32,7 +32,7 @@ Nrot, 1,3
 *solid section, elset=Erfix, material=tool
 *solid section, elset=Ermov, material=tool
 ** contact definitions
-*surface interaction, name=tool
+*surface interaction, name=itool
 ***surface behavior, pressure-overclosure=linear
 **1e6
 **surface behavior, pressure-overclosure=exponential
@@ -41,7 +41,7 @@ Nrot, 1,3
 10000,0.1,0.01
 ***friction
 **0.1,1e7
-*contact pair, interaction=tool, type=node to surface
+*contact pair, interaction=itool, type=node to surface
 Smdep,Smind
 Sfdep,Sfind
 *step,nlgeom, inc=200
