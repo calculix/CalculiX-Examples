@@ -54,7 +54,7 @@ Model           | File    | Volume | x of cg
 
 ## Modal analysis results for solid/shell and full/reduced model
 
-The mode frequencies for the first two symmetric mode shapes are compared. All models have the same mesh density and consist of a single layer of C3D8I elements (after shell expansion). For the shell models, the reference surface is the outside. This might lead to slightly increased mass.
+The mode frequencies for the first two symmetric mode shapes are compared. All models have the same mesh density and consist of a single layer of C3D20R elements (after shell expansion). For the shell models, the reference surface is the outside. This might lead to slightly increased mass.
 
 Mode               | Solid full | Solid half | Shell full | Shell half|    
  :------------     | --:   | --:   | --:   | --:
