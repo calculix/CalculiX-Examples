@@ -16,7 +16,7 @@ view sh
 max 10000 i l
 min 0 i l
 steps 20
-ds -0 e 7
+ds -1 e 7
 frame
 hcpy png
 sys mv hcpy_1.png Refs/solid-SE-pos.png
