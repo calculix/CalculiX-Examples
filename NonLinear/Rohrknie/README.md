@@ -58,8 +58,8 @@ The mode frequencies for the first two symmetric mode shapes are compared. All m
 
 Mode               | Solid full | Solid half | Shell full | Shell half|    
  :------------     | --:   | --:   | --:   | --:
- In-plane bending  | 337.2 | 337.2 | 353.3 | 368.5
- Ovalization       | 894.7 | 895.0 | 964.7 | 974.9
+ In-plane bending  | 337.2 | 337.2 | 339.9 | 350.5
+ Ovalization       | 894.7 | 895.0 | 898.3 | 900.7
 
  <img src="Refs/solid-modal-1.gif" width="200" title="Solid full, Mode 1"> <img src="Refs/solid-sym-modal-1.gif" width="200" title="Solid reduced, Mode 1"> <img src="Refs/shell-modal-1.gif" width="200" title="Shell full, Mode 1"> <img src="Refs/shell-sym-modal-1.gif" width="200" title="Shell reduced, Mode 1">
 
