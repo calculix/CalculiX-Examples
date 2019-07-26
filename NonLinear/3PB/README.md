@@ -1,5 +1,5 @@
 # Three-point bending test of a hollow profile
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Non-linear static analysis
 + Plasticity
@@ -16,8 +16,7 @@ File                         | Contents
  [df.gpl](df.gpl)            | Gnuplot control file for the force-displacement plot
  [test.py](test.py)          | python script to run the simulation  
 
-The model represents a three point bending test on a elasto-plastic beam with a hollow box section. The simulation
-domain is reduced to a quarter due to symmetry.
+The model represents a three point bending test on a elasto-plastic beam with a hollow box section.
 
 [![Screenshot](3PBref.png)](http://smath.info/cloud/worksheet/RgGh4MoK)
 
