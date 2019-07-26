@@ -8,12 +8,18 @@ tra r 20
 view elem
 anim real
 scal d 200
+
+ulin Buckling mode 1
 movi frames 11
 ds -2 a
 sys mv movie.gif b1.gif
+
+ulin Buckling mode 2
 movi frames 11
 ds -1 a
 sys mv movie.gif b2.gif
+
+ulin Buckling mode 3
 movi frames 11
 ds -0 a
 sys mv movie.gif b3.gif

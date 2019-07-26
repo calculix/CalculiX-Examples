@@ -7,30 +7,42 @@ zoom 1.5
 tra r 20
 view elem
 # mode shape movies
-movi frames 11
-ds 4 a
-sys mv movie.gif v1.gif
+ulin Vibration mode 1
 movi frames 11
 ds 5 a
-sys mv movie.gif v2.gif
+sys mv movie.gif v1.gif
+
+ulin Vibration mode 2
 movi frames 11
 ds 6 a
+sys mv movie.gif v2.gif
+
+ulin Vibration mode 3
+movi frames 11
+ds 7 a
 sys mv movie.gif v3.gif
 # modal lines
 rot -z
 frame
 view disp off
-ds 4 e 3
+ulin Vibration mode 1
+ds 5 e 3
 mm 20 f l
 steps 5
 hcpy png
 sys mv hcpy_1.png v1n.png
-ds 5 e 3
-hcpy png
-sys mv hcpy_2.png v2n.png
+
+ulin Vibration mode 2
 ds 6 e 3
 hcpy png
-sys mv hcpy_3.png v3n.png
+sys mv hcpy_2.png v2n.png
+
+ulin Vibration mode 3
 ds 7 e 3
+hcpy png
+sys mv hcpy_3.png v3n.png
+
+ulin Vibration mode 4
+ds 8 e 3
 hcpy png
 sys mv hcpy_4.png v4n.png
