@@ -1,7 +1,7 @@
 # Cut Operation: Plasticity and Contact
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
-Simplified model of a cut operation, where a C-shaped profile is sheared between two cutting tools. Both tools (knives) are of identical shape. One of them is fixed (entry side) and one moves (exit side).
+Simplified model of a cut operation, where a continuously strip-formed C-shaped profile is sheared between two cutting tools in order to produce separate parts of given length. Both tools (knives) are of identical shape. One of them is fixed (entry side) and one moves (exit side).
 
 Only the onset of the process can be represented with the static solution procedure. This, however, is sufficient to derive the load distribution for the tools.
 
@@ -15,8 +15,8 @@ File                       | Contents
 :-------------             | :-------------
 [par.pre.fbd](par.pre.fbd) | Pre-processing script for CGX (parametrized with `param.py`)      
 [post.fbd](post.fbd)       | Post-processing script for CGX
-[iter.fbd](iter.fbd)]      | CGX script for inspection of unconverged iterations during the solution process
-[solve.inp](solve.inp)]    | CCX input
+[iter.fbd](iter.fbd)     | CGX script for inspection of unconverged iterations during the solution process
+[solve.inp](solve.inp)  | CCX input
 [test.py](test.py)         | Python script to run the full simulation
 
 
