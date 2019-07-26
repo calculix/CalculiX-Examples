@@ -30,8 +30,8 @@ while num < end
   plot fv all
   #plus f new n
   # init movie recording and start animation
-  movi frames 20
-  #ds num a
+  movi frames auto
+  #ds num e 4
   anim start
   #view surf
   # storage of the movie
