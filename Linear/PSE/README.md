@@ -1,5 +1,5 @@
 # Illustration of Plane Stress and Plane Strain
-Tested with CGX 2.13.1 /CCX 2.13
+Tested with CGX 2.15 /CCX 2.15
 
 + Parametric geometry
 + 4 simply supported beams with different width (one of them in fact a plate) and one of them with lateral constraints (plane strain)
@@ -34,7 +34,7 @@ built by first defining the edges at x,z=0 and then extruding them in z and x di
 The model consists of the following parts (listed in increasing y direction) with identical length and height but different width:
 
 + Thin beam with transverse constraints (uy=0), representing plane strain.
-+ Thin beam without transverse constraints, representing stress state.
++ Thin beam without transverse constraints, representing plane stress state.
 + Square section beam, still behaving like a plane stress structure.
 + Wide plate, showing plane strain conditions in the center and plane stress conditions at the sides.
 
