@@ -35,7 +35,7 @@ copy all new mir z
 view disp
 view sh
 scal d 2000
-ds -0 e 7
+ds -1 e 7
 rot -z
 rot r 25
 rot u 5

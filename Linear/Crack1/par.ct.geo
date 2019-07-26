@@ -62,5 +62,4 @@ Physical Volume("Part")={1};
 Mesh.SaveGroupsOfNodes = 1;
 General.Axes = 1;
 Save "gmsh.inp";
-Save "gmsh.png";
 Save "Refs/gmsh.png";
