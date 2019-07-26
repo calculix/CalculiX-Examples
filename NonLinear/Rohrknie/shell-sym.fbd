@@ -22,7 +22,7 @@ flip all
 swep sec sec1 rot z -90 DivR1
 swep sec1 fix tra Lneg 0 0 DivL
 
-elty all qu8
+elty all qu8r
 #div all mult 2
 mesh all
 send all abq

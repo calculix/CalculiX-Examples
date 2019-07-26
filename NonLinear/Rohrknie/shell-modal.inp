@@ -10,7 +10,7 @@ Nfix,1,6
 *density
 7.85e-9
 *shell section, elset=Eall, material=steel, offset=0.5
-1
+1.0
 *STEP
 *frequency
 10
