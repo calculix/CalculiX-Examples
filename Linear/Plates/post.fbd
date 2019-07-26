@@ -1,5 +1,5 @@
 read plates.frd
-ds -0 e 1
+ds -1 e 1
 rot -z
 rot r 25
 rot u 20
