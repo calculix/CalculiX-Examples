@@ -1,5 +1,5 @@
 # Four-Point Bending Test With Sandwich Material
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Non-linear static analysis
 + Plasticity
@@ -14,7 +14,7 @@ File                        | Contents
 [Biegung.inp](Biegung.inp) | CCX input
 [test.py](test.py)         | Python script to run the full simulation
 
-The model represents a four point bending test on a elasto-plastic sandwich plate. The face material is mild steel, the core material is aluminum foam.
+The model represents a four point bending test of an elasto-plastic sandwich plate. The face material is mild steel, the core material is aluminum foam.
 
 <img src="4pb.png" width="400" title="Dimensions">
 
