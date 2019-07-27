@@ -1,5 +1,5 @@
 # Properties of Cross Sections
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 The model contains several simply supported beams under gravity load of equal section area but different section shape.
 Objective is to determine the relative stiffness and strength (yield limit) with respect to the square section.
