@@ -46,9 +46,9 @@ Constraints:
 * Components of the average deformation gradient or of the average nominal stress (first Piola-Kirchhoff stress) can be specified as displacements or forces at the control nodes.
 In the given example, the deformation gradient is a 20% stretch in x direction and a 20% shear on the y-plane in z direction. The components are prescribed as (x means unconstrained)
 ```
-1 + 0.2    x       0
-   0       x       0
-   0      0.2      1
+1 + 0.2    x       x
+   0         x       0
+   0        0.2      x
 ```
 Given the edge length of 1, the above deformation gradient can be prescribed using
 ```
