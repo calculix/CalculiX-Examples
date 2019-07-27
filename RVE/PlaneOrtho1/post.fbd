@@ -2,7 +2,7 @@ read Zug.frd
 read monitor.nam inp
 # verify constraints
 text Displacement in x (normal to section)
-ds -2 e 1
+ds -3 e 1
 frame
 view disp
 view elem
@@ -15,7 +15,7 @@ frame
 hcpy png
 sys mv hcpy_1.png dx.png
 text Displacement in y (lateral)
-ds -2 e 2
+ds -3 e 2
 plot fv all
 frame
 hcpy png
@@ -25,7 +25,7 @@ copy all new mir y
 copy all new mir z
 view disp
 view elem
-ds -0 e 1
+ds -1 e 1
 rot x
 rot c 90
 text Equivalent plastic strain

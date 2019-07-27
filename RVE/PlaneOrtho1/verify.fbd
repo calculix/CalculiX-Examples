@@ -13,13 +13,13 @@ view disp
 view elem
 view sh
 ulin Displacement in x (normal to section)
-ds -2 e 1
+ds -3 e 1
 
 frame
 hcpy png
 sys mv hcpy_1.png dx.png
 ulin Displacement in y (lateral)
-ds -2 e 2
+ds -3 e 2
 frame
 hcpy png
 sys mv hcpy_2.png dy.png
