@@ -36,10 +36,21 @@ del mesh
 
 sys ccx static
 
-ulim Etyp
 read static.frd new
-# magnitude of displacement
-ds -1 e 4
+# magnitude of displacement, set number depends on
+# whether solution has converged or not.
+# first get time of last dataset
+stack on
+ds l
+valu time pop 3
+stack off
+if time == 2.0
+  ds -2 e 4
+  ulin Etyp
+else
+  ds -1 e 4
+  ulin Etyp (unconverged)
+endif
 # symmetry expansion
 seta base f all
 copy all new mir x

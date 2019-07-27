@@ -23,7 +23,7 @@ for elty in eltyps.keys():
     print elty
     # read pre.fbd and write it to pre-auto.fbd
     fout = open("run_auto.fbd", "w")
-    fout.write("text "+elty+"\n")
+    fout.write("ulin "+elty+"\n")
     for line in lines:
         # set element type
         if line.startswith("valu Etyp"):

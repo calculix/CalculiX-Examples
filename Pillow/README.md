@@ -1,5 +1,5 @@
 # Inflating a Pillow
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Non-linear static solution
 + Shell elements
