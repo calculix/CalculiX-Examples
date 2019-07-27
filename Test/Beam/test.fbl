@@ -86,6 +86,7 @@ plot l beam n 4
 comp beam do
 plus pa beam b 6
 plus f all w
+plus f s1 y
 frame
 rot y
 rot l 50

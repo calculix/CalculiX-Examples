@@ -38,7 +38,7 @@ while counter < num
   # make sure that the frequency is correctly displayed
   ds counter e 4
   # write 11 frames from the output of the subsequent command
-  movi frames 11
+  movi frames auto
   ds counter a 4
   # store the movie under the target name target
   sys mv movie.gif target
