@@ -7,15 +7,10 @@ Tested with CGX 2.15 / CCX 2.15
 + Distributing coupling of translations and rotations or translations only
 + Reference nodes with and without knots
 
-Issues:
-+ distributing coupling of rotations leads to hour-glassing modes, which aren't there if only
-  the translations are coupled. This is independent of the presence of a knot at the ref node.
-+ kinematic coupling doesn't trigger the generation of a knot at the ref node. To couple the
-  rotations, a knot has to be enforced by other means (e.g. by having adjacent beam elements with
-    different normals).
-
-Feature request:
-+ Distributing coupling such that the CG of the surface and the ref node are coupled rigidly (to allow for a distant force or a distant support without constraining the deformation of the coupled surface).
+Observations:
++ None of the methods can couple the rotations of a beam node (knot or not a knot) to a surface.
++ Distributing coupling makes the mean displacement of the surface equal to the displacement of the reference node.
++ Kinematic coupling pin-joines the reference node to the surface.
 
 
 File                          | Contents    
