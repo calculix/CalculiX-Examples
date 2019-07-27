@@ -1,11 +1,11 @@
 # RVE with periodic boundary conditions
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 This is a generic RVE of a fiber-matrix compound.
 
 + Brick-shaped unit cell
 + Structured mesh
-+ Location based assignment of material to elements
++ Location-based assignment of material to elements
 + Periodic boundary conditions applied via helper script `periodic.py`
 
 Todo:
@@ -44,6 +44,20 @@ Constraints:
 
 * `periodic.py` produces set definitions for control nodes and the equations for periodicity.
 * Components of the average deformation gradient or of the average nominal stress (first Piola-Kirchhoff stress) can be specified as displacements or forces at the control nodes.
+In the given example, the deformation gradient is a 20% stretch in x direction and a 20% shear on the y-plane in z direction. The components are prescribed as (x means unconstrained)
+```
+1 + 0.2    x       0
+   0       x       0
+   0      0.2      1
+```
+Given the edge length of 1, the above deformation gradient can be prescribed using
+```
+*boundary
+nx,1,1,0.2
+nx,2,3
+ny,3,3,0.2
+nz,2,2,0
+```
 
 <img src="matrix.png" width="400"><img src="fiber.png" width="400">
 
