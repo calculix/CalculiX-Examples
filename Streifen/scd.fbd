@@ -30,6 +30,6 @@ sys ccx scd
 sys monitor.py scd&
 
 read scd.frd
-ds -0 e 4
+ds -1 e 23
 read def-plot.fbd
 sys mv hcpy_2.png scd-def.png

@@ -4,7 +4,7 @@ pnt p1 0 0 0
 seta fix se all
 swep all rot tra 100 0 0 20
 
-elty all be3
+elty all be3r
 mesh all
 send all abq
 send all abq nam

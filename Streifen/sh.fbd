@@ -22,9 +22,9 @@ plus n rot t
 hcpy png
 sys mv hcpy_1.png sh-mesh.png
 sys ccx sh
-sys monitor.py sh&
+sys monitor.py
 
 read sh.frd
-ds -0 e 23
+ds -1 e 23
 read def-plot.fbd
 sys mv hcpy_2.png sh-def.png

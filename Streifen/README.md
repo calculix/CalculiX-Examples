@@ -1,5 +1,5 @@
 # 90°-Bending of an Elastic Strip
-Tested with CGX 2.13 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is
@@ -39,9 +39,9 @@ Click the image below to open a life SMath worksheet
 
 
 # Beam Model
-In CGX, b3 elements are specified. This results in B23R elements in the CCX input. These are internally expanded into C3D20R.
+In CGX, be3r elements are specified. This results in B32R elements in the CCX input. These are internally expanded into C3D20R.
 
-The rotation is applied as constraint to dof 5 of the node at the free end of the beam. With the default convergence control settings, only 12% of the specified rotation are reached.
+The rotation is applied as constraint to dof 5 of the node at the free end of the beam. With the default convergence control settings, only 6% of the specified rotation are reached.
 ```
 > cgx -b b.fbd
 ```
@@ -52,7 +52,7 @@ The script contains the pre-processing, solution and post-processing.
 <img src="b.png" width="600" title="Convergence plot">
 
 # Shell Model
-In CGX, qu8 elements are specified. This results in S8R elements in the CCX input. These are internally expanded into C3D20R.
+In CGX, qu8r elements are specified. This results in S8R elements in the CCX input. These are internally expanded into C3D20R.
 
 The rotation is applied as constraint to dof 5 of the nodes at the free end of the strip. The solution converges very well. Due to the large rotations, only invariant stress measures like v. Mises or principal stresses are useful.
 ```
@@ -117,7 +117,7 @@ Run the analysis:
 ```
 > cgx -b scd.fbd
 ```
-The simulation doesn't complete a single increment.
+The simulation runs but the free end exhibits some hourglassing-like distortion.
 
 <img src="scd-mesh.png" width="300" title="Solid model with surfaced based load (distributing coupling)"><img src="scd-def.png" width="300" title="Residual forces">
 
@@ -135,6 +135,7 @@ and
 ```
 *boundary
 Nrefnode,5,5,1.57
+Nrefnode,2,2
 ```
 
 Run the analysis:

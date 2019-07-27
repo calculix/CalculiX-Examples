@@ -16,6 +16,7 @@
 *STATIC
 *boundary
 Nrefnode,5,5,1.57
+Nrefnode,2,2
 *el file
 S
 *node file

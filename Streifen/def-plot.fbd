@@ -1,4 +1,6 @@
-tra u 25
+frame
+tra u 20
+zoom 1.5
 view disp
 view elem
 plot fv all n
