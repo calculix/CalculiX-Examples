@@ -5,7 +5,7 @@ copy all new mir y
 copy all new mir z
 view disp
 view elem
-ds -0 e 1
+ds -1 e 1
 rot x
 rot c 90
 frame
