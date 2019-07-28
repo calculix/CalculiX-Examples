@@ -33,7 +33,7 @@ This element is internally expanded into C3D20R solid elements. Prescribed rotat
 
 For the given mesh density, the displacement is 3% lower than the reference value and converges to it for higher density.
 
-<img src="/Refs/b32-fix.png" width="400" title="All nodes stick to the support plane"><img src="Refs/b32-fix-30.png" width="400" title="All nodes stick to the support plane">
+<img src="Refs/b32-fix.png" width="400" title="All nodes stick to the support plane"><img src="Refs/b32-fix-30.png" width="400" title="All nodes stick to the support plane">
 
 ### User element U1 with general section
 
