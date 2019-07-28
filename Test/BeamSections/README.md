@@ -1,6 +1,6 @@
 # Beam Sections
 
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Test of beam elements
 
@@ -23,21 +23,21 @@ steel with E = 210 GPa and nu = 0.3.
 Click the image below to open a life worksheet:
 [![Screenshot](cantilever.png)](https://en.smath.info/cloud/worksheet/RGoTsp3s)
 
-### Beam element b32
-This element is internally expanded into C3D20 solid elements. Prescribed rotations are internally converted into mean rotation MPCs. The conversion isn't consistent, the mean rotation of the left end clearly isn't zero. This leads to excessive displacement compared to the reference.
+### Beam element b32r
+This element is internally expanded into C3D20R solid elements. Prescribed rotations are internally converted into mean rotation MPCs.
 
 ```
 > cgx -b b32.fbd
 ```
-<img src="b32-disp.png" width="400" title="Deflection for B32 element"><img src="b32-se.png" width="400" title="Equivalent stress for B32 element">
+<img src="Refs/b32-disp.png" width="400" title="Deflection for B32R element"><img src="Refs/b32-se.png" width="400" title="Equivalent stress for B32R element">
 
-The displacement exceeds the reference value by 10%. This is due to the incomplete rotation constraint at the support:
+For the given mesh density, the displacement is 3% lower than the reference value and converges to it for higher density.
 
-<img src="b32-fix.png" width="400" title="The corner nodes stick to the support plane, the top and bottom midside nodes don't"><img src="b32-fix-30.png" width="400" title="The corner nodes stick to the support plane, the top and bottom midside nodes don't">
+<img src="/Refs/b32-fix.png" width="400" title="All nodes stick to the support plane"><img src="Refs/b32-fix-30.png" width="400" title="All nodes stick to the support plane">
 
 ### User element U1 with general section
 
-This element is mentioned in the CCX handbook version 2.13 in section 6.2.45.
+This element is mentioned in the CCX handbook version 2.15 in section 6.2.45.
 
 ```
 *ELEMENT, TYPE=U1, ELSET=Eall
@@ -64,4 +64,4 @@ For results checking you have to rely on the DAT file.
 
 The following image shows the displacement UZ and the rotation RY along the beam.
 
-<img src="u1-def.png" width="500" title="Deflection and rotation results for U1 user element">
+<img src="Refs/u1-def.png" width="500" title="Deflection and rotation results for U1 user element">
