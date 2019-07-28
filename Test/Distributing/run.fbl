@@ -64,7 +64,7 @@ sys mv hcpy_2.png Refs/mx.png
 graph pathy length
 
 ulin Moment about y
-ds 4 e 3
+ds 5 e 3
 frame
 hcpy png
 sys mv hcpy_3.png Refs/my.png
@@ -72,7 +72,7 @@ sys mv hcpy_3.png Refs/my.png
 graph pathx length
 
 ulin Moment about z
-ds 6 e 24
+ds 8 e 24
 frame
 hcpy png
 sys mv hcpy_4.png Refs/mz.png
@@ -84,7 +84,7 @@ frame
 ulin Moment about z
 view disp
 scal d 100000
-ds 6 e 24
+ds 8 e 24
 frame
 hcpy png
 sys mv hcpy_5.png Refs/mz-disp.png
