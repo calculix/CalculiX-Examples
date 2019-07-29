@@ -1,10 +1,12 @@
 # Stress distribution with mean rotation MPC
 
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Test of mean rotation multipoint constraints
 + Stress distribution for applied moments
-+ Result: Exhibits the same strange (hyperbolic) stress distribution as distributing coupling, plus stress peaks at boundaries and edges due to equal nodal weights. Distributing coupling is area-weighted, thus no artificial peaks.
++ Result in version 2.13: Exhibits the same strange (hyperbolic) stress distribution as distributing coupling, plus stress peaks at boundaries and edges due to equal nodal weights. Distributing coupling is area-weighted, thus no artificial peaks.
++ Result in version 2.15: The MPC syntax of the CCX input has changed without this being also implemented in CGX. Therefore no results are obtained. All stresses are Zero.
+
 
 File                           | Contents    
 :-------------                | :-------------
@@ -39,6 +41,6 @@ The plots of the normal stress show the load distribution for bending moments, t
 <img src="Refs/mx.png" width="400"><img src="Refs/my.png" width="400">
 <img src="Refs/mz-disp.png" width="400"><img src="Refs/mesh.png" width="400">
 
-The stress profiles are hyperbolic with distance from the center of gravity (a linear distribution would be expected). The stress peaks at the corners and at the edge come from equal weight per node (in contrast to surface based distributing coupling, mean rot mpc is not area-aware).
+(2.13 only) The stress profiles are hyperbolic with distance from the center of gravity (a linear distribution would be expected). The stress peaks at the corners and at the edge come from equal weight per node (in contrast to surface based distributing coupling, mean rot mpc is not area-aware).
 
 <img src="Refs/stress.png">
