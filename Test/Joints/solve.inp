@@ -39,12 +39,12 @@ U
 *el file
 S
 *end step
-*step,nlgeom
-*static
-*dsload
-Sload,P,-1000
-*node file
-U
-*el file
-S
-*end step
+** *step,nlgeom
+** *static
+** *dsload
+** Sload,P,-1000
+** *node file
+** U
+** *el file
+** S
+** *end step

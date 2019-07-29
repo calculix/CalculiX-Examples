@@ -1,5 +1,5 @@
 # Test of Joints
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Test of distributing and kinematic coupling
 + Modal analysis
@@ -85,89 +85,76 @@ Both versions are used in simulations of three steps:
 
 ## Distributing coupling
 
+Coupling commands:
+```
+*coupling, ref node= 5351 ,surface= Ss1 ,constraint name=p11
+*distributing
+4,6
+*coupling, ref node= 5352 ,surface= Ss2 ,constraint name=p12
+*distributing
+4,5
+```
 ```
 > cgx -b dist.fbl
 ```
-The frequency analysis and the linear static analysis indicate that the pin is not movable at all.
+The frequency analysis and the linear static analysis indicate that the pin is not movable at all. Movies of the modal shapes can be found in [Refs](./Refs).
 
 <img src="Refs/dist1.gif" width="160"><img src="Refs/dist2.gif" width="160"><img src="Refs/dist3.gif" width="160"><img src="Refs/dist4.gif" width="160"><img src="Refs/dist5.gif" width="160">
 
 <img src="Refs/f-dist.png" width="400">
 
-The knot messages in the dat file indicate some problems:
-```
-KNOT2
-tra      5333 -0.5947E-15  0.1546E-15  0.8250E-15
-rot         0         NaN  0.1028-320  0.8777-318
-exp      5461  0.0000E+00 -0.9328E-14 -0.9328E-14
-
-```
-
 In the linear static step, the lower fixed bar is totally stress free, all the load is taken by the upper reference node (which was not fixed deliberately). There is a message stating that nlgeom is active.
 
 <img src="Refs/se-dist.png" width="400">
 
-The non-linear static analysis doesn't succeed, CCX stops with the message:
+The non-linear static analysis crashes with a segfault which destroys the DAT file.
 
-```
-STEP            3
-
-Static analysis was selected
-
-Newton-Raphson iterative procedure is active
-
-Nonlinear geometric effects are taken into account
-
-*ERROR in meanrotmpc: MPC has wrong number of terms
-```
+In order to generate the frequency plot, the non-linear step must be removed.
 
 ## Kinematic coupling
-The interface surfaces are coupled to separate ref nodes. The ref nodes are connected by the pin with no released degrees of freedom. Thus the structure behaves like a single deformable part.
+
+Coupling commands:
+```
+*coupling, ref node= 5351 ,surface= Ss1 ,constraint name=p11
+*kinematic
+1,3
+*coupling, ref node= 5352 ,surface= Ss2 ,constraint name=p12
+*kinematic
+1,3
+```
+The interface surfaces are coupled to separate ref nodes. The ref nodes are connected by the pin with no released degrees of freedom. Thus the structure should behave like a single deformable part. However, it there is no coupling of rotations between the two parts and the pin. Movies of the modal shapes can be found in [Refs](./Refs).
 
 ```
 > cgx -b kin.fbl
 ```
-The frequency analysis and the linear static analysis show the expected behaviour.
 
 <img src="Refs/kin1.gif" width="160"><img src="Refs/kin2.gif" width="160"><img src="Refs/kin3.gif" width="160"><img src="Refs/kin4.gif" width="160"><img src="Refs/kin5.gif" width="160">
 
-The frequency chart can't be plotted because the dat-file is empty, perhaps due to the segfault crash.
+<img src="Refs/f-kin.png" width="400">
+
+given the missing coupling of rotations, there should be more than 2 zero frequencies
 
 `<img src="Refs/f-kin.png" width="400">`
 
-In the linear static step, the lower fixed bar shows bending and twisting load. The upper bar has tensile load, the stresses are much smaller there. This is to be expected because regardles of how the upper bar rotates, the pressure load is always axial.
+In the linear static step, the pin and the movable part aren't sufficiently constrained. This leads to very large meaningless deformations.
 
 <img src="Refs/se-kin.png" width="400">
 
-The non-linear static analysis doesn't succeed, CCX stops with the message:
+The non-linear static analysis doesn't succeed, it has been de-activated because it crashes with segfault and destroys the DAT file.
 
-```
-STEP            3
-
-Static analysis was selected
-
-Newton-Raphson iterative procedure is active
-
-Nonlinear geometric effects are taken into account
-
-Determining the structure of the matrix:
-number of equations
-10939
-number of nonzero lower triangular matrix elements
-369327
-
-increment 1 attempt 1
-increment size= 1.000000e+00
-sum of previous increments=0.000000e+00
-actual step time=1.000000e+00
-actual total time=2.000000e+00
-
-iteration 1
-
-Segmentation fault
-
-```
 ## Kinematic coupling without pin
+
+Coupling commands:
+```
+*orientation, name=pin, system=cylindrical
+100, 0, 0, 100, 0, 10
+*node, nset=nref
+6000 , 100, 0, 0
+*coupling, ref node= 6000 ,surface= Ss12 ,constraint name=p11, orientation=pin
+*kinematic
+1
+3
+```
 
 The idea is to couple the interface surfaces of both members to the same reference node and restricting the coupling to the axial and radial motion using a custom co-ordinate system. This will allow relative rotation about the axis.
 

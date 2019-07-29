@@ -1,4 +1,3 @@
-
 # run the simulations and generate the images
 ulin Kinematic coupling
 sys cp kpin.inc pin.inc
@@ -20,24 +19,18 @@ valu counter 0
 valu num 10
 # increment for modes
 valu incr 1
-# file extension for movies
-valu ext .gif
-# file prefix for movies
-valu topre Refs/kin
-read the solution
-# setup the view
 # loop over movies
 while counter < num
   valu counter + counter incr
   # convert counter value to integer
   valu counter int counter
   # build output file name from prefix, counter and extension
-  valu target & topre counter
-  valu target & target ext
+  valu target & Refs/kin counter
+  valu target & target .gif
   # make sure that the frequency is correctly displayed
   ds counter e 4
   # write 11 frames from the output of the subsequent command
-  movi frames 11
+  movi frames auto
   ds counter a 4
   # store the movie under the target name target
   sys mv movie.gif target

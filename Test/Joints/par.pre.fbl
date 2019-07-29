@@ -87,7 +87,7 @@ sys echo *distributing                                                 >> dpin.i
 sys echo 4,6                                                           >> dpin.inc
 sys echo *coupling, ref node= nref2 ,surface= Ss2 ,constraint name=p12 >> dpin.inc
 sys echo *distributing                                                 >> dpin.inc
-sys echo 4,6                                                           >> dpin.inc
+sys echo 4,5                                                           >> dpin.inc
 
 # write coupling cards, kinematic
 sys echo *coupling, ref node= nref1 ,surface= Ss1 ,constraint name=p11  > kpin.inc
