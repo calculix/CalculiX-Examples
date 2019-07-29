@@ -8,18 +8,18 @@ rot r 50
 rot u 40
 
 # stress plots at the end positions
-text Nominal stress: 20 MPa
+ulin Nominal stress: 20 MPa
 ds 2 e 7
 frame
 zoom 1.5
 hcpy png
 sys mv hcpy_1.png Refs/trfix1.png
-text Nominal stress: 2400 MPa
-ds 4 e 7
+ulin Nominal stress: 2400 MPa
+ds 5 e 7
 hcpy png
 sys mv hcpy_2.png Refs/trfix2.png
-text Nominal stress: 1200 MPa
-ds 6 e 7
+ulin Nominal stress: 1200 MPa
+ds 8 e 7
 hcpy png
 sys mv hcpy_3.png Refs/trfix3.png
 

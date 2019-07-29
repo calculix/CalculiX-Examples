@@ -14,15 +14,15 @@ frame
 hcpy png
 sys mv hcpy_1.png Refs/trans1.png
 text Nominal stress: 1200 MPa
-ds 22 e 7
+ds 32 e 7
 hcpy png
 sys mv hcpy_2.png Refs/trans2.png
 text Nominal stress: 2400 MPa
-ds 42 e 7
+ds 62 e 7
 hcpy png
 sys mv hcpy_3.png Refs/trans3.png
 text Nominal stress: 20 MPa
-ds 62 e 7
+ds 92 e 7
 hcpy png
 sys mv hcpy_4.png Refs/trans4.png
 

@@ -4,11 +4,6 @@ valu counter 0
 valu num 20
 # increment for modes
 valu incr 1
-# file extension for movies
-valu ext .gif
-# file prefix for movies
-valu topre Refs/shape_
-
 # read the solution
 read solve.frd new
 # setup the view
@@ -28,12 +23,12 @@ while counter < num
   # convert counter value to integer
   valu counter int counter
   # build output file name from prefix, counter and extension
-  valu to & topre counter
-  valu to & to ext
+  valu to & Refs/shape_ counter
+  valu to & to .gif
   # make sure that the frequency is correctly displayed
   ds counter e 4
   # write 11 frames from the output of the subsequent command
-  movi frames 11
+  movi frames auto
   ds counter a 4
   # store the file under the target name
   sys mv movie.gif to
