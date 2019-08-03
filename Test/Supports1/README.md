@@ -1,5 +1,5 @@
 # Supports using distributing coupling
-Tested with CGX 2.13.1 /CCX 2.13
+Tested with CGX 2.15 /CCX 2.15
 
 + Use of distributing coupling to model bearings of a shaft
 + Modal analysis
@@ -12,12 +12,12 @@ File                          | Contents
 [gmsh.fbl](gmsh.fbl)          | CGX script, meshing with Gmsh
 [test.py](test.py)            | Python script to run the full simulation
 
-The geometry represents a gearbox shaft with bearing journals at the ends. These are modelled using distributing coupling of the cylindrical bearing surfaces. The translations of their centroid is controlled by the displacement of the reference nodes.
+The geometry represents a gearbox shaft with bearing journals at the ends. These are modeled using distributing coupling of the cylindrical bearing surfaces. The translations of their centroid is controlled by the displacement of the reference nodes.
 
 Note that this works only for solid elements (not for shells).
 
 ```
-> cgx .b run.fbl
+> cgx -b run.fbl
 ```
 
 <img src="Refs/cgx-mesh.png" width="400">

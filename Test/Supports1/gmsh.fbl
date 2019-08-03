@@ -24,7 +24,7 @@ ulin Ref nodes
 plot n r1 r 10
 plus n r2 b 10
 hcpy png
-sys mv hcpy_1.png Refs/refnodes.png
+sys mv hcpy_2.png Refs/refnodes.png
 
 # movie counter
 valu counter 0
@@ -32,10 +32,6 @@ valu counter 0
 valu num 20
 # increment for modes
 valu incr 1
-# file extension for movies
-valu ext .gif
-# file prefix for movies
-valu topre Refs/shape_
 # show undeformed model edges
 anim model
 # loop over movies
@@ -45,12 +41,12 @@ while counter < num
   valu counter int counter
   ulin Mode counter
   # build output file name from prefix, counter and extension
-  valu to & topre counter
-  valu to & to ext
+  valu to & Refs/shape_gmsh_ counter
+  valu to & to .gif
   # make sure that the frequency is correctly displayed
   ds counter e 4
   # write 11 frames from the output of the subsequent command
-  movi frames 11
+  movi frames auto
   ds counter a 4
   # store the file under the target name
   sys mv movie.gif to
