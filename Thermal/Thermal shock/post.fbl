@@ -15,10 +15,10 @@ graph * amp
 graph Nhist time DISP D1
 sys gnuplot history.gnu
 
-# path plots
-ds 71 e 1
+# path plots at end of excitation
+ds 94 e 1
 graph Npath length
-ds 72 e 3
+ds 95 e 3
 graph Npath length
 sys gnuplot profile.gnu
 
@@ -35,13 +35,13 @@ plus e new n
 hcpy png
 sys mv hcpy_1.png Refs/start.png
 
-ds 71 e 1
+ds 94 e 1
 plot fv base
 plus e new n
 hcpy png
 sys mv hcpy_2.png Refs/end_of_excitation.png
 
-ds 149 e 1
+ds 198 e 1
 plot fv base
 plus e new n
 hcpy png

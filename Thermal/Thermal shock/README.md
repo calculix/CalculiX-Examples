@@ -1,10 +1,10 @@
 # Thermal Strain
-Tested with CGX 2.13.1 / CCX 2.13
+Tested with CGX 2.15 / CCX 2.15
 
 + Transient coupled thermo-mechanical analysis
 + Bending of a plate due to one-sided heating
-+ Time history excitation and deflection plot
-+ Cross thickness temperature and stress plot
++ Time history plot of excitation and deflection
++ Cross thickness plot of temperature and stress
 
 File                       | Contents    
  :-------------            | :-------------
