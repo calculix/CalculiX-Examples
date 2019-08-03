@@ -1,7 +1,7 @@
 read Tjoint.frd new
 read contact.fbd
 
-ds -0 e 7
+ds -1 e 7
 view disp
 view elem
 scal d 20
@@ -35,7 +35,7 @@ sys mv hcpy_1.png name
 valu name -D2.png
 valu name & contact name
 steps 10
-ds -1 e 2
+ds -2 e 2
 max 0.5 f
 min -0.5 f
 plot f all n
