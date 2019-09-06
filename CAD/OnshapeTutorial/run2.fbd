@@ -1,21 +1,18 @@
 # convert and import geometry
 sys cad2fbd part.step
 read result.fbd
-ulin cad2fbd import, local mesh refinement
 
-# meshing
+ulin cad2fbd import, local mesh refinement
 div all auto 5 30
 seta cdiv l Q021 Q018 Q013
 div cdiv mult 4
 elty all te10
 mesh all
+send all abq
 
 view elem
 plot e all
-hcpy png
-sys mv hcpy_1.png Refs/mesh2.png
-
-send all abq
+hcpy png Refs/mesh2
 
 # pressure application
 seta load s A00H
@@ -33,11 +30,11 @@ send support abq nam
 frame
 plot f load
 plus n support
-hcpy png
-sys mv hcpy_2.png Refs/sets2.png
+hcpy png Refs/sets2
 
 # solve
 sys ccx solve
+
 read solve.frd
 rot y
 rot c 30
@@ -48,11 +45,10 @@ scal d 1000
 view elem
 ds -1 e 7
 plot fv all
-hcpy png
-sys mv hcpy_3.png Refs/se2.png
+hcpy png Refs/se2
+
 rot y
 rot u 30
 plot fv all
 plus f all n
-hcpy png
-sys mv hcpy_4.png Refs/disp2.png
+hcpy png Refs/disp2

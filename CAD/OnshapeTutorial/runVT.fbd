@@ -12,10 +12,11 @@ send load abq pres 1
 
 plot f load
 plus n support
-hcpy png
-sys mv hcpy_1.png Refs/setsVT.png
+hcpy png Refs/setsVT
+
 sys ccx solve
 read solve.frd
+
 rot y
 rot c 30
 rot r 30
@@ -25,11 +26,10 @@ scal d 1000
 view elem
 ds -1 e 7
 plot fv all
-hcpy png
-sys mv hcpy_2.png Refs/seVT.png
+hcpy png Refs/seVT
+
 rot y
 rot u 30
 plot fv all
 plus f all n
-hcpy png
-sys mv hcpy_3.png Refs/dispVT.png
+hcpy png Refs/dispVT

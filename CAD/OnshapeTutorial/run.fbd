@@ -6,17 +6,24 @@ ulin gmsh without virtual topology
 # remove surface elements
 zap +CPS6
 
+# send mesh, support set and load definition
 send all abq
 send support abq nam
 comp load do
 send load abq pres 1
 
+# document sets
 plot f load
 plus n support
-hcpy png
-sys mv hcpy_1.png Refs/sets.png
+hcpy png Refs/sets
+
+# solve
 sys ccx solve
+
+# read results
 read solve.frd
+
+# plot of equivalent stress
 rot y
 rot c 30
 rot r 30
@@ -26,12 +33,11 @@ scal d 1000
 view elem
 ds -1 e 7
 plot fv all
-hcpy png
-sys mv hcpy_2.png Refs/se.png
+hcpy png Refs/se
 
+# plot of deformed geometry
 rot y
 rot u 30
 plot fv all
 plus f all n
-hcpy png
-sys mv hcpy_3.png Refs/disp.png
+hcpy png Refs/disp
