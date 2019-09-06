@@ -1,5 +1,5 @@
 # Hertz contact axisymmetric (sphere to plane)
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.16 / CCX 2.15
 
 + Axisymmetric model
 + Linear elasticity

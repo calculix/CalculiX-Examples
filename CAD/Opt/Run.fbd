@@ -69,7 +69,7 @@ frame
 plot f load b 6
 plus n fix r 6
 plus n fix r 6
-hcpy png
+hcpy png sets
 
 # solve and read results
 sys ccx Solve
@@ -83,7 +83,8 @@ view disp
 scal d 100
 plot fv all
 plot fv all
-hcpy png
+hcpy png se
+
 prnt st
 valu maxs pop 7
 

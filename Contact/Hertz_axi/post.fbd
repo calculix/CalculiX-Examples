@@ -5,17 +5,14 @@ ds 2 e 7
 view disp
 plot fv all
 frame
-hcpy png
-sys mv hcpy_1.png SE.png
+hcpy png SE
 
 zoom 10
 tra r 55
 tra d 5
 view elem
 plot fv all
-hcpy png
-sys mv hcpy_2.png SE_zoom.png
-
+hcpy png SE_zoom
 
 view elem off
 seta base all
@@ -29,5 +26,4 @@ plus ev 2D
 rot -z
 rot r 10
 rot u 10
-hcpy png
-sys mv hcpy_3.png SE-3D.png
+hcpy png SE-3D

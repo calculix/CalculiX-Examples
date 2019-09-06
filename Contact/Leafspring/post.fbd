@@ -1,4 +1,5 @@
 read solve.frd new
+
 view disp
 ds -2 e 1
 view elem
@@ -14,5 +15,4 @@ rot u 2
 zoom 10
 plot ev base
 plus e new n
-hcpy png
-sys mv hcpy_1.png Refs/Sxx.png
+hcpy png Refs/Sxx

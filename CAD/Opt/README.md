@@ -1,6 +1,6 @@
 # Model for Parametric Optimization
 
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.16 / CCX 2.15
 
 This is a test model for optimization with various optimization software tools like Optimax or Dakota.
 
@@ -39,7 +39,7 @@ The mesh is controlled by
 
 Node set `fix` and surface `load` are created for application of the boundary conditions.
 
-<img src="hcpy_1.png" width="400" title="Geometry">
+<img src="sets.png" width="400" title="Geometry">
 
 
 
@@ -61,7 +61,7 @@ The stack is activated in order to extract result values and write them to a tex
 
 A plot of the equivalent stress is generated and the maximum value is read from the stack.
 
-<img src="hcpy_2.png" width="400" title="Equivalent stress">
+<img src="se.png" width="400" title="Equivalent stress">
 
 
 The `area` command computes the surface properties and writes them to the stack.

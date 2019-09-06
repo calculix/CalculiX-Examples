@@ -1,11 +1,8 @@
-# contact stress between cylinder and brick, based on a non-parametric model by
-# dichtstoff
 valu radius 50
 valu height 60
 valu width 120
 # element type, e.g. qu8c, qu8cr
 valu etyp qu8c
-
 
 # quarter circle (hemisphere)
 pnt p1 0 radius 0
@@ -42,16 +39,14 @@ rot -z
 view elem
 frame
 seta ! all
-hcpy png
-sys mv hcpy_1.png parts.png
+hcpy png parts
 
 # view of the contact zone
 zoom 10
 tra r 55
 tra d 5
 seta ! all
-hcpy png
-sys mv hcpy_2.png parts-zoom.png
+hcpy png parts-zoom
 
 # line numbers
 frame
@@ -103,5 +98,4 @@ ulin x0 (red), y0 (mag.), control (b)
 plot l x0 r 6
 plus l y0 m 6
 plus l control b 6
-hcpy png
-sys mv hcpy_4.png sets.png
+hcpy png sets

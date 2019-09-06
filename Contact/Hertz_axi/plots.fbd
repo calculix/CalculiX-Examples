@@ -31,6 +31,5 @@ ds 4 e 4
 graph Npath length
 sys mv graph_6.out pres.out
 
-#
 # create the real plots
 sys gnuplot plots.gnu

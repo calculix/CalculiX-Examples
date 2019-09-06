@@ -83,5 +83,4 @@ plus n path m 6
 zoom 1.2
 view elem
 plus n control t 6
-hcpy png
-sys mv hcpy_1.png mesh.png
+hcpy png mesh

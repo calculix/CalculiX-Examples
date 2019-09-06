@@ -1,16 +1,16 @@
 read eyebar.frd
+
 rot -z
 ds -2 e 1
 view disp
 view elem
 zoom 1.2
 plot fv all
-hcpy png
-sys mv hcpy_1.png PE.png
+hcpy png PE
+
 ds -4 e 7
 plot fv all
-hcpy png
-sys mv hcpy_2.png SE.png
+hcpy png SE
 
 # create force-displacement plot
 sys dat2txt.py eyebar

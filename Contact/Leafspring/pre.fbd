@@ -80,13 +80,26 @@ send load abq spc 3 10
 # support
 enq nodes support rec L _ offset 0.1
 send support abq nam
-# image
 
+# image
 frame
 rot y
-rot l 70
-rot u 10
-zoom 3
+rot l 80
+rot d 10
+zoom 4
 seta ! all
-hcpy png
-sys mv hcpy_1.png Refs/geo.png
+hcpy png Refs/geo
+
+# contact plot
+seta master f bot*
+seta slave n top*
+frame
+rot y
+rot l 80
+rot d 10
+zoom 4
+plot fb all n 50
+plus fb master b 50
+plus n slave r 4
+view ill
+hcpy png Refs/contact

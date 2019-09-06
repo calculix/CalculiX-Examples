@@ -4,16 +4,18 @@ valu radius 50
 valu height 60
 valu width 120
 
+# geometry, indenter
 pnt p1 radius 0 0
 pnt p2 0 0 0
 pnt p3 radius radius 0
-# undocumented line bias
+## undocumented line bias
 line peri p2 p3 p1 80 1.05
 line l1 p2 p1 80 1.05
 line l2 p3 p1 40 1
 surf s1 l2 peri l1
 move all tra height 0 0
 
+# geometry, block
 seto block
 pnt p4 height 0 0
 valu neg_height * -1 height
@@ -23,71 +25,75 @@ swep block block tra 0 width 0 120
 seta lb l L003 L004
 bia lb 8
 
+# meshing
 elty all qu8e
 mesh all
 send all abq
 
+# mesh plot
 rot -z
 view elem
 plot f all n
 frame
 seta ! all
 # plot f all n
-hcpy png
-sys mv hcpy_1.png parts.png
+hcpy png parts
+
+# mesh plot, detail
 zoom 10
 tra u 55
 tra l 5
-
 # this is a trick to get the screenshot correct (plots an invisible point)
 plus p all k 1
+hcpy png parts-zoom
 
-hcpy png
-sys mv hcpy_2.png parts-zoom.png
-
+# contact surface
 SETA scyl l peri
 comp scyl do
 comp scyl do
 send scyl abq sur
 
+# contact surface
 seta sblk l L003
 comp sblk do
 comp sblk do
 send sblk abq sur
 
+# symmetry boundary
 seta y0 l L001 l1
 comp y0 do
 comp y0 do
 send y0 abq spc 2
 
+# support
 seta x0 l L004
 comp x0 do
 comp x0 do
 send x0 abq spc 1
 
-
+# control surface
 seta control l l2
 comp control do
 comp control do
-
+# pressure load
 send control abq pres 50
+# precribed displacement
 send control abq spc 1 -1
 
+# reduced node set (nodes with spc can't be slave nodes)
 setr scyl n control
 send scyl abq nam
 
-# boundary sets
+# plot of boundary sets
 ulin Boundary sets: x0 (red), y0 (blue), control (turq.)
 frame
 plot n x0 r 6
 plus n y0 b 6
 plus f control t 8
-hcpy png
-sys mv hcpy_3.png sets.png
+hcpy png sets
 
-# contact surfaces
+# plot of contact surfaces
 ulin Contact surfaces: scyl (red), sblk (blue)
 plot f scyl r 8
 plus f sblk b 8
-hcpy png
-sys mv hcpy_4.png contact.png
+hcpy png contact
