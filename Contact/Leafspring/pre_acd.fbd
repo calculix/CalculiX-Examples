@@ -1,0 +1,72 @@
+# <L=500>  Length
+# <W=20> Width
+# <T=5> thickness
+# <num=5> number of leafs
+valu L 300
+valu W 20
+valu T 5
+valu num 6
+
+# basic brick
+valu L0 / L num
+pnt p0 0 0 0
+swep all new tra 0 W 0
+swep all new tra 0 0 T
+swep all new tra L0 0 0
+seta leaf0 b all
+
+#other leafs
+valu count 1
+while count < num
+  # counter
+  valu leafi & leaf count
+  # offset in z
+  valu offset * T count
+  # increment counter
+  valu count + count 1
+  valu count int count
+  # create new leaf
+  copy leaf0 leafi tra 0 0 offset
+  move leafi scal count 1 1
+endwhile
+
+#meshing
+elty all he20
+div all auto W
+mesh all
+send all abq
+
+# contact detection
+sys rm -f ICF*.sur
+sys rm -f DCF*.nam
+neigh all 1 abq nsc 100000 0
+sys cat ICF*.sur > surfaces.inp
+sys cat DCF*.nam > nodesets.inp
+sys rm -f ICF*.sur
+sys rm -f DCF*.nam
+
+# contact plot
+seta master f ICF*
+seta slave n DCF*
+frame
+rot y
+rot l 80
+rot d 10
+zoom 4
+plot fb all n 50
+plus fb master b 50
+plus n slave r 4
+hcpy png Refs/contact_acd
+
+# Symmetry
+seta nodes n all
+enq nodes ysym rec _ 0 _ 0.1
+enq nodes xsym rec 0 _ _ 0.1
+send ysym abq spc 2
+send xsym abq spc 1
+# Load
+enq nodes load rec 0 _ _ 0.1
+send load abq spc 3 10
+# support
+enq nodes support rec L _ offset 0.1
+send support abq nam

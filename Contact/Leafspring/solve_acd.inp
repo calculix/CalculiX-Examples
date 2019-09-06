@@ -1,0 +1,32 @@
+*include, input=all.msh
+*include, input=support.nam
+*include, input=surfaces.inp
+*include, input=nodesets.inp
+*include, input=neigh.con
+*boundary
+*include, input=ysym_2.bou
+*include, input=xsym_1.bou
+Nsupport,3
+** material definition
+*material, name=steel
+*elastic
+210000,0.3
+** material assignment to bodies
+*solid section, elset=Eall, material=steel
+
+*step,nlgeom, inc=500
+***controls, parameters=field
+**0.05,0.1,0.1,0.1,0.1
+*static
+0.01,1
+*boundary
+*include, input=load_310.bou
+*node file,
+U
+*el file, frequency=50
+S
+*contact file
+CDIS
+*node print, nset=Nsupport,totals=only
+RF
+*end step
