@@ -44,8 +44,7 @@ move cgw tra 0.01 0 0
 plot f cgw r
 plus f ckw b
 plus n hist t 10
-hcpy png
-sys mv hcpy_1.png contact.png
+hcpy png contact
 
 # contact versions
 sys cp s2s-lin.inc contact.inc
@@ -75,7 +74,6 @@ sys mv graph_2.out n2s-lin.hist
 sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" n2s-lin.txt
 
-
 sys cp n2s-exp.inc contact.inc
 sys ccx solve
 read solve.frd new
@@ -84,7 +82,6 @@ graph Nhist time CONTACT CPRESS
 sys mv graph_3.out n2s-exp.hist
 sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" n2s-exp.txt
-
 
 sys cp n2s-tab.inc contact.inc
 sys ccx solve

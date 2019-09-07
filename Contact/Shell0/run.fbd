@@ -65,8 +65,7 @@ frame
 #tra d 2
 #tra r 2
 seta ! all
-hcpy png
-sys mv hcpy_1.png model.png
+hcpy png model
 
 # plot of the contact pair
 view ill
@@ -75,8 +74,7 @@ plot f k1 r 8
 plus f s1 b
 plus n k1 r 8
 frame s1
-hcpy png
-sys mv hcpy_2.png contact.png
+hcpy png contact
 
 sys ccx ctyp
 sys python dat2txt.py ctyp

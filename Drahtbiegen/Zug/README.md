@@ -1,5 +1,5 @@
 # Tensile Test
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.16 / CCX 2.15
 
 Issues
 * dark shading of `expanded.png` worked around with first generating a color plot and then add a shaded geometry plot using `plus`

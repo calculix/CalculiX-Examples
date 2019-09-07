@@ -15,17 +15,14 @@ rot u 5
 ds -2 e 23
 plot fv Epart
 plus f Eind n
-hcpy png
-sys mv hcpy_1.png Refs/worstPS1.png
+hcpy png Refs/worstPS1
 
 rot d 30
-hcpy png
-sys mv hcpy_2.png Refs/worstPS2.png
+hcpy png Refs/worstPS2
 
 # shaded deformed plot
 rot y
 rot l 10
 rot u 5
 plus f all n
-hcpy png
-sys mv hcpy_3.png Refs/def1.png
+hcpy png Refs/def1

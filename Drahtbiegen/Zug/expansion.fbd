@@ -22,17 +22,14 @@ rot l 25
 rot u 15
 zoom 2
 plot fv all
-hcpy png
-sys mv hcpy_1.png PE-expanded.png
+hcpy png PE-expanded
 
 plot fv all
 plus f all n
-hcpy png
-sys mv hcpy_2.png expanded.png
+hcpy png expanded
 
 plus ev base
-hcpy png
-sys mv hcpy_3.png 2D3D.png
+hcpy png 2D3D
 
 # movie
 plot ev all

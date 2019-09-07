@@ -36,8 +36,7 @@ tra l 0.5
 plot la all
 plus sa all
 plus pa all
-hcpy png
-sys mv hcpy_1.png zug-geo.png
+hcpy png zug-geo
 
 ulin Sets: top (blue), sym (green), bottom (turq)
 view elem
@@ -47,6 +46,5 @@ plus n bottom t 8
 plus n sym g 6
 
 
-hcpy png
-sys mv hcpy_2.png zug-sets.png
+hcpy png zug-sets
 # END OF SCRIPT

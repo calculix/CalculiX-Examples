@@ -120,9 +120,7 @@ plus f press b 6
 plus f vsc m 10
 plus f vc y 6
 frame
-hcpy png
-sys mv hcpy_1.png mesh.png
+hcpy png mesh
 
 frame vsc
-hcpy png
-sys mv hcpy_2.png mesh-vsc.png
+hcpy png mesh-vsc

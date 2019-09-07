@@ -6,6 +6,7 @@ valu ls 30
 valu ri 10
 valu xi -5
 valu ts 1
+
 # core
 pnt p0 0 0 0
 seto cl
@@ -17,6 +18,7 @@ seta c_bottom se all
 merg p all
 swep c_bottom c_top tra 0 0 hc
 seta core all
+
 # skin
 valu ls_half / ls 2
 valu ls_neg * ls -1
@@ -28,11 +30,13 @@ setc
 copy bottom top tra 0 0 hc
 flip bottom
 seta part se all
+
 # edges
 seta bot_edge l L00B L00C L00D L00E
 comp bot_edge do
 seta top_edge l L00F L00G L00H L00I
 comp top_edge do
+
 # indenter
 seto ind
   pnt pk0 0 0 0
@@ -52,18 +56,21 @@ seto ind
   copy ind new rot z 180
   merg n ind
 setc
+
 # positioning the indenter
 move ind rot y 180
 move ind tra 0 0 hc
 move ind tra 0 0 ri
 move ind tra 0 0 ts
 move ind tra xi 0 0
+
 # meshing
 div part mult 2
 elty part qu8
 mesh part
 send all abq
 send all abq nam
+
 # surfaces
 send c_bottom abq surf
 send c_top abq surf
@@ -72,6 +79,7 @@ send top abq surf
 seta topneg se top
 send topneg abq surf -
 send ind abq sur
+
 # image
 ulin Independent meshes
 view elem
@@ -82,12 +90,10 @@ rot u 30
 seta ! all
 frame
 zoom 0.9
-hcpy png
-sys mv hcpy_1.png Refs/model.png
+hcpy png Refs/model
 
 ulin Sets: bot_edge (red), ind (blue)
 plot f all n
 plus n bot_edge r 6
 plus n ind b 6
-hcpy png
-sys mv hcpy_2.png Refs/sets.png
+hcpy png Refs/sets

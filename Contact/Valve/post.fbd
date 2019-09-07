@@ -16,8 +16,7 @@ ds 2 e 7
 tra u 15
 zoom 2.5
 plot fv all
-hcpy png
-sys mv hcpy_1.png se.png
+hcpy png se
 
 seta ! all
 
@@ -41,8 +40,7 @@ zoom 1.2
 tra u 15
 rot r 20
 rot u 10
-hcpy png
-sys mv hcpy_2.png se_exp.png
+hcpy png se_exp
 
 # path plot
 sys gnuplot path.gnu

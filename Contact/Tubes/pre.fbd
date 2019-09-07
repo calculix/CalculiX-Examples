@@ -78,12 +78,10 @@ plus f ind b
 plus f dep r
 view elem
 zoom 4
-hcpy png
-sys mv hcpy_1.png contact.png
+hcpy png contact
 
 plot n fix m 6
 plus n load t 6
 plus n ysym r 4
 ulin fix (magenta), ysym (red), load (turq)
-hcpy png
-sys mv hcpy_2.png sets.png
+hcpy png sets

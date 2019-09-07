@@ -84,8 +84,7 @@ zoom 1.5
 ulin Nodes for symmetry constraint
 plot e all n
 plot n symy 6
-hcpy png
-sys mv hcpy_1.png symy.png
+hcpy png symy
 
 # constrain wire end
 seta nodes n all
@@ -96,8 +95,7 @@ send wfix abq spc 123
 ulin Nodes for wire constraint
 plot e all n
 plot n wfix 6
-hcpy png
-sys mv hcpy_2.png wfix.png
+hcpy png wfix
 
 # constrain fixed cylinder
 send rfix abq spc 123
@@ -132,12 +130,10 @@ plot f find t
 plus f fdep b
 plus f mind m
 plus f mdep r
-hcpy png
-sys mv hcpy_3.png contact.png
+hcpy png contact
 
 # parts and elements
 view elem
 ulin Independent parts
 seta ! all
-hcpy png
-sys mv hcpy_4.png parts.png
+hcpy png parts

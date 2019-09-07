@@ -13,5 +13,4 @@ max  2 f l
 min  -0.2 f l
 plot fv all
 
-hcpy png
-sys mv hcpy_1.png PE-2D.png
+hcpy png PE-2D

@@ -10,8 +10,7 @@ rot r 130
 zoom 1.5
 ds -1 e 1
 seta ! all
-hcpy png
-sys mv hcpy_1.png deform.png
+hcpy png deform
 
 rot y
 frame
@@ -22,5 +21,4 @@ zoom 1.5
 tra r 2
 plot fv Ndraht
 min 0 f
-hcpy png
-sys mv hcpy_2.png PE.png
+hcpy png PE

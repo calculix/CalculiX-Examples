@@ -14,21 +14,17 @@ ds -2 e 7
 plot fv all
 frame
 #zoom 1.5
-hcpy png
-sys mv hcpy_1.png SE.png
+hcpy png SE
 zoom 4
-hcpy png
-sys mv hcpy_2.png SE_zoom.png
+hcpy png SE_zoom
 
 # color plots of contact pressure
 ds -1 e 4
 plot fv Sdep
 view sh off
-hcpy png
-sys mv hcpy_3.png cpress.png
+hcpy png cpress
 rot u 60
-hcpy png
-sys mv hcpy_4.png cpress_rot.png
+hcpy png cpress_rot
 
 sys dat2txt.py
 sys gnuplot moment.plt
