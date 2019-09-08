@@ -54,8 +54,7 @@ frame
 zoom 1.5
 view elem
 plot ld all
-hcpy png
-sys mv hcpy_1.png Refs/div.png
+hcpy png Refs/div
 
 swep all new rot y 270 30
 ulin Sets: fix (red), pr (blue)
@@ -64,5 +63,4 @@ zoom 1.3
 plot n fix r 8
 plus l pr b 6
 plus f all n
-hcpy png
-sys mv hcpy_2.png Refs/mesh.png
+hcpy png Refs/mesh

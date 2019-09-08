@@ -21,8 +21,7 @@ rot y
 rot d 10
 rot r 10
 frame
-hcpy png
-sys mv hcpy_1.png geo.png
+hcpy png geo
 
 div all auto nd
 elty all qu8r
@@ -46,5 +45,4 @@ ulin Sets: upper (blue), lower (red)
 plot n upper b 6
 plus n lower r 6
 plus l all k
-hcpy png
-sys mv hcpy_2.png sets.png
+hcpy png sets

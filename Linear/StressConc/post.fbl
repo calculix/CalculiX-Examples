@@ -18,12 +18,10 @@ trfm cyl y
 plot f all n
 plus ev 2D
 frame
-hcpy png
-sys mv hcpy_1.png Refs/worstps.png
+hcpy png Refs/worstps
 
 # zoom in and annotate maximum
 zoom 3
 txt max n 0.05 0.05
 plus nt max r
-hcpy png
-sys mv hcpy_2.png Refs/worstps-zoom.png
+hcpy png Refs/worstps-zoom

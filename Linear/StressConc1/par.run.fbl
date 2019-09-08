@@ -23,8 +23,7 @@ rot -z
 plot la all
 plus pa all
 frame
-hcpy png
-sys mv hcpy_1.png Refs/lines.png
+hcpy png Refs/lines
 
 # generate the surface from the edges
 surf ! l1 l2 l3 l4 l5
@@ -65,8 +64,7 @@ send all abq nam
 # plot: Line divisions
 rot -z
 plot ld all
-hcpy png
-sys mv hcpy_2.png Refs/div.png
+hcpy png Refs/div
 
 # plot: Mesh and sets
 view elem
@@ -76,8 +74,7 @@ plus n sym r 8
 plus na nref b 10
 plus n rb b 6
 frame
-hcpy png
-sys mv hcpy_3.png Refs/mesh.png
+hcpy png Refs/mesh
 
 # solution
 sys ccx Stress
@@ -92,8 +89,7 @@ ds 2 e 23
 view vec
 scal v 3
 frame
-hcpy png
-sys mv hcpy_4.png Refs/vecplot.png
+hcpy png Refs/vecplot
 
 # expanded deformation plot
 view disp
@@ -105,8 +101,7 @@ zoom 1.2
 plot fv base
 plus e new n
 plus fv base
-hcpy png
-sys mv hcpy_5.png Refs/D.png
+hcpy png Refs/D
 
 # path plot along weakest cross section
 view disp off

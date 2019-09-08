@@ -15,11 +15,9 @@ trfm cyl y
 frame
 view sh
 plot fv all
-hcpy png
-sys mv hcpy_1.png polar.png
+hcpy png polar
 
 plot f all n
 plus ev 2D
 plus n 2D r 6
-hcpy png
-sys mv hcpy_2.png 2D3D.png
+hcpy png 2D3D

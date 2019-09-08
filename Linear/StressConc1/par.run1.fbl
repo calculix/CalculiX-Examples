@@ -23,8 +23,7 @@ rot -z
 plot la all
 plus pa all
 frame
-hcpy png
-sys mv hcpy_1.png Refs/lines.png
+hcpy png Refs/lines
 
 # generate the surface from the edges
 surf ! l1 l2 l3 l4 l5
@@ -68,8 +67,7 @@ plus n nref b 10
 plus n sym r 6
 plus f load b 6
 frame
-hcpy png
-sys mv hcpy_2.png Refs/mesh1.png
+hcpy png Refs/mesh1
 
 # solution
 sys ccx Stress1
@@ -85,8 +83,7 @@ ds 2 e 23
 scal v 3
 plot fv all
 frame
-hcpy png
-sys mv hcpy_3.png Refs/vecplot1.png
+hcpy png Refs/vecplot1
 
 # expanded deformation plot
 # view disp
@@ -98,12 +95,10 @@ sys mv hcpy_3.png Refs/vecplot1.png
 # plot fv base
 # plus e new n
 # plus fv base
- hcpy png
- sys mv hcpy_4.png Refs/D1.png
+ hcpy png Refs/D1
 #
 # debug plot
 view elem
 ds 3 e 4
 plot fv all
-hcpy png
-sys mv hcpy_5.png Refs/RF1.png
+hcpy png Refs/RF1

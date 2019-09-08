@@ -44,5 +44,4 @@ rot -z
 plus n fix r 6
 plus f load b 4
 frame
-hcpy png
-sys mv hcpy_1.png mesh.png
+hcpy png mesh

@@ -1,5 +1,5 @@
 # Modal analysis
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.16 / CCX 2.15
 
 + Modal analysis with automatic generation of mode shape animations
 + Parametric model

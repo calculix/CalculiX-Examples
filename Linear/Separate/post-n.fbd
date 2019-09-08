@@ -2,8 +2,7 @@ read nodal.frd
 rot -z
 view elem
 seta ! all
-hcpy png
-sys mv hcpy_1.png nodal-mesh.png
+hcpy png nodal-mesh
 
 ds -1 e 1
 view disp
@@ -11,5 +10,4 @@ scal d 500
 frame
 zoom 1.1
 plot fv all
-hcpy png
-sys mv hcpy_2.png nodal-sx.png
+hcpy png nodal-sx

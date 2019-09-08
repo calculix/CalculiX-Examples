@@ -15,14 +15,15 @@ frame
 rot l 70
 rot u 10
 zoom 1.5
+
 # plastic strain
 ds -1 e 1
 plot fv Npart1
 min 0 f
 max 0.04 f
 ulin Plastic strain
-hcpy png
-sys mv hcpy_1.png Refs/PE.png
+hcpy png Refs/PE
+
 view elem off
 copy all new mir x
 copy new new1 mir y
@@ -36,16 +37,15 @@ frame
 zoom 2
 max 0.04
 min 0
-hcpy png
-sys mv hcpy_2.png Refs/PEexpanded.png
+hcpy png Refs/PEexpanded
+
 rot y
 frame
-hcpy png
-sys mv hcpy_3.png Refs/PEexpanded_y.png
+hcpy png Refs/PEexpanded_y
+
 frame
 zoom 4
 rot y
 rot r 20
 rot u 10
-hcpy png
-sys mv hcpy_4.png Refs/PEexpanded_yx.png
+hcpy png Refs/PEexpanded_yx

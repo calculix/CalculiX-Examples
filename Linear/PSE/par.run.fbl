@@ -39,37 +39,33 @@ rot l 20
 rot u 25
 zoom 2.3
 view elem
-text From bottom right: plane strain, plane stress, beam, plate
+ulin From bottom right: plane strain, plane stress, beam, plate
 seta ! all
-hcpy png
-sys mv hcpy_1.png mesh.png
+hcpy png mesh
 
 # z support
 seta nodes n all
 enq nodes fixz rec <le> _ _ 0.1
 send fixz abq spc 3
-text Constraint uz=0 (support)
+ulin Constraint uz=0 (support)
 plot n fixz
-hcpy png
-sys mv hcpy_2.png uz0.png
+hcpy png uz0
 
 # y support
 enq nodes fixy rec _ <b0/2.> _ <1.1*b0/2.>
 seta fixy p D003 D005 D007
 comp fixy do
 send fixy abq spc 2
-text Constraint uy=0 (rigid body constraint and plane strain)
+ulin Constraint uy=0 (rigid body constraint and plane strain)
 plot n fixy
-hcpy png
-sys mv hcpy_3.png uy0.png
+hcpy png uy0
 
 # symmetry
 enq nodes symx rec 0 _ _ 0.1
 send symx abq spc 1
-text Constraint ux=0 (symmetry)
+ulin Constraint ux=0 (symmetry)
 plot n symx
-hcpy png
-sys mv hcpy_4.png ux0.png
+hcpy png ux0
 
 # load
 seta load s A00D A00E A00F A00G
@@ -78,8 +74,7 @@ comp load do
 send load abq pres 1
 text Pressure application area
 plot f load
-hcpy png
-sys mv hcpy_5.png load.png
+hcpy png load
 
 sys ccx solve
 read solve.frd
@@ -104,8 +99,7 @@ zoom 3
 ds 1 e 3
 text Vertical displacement
 plot fv all
-hcpy png
-sys mv hcpy_6.png U3-flat.png
+hcpy png U3-flat
 
 seta base se all
 copy all new mir x
@@ -118,25 +112,20 @@ tra l <le/2>
 
 ds 1 e 3
 plot fv base
-hcpy png
-sys mv hcpy_7.png U3.png
+hcpy png U3
 
 text Transverse strain
 ds 3 e 2
-hcpy png
-sys mv hcpy_8.png EYY.png
+hcpy png EYY
 
 text Transverse stress
 ds 2 e 2
-hcpy png
-sys mv hcpy_9.png SYY.png
+hcpy png SYY
 
 text Longitudinal (bending) stress
 ds 2 e 1
-hcpy png
-sys mv hcpy_10.png SXX.png
+hcpy png SXX
 
 text Equivalent (von Mises) stress
 ds 2 e 7
-hcpy png
-sys mv hcpy_11.png SE.png
+hcpy png SE

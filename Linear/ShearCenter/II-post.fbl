@@ -7,8 +7,7 @@ rot c -90
 plot f all n
 plus n x0 r
 zoom 1.1
-hcpy png
-sys mv hcpy_1.png Refs/undefx.png
+hcpy png Refs/undefx
 
 rot l 5
 rot u 5
@@ -16,26 +15,22 @@ frame
 zoom 1.1
 plot f all n
 plus n x0 r
-hcpy png
-sys mv hcpy_2.png Refs/undef.png
+hcpy png Refs/undef
 
 view disp
 scal d 100
 plot f all n
 plus n x0 r
-hcpy png
-sys mv hcpy_3.png Refs/def.png
+hcpy png Refs/def
 
 view elem
 ds 2 e 1
 plot fv all
-hcpy png
-sys mv hcpy_4.png Refs/Sxx.png
+hcpy png Refs/Sxx
 
 ds 2 e 6
 rot u -5
 view elem off
 plot fv all
 mm 8
-hcpy png
-sys mv hcpy_5.png Refs/Sxz.png
+hcpy png Refs/Sxz

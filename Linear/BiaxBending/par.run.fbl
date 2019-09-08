@@ -87,8 +87,7 @@ plus f load2 y
 plus f load3 y
 plus n ref b 10
 plus n support r 10
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh
 
 # Solving
 sys ccx Biegung
@@ -101,20 +100,18 @@ view sh
 scal d 1000
 # sxx
 ds 2 e 1
-hcpy png
-sys mv hcpy_2.png Refs/sxx.png
+hcpy png Refs/sxx
 
 # neutral fiber
 ulin Neutral fiber
 steps 2
-hcpy png
-sys mv hcpy_3.png Refs/neutral.png
+mm 1
+hcpy png Refs/neutral
 
+#
 ulin displacement
 rot -x
 rot c 90
 plot n all r 1
 plus f all n
-
-hcpy png
-sys mv hcpy_4.png Refs/disp.png
+hcpy png Refs/disp

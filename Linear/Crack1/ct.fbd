@@ -18,15 +18,17 @@ rot -z
 rot l 30
 rot d 30
 view ill
-plot f Load
+plot fb all n 30
+plus f Load
 plus n Symy r
 plus n Symz b
 plus n origin g 8
-hcpy png
-sys mv hcpy_1.png Refs/sets.png
+hcpy png Refs/sets
+
 # solver run
 sys ccx solve
 read solve.frd
+
 # symmetry expansion
 seta orig e all
 copy all new mir y
@@ -44,7 +46,7 @@ plus e new n
 min 0 f
 max 10 f
 frame
-hcpy png
-sys mv hcpy_2.png Refs/se.png
+hcpy png Refs/se
+
 # display of the strain energy
 sys more solve.dat

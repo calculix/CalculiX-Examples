@@ -38,7 +38,6 @@ enq nodes right rec <2*h> _ _ 0.01
 # mesh image
 view edge off
 ulin upper (red), left (green), lower (blue), right (mag.)
-#plot e all n
 plot f all n
 frame
 plus n upper r 6
@@ -46,8 +45,8 @@ plus n left g 6
 plus n lower b 6
 plus n right m 6
 view edge
-hcpy png
-sys mv hcpy_1.png mesh.png
+hcpy png mesh
+
 ulin
 send all abq
 send all abq nam
@@ -58,13 +57,11 @@ read solve.frd new
 ds 2 e 19
 view disp
 scal d 1000
-hcpy png
-sys mv hcpy_2.png PS3.png
+hcpy png PS3
 
 ds 3 e 4
 view vec
 scal v 3
-hcpy png
-sys mv hcpy_3.png RFv.png
+hcpy png RFv
 
 # vibration shapes

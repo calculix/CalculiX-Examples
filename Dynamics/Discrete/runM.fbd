@@ -7,8 +7,7 @@ seta fix n 1
 plot e all k
 plus n all k 6
 plus n fix r 6
-hcpy png
-sys mv hcpy_1.png meshM.png
+hcpy png meshM
 # plot mode shapes
 seta path n 1 2 3
 ds 1 e 1

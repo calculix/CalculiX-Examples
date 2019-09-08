@@ -95,16 +95,14 @@ frame
 zoom 1.5
 ulin Parts
 seta ! all
-hcpy png
-sys mv hcpy_1.png Refs/parts.png
+hcpy png Refs/parts
 
 ulin Node groups
 plot n ysym r
 plus n xsym r
 plus n load b
 plus n support k
-hcpy png
-sys mv hcpy_2.png Refs/groups.png
+hcpy png Refs/groups
 
 view back
 ulin Contact pairs
@@ -112,8 +110,7 @@ plot f c1a
 plus f c1s n
 plus f c2a
 plus f c2s n
-hcpy png
-sys mv hcpy_3.png Refs/pairs.png
+hcpy png Refs/pairs
 
 # prescribed displacement
 sys echo Nload,3,3, <-disp> > load.bou

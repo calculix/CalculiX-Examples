@@ -212,48 +212,41 @@ rot r 30
 rot u 30
 seta ! all
 frame
-hcpy png
-sys mv hcpy_1.png Refs/parts.png
+hcpy png Refs/parts
 
 ulin contact surfaces: MI1 (turq.), MA1 (blue)
 plot l all n
 plus f MI1 t
 plus f MA1 b
-hcpy png
-sys mv hcpy_2.png Refs/surf1.png
+hcpy png Refs/surf1
 
 ulin contact surfaces: MI2 (turq.), MA2 (blue)
 plot l all n
 plus f MI2 t
 plus f MA2 b
-hcpy png
-sys mv hcpy_3.png Refs/surf2.png
+hcpy png Refs/surf2
 
 ulin contact surfaces: BlechInnen (turq.), BlechAussen (blue)
 plot l all n
 plus f BlechInnen t
 plus f BlechAussen b
-hcpy png
-sys mv hcpy_4.png Refs/surfb.png
+hcpy png Refs/surfb
 
 ulin conststraint regions of Messer1: m1r (black), m1u (red), m1k (green)
 plot l all n
 plus n m1r k 4
 plus n m1u r 4
 plus n m1k g 4
-hcpy png
-sys mv hcpy_5.png Refs/rand1.png
+hcpy png Refs/rand1
 
 ulin conststraint regions of Messer2: m2r (black), m2u (red), m2k (green)
 plot l all n
 plus n m2l k 4
 plus n m2o r 4
 plus n m2k g 4
-hcpy png
-sys mv hcpy_6.png Refs/rand2.png
+hcpy png Refs/rand2
 
 ulin conststraint region: Blechrand
 plot l all n
 plus n Blechrand r 4
-hcpy png
-sys mv hcpy_7.png Refs/randb.png
+hcpy png Refs/randb

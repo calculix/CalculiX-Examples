@@ -79,5 +79,4 @@ frame
 view elem
 plus n x0 r
 plus n xL b
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh

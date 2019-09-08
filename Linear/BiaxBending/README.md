@@ -1,5 +1,5 @@
 # Unsymmetric Bending
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.16 / CCX 2.15
 
 + Application of bending moment via kinematic coupling without transverse constraints
 + Display of the neutral fiber
