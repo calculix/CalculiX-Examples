@@ -1,0 +1,24 @@
+read solve.frd
+
+view sh
+view edge off
+anim steps 12
+rot x
+rot c 90
+rot r 20
+rot u 20
+frame
+zoom 0.9
+
+valu counter 6
+while counter < 10
+  valu counter + counter 1
+  valu counter int counter
+  valu to & Refs/shape_ counter
+  valu to & to .gif
+  ds counter e 4
+  ulin Mode counter
+  movi frames auto
+  ds counter a
+  sys mv movie.gif to
+endwhile

@@ -1,0 +1,114 @@
+valu a 20
+valu tflansch 2
+valu tsteg 1.2
+valu dtube 8
+valu dhole 5
+valu bnut 6
+valu bnuti 11
+valu length 100
+valu ldiv 40
+
+# Radius Bohrung
+valu rhole / dhole 2
+# Radius Rohr
+valu rtube / dtube 2
+# halbe Stegdicke
+valu t2steg / tsteg 2
+# sin oder cos 45�
+valu cs45 sqr 0.5
+# Komponenten horizontal/vertikal
+valu rhole45 * rhole cs45
+valu tsteg45 * tsteg cs45
+valu t2steg45 * t2steg cs45
+# Koordinaten
+valu x12 + rhole45 t2steg45
+valu x13 - rhole45 t2steg45
+valu x23 - rtube tsteg45
+valu bnut2 / bnut 2
+valu bnuti2 / bnuti 2
+valu x32 + bnuti2 tsteg45
+valu a2 / a 2
+valu ai2 - a2 tflansch
+valu x33 - ai2 tsteg45
+valu x43 - a2 tsteg45
+
+pnt pc 0 0 0
+# Bohrung
+pnt p11 rhole 0 0
+# Bohrung Steg rechts
+pnt p12 x12 x13 0
+# Bohrung Steg links
+pnt p13 x13 x12 0
+# Bohrung 90°
+pnt p14 0 rhole 0
+
+# Rohr 0�
+pnt p21 rtube 0 0
+# Rohr Steg rechts
+pnt p22 rtube x23 0
+# Rohr Steg links
+pnt p23 x23 rtube 0
+# Rohr 90�
+pnt p24 0 rtube 0
+
+# Flansch innen
+pnt p31 ai2 bnut2 0
+pnt p31a ai2 bnuti2 0
+pnt p32 x32 bnuti2 0
+pnt p33 bnuti2 x32 0
+pnt p34a bnuti2 ai2 0
+pnt p34 bnut2 ai2
+
+# Flansch au�en
+pnt p41 a2 bnut2 0
+pnt p42 a2 x43 0
+pnt p43 x43 a2 0
+pnt p44 bnut2 a2
+
+# Kante
+seto kante
+line ! p11 p21
+line ! p21 p22
+line ! p22 p32
+line ! p32 p31a
+line ! p31a p31
+line ! p31 p41
+line ! p41 p42
+line ! p42 p43
+line ! p43 p44
+line ! p44 p34
+line ! p34 p34a
+line ! p34a p33
+line ! p33 p23
+line ! p23 p24
+line ! p24 p14
+line ! p14 p11 pc
+setc kante
+surf ! kante
+
+copy all new rot z 90
+copy all new1 rot z 180
+
+merg p all 0.1
+merg l all 0.1
+div all auto 1
+# Volumen
+swep all new2 tra 0 0 length ldiv
+#merg s all 0.1
+elty all te10
+mesh all
+merg n all
+
+send all abq
+sys cp all.msh 2020.inp
+
+frame
+rot -z
+rot r 15
+rot u 15
+view elem
+zoom 2
+ulin a x a x length
+plot n all r 1
+plus f all n
+hcpy png Refs/profile

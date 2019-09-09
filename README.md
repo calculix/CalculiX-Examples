@@ -14,6 +14,11 @@ This page uses animated gifs. In Firefox, you might want to install the plugin [
 In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) you can download the examples for your version of CalculiX. Oldest available version is 2.10. Note that only the current version is under maintenance.
 
 [<img
+  src="Contact/CNC/Refs/contact.png"
+  width="200"
+  title="Assembly with automatic contact detection">
+](Contact/CNC/)
+[<img
   src="Drahtbiegen/Biegung/movie.gif"
   width="200"
   title="Bending of a wire. Large deformations, plasticity, rigid body control">

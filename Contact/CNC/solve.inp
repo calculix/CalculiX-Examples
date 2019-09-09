@@ -1,0 +1,24 @@
+*include, input=all.msh
+*include, input=Surfaces.inp
+*include, input=neigh.con
+*include, input=steel.nam
+*include, input=alu.nam
+** material
+*MATERIAL, NAME=Aluminium
+*ELASTIC
+70000, 0.34
+*DENSITY
+2.7e-9
+*MATERIAL, NAME=Steel
+*ELASTIC
+210000, 0.3
+*DENSITY
+7.85e-9
+*solid section, elset=Ealu, material=Aluminium
+*solid section, elset=Esteel, material=Steel
+*step
+*frequency
+20
+*NODE FILE
+U
+*END STEP

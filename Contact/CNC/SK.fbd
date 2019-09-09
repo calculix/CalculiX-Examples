@@ -1,0 +1,73 @@
+valu length 14
+valu dia 8
+valu h_d 20
+valu height 32
+valu h_foot 6
+valu w_foot 42
+valu w_b 18
+valu gap 0.5
+
+valu xg / gap 2
+valu x2 / w_foot 2
+valu x1 / w_b 2
+valu radius / dia 2
+valu y2 - h_d radius
+valu y4 + h_d radius
+valu l2 / length 2
+
+# Kontur
+pnt p1 0 0 0
+pnt p2 x2 0 0
+pnt p3 x2 h_foot 0
+pnt p4 x1 h_foot 0
+pnt p5 x1 height 0
+pnt p6 xg height 0
+pnt p7 xg y4 0
+pnt pc 0 h_d 0
+pnt p8 radius h_d 0
+pnt p9 0 y2 0
+
+seto lines
+line ! p1 p2
+line ! p2 p3
+line ! p3 p4
+line ! p4 p5
+line ! p5 p6
+line ! p6 p7
+line ! p7 p8 pc
+line ! p8 p9 pc
+line ! p9 p1
+setc lines
+
+# generate solid and mesh
+surf ! lines
+swep all new tra 0 0 l2
+
+div all auto 2
+elty all te10
+mesh all
+
+copy all new mir x
+copy all new mir z
+
+merg n all
+
+plot e all
+view elem
+
+
+
+# export mesh
+send all abq
+sys cp all.msh SK.inp
+
+frame
+rot -z
+rot r 15
+rot u 15
+view elem
+zoom 1
+ulin length x height x w_foot , offset h_d
+plot n all r 1
+plus f all n
+hcpy png Refs/SK

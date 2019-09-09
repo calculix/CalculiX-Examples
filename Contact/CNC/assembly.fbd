@@ -1,0 +1,155 @@
+asgn 4
+rot y
+rot l 20
+rot u 20
+# read template meshes
+seto templates
+ seto profil
+  read 2020.inp
+ setc
+ seto winkel
+  read bracket28.inp add
+ setc
+ seto SK
+  read SK.inp add
+ setc
+ seto rod8
+  read rod8.inp add
+ setc
+setc
+
+valu tol 0.1
+valu height 200
+valu width 200
+valu length 200
+valu zquer 120
+valu rod_y_dist 100
+valu rod_x_dist 80
+valu lneg * length -1
+valu lz - height 20
+valu fz / lz 100
+valu fy / length 100
+# generate bounding box
+seto box
+pnt origin 0 0 0
+swep box box tra width 0 0
+swep box box tra 0 lneg 0
+swep box box tra 0 0 height
+setc
+# copy and position parts
+seto alu
+# profiles in z direction
+copy profil pz1 scal 1 1 fz
+move pz1 tra 10 -10 20
+valu dist - width 20
+copy pz1 pz2 tra dist 0 0
+# profiles in y direction
+copy profil py1 scal 1 1 fy
+move py1 rot x 90
+move py1 tra 10 0 10
+copy py1 py2 tra dist 0 0
+valu lx - width 40
+valu fx / lx 100
+# profiles in x direction
+copy profil p1x scal 1 1 fx
+move p1x rot y 90
+move p1x tra 20 -10 10
+valu dist - 20 length
+copy p1x p2x tra 0 dist 0
+valu dist - height 20
+copy p1x p3x tra 0 0 dist
+valu dist - zquer height
+copy p3x p4x tra 0 0 dist
+# angle brackets
+copy winkel w1 tra 20 -10 zquer
+copy winkel w2 mir x
+valu dist - width 20
+move w2 tra dist -10 zquer
+copy winkel w3 mir z
+valu dist - height 20
+move w3 tra 20 -10 dist
+copy winkel w4 rot y 180
+valu distx - width 20
+valu distz - height 20
+move w4 tra distx -10 distz
+copy winkel w5 rot z -90
+move w5 tra 10 -20 20
+copy w5 w6 tra distx 0 0
+copy winkel w7 rot x 90
+copy w7 w8 rot z 90
+copy w7 w9 rot z 180
+copy w7 w10 rot z -90
+move w7 tra 20 -20 10
+valu disty - 20 length
+valu distx - width 20
+move w8 tra 20 disty 10
+move w9 tra distx disty 10
+move w10 tra distx -20 10
+
+setc alu
+seto steel
+
+# y rail
+seto yrail
+copy SK SK1 rot x 90
+valu drod2 / rod_y_dist 2
+move SK1 tra drod2 -10 20
+copy SK1 SK2 tra 0 disty 0
+copy rod8 R1 rot z -90
+move R1 tra drod2 0 40
+copy yrail yrail2 mir x
+valu width2 / width 2
+move yrail tra width2 0 0
+setc
+# x rail
+seto railx
+copy SK SK3 mir y
+move SK3 rot y 90
+valu distz - height 20
+move SK3 tra 10 -20 distz
+copy SK3 SK4 tra distx 0 0
+copy rod8 R2 tra 0 -40 distz
+valu dist * rod_x_dist -1
+copy railx railx1 tra 0 0 dist
+setc
+
+setc
+
+# Vorlagen beseitigen
+zap templates
+
+# Spalt erzeugen, wo kein Kontakt gefunden werden soll
+valu height2 / height 2
+pnt center width2 0 height2
+move p1x scal 0.998 1     1 center
+move p2x scal 0.998 1     1 center
+move p3x scal 0.998 1     1 center
+move p4x scal 0.998 1     1 center
+move pz1 scal 1     1 0.998 center
+move pz2 scal 1     1 0.998 center
+
+# Kontaktfindung
+sys rm -f ICF* DCF*
+neigh all 0.1 abq tie
+del se0
+seta master se ICF*
+seta slave se DCF*
+sys cat DCF* ICF* > Surfaces.inp
+sys rm -f ICF* DCF*
+
+plus l box
+view edge off
+frame
+zoom 0.9
+hcpy png Refs/parts
+
+plot fb all n 20
+plus f master b
+plus n slave r 4
+hcpy png Refs/contact
+
+send all abq
+
+# prepare include-files
+send alu abq nam
+send steel abq nam

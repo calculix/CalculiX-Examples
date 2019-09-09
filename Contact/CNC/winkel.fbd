@@ -1,0 +1,78 @@
+valu height 28
+valu width 20
+valu t_web 2
+valu t_flange 2
+valu h_flange 4
+valu l_flange 5
+valu l_hole 10
+valu w_hole 6
+
+valu tmp - height l_hole
+valu x01 / tmp 2
+valu x02 + x01 l_hole
+valu y1 / w_hole 2
+valu y3 / width 2
+valu y2 - y3 t_flange
+valu dy12 - y2 y1
+valu dz12 - h_flange t_web
+valu xf - height l_flange
+valu de - xf h_flange
+valu de / de 2
+valu xsym - xf de
+valu zsym - xsym h_flange
+valu df - xf x02
+valu dzm / de 2
+valu dxm - dzm x01
+valu dxm + dxm xsym
+
+# generate entities
+pnt p00 0 0 0
+pnt p02 x02 0 0
+swep all p01 tra x01 0 0
+swep all new tra 0 y1 0
+line l0 D005 D004
+seta tmp L003 L004 l0
+swep tmp new1 tra 0 dy12 0
+swep new1 new2 tra 0 t_flange 0
+swep all new3 tra 0 0 t_web
+seta sflange s A00E A00F A00G
+swep sflange new4 tra 0 0 dz12
+
+# modify co-ordinates
+enq all sym1 rec 0 _ t_web 0.1
+move sym1 tra t_web 0 0
+enq all sym2 rec 0 _ h_flange 0.1
+move sym2 tra xsym 0 zsym
+enq all fl rec x02 _ h_flange 0.1
+move fl tra df 0 0
+enq all fm rec x01 _ h_flange 0.1
+move fm tra dxm 0 dzm
+
+div all auto 2
+elty all te10
+mesh all
+
+# copy and merge mesh
+copy all new mir y
+move all rot y 45
+copy all new mir z
+move all rot y -45
+
+merg n all 0.1
+
+view elem
+plot e all
+
+send all abq
+sys cp all.msh bracket28.inp
+
+frame
+rot -z
+rot r 15
+rot u 15
+view elem
+zoom 0.8
+ulin height x height x width
+plot n all r 1
+plus f all n
+hcpy png Refs/winkel

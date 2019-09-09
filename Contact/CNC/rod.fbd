@@ -1,0 +1,43 @@
+valu length 200
+valu dia 8
+valu divx 50
+valu divr 2
+
+valu radius / dia 2
+valu divu * divr 2
+
+# solid
+pnt pc 0 0 0
+pnt py 0 radius 0
+pnt pz 0 0 radius
+line ly pc py divr
+line lu py pz pc divu
+line lz pz pc divr
+surf ! all
+swep all new tra length 0 0 divx
+
+# mesh
+#div all auto 10 20
+elty all he20
+mesh all
+copy all new mir y
+copy all new mir z
+merg n all
+
+plot e all
+view elem
+
+# export mesh
+send all abq
+sys cp all.msh rod8.inp
+
+frame
+rot x
+rot r 15
+rot u 15
+view elem
+zoom 3
+ulin dia x length
+plot n all r 1
+plus f all n
+hcpy png Refs/rod
