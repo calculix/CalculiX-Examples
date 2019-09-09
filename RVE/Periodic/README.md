@@ -1,5 +1,5 @@
 # RVE with periodic boundary conditions
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.16 / CCX 2.15
 
 This is a generic RVE of a fiber-matrix compound.
 
@@ -7,6 +7,8 @@ This is a generic RVE of a fiber-matrix compound.
 + Structured mesh
 + Location-based assignment of material to elements
 + Periodic boundary conditions applied via helper script `periodic.py`
+
+<img src="matrix-fiber.png" width="400">
 
 Todo:
 + Output of the average nominal stress

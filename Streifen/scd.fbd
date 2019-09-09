@@ -23,8 +23,7 @@ plus n fix b
 plus f rot t
 plus na refnode r
 
-hcpy png
-sys mv hcpy_1.png scd-mesh.png
+hcpy png scd-mesh
 
 sys ccx scd
 sys monitor.py scd&

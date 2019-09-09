@@ -3,18 +3,6 @@ sys cp incfile c.inc
 sys ccx modal > modal.log
 ulin file
 read modal.frd new
-# movie counter
-valu counter 0
-# number of modes
-valu num 10
-# increment for modes
-valu incr 1
-# file extension for movies
-valu ext .gif
-# file prefix for movies
-valu topre Refs/
-valu topre & topre file
-# read the solution
 # setup the view
 frame
 plot fv all
@@ -27,14 +15,17 @@ zoom 1.3
 #anim model
 view elem
 
+# file prefix for movies
+valu topre & Refs/ file
 # loop over movies
-while counter < num
-  valu counter + counter incr
+valu counter 0
+while counter < 10
+  valu counter + counter 1
   # convert counter value to integer
   valu counter int counter
   # build output file name from prefix, counter and extension
   valu target & topre counter
-  valu target & target ext
+  valu target & target .gif
   # make sure that the frequency is correctly displayed
   ds counter e 4
   # write 11 frames from the output of the subsequent command

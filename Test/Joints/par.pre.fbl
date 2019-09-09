@@ -119,15 +119,13 @@ rot l 45
 rot u 45
 tra l <0.3*xh>
 plot f all w
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh
 # plot of support and load application sets
 ulin nodeset 'fix' and surface 'load'
 plot n fix r
 plus f load b
 plus l all
-hcpy png
-sys mv hcpy_2.png Refs/fix_load.png
+hcpy png Refs/fix_load
 # plot of coupling details
 ulin Coupling surfaces and reference nodes
 frame pin
@@ -141,5 +139,4 @@ plus pa ref1 r 10
 plus f s2 b
 plus pa ref2 b 10
 plus e pin k 6
-hcpy png
-sys mv hcpy_3.png Refs/coupling.png
+hcpy png Refs/coupling

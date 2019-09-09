@@ -1,5 +1,5 @@
 # Supports using distributing coupling
-Tested with CGX 2.15 /CCX 2.15
+Tested with CGX 2.16 / CCX 2.15 / Gmsh 4.4.1
 
 + Use of distributing coupling to model bearings of a shaft
 + Modal analysis
@@ -8,6 +8,7 @@ Tested with CGX 2.15 /CCX 2.15
 File                          | Contents    
 :-------------                | :-------------
 [Welle.stp](Welle.stp)        | Geometry, STEP format, generated using Autodesk INVENTOR
+[Welle.geo](Welle.geo)        | Gmsh script for geometry and mesh
 [pre.fbl](pre.fbl)            | CGX script, meshing with CGX
 [gmsh.fbl](gmsh.fbl)          | CGX script, meshing with Gmsh
 [test.py](test.py)            | Python script to run the full simulation

@@ -13,8 +13,7 @@ comp new do
 ds 2 e 1
 plot fv base
 frame base
-hcpy png
-sys mv hcpy_1.png Refs/S11.png
+hcpy png Refs/S11
 
 ds 1 e 3
 scal d 100000
@@ -26,8 +25,7 @@ plot fv base
 plus f new n
 frame
 zoom 1.2
-hcpy png
-sys mv hcpy_2.png Refs/D3.png
+hcpy png Refs/D3
 # max stress and displacement
 read square.nam inp
 read circle.nam inp
@@ -57,8 +55,7 @@ view edge off
 txt max nf -0.15 -0.1
 plus nt max k
 frame
-hcpy png
-sys mv hcpy_3.png Refs/stress.png
+hcpy png Refs/stress
 
 # extract displacement values
 ds 1 e 3
@@ -78,8 +75,7 @@ ulin Maximum Displacement
 txt maxd nf -0.15 -0.1
 plus nt maxd k
 frame
-hcpy png
-sys mv hcpy_4.png Refs/disp.png
+hcpy png Refs/disp
 
 # write absolute values to a file
 sys echo Square s1 w1 > s-w.txt

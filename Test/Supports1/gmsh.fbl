@@ -12,8 +12,7 @@ plot f all n
 plus f s1 r
 plus f s2 b
 frame
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh
 
 sys ccx solve
 
@@ -23,20 +22,13 @@ read solve.frd new
 ulin Ref nodes
 plot n r1 r 10
 plus n r2 b 10
-hcpy png
-sys mv hcpy_2.png Refs/refnodes.png
+hcpy png Refs/refnodes
 
-# movie counter
-valu counter 0
-# number of modes
-valu num 20
-# increment for modes
-valu incr 1
-# show undeformed model edges
 anim model
 # loop over movies
-while counter < num
-  valu counter + counter incr
+valu counter 0
+while counter < 20
+  valu counter + counter 1
   # convert counter value to integer
   valu counter int counter
   ulin Mode counter

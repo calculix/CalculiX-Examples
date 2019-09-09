@@ -1,10 +1,8 @@
 # solid model (full)
 read values.fbd
-valu neg -1
-valu Tneg * neg T
-valu Lneg * L neg
-valu two 2
-valu DivLhalf / DivL two
+valu Tneg * -1 T
+valu Lneg * L -1
+valu DivLhalf / DivL 2
 # cross section
 pnt pc 0 0 0
 pnt pc1 R1 0 0

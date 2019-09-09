@@ -10,11 +10,8 @@ valu num 0
 valu incr 1
 valu end 4
 # name for movies to store
-valu path Refs/
-valu type -modal-
-valu pre & path model
-valu pre & pre type
-valu ext .gif
+valu pre & Refs/ model
+valu pre & pre -modal-
 # subset for shaded plot
 enq all new rec _ _ -100 101 a
 comp new do
@@ -36,7 +33,7 @@ while num < end
   #view surf
   # storage of the movie
   valu name & pre num
-  valu name & name ext
+  valu name & name .gif
   sys mv movie.gif name
 endwhile
 ds 1 a 1

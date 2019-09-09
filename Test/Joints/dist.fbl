@@ -46,8 +46,7 @@ rot l 45
 rot u 45
 tra l 30
 plot fv all
-hcpy png
-sys mv hcpy_1.png Refs/se-dist.png
+hcpy png Refs/se-dist
 sys dat2txt.py solve
 sys gnuplot frequency.gpl
 sys mv f.png Refs/f-dist.png

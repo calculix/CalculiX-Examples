@@ -50,8 +50,7 @@ plus n ysym
 plus n x0 k
 plus na hist b
 plus n path m
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh
 
 plot f all n
 rot z

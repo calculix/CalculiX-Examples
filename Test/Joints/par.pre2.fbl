@@ -110,8 +110,7 @@ rot l 45
 rot u 45
 tra l <0.3*xh>
 plot f all w
-hcpy png
-sys mv hcpy_1.png Refs2/mesh.png
+hcpy png Refs2/mesh
 # plot of the surfaces
 ulin  Sets: 'fix' (red), surface 'load' (blue), coupling surface (yellow)
 view ill
@@ -119,5 +118,4 @@ plot f fix r
 plus f load b
 plus l all
 plus f s12 y
-hcpy png
-sys mv hcpy_2.png Refs2/surf.png
+hcpy png Refs2/surf

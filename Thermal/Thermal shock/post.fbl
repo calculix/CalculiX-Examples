@@ -32,20 +32,17 @@ scal d 500
 ds 2 e 1
 plot fv base
 plus e new n
-hcpy png
-sys mv hcpy_1.png Refs/start.png
+hcpy png Refs/start
 
 ds 94 e 1
 plot fv base
 plus e new n
-hcpy png
-sys mv hcpy_2.png Refs/end_of_excitation.png
+hcpy png Refs/end_of_excitation
 
 ds 198 e 1
 plot fv base
 plus e new n
-hcpy png
-sys mv hcpy_3.png Refs/end.png
+hcpy png Refs/end
 
 min 0 f u
 max 1 f u

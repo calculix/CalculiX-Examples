@@ -18,6 +18,7 @@
 # <wl=dx1*2.+le> row spacing parallel
 # <nx=int(lx/(wl+le))+1>
 # <ny=int(ly/wb)+1>
+
 # base cell
 pnt p0 0 0 0
 pnt p1 <dx1+le/2.> 0 0
@@ -53,9 +54,9 @@ seta toflip A00I A00M A00F A00B
 seta toflip s1 A006 A00Q A00N
 seta toflip A00G A003 A004 A00U A00D
 flip toflip
+
 # replicate in y direction
 valu ny <ny>
-#valu inc 1
 valu count 1
 valu dy <wb>
 while count < ny
@@ -71,9 +72,9 @@ seta rowy se basey
 seta wsym s A009 A00G
 setr double se wsym
 seta single se wsym
+
 # replicate in x direction
 valu nx <nx>
-#valu inc 1
 valu count 1
 valu dx <(dx1+le)*2>
 while count < nx
@@ -84,12 +85,14 @@ endwhile
 merg p all
 merg l all
 merg s all
+
 # meshing
 #div all auto <esize>
 asgn e 2
 elty all qu4
 mesh all
 merg n all 0.01
+
 # cut to size
 seta nodes n all
 enq nodes partx rec <lx/2.> _ _ <1.0001*lx/2.>
@@ -99,7 +102,8 @@ setr tozap n part
 comp tozap up
 zap tozap
 merg n all
-# image
+
+# images
 seto outline
 pnt po1 0 <ly> 0
 swep outline po2 tra <lx> 0 0
@@ -113,8 +117,7 @@ plot e all n
 plus s all
 plus l outline b 6
 frame
-hcpy png
-sys mv hcpy_1.png size.png
+hcpy png size
 
 rot -z
 rot c 45
@@ -125,8 +128,7 @@ zoom 1.5
 plot e lower n
 plus e single t
 plus e double b
-hcpy png
-sys mv hcpy_2.png core.png
+hcpy png core
 
 # cylinders
 del se new
@@ -141,8 +143,7 @@ elty cyl1 qu4
 elty cyl2 qu4
 
 plot n all
-hcpy png
-sys mv hcpy_3.png all_nodes_1.png
+hcpy png all_nodes_1
 
 mesh cyl1
 mesh cyl2
@@ -150,8 +151,7 @@ mesh cyl2
 plot n all
 plus n cyl1 g
 plus n cyl2 t
-hcpy png
-sys mv hcpy_4.png all_nodes_2.png
+hcpy png all_nodes_2
 
 #comp * do
 send all abq
@@ -186,5 +186,4 @@ seta ! all
 plus n mon1 t 8
 plus n monc t 8
 view ill
-hcpy png
-sys mv hcpy_5.png quarter.png
+hcpy png quarter

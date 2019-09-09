@@ -12,8 +12,7 @@ copy base new mir x
 comp new do
 ds 2 e 1
 plot fv base
-hcpy png
-sys mv hcpy_1.png S11-1.png
+hcpy png S11-1
 
 rot -y
 rot l 135
@@ -23,8 +22,7 @@ plot fv base
 mm 210
 steps 21
 zoom 3
-hcpy png
-sys mv hcpy_1.png PE.png
+hcpy png PE
 
 ds -1 e 1
 min 0 e l

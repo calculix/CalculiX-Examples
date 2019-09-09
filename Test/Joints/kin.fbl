@@ -13,15 +13,11 @@ rot l 45
 rot u 45
 tra l 30
 plot fv all
-# movie counter
-valu counter 0
-# number of modes
-valu num 10
-# increment for modes
-valu incr 1
+
 # loop over movies
-while counter < num
-  valu counter + counter incr
+valu counter 0
+while counter < 10
+  valu counter + counter 1
   # convert counter value to integer
   valu counter int counter
   # build output file name from prefix, counter and extension
@@ -46,9 +42,9 @@ rot l 45
 rot u 45
 tra l 30
 plot fv all
-hcpy png
+hcpy png Refs/se-kin
+
 sys rm Eigenvalues_1.txt
-sys mv hcpy_1.png Refs/se-kin.png
 sys dat2txt.py solve
 sys gnuplot frequency.gpl
 sys mv f.png Refs/f-kin.png

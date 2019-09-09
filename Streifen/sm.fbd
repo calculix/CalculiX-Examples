@@ -16,8 +16,7 @@ plot f all n
 plus n all
 plus n fix b
 plus n rot t
-hcpy png
-sys mv hcpy_1.png sm-mesh.png
+hcpy png sm-mesh
 
 sys ccx sm
 sys monitor.py sm&

@@ -16,10 +16,8 @@ ulin Displacement in x (normal to section)
 ds -3 e 1
 
 frame
-hcpy png
-sys mv hcpy_1.png dx.png
+hcpy png dx
 ulin Displacement in y (lateral)
 ds -3 e 2
 frame
-hcpy png
-sys mv hcpy_2.png dy.png
+hcpy png dy

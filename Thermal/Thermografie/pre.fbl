@@ -69,5 +69,4 @@ seta ! all
 plot f +CF1 n
 plus f +CF3 g
 plus f +CF4 g
-hcpy png
-sys mv hcpy_1.png Refs/geo.png
+hcpy png Refs/geo

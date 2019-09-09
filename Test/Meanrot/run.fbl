@@ -60,10 +60,8 @@ plot f all n
 plus n pathx m 6
 plus n pathy r 6
 frame
-stack on
-hcpy png
-valu name pop
-sys mv name Refs/mesh.png
+
+hcpy png Refs/mesh.png
 
 sys ccx solve
 read solve.frd nom
@@ -71,27 +69,21 @@ read solve.frd nom
 ulin Moment about x
 ds 2 e 3
 frame
-hcpy png
-valu name pop
-sys mv name Refs/mx.png
+hcpy png Refs/mx.png
 
 graph pathy length
 
 ulin Moment about y
 ds 5 e 3
 frame
-hcpy png
-valu name pop
-sys mv name Refs/my.png
+hcpy png Refs/my.png
 
 graph pathx length
 
 ulin Moment about z
 ds 8 e 24
 frame
-hcpy png
-valu name pop
-sys mv name Refs/mz.png
+hcpy png Refs/mz.png
 
 graph pathx length
 
@@ -102,8 +94,6 @@ view disp
 scal d 100000
 ds 8 e 24
 frame
-hcpy png
-valu name pop
-sys mv name Refs/mz-disp.png
+hcpy png Refs/mz-disp.png
 
 sys gnuplot path.gpl

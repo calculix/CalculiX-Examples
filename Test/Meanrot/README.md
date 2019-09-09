@@ -1,6 +1,6 @@
 # Stress distribution with mean rotation MPC
 
-Tested with CGX 2.15 / CCX 2.16pre
+Tested with CGX 2.16 / CCX 2.16pre
 
 + Test of mean rotation multipoint constraints
 + Stress distribution for applied moments

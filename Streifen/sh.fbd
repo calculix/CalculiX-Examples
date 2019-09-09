@@ -19,8 +19,7 @@ plot l all
 plus n all
 plus n fix b
 plus n rot t
-hcpy png
-sys mv hcpy_1.png sh-mesh.png
+hcpy png sh-mesh
 sys ccx sh
 sys monitor.py
 

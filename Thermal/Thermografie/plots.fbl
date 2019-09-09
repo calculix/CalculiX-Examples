@@ -42,8 +42,7 @@ txt botseam  v pos neg
 txt botfault v pos neg
 plot e all n
 plus nt probes r 6
-hcpy png
-sys mv hcpy_1.png Refs/probes.png
+hcpy png Refs/probes
 break
 # path plot along the seam on the upper side
 enq nodes top rec xN _ ztop 0.1 a
@@ -58,5 +57,4 @@ rot r 20
 rot u 20
 ulin Path for temperature profile
 plot n top
-hcpy png
-sys mv hcpy_2.png Refs/path.png
+hcpy png Refs/path

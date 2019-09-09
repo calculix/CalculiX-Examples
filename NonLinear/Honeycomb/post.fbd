@@ -16,20 +16,16 @@ view sh
 ds -1 e 1
 plot ev Edouble
 plus ev Esingle
-hcpy png
-sys mv hcpy_1.png PE-core.png
+hcpy png PE-core
 plot fv Esand
-hcpy png
-sys mv hcpy_2.png PE.png
+hcpy png PE
 # Equivalent stress
 ds -2 e 7
 plot ev Edouble
 plus ev Esingle
-hcpy png
-sys mv hcpy_3.png SE-core.png
+hcpy png SE-core
 plot fv Esand
-hcpy png
-sys mv hcpy_4.png SE.png
+hcpy png SE
 # Force-displacement curve
 sys dat2txt.py Biegung
 sys mv "total force fx,fy,fz_NCYL1.txt" f.txt

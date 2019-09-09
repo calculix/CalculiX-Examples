@@ -68,8 +68,7 @@ rot u 20
 seta ! all
 frame
 view elem
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh
 
 # sets
 send xL abq nam

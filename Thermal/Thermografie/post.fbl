@@ -12,13 +12,11 @@ max 2 f l
 # create screen shots
 ds 11 e 1
 plot fv all
-hcpy png
-sys mv hcpy_1.png Refs/end_of_excitation.png
+hcpy png Refs/end_of_excitation
 
 ds -0 e 1
 plot fv all
-hcpy png
-sys mv hcpy_2.png Refs/end.png
+hcpy png Refs/end
 
 # create animation
 movi frames auto

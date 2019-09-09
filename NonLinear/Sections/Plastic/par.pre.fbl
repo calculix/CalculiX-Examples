@@ -119,8 +119,7 @@ zoom 2.5
 tra l <dist>
 view elem
 seta ! all
-hcpy png
-sys mv hcpy_1.png mesh.png
+hcpy png mesh
 
 # sets
 seta nodes n all
@@ -152,8 +151,8 @@ plot n x0 r
 plus n fixy g
 plus n disp t
 plus n xL b
-hcpy png
-sys mv hcpy_2.png sets.png
+plus fb all n 30
+hcpy png sets
 
 
 # send nmid_block abq nam

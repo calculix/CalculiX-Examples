@@ -9,8 +9,7 @@ ds -1 e 1
 rot x
 rot c 90
 frame
-hcpy png
-sys mv hcpy_1.png exp.png
+hcpy png exp
 
 graph Nmonitor time PE PE
 sys dat2txt.py Zug

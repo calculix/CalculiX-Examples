@@ -43,16 +43,14 @@ view disp
 scal d 100
 frame
 plot fv all
-hcpy png
-sys mv hcpy_1.png Refs2/se1-kin.png
+hcpy png Refs2/se1-kin
 ulin Vertical load at the end of part 2
 rot y
 rot c 180
 ds 14 e 7
 scal d
 scal d 5
-hcpy png
-sys mv hcpy_2.png Refs2/se2-kin.png
+hcpy png Refs2/se2-kin
 sys dat2txt.py solve2
 sys gnuplot frequency.gpl
 sys mv f.png Refs2/f-kin.png

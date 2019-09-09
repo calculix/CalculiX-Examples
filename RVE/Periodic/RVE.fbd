@@ -35,8 +35,23 @@ send all abq nam
 view elem
 frame
 plot e fiber r
-hcpy png
-sys mv hcpy_1.png fiber.png
+hcpy png fiber
+
 plot e matrix n
-hcpy png
-sys mv hcpy_2.png matrix.png
+hcpy png matrix
+
+# adds faces to fiber
+comp fiber do
+# removes these faces from matrix
+setr matrix f fiber
+# removes matrix elements from fiber (why are they there?)
+setr fiber e matrix
+
+rot x
+rot r 30
+rot u 20
+frame
+zoom 0.8
+plot e fiber r
+plus fb matrix n 20
+hcpy png matrix-fiber

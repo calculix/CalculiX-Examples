@@ -83,5 +83,4 @@ frame
 zoom 3
 seta ! all
 
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh

@@ -8,10 +8,8 @@ plot fv all
 rot -x
 rot c -90
 frame
-hcpy png
-sys mv hcpy_1.png se.png
+hcpy png se
 rot r 20
 rot u 20
 frame
-hcpy png
-sys mv hcpy_2.png se-rot.png
+hcpy png se-rot

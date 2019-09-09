@@ -55,5 +55,4 @@ plot f fix r
 plus n rfix m 10
 plus f load b
 plus n rload t 10
-hcpy png
-sys mv hcpy_1.png Refs/mesh.png
+hcpy png Refs/mesh

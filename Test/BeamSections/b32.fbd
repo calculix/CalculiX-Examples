@@ -33,17 +33,14 @@ frame
 
 ds 2 e 7
 
-hcpy png
-sys mv hcpy_1.png Refs/b32-se.png
+hcpy png Refs/b32-se
 
 frame fix
 scal d 10
-hcpy png
-sys mv hcpy_2.png Refs/b32-fix.png
+hcpy png Refs/b32-fix
 
 rot l 30
-hcpy png
-sys mv hcpy_3.png Refs/b32-fix-30.png
+hcpy png Refs/b32-fix-30
 
 view disp off
 ds 1 e 3
@@ -55,5 +52,4 @@ rot -y
 plot fv all
 
 frame
-hcpy png
-sys mv hcpy_4.png Refs/b32-disp.png
+hcpy png Refs/b32-disp

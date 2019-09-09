@@ -62,15 +62,11 @@ plot n symx r
 plus n symy g
 plus n symz b
 plus n load m
-
-hcpy png
-sys mv hcpy_1.png zug-geo.png
+hcpy png zug-geo
 
 ulin region of imperfection (dy of imp mm)
 plot n nimp
-
-hcpy png
-sys mv hcpy_2.png zug-imp.png
+hcpy png zug-imp
 
 # parameter info for gnuplot
 sys echo maxe= maxeps > params.gnu

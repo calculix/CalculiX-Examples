@@ -18,15 +18,13 @@ ds -2 e 1
 plot fv all
 min 0 f
 ulin Plastic strain
-hcpy png
-sys mv hcpy_1.png Refs/PE.png
+hcpy png Refs/PE
 
 # equivalent stress
 ds -3 e 7
 min 0 f
 ulin Equivalent stress
-hcpy png
-sys mv hcpy_2.png Refs/SE.png
+hcpy png Refs/SE
 
 ds -2 e 1
 copy all new mir y
@@ -41,5 +39,4 @@ frame
 zoom 4.2
 ulin Equivalent strain
 plus ev Ecore
-hcpy png
-sys mv hcpy_3.png Refs/PE-expanded.png
+hcpy png Refs/PE-expanded

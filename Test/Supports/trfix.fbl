@@ -12,16 +12,13 @@ ulin Nominal stress: 20 MPa
 ds 2 e 7
 frame
 zoom 1.5
-hcpy png
-sys mv hcpy_1.png Refs/trfix1.png
+hcpy png Refs/trfix1
 ulin Nominal stress: 2400 MPa
 ds 5 e 7
-hcpy png
-sys mv hcpy_2.png Refs/trfix2.png
+hcpy png Refs/trfix2
 ulin Nominal stress: 1200 MPa
 ds 8 e 7
-hcpy png
-sys mv hcpy_3.png Refs/trfix3.png
+hcpy png Refs/trfix3
 
 # surface data plots
 sys dat2txt.py trfix

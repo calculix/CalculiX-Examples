@@ -30,8 +30,7 @@ plus n y0 b 6
 #plus l y0 b
 plus n outer g 6
 #plus l outer g
-hcpy png
-sys mv hcpy_1.png sets.png
+hcpy png sets
 del mesh
 
 sys ccx static
@@ -68,8 +67,7 @@ rot -z
 rot c -100
 rot d 65
 frame
-hcpy png
-sys mv hcpy_2.png expanded.png
+hcpy png expanded
 # cut y=0
 rot y
 frame
@@ -78,5 +76,4 @@ tra l 75
 tra d 10
 plot n all r 1
 plus f base n
-hcpy png
-sys mv hcpy_3.png cuty0.png
+hcpy png cuty0

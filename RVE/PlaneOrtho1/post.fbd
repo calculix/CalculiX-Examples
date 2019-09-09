@@ -12,14 +12,12 @@ rot r 45
 rot u 30
 plot fv all
 frame
-hcpy png
-sys mv hcpy_1.png dx.png
+hcpy png dx
 text Displacement in y (lateral)
 ds -3 e 2
 plot fv all
 frame
-hcpy png
-sys mv hcpy_2.png dy.png
+hcpy png dy
 
 copy all new mir y
 copy all new mir z
@@ -31,8 +29,7 @@ rot c 90
 text Equivalent plastic strain
 plot fv all
 frame
-hcpy png
-sys mv hcpy_3.png exp.png
+hcpy png exp
 graph Nmonitor time PE PE
 sys dat2txt.py Zug
 sys gnuplot pe.gnu
