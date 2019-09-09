@@ -54,7 +54,7 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   title="Welded T-joint, assembly with different contact formulations, shrinkage model for the distortion">
 ](Thermal/Thermal%20distortion/)
 [<img
-  src="Contact/Hertz_2D/SE.png"
+  src="Contact/Hertz_2D/SE_dc.png"
   width="200"
   title="Hertz contact stress, plane strain, linear elasticity">
 ](Contact/Hertz_2D/)
@@ -254,7 +254,7 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   title="Incomplete cutting operation">
 ](NonLinear/Cut)
 [<img
-  src="CAD/Opt/hcpy_2.png"
+  src="CAD/Opt/se.png"
   width="200"
   title="Plane stress model for parameter optimization">
 ](CAD/Opt)
