@@ -16,6 +16,7 @@ File                          | Contents
 [rod.fbd](rod.fbd)            | CGX script for 8mm rod                
 [post.fbd](post.fbd)          | CGX script postprocessing             
 [solve.inp](solve.inp)        | CCX input   
+[test.py](test.py)            | Python script to run the complete simulation  
 
 # Parts
 
