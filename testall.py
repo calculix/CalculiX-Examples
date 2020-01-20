@@ -1,6 +1,9 @@
 #!/usr/bin/python
 """execute all test scripts in the example collection"""
-import os, fnmatch
+import os, fnmatch, multiprocessing
+
+# Enable multithreading for ccx
+os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
 # Locate all files matching supplied filename pattern in and below
 # current directory.
@@ -13,6 +16,3 @@ for path, dirs, files in os.walk(os.path.abspath(os.curdir)):
         os.chdir(path)
         # execute the test script
         os.system("./test.py > test.log")
-        
-        
-        

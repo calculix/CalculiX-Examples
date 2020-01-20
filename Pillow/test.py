@@ -7,6 +7,10 @@ import os
 import pylab
 import numpy
 import re
+import multiprocessing
+
+# Enable multithreading for ccx
+os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
 # The example is run for four element types
 eltyps={"S8":"qu8",

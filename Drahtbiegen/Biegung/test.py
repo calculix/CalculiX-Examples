@@ -1,6 +1,10 @@
 #!/usr/bin/python
 import os
 import glob
+import multiprocessing
+
+# Enable multithreading for ccx
+os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
 # preprocessing
 if 1:
