@@ -81,7 +81,7 @@ Run the analysis:
 ```
 > cgx -b sm.fbd
 ```
-At 28% of the specified deformation, the incremental time becomes too small and the solution is stppped.
+At 28% of the specified deformation, the incremental time becomes too small and the solution is stopped.
 
 <img src="sm-mesh.png" width="300" title="Solid model with mean rotation MPC"><img src="sm-def.png" width="300" title="Residual forces">
 
@@ -94,7 +94,7 @@ Run the analysis:
 ```
 > cgx -b sr.fbd
 ```
-At 74% of the specified deformation, the incremental time becomes too small and the solution is stppped.
+At 74% of the specified deformation, the incremental time becomes too small and the solution is stopped.
 
 <img src="sr-mesh.png" width="300" title="Solid model with rigid body MPC"><img src="sr-def.png" width="300" title="Residual forces">
 
