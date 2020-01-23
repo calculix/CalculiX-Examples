@@ -4,12 +4,13 @@ Working environment:
 
 + Example files
 + Command window (terminal) with the following commands working:
-  + `monitor.py`, `dat2txt.py`, `param.py` (helper scripts from the examples collection)
+  + `monitor.py`, `dat2txt.py`, `param.py`, `periodic.py`, `separate.py` (helper scripts from the examples collection)
   + `gmsh` (sometimes used for geometry and meshing)
   + `join`, `mv` (unix commands, under Windows you might install Cygwin to make them available)
   + `gnuplot` (plotting program)
   + `cgx` and `ccx` (the CalculiX programs)
   + `git` (source code management system, for easy update of the example collection)
+  + `ng_vol` (netgen tetraeder mesher)
 
 The examples are developed under Linux but most of them might work under Windows.
 
@@ -49,6 +50,12 @@ Don't expect all system calls (`sys` command) in the CGX scripts to work. In par
 + Some examples use `join` to combine results files, mainly to create force-displacement plots.
 Former problems with incompatible `echo` behaviour have been fixed.
 
+#### Helper Scripts
+
+Running the helper scripts requires a Python installation with the matplotlib package available. You may need to install this package using
+```
+>pip install matplotlib
+```
 #### CalculiX
 
 Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting and execution hotkeys for various relevant file types.
@@ -60,12 +67,6 @@ The distribution comes with a pre-configured command line window (console), wher
 
 It might be convenient to add a desktop link to the CalculiX command window.
 
-#### Helper Scripts
-
-Running the helper scripts requires a Python installation with the matplotlib package available. You may need to install this package using
-```
->pip install matplotlib
-```
 Customize the bConverged CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`. To provide access to the helper scripts, add the `<exampledir>\Scripts` directory to your path, e.g. by adding a line next to the other set commands:
 ```
 set PATH=<exampledir>\Scripts;%PATH%
@@ -75,6 +76,8 @@ set PATH=<exampledir>\Scripts;%PATH%
 You might also wish to change the default working directory (default current directory in the CalculiX command window).
 
 Run the examples in the CalculiX Command Window.
+
+The [CalculiX homepage](http://www.dhondt.de/) provides Windows binaries of the newest version. You can use these to update the corresponding files in the bConverged distribution.
 
 #### Other Tools
 
@@ -105,6 +108,8 @@ You should run the examples in the CalculiXWindowsShell, provided with the distr
 All examples are developed and tested with CalculiX 2.10 in the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX.
 
 Python, Gmsh and Gnuplot are included.
+
+For tetraeder meshing of solid parts netgen is called by CGX. The binary file `ng_vol` must be in the path. See [ngsolve.org](https://ngsolve.org/downloads) for instructions on download and installation.
 
 It has, however, some disadvantages:
 
