@@ -3,6 +3,10 @@ import os
 import glob
 import shutil
 import numpy
+import multiprocessing
+
+# Enable multithreading for ccx
+os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
 etypes = ("qu4", "qu8", "qu8r")
 ctypes = ("tie", "equ", "pc-ns", "pc-ss")
