@@ -40,7 +40,7 @@ for ctyp in ctypes:
         os.chdir(simPath)
         os.system("cgx -bg run.fbd")
         # extract frequencies
-        os.system("dat2txt.py " + ctyp)
+        os.system("../../Scripts/dat2txt.py " + ctyp)
         freq=numpy.genfromtxt("Eigenvalues_1.txt",skip_header=1)
         os.chdir("..")
         
