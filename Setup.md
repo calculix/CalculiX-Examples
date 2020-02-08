@@ -4,7 +4,6 @@ Working environment:
 
 + Example files
 + Command window (terminal) with the following commands working:
-  + `monitor.py`, `dat2txt.py`, `param.py`, `periodic.py`, `separate.py` (helper scripts from the examples collection)
   + `gmsh` (sometimes used for geometry and meshing)
   + `join`, `mv` (unix commands, under Windows you might install Cygwin to make them available)
   + `gnuplot` (plotting program)
@@ -54,7 +53,7 @@ Former problems with incompatible `echo` behaviour have been fixed.
 
 Running the helper scripts requires a Python installation with the matplotlib package available. You may need to install this package using
 ```
->pip install matplotlib
+pip install matplotlib
 ```
 #### CalculiX
 
@@ -67,11 +66,7 @@ The distribution comes with a pre-configured command line window (console), wher
 
 It might be convenient to add a desktop link to the CalculiX command window.
 
-Customize the bConverged CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`. To provide access to the helper scripts, add the `<exampledir>\Scripts` directory to your path, e.g. by adding a line next to the other set commands:
-```
-set PATH=<exampledir>\Scripts;%PATH%
-```
-`<exampledir>` might be something like `D:\FHB\Software\CalculiX\Git`.
+Customize the bConverged CalculiX startup script by editing the file `%CALCULIX_ROOT%\common\site\cmdStartup.bat`.
 
 You might also wish to change the default working directory (default current directory in the CalculiX command window).
 
@@ -95,11 +90,10 @@ Open the README.md in `<exampledir>` with MarkdownEdit and click the preview ima
 #### GE Distribution
 
 If you use the [GE distribution of CalculiX](https://github.com/GeneralElectric/CalculiX), the
-right spot to modify the path variables is
-`<GEhome>\etc\CalculiXWindowsEnvironment.bat`. Add these settings:
+right spot to modify the path variable in
+`<GEhome>\etc\CalculiXWindowsEnvironment.bat`. Add this setting:
 ```
 set PROJECT=<exampledir>
-set PATH=%PROJECT%\Scripts;%PATH%
 ```
 You should run the examples in the CalculiXWindowsShell, provided with the distribution.
 
@@ -120,15 +114,3 @@ It has, however, some disadvantages:
 These are not relevant for simple educational models but are definitely relevant for serious work.
 
 For editing CGX, CCX  or gmsh input under linux, I recommend [atom](https://atom.io/), it has syntax highlighting for these files and markdown preview.
-
-#### Helper Scripts
-
-`<exampledir` might be `$HOME/GIT/CalculiX-Examples`.
-Add the following line to your `.bashrc`:
-```
-export PATH="<exampledir>/Scripts:$PATH"
-```
-CGX executes sys commands in sh, not in the bash. As the scripts also are called from CGX scripts, you have to augment the path for sh as well by adding this to your `.profile`:
-```
-PATH="<exampledir>/Scripts:$PATH"
-```
