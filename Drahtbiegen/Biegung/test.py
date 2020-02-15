@@ -53,8 +53,8 @@ if 1:
     os.remove("deform.png")
     os.remove("PE.png")
 
-    os.system("monitor.py Biegung")
-    os.system("dat2txt.py Biegung")
+    os.system("../../Scripts/monitor.py Biegung")
+    os.system("../../Scripts/dat2txt.py Biegung")
     os.system("./Biegung.py")
     os.system("cgx -b Animation.fbd")
     os.system("cgx -b post.fbd")
