@@ -8,10 +8,7 @@ import pylab
 import numpy
 import re
 
-# Calculix solid element types with their cgx counterparts.
-#~ eltyps={"C3D8":"he8",
-    #~ "C3D4":"te4",
-    #~ "C3D10":"te10"}
+# Calculix solid element types with their cgx counterparts
 eltyps={"C3D8":"he8",
     "C3D8R":"he8r",
     "C3D8I":"he8i",
@@ -19,8 +16,12 @@ eltyps={"C3D8":"he8",
     "C3D20R":"he20r",
     "C3D4":"te4",
     "C3D10":"te10"}
+
+elsizes=[50,20,10,5]
+# C3D4 mesh fails for those elsize
 #elsizes=[500,250,100,50,25,10,5]
-elsizes=[100,50,25,10,5]
+#elsizes=[100,50,25,10,5]
+
 # read the template fbd file
 f = open("solid.fbd","r")
 lines=f.readlines()
