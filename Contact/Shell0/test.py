@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import os
-import glob
 import shutil
 import numpy
 import multiprocessing
@@ -28,19 +27,16 @@ for ctyp in ctypes:
         shutil.copyfile(ctyp+".inp",os.path.join(simPath,ctyp+".inp"))
         
         # generate parameter file
-        f = open(os.path.join(simPath,"values.fbd"),'w')
-        f.write("valu etyp " + etyp + "\n")
-        f.write("valu ctyp " + ctyp + "\n")
-        f.write("valu last quit \n")
-        
-        
-        f.close()
+        with open(os.path.join(simPath, "values.fbd"), "w") as f:
+            f.write("valu etyp " + etyp + "\n")
+            f.write("valu ctyp " + ctyp + "\n")
+            f.write("valu last quit \n")
         
         # run the simulation
         os.chdir(simPath)
         os.system("cgx -bg run.fbd")
         # extract frequencies
-        os.system("../../Scripts/dat2txt.py " + ctyp)
+        os.system("../../../Scripts/dat2txt.py " + ctyp)
         freq=numpy.genfromtxt("Eigenvalues_1.txt",skip_header=1)
         os.chdir("..")
         
@@ -51,7 +47,5 @@ for ctyp in ctypes:
             fcol=len(freq[0])-2
             r.write(" | " + "{0:8.3g}".format(freq[i,fcol]))
         r.write("\n")
-        
-        
         
 r.close()
