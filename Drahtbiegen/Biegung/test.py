@@ -30,10 +30,14 @@ if 1:
 
 # solve, can take a while
 if 1:
-    os.remove("Biegung.frd")
-    os.remove("Biegung.dat")
-    os.remove("Biegung.sta")
-    os.remove("Biegung.cvg")
+    try: os.remove("Biegung.frd")
+    except: pass
+    try: os.remove("Biegung.dat")
+    except: pass
+    try: os.remove("Biegung.sta")
+    except: pass
+    try: os.remove("Biegung.cvg")
+    except: pass
     os.system("ccx Biegung >>Biegung.log")
 
 # convergence plot, reaction-time-plot
