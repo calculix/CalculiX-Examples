@@ -6,4 +6,4 @@ import multiprocessing
 os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
 os.system("cgx -b gmsh.fbl")
-os.system("cgx -b run.fbl")
+# os.system("cgx -b run.fbl")
