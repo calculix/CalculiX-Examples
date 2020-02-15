@@ -19,7 +19,7 @@ eltyps=["C3D8",
 pylab.figure(figsize=(10, 5.0), dpi=100)
 pylab.subplot(1,2,1)
 pylab.title("Stress")
-pylab.hold(True)
+# pylab.hold(True) # deprecated
 for elty in eltyps:
     data = numpy.genfromtxt(elty+".txt")
     pylab.plot(data[:,1],data[:,2]/sref,"o-")
@@ -29,7 +29,7 @@ pylab.ylabel('Max $\sigma / \sigma_{\mathrm{ref}}$')
 pylab.grid(True)
 pylab.subplot(1,2,2)
 pylab.title("Displacement")
-pylab.hold(True)
+# pylab.hold(True) # deprecated
 for elty in eltyps:
     data = numpy.genfromtxt(elty+".txt")
     pylab.plot(data[:,1],data[:,3]/wref,"o-")
