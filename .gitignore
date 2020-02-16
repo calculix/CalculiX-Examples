@@ -1,10 +1,37 @@
-# CalculiX generated files
-.cvg
-.frd
-.sta
-.msh
-.nam
-.dlo
-.sur
-.out
 Contact/Eyebar/material.ps
+
+# CalculiX generated files
+*.12d
+*.bou
+*.con
+*.cvg
+*.dat
+*.dfl
+*.dlo
+*.equ
+*.frc
+*.frd
+*.inc
+*.mpc
+*.msh
+*.nam
+*.out
+*.sta
+*.sur
+
+# Visual Studio Code settings
+*.vscode
+
+# Other generated files
+*.log
+*.txt
+*.png
+*.inp
+*.fbd
+*.fbl
+*.ng
+*.gnu
+*.ps
+*.out*
+*.hist
+*.eig
