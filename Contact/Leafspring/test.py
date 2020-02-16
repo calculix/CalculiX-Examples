@@ -9,11 +9,3 @@ os.system("cgx -b pre.fbd")
 os.system("ccx solve")
 os.system("../../Scripts/monitor.py solve")
 os.system("cgx -b post.fbd")
-
-
-
-
-
-
-
-

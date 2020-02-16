@@ -4,9 +4,6 @@ Test for the pillow example
 """
 #from subprocess import call
 import os
-import pylab
-import numpy
-import re
 import multiprocessing
 
 # Enable multithreading for ccx

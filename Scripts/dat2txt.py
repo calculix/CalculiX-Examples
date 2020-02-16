@@ -3,7 +3,6 @@
 This script extracts data from ccx dat-files
 """
 import sys
-import pylab
 import re
 import glob
 
