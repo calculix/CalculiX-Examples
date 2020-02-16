@@ -1,0 +1,56 @@
+sys cad2fbd Welle.step
+read result.fbd
+#node 1 0 0 0
+#node 2 0 0 0
+asgn n 3
+div all auto 4 30 0.5
+elty all te10
+mesh all
+seta s1 s A001
+seta s2 s A009
+comp s* do
+comp s* do
+
+send s1 abq sur
+send s2 abq sur
+
+# this is required as workaround for an export bug
+comp all do
+
+send all abq
+view elem
+# image
+ulin bearing surfaces (red and blue)
+view elem
+plot f all n
+plus f s1 r
+plus f s2 b
+frame
+hcpy png Refs/cgx-mesh
+
+sys ccx solve
+
+read solve.frd new
+
+view sh
+
+# show undeformed model edges
+anim model
+# loop over movies
+valu counter 0
+while counter < 20
+  valu counter + counter 1
+  # convert counter value to integer
+  valu counter int counter
+  ulin Mode counter
+  # build output file name from prefix, counter and extension
+  valu to & Refs/shape_ counter
+  valu to & to .gif
+  # make sure that the frequency is correctly displayed
+  ds counter e 4
+  # write 11 frames from the output of the subsequent command
+  movi frames auto
+  ds counter a 4
+  # store the file under the target name
+  sys mv movie.gif to
+endwhile
