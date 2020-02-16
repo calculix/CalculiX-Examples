@@ -1,8 +1,7 @@
 #!/usr/bin/python
-"""
-Test for the pillow example
-"""
-#from subprocess import call
+
+""" Test for the pillow example """
+
 import os
 import multiprocessing
 
