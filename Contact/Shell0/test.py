@@ -7,13 +7,15 @@ import multiprocessing
 # Enable multithreading for ccx
 os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
+# Explicitly move to example's directory
+os.chdir(os.path.dirname(__file__))
+
+# Run the example
 etypes = ("qu4", "qu8", "qu8r")
 ctypes = ("tie", "equ", "pc-ns", "pc-ss")
-
 r=open("Results.md",'w')
 r.write("Elem   | Contact |        1 |        2 |        3 |        4 |        5 |        6 |        7 |        8 |        9 |       10\n")
 r.write(":--    | :--     | --:      | --:      | --:      | --:      | --:      | --:      | --:      | --:      | --:      | --:\n")
-
 for ctyp in ctypes:
     for etyp in etypes:
         # cleanup and create sim dir
@@ -47,5 +49,4 @@ for ctyp in ctypes:
             fcol=len(freq[0])-2
             r.write(" | " + "{0:8.3g}".format(freq[i,fcol]))
         r.write("\n")
-        
 r.close()

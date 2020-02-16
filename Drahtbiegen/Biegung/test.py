@@ -3,11 +3,8 @@ import os
 import glob
 import multiprocessing
 
-# Enable multithreading for ccx
-os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
-
 # preprocessing
-if 1:
+def pre():
     toRemovePre = (
         "*.nam",
         "*.bou",
@@ -29,7 +26,7 @@ if 1:
     os.system("cgx -b pre.fbd")
 
 # solve, can take a while
-if 1:
+def solve():
     try: os.remove("Biegung.frd")
     except: pass
     try: os.remove("Biegung.dat")
@@ -41,7 +38,7 @@ if 1:
     os.system("ccx Biegung >>Biegung.log")
 
 # convergence plot, reaction-time-plot
-if 1:
+def post():
     try:
         os.remove("Biegung.png")
     except:
@@ -62,3 +59,14 @@ if 1:
     os.system("./Biegung.py")
     os.system("cgx -b Animation.fbd")
     os.system("cgx -b post.fbd")
+
+# Enable multithreading for ccx
+os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
+
+# Explicitly move to example's directory
+os.chdir(os.path.dirname(__file__))
+
+# Run the example
+pre()
+solve()
+post()

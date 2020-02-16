@@ -9,6 +9,11 @@ import multiprocessing
 # Enable multithreading for ccx
 os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
+# Explicitly move to example's directory
+os.chdir(os.path.dirname(__file__))
+
+# Run the example
+
 # The example is run for four element types
 eltyps={"S8":"qu8",
         "S8R":"qu8r",

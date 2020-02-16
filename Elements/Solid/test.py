@@ -111,10 +111,14 @@ def solid_plot():
 	pylab.legend(eltyps,loc="lower right")
 	pylab.tight_layout()
 	pylab.savefig("solid.svg",format="svg")
-	pylab.show()
+	# pylab.show()
 
 # Enable multithreading for ccx
 os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
+# Explicitly move to example's directory
+os.chdir(os.path.dirname(__file__))
+
+# Run the example
 solid_conv()
 solid_plot()
