@@ -9,7 +9,7 @@ File                          | Contents
 :-------------                | :-------------
 [Welle.stp](Welle.stp)        | Geometry, STEP format, generated using Autodesk INVENTOR
 [Welle.geo](Welle.geo)        | Gmsh script for geometry and mesh
-[pre.fbl](pre.fbl)            | CGX script, meshing with CGX
+[run.fbl](run.fbl)            | CGX script, meshing with CGX
 [gmsh.fbl](gmsh.fbl)          | CGX script, meshing with Gmsh
 [test.py](test.py)            | Python script to run the full simulation
 
