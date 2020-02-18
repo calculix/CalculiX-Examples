@@ -1,8 +1,9 @@
-Contact/Eyebar/material.ps
+TODO.md
 
 # CalculiX generated files
 *.12d
 *.bou
+*.cel
 *.con
 *.cvg
 *.dat
@@ -26,6 +27,7 @@ Contact/Eyebar/material.ps
 *.log
 *.txt
 *.png
+*.gif
 *.inp
 *.fbd
 *.fbl
