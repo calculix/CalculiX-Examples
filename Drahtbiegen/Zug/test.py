@@ -28,9 +28,14 @@ if __name__ == '__main__':
 
     # Run the example
     snap = os.listdir(os.curdir)
-    os.system("../../Scripts/param.py par.pre.fbl")
-    os.system("cgx -b pre.fbl")
-    os.system("ccx Biegung")
-    os.system("../../Scripts/monitor.py Biegung")
-    os.system("cgx -b post.fbd")
+    # TODO
+    # os.system('../../Scripts/param.py par.pre.fbd')
+    # os.system('cgx -b pre.fbd')
+    # os.system('cgx -b vpre.fbd')
+    # os.system('cgx -b plots.fbd')
+    # os.system('cgx -b 2D.fbd')
+    # os.system('cgx -b Zug-post.fbd')
+    # os.system('cgx -b expansion.fbd')
+    # os.system('cgx -b expansion2.fbd')
+    # os.system('cgx -b expansion3.fbd')
     move(snap)

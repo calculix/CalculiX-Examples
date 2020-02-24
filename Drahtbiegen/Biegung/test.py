@@ -1,7 +1,10 @@
 #!/usr/bin/python
+
 import os
 import glob
 import multiprocessing
+import shutil
+
 
 # preprocessing
 def pre():
@@ -25,6 +28,7 @@ def pre():
             os.remove(f)
     os.system("cgx -b pre.fbd")
 
+
 # solve, can take a while
 def solve():
     try: os.remove("Biegung.frd")
@@ -36,6 +40,7 @@ def solve():
     try: os.remove("Biegung.cvg")
     except: pass
     os.system("ccx Biegung >>Biegung.log")
+
 
 # convergence plot, reaction-time-plot
 def post():
@@ -60,13 +65,34 @@ def post():
     os.system("cgx -b Animation.fbd")
     os.system("cgx -b post.fbd")
 
-# Enable multithreading for ccx
-os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
-# Explicitly move to example's directory
-os.chdir(os.path.dirname(__file__))
+# Move new files and folders to 'Refs'
+def move(old_snap):
+    new_snap = os.listdir(os.curdir)
+    if not os.path.exists('Refs'):
+        os.mkdir('Refs')
+    for f in new_snap:
+        if not f in old_snap:
+            fname = os.path.basename(f)
+            new_name = os.path.join(os.curdir, 'Refs', fname)
+            if os.path.isfile(new_name):
+                os.remove(new_name)
+            if os.path.isdir(new_name):
+                shutil.rmtree(new_name)
+            os.rename(f, new_name)
 
-# Run the example
-pre()
-solve()
-post()
+
+if __name__ == '__main__':
+
+    # Enable multithreading for ccx
+    os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
+
+    # Explicitly move to example's directory
+    os.chdir(os.path.dirname(__file__))
+
+    # Run the example
+    snap = os.listdir(os.curdir)
+    pre()
+    solve()
+    post()
+    move(snap)

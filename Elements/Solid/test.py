@@ -6,6 +6,8 @@ import os
 import multiprocessing
 import pylab
 import numpy
+import shutil
+
 
 # Runs a convergence study
 def solid_conv():
@@ -73,6 +75,7 @@ def solid_conv():
             fdata.write(str(elsize)+" "+str(nnode)+" "+str((smax-smin)/2.)+" "+str(abs(umax))+"\n")
         fdata.close()
 
+
 # Plots the results of a convergence study
 def solid_plot():
 	# reference values, see
@@ -113,12 +116,33 @@ def solid_plot():
 	pylab.savefig("solid.svg",format="svg")
 	# pylab.show()
 
-# Enable multithreading for ccx
-os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
-# Explicitly move to example's directory
-os.chdir(os.path.dirname(__file__))
+# Move new files and folders to 'Refs'
+def move(old_snap):
+    new_snap = os.listdir(os.curdir)
+    if not os.path.exists('Refs'):
+        os.mkdir('Refs')
+    for f in new_snap:
+        if not f in old_snap:
+            fname = os.path.basename(f)
+            new_name = os.path.join(os.curdir, 'Refs', fname)
+            if os.path.isfile(new_name):
+                os.remove(new_name)
+            if os.path.isdir(new_name):
+                shutil.rmtree(new_name)
+            os.rename(f, new_name)
 
-# Run the example
-solid_conv()
-solid_plot()
+
+if __name__ == '__main__':
+
+    # Enable multithreading for ccx
+    os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
+
+    # Explicitly move to example's directory
+    os.chdir(os.path.dirname(__file__))
+
+    # Run the example
+    snap = os.listdir(os.curdir)
+    solid_conv()
+    solid_plot()
+    move(snap)
