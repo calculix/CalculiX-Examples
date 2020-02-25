@@ -26,7 +26,7 @@ plus na refnode r
 hcpy png sck-mesh
 
 sys ccx sck
-sys ../Scripts/monitor.py sck&
+sys monitor.py sck&
 
 read sck.frd
 ds -0 e 4

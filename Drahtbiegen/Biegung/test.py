@@ -6,6 +6,17 @@ import multiprocessing
 import shutil
 
 
+# Provide access to the helper scripts
+def modify_path():
+    scripts_dir = os.path.dirname(__file__)
+    while not 'Scripts' in os.listdir(scripts_dir):
+        scripts_dir = os.path.abspath(os.path.join(scripts_dir, '..'))
+    scripts_dir = os.path.join(scripts_dir, 'Scripts')
+    if not scripts_dir in os.environ['PATH']:
+        os.environ['PATH'] += os.pathsep + scripts_dir
+    print '\nPATH = {}\n'.format(os.environ['PATH'])
+
+
 # preprocessing
 def pre():
     toRemovePre = (
@@ -59,8 +70,8 @@ def post():
     os.remove("deform.png")
     os.remove("PE.png")
 
-    os.system("../../Scripts/monitor.py Biegung")
-    os.system("../../Scripts/dat2txt.py Biegung")
+    os.system("monitor.py Biegung")
+    os.system("dat2txt.py Biegung")
     os.system("./Biegung.py")
     os.system("cgx -b Animation.fbd")
     os.system("cgx -b post.fbd")
@@ -91,6 +102,7 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
     # Run the example
+    modify_path()
     snap = os.listdir(os.curdir)
     pre()
     solve()

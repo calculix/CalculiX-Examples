@@ -7,6 +7,17 @@ import multiprocessing
 import shutil
 
 
+# Provide access to the helper scripts
+def modify_path():
+    scripts_dir = os.path.dirname(__file__)
+    while not 'Scripts' in os.listdir(scripts_dir):
+        scripts_dir = os.path.abspath(os.path.join(scripts_dir, '..'))
+    scripts_dir = os.path.join(scripts_dir, 'Scripts')
+    if not scripts_dir in os.environ['PATH']:
+        os.environ['PATH'] += os.pathsep + scripts_dir
+    print '\nPATH = {}\n'.format(os.environ['PATH'])
+
+
 def run():
     # The example is run for four element types
     eltyps={"S8":"qu8",
@@ -34,7 +45,7 @@ def run():
         # run run_auto.fbd (preprocessing, solving and postprocessing)
         os.system("cgx -b run_auto.fbd")
         # store the images.
-        os.system("../Scripts/monitor.py static")
+        os.system("monitor.py static")
         os.system("mv expanded.png Refs/expanded-"+elty.lower()+".png")
         os.system("mv cuty0.png Refs/cuty0-"+elty.lower()+".png")
         os.system("mv static.png Refs/static-"+elty.lower()+".png")
@@ -65,6 +76,7 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
     # Run the example
+    modify_path()
     snap = os.listdir(os.curdir)
     run()
     move(snap)

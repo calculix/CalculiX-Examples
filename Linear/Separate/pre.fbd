@@ -23,7 +23,7 @@ elty d4 tr6s
 mesh all
 send all abq
 # separate the elements into disjoint meshes
-sys ../../Scripts/separate.py all.msh
+sys separate.py all.msh
 
 # constraints
 seta nodes n all

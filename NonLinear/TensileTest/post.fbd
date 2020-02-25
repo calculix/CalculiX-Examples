@@ -1,4 +1,4 @@
-sys ../../Scripts/dat2txt.py
+sys dat2txt.py
 sys gnuplot sigeps.gnu
 
 read Zug.frd

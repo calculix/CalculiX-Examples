@@ -13,7 +13,7 @@ plot fv all
 hcpy png SE
 
 # create force-displacement plot
-sys ../../Scripts/dat2txt.py eyebar
+sys dat2txt.py eyebar
 sys join "total force fx,fy,fz_NCONTROL.txt" "displacements vx,vy,vz_NMONITOR.txt" > df.txt
 sys gnuplot df.gnu
 

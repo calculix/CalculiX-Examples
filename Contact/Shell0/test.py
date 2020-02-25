@@ -1,10 +1,21 @@
 #!/usr/bin/python
 
 import os
-import shutil
 import numpy
 import multiprocessing
 import shutil
+
+
+# Provide access to the helper scripts
+def modify_path():
+    scripts_dir = os.path.dirname(__file__)
+    while not 'Scripts' in os.listdir(scripts_dir):
+        scripts_dir = os.path.abspath(os.path.join(scripts_dir, '..'))
+    scripts_dir = os.path.join(scripts_dir, 'Scripts')
+    if not scripts_dir in os.environ['PATH']:
+        os.environ['PATH'] += os.pathsep + scripts_dir
+    print '\nPATH = {}\n'.format(os.environ['PATH'])
+
 
 def run():
     etypes = ("qu4", "qu8", "qu8r")
@@ -34,7 +45,7 @@ def run():
             os.chdir(simPath)
             os.system("cgx -bg run.fbd")
             # extract frequencies
-            os.system("../../../Scripts/dat2txt.py " + ctyp)
+            os.system("dat2txt.py " + ctyp)
             freq=numpy.genfromtxt("Eigenvalues_1.txt",skip_header=1)
             os.chdir("..")
             
@@ -62,6 +73,7 @@ def move(old_snap):
                 shutil.rmtree(new_name)
             os.rename(f, new_name)
 
+
 if __name__ == '__main__':
 
     # Enable multithreading for ccx
@@ -71,6 +83,7 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
     # Run the example
+    modify_path()
     snap = os.listdir(os.curdir)
     run()
     move(snap)

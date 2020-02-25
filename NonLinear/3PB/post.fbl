@@ -2,7 +2,7 @@ read Biegung.frd
 read part1.nam inp
 comp Npart1 do
 # todo: parametrize the theoretical solution
-sys ../../Scripts/dat2txt.py Biegung
+sys dat2txt.py Biegung
 sys gnuplot df.gpl
 
 view disp

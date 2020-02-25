@@ -26,7 +26,7 @@ plus na refnode r
 hcpy png scd-mesh
 
 sys ccx scd
-sys ../Scripts/monitor.py scd&
+sys monitor.py scd&
 
 read scd.frd
 ds -1 e 23

@@ -31,5 +31,5 @@ plot fv all
 frame
 hcpy png exp
 graph Nmonitor time PE PE
-sys ../../Scripts/dat2txt.py Zug
+sys dat2txt.py Zug
 sys gnuplot pe.gnu

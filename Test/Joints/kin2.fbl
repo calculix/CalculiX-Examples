@@ -51,6 +51,6 @@ ds 14 e 7
 scal d
 scal d 5
 hcpy png Refs2/se2-kin
-sys ../../Scripts/dat2txt.py solve2
+sys dat2txt.py solve2
 sys gnuplot frequency.gpl
 sys mv f.png Refs2/f-kin.png

@@ -1,39 +1,40 @@
 TODO.md
+/**/Refs
 
-# CalculiX generated files
-*.12d
-*.bou
-*.cel
-*.con
-*.cvg
-*.dat
-*.dfl
-*.dlo
-*.equ
-*.frc
-*.frd
-*.inc
-*.mpc
-*.msh
-*.nam
-*.out
-*.sta
-*.sur
+# # CalculiX generated files
+# *.12d
+# *.bou
+# *.cel
+# *.con
+# *.cvg
+# *.dat
+# *.dfl
+# *.dlo
+# *.equ
+# *.frc
+# *.frd
+# *.inc
+# *.mpc
+# *.msh
+# *.nam
+# *.out
+# *.sta
+# *.sur
 
-# Visual Studio Code settings
+# # Visual Studio Code settings
 *.vscode
 
 # Other generated files
 *.log
-*.txt
-*.png
-*.gif
-*.inp
-*.fbd
-*.fbl
-*.ng
-*.gnu
-*.ps
-*.out*
-*.hist
-*.eig
+# *.gif
+# *.gnu
+# *.inp
+# *.fbd
+# *.fbl
+# *.ng
+# *.out*
+# *.png
+# *.ps
+# *.txt
+# *.hist
+# *.eig

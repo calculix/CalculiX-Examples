@@ -19,7 +19,7 @@ plus n rot t
 hcpy png sm-mesh
 
 sys ccx sm
-sys ../Scripts/monitor.py sm&
+sys monitor.py sm&
 
 read sm.frd
 ds -0 e 4

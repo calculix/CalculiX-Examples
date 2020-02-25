@@ -21,7 +21,7 @@ plus n fix b
 plus n rot t
 hcpy png sh-mesh
 sys ccx sh
-sys ../Scripts/monitor.py
+sys monitor.py
 
 read sh.frd
 ds -1 e 23

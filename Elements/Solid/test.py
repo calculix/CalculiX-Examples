@@ -9,6 +9,17 @@ import numpy
 import shutil
 
 
+# Provide access to the helper scripts
+def modify_path():
+    scripts_dir = os.path.dirname(__file__)
+    while not 'Scripts' in os.listdir(scripts_dir):
+        scripts_dir = os.path.abspath(os.path.join(scripts_dir, '..'))
+    scripts_dir = os.path.join(scripts_dir, 'Scripts')
+    if not scripts_dir in os.environ['PATH']:
+        os.environ['PATH'] += os.pathsep + scripts_dir
+    print '\nPATH = {}\n'.format(os.environ['PATH'])
+
+
 # Runs a convergence study
 def solid_conv():
     # Calculix solid element types with their cgx counterparts
@@ -142,6 +153,7 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
     # Run the example
+    modify_path()
     snap = os.listdir(os.curdir)
     solid_conv()
     solid_plot()

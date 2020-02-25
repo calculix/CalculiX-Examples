@@ -26,5 +26,5 @@ hcpy png cpress
 rot u 60
 hcpy png cpress_rot
 
-sys ../../Scripts/dat2txt.py
+sys dat2txt.py
 sys gnuplot moment.plt

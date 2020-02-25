@@ -47,6 +47,6 @@ rot u 45
 tra l 30
 plot fv all
 hcpy png Refs/se-dist
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys gnuplot frequency.gpl
 sys mv f.png Refs/f-dist.png

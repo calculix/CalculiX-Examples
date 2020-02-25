@@ -21,6 +21,6 @@ ds 8 e 7
 hcpy png Refs/trfix3
 
 # surface data plots
-sys ../../Scripts/dat2txt.py trfix
+sys dat2txt.py trfix
 sys gnuplot surface.gpl
 sys mv surface*.png Refs/trfix

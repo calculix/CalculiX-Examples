@@ -20,7 +20,7 @@ plus n rot t
 hcpy png b-mesh
 
 sys ccx b
-sys ../Scripts/monitor.py b&
+sys monitor.py b&
 
 read b.frd
 ds -0 e 4

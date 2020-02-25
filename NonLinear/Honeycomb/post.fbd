@@ -27,7 +27,7 @@ hcpy png SE-core
 plot fv Esand
 hcpy png SE
 # Force-displacement curve
-sys ../../Scripts/dat2txt.py Biegung
+sys dat2txt.py Biegung
 sys mv "total force fx,fy,fz_NCYL1.txt" f.txt
 sys mv "displacements vx,vy,vz_NMON1.txt" d.txt
 sys join f.txt d.txt > df.txt

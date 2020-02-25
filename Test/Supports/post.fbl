@@ -23,6 +23,6 @@ ds 92 e 7
 hcpy png Refs/trans4
 
 # surface data plots
-sys ../../Scripts/dat2txt.py trans
+sys dat2txt.py trans
 sys gnuplot surface.gpl
 sys mv surface*.png Refs/trans

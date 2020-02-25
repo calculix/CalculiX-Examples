@@ -45,6 +45,6 @@ plot fv all
 hcpy png Refs/se-kin
 
 sys rm Eigenvalues_1.txt
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys gnuplot frequency.gpl
 sys mv f.png Refs/f-kin.png

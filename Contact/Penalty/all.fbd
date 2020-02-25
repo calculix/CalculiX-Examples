@@ -53,7 +53,7 @@ read solve.frd new
 read hist.nam inp
 graph Nhist time CONTACT CPRESS
 sys mv graph_0.out s2s-lin.hist
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" s2s-lin.txt
 
 sys cp s2s-tie.inc contact.inc
@@ -62,7 +62,7 @@ read solve.frd new
 read hist.nam inp
 graph Nhist time CONTACT CPRESS
 sys mv graph_1.out s2s-tie.hist
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" s2s-tie.txt
 
 sys cp n2s-lin.inc contact.inc
@@ -71,7 +71,7 @@ read solve.frd new
 read hist.nam inp
 graph Nhist time CONTACT CPRESS
 sys mv graph_2.out n2s-lin.hist
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" n2s-lin.txt
 
 sys cp n2s-exp.inc contact.inc
@@ -80,7 +80,7 @@ read solve.frd new
 read hist.nam inp
 graph Nhist time CONTACT CPRESS
 sys mv graph_3.out n2s-exp.hist
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" n2s-exp.txt
 
 sys cp n2s-tab.inc contact.inc
@@ -89,7 +89,7 @@ read solve.frd new
 read hist.nam inp
 graph Nhist time CONTACT CPRESS
 sys mv graph_4.out n2s-tab.hist
-sys ../../Scripts/dat2txt.py solve
+sys dat2txt.py solve
 sys mv "total force fx,fy,fz_NKW.txt" n2s-tab.txt
 
 sys gnuplot pd.gnu

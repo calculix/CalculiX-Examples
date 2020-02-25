@@ -1,5 +1,5 @@
 sys ccx solve
-sys ../../Scripts/monitor.py solve &
+sys monitor.py solve &
 read solve.frd new
 read hist.nam inp nom
 graph Nhist time CONTACT CPRESS
