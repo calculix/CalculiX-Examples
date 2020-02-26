@@ -77,7 +77,7 @@ frame s1
 hcpy png contact
 
 sys ccx ctyp
-sys python dat2txt.py ctyp
+sys dat2txt.py ctyp
 
 ulin etyp: etyp , ctyp: ctyp
 

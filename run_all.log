@@ -1,0 +1,232 @@
+==================================================
+1: CAD/OnshapeTutorial/test.py
+terminate called after throwing an instance of 'ngcore::Exception'
+  what():  Stop meshing since surface mesh not consistent
+Caught SIGABRT: usually caused by abort() or assert()
+
+terminate called after throwing an instance of 'ngcore::Exception'
+  what():  Stop meshing since surface mesh not consistent
+Caught SIGABRT: usually caused by abort() or assert()
+
+52.1 seconds
+
+==================================================
+2: CAD/Opt/test.py
+1.7 seconds
+
+==================================================
+3: Contact/CNC/test.py
+169.5 seconds
+
+==================================================
+4: Contact/Eyebar/test.py
+14.3 seconds
+
+==================================================
+5: Contact/Hertz_2D/test.py
+35.9 seconds
+
+==================================================
+6: Contact/Hertz_axi/test.py
+gv: Cannot open file graph_6.ps (No such file or directory)
+200.5 seconds
+
+==================================================
+7: Contact/Leafspring/test.py
+24.1 seconds
+
+==================================================
+8: Contact/Penalty/test.py
+5.5 seconds
+
+==================================================
+9: Contact/Shell0/test.py
+12.5 seconds
+
+==================================================
+10: Contact/Shell1/test.py
+10.7 seconds
+
+==================================================
+11: Contact/Tubes/test.py
+51.2 seconds
+
+==================================================
+12: Contact/Valve/test.py
+8.6 seconds
+
+==================================================
+13: Drahtbiegen/Biegung/test.py
+93.5 seconds
+
+==================================================
+14: Drahtbiegen/Zug/test.py
+0.1 seconds
+
+==================================================
+15: Dynamics/Discrete/test.py
+Warning: empty y range [0:0], adjusting to [-1:1]
+Warning: empty y range [0:0], adjusting to [-1:1]
+Warning: empty y range [0:0], adjusting to [-1:1]
+2.3 seconds
+
+==================================================
+16: Elements/Solid/test.py
+52.9 seconds
+
+==================================================
+17: Kasten/test.py
+87.5 seconds
+
+==================================================
+18: Linear/BiaxBending/test.py
+4.7 seconds
+
+==================================================
+19: Linear/Crack1/test.py
+13.8 seconds
+
+==================================================
+20: Linear/L-Plate/test.py
+19.7 seconds
+
+==================================================
+21: Linear/Mesh1/test.py
+30.1 seconds
+
+==================================================
+22: Linear/PSE/test.py
+6.0 seconds
+
+==================================================
+23: Linear/Plates/test.py
+4.3 seconds
+
+==================================================
+24: Linear/Separate/test.py
+7.7 seconds
+
+==================================================
+25: Linear/ShearCenter/test.py
+7.0 seconds
+
+==================================================
+26: Linear/StressConc/test.py
+4.1 seconds
+
+==================================================
+27: Linear/StressConc1/test.py
+convert-im6.q16: not authorized `graph_0.ps' @ error/constitute.c/ReadImage/412.
+convert-im6.q16: no images defined `Refs/nodepath.png' @ error/convert.c/ConvertImageCommand/3258.
+convert-im6.q16: not authorized `graph_1.ps' @ error/constitute.c/ReadImage/412.
+convert-im6.q16: no images defined `Refs/linepath.png' @ error/convert.c/ConvertImageCommand/3258.
+6.3 seconds
+
+==================================================
+28: NonLinear/3PB/test.py
+
+        User and default variables:
+        pi = 3.14159265358979
+        GNUTERM = "qt"
+        NaN = NaN
+        ARGC = 0
+        ARG0 = "df.gpl"
+        disp = 20
+        w = 1.90476190476
+        Fe = 45973.7770667
+
+305.4 seconds
+
+==================================================
+29: NonLinear/Cut/test.py
+2636.5 seconds
+
+==================================================
+30: NonLinear/Honeycomb/test.py
+1363.3 seconds
+
+==================================================
+31: NonLinear/Rohrknie/test.py
+121.2 seconds
+
+==================================================
+32: NonLinear/Sandwichtest/test.py
+83.9 seconds
+
+==================================================
+33: NonLinear/Sections/Plastic/test.py
+166.5 seconds
+
+==================================================
+34: NonLinear/Sections/test.py
+9.7 seconds
+
+==================================================
+35: NonLinear/TensileTest/test.py
+129.9 seconds
+
+==================================================
+36: Pillow/test.py
+45.6 seconds
+
+==================================================
+37: RVE/Periodic/test.py
+5.1 seconds
+
+==================================================
+38: RVE/PlanarSlide/test.py
+186.6 seconds
+
+==================================================
+39: RVE/PlaneOrtho1/test.py
+11.2 seconds
+
+==================================================
+40: Streifen/test.py
+8.3 seconds
+
+==================================================
+41: Test/Beam/test.py
+31.2 seconds
+
+==================================================
+42: Test/BeamSections/test.py
+2.7 seconds
+
+==================================================
+43: Test/Distributing/test.py
+13.6 seconds
+
+==================================================
+44: Test/Joints/test.py
+114.1 seconds
+
+==================================================
+45: Test/Meanrot/test.py
+5.2 seconds
+
+==================================================
+46: Test/Supports/test.py
+81.4 seconds
+
+==================================================
+47: Test/Supports1/test.py
+86.7 seconds
+
+==================================================
+48: Thermal/Thermal distortion/test.py
+12.3 seconds
+
+==================================================
+49: Thermal/Thermal shock/test.py
+60.4 seconds
+
+==================================================
+50: Thermal/Thermografie/test.py
+convert-im6.q16: not authorized `graph_0.ps' @ error/constitute.c/ReadImage/412.
+convert-im6.q16: no images defined `Refs/history.png' @ error/convert.c/ConvertImageCommand/3258.
+convert-im6.q16: not authorized `graph_1.ps' @ error/constitute.c/ReadImage/412.
+convert-im6.q16: no images defined `Refs/pathplot.png' @ error/convert.c/ConvertImageCommand/3258.
+60.1 seconds
+
+Total 01:47:48

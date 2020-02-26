@@ -43,7 +43,7 @@ txt botfault v pos neg
 plot e all n
 plus nt probes r 6
 hcpy png Refs/probes
-break
+# break
 # path plot along the seam on the upper side
 enq nodes top rec xN _ ztop 0.1 a
 ds -0 e 1

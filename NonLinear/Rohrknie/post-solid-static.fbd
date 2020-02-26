@@ -1,5 +1,5 @@
 # create force-displacement-plot
-sys ../../Scripts/dat2txt.py solid-static
+sys dat2txt.py solid-static
 sys mv "total force fx,fy,fz_NLOAD.txt" f.txt
 sys mv "displacements vx,vy,vz_NREF.txt" d.txt
 sys join f.txt d.txt > df.txt

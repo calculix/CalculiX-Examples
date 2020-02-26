@@ -5,7 +5,6 @@ The elements are scanned and if a node is used repeatedly, it is replaced by
 a new node at the same location and appropriate equations are generated.
 """
 import sys
-import numpy
 
 # processing command line arguments, get the
 # jobname

@@ -77,7 +77,7 @@ seta ! all
 plot f +CF1 n
 plus f +CF3 g
 plus f +CF4 g
-break
+#break
 #~ plot la all
 #~ plus sa all
 #~ plus pa all

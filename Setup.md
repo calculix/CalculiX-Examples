@@ -11,6 +11,7 @@ Working environment:
   + `cgx` and `ccx` (the CalculiX programs)
   + `git` (source code management system, for easy update of the example collection)
   + `ng_vol` (netgen tetraeder mesher)
+  + `cgxCadTools` based on Open CASCADE Technology
 
 The examples are developed under Linux but most of them might work under Windows.
 
