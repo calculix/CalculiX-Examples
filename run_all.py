@@ -213,7 +213,7 @@ if __name__ == '__main__':
     start = time.perf_counter() # start time
 
     # This will run all examples
-    start_folder = os.path.dirname(__file__)
+    start_folder = os.path.dirname(os.path.abspath(__file__))
     limit = 1000000 # how many files to process
 
     # # This will run one example only
