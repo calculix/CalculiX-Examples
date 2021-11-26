@@ -86,7 +86,7 @@ plot fv all
 hcpy png se
 
 prnt st
-valu maxs pop 7
+valu maxs pop 9
 
 
 # write area (for mass optimization)
