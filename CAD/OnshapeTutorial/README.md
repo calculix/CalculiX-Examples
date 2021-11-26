@@ -22,7 +22,7 @@ The virtual topology version of this example has been set up with the help of Ch
 | [part.geo](part.geo)     | Gmsh control file for meshing and model display                |
 | [partVT.geo](partVT.geo) | Gmsh control file with geometry cleaning (virtual topology)    |
 | [run.fbd](run.fbd)       | CGX control file for standard meshing with gmsh,  solving and postprocessing, |
-| [runVT.fbd](runVT.fbd)       | CGX control file for virtual tppology meshing with gmsh,  solving and postprocessing, |
+| [runVT.fbd](runVT.fbd)       | CGX control file for virtual topology meshing with gmsh,  solving and postprocessing, |
 | [run1.fbd](run1.fbd)     | CGX control file import with `cad2fbd` and various meshing versions in CGX      |
 | [run2.fbd](run2.fbd)     | CGX control file, import with `cad2fbd`, meshing, solving, postprocessing,    |
 | [VTdemo.fbd](VTdemo.fbd) | CGX file for the mesh plots (original and VT version)          |
