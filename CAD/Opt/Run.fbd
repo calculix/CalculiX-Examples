@@ -76,7 +76,7 @@ sys ccx Solve
 read Solve.frd new
 
 # select equivalent stress result
-# and write max value
+# and get max value
 ds 2 e 7
 stack on
 view disp
@@ -89,9 +89,10 @@ prnt st
 valu maxs pop 9
 
 
-# write area (for mass optimization)
+# get area (for mass optimization)
 area all
 valu size pop
+# write results
 sys echo Stress  maxs > results.txt
 sys echo Surface size >> results.txt
 #quit

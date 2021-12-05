@@ -1,5 +1,5 @@
 # Leaf Spring
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.18 / CCX 2.18
 
 + Parametric model with variable number of leafs
 + completely automatic generation of the solver input using a loop in CGX with and without automatic contact detection (ACD)
