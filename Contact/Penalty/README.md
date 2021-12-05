@@ -1,5 +1,5 @@
 # Basic Tests of Penalty Contact
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.18 / CCX 2.18
 
 + Completely displacement controlled model (no dofs)
 + Objective: extract pressure-penetration characteristic for various contact options
