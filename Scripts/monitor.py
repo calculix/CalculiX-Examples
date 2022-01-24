@@ -85,7 +85,7 @@ for i in it:
 pylab.subplot(2,1,1)
 pylab.title('sta and cvg data of job '+job )
 pylab.semilogy(it[:istamax],itdt[:istamax],'-',
-               it[:icvgmax],cvg[:icvgmax,5],'-',
+               it[:icvgmax],cvg[:icvgmax,5],'g-',
                it[:icvgmax],cvg[:icvgmax,6],'r-')
 pylab.grid()
 pylab.legend(['dt','force','disp'],
@@ -102,5 +102,5 @@ pylab.grid()
 sp2=sp1.twinx()
 pylab.plot(it[:icvgmax],cvg[:icvgmax,4],'r-')
 pylab.ylabel('# of cont. elements')
-pylab.savefig(job)
+pylab.savefig(job, bbox_inches='tight' )
 pylab.show()
