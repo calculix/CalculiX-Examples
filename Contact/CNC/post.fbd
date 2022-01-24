@@ -22,3 +22,5 @@ while counter < 10
   ds counter a
   sys mv movie.gif to
 endwhile
+
+quit

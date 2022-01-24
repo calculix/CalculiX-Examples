@@ -91,3 +91,5 @@ ds 1 a 4
 if last eq quit
    quit
 endif
+
+quit

@@ -71,3 +71,5 @@ ulin length x height x w_foot , offset h_d
 plot n all r 1
 plus f all n
 hcpy png Refs/SK
+
+quit

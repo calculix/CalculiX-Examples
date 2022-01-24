@@ -22,3 +22,5 @@ tra r 2
 plot fv Ndraht
 min 0 f
 hcpy png PE
+
+quit

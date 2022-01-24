@@ -1,5 +1,5 @@
 # Wire Bending
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.18 / CCX 2.19
 
 Click the image to see the animation
 
@@ -86,4 +86,4 @@ Open the results in CGX and create some plots
 ```
 cgx -b post.fbd
 ```
-<img src="deform.png" width="300"><img src="PE.png" width="300">
+git <img src="deform.png" width="300"><img src="PE.png" width="300">

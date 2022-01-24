@@ -41,3 +41,5 @@ ulin dia x length
 plot n all r 1
 plus f all n
 hcpy png Refs/rod
+
+quit

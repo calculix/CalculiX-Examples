@@ -153,3 +153,5 @@ send all abq
 # prepare include-files
 send alu abq nam
 send steel abq nam
+
+quit

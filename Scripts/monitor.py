@@ -103,5 +103,4 @@ sp2=sp1.twinx()
 pylab.plot(it[:icvgmax],cvg[:icvgmax,4],'r-')
 pylab.ylabel('# of cont. elements')
 pylab.savefig(job)
-
 pylab.show()

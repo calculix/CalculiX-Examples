@@ -1,2 +1,2 @@
-Stress STRESS
+Stress 9.405108e+01
 Surface 1.069340e+04
