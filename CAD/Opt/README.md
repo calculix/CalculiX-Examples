@@ -1,6 +1,6 @@
 # Model for Parametric Optimization
 
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 This is a test model for optimization with various optimization software tools like Optimax or Dakota.
 
