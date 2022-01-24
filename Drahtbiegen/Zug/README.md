@@ -1,9 +1,6 @@
 # Tensile Test
 Tested with CGX 2.19/ CCX 2.19
 
-Issues
-* dark shading of `expanded.png` worked around with first generating a color plot and then add a shaded geometry plot using `plus`
-
 Tensile test of a wire of 1 mm diameter made of 1.4301 stainless steel. This steel has a high yield strength but nearly no work hardening, thus the uniform strain is very low and necking occures early and very localized.
 
 <img src="movie.gif" width="300" title="plastic equivalent strain"><img src="2D3D.png" width="300" title="3D expansion with embedded 2D model">

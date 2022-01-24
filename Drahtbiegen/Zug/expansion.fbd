@@ -24,8 +24,7 @@ zoom 2
 plot fv all
 hcpy png PE-expanded
 
-plot fv all
-plus f all n
+plot f all n
 hcpy png expanded
 
 plus ev base

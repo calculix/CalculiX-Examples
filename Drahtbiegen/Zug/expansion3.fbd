@@ -1,9 +1,0 @@
-# This requires CGX 2.10
-read Zug.frd new
-seta e1 se all
-copy e1 e2 tra 0 0 0
-swep e1 q1 rot y 180 30 a
-view disp
-ds -0 e 1
-plot f all n
-plus ev e2
