@@ -1,6 +1,6 @@
 # Meshing a CAD Geometry
 
-Tested with CGX 2.16 / CCX 2.15, Gmsh 4.4.1
+Tested with CGX 2.19 / CCX 2.19, Gmsh 4.9.3
 
 This demonstrates possible workflows for a CalculiX analysis of a CAD
 generated part.
@@ -15,6 +15,11 @@ generated part.
    * `run2.fbd` performs a full analysis with the best settings found
 
 The virtual topology version of this example has been set up with the help of Christophe Geuzaine and has become [part of the gmsh test suite](https://gitlab.onelab.info/gmsh/gmsh/blob/master/benchmarks/step/part_compound_curved_mesh.geo).
+
+**Issues:** 
+
+- The meshing algorithm in gmsh has changed, thus the virtual topology (compound) meshing doesn't work for the example. Elements with negative jacobian are created. (4.4.1 worked, 4.9.3 doesn't work).
+- `cad2fbd` doesn't work on the current test platform (nuvolos cloud)
 
 | File                     | Contents                                                       |
 | :-------                 | :-------------                                                 |
