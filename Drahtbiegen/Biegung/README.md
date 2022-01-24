@@ -1,5 +1,5 @@
 # Wire Bending
-Tested with CGX 2.18 / CCX 2.19
+Tested with CGX 2.19 / CCX 2.19
 
 Click the image to see the animation
 
