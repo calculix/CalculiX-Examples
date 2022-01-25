@@ -1,6 +1,6 @@
 # Multipart Assembly
 
-Tested with CGX 2.18 / CCX 2.18
+Tested with CGX 2.19 / CCX 2.19
 
 + Assembly of mesh parts
 + Parametric parts generated in CGX

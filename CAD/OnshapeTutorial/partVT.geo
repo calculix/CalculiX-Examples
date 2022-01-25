@@ -22,6 +22,7 @@ Mesh.CharacteristicLengthMax = 7;
 //Transfinite Curve {52,58} = 10;
 Mesh.CompoundCharacteristicLengthFactor = 0.3;
 Mesh.CompoundClassify = 0;
+Mesh.HighOrderOptimize = 1;
 Mesh.ElementOrder = 2;
 
 Mesh 3;
