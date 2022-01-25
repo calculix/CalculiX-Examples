@@ -76,5 +76,3 @@ ulin height x height x width
 plot n all r 1
 plus f all n
 hcpy png Refs/winkel
-
-quit
