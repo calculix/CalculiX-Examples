@@ -14,7 +14,7 @@ generated part.
    * `run1.fbd` demonstrates various mesh settings
    * `run2.fbd` performs a full analysis with the best settings found
 
-The virtual topology version of this example has been set up with the help of Christophe Geuzaine and has become [part of the gmsh test suite](gitlab.onelab.info/gmsh/gmsh/blob/master/benchmarks/step/part_compound_curved_mesh.geo).
+The virtual topology version of this example has been set up with the help of Christophe Geuzaine and has become [part of the gmsh test suite](https://gitlab.onelab.info/gmsh/gmsh/blob/master/benchmarks/step/part_compound_curved_mesh.geo).
 
 **Issues:** 
 
