@@ -1,5 +1,5 @@
 # Hertz Contact 2D
-Tested with CGX 2.18 / CCX 2.18
+Tested with CGX 2.19 / CCX 2.19
 
 + Plane strain model
 + Linear elasticity
