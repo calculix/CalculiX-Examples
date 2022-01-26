@@ -88,8 +88,11 @@ pylab.semilogy(it[:istamax],itdt[:istamax],'-',
                it[:icvgmax],cvg[:icvgmax,5],'g-',
                it[:icvgmax],cvg[:icvgmax,6],'r-')
 pylab.grid()
+# enforce integer x ticks
+ax = pylab.gca()
+ax.xaxis.get_major_locator().set_params(integer=True)
 pylab.legend(['dt','force','disp'],
-             fontsize='small',framealpha=0.5, loc=2)
+  fontsize='small',framealpha=0.5, loc=2)
 # step time and number of contact elements
 sp1=pylab.subplot(2,1,2)
 pylab.plot(it[:istamax],itsteptime[:istamax],'r-',
@@ -99,6 +102,9 @@ pylab.legend(['# cont. el.','step time'],
 pylab.ylabel('step time')
 pylab.xlabel('Iteration')
 pylab.grid()
+# enforce integer x ticks
+ax = pylab.gca()
+ax.xaxis.get_major_locator().set_params(integer=True)
 sp2=sp1.twinx()
 pylab.plot(it[:icvgmax],cvg[:icvgmax,4],'r-')
 pylab.ylabel('# of cont. elements')
