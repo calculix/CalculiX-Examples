@@ -78,6 +78,3 @@ Results with displacement control (first step)
 Results with pressure control (second step)
 
 <img src="pc-stress.png" width="400" title="Stress plot along contact normal, pressure control"><img src="pc-pres.png" title="Transversal pressure distribution, pressure control" width="400">
-
-
-```
