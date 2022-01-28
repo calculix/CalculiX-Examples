@@ -1,5 +1,5 @@
 # Hertz contact axisymmetric (sphere to plane)
-Tested with CGX 2.18 / CCX 2.18
+Tested with CGX 2.19 / CCX 2.19
 
 + Axisymmetric model
 + Linear elasticity
@@ -43,6 +43,8 @@ The nodes on the axis of symmetry (magenta) are constrained in radial (x) direct
 > ccx Hertz
 > monitor.py Hertz
 ```
+As you see, the force control is quite challenging for the solver.
+
 <img src="Hertz.png" title="Convergence plot">
 
 ## Postprocess
@@ -66,8 +68,3 @@ Stress plot along the axis of symmetry (x=0) at the contact location:
 Contact pressure distribution along the meridian of the sphere:
 
 <img src="pres.png" title="Radial pressure distribution" >
-
-
-
-
-```

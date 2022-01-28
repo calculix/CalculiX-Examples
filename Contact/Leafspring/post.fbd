@@ -13,6 +13,7 @@ rot y
 rot r 95
 rot u 2
 zoom 10
+view sh off
 plot ev base
 plus e new n
 hcpy png Refs/Sxx
