@@ -1,3 +1,4 @@
+asgn graph off
 valu le 20
 valu off 5
 
@@ -46,11 +47,15 @@ plus f ckw b
 plus n hist t 10
 hcpy png contact
 
+# suppress the display of ps images
+
+
 # contact versions
 sys cp s2s-lin.inc contact.inc
 sys ccx solve
 read solve.frd new
 read hist.nam inp
+asgn graph 0
 graph Nhist time CONTACT CPRESS
 sys mv graph_0.out s2s-lin.hist
 sys dat2txt.py solve
