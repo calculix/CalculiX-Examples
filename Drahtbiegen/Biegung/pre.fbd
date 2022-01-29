@@ -137,5 +137,3 @@ view elem
 ulin Independent parts
 seta ! all
 hcpy png parts
-
-quit
