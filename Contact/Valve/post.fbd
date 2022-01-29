@@ -1,6 +1,7 @@
 read valve.frd
 
 read vc.nam inp
+asgn graph off
 ds 3 e 4
 graph Nvc length
 ds 3 e 2
