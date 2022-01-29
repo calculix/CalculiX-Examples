@@ -86,4 +86,4 @@ Open the results in CGX and create some plots
 ```
 cgx -b post.fbd
 ```
-git <img src="deform.png" width="300"><img src="PE.png" width="300">
+<img src="deform.png" width="300"><img src="PE.png" width="300">
