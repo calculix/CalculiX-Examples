@@ -1,5 +1,5 @@
 # Shell Assembly
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Investigation of shell edge to shell face connection using modal analysis
 + Various contact versions
@@ -23,7 +23,7 @@ The complete test is run using
 ```
 This generates a table with the frequency results for the various contact types and element types:
 
-[Results.md](Results.md)
+[Results.md](Refs/Results.md)
 
 MPC contact with  `*tie` and penalty contact lead to a stiff connection between shell edge to shell face. Node-to-surface penalty contact and MPC contact with `*tie` show similar behaviour. The frequencies for penalty contact are usually slightly lower than with MPC contact, which is plausible, as the penalty contact has added compliance.
 

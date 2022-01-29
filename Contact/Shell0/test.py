@@ -87,4 +87,4 @@ if __name__ == '__main__':
     modify_path()
     snap = os.listdir(os.curdir)
     run()
-    move(snap)
+    #move(snap)
