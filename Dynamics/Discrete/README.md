@@ -1,5 +1,5 @@
 # Spring/Mass Oscillator
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Frequency response analysis
 + 2-Mass oscillator
@@ -67,4 +67,5 @@ the masses are represented by mass elements (new in 2.12).
 > cgx -b runM.fbd
 ```
 
-The simulation runs but the results are unreliable, because the eigensolver Arpack is not suited for small systems.
+The `*frequency` step runs but returns no reasonable eigenvalues. 
+Due to that, the subsequent `*steady state dynamics` step fails.

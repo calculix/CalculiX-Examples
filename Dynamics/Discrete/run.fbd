@@ -4,7 +4,9 @@ read MS.inp nom
 # plot model
 seta ! all
 hcpy png mesh
+
 # plot mode shapes
+asgn graph off
 seta path n 1 3 5
 ds 1 e 1
 graph path length

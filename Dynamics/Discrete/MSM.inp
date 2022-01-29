@@ -26,7 +26,7 @@ NALL,2,3
 *Mass, Elset=Emass
 7.8e-9
 *STEP
-*frequency,storage=yes
+*frequency,storage=yes, solver=matrixstorage
 2
 *cload
 3,1,0
