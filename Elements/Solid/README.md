@@ -1,5 +1,5 @@
 ## Simply Supported Beam Model With Solid Elements
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + tetrahedral and hexahedral elements
 + linear or quadratic elements
@@ -9,9 +9,14 @@ File                           | Contents
 :-------------                 | :------------- |
 [solid.fbd](solid.fbd)         | Parametric pre- and postprocessing script for CGX   
 [solid.inp](solid.inp)         | CCX input
-[solid-conv.py](solid-conv.py) | Python script for the convergence study
-[solid-plot.py](solid-plot.py) | Python script for the convergence plot
 [test.py](test.py)             | Python script to run the full example
+
+Until version 2.15, this example had separate scripts for convergence study and for the plot. These have been directly integrated into `test.py`.
+
+**Issue:** CGX 2.19 can't handle 4-node tetraeder elements with tetgen. Change line 708 of `generateTet.cpp` to
+
+    if((body[nr].nod=(int *)realloc((int *)body[nr].nod, (set[setNr].anz_n+1)*sizeof(int)) )==NULL)
+    
 
 | Unstructured tet mesh    | structured hex mesh    |
 | :------------- | :------------- |
@@ -21,12 +26,7 @@ For the reference solution go to the [parent directory](https://github.com/mkras
 
 ## Mesh Convergence of the Normalized Results
 
-
-Running
-```
-python solid-conv.py
-```
-creates a data file for each element type with the mesh density parameter setting, the number of nodes and the maximum displacement and stress values. An example (C3D8I.txt):
+The function `solid_conv()` in `test.py` creates a data file for each element type with the mesh density parameter setting, the number of nodes and the maximum displacement and stress values. An example (C3D8I.txt):
 ```
 # size NoN smax umax
 200 8 0.046205 0.000108
@@ -35,10 +35,6 @@ creates a data file for each element type with the mesh density parameter settin
 20 264 0.093441 0.00017
 10 1386 0.094022 0.000171
 ```
-Then, running
-```
-python solid-plot.py
-```
-generates the following plot of the results normalized by the analytical reference values.
+The function `solid_plot()` in `test.py` generates the following plot of the results normalized by the analytical reference values.
 
 <img src="solid.svg" width="600">
