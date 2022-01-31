@@ -105,6 +105,7 @@ hcpy png Refs/D
 
 # path plot along weakest cross section
 view disp off
+asgn graph off
 # based on node set
 read sym.nam inp
 graph Nsym length +
