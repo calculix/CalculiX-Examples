@@ -1,5 +1,5 @@
 # Illustration of Plane Stress and Plane Strain
-Tested with CGX 2.16 /CCX 2.15
+Tested with CGX 2.19 /CCX 2.19
 
 + Parametric geometry
 + 4 simply supported beams with different width (one of them in fact a plate) and one of them with lateral constraints (plane strain)
