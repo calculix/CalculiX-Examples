@@ -120,6 +120,6 @@ Vertical displacement and plastic equivalent strain:
 
 <img src="D3.png" width="400" title="Vertical displacement"><img src="PE.png" width="400" title="Plastic equivalent strain">
 
-Force-displacement plots. Left: full history, right: detail of transition to collapse.
+Force-displacement plots. Left: full history, right: detail of transition to collapse. Note that 40 kN is the elastic limit in the linear analysis.
 
 <img src="df.png" width="400" title="force-displacement plot"><img src="df1.png" width="400" title="force-displacement plot, detail">
