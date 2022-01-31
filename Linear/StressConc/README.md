@@ -1,5 +1,5 @@
 # Stress Concentration
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Axisymmetric part under tensile load
 + Free meshing with biased line divisions
