@@ -1,5 +1,5 @@
 # Unsymmetric Bending
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Application of bending moment via kinematic coupling without transverse constraints
 + Display of the neutral fiber
@@ -12,24 +12,24 @@ File                           | Contents
 
 ## Model
 
-Parameter | Value | Description
-:--       | :--   |:--
-lx        | 100   | Length in mm
-Rotated Flat |        |
-th        | 10    | Thickness in mm
-he        | 50    | Height in mm
-Z profile          |       |
-y0z       | -45   | y reference location in mm
-z0z       | 20    | z reference location in mm
-la        | 40    |
-lb        | 10    |
-th        | 3     |
-L profile          |       |
-y0a       | -90   | y reference location in mm
-z0a       | 20    | z reference location in mm
-la        | 40    |
-lb        | 20    |
-tha       | 3     |
+Parameter    | Value | Description
+:--          | :--   |:--
+lx           | 100   | Length in mm
+Rotated Flat |       |
+th           | 10    | Thickness in mm
+he           | 50    | Height in mm
+Z profile    |       |
+y0z          | -45   | y reference location in mm
+z0z          | 20    | z reference location in mm
+la           | 40    |
+lb           | 10    |
+th           | 3     |
+L profile    |       |
+y0a          | -90   | y reference location in mm
+z0a          | 20    | z reference location in mm
+la           | 40    |
+lb           | 20    |
+tha          | 3     |
 
 
 The model contains three cantilever beams of different cross sections with non-zero deviatoric moment of inertia. Each one is subjected to a bending moment about the transverse horizontal axis (y).
