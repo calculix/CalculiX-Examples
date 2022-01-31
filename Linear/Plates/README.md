@@ -1,5 +1,5 @@
 # Axisymmetric Plate With Hole
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Linear static solution
 + Axisymmetric model
