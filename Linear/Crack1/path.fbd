@@ -1,5 +1,6 @@
 read solve.frd
 # path plot based on node set
+asgn graph off
 seta nodes n all
 enq nodes sym rec _ 0 0 0.01
 ds -1 e 2

@@ -1,5 +1,5 @@
 # Energy Release Rate (Global Energy Method)
-Tested with CGX 2.18 / CCX 2.18, Gmsh 4.9.3
+Tested with CGX 2.19 / CCX 2.19, Gmsh 4.9.3
 
 + Linear static solution
 + Symmetric model
