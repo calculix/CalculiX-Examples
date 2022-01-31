@@ -23,14 +23,17 @@ plot f all n
 plus n x0 r
 hcpy png Refs/def
 
-view elem
+view sh off
+view elem off
+rot x
+rot c 90
+rot r 10 rot
+rot u 10
 ds 2 e 1
 plot fv all
 hcpy png Refs/Sxx
 
 ds 2 e 6
-rot u -5
-view elem off
 plot fv all
 mm 8
 hcpy png Refs/Sxz
