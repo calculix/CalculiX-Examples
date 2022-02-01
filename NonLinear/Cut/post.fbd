@@ -2,6 +2,7 @@
 read solve.frd
 seta ! all
 view elem
+view edge off
 view disp
 view sh
 
