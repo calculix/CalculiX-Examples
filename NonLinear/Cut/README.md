@@ -1,5 +1,5 @@
 # Cut Operation: Plasticity and Contact
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 Simplified model of a cut operation, where a continuously strip-formed C-shaped profile is sheared between two cutting tools in order to produce separate parts of given length. Both tools (knives) are of identical shape. One of them is fixed (entry side) and one moves (exit side).
 
