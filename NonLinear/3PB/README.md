@@ -1,5 +1,5 @@
 # Three-point bending test of a hollow profile
-Tested with CGX 2.15 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Non-linear static analysis
 + Plasticity

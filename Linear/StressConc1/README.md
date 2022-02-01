@@ -101,21 +101,21 @@ Values printed by `*section print`
 Moment about CG should be 600
 
 ```
-statistics for surface set SLOAD and time  0.1000000E+01
+ statistics for surface set SLOAD and time  0.1000000E+01
 
-  total surface force (fx,fy,fz) and moment about the origin(mx,my,mz)
+   total surface force (fx,fy,fz) and moment about the origin(mx,my,mz)
 
-   7.815719E-01  6.560960E-01 -8.669194E-14  1.025126E-11  8.659184E-12 -9.624174E+01
+    7.815720E-01  6.560960E-01 -8.669628E-14  1.025154E-11  8.660073E-12 -9.624174E+01
 
-  center of gravity and mean normal
+   center of gravity and mean normal
 
-   1.000000E+02  0.000000E+00 -2.220446E-17  1.000000E+00 -7.105427E-16  1.065814E-14
+    1.000000E+02  0.000000E+00 -2.220446E-17  1.000000E+00 -7.105427E-16  1.065814E-14
 
-  moment about the center of gravity(mx,my,mz)
+   moment about the center of gravity(mx,my,mz)
 
-   1.025124E-11 -9.992000E-15 -1.618513E+02
+    1.025153E-11 -9.537503E-15 -1.618513E+02
 
-  area,  normal force (+ = tension) and shear force (size)
+   area, normal force (+ = tension), shear force (size), torque and bending moment (size)
 
-   6.000000E+01  7.815719E-01  6.560960E-01
+    6.000000E+01  7.815720E-01  6.560960E-01  8.526491E-12  1.618513E+02
 ```
