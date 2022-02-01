@@ -18,6 +18,7 @@
 # wl=dx1*2.+le row spacing parallel
 # nx=int(lx/(wl+le))+1
 # ny=int(ly/wb)+1
+
 # base cell
 pnt p0 0 0 0
 pnt p1 5.90473750966 0 0
@@ -53,9 +54,9 @@ seta toflip A00I A00M A00F A00B
 seta toflip s1 A006 A00Q A00N
 seta toflip A00G A003 A004 A00U A00D
 flip toflip
+
 # replicate in y direction
 valu ny 3
-#valu inc 1
 valu count 1
 valu dy 10.5
 while count < ny
@@ -71,9 +72,9 @@ seta rowy se basey
 seta wsym s A009 A00G
 setr double se wsym
 seta single se wsym
+
 # replicate in x direction
 valu nx 7
-#valu inc 1
 valu count 1
 valu dx 17.8094750193
 while count < nx
@@ -84,12 +85,14 @@ endwhile
 merg p all
 merg l all
 merg s all
+
 # meshing
 #div all auto 2
 asgn e 2
 elty all qu4
 mesh all
 merg n all 0.01
+
 # cut to size
 seta nodes n all
 enq nodes partx rec 60.0 _ _ 60.006
@@ -99,7 +102,8 @@ setr tozap n part
 comp tozap up
 zap tozap
 merg n all
-# image
+
+# images
 seto outline
 pnt po1 0 25 0
 swep outline po2 tra 120 0 0
