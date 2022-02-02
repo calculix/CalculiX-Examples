@@ -36,6 +36,7 @@ read Iprofile.nam inp
 ds 2 e 1
 stack on
 
+# get the nodes with highest value for each section and store the value
 enq Nsquare max rec 0 _ _  1 h
 valu s1 pop 2
 enq Ncircle max rec 0 _ _ 1 h
@@ -52,7 +53,7 @@ ulin Maximum Bending Stress
 frame
 view elem off
 view edge off
-txt max nf -0.15 -0.1
+txt max ne -0.15 -0.1
 plus nt max k
 frame
 hcpy png Refs/stress
@@ -72,7 +73,7 @@ valu w4 pop 2
 
 plot fv base
 ulin Maximum Displacement
-txt maxd nf -0.15 -0.1
+txt maxd ne -0.15 -0.1
 plus nt maxd k
 frame
 hcpy png Refs/disp
