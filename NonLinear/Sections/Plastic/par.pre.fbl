@@ -140,6 +140,7 @@ send xLhcircle abq nam
 send xLIprofile abq nam
 
 ulin x0 (red), y0 (green), disp (turq), xL (blue)
+view elem off
 rot x
 rot c -90
 rot l 5

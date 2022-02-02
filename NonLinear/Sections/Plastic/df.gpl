@@ -9,8 +9,8 @@ load "disp.gnu"
 set out "df.png"
 # force factor: half model, remove negative sign
 ff=-2
-plot "total force fx,fy,fz_NXLSQUARE.txt" using ($1*disp):(ff*$4/1000) title "square" w l,\
-	"total force fx,fy,fz_NXLCIRCLE.txt" using ($1*disp):(ff*$4/1000) title "circle" w l, \
-	"total force fx,fy,fz_NXLHCIRCLE.txt" using ($1*disp):(ff*$4/1000) title "hcircle" w l, \
-	"total force fx,fy,fz_NXLIPROFILE.txt" using ($1*disp):(ff*$4/1000) title "Iprofile" w l
+plot "total force fx,fy,fz_NXLSQUARE.txt" using ($1*disp):(ff*$4/1000) title "square" w lp,\
+	"total force fx,fy,fz_NXLCIRCLE.txt" using ($1*disp):(ff*$4/1000) title "circle" w lp, \
+	"total force fx,fy,fz_NXLHCIRCLE.txt" using ($1*disp):(ff*$4/1000) title "hcircle" w lp, \
+	"total force fx,fy,fz_NXLIPROFILE.txt" using ($1*disp):(ff*$4/1000) title "Iprofile" w lp
 set out #
