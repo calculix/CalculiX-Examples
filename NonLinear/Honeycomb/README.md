@@ -72,7 +72,7 @@ The rate of convergence is affected by the plastic material, the mesh density, t
 ```
 > cgx -b post.fbd
 ```
-<img src="PE.png" width="400" title="Equivalent plasti strain"><img src="PE-core.png" width="400" title="Equivalent plastic strain in the core"><img src="SE.png" width="400" title="Equivalent stress"><img src="SE-core.png" width="400" title="Equivalent stress in the core">
+<img src="PE.png" width="400" title="Equivalent plastic strain"><img src="PE-core.png" width="400" title="Equivalent plastic strain in the core"><img src="SE.png" width="400" title="Equivalent stress"><img src="SE-core.png" width="400" title="Equivalent stress in the core">
 
 The force-displacement plot is generated in `post.fbd` using the `dat2txt.py` script (see [../../Scripts/dat2txt.py](../../Scripts/dat2txt.py)).
 
