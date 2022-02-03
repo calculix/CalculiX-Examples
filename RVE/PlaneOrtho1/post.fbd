@@ -30,6 +30,8 @@ text Equivalent plastic strain
 plot fv all
 frame
 hcpy png exp
+
+asgn graph off
 graph Nmonitor time PE PE
 sys dat2txt.py Zug
 sys gnuplot pe.gnu
