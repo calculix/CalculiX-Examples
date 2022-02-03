@@ -30,5 +30,6 @@ sys monitor.py sck&
 
 read sck.frd
 ds -0 e 4
+view sh off
 read def-plot.fbd
 sys mv hcpy_2.png sck-def.png

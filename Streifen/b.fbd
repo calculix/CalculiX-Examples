@@ -24,5 +24,6 @@ sys monitor.py b&
 
 read b.frd
 ds -0 e 4
+view sh off
 read def-plot.fbd
 sys mv hcpy_2.png b-def.png

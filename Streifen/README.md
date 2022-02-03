@@ -1,5 +1,5 @@
 # 90°-Bending of an Elastic Strip
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 This example demonstrates the application of prescribed rotations to node sets.
 The structure is an elastic flat strip of dimensions 100x10x1 mm³. One end is
@@ -117,7 +117,7 @@ Run the analysis:
 ```
 > cgx -b scd.fbd
 ```
-The simulation runs but the free end exhibits some hourglassing-like distortion.
+The simulation used to run and had some hourglassing-like distortion at the free end. In version 2.19 the definition of distributed coupling needs to be modified (TBD), because the simulation doesn't run at all.
 
 <img src="scd-mesh.png" width="300" title="Solid model with surfaced based load (distributing coupling)"><img src="scd-def.png" width="300" title="Residual forces">
 
