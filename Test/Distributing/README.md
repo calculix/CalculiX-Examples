@@ -1,6 +1,6 @@
 # Stress distribution with distributing coupling
 
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Test of distributing coupling
 + Stress distribution for applied moments
@@ -28,6 +28,6 @@ The plots of the normal stress show the load distribution for bending moments, t
 <img src="Refs/mx.png" width="400"><img src="Refs/my.png" width="400">
 <img src="Refs/mz-disp.png" width="400"><img src="Refs/mesh.png" width="400">
 
-The stress profiles are hyperbolic with distance from the center of gravity (a linear distribution would be expected)
+The stress profiles are nearly linear with distance from the center of gravity. 
 
 <img src="Refs/stress.png">

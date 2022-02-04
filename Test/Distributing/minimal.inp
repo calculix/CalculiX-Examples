@@ -1,0 +1,57 @@
+*NODE, NSET=Nall
+    1,-1.0, -1.0, -1.0
+    2, 1.0, -1.0, -1.0
+    3, 1.0,  1.0, -1.0
+    4,-1.0,  1.0, -1.0
+    5,-1.0, -1.0,  1.0
+    6, 1.0, -1.0,  1.0
+    7, 1.0,  1.0,  1.0
+    8,-1.0,  1.0,  1.0
+    9, 0.0,  0.0,  1.0
+*ELEMENT, TYPE=C3D8I, ELSET=Eall
+     1,     1,     2,     3,     4,     5,     6,     7,     8
+*NSET,NSET=Nfix 
+1, 2, 3, 4
+*NSET,NSET=Nload
+9
+*SURFACE, NAME=Sload
+1, S2
+*boundary
+Nfix,1,3
+** material definition
+*material, name=dummy
+*elastic
+10000,0
+** material assignment to bodies
+*solid section, elset=Eall, material=dummy
+** coupling
+*coupling,surface=Sload,refnode=9,constraint name=load
+*distributing
+1,6
+** Moment about x
+*step
+*static
+*cload
+9,4,1000.
+*node file
+U
+*el file
+S
+*section print, surface=Sload, name=so1
+SOF
+*el print, elset=Eall, totals=only
+ELSE
+*end step
+*step
+*static
+*cload
+Nload,4,1000.
+*node file
+U
+*el file
+S
+*section print, surface=Sload, name=so1
+SOF
+*el print, elset=Eall, totals=only
+ELSE
+*end step
