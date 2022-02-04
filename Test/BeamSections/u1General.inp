@@ -38,8 +38,13 @@
 U
 *EL PRINT,ELSET=Eall
 S
-*NODE FILE
+*END STEP
+*STEP
+*STATIC
+*CLOAD
+11,2,1000.
+*NODE PRINT,NSET=Nall
 U
-*EL FILE,section forces, output=2d
+*EL PRINT,ELSET=Eall
 S
 *END STEP

@@ -44,6 +44,7 @@ if __name__ == '__main__':
     snap = os.listdir(os.curdir)
     os.system("cgx -b b32.fbd")
     os.system("ccx u1General")
-    os.system("sed -n '4,14 p' u1General.dat > u1.txt")
+    os.system("sed -n '4,14 p' u1General.dat > u1-3.txt")
+    os.system("sed -n '41,51 p' u1General.dat > u1-2.txt")
     os.system("gnuplot u1.plt")
     move(snap)

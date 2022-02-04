@@ -44,6 +44,7 @@ hcpy png Refs/b32-fix-30
 
 view disp off
 ds 1 e 3
+asgn graph off
 graph b32 length
 
 view disp
