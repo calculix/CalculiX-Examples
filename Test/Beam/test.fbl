@@ -58,19 +58,6 @@ prnt se center
 valu nref pop 14
 prnt se load
 valu nload pop 14
-# distributing
-sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_dist_center_123.inc
-sys echo *distributing                                              >> c_dist_center_123.inc
-sys echo 1,3                                                        >> c_dist_center_123.inc
-sys echo *coupling, ref node= nload , surface=Ss1, constraint name=c1 > c_dist_load_123.inc
-sys echo *distributing                                              >> c_dist_load_123.inc
-sys echo 1,3                                                        >> c_dist_load_123.inc
-sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_dist_center_123456.inc
-sys echo *distributing                                              >> c_dist_center_123456.inc
-sys echo 1,6                                                        >> c_dist_center_123456.inc
-sys echo *coupling, ref node= nload , surface=Ss1, constraint name=c1 > c_dist_load_123456.inc
-sys echo *distributing                                              >> c_dist_load_123456.inc
-sys echo 1,6                                                        >> c_dist_load_123456.inc
 # kinematic
 sys echo *coupling, ref node= nref , surface=Ss1, constraint name=c1 > c_kin_center_123.inc
 sys echo *kinematic                                                 >> c_kin_center_123.inc
@@ -98,14 +85,7 @@ hcpy png Refs/mesh
 send all abq
 send all abq nam
 
-valu file c_dist_center_123
-read run.fbl add
-valu file c_dist_load_123
-read run.fbl add
-valu file c_dist_load_123456
-read run.fbl add
-valu file c_dist_center_123456
-read run.fbl add
+# call the individual simulations
 valu file c_kin_center_123
 read run.fbl add
 valu file c_kin_load_123
