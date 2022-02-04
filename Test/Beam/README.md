@@ -1,6 +1,6 @@
 ># Coupling with beams
 
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
 + Test of coupling with beam nodes
 + Distributing and kinematic coupling
@@ -11,6 +11,7 @@ Observations:
 + None of the methods can couple the rotations of a beam node (knot or not a knot) to a surface.
 + Distributing coupling makes the mean displacement of the surface equal to the displacement of the reference node.
 + Kinematic coupling pin-joines the reference node to the surface.
++ Issue in 2.19: Definition of distributed coupling has changed. Input files need to be adjusted. For now, they exhibit no coupling at all.
 
 
 File                          | Contents    
@@ -53,13 +54,13 @@ A frequency analysis is performed to see how the coupling works.
 
 ### c_dist_load_123
 
-Distributing coupling of the translations to the end node. Ref node and CG of the coupled face translate synchronously. The rotation of the disk is free.
+(2.19 input adjustments required) Distributing coupling of the translations to the end node. Ref node and CG of the coupled face translate synchronously. The rotation of the disk is free.
 
 <img src="Refs/c_dist_load_1231.gif" width="400"><img src="Refs/c_dist_load_1237.gif" width="400">
 
 ### c_dist_center_123
 
-Distributing coupling of the translations to the center node. Ref node and CG of the coupled face translate synchronously. The rotation of the disk is free.
+(2.19 input adjustments required) Distributing coupling of the translations to the center node. Ref node and CG of the coupled face translate synchronously. The rotation of the disk is free.
 
 For distributing coupling of translations it does not matter if the ref node has a knot.
 
@@ -67,13 +68,13 @@ For distributing coupling of translations it does not matter if the ref node has
 
 ### c_dist_load_123456
 
-Distributing coupling of the translations and rotations to the end node. The end node can't take the rotations.  . Due to the absence of a knot at the ref node, this is to be expected.
+(2.19 input adjustments required) Distributing coupling of the translations and rotations to the end node. The end node can't take the rotations.  . Due to the absence of a knot at the ref node, this is to be expected.
 
 <img src="Refs/c_dist_load_1234561.gif" width="400"><img src="Refs/c_dist_load_12345610.gif" width="400">
 
 ### c_dist_center_123456
 
-Distributing coupling of the translations and rotations to the center node. Even though it is a knot, coupling of the rotations seem to fail.
+(2.19 input adjustments required) Distributing coupling of the translations and rotations to the center node. Even though it is a knot, coupling of the rotations seem to fail.
 
 <img src="Refs/c_dist_center_1234567.gif" width="400"><img src="Refs/c_dist_center_1234569.gif" width="400">
 
