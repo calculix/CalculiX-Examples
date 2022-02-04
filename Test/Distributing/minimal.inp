@@ -14,6 +14,8 @@
 1, 2, 3, 4
 *NSET,NSET=Nload
 9
+*nset,nset=ntop
+5,6,7,8
 *SURFACE, NAME=Sload
 1, S2
 *boundary
@@ -44,8 +46,21 @@ ELSE
 *end step
 *step
 *static
-*cload
-Nload,4,1000.
+*cload, op=new
+Nload,5,1000.
+*node file
+U
+*el file
+S
+*section print, surface=Sload, name=so1
+SOF
+*el print, elset=Eall, totals=only
+ELSE
+*end step
+*step
+*static
+*cload, op=new
+ntop,3,1000.
 *node file
 U
 *el file
