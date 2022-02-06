@@ -52,5 +52,5 @@ scal d
 scal d 5
 hcpy png Refs2/se2-kin
 sys dat2txt.py solve2
-sys gnuplot frequency.gpl
+sys gnuplot frequency.plt
 sys mv f.png Refs2/f-kin.png
