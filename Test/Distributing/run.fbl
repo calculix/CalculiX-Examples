@@ -59,6 +59,7 @@ ds 2 e 3
 frame
 hcpy png Refs/mx
 
+asgn graph off
 graph pathy length
 
 ulin Moment about y
@@ -84,4 +85,4 @@ ds 8 e 24
 frame
 hcpy png Refs/mz-disp
 
-sys gnuplot path.gpl
+sys gnuplot path.plt

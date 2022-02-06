@@ -9,7 +9,7 @@ File                          | Contents
 :-------------                | :-------------
 [run.fbl](run.fbl)            | CGX script, full simulation
 [solve.inp](solve.inp)        | CCX input
-[path.gpl](path.gpl)          | Gnuplot input for path plots
+[path.plt](path.plt)          | Gnuplot input for path plots
 [test.py](test.py)            | Python script to run the full simulation
 
 The model consists of a thin rectangular plate. The bottom at z=0 is fixed (all dofs constrained).

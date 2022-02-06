@@ -46,5 +46,5 @@ hcpy png Refs/se-kin
 
 sys rm Eigenvalues_1.txt
 sys dat2txt.py solve
-sys gnuplot frequency.gpl
+sys gnuplot frequency.plt
 sys mv f.png Refs/f-kin.png

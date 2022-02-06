@@ -1,7 +1,7 @@
 # Test of Joints
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19 / CCX 2.19
 
-+ Test of distributing and kinematic coupling
++ Test of kinematic coupling
 + Modal analysis
 + Linear static analysis
 + Non-linear static analysis
@@ -30,8 +30,6 @@ Tested with CGX 2.16 / CCX 2.15
 
 
 ### Issues
-* version with distributing coupling behaves as if the pin was fully constrained.
-* version with distributing coupling fails in a nlgeom step
 * Segfault with kinematic coupling with pin in nlgeom step
 * Segfault destroys already accumulated dat file.
 
@@ -40,7 +38,6 @@ File                          | Contents
 :-------------                | :-------------
 [par.pre.fbl](par.pre.fbl)    | CGX script, pre-processing
 [par.pre2.fbl](par.pre2.fbl)  | CGX script, pre-processing, pin-less model
-[dist.fbl](dist.fbl)          | CGX script, simulation and post-pro with distributing coupling
 [kin.fbl](kin.fbl)            | CGX script, simulation and post-pro with kinematic coupling
 [kin2.fbl](kin2.fbl)          | CGX script, simulation and post-pro with kinematic coupling and no pin
 [solve.inp](solve.inp)        | CCX input for model with pin
@@ -75,41 +72,13 @@ It should be sufficient to just have the center region, but unfortunately, it is
 
 <img src="Refs/coupling.png" width="400">
 
-After running `pre.fbl` you find the ccx input files `dpin.inc` and `kpin.inc`, with the commands for distributing and kinematic coupling respectively.
+After running `pre.fbl` you find the ccx input file `kpin.inc`, with the commands for kinematic coupling.
 
-Both versions are used in simulations of three steps:
+The simulation consists of three steps:
 * frequency analysis
 * static analysis without explicit `nlgeom`
 * static analysis with explicit `nlgeom`
 
-
-## Distributing coupling
-
-Coupling commands:
-```
-*coupling, ref node= 5351 ,surface= Ss1 ,constraint name=p11
-*distributing
-4,6
-*coupling, ref node= 5352 ,surface= Ss2 ,constraint name=p12
-*distributing
-4,5
-```
-```
-> cgx -b dist.fbl
-```
-The frequency analysis and the linear static analysis indicate that the pin is not movable at all. Movies of the modal shapes can be found in [Refs](./Refs).
-
-<img src="Refs/dist1.gif" width="160"><img src="Refs/dist2.gif" width="160"><img src="Refs/dist3.gif" width="160"><img src="Refs/dist4.gif" width="160"><img src="Refs/dist5.gif" width="160">
-
-<img src="Refs/f-dist.png" width="400">
-
-In the linear static step, the lower fixed bar is totally stress free, all the load is taken by the upper reference node (which was not fixed deliberately). There is a message stating that nlgeom is active.
-
-<img src="Refs/se-dist.png" width="400">
-
-The non-linear static analysis crashes with a segfault which destroys the DAT file.
-
-In order to generate the frequency plot, the non-linear step must be removed.
 
 ## Kinematic coupling
 
@@ -122,7 +91,7 @@ Coupling commands:
 *kinematic
 1,3
 ```
-The interface surfaces are coupled to separate ref nodes. The ref nodes are connected by the pin with no released degrees of freedom. Thus the structure should behave like a single deformable part. However, it there is no coupling of rotations between the two parts and the pin. Movies of the modal shapes can be found in [Refs](./Refs).
+The interface surfaces are coupled to separate ref nodes. The ref nodes are connected by the pin with no released degrees of freedom. Thus the structure should behave like a single deformable part. However, here is no coupling of rotations between the two parts and the pin. Movies of the modal shapes can be found in [Refs](./Refs).
 
 ```
 > cgx -b kin.fbl
@@ -133,8 +102,6 @@ The interface surfaces are coupled to separate ref nodes. The ref nodes are conn
 <img src="Refs/f-kin.png" width="400">
 
 given the missing coupling of rotations, there should be more than 2 zero frequencies
-
-`<img src="Refs/f-kin.png" width="400">`
 
 In the linear static step, the pin and the movable part aren't sufficiently constrained. This leads to very large meaningless deformations.
 
