@@ -4,13 +4,14 @@ Working environment:
 
 + Example files
 + Command window (terminal) with the following commands working:
+  + `python` either python 2 or python 3 for the helper scripts
   + `monitor.py`, `dat2txt.py`, `param.py`, `periodic.py`, `separate.py` (helper scripts from the examples collection)
   + `gmsh` (sometimes used for geometry and meshing)
   + `join`, `mv` (unix commands, under Windows you might install Cygwin to make them available)
   + `gnuplot` (plotting program)
   + `cgx` and `ccx` (the CalculiX programs)
   + `git` (source code management system, for easy update of the example collection)
-  + `ng_vol` (netgen tetraeder mesher)
+  + `tetgen` (tetgen tetraeder mesher)
   + `cgxCadTools` based on Open CASCADE Technology
 
 The examples are developed under Linux but most of them might work under Windows.
@@ -25,19 +26,19 @@ Unpack/install the files to a directory (called `<exampledir`)
 
 + where you have read and write access
 + with fast read and write access (not on a network or slow portable drive)
-+ with 500 MB free disk space (that might increase in future, by end of June 1016, 250 MB are
++ with 2 GB free disk space if you want to run all examples (that might increase in future, by February 2022, 1,6 GB MB are
   used)
 
 File types
 
-| Extension | Type                    | Support in SciTE | Support in Atom |
-| :--       | :--                     | :--              | :--             |
-| `.fbd .fbl` | CGX  pre/post scripts | x                | x               |
-| `.inp`    | CCX solver input        | x                | x               |
-| `.geo`    | Gmsh input              | x                | x               |
-| `.gnu`    | Gnuplot script          | x                |                 |
-| `.py`     | Python script           | x                | x               |
-| `.md`     | Markdown (documentation)|                  | x               |
+| Extension   | Type                    | Support in SciTE | Support in Atom | Support in VSCode
+| :--         | :--                     | :--              | :--             | :-- 
+| `.fbd .fbl` | CGX  pre/post scripts   | x                | x               | 
+| `.inp`      | CCX solver input        | x                | x               | x
+| `.geo`      | Gmsh input              | x                | x               | x
+| `.gnu`      | Gnuplot script          | x                |                 | x
+| `.py`       | Python script           | x                | x               | x
+| `.md`       | Markdown (documentation)|                  | x               | x
 
 ### Windows Setup
 
@@ -59,7 +60,7 @@ Running the helper scripts requires a Python installation with the matplotlib pa
 ```
 #### CalculiX
 
-Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting and execution hotkeys for various relevant file types.
+Under Windows, I recommend the [bConverged](http://bconverged.com/) build. It has nice SciTE integration with syntax highlighting and execution hotkeys for various relevant file types. However, it is out of maintenance since version 2.10. 
 
 If you are not familiar with this distribution, the
 [GettingStarted Tutorial](http://bconverged.com/content/calculix/doc/GettingStarted.pdf) is recommended.
@@ -106,21 +107,11 @@ You should run the examples in the CalculiXWindowsShell, provided with the distr
 
 ### Linux Setup
 
-All examples are developed and tested with CalculiX 2.10 in the virtual box provided by Sven Kaßbohm at [fiziko.de](http://www.fiziko.de/vbox/). It is configured such that you can easily compile new versions of CCX and CCX.
-
-Python, Gmsh and Gnuplot are included.
-
-For tetraeder meshing of solid parts netgen is called by CGX. The binary file `ng_vol` must be in the path. See [ngsolve.org](https://ngsolve.org/downloads) for instructions on download and installation.
-
-It has, however, some disadvantages:
-
-* Hardware Open GL does not work
-* Multithreading does not work.
-* Avoid working in folders shared with the host system.
-
-These are not relevant for simple educational models but are definitely relevant for serious work.
+Originally, all examples were developed and tested with CalculiX 2.10 in the virtual box provided by Kai Kaß¢ohm at [fiziko.de](http://www.fiziko.de/vbox/). It is is not available any more.
 
 For editing CGX, CCX  or gmsh input under linux, I recommend [atom](https://atom.io/), it has syntax highlighting for these files and markdown preview.
+
+An alternative is Visual Studio Code, which, however, has no language support for CGX input files.
 
 #### Helper Scripts
 
