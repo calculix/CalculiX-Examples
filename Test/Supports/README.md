@@ -29,7 +29,7 @@ lz         | 10    | Width
 
 Three simulations are set up:
 
-+ Frequency analysis with one end coupled and subjected to various constraints (distributing coupling is used).
++ Frequency analysis with one end coupled and subjected to various support conditions (as of 2.19, kinematic coupling is used).
 + Multistep static analysis with large rotation. Cantilever beam with the load distributed over the end surface by distributing coupling. Support is applied via kinematic coupling.
 + Reference solution, cantilever beam with nodal constraints at the end surface.
 
@@ -45,7 +45,7 @@ The script generates the elements, the surface sets and the reference nodes.
 
 The simulation consists of two frequency steps with different constraints of the reference node:
 1. Free (no constraints)
-2. Clamped (all dofs constrained)
+2. Clamped (all dofs constrained) 
 
 For each step, 10 mode shapes are stored.
 ```
@@ -60,10 +60,13 @@ Free (unconstrained reference node).
 <img src="Refs/shape_1.gif" width="160"><img src="Refs/shape_2.gif" width="160"><img src="Refs/shape_3.gif" width="160"><img src="Refs/shape_4.gif" width="160"><img src="Refs/shape_5.gif" width="160">
 <img src="Refs/shape_6.gif" width="160"><img src="Refs/shape_7.gif" width="160"><img src="Refs/shape_8.gif" width="160"><img src="Refs/shape_9.gif" width="160"><img src="Refs/shape_10.gif" width="160">
 
-Clamped (all dofs of the ref node constrained). The constraints are in effect without preventing the end face from deforming.
+Clamped (all dofs of the ref node constrained). This entirely clamps the support nodes without allowing for deformation.
 
 <img src="Refs/shape_11.gif" width="160"><img src="Refs/shape_12.gif" width="160"><img src="Refs/shape_13.gif" width="160"><img src="Refs/shape_14.gif" width="160"><img src="Refs/shape_15.gif" width="160">
 <img src="Refs/shape_16.gif" width="160"><img src="Refs/shape_17.gif" width="160"><img src="Refs/shape_18.gif" width="160"><img src="Refs/shape_19.gif" width="160"><img src="Refs/shape_20.gif" width="160">
+
+A test with meanrot MPC as replacement for distributing coupling in 2.19 would be sensible.S
+
 
 ## Multistep static analysis
 
