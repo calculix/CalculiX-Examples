@@ -14,7 +14,7 @@ while counter < num
   valu to & Refs/shape_ counter
   valu to & to .gif
   ulin Mode counter
-  movi frames 11
+  movi frames auto
   ds counter a
   sys mv movie.gif to
 endwhile
