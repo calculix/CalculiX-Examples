@@ -1,5 +1,5 @@
 # Shrinkage Model for Welding Distortion
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19/ CCX 2.19
 
 + Assembly with `*tie` or `*contact pair` connections. Contact version is
 selected via parameter `contact` in `pre.fbd.par`.

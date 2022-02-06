@@ -21,6 +21,7 @@ tra u 20
 # stress plot
 ulin contact: contact
 plot f new n
+view sh off
 plus fv base
 max 3000 f
 min 0 f
