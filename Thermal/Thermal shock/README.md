@@ -1,5 +1,5 @@
 # Thermal Strain
-Tested with CGX 2.16 / CCX 2.15
+Tested with CGX 2.19/ CCX 2.19
 
 + Transient coupled thermo-mechanical analysis
 + Bending of a plate due to one-sided heating

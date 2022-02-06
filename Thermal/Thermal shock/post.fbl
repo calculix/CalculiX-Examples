@@ -11,6 +11,7 @@ min 0 f l
 max 2 f l
 
 # time history plots
+asgn graph off
 graph * amp
 graph Nhist time DISP D1
 sys gnuplot history.gnu
