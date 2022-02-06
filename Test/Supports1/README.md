@@ -1,7 +1,8 @@
 # Supports using distributing coupling
-Tested with CGX 2.16 / CCX 2.15 / Gmsh 4.4.1
+Tested with CGX 2.19 / CCX 2.19 / Gmsh 4.9.3
 
-+ Use of distributing coupling to model bearings of a shaft
++ Use of distributing coupling to model bearings of a shaft (doesn not work any more in 2.19, needs to be converted to meanrot MPC)
++ cad2fbd not tested in 2.19
 + Modal analysis
 
 
@@ -37,14 +38,14 @@ Bending modes rotate about the centers of the bearing surfaces
 
 <img src="Refs/shape_2.gif" width="400"><img src="Refs/shape_5.gif" width="400">
 
-The left bearing is constrained in longitudinal direction (x), the right one is not. It is clearly visible that the bearing surfaces can deform (which they could not with kinematic coupling)
+(2.19: no support at all due to distributing coupling being a pure load distribution, not a dof coupling) The left bearing is constrained in longitudinal direction (x), the right one is not. It is clearly visible that the bearing surfaces can deform (which they could not with kinematic coupling)
 
 <img src="Refs/shape_12.gif" width="400">
 
 ## Meshing with Gmsh
 
 In CGX 2.12 there was a bug, which resulted in fail of meshing the geometry.
-Therefore, an alternative simulation with gmsh as pre-processor has been set up
+Therefore, an alternative simulation with gmsh as pre-processor has been set up. 
 
 ```
 > cgx -b gmsh.fbl

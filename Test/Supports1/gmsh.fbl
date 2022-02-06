@@ -1,4 +1,4 @@
-sys gmsh Welle.geo
+sys gmsh - Welle.geo
 read mesh.inp
 zap +CPS6
 comp s* do
