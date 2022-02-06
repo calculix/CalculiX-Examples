@@ -94,4 +94,4 @@ ds 8 e 24
 frame
 hcpy png Refs/mz-disp.png
 
-sys gnuplot path.gpl
+sys gnuplot path.plt
