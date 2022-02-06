@@ -1,10 +1,10 @@
 # Stress distribution with mean rotation MPC
 
-Tested with CGX 2.16 / CCX 2.16pre
+Tested with CGX 2.19 / CCX 2.19
 
 + Test of mean rotation multipoint constraints
 + Stress distribution for applied moments
-+ Result in version 2.13 and later: Exhibits the same strange (hyperbolic) stress distribution as distributing coupling, plus stress peaks at boundaries and edges due to equal nodal weights. Distributing coupling is area-weighted, thus no artificial peaks.
++ Result in version 2.13 and later: Exhibits the same strange (hyperbolic) stress distribution as distributing coupling in versions up to 2.18, plus stress peaks at boundaries and edges due to equal nodal weights. 
 + This example doesn't work in CGX 2.14.1 and 2.15.
 
 
@@ -24,11 +24,21 @@ The meanrot MPC couples a set of nodes to a reference node:
  - The co-ordinates of the ref node specify the axis of rotation
  - Dof 1 of the ref node specifies the amount of rotation (in radians)
 
-For different load directions, individual MPCs have to be generated. This is a bit cumbersome in CGX, because multiple `send <set> abq mpc <phi> <nx> <ny> <nz>` commands all use the same reference node and file names. To work around this:
-- you have to create dummy nodes, `send` then uses the next unused number (but doesn't recognize the generated reference node)
-- you have to rename the target node set for MPCs with different angle or direction.
+In CGX, you generate a `meanrot` MPC using the `send` command
 
-Using `asgn n <number>` is not really a solution because it doesn't work correctly (asgn n 4 produces node numbers 4,8,12...)
+    send load abq mpc df 1 0 0
+
+with `load` being the coupled node set, `df` being the angle and `1 0 0` being the axis of rotation.
+This generates input with the MPC definition including the definition of the reference node and with the constraint on the reference node.
+The reference node number is the maximal node number + 1.
+
+The reference node is not stored in the CGX node list, so you have to add a dummy node if you want to create another MPC. Store this node in a set for load application.
+
+ 
+    seto refnode
+    node ! 0 0 0
+    setc refnode
+  
 
 For path plots of the stress distribution, appropriate node sets are generated.
 

@@ -13,7 +13,6 @@ merg p all
 merg l all
 swep all new tra 0 0 lz
 
-asgn n 4
 div all auto 2
 div all mult 0.5
 elty all he8i
@@ -26,26 +25,25 @@ seta nodes n all
 enq nodes load rec _ _ lz 0.01
 
 # send meanrot mpc under different names
-# dummy nodes need to be created to enforce
-# different ref nodes
-# Caution, this is not robust against mesh changes
-node 3000 0 0 0
 seta mx n load
 send mx abq mpc df 1 0 0
-# the new reference node is not known to cgx and can't be included in a set
-# unless we define some dummy node
-node 3001 0 0 0
-seta refx n 3001
+# dummy node to increment the max node number so that for the next mpc a different node number is created.
+# store it in a set for application of load instead of constraint
+seto refx
+node ! 0 0 0
+setc refx
 
 seta my n load
 send my abq mpc df 0 1 0
-node 3002 0 0 0
-seta refy n 3002
+seto refy
+node ! 0 0 0
+setc refy
 
 seta mz n load
 send mz abq mpc df 0 0 1
-node 3003 0 0 0
-seta refz n 3003
+seto refz
+node ! 0 0 0
+setc refz
 
 # sets for paths
 enq nodes pathx rec _ 0 0 0.01
@@ -70,7 +68,7 @@ ulin Moment about x
 ds 2 e 3
 frame
 hcpy png Refs/mx.png
-
+asgn graph off
 graph pathy length
 
 ulin Moment about y
