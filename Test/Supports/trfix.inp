@@ -24,7 +24,8 @@ Nfix,1,3
 *step, nlgeom
 *static
 *cload
-Nrload,1,1000
+**Nrload,1,1000
+*load,1,1000
 *node file
 U
 *el file
@@ -37,7 +38,8 @@ ELSE
 *step, nlgeom
 *static
 *cload, op=new
-Nrload,2,1000
+**Nrload,2,1000
+2,2,1000
 *node file
 U
 *el file
@@ -50,7 +52,8 @@ ELSE
 *step, nlgeom
 *static
 *cload, op=new
-Nrload,3,1000
+**Nrload,3,1000
+2,3,1000
 *node file
 U
 *el file

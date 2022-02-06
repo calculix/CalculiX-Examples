@@ -26,7 +26,8 @@
 Nrfix,1,3
 Nrfix,4,6
 *cload
-Nrload,3,-1000
+**Nrload,3,-1000
+2,3,-1000
 *node file
 U
 *el file

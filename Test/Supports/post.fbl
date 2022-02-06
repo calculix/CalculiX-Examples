@@ -24,5 +24,5 @@ hcpy png Refs/trans4
 
 # surface data plots
 sys dat2txt.py trans
-sys gnuplot surface.gpl
+sys gnuplot surface.plt
 sys mv surface*.png Refs/trans
