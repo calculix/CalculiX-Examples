@@ -24,6 +24,7 @@ enq nodes botfault rec xN yF zbot 1 i
 
 # create the time history plots
 seta probes se topseam topfault botseam botfault
+asgn graph off
 graph probes time NDTEMP T
 sys convert -rotate 90 graph_0.ps Refs/history.png
 
