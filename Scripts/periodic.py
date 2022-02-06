@@ -10,10 +10,10 @@ import numpy
 # processing command line arguments, get the
 # jobname
 if len(sys.argv)>1:
-    print "Using file:",sys.argv[1]
+    print( "Using file:",sys.argv[1])
     source = sys.argv[1]
 else:
-    print "Specify mesh file"
+    print( "Specify mesh file")
     quit()
     
 # initializing
@@ -45,7 +45,7 @@ z=numpy.array(na[:,3])
 
 # determine dimensions of the brick
 [lx,ly,lz]=[x.max(),y.max(),z.max()]
-print "lx: {0}\nly: {1}\nlz: {2}".format(lx,ly,lz)
+print( "lx: {0}\nly: {1}\nlz: {2}".format(lx,ly,lz))
 
 # determine control nodes
 x0=numpy.extract(x==0.,n)
@@ -58,7 +58,7 @@ n0=numpy.extract([pt==[0.,0.,0.] for pt in na[:,1:].tolist()],n)[0]
 nx=numpy.extract([pt==[lx,0.,0.] for pt in na[:,1:].tolist()],n)[0]
 ny=numpy.extract([pt==[0.,ly,0.] for pt in na[:,1:].tolist()],n)[0]
 nz=numpy.extract([pt==[0.,0.,lz] for pt in na[:,1:].tolist()],n)[0]
-print "n0: {0}\nnx: {1}\nny: {2}\nnz: {3}".format(n0,nx,ny,nz)
+print( "n0: {0}\nnx: {1}\nny: {2}\nnz: {3}".format(n0,nx,ny,nz))
 
 fo.write("**set definitions\n")
 fo.write("*nset, nset=n0\n{0}\n".format(n0))
@@ -100,5 +100,5 @@ for i in z0:
                 fo.write("3\n{0},2,-1,{1},2,1,{2},2,1\n".format(j,i,nz))
                 fo.write("3\n{0},3,-1,{1},3,1,{2},3,1\n".format(j,i,nz))
                 constrained.append(j)
-print "{0} nodes constrained".format(len(constrained))
+print( "{0} nodes constrained".format(len(constrained)))
 fo.close()

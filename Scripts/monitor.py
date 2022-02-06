@@ -3,7 +3,7 @@
 This is a monitor for .sta and .cvg files of calculix
 """
 import sys
-import pylab
+import matplotlib.pyplot as plt
 import numpy
 import glob
 
@@ -12,18 +12,18 @@ import glob
 # processing command line arguments, get the
 # jobname
 if len(sys.argv)==1:
-    print "No jobname given."
+    print("No jobname given.")
     files=glob.glob("*.sta")
     if len(files)==1:
-        print "Found", files[0]
+        print("Found", files[0])
         job=files[0][:-4]
     else:
-        print "Available .sta files:"
+        print("Available .sta files:")
         for f in files:
-            print "  ", f
+            print("  ", f)
         quit()
 if len(sys.argv)>1:
-    print "Jobname:",sys.argv[1]
+    print("Jobname:",sys.argv[1])
     job = sys.argv[1]
 try:
     sta=numpy.genfromtxt(job+'.sta',skip_header=2,delimiter=[6,11,7,6,14,14,14])
@@ -74,39 +74,39 @@ for i in it:
         if (stp==sta.astype(int)[j,0]) and (inc==sta.astype(int)[j,1]):
             itdt[i]=sta[j,6]
             itsteptime[i]=sta[j,5]
-            print i, stp, inc, j, itdt[i],itsteptime[i],cvg[i,5]
+            print (i, stp, inc, j, itdt[i],itsteptime[i],cvg[i,5])
             istamax=i
             icvgmax=i
             found=1
     if (not found==1):
-        print i, stp, inc, cvg[i,4], cvg[i,5]
+        print(i, stp, inc, cvg[i,4], cvg[i,5])
         icvgmax=i
 ## Plot force residuals, disp correction and time step
-pylab.subplot(2,1,1)
-pylab.title('sta and cvg data of job '+job )
-pylab.semilogy(it[:istamax],itdt[:istamax],'-',
+plt.subplot(2,1,1)
+plt.title('sta and cvg data of job '+job )
+plt.semilogy(it[:istamax],itdt[:istamax],'-',
                it[:icvgmax],cvg[:icvgmax,5],'g-',
                it[:icvgmax],cvg[:icvgmax,6],'r-')
-pylab.grid()
+plt.grid()
 # enforce integer x ticks
-ax = pylab.gca()
+ax = plt.gca()
 ax.xaxis.get_major_locator().set_params(integer=True)
-pylab.legend(['dt','force','disp'],
+plt.legend(['dt','force','disp'],
   fontsize='small',framealpha=0.5, loc=2)
 # step time and number of contact elements
-sp1=pylab.subplot(2,1,2)
-pylab.plot(it[:istamax],itsteptime[:istamax],'r-',
+sp1=plt.subplot(2,1,2)
+plt.plot(it[:istamax],itsteptime[:istamax],'r-',
            it[:istamax],itsteptime[:istamax],'b-',)
-pylab.legend(['# cont. el.','step time'],
+plt.legend(['# cont. el.','step time'],
              fontsize='small',framealpha=0.5, loc=2)
-pylab.ylabel('step time')
-pylab.xlabel('Iteration')
-pylab.grid()
+plt.ylabel('step time')
+plt.xlabel('Iteration')
+plt.grid()
 # enforce integer x ticks
-ax = pylab.gca()
+ax = plt.gca()
 ax.xaxis.get_major_locator().set_params(integer=True)
 sp2=sp1.twinx()
-pylab.plot(it[:icvgmax],cvg[:icvgmax,4],'r-')
-pylab.ylabel('# of cont. elements')
-pylab.savefig(job, bbox_inches='tight' )
-pylab.show()
+plt.plot(it[:icvgmax],cvg[:icvgmax,4],'r-')
+plt.ylabel('# of cont. elements')
+plt.savefig(job, bbox_inches='tight' )
+plt.show()

@@ -1,5 +1,5 @@
 # Helper Scripts
-These scripts augment the automation capabilities of CGX.
+These scripts augment the automation capabilities of CGX. They run with python2 and with python3
 
 File                        | Contents    
  :-------------             | :-------------
@@ -257,3 +257,6 @@ Limitations:
 - No effect on multilayer shell elements in through-thickness direction
 
 For hexahedral meshes, the amount of nodes (and thus the size of the results file) can grow by a factor of 8. The number of dofs, however, remains the same, as all added nodes are eliminated by equations.
+
+Example:
+-  [Linear/Separate/](../Linear/Separate/)

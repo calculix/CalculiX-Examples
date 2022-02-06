@@ -15,18 +15,18 @@ argParamsDict={}
 # processing command line arguments, get the
 # jobname
 if len(sys.argv)==1:
-    print "No filename given."
+    print( "No filename given.")
     files=glob.glob("par.*")
     if len(files)==1:
-        print "Found", files[0]
+        print( "Found", files[0])
         source=files[0]
     else:
-        print "Available par.* files:"
+        print( "Available par.* files:")
         for f in files:
-            print "  ", f
+            print( "  ", f)
         quit()
 if len(sys.argv)>1:
-    print "Using file:",sys.argv[1]
+    print( "Using file:",sys.argv[1])
     source = sys.argv[1]
     # check if parameter values are given on the command line
     if len(sys.argv)>2:
@@ -34,9 +34,9 @@ if len(sys.argv)>1:
         #print sys.argParams
         for argParam in argParams:
             key,val=argParam.split("=")
-            print key,val
+            print( key,val)
             argParamsDict[key]=val
-        print argParamsDict    
+        print( argParamsDict )   
             
 # open files
 print("Source: "+source)
@@ -84,17 +84,17 @@ for line in f:
                     key=active.split("=")[0]
                     if key in argParamsDict:
                         exec(key+"="+argParamsDict[key],g,l)
-                        print "  Override by command line: ("+argParamsDict[key]+")"
+                        print( "  Override by command line: ("+argParamsDict[key]+")")
                         res=key+"="+argParamsDict[key]
                 except Exception as ex:
                     #template = "An exception of type {0} occured. Arguments:\n{1!r}"
                     #print template.format(type(ex).__name__, ex.args)
-                    print "******* ERROR ********"
-                    print "Line "+str(ln)+" in "+source+"\n"
-                    print line
-                    print ex.args[0]
+                    print( "******* ERROR ********")
+                    print( "Line "+str(ln)+" in "+source+"\n")
+                    print( line)
+                    print( ex.args[0])
                     if type(ex).__name__=="NameError":
-                        print "Hint: Use <name=value> to define names."
+                        print( "Hint: Use <name=value> to define names.")
                     exit()
             else:
                 # active string is an expression
@@ -103,12 +103,12 @@ for line in f:
                 except Exception as ex:
                     #template = "An exception of type {0} occured. Arguments:\n{1!r}"
                     #print template.format(type(ex).__name__, ex.args)
-                    print "******* ERROR ********"
-                    print "Line "+str(ln)+" in "+source+"\n"
-                    print line
-                    print ex.args[0]
+                    print( "******* ERROR ********")
+                    print( "Line "+str(ln)+" in "+source+"\n")
+                    print( line)
+                    print( ex.args[0])
                     if type(ex).__name__=="NameError":
-                        print "Hint: Use <name=value> to define names."
+                        print( "Hint: Use <name=value> to define names.")
                     exit()
             outline=outline+res
     fo.write(outline)

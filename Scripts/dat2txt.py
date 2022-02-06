@@ -16,18 +16,18 @@ stop_on_empty = 0 # empty line triggers end of body
 # processing command line arguments, get the
 # jobname
 if len(sys.argv)==1:
-    print "No jobname given."
+    print("No jobname given.")
     files=glob.glob("*.dat")
     if len(files)==1:
-        print "Found", files[0]
+        print("Found", files[0])
         job=files[0]
     else:
-        print "Available data files:"
+        print("Available data files:")
         for f in files:
-            print "  ", f
+            print( "  ", f)
         quit()
 if len(sys.argv)>1:
-    print "Jobname:",sys.argv[1]
+    print( "Jobname:",sys.argv[1])
     job = sys.argv[1]+".dat"
 
 f = open(job,"r")
@@ -46,7 +46,7 @@ for line in f:
         res = resname+"_"+group
         time = float(b.group(3))
         if not (res in data.keys()): # new result type
-            print res
+            print( res)
             data[res] = open(res+".txt","w")
         data[res].write("\n"+str(time)+" ")
         line_end = " "
@@ -56,7 +56,7 @@ for line in f:
         # eigenvalue data
         nev+=1
         res = "Eigenvalues_"+str(nev)
-        print res
+        print( res)
         data[res] = open(res+".txt","w")
         data[res].write("# mode  EV  Re(f)_rad/time Re(f)_cycles/time Im(f)_rad/time\n")
         line_end = "\n"
@@ -66,7 +66,7 @@ for line in f:
     elif line.startswith("     P A R T I C I P A T I O N   F A C T O R S"):
         # eigenvalue data
         res = "Eigenvalues_PF_"+str(nev)
-        print res
+        print( res)
         data[res] = open(res+".txt","w")
         data[res].write("# mode  UX  UY UZ RX RY RZ\n")
         line_end = "\n"
@@ -76,7 +76,7 @@ for line in f:
     elif line.startswith("     E F F E C T I V E   M O D A L   M A S S"):
         # eigenvalue data
         res = "Eigenvalues_MM_"+str(nev)
-        print res
+        print( res)
         data[res] = open(res+".txt","w")
         data[res].write("# mode  UX  UY UZ RX RY RZ\n")
         line_end = "\n"

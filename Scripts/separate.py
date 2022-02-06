@@ -9,10 +9,10 @@ import sys
 # processing command line arguments, get the
 # jobname
 if len(sys.argv)>1:
-    print "Using file:",sys.argv[1]
+    print ("Using file:",sys.argv[1])
     source = sys.argv[1]
 else:
-    print "Specify mesh file"
+    print( "Specify mesh file")
     quit()
 
 # 0 number of nodes
@@ -92,7 +92,7 @@ for line in f:
             numnodes=elprop[eltyp][0]
             numdofs=elprop[eltyp][1]
             felems.write(line)
-            print eltyp, numnodes, numdofs
+            print( eltyp, numnodes, numdofs)
         else:
             datatype="unknown"
         continue
