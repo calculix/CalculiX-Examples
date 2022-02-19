@@ -10,7 +10,7 @@ Model based on the official ccx example `beamcr.inp` but with modified material 
 File                       | Contents    
 :-------------             | :-------------
 [solve.inp](solve.inp)     | CCX input
-[plot.plt](plot.plt)       | Gnuplot script for the creep curve
+[disp.plt](disp.plt)       | Gnuplot script for the creep curve
 
 ## Setup
 
