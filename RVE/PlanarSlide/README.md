@@ -57,6 +57,7 @@ Boundary conditions:
 > monitor.py Zug
 ```
 The second command generates a convergence history plot of the solution.
+
 <img src="Zug.png" title="Convergence history">
 
 ## Postprocessing
