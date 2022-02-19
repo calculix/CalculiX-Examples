@@ -10,8 +10,7 @@ Model based on the official ccx example `beamcr.inp` but with modified material 
 File                       | Contents    
 :-------------             | :-------------
 [solve.inp](solve.inp)     | CCX input
-[test.py](test.py)         | Python script to run the full simulation
-
+[plot.plt](plot.plt)       | Gnuplot script for the creep curve
 
 ## Setup
 
