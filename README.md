@@ -264,7 +264,7 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   title="Plane stress model for parameter optimization">
 ](CAD/Opt)
 [<img
-  src="Nonlinear/Creep/disp.png"
+  src="NonLinear/Creep/disp.png"
   width="200"
   title="Creep curve (constant tensile load)">
-](Nonlinear/Creep)
+](NonLinear/Creep)
