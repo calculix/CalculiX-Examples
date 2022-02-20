@@ -1,0 +1,49 @@
+valu width 1
+valu length 8
+valu le 1
+valu cw / width 2
+
+# geometry 
+pnt p0 0 0 0 
+swep all new tra width 0 0 
+swep all new tra 0 width 0
+swep all new tra 0 0 length
+
+# mesh
+# control node in the center of the upper end
+node 1 cw cw length
+div all auto le
+elty all he20
+mesh all
+send all abq
+
+# node sets
+seta nodes n all
+enq nodes z0 rec _ _ 0 0.1
+enq nodes zl rec _ _ length 0.1
+seta control n 1
+enq nodes monitor rec 0 0 length 0.1
+enq nodes xyz0 rec 0 0 0 0.1
+enq nodes x0yw rec 0 width 0 0.1
+send all abq nam
+
+# surface
+comp zl do
+send zl abq sur
+
+view elem 
+rot -z
+rot l 20
+rot u 20
+frame
+zoom 2
+capt Sets: xyz0 (magenta), x0yw (turquoise)
+ulin z0 (red), zl (yellow), control (blue), monitor (green)
+plot fb all n 50
+plus n z0 r 10
+plus fb zl 50
+plus n control b 10
+plus n monitor g 10
+plus n xyz0 m 10
+plus n x0yw t 10
+hcpy png sets 
