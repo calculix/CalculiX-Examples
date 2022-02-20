@@ -17,12 +17,15 @@ elty all he20
 mesh all
 send all abq
 
-# node sets
+# node sets (some of them with different names for separate postprocessing of solutions)
 seta nodes n all
 enq nodes z0 rec _ _ 0 0.1
 enq nodes zl rec _ _ length 0.1
 seta control n 1
-enq nodes monitor rec 0 0 length 0.1
+seta peeq e 1
+seta peeq2 e 1
+enq nodes disp rec 0 0 length 0.1
+enq nodes disp2 rec 0 0 length 0.1
 enq nodes xyz0 rec 0 0 0 0.1
 enq nodes x0yw rec 0 width 0 0.1
 send all abq nam
@@ -43,7 +46,7 @@ plot fb all n 50
 plus n z0 r 10
 plus fb zl 50
 plus n control b 10
-plus n monitor g 10
+plus n disp g 10
 plus n xyz0 m 10
 plus n x0yw t 10
 hcpy png sets 
