@@ -7,7 +7,7 @@ import re
 import glob
 
 data={}
-pH = re.compile(' (.+) for .*set\\s(\\S+) and time  (.+)')
+pH = re.compile(' (.+)for .*set\\s(\\S+) and time  (.+)')
 skip = 0 # if empty lines are to be skipped
 body = 0 # if data lines are expected
 nev = 0 # number of eigenvalue file
@@ -44,6 +44,7 @@ for line in f:
         resname = b.group(1)
         group = b.group(2)
         res = resname+"_"+group
+        res = res.replace(" _","_")   # remove spaces in front of _
         time = float(b.group(3))
         if not (res in data.keys()): # new result type
             print( res)
