@@ -24,7 +24,7 @@ The parameters are defined in `pre.fbd`.The mesh and the sets are generated usin
     
     > cgx -b pre.fbd
 
-The model consists of a bar of cross section 1 x 1 mm and 8 mm length (longitudinal direction Z). It is fixed at z = 0 in z-direction while allowing for deformation in x and y directions. The load is applied via surface `Sload` coupled to reference node 1000. 
+The model consists of a bar of cross section 1 x 1 mm and 8 mm length (longitudinal direction Z). It is fixed at z = 0 in z-direction while allowing for deformation in x and y directions. The load is applied via surface `Szl` coupled to reference node 1. 
 
 The material parameters are taken from literature and represent magnesium alloy AZ91 at 200°C.
 
@@ -37,11 +37,10 @@ The simulation consists of a `*visco` step of 20 hr duration, yet stops after ap
 ```
 > ccx solve
 ```
-While the solution is running (takes a while), you can inspect the progress with the CVG and STA file monitor
+The solver history can be documented with
 ```
 > monitor.py solve
 ```
-
 
 <img src="solve.png" title="Convergence history">
 
