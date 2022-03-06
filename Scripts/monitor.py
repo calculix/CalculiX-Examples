@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 """
 This is a monitor for .sta and .cvg files of calculix
 """
@@ -29,9 +29,13 @@ try:
     sta=numpy.genfromtxt(job+'.sta',skip_header=2,delimiter=[6,11,7,6,14,14,14])
 except:
     # before the first increment is completed, the sta-file is empty, so we
-    # fake some contents to not crash the 
+    # fake some contents to not crash later
     sta=numpy.array([[  1.   ,   1.   ,   1.   ,  0   ,   0  ,   0  ,   0  ]])
 cvg=numpy.genfromtxt(job+'.cvg',skip_header=4)
+if len(cvg)==0:
+    # if the job is linear, cvg data is empty.
+    print(job+".cvg contains no data. No plot is generated" )
+    sys.exit()
 # ensure 2dim array in case of single data line
 if sta.ndim==1:
     sta=sta[numpy.newaxis,:]
