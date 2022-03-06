@@ -1,6 +1,6 @@
 sys ccx MSM > MSM.log
-read MSM.frd
-read MSM.inp nom
+# read MSM.frd
+read MSM.inp 
 # plot model
 seta ! all
 seta fix n 1
@@ -8,6 +8,8 @@ plot e all k
 plus n all k 6
 plus n fix r 6
 hcpy png meshM
+
+break
 # plot mode shapes
 seta path n 1 2 3
 ds 1 e 1
