@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import os
 import multiprocessing
 import shutil
@@ -12,7 +12,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 # Move new files and folders to 'Refs'
@@ -42,14 +42,12 @@ if __name__ == '__main__':
     # Run the example
     modify_path()
     snap = os.listdir(os.curdir)
-    # TODO
-    # os.system('param.py par.pre.fbd')
-    # os.system('cgx -b pre.fbd')
-    # os.system('cgx -b vpre.fbd')
-    # os.system('cgx -b plots.fbd')
-    # os.system('cgx -b 2D.fbd')
-    # os.system('cgx -b Zug-post.fbd')
-    # os.system('cgx -b expansion.fbd')
-    # os.system('cgx -b expansion2.fbd')
-    # os.system('cgx -b expansion3.fbd')
-    move(snap)
+    os.system('param.py par.pre.fbd')
+    os.system('cgx -b pre.fbd')
+    os.system('cgx -b vpre.fbd')
+    os.system('ccx Zug')
+    os.system('monitor.py Zug')
+    os.system('cgx -b plots.fbd')
+    os.system('cgx -b 2D.fbd')
+    os.system('cgx -b expansion.fbd')
+    #move(snap)

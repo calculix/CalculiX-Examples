@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import os
 import glob
@@ -14,7 +14,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 # preprocessing
@@ -31,11 +31,11 @@ def pre():
         "all.msh",
         "rb1.inp")
 
-    print "removing files"
+    print("removing files")
     for spec in toRemovePre:
         files=glob.glob(spec)
         for f in files:
-            print f
+            print(f)
             os.remove(f)
     os.system("cgx -b pre.fbd")
 
@@ -107,4 +107,4 @@ if __name__ == '__main__':
     pre()
     solve()
     post()
-    move(snap)
+    #move(snap)
