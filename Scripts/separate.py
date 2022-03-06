@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 """
 This script replicates nodes to avoid nodal averaging of results.
 The elements are scanned and if a node is used repeatedly, it is replaced by

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 """ Test for the pillow example """
 
@@ -15,7 +15,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 def run():
@@ -31,7 +31,7 @@ def run():
     # loop over element types
     for elty in eltyps.keys():
         # open results summary file
-        print elty
+        print(elty)
         # read pre.fbd and write it to pre-auto.fbd
         fout = open("run_auto.fbd", "w")
         fout.write("ulin "+elty+"\n")
@@ -79,4 +79,4 @@ if __name__ == '__main__':
     modify_path()
     snap = os.listdir(os.curdir)
     run()
-    move(snap)
+    #move(snap)
