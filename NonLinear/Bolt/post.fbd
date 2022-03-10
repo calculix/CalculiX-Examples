@@ -17,7 +17,7 @@ min 0
 max 200
 hcpy png se-bolt-pretension
 
-ds -3 e 7
+ds -5 e 7
 plot fv Nbolt
 min 0
 max 200
@@ -36,8 +36,19 @@ max 200
 hcpy png cpress-pretension
 
 
-ds -2 e 4
+ds -4 e 4
 plot fv +cont1
 min 0
 max 200
 hcpy png cpress
+
+# symmetry expansion
+seta base all
+copy all new mir x
+ds -5 e 7
+rot y
+rot l 20
+plot fb all n 50
+plus fv base
+frame
+hcpy png expansion
