@@ -1,0 +1,71 @@
+read Bolt-gmsh.inp
+zap +CPS6
+# contact surfaces
+comp C_head do
+send C_head abq surf
+comp C_nut do
+send C_nut abq surf
+comp c1o do
+send c1o abq surf
+comp c1u do
+send c1u abq surf
+comp c2o do
+send c2o abq surf
+comp c2u do
+send c2u abq surf
+
+# node sets for boundary conditions
+seta nc2r n c2r
+send nc2r abq nam
+seta nsym1 n sym1
+send nsym1 abq nam
+seta nsym2 n sym2
+send nsym2 abq nam
+
+# correct position of p2
+move p2 tra 0 0 0.001
+
+# constraint node for the bolt
+seta nbolt n bolt
+enq nbolt nfix rec 20 0 17 1
+send nfix abq nam
+enq nbolt nfix1 rec 28.5 0 17 1
+send nfix1 abq nam
+
+#constraint node for p1
+seta np1 n p1
+enq np1 nfixp1 rec 0 20 0 1
+send nfixp1 abq nam
+
+# elements
+send p1 abq
+send p2 abq
+send bolt abq
+
+# parts plot
+seta ! all
+rot y
+rot l 15
+rot u 15
+hcpy png parts
+
+# plot contact
+ulin slave (red), master (blue)
+view ill on
+plot fb C_head r 50
+plus fb c1o b 50
+plus fb c1u r 50
+plus fb c2o b 50
+plus fb c2u b 50
+plus fb C_nut r 50
+hcpy png contact
+
+# plot boundary
+ulin nsym1 (red), nsym2 (green), nc2r (blue)
+plot n nsym1 r 
+plus n nsym2 g
+plus n nc2r b
+plus fb all n 20
+hcpy png boundary
+
+

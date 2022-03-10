@@ -1,0 +1,80 @@
+*include, input=bolt.msh
+*include, input=p1.msh
+*include, input=p2.msh
+** contact surfaces
+*include, input=C_head.sur
+*include, input=C_nut.sur
+*include, input=c1o.sur
+*include, input=c1u.sur
+*include, input=c2o.sur
+*include, input=c2u.sur
+** constraints
+*include, input=nc2r.nam
+*include, input=nsym1.nam
+*include, input=nsym2.nam
+*include, input=nfix.nam
+*include, input=nfix1.nam
+*include, input=nfixp1.nam
+*boundary
+Nnc2r,2,3
+Nnsym1,1
+Nnsym2,1
+Nnfix,1,2
+Nnfix1,2
+Nnfixp1,2
+** material
+*solid section, elset=Ebolt, material=steel
+*solid section, elset=Ep1, material=steel
+*solid section, elset=Ep2, material=steel
+** contact
+*surface interaction, name=c1
+*surface behavior, pressure-overclosure=linear
+1e7,1
+*contact pair, interaction=c1, type=surface to surface
+SC_head,Sc1o
+*contact pair, interaction=c1, type=surface to surface
+SC_nut,Sc2u
+*contact pair, interaction=c1, type=surface to surface
+Sc1u,Sc2o
+*material, name=steel
+*elastic
+210000,0.3,0
+*density 
+7.85e-9
+*expansion 
+12e-6 
+*initial conditions, type=temperature 
+Nbolt,0
+Np1,0
+Np2,0
+** *step
+** *frequency			
+** 20
+** *node file
+** U
+** *end step
+** pre-tension
+*step,nlgeom
+*static
+0.5,1
+*temperature 
+Nbolt,-50
+*node file
+U
+*el file
+S
+*contact file
+cdis
+*end step
+*step,nlgeom
+*static
+0.1,1
+*boundary
+Nnsym1,3,3,0.1
+*node file
+U
+*el file
+S
+*contact file
+cdis
+*end step
