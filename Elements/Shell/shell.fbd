@@ -1,0 +1,68 @@
+valu B 50
+Valu L 200
+valu LE 40 
+valu Etyp tr3u
+
+# preprocessing
+# geometry
+pnt p1 0 0 0
+seta lowerleft p p1
+swep all new tra 0 0 B
+seta left all
+swep left right tra L 0 0
+seta beam all
+
+# meshing
+div all auto LE
+elty all Etyp
+mesh all
+send all abq
+
+# left end symmetry
+send left abq spc 156
+
+# right end support
+send right abq spc 2
+
+# vertex for z constraint
+send lowerleft abq spc 3
+
+# run analysis
+sys ccx shell
+
+## postprocessing
+seto nodes
+read shell.frd
+setc nodes
+
+# extract umax
+ds 1 e 2
+enq all umax rec 0 _ _ 1 l
+sys mv enq_lc1_e2_1.out umax.txt
+
+# extract smax
+ds 2 e 1
+enq all smax rec 0 _ _ 1 h
+sys mv enq_lc2_e1_2.out smax.txt
+enq all smax rec 0 _ _ 1 l
+sys mv enq_lc2_e1_3.out smin.txt
+
+# create plot, title will be inserted by python script
+rot -z
+rot l 30
+rot u 15
+tra u 50
+plot ld beam
+frame
+view elem
+view sh off
+view disp
+scal d 1000
+plus fv all
+# show divisions
+plus ld all
+plus ld all
+plus n nodes
+# make image
+hcpy png
+
