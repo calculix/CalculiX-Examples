@@ -39,6 +39,11 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   title="Convergence study for solid elements in linear elasticity">
 ](Elements/Solid/)
 [<img
+  src="Elements/Shell/shell_S6_25_S.png"
+  width="200"
+  title="Convergence study for shell elements in linear elasticity">
+](Elements/Shell/)
+[<img
   src="Contact/Shell0/mode9.png"
   width="200"
   title="Shell edge to shell face connection, modal analysis">
