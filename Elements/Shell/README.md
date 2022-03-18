@@ -19,7 +19,7 @@ File                           | Contents
 
 ## Reference solution
 
-[![Screenshot](shell-ref.png)](https://de.smath.com/cloud/worksheet/BR4C5nLg) of this example.
+[![Screenshot](shell-ref.png)](https://de.smath.com/cloud/worksheet/BR4C5nLg)
 
 ## Mesh Convergence of the Normalized Results
 
@@ -45,7 +45,7 @@ All plots sorted by element type and nodal distance (division).
 
 - The S3 element is too stiff and shows strange stress pattersn
 - The S4R element can't represent bending, the stiffness results just from shear stiffness.
-- The S8R element exhibits hourglassing if there is just one element over the cross section. Yet the stress values and maximum displacements at the symmetry plane are acceptable
+- The S8R element exhibits hourglassing if there is just one element over the cross section. Yet the stress values and maximum displacements at the plane of symmetry are acceptable
 - S4, S6 and S8 converge well, while S4 is most efficient, S8 is least efficient in terms of precision versus number of nodes. Efficience in terms of computing time may be different.
 
 | Type    | 200    | 100 | 50 | 20 | 10 | 5 
