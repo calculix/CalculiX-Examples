@@ -1,8 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import os
 import multiprocessing
 import shutil
-
 
 # Provide access to the helper scripts
 def modify_path():
@@ -12,7 +11,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 # Move new files and folders to 'Refs'
@@ -47,4 +46,4 @@ if __name__ == '__main__':
     os.system("param.py par.ct.geo a=20.5")
     os.system("cgx -b ct.fbd")
     os.system("cgx -b path.fbd")
-    move(snap)
+    #move(snap)

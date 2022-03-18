@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 """
 This script extracts data from ccx dat-files
 """
@@ -34,8 +34,8 @@ f = open(job,"r")
 
 for line in f:
     if skip: # if the line is known to be useless
-	    skip = skip -1
-	    continue
+        skip = skip -1
+        continue
     line = line.replace("(","")
     line = line.replace(")","")
     line = line.replace("\n","")

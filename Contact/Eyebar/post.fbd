@@ -22,6 +22,7 @@ read fix.nam inp
 read path.nam inp
 view disp off
 ds 2 e 1
+asgn graph off
 graph Nfix length
 graph Npath length
 ds -4 e 1

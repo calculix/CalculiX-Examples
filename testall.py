@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 """execute all test scripts in the example collection"""
 import os, fnmatch, multiprocessing
 
@@ -11,7 +11,7 @@ counter=1
 for path, dirs, files in os.walk(os.path.abspath(os.curdir)):
     for filename in fnmatch.filter(files, "test.py"):
         test=os.path.join(path, filename)
-        print test
+        print(test)
         # change to the example directory
         os.chdir(path)
         # execute the test script

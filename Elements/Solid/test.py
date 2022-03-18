@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 """ Convergence study for solid elements """
 
 import os
 import multiprocessing
-import pylab
+import matplotlib.pyplot as plt
 import numpy
 import shutil
 
@@ -17,7 +17,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 # Runs a convergence study
@@ -47,7 +47,7 @@ def solid_conv():
         fdata.write("# size NoN smax umax\n")
         # loop over element sizes
         for elsize in elsizes:
-            print elty, elsize
+            print(elty, elsize)
             # modify solid.fbd and write output to solid-auto.fbd
             fout = open("solid_auto.fbd", "w")
             for line in lines:
@@ -73,7 +73,7 @@ def solid_conv():
                 if line.startswith("    2C"):
                     nnode=int(line.split()[1])
             f.close()
-            print "Knotenzahl ", nnode
+            print("Knotenzahl ", nnode)
             # get smax from smax.txt
             smax=numpy.genfromtxt("smax.txt")[3]
             # get umax from umax.txt
@@ -100,32 +100,32 @@ def solid_plot():
 		"C3D20R",
 		"C3D4",
 		"C3D10"]
-	pylab.figure(figsize=(10, 5.0), dpi=100)
-	pylab.subplot(1,2,1)
-	pylab.title("Stress")
-	# pylab.hold(True) # deprecated
+	plt.figure(figsize=(10, 5.0), dpi=100)
+	plt.subplot(1,2,1)
+	plt.title("Stress")
+	# plt.hold(True) # deprecated
 	for elty in eltyps:
 		data = numpy.genfromtxt(elty+".txt")
-		pylab.plot(data[:,1],data[:,2]/sref,"o-")
-	pylab.xscale("log")
-	pylab.xlabel('Number of nodes')
-	pylab.ylabel('Max $\sigma / \sigma_{\mathrm{ref}}$')
-	pylab.grid(True)
-	pylab.subplot(1,2,2)
-	pylab.title("Displacement")
-	# pylab.hold(True) # deprecated
+		plt.plot(data[:,1],data[:,2]/sref,"o-")
+	plt.xscale("log")
+	plt.xlabel('Number of nodes')
+	plt.ylabel('Max $\sigma / \sigma_{\mathrm{ref}}$')
+	plt.grid(True)
+	plt.subplot(1,2,2)
+	plt.title("Displacement")
+	# plt.hold(True) # deprecated
 	for elty in eltyps:
 		data = numpy.genfromtxt(elty+".txt")
-		pylab.plot(data[:,1],data[:,3]/wref,"o-")
-	pylab.xscale("log")
-	pylab.xlabel('Number of nodes')
-	pylab.ylabel('Max $u / u_{\mathrm{ref}}$')
-	pylab.ylim([0,1.2])
-	pylab.grid(True)
-	pylab.legend(eltyps,loc="lower right")
-	pylab.tight_layout()
-	pylab.savefig("solid.svg",format="svg")
-	# pylab.show()
+		plt.plot(data[:,1],data[:,3]/wref,"o-")
+	plt.xscale("log")
+	plt.xlabel('Number of nodes')
+	plt.ylabel('Max $u / u_{\mathrm{ref}}$')
+	plt.ylim([0,1.2])
+	plt.grid(True)
+	plt.legend(eltyps,loc="lower right")
+	plt.tight_layout()
+	plt.savefig("solid.svg",format="svg")
+	# plt.show()
 
 
 # Move new files and folders to 'Refs'

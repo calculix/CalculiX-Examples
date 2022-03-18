@@ -14,6 +14,7 @@ File                       | Contents
 [solve2.inp](solve2.inp)   | CCX input (constant true stress)
 [peeq.plt](peeq.plt)       | Gnuplot script for the creep curve (strain)
 [disp.plt](disp.plt)       | Gnuplot script for the creep curve (displacement)
+[test.py](test.py)         | Python script for the complete analysis
 
 ## Setup
 

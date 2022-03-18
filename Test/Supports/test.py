@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import os
 import multiprocessing
 import shutil
@@ -12,7 +12,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 # Move new files and folders to 'Refs'
@@ -50,4 +50,4 @@ if __name__ == '__main__':
     os.system("cgx -b post.fbl")
     os.system("ccx trfix")
     os.system("cgx -b trfix.fbl")
-    move(snap)
+    #move(snap)

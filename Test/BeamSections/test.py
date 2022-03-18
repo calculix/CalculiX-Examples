@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import os
 import multiprocessing
 import shutil
@@ -12,7 +12,7 @@ def modify_path():
     scripts_dir = os.path.join(scripts_dir, 'Scripts')
     if not scripts_dir in os.environ['PATH']:
         os.environ['PATH'] += os.pathsep + scripts_dir
-    print '\nPATH = {}\n'.format(os.environ['PATH'])
+    print('\nPATH = {}\n'.format(os.environ['PATH']))
 
 
 # Move new files and folders to 'Refs'
@@ -47,4 +47,4 @@ if __name__ == '__main__':
     os.system("sed -n '4,14 p' u1General.dat > u1-3.txt")
     os.system("sed -n '41,51 p' u1General.dat > u1-2.txt")
     os.system("gnuplot u1.plt")
-    move(snap)
+    #move(snap)
