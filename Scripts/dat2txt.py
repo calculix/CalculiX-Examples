@@ -7,7 +7,7 @@ import re
 import glob
 
 data={}
-pH = re.compile(' (.+)for .*set\\s(\\S+) and time  (.+)')
+pH = re.compile(' (.+)for .*set\\s*(\\S+) and time  (.+)')
 skip = 0 # if empty lines are to be skipped
 body = 0 # if data lines are expected
 nev = 0 # number of eigenvalue file
