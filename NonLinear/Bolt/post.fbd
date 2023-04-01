@@ -1,0 +1,54 @@
+read thermal.frd
+read thermal.inp nom
+# document pre-tension
+comp Nbolt do
+
+view ill
+
+rot y
+rot u 20
+rot l 20
+view disp 
+scal d 100
+
+ds 6 e 7
+plot fv Nbolt
+min 0
+max 200
+hcpy png se-bolt-pretension
+
+ds -5 e 7
+plot fv Nbolt
+min 0
+max 200
+hcpy png se-bolt
+
+
+plot fv all
+min 0
+max 200
+hcpy png se-all
+
+ds 7 e 4
+plot fv +cont1
+min 0
+max 200
+hcpy png cpress-pretension
+
+
+ds -4 e 4
+plot fv +cont1
+min 0
+max 200
+hcpy png cpress
+
+# symmetry expansion
+seta base all
+copy all new mir x
+ds -5 e 7
+rot y
+rot l 20
+plot fb all n 50
+plus fv base
+frame
+hcpy png expansion
