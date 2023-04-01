@@ -224,7 +224,7 @@ the control nodes. These can be specified using `*boundary`.
 This script enable the display of results not averaged at the nodes in CGX. The
 trick is to provide a separate node for each element where otherwise all adjacent
 elements would share the same node. Instead of ensuring continuity of the
-displacement field by using the same node, identical displacement of
+displacement field by using the same node, identical displacements and temperatures of
 repeated nodes is enforced using equations.
 
 These equations completely eliminate the dofs of the added nodes, such that no

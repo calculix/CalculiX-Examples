@@ -3,6 +3,7 @@
 This script replicates nodes to avoid nodal averaging of results.
 The elements are scanned and if a node is used repeatedly, it is replaced by
 a new node at the same location and appropriate equations are generated.
+The equations are generated for the displacement and temperature dofs.
 """
 import sys
 
@@ -133,7 +134,9 @@ for line in f:
                         fnodes.write("{0},".format(maxnode)+nodes[number])
                         felems.write("{0},".format(maxnode))
                         # create the equations to couple the nodes
-                        for i in range(numdofs):
+                        dofs = range(numdofs)
+                        dofs.append(11-1)
+                        for i in dofs:
                             feqn.write("2\n")
                             feqn.write("{0},{1},1,{2},{1},-1\n".format(maxnode,i+1,number))
                 felems.write("\n")
