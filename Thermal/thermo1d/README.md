@@ -4,6 +4,11 @@ Tested with CGX 2.20 / CCX 2.20
 + Steady state thermal analysis
 + Prescribed volumentric heat production, isothermal boundary and prescribed flux density
 + Comparison of averaged and non-averaged nodal solution
++ Comparison of 3D solid model and 2D plane model
+
+**Issue**
+
+Due to some bug in CCX the result of the 2D model isn't correct. On the right end you see a skewness in the flux distribution (T should not depend on y). Also, the path plot shows that at x = 3 m the value of q isn't correct (should be 0.5) and it is not constant over the element in the non-averaged solution.
 
 File                       | Contents    
  :-------------            | :-------------
@@ -77,3 +82,4 @@ The script does the following
 <img width="300" src="q-2d-noavg.png" title="Heat flux density, non-averaged">
 
 <img width="400" src="path2d.png" title="Path plot">
+
