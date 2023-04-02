@@ -55,8 +55,7 @@ The script does the following
 - Create q contour plot and path plot
 - Create the combined plot
 
-<img width="300" src="q.png" title="Heat flux density, averaged">
-<img width="300" src="q-noavg.png" title="Heat flux density, non-averaged">
+<img width="300" src="q.png" title="Heat flux density, averaged"><img width="300" src="q-noavg.png" title="Heat flux density, non-averaged">
 
 <img width="400" src="path.png" title="Path plot">
 
@@ -78,8 +77,7 @@ The script does the following
 - Create q contour plot and path plot
 - Create the combined plot
 
-<img width="300" src="q-2d.png" title="Heat flux density, averaged">
-<img width="300" src="q-2d-noavg.png" title="Heat flux density, non-averaged">
+<img width="300" src="q-2d.png" title="Heat flux density, averaged"><img width="300" src="q-2d-noavg.png" title="Heat flux density, non-averaged">
 
 <img width="400" src="path2d.png" title="Path plot">
 
