@@ -1,0 +1,35 @@
+*include,input=separate-nod.inc
+*include,input=separate-ele.inc
+*include,input=separate-eqn.inc
+** sets and surfaces
+*include, input=x0.nam
+*include, input=x0.sur
+*include, input=xL.sur
+*include, input=yz0.nam
+** material definition
+*material, name=dummy
+*conductivity
+0.8,0
+*solid section, elset=Eall, material=dummy
+*include, input=thickness.inp
+*boundary
+Nx0,11,,1.
+*step
+*heat transfer, steady state
+1,1
+*dflux
+Eall, BF, 2.
+SxL, S0, -0.5
+*node file
+NT, hfl
+*el file 
+NT, hfl
+*section print, surface=Sx0, name=sp1
+flux
+*section print, surface=SxL, name=sp2
+flux
+*node print, nset=Nyz0
+nt
+*el print, elset=Eall
+hfl
+*end step

@@ -1,0 +1,66 @@
+# 1d heat conduction, steady state
+
+valu lx 3
+valu ly 1
+valu lz 1
+
+pnt p1 0 0 0
+swep all new tra lx 0 0 3
+swep all new tra 0 ly 0 1
+swep all new tra 0 0 lz 1
+
+elty all he8
+mesh all
+send all abq
+
+# sets
+seta nodes n all
+enq nodes x0 rec 0 _ _ 0.01
+comp x0 do
+send x0 abq nam
+send x0 abq sur
+
+enq nodes xL rec lx _ _ 0.01
+comp xL do
+send xL abq sur
+
+enq nodes yz0 rec _ 0 0 0.01
+send yz0 abq nam
+
+# mesh plot
+plot fb all n 20
+frame all
+plus f x0 r 
+plus f xL b
+plus n all g 10 
+view ill
+view elem
+frame all
+hcpy png mesh
+
+# PATH
+seto centerline
+pnt start 0 0.5 0.5
+swep centerline centerline tra lx 0 0 60
+setc centerline
+
+# 3D standard
+sys ccx solve
+
+read solve.frd
+ds -0 e 4
+hcpy png q
+
+graph centerline length
+
+# 3D non-averaged
+sys separate.py all.msh
+sys ccx solve_sep
+
+read solve_sep.frd
+ds -0 e 4
+hcpy png q-noavg
+
+graph centerline length
+
+

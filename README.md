@@ -278,3 +278,8 @@ In the [Release Manager](https://github.com/mkraska/CalculiX-Examples/releases) 
   width="200"
   title="Creep curves">
 ](NonLinear/Creep)
+[<img
+  src="Thermal/thermo1d/q.png"
+  width="200"
+  title="1D steady state heat conduction with solid and plane model">
+](Thermal/thermo1d)
