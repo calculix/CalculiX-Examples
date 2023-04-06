@@ -8,7 +8,7 @@ Tested with CGX 2.20 / CCX 2.20
 
 **Issue**
 
-Due to some bug in CCX the result of the 2D model isn't correct. On the right end you see a skewness in the flux distribution (T should not depend on y). Also, the path plot shows that at x = 3 m the value of q isn't correct (should be 0.5) and it is not constant over the element in the non-averaged solution.
+Due to some dependence on node numbering in CCX the result of the 2D model isn't correct. On the right end you see a skewness in the flux distribution (T should not depend on y). Also, the path plot shows that at x = 3 m the value of q isn't correct (should be 0.5) and it is not constant over the element in the non-averaged solution.
 
 File                       | Contents    
  :-------------            | :-------------
