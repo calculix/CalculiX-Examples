@@ -48,7 +48,7 @@ setc centerline
 sys ccx solve
 
 read solve.frd
-ds -0 e 4
+ds -0 e 1
 hcpy png q
 
 graph centerline length
@@ -58,9 +58,10 @@ sys separate.py all.msh
 sys ccx solve_sep
 
 read solve_sep.frd
-ds -0 e 4
+ds -0 e 1
 hcpy png q-noavg
 
 graph centerline length
 
-
+# create combined path plot
+sys gnuplot path.gnu

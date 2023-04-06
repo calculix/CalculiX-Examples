@@ -51,7 +51,7 @@ setc centerline
 sys ccx solve2d
 
 read solve2d.frd
-ds -0 e 4
+ds -0 e 1
 hcpy png q-2d
 
 graph centerline length
@@ -61,7 +61,7 @@ sys separate.py all.msh
 sys ccx solve2d_sep
 
 read solve2d_sep.frd
-ds -0 e 4
+ds -0 e 1
 hcpy png q-2d-noavg
 
 graph centerline length
