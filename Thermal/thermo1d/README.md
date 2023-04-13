@@ -8,7 +8,9 @@ Tested with CGX 2.20 / CCX 2.20
 
 **Issue**
 
-Due to some dependence on node numbering in CCX the result of the 2D model isn't correct. On the right end you see a skewness in the flux distribution (T should not depend on y). Also, the path plot shows that at x = 3 m the value of q isn't correct (should be 0.5) and it is not constant over the element in the non-averaged solution.
+Due to wrong surface definition by CGX (for the given topology, the edge at x=L should be S1 of element 1 and not S4 as written in the xL.sur file.
+
+the result of the 2D model isn't correct. On the right end you see a skewness in the flux distribution (T should not depend on y). Also, the path plot shows that at x = 3 m the value of q isn't correct (should be 0.5).
 
 File                       | Contents    
  :-------------            | :-------------
@@ -29,9 +31,7 @@ The model represents a uniform bar for demonstration of 1D steady state heat con
 | `lx`           | 3       | x dimension in m                            |
 | `ly`           | 1       | y dimension in m                            |
 | `lz`           | 1       | z dimension in m                            |
-| `T0`           | 1       | Prescribed temperature at x=0 in °C         |
-| `qL`           | 0.5     | Prescribed heat flux density at x=L in W/m² |
-| `pr`           | 2       | Volumetric heat production in W/m³          |
+
 
 
 The parameters are defined in [run.fbd](run.fbd) and [run2d.fbd](run2d.fbd)
