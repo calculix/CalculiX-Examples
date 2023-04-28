@@ -1,0 +1,70 @@
+valu thi 0.1
+valu tol 0.01
+valu x1 1
+valu x2 2
+valu x3 4
+valu y1 1 
+valu dy 2
+
+# first order quadrilateral
+node 1 0 0 0
+node 2 x1 0 0
+node 3 x1 y1 0
+node 4 0 y1 0
+elem 1 1 2 3 4 qu4
+
+# first order triangle
+node 5 x2 0 0
+node 6 x3 0 0
+node 7 x2 y1 0
+elem 2 5 6 7 tr3
+
+# create solid elements
+swep all new tra 0 0 thi 1
+
+# make copies and add midside nodes
+copy all quad tra 0 dy 0
+mids quad gen
+
+# send mesh
+send all abq
+
+# create sets
+seta nodes n all
+
+# support nodes
+enq nodes z0   rec _ _ 0 tol
+send z0 abq nam
+
+# load surface
+enq nodes z1   rec _ _ thi tol
+comp z1 do
+comp z1 do
+send z1 abq surf
+send z1 abq nam
+
+# mesh plot and sets
+ulin Support nodes (red), load surface (yellow)
+frame
+rot -z
+rot d 60
+rot l 30
+plot n z0 8
+plus fb z1 y 50
+hcpy png mesh
+
+# solve
+sys ccx solid
+
+# postprocessing
+read solid.frd
+
+ulin Nodal forces in % of total pressure load
+frame
+rot -z
+tra l 0.1
+ds 3 e 3
+plot ev z1 
+txt z1 nf 0.02 0.02
+plot nt z1 b 10 
+hcpy png forces

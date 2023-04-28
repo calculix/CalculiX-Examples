@@ -1,0 +1,25 @@
+*include, input=all.msh
+*include, input=z0.nam
+*include, input=z1.nam
+*include, input=z1.sur
+*material, name=metal
+*elastic
+100000,0.3
+*density
+10
+*solid section, material=metal, elset=Eall
+*boundary
+Nz0,1,3
+*step
+*static
+*dsload
+Sz1,P,100
+**dload
+**Eall, GRAV,100,0,0,-1
+*el file, elset=Eall
+S
+*node file, nset=Nall
+U, RF
+*node print, nset=Nz1
+RF
+*end step
