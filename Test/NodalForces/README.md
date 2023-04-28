@@ -9,16 +9,9 @@ Tested with CGX 2.20 / CCX 2.20
 
 File                       | Contents    
  :-------------            | :-------------
- [run.fbd](run.fbd)        | CGX script for 3D model
- [solve.inp](solve.inp)    | CCX input for 3D model
- [solve_sep.inp](solve_sep.inp)    | CCX input for non-averaged solution (3D-model)
- [run2d.fbd](run2d.fbd)    | CGX script for plane model
- [solve2d.inp](solve2d.inp)    | CCX input for plane model
- [solve2d_sep.inp](solve2d_sep.inp)    | CCX input for non-averaged solution
- [path.gnu](path.gnu)      | Gnuplot control file for the combined path plot (3D)
- [path2d.gnu](path2d.gnu)      | Gnuplot control file for the combined path plot (2D)
- [test.py](test.py)        | Python script to run the simulation
-
+ [solid.fbd](solid.fbd)        | CGX script 
+ [solid.inp](solid.inp)    | CCX input
+ 
 
 The upper surfaces are loaded with a uniform pressure. 
 
